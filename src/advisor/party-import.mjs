@@ -43,7 +43,9 @@ function makeDict(pairs) {  // [[한글, 값]] → 찾기 함수
     if (!q) return null;
     let best = null;
     for (const it of list) {
-      const s = 1 - lev(q, it.j) / Math.max(q.length, it.j.length);
+      const L = Math.max(q.length, it.j.length);
+      if (Math.abs(q.length - it.j.length) > L * 0.5) continue;  // 길이가 너무 다르면 비교 생략
+      const s = 1 - lev(q, it.j) / L;
       if (!best || s > best.score) best = {value: it.v, label: it.k, score: s};
     }
     return best;
@@ -89,6 +91,36 @@ export function createPartyReader(M, itemDict) {
         else { cur = {text: w.text, x0: w.x0, x1: w.x1, y0: l.cy - med / 2, y1: l.cy + med / 2, cy: l.cy, parts: [w]}; out.push(cur); }
       }
     }
+    return out.flatMap(refine);
+  }
+
+  // 아이콘(캐릭터·성별·타입)을 글자로 잘못 읽어 이름·기술이 쓰레기 글자와 한 구절로 붙는 경우
+  // → 구절 안의 연속된 글자 조합 중 사전과 가장 잘 맞는 부분을 떼어냄 ("ㄷ어흥염8@지옥찌르기" → "어흥염" + "지옥찌르기")
+  const FINDS = [findMon, findMove, findAbility, findItem];
+  const bestScore = t => Math.max(0, ...FINDS.map(f => f(t)?.score || 0));
+  function refine(p) {
+    const P = p.parts;
+    if (P.length < 2 || P.length > 14 || !/[가-힣]/.test(p.text)) return [p];
+    const whole = bestScore(p.text);
+    if (whole >= 0.85) return [p];
+    let best = null;
+    for (let i = 0; i < P.length; i++) {
+      let t = '';
+      for (let j = i; j < Math.min(P.length, i + 7); j++) {
+        t += P[j].text;
+        const jl = jamo(t).length;
+        if (jl < 4) continue;
+        const sc = bestScore(t);
+        const key = sc + jl * 0.002;  // 점수가 같으면 긴 쪽 ("트릭룸" > "트릭")
+        if (!best || key > best.key) best = {score: sc, key, i, j};
+      }
+    }
+    if (!best || best.score < 0.75 || best.score < whole + 0.1) return [p];
+    const mk = parts => ({...p, text: parts.map(w => w.text).join(''), x0: parts[0].x0, x1: parts[parts.length - 1].x1, parts});
+    const out = [];
+    if (best.i > 0) out.push(mk(P.slice(0, best.i)));
+    out.push(mk(P.slice(best.i, best.j + 1)));
+    if (best.j < P.length - 1) out.push(...refine(mk(P.slice(best.j + 1))));
     return out;
   }
 
@@ -145,9 +177,13 @@ export function createPartyReader(M, itemDict) {
   function readStatCard(card) {
     // 숫자 토큰 (한 단어에 "186—21" 처럼 두 숫자가 붙어 있을 수 있음 → 글자 위치 비율로 나눔)
     const nums = [];
-    const xs = card.body.flatMap(p => [p.x0, p.x1]);
+    // 이름 줄의 아이콘이 "우0", "26자" 처럼 숫자로 읽히는 일이 있어 이름 줄은 빼고 읽음
+    const h = card.head, hh = h.y1 - h.y0;
+    const body = card.body.filter(p => p.cy > h.cy + hh * 0.6);
+    if (!body.length) return null;
+    const xs = body.flatMap(p => [p.x0, p.x1]);
     const split = (Math.min(...xs) + Math.max(...xs)) / 2;  // 카드 왼쪽(HP·공격·방어) / 오른쪽(특공·특방·스피드)
-    for (const p of card.body) for (const w of p.parts) {
+    for (const p of body) for (const w of p.parts) {
       const t = /^[ㅇoO]{1,2}$/.test(w.text) ? '0' : w.text;  // 0을 ㅇ·o로 읽는 경우
       const re = /\d+/g;
       let m;
@@ -211,7 +247,8 @@ export function createPartyReader(M, itemDict) {
 
   // ---------------- 전체 ----------------
   // shots: [{words, width, height}] (능력·스테이터스 어느 쪽이든, 한 장 또는 두 장)
-  function read(shots) {
+  // 6칸 그대로 (못 읽은 칸은 null) → 확인 화면에서 직접 채울 수 있게
+  function readSlots(shots) {
     const slots = Array.from({length: 6}, () => ({name: null}));
     for (const shot of shots) {
       const ps = phrases(shot.words);
@@ -224,8 +261,9 @@ export function createPartyReader(M, itemDict) {
         else Object.assign(s, readAbilityCard(c));
       }
     }
-    return slots.filter(s => s.name).map(s => resolve(s));
+    return slots.map(s => (s.name ? resolve(s) : null));
   }
+  const read = shots => readSlots(shots).filter(Boolean);
 
   // 이름 후보(지역폼·성별) 중에서 특성·능력치가 맞는 항목 고르기 → 세트
   function resolve(s) {
@@ -267,5 +305,5 @@ export function createPartyReader(M, itemDict) {
     return {set, baseId: pickId, found: {name: s.name, ability: !!s.ability, item: !!s.item, moves: moves.length, stats: !!solved}, warn};
   }
 
-  return {read, phrases, cards, solve, findMon, findMove, findItem, findAbility, byPlain};
+  return {read, readSlots, phrases, cards, solve, findMon, findMove, findItem, findAbility, byPlain};
 }

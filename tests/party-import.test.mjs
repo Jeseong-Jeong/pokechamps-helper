@@ -112,6 +112,24 @@ test('숫자를 잘못 읽어도 성격·SP 복원 (실제 OCR 오인식: HP→1
   assert.ok(r.warn.includes('능력치'), '확신이 낮으면 확인 표시');
 });
 
+test('이름 줄에 아이콘 쓰레기 글자·첫 기술이 붙어도 이름을 떼어냄', () => {
+  const w = (text, x0, x1, y0 = 258, y1 = 286) => ({text, x0, x1, y0, y1, conf: 70});
+  // 캐릭터 아이콘→"로", 성별·타입 아이콘→"8","@","ㅎ" 로 읽혀 간격 없이 이어진 경우
+  const words = [
+    w('로', 1040, 1080), w('어', 1095, 1119), w('흥', 1126, 1150), w('염', 1155, 1179),
+    w('8', 1200, 1225), w('@', 1235, 1260), w('ㅎ', 1270, 1300), w('U', 1330, 1360), w('지옥찌르기', 1390, 1560),
+    w('위협', 1102, 1144, 300, 322), w('생명의구슬', 1102, 1210, 341, 363),
+    w('플레어드라이브', 1453, 1600, 300, 322), w('속이다', 1453, 1520, 339, 361), w('막말내뱉기', 1453, 1560, 378, 400),
+  ];
+  const slots = R.readSlots([{words, width: 2000, height: 923}]);
+  const inc = slots[1];
+  assert.ok(inc, '2번 칸(오른쪽 위)에 어흥염');
+  assert.equal(inc.set.id, 'Incineroar');
+  assert.equal(inc.set.item, 'Life Orb');
+  assert.deepEqual(inc.set.moves, ['Throat Chop', 'Flare Blitz', 'Fake Out', 'Parting Shot']);
+  assert.equal(slots.filter(Boolean).length, 1);
+});
+
 test('실수치 역산: 무보정 성격', () => {
   const e = M.byId.Incineroar;
   const r = R.solve(e, {hp: 170, atk: 135, def: 110, spa: 100, spd: 110, spe: 80}, null);
