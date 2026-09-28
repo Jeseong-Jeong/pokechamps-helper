@@ -85,3 +85,16 @@ test('뒤 포켓몬 정보가 없으면 교체 예측 안 함, 방금 나온 상
     opp: [{id: 'Sneasler', hpPct: 100}, {id: 'Rillaboom', hpPct: 100}], oppBench: ['Kingambit']});
   assert.ok(r1.defense[0].pS < r2.defense[0].pS);
 });
+
+test('교체해 들어온 포켓몬이 대신 맞고, 맞은 뒤 남은 HP가 기록됨', () => {
+  const r = B.advise({field: {terrain: 'Grassy'}, me: [slot(inc, {fresh: true}), slot(gol, {fresh: true})], bench: [{id: 'Oranguru', set: ora, hpPct: 100}],
+    opp: [{id: 'Rillaboom', hpPct: 100, fresh: true}, {id: 'Sneasler', hpPct: 100, fresh: true}]});
+  const c = r.top.find(x => x.acts.some(a => a.kind === 'switch'));
+  assert.ok(c, '교체가 들어간 추천');
+  const hit = c.log.find(x => x.k === 'hit' && x.from[0] === 'o' && x.toId === 'Oranguru');
+  assert.ok(hit, '하랑우탄이 대신 맞음');
+  assert.ok(hit.leftRange[0] <= hit.leftRange[1] && hit.leftRange[1] < 100);
+  // 화면에서 기록한 공격으로 들어온 쪽 HP를 구할 때 쓰는 계산
+  const d = r.dmg('o1', 'Close Combat', 'b0');
+  assert.ok(d && d.maxPct > 0);
+});

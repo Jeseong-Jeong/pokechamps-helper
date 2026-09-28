@@ -195,13 +195,18 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
       if (x.k === 'oppSwitch') lines.push(`상대 ${nm(R.opps[x.j].set.id)} 교체 → ${nm(x.to)}`);
       if (x.k === 'oppProtect') lines.push(`상대 ${nm(R.opps[x.j].set.id)} 방어`);
       if (x.k === 'oppBlocked') lines.push(`<span class="mini">${who(x.from)}의 ${esc(M.moveKo(x.move))}는 방어에 막힘</span>`);
-      if (x.k === 'hit' && x.from[0] !== 'o') lines.push(`${who(x.from)}의 ${esc(M.moveKo(x.move))} → ${x.toId ? nm(x.toId) + '(교체해 들어옴)' : who(x.to)} ${rng(x.r)}${x.mult > 1 ? ' (도우미)' : ''}${x.ko ? (x.sure ? ' <b class="good">확정으로 쓰러짐</b>' : ' <b class="good">쓰러질 가능성 큼</b>') : ''}`);
+      if (x.k === 'hit' && x.from[0] !== 'o') lines.push(`${who(x.from)}의 ${esc(M.moveKo(x.move))} → ${x.toId ? nm(x.toId) + '(교체해 들어옴)' : who(x.to)} ${rng(x.r)}${!x.ko && x.toId ? ` → 남은 HP 약 ${Math.round(x.left)}%` : ''}${x.mult > 1 ? ' (도우미)' : ''}${x.ko ? (x.sure ? ' <b class="good">확정으로 쓰러짐</b>' : ' <b class="good">쓰러질 가능성 큼</b>') : ''}`);
       if (x.k === 'redirected') lines.push(`${who(x.from)}의 공격이 ${who(x.to)}에게 끌려감 (유인)`);
       if (x.k === 'ally') lines.push(`<span class="bad">⚠ ${who(x.from)}의 ${esc(M.moveKo(x.move))}가 우리 편 ${who(x.to)}도 맞춤 ${x.r.minPct.toFixed(0)}~${x.r.maxPct.toFixed(0)}%</span>`);
       if (x.k === 'flinch') lines.push(`${who(x.who)} 풀죽어서 행동 못 함`);
       if (x.k === 'blocked') lines.push(`${who('o' + x.j)}의 ${esc(M.moveKo(x.move))}를 방어로 막음`);
       if (x.k === 'wide') lines.push(`${who('o' + x.j)}의 ${esc(M.moveKo(x.move))}를 와이드가드로 막음`);
-      if (x.k === 'hit' && x.from[0] === 'o') lines.push(`<span class="mini">${who(x.from)}의 ${esc(M.moveKo(x.move))} → ${who(x.to)} ${x.r.minPct.toFixed(0)}~${x.r.maxPct.toFixed(0)}%${x.ko ? ' <b class="bad">쓰러짐 위험</b>' : ''}</span>`);
+      if (x.k === 'hit' && x.from[0] === 'o') {
+        const tgt = x.toId ? `교체해 들어온 ${nm(x.toId)}` : who(x.to);
+        const left = x.ko ? ' <b class="bad">쓰러짐 위험</b>' : ` → 남은 HP 약 ${Math.round(x.leftRange[0])}~${Math.round(x.leftRange[1])}%`;
+        const line = `${who(x.from)}의 ${esc(M.moveKo(x.move))} → ${tgt} ${rng(x.r)}${left}`;
+        lines.push(x.toId ? line : `<span class="mini">${line}</span>`);
+      }
     }
     return lines;
   }
@@ -232,15 +237,16 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
         if (!s.id) return null;
         const d = R && R.defense[j], p = R && R.oppPred[j];
         const move = p && p.move ? p.move : '';
-        return {act: 'attack', move, target: p && !p.redirect ? tgtOf(p.target) : '', to: d && d.switchTo ? d.switchTo.id : '', hp: s.hpPct, newHp: 100};
+        const to = d && d.switchTo ? d.switchTo.id : '';
+        return {act: 'attack', move, target: p && !p.redirect ? tgtOf(p.target) : '', to, hp: s.hpPct, newHp: S.oppHp[to] ?? 100};
       }),
       me: S.me.map((s, i) => {
         if (!s.id) return null;
         const a = top && top.acts[i];
-        const base = {act: 'attack', move: '', target: '', to: '', hp: s.hpPct};
+        const base = {act: 'attack', move: '', target: '', to: '', hp: s.hpPct, newHp: 100};
         if (!a || a.kind === 'none') return base;
         if (a.kind === 'protect') return {...base, act: 'protect', move: a.move};
-        if (a.kind === 'switch') return {...base, act: 'switch', to: R.bench[a.to] ? R.bench[a.to].id : ''};
+        if (a.kind === 'switch') { const to = R.bench[a.to] ? R.bench[a.to].id : ''; return {...base, act: 'switch', to, newHp: S.benchHp[to] ?? 100}; }
         return {...base, move: a.move || '', target: a.kind === 'attack' ? tgtOf(a.target) : ''};
       }),
       rec: top ? top.acts.map(a => [a.kind, a.move || '', a.target ?? '', a.to ?? ''].join(':')) : null,
@@ -265,6 +271,27 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
     const cur = (side === 'opp' ? S.opp[k] : S.me[k]).hpPct;
     return [Math.max(0, Math.round(cur - hi)), Math.max(0, Math.round(cur - lo))];
   }
+
+  // 교체해 들어온 포켓몬의 예상 HP: 기록한 공격 중 이 자리를 친 것을 들어온 포켓몬 기준으로 계산
+  function expectIncoming(R, side, k) {
+    const a = draft[side][k];
+    if (!R || !a || a.act !== 'switch' || !a.to) return null;
+    const idx = side === 'me' ? R.bench.findIndex(b => b.id === a.to) : R.oppBench.findIndex(b => b.id === a.to);
+    if (idx < 0) return null;
+    const defKey = (side === 'me' ? 'b' : 'x') + idx;
+    const base = side === 'me' ? (S.benchHp[a.to] ?? 100) : (S.oppHp[a.to] ?? 100);
+    let lo = 0, hi = 0;
+    (side === 'me' ? draft.opp : draft.me).forEach((x, i) => {
+      if (!x || x.act !== 'attack' || !x.move || !(x.target === 'spread' || x.target === k)) return;
+      const r = R.dmg((side === 'me' ? 'o' : 'm') + i, x.move, defKey);
+      if (r) { lo += r.minPct; hi += r.maxPct; }
+    });
+    return [Math.max(0, Math.round(base - hi)), Math.max(0, Math.round(base - lo))];
+  }
+  const newHpBox = (R, side, k, a) => {
+    const e = expectIncoming(R, side, k);
+    return `<label>들어온 쪽 HP<input type="number" min="0" max="100" data-f="rnew" data-side="${side}" data-k="${k}" value="${a.newHp}">%</label>${e ? `<span class="mini">맞은 뒤 예상 ${e[0]}~${e[1]}% <button class="link" data-f="rnewexp" data-side="${side}" data-k="${k}" data-v="${Math.round((e[0] + e[1]) / 2)}">넣기</button></span>` : ''}`;
+  };
 
   function resultForm(R) {
     if (!draft) draft = makeDraft(R);
@@ -292,7 +319,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
         ${a.act === 'attack' ? `<select data-f="rmove" data-side="opp" data-k="${j}"><option value="">(기술 모름)</option>${list.map(m => `<option value="${esc(m)}"${m === a.move ? ' selected' : ''}>${esc(M.moveKo(m))}${pctOf(m)}</option>`).join('')}</select>${tgtSel('opp', j, a, myNames)}` : ''}
         ${a.act === 'switch' || a.act === 'faint' ? `<select data-f="rto" data-side="opp" data-k="${j}"><option value="">${a.act === 'faint' ? '(다음에 나온 포켓몬)' : '(누구로?)'}</option>${oppBack.map(id => `<option value="${id}"${id === a.to ? ' selected' : ''}>${nm(id)}</option>`).join('')}</select>` : ''}
         ${a.act !== 'faint' && a.act !== 'switch' ? hpBox('opp', j, a) : ''}
-        ${(a.act === 'switch' || a.act === 'faint') && a.to ? `<label>들어온 쪽 HP<input type="number" min="0" max="100" data-f="rnew" data-side="opp" data-k="${j}" value="${a.newHp}">%</label>` : ''}
+        ${(a.act === 'switch' || a.act === 'faint') && a.to ? newHpBox(R, 'opp', j, a) : ''}
       </div>`;
     }).join('');
     const myRows = S.me.map((s, i) => {
@@ -304,6 +331,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
         ${a.act === 'attack' && set ? `<select data-f="rmove" data-side="me" data-k="${i}"><option value="">(기술)</option>${set.moves.filter(Boolean).map(m => `<option value="${esc(m)}"${m === a.move ? ' selected' : ''}>${esc(M.moveKo(m))}</option>`).join('')}</select>${tgtSel('me', i, a, oppNames)}` : ''}
         ${a.act === 'switch' || a.act === 'faint' ? `<select data-f="rto" data-side="me" data-k="${i}"><option value="">${a.act === 'faint' ? '(다음에 낸 포켓몬)' : '(누구로?)'}</option>${myBack.map(id => `<option value="${id}"${id === a.to ? ' selected' : ''}>${nm(id)}</option>`).join('')}</select>` : ''}
         ${a.act !== 'faint' && a.act !== 'switch' ? hpBox('me', i, a) : ''}
+        ${(a.act === 'switch' || a.act === 'faint') && a.to ? newHpBox(R, 'me', i, a) : ''}
       </div>`;
     }).join('');
     return `<div class="turnres">
@@ -317,7 +345,15 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
     if (!S.history.length) return '';
     let hit = 0, n = 0, follow = 0, fn = 0;
     const T2 = {attack: '공격', protect: '방어', switch: '교체', faint: '쓰러짐'};
-    const tname = (h, side, t) => (t === 'spread' ? '전체' : t === '' || t == null ? '' : nm((side === 'me' ? h.oppIds : h.meIds)[t] || ''));
+    // 대상 이름: 그 자리가 이번 턴에 교체했으면 들어온 포켓몬
+    const tname = (h, side, t) => {
+      if (t === 'spread') return '전체';
+      if (t === '' || t == null) return '';
+      const other = side === 'me' ? h.opp : h.me;
+      const sw = other && other[t] && (side === 'me' ? other[t].actual : other[t]);
+      if (sw && sw.act === 'switch' && sw.to) return nm(sw.to) + '(교체해 들어옴)';
+      return nm((side === 'me' ? h.oppIds : h.meIds)[t] || '');
+    };
     const actText = (h, side, x) => {
       if (x.act === 'switch') return `교체 → ${nm(x.to)}`;
       if (x.act === 'faint') return `쓰러짐${x.to ? ' → ' + nm(x.to) : ''}`;
@@ -384,7 +420,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
       if (a.act === 'switch' || a.act === 'faint') {
         if (a.act === 'faint') { S.bench = S.bench.filter(x => x !== s.id); S.benchHp[s.id] = 0; }
         else { S.benchHp[s.id] = s.hpPct; if (!S.bench.includes(s.id)) S.bench.push(s.id); }
-        S.me[i] = a.to ? {...blankSlot(), id: a.to, hpPct: S.benchHp[a.to] ?? 100, fresh: true} : blankSlot();
+        S.me[i] = a.to ? {...blankSlot(), id: a.to, hpPct: a.newHp ?? S.benchHp[a.to] ?? 100, fresh: true} : blankSlot();
         if (a.to) S.bench = S.bench.filter(x => x !== a.to);
       } else {
         s.hpPct = a.hp; s.fresh = false; s.protected = a.act === 'protect';
@@ -501,9 +537,9 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
       case 'bhp': S.benchHp[el.dataset.v] = Math.max(0, Math.min(100, Math.round(+el.value || 0))); full = false; break;
       case 'rmove': draft[side][k].move = el.value; renderResults(); return;
       case 'rtgt': draft[side][k].target = el.value === 'spread' ? 'spread' : el.value === '' ? '' : +el.value; renderResults(); return;
-      case 'rto': draft[side][k].to = el.value; renderResults(); return;
+      case 'rto': draft[side][k].to = el.value; draft[side][k].newHp = side === 'me' ? (S.benchHp[el.value] ?? 100) : (S.oppHp[el.value] ?? 100); renderResults(); return;
       case 'rhp': draft[side][k].hp = Math.max(0, Math.min(100, Math.round(+el.value || 0))); if (draft[side][k].hp === 0) { draft[side][k].act = 'faint'; renderResults(); } return;
-      case 'rnew': draft.opp[k].newHp = Math.max(0, Math.min(100, Math.round(+el.value || 0))); return;
+      case 'rnew': draft[side][k].newHp = Math.max(0, Math.min(100, Math.round(+el.value || 0))); return;
       default: return;
     }
     draft = null;  // 필드가 바뀌면 결과 입력 초기화
@@ -549,6 +585,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
       renderResults(); return;
     }
     if (f === 'rsave') { saveResult(); return; }
+    if (f === 'rnewexp') { draft[b.dataset.side][k].newHp = +b.dataset.v; renderResults(); return; }
     if (f === 'rexp') { const a = draft[b.dataset.side][k]; a.hp = +b.dataset.v; if (a.hp <= 0) a.act = 'faint'; renderResults(); return; }
     if (f === 'oout') { const id = b.dataset.v; S.oppOut = S.oppOut.includes(id) ? S.oppOut.filter(x => x !== id) : [...S.oppOut, id]; }
     if (f === 'oclear') S.opp[k] = blankSlot();

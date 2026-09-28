@@ -265,6 +265,7 @@ export function createBattle(M, P) {
       if (acts[0] && acts[0].kind === 'switch') hp.m0 = bench[acts[0].to].hpPct;
       if (acts[1] && acts[1].kind === 'switch') hp.m1 = bench[acts[1].to].hpPct;
       const startHp = {...hp};
+      const cumLo = {}, cumHi = {};  // 이번 턴에 누적으로 받은 피해 (남은 HP 범위 표시용)
       const protecting = [0, 1].map(i => acts[i] && acts[i].kind === 'protect');
       const redirector = [0, 1].find(i => acts[i] && acts[i].kind === 'redirect');
       const wide = [0, 1].some(i => acts[i] && acts[i].kind === 'wideguard');
@@ -321,7 +322,8 @@ export function createBattle(M, P) {
             hp[tk] -= d; dealt[tk] += d;
             if (hp[tk] <= 0 && !acted[tk]) koBefore[tk] = true;
             if (a.fakeout && r.maxPct > 0 && !acted[tk] && !NO_FLINCH.includes(opps[j].set.ability)) flinched[tk] = true;
-            log.push({k: 'hit', from: 'm' + act.i, to: tk, toId: scen[j].type === 'switch' ? oppBench[scen[j].k].id : null, move: a.move, r, mult, ko: hp[tk] <= 0, sure});
+            log.push({k: 'hit', from: 'm' + act.i, to: tk, toId: scen[j].type === 'switch' ? oppBench[scen[j].k].id : null, move: a.move, r, mult, ko: hp[tk] <= 0, sure,
+                      left: Math.max(0, hp[tk])});
           }
           if (hitsAlly(a.move)) {
             const ally = 1 - act.i;
@@ -347,7 +349,10 @@ export function createBattle(M, P) {
             // 상대 속이다: 아직 행동 안 한 내 포켓몬은 풀죽음 (정신력 등 제외)
             const target = who[mk][0] === 'b' ? bench[+who[mk][1]] : mine[i];
             if (p.move === 'Fake Out' && r.maxPct > 0 && !acted[mk] && !NO_FLINCH.includes(target.set.ability)) flinched[mk] = true;
-            log.push({k: 'hit', from: 'o' + act.i, to: mk, move: p.move, r, ko: hp[mk] <= 0, sure: r.minPct >= startHp[mk]});
+            // 교체해 들어온 포켓몬이 맞으면 그 이름(toId)과 맞은 뒤 남은 HP도 기록
+            log.push({k: 'hit', from: 'o' + act.i, to: mk, toId: who[mk][0] === 'b' ? bench[+who[mk].slice(1)].id : null, move: p.move, r, ko: hp[mk] <= 0,
+                      sure: r.minPct >= startHp[mk], left: Math.max(0, hp[mk]),
+                      leftRange: [Math.max(0, startHp[mk] - (cumHi[mk] = (cumHi[mk] || 0) + r.maxPct)), Math.max(0, startHp[mk] - (cumLo[mk] = (cumLo[mk] || 0) + r.minPct))]});
           }
         }
       }
@@ -438,7 +443,8 @@ export function createBattle(M, P) {
       move: mv, prio: priorityOf(opps[j].set, mv, f), spread: isSpread(mv),
       vs: [0, 1].map(i => (mine[i] ? dmg('o' + j, mv, 'm' + i) : null)),
     })) : []));
-    return {top, oppPred, defense, scenarios, speeds: spd, grid, incoming, mine, opps, bench, oppBench, trickRoom: tr, count: combos.length};
+    // dmg: 화면에서 기록한 기술로 교체해 들어온 포켓몬의 예상 HP를 구할 때 씀 ('b0' 내 뒤, 'x0' 상대 뒤)
+    return {top, oppPred, defense, scenarios, speeds: spd, grid, incoming, mine, opps, bench, oppBench, trickRoom: tr, count: combos.length, dmg};
   }
 
   return {advise, oppInfo, oppSetOf, priorityOf, isSpread, hitsAlly, entryConditions};
