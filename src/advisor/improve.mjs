@@ -258,11 +258,12 @@ export function createImprover(M, T, P, {threatCount = 20, poolMinPct = 0.5, nat
   }
 
   // 새 멤버 세트: 사용률 1순위, 팀 도구와 안 겹치게
-  function setFor(id, usedItems) {
+  // noMega: 메가스톤 대신 일반 도구 (채팅에서 "메가 말고")
+  function setFor(id, usedItems, {noMega = false} = {}) {
     const u = usageById[id], e = byId[id];
     const s = {...M.defaultSet(id), baseId: id};
     if (!u) return s;
-    const stone = u.it.find(([n, p]) => isStone(n) && p >= 40 && !usedItems.has(n));
+    const stone = !noMega && u.it.find(([n, p]) => isStone(n) && p >= 40 && !usedItems.has(n));
     if (stone && e.megas) {
       const suf = (stone[0].match(/ ([XYZ])$/) || [])[1];
       const mega = e.megas.find(m => ((m.match(/ ([XYZ])$/) || [])[1]) === suf);
@@ -275,7 +276,72 @@ export function createImprover(M, T, P, {threatCount = 20, poolMinPct = 0.5, nat
   const pool = D.usage.filter(u => u.pct >= poolMinPct && byId[u.id]).map(u => u.id);
   // 후보의 대표 세트(도구 겹침 무시) — 상위 상대와의 상성 줄은 팀과 무관하므로 후보마다 한 번만 계산해서 재사용
   const freeCache = new Map();
-  const freeSet = id => { if (!freeCache.has(id)) freeCache.set(id, setFor(id, new Set())); return freeCache.get(id); };
+  const freeSet = (id, noMega = false) => {
+    const k = id + (noMega ? '|nm' : '');
+    if (!freeCache.has(k)) freeCache.set(k, setFor(id, new Set(), {noMega}));
+    return freeCache.get(k);
+  };
+
+  // ---------------- 채팅 조건 ----------------
+  // 특정 상대 한 마리와의 상성 칸 (상위 20마리 밖이어도 됨)
+  const vsCache = new Map();
+  function vsCell(set, tid, plan) {
+    const ctx = contexts(plan)[0];
+    const k = keyOf(set) + '|' + tid + '|' + [ctx.weather, ctx.terrain].join(',');
+    if (!vsCache.has(k)) vsCache.set(k, P.matrix([set], [P.oppSet(tid)], ctx)[0][0]);
+    return vsCache.get(k);
+  }
+  const usedPct = (id, move) => { const u = usageById[id]; const m = u && u.mv.find(([x]) => moveEn(x) === move); return m ? m[1] : 0; };
+  // 후보가 조건을 통과하는지. 못 통과하면 이유 키를 돌려줌
+  function failsOf(id, cons, plan) {
+    if ((cons.exclude || []).includes(id) || (cons.seen || []).includes(id)) return 'exclude';
+    const u = usageById[id], e0 = byId[id];
+    if (cons.megaOnly && !(e0.megas && u && u.it.some(([n, p]) => isStone(n) && p >= 40))) return 'megaOnly';
+    const s = freeSet(id, !!cons.noMega), e = byId[s.id];
+    for (const w of cons.avoidWeak || []) if (effectiveness(w.type, e.ty, s.ability) >= w.min) return 'avoidWeak';
+    if ((cons.types || []).length && !cons.types.some(t => e.ty.includes(t))) return 'types';
+    for (const r of cons.roles || []) {
+      if (r === 'trickroom' && !(s.moves.includes('Trick Room') || usedPct(id, 'Trick Room') >= 5)) return 'roles';
+      if (r === 'tailwind' && !(s.moves.includes('Tailwind') || usedPct(id, 'Tailwind') >= 5)) return 'roles';
+      if (!['trickroom', 'tailwind'].includes(r) && !T.rolesOf(id, s).includes(r)) return 'roles';
+    }
+    if (cons.speed) {
+      const spe = M.finalStats(s).spe;
+      if (cons.speed === 'slow' && spe > 75) return 'speed';
+      if (cons.speed === 'fast' && spe < 100) return 'speed';
+    }
+    if (cons.category) {
+      const cats = s.moves.map(n => moveOf(n)).filter(m => m && m.c !== '변화' && !UTILITY_ATTACKS.has(m.en)).map(m => m.c);
+      const mine = cats.filter(c => c === cons.category).length;
+      if (mine * 2 < cats.length || !mine) return 'category';
+    }
+    for (const tid of cons.mustSurvive || []) {
+      const c = vsCell(s, tid, plan);
+      if (c.def.row && c.def.row.maxPct >= 100) return 'mustSurvive';
+    }
+    for (const tid of cons.mustBeat || []) if (vsCell(s, tid, plan).v < 0.15) return 'mustBeat';
+    return null;
+  }
+
+  // "OO는 어때?": 그 포켓몬을 넣기 가장 좋은 자리와 점수 변화
+  function evalCandidate(sets, id, cons = {}) {
+    const base = score(sets);
+    const core = coreOf(sets);
+    let best = null;
+    sets.forEach((s, i) => {
+      const bid = s.baseId || s.id;
+      if ((cons.lock || []).includes(bid) || (core[i] && !(cons.target || []).includes(bid))) return;
+      if ((cons.target || []).length && !cons.target.includes(bid)) return;
+      const others = sets.filter((_, k) => k !== i);
+      if (others.some(o => byId[o.baseId || o.id].no === byId[id].no)) return;
+      const cand = setFor(id, new Set(others.map(o => o.item).filter(Boolean)), {noMega: !!cons.noMega});
+      const next = sets.slice(); next[i] = cand;
+      const sc = score(next);
+      const d = sc.total - base.total;
+      if (!best || d > best.delta) best = {slot: i, set: cand, delta: d, why: reasons(base, sc)};
+    });
+    return best;
+  }
 
   // 가벼운 사전 점수: 인기 + 팀 약점 타입을 받아줌 + 빠진 역할 + 파트너 궁합 (무거운 데미지 계산 전에 후보를 추림)
   function quick(id, others) {
@@ -328,11 +394,17 @@ export function createImprover(M, T, P, {threatCount = 20, poolMinPct = 0.5, nat
 
   // 한 자리 교체 후보. onProgress(done, total) 는 화면 갱신용
   // shortlist: 가벼운 사전 점수로 추린 뒤 전부 계산할 후보 수 (브라우저에서 15초 안쪽)
-  async function swaps(sets, {slots = 2, per = 3, shortlist = 50, lite = 10, finalists = 12, pairTop = 10, onProgress, yieldMs = 100} = {}) {
+  // constraints: 채팅에서 받은 조건 (chat.mjs 형식). 없으면 모델 그대로
+  async function swaps(sets, {slots = 2, per = 3, shortlist = 50, lite = 10, finalists = 12, pairTop = 10, onProgress, yieldMs = 100, constraints = {}} = {}) {
+    const cons = constraints;
     let last = now();
     const base = score(sets);
     const baseLite = score(sets, lite);
-    const weak = weakest(sets).filter(w => !w.core).slice(0, slots);
+    const bidOf = i => sets[i].baseId || sets[i].id;
+    let weak = weakest(sets).filter(w => !w.core && !(cons.lock || []).includes(bidOf(w.i)));
+    if ((cons.target || []).length) weak = weakest(sets).filter(w => cons.target.includes(bidOf(w.i)));  // 지정한 자리는 핵심이어도 바꿈
+    weak = weak.slice(0, (cons.target || []).length ? cons.target.length : slots);
+    const failCount = {};
     const results = [];
     let done = 0;
     const total = weak.length * Math.min(shortlist, pool.length);
@@ -340,22 +412,24 @@ export function createImprover(M, T, P, {threatCount = 20, poolMinPct = 0.5, nat
       const others = sets.filter((_, k) => k !== w.i);
       const nos = new Set(others.map(s => byId[s.baseId || s.id].no));
       const used = new Set(others.map(s => s.item).filter(Boolean));
+      const plan = planOf(sets);
       const shortl = pool.filter(id => !nos.has(byId[id].no) && id !== (sets[w.i].baseId || sets[w.i].id))
+        .filter(id => { const f = failsOf(id, cons, plan); if (f) failCount[f] = (failCount[f] || 0) + 1; return !f; })
         .map(id => ({id, q: quick(id, others)})).sort((a, b) => b.q - a.q).slice(0, shortlist);
       // 1차: 상위 lite마리 상대로만 빠르게 → 2차: 남은 finalists마리를 전체 상대로 정밀하게
       const pre = [];
       for (const {id} of shortl) {
         done++;
-        const next = sets.slice(); next[w.i] = freeSet(id);   // 점수는 대표 세트로 (상성 줄 재사용)
+        const next = sets.slice(); next[w.i] = freeSet(id, !!cons.noMega);   // 점수는 대표 세트로 (상성 줄 재사용)
         pre.push({id, d: score(next, lite).total - baseLite.total});
         if (onProgress && now() - last > yieldMs) { onProgress(done, total); await yieldNow(); last = now(); }
       }
       pre.sort((a, b) => b.d - a.d);
       const cands = [];
       for (const {id} of pre.slice(0, finalists)) {
-        const next = sets.slice(); next[w.i] = freeSet(id);
+        const next = sets.slice(); next[w.i] = freeSet(id, !!cons.noMega);
         const sc = score(next);
-        cands.push({id, set: setFor(id, used), delta: sc.total - base.total, after: sc});
+        cands.push({id, set: setFor(id, used, {noMega: !!cons.noMega}), delta: sc.total - base.total, after: sc});
         if (onProgress && now() - last > yieldMs) { onProgress(done, total); await yieldNow(); last = now(); }
       }
       cands.sort((a, b) => b.delta - a.delta);
@@ -374,7 +448,7 @@ export function createImprover(M, T, P, {threatCount = 20, poolMinPct = 0.5, nat
         if (!pair || d > pair.delta) pair = {slots: [A.slot, B.slot], sets: [sA, sB], delta: d, why: reasons(base, sc)};
       }
     }
-    return {base, pretty: pretty(base.total), results, pair, core: coreOf(sets), members: members(sets)};
+    return {base, pretty: pretty(base.total), results, pair, core: coreOf(sets), members: members(sets), failCount};
   }
 
   // ---------------- 세트 다듬기 ----------------
@@ -564,5 +638,6 @@ export function createImprover(M, T, P, {threatCount = 20, poolMinPct = 0.5, nat
     return out.filter(x => x.offScore || x.delta > -0.05).sort((a, b) => b.delta - a.delta);
   }
 
-  return {score, pretty, weakest, members, swaps, tune, threats, threatIds, setFor, planOf, setOverride, getOverride: () => override};
+  return {score, pretty, weakest, members, swaps, tune, threats, threatIds, setFor, planOf, setOverride, getOverride: () => override,
+          evalCandidate, failsOf};
 }

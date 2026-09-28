@@ -240,6 +240,27 @@ label.chk input{margin:0}
 .probs{margin:6px 0 8px;padding-left:18px;font-size:14px}
 .probs li{margin:3px 0}
 .good{color:var(--good);font-weight:600}
+#imp2-extra{margin-top:12px;display:flex;flex-direction:column;gap:8px}
+#imp2-extra h3{margin:0;font-size:15px}
+.extra-btns{display:flex;flex-wrap:wrap;gap:8px}
+#chat-root{border-top:1px dashed var(--line);padding-top:10px;display:flex;flex-direction:column;gap:8px}
+.chat-log{max-height:420px;overflow-y:auto;display:flex;flex-direction:column;gap:8px;padding:4px}
+.msg{max-width:88%;padding:8px 12px;border-radius:12px;font-size:14px;line-height:1.55}
+.msg.me{align-self:flex-end;background:var(--accent);color:#fff;border-bottom-right-radius:4px}
+:root[data-theme="dark"] .msg.me{color:#0E121A}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .msg.me{color:#0E121A}}
+.msg.bot{align-self:flex-start;background:var(--sunk);border-bottom-left-radius:4px}
+.msg.bot ol{margin:4px 0 6px;padding-left:20px}
+.msg.bot li{margin:4px 0}
+.msg.bot p{margin:6px 0 2px}
+.chat-cons{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.chip-x{appearance:none;border:1px solid var(--line);background:var(--accent-soft);color:var(--ink);border-radius:999px;font:500 12px var(--f-body);padding:3px 9px;cursor:pointer}
+.chip-x:hover{border-color:var(--bad)}
+.chat-in{display:flex;gap:6px}
+.chat-in input{flex:1;font-size:15px;padding:8px 10px}
+.chat-ex{display:flex;flex-wrap:wrap;gap:4px}
+.chip-ex{appearance:none;border:1px dashed var(--line);background:transparent;color:var(--muted);border-radius:999px;font:12px var(--f-body);padding:3px 9px;cursor:pointer}
+.chip-ex:hover{color:var(--ink);border-color:var(--accent)}
 .planbar{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center}
 .planbar label{flex-direction:row;align-items:center;gap:6px;font-size:13px;color:var(--ink)}
 .planbar .mini{flex-basis:100%}
@@ -352,6 +373,15 @@ footer a{color:var(--accent)}
   </div>
   <div class="panel" id="p-improve" hidden>
     <div id="imp2-body"></div>
+    <section class="card" id="imp2-extra">
+      <h3>추천이 마음에 안 들면</h3>
+      <p class="mini">봇 추천은 데미지 계산 모델이라 내 의도를 모를 수 있어요. 말로 조건을 붙이거나, 진단 내용을 통째로 받아서 다른 AI(ChatGPT 등)에게 물어보세요.</p>
+      <div class="extra-btns">
+        <button class="btn primary" data-k="open-chat">💬 추가 대화 나누기 (규칙 기반)</button>
+        <button class="btn" data-k="export">⬇ 상세내용 다운로드 (GPT용 .md)</button>
+      </div>
+      <div id="chat-root" hidden></div>
+    </section>
   </div>
 
   <div class="panel" id="p-pick" hidden>

@@ -1,12 +1,29 @@
 // 팀 진단 탭: 팀 점수·문제점 → 교체 추천 → (포켓몬 유지 시) 세트 다듬기
+// + 추가 대화(규칙 기반 채팅) / 상세내용 다운로드(GPT에 붙여넣을 마크다운)
+import {initChat} from './ui-chat.mjs';
+import {teamReportMarkdown, downloadText} from './export-md.mjs';
 const KIND = {move: '기술', item: '도구', nature: '성격', sp: 'SP'};
 const PART = {meta: '자주 만나는 상대 대응', types: '타입 약점', cover: '공격 범위', roles: '역할', syn: '파트너 궁합', mega: '메가 수', field: '상대 필드·날씨 대응'};
 const WK = {Rain: '비', Sun: '쾌청', Sand: '모래바람', Snow: '설경'}, TK = {Grassy: '그래스필드', Psychic: '사이코필드', Electric: '일렉트릭필드', Misty: '미스트필드'};
 const CORE = {tr: '트릭룸 핵심', weather: '날씨 핵심', terrain: '필드 핵심'};
 
-export function initImprove({M, I, ty, esc, $, getSets, teamUI, gotoTeam}) {
+export function initImprove({M, I, C, ty, esc, $, getSets, teamUI, gotoTeam}) {
   const {byId, D} = M;
   let key = null, result = null, running = false, tuneCache = [];
+  const chat = initChat({M, I, C, ty, esc, root: $('chat-root'), getSets, getResult: () => result, teamUI});
+  $('imp2-extra').addEventListener('click', ev => {
+    const b = ev.target.closest('button[data-k]');
+    if (!b) return;
+    if (b.dataset.k === 'open-chat') {
+      $('chat-root').hidden = !$('chat-root').hidden;
+      if (!$('chat-root').hidden) { $('chat-root').scrollIntoView({block: 'nearest'}); $('chat-text')?.focus(); }
+    }
+    if (b.dataset.k === 'export') {
+      if (!result) { b.textContent = '진단이 끝난 뒤에 받을 수 있어요'; return; }
+      const md = teamReportMarkdown({M, I, sets: getSets(), result, tunes: tuneCache, constraints: chat.constraintsText(), chatLog: chat.log()});
+      downloadText(`포챔스_팀상담_${new Date().toISOString().slice(0, 10)}.md`, md);
+    }
+  });
 
   const nm = s => esc(byId[s.id].ko);
   const pts = d => {  // 점수 변화 표시 (+3점 / −2점 / ±0점)
@@ -160,6 +177,7 @@ export function initImprove({M, I, ty, esc, $, getSets, teamUI, gotoTeam}) {
         <p class="mini">빼도 팀 점수가 가장 덜 떨어지는 멤버 자리에, 넣었을 때 점수가 가장 많이 오르는 포켓몬입니다. 같은 도감번호·같은 도구는 피합니다.</p>
         ${pairHtml}
         <div class="swaps">${swapCards || '<p class="mini">교체할 만한 자리가 없습니다.</p>'}</div>
+        <p class="mini" style="margin-top:10px">추천이 내 의도와 다르면 아래 <button class="link" data-k="goto-chat">추가 대화 나누기</button>에서 말해 주세요. 예: "메가 슬롯이 애매해", "고릴타한테 안 죽는 애로".</p>
       </section>
       <section class="card">
         <h3>2. 포켓몬은 그대로 쓴다면 — 세트 다듬기</h3>
@@ -187,6 +205,7 @@ export function initImprove({M, I, ty, esc, $, getSets, teamUI, gotoTeam}) {
     if (!b || !result) { if (b && b.dataset.k === 'goto-team') gotoTeam(); return; }
     const k = b.dataset.k;
     if (k === 'goto-team') gotoTeam();
+    if (k === 'goto-chat') { $('chat-root').hidden = false; $('imp2-extra').scrollIntoView({block: 'start', behavior: 'smooth'}); $('chat-text')?.focus(); }
     if (k === 'swap') {
       const r = result.results.find(x => x.slot === +b.dataset.slot);
       teamUI.replaceAt(r.slot, r.options[+b.dataset.o].set);

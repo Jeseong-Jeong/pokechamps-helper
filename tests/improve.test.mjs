@@ -102,3 +102,13 @@ test('선출: 트릭룸 팀은 트릭룸 담당 + 속이다 선봉, 게임 플�
   const megas = r.picks[0].idx.filter(i => TEAM[i].id !== TEAM[i].baseId);
   if (megas.length) assert.ok(megas.includes(r.picks[0].megaI));
 });
+
+test('GPT용 상세내용: 팀·규칙·진단·조건·요청이 들어간 마크다운', async () => {
+  const {teamReportMarkdown} = await import('../src/advisor/export-md.mjs');
+  const result = await I.swaps(TEAM, {slots: 1, per: 2});
+  const md = teamReportMarkdown({M, I, sets: TEAM, result, constraints: ['메가 없이'], chatLog: [{who: 'me', text: '메가 슬롯이 애매해'}]});
+  for (const h of ['## 내 팀', '## 게임 규칙', '## 봇 진단 요약', '## 멤버별 기여도', '## 봇의 교체 추천', '## 내가 붙인 조건', '## 요청']) assert.ok(md.includes(h), h);
+  assert.ok(md.includes('하랑우탄(Oranguru)'));
+  assert.ok(md.includes('21-0-30-0-0-15'));
+  assert.ok(md.includes('메가 없이'));
+});

@@ -7,6 +7,7 @@ import {initPick} from './ui-pick.mjs';
 import {initImport} from './ui-import.mjs';
 import {createImprover} from './improve.mjs';
 import {initImprove} from './ui-improve.mjs';
+import {createChat} from './chat.mjs';
 
 const DATA = window.__DATA__;
 const M = createModel(DATA);
@@ -271,7 +272,7 @@ const importUI = initImport({
   onImport: sets => { teamUI.importSets(sets); $('team-msg').textContent = `스크린샷에서 ${sets.length}마리를 불러왔습니다.`; },
 });
 $('import-open').addEventListener('click', () => importUI.open());
-improveUI = initImprove({M, I, ty, esc, $, getSets: () => teamUI.getSets(), teamUI, gotoTeam: () => showTab('team')});
+improveUI = initImprove({M, I, C: createChat(M, DATA), ty, esc, $, getSets: () => teamUI.getSets(), teamUI, gotoTeam: () => showTab('team')});
 if (!$('p-improve').hidden) improveUI.run();
 pickUI = initPick({
   M, T, P, ty, esc, $, findMon,
