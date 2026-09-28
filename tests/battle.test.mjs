@@ -114,3 +114,10 @@ test('메가진화 전에는 원래 모습으로 계산 (메가스톤만 들고 
   assert.equal(B.advise(st('')).opps[0].set.id, 'Metagross');
   assert.equal(B.advise(st('Metagross')).opps[0].set.id, 'Mega Metagross');
 });
+
+test('특성 통계가 없는 포켓몬도 특성 목록은 도감에서', () => {
+  const u = M.D.usage.find(x => M.byId[x.id] && !x.ab.length);
+  assert.ok(u, '특성 통계 없는 포켓몬이 있어야 함');
+  assert.ok(B.oppInfo(u.id).abilities.length > 0);
+  assert.equal(B.oppInfo('Whimsicott').abilities[0][0], 'Prankster');
+});

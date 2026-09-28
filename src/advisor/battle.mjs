@@ -32,7 +32,7 @@ export function createBattle(M, P) {
     return {
       id: base.id, set, usage: u || null, speed,
       moves: u ? u.mv.map(([m, p]) => [moveEn(m), p]) : set.moves.map(m => [m, 0]),
-      items: u ? u.it : [], abilities: u ? u.ab.map(([n, p]) => [n, p]) : base.ab.map(a => [a.en, 0]),
+      items: u ? u.it : [], abilities: u && u.ab.length ? u.ab.map(([n, p]) => [n, p]) : base.ab.map(a => [a.en, 0]),  // 사용률 적은 포켓몬은 특성 통계 없음
       mates: u ? u.tm.filter(t => t[2]).map(t => [t[2], t[1]]) : [],
     };
   }

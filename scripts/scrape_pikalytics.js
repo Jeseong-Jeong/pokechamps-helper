@@ -6,6 +6,7 @@
 (async () => {
   const FORMAT = 'gen9championsvgc2026regmc';
   const API = '/api/l/2026-05/' + FORMAT + '-1760';
+  const AB_FORMAT = 'championstournaments';  // 특성만 여기서 (build.py 가 그 포켓몬이 가질 수 있는 특성만 남김)
   const MIN_PCT = 0.3;          // 이 사용률 이상만 세부 데이터 수집
   const sleep = ms => new Promise(r => setTimeout(r, ms));
 
@@ -36,6 +37,10 @@
       if (r.status === 429) { await sleep(30000); continue; }
       const o = parse(new DOMParser().parseFromString(await r.text(), 'text/html'));
       detail[x.name] = { Moves: cut(o.Moves, 12), Items: cut(o.Items, 8), Abilities: cut(o.Abilities, 4), Teammates: cut(o.Teammates, 8) };
+      // M-C 페이지의 특성 표는 이름이 틀리게 나옴 (엘풍 'Trace 82%' 등, 원본 사이트 버그) → 대회 데이터 특성으로 바꿈
+      await sleep(1200);
+      const t = await fetch('/pokedex/' + AB_FORMAT + '/' + encodeURIComponent(x.name));
+      if (t.ok) { const a = cut(parse(new DOMParser().parseFromString(await t.text(), 'text/html')).Abilities, 4); if (a.length) detail[x.name].Abilities = a; }
       break;
     }
     console.log('done', x.rank, x.name);

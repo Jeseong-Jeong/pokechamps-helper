@@ -68,3 +68,17 @@ test('스피드: 순풍 2배', () => {
   const base = M.speed(s, FIELD, true);
   assert.equal(M.speed(s, {...FIELD, L: {tailwind: true}}, true), base * 2);
 });
+
+test('사용률 특성은 그 포켓몬(또는 메가)이 가질 수 있는 것만', () => {
+  const bad = [];
+  for (const u of D.usage) {
+    const e = M.byId[u.id];
+    if (!e) continue;
+    const ok = new Set([e, ...(e.megas || []).map(m => M.byId[m])].flatMap(x => x.ab.map(a => a.en)));
+    for (const [n] of u.ab) if (!ok.has(n)) bad.push(`${u.id}:${n}`);
+  }
+  assert.deepEqual(bad, []);
+  const ab = id => D.usage.find(u => u.id === id).ab[0][0];
+  assert.equal(ab('Whimsicott'), 'Prankster');
+  assert.equal(ab('Incineroar'), 'Intimidate');
+});

@@ -254,6 +254,28 @@ if P:
         return re.sub(r'^메가|\s*[XYZ]$', '', mega_ko).strip() + '나이트' + suf
     unmatched = []
     D = P['detail']
+    # Pikalytics M-C 페이지의 특성 표는 이름이 틀림 (엘풍 'Trace 82%' 등 — 원본 사이트 버그).
+    # 대회 데이터(championstournaments) → M-B 랭크 순으로 받아 둔 특성을 쓰고, M-C 값은 그 포켓몬이 가질 수 있는 것만 남김.
+    abp = os.path.join(ROOT, 'raw', 'pchamps_abilities.json')
+    AB = json.load(open(abp, encoding='utf-8'))['data'] if os.path.exists(abp) else {}
+    ab_src = {}
+    def legal_ab(e):
+        names = {a['en'] for a in e['ab']}
+        for m in e.get('megas', []):
+            names |= {a['en'] for a in next(x for x in entries if x['id'] == m)['ab']}
+        return names
+    def pick_ab(name, e, mc):
+        ok = legal_ab(e)
+        for src in ('championstournaments', 'gen9championsvgc2026regmb'):
+            raw = [[n, p] for n, p in ((AB.get(name) or {}).get(src) or []) if p > 0]
+            lst = [[n, p] for n, p in raw if n in ok]
+            # 대부분이 가질 수 없는 특성이면 그 출처는 믿지 않음
+            if lst and sum(p for _, p in lst) >= 0.5 * sum(p for _, p in raw):
+                ab_src[src] = ab_src.get(src, 0) + 1
+                return lst
+        lst = [[n, p] for n, p in mc if n in ok]
+        ab_src['mc' if lst else 'none'] = ab_src.get('mc' if lst else 'none', 0) + 1
+        return lst
     for x in P['list']:
         if x['pct'] <= 0: continue
         e = ek(x['name'])
@@ -268,12 +290,13 @@ if P:
             te = ek(n)
             tm.append([n, p, te['id'] if te else None])
         mvu = [[move_idx(n), p] for n, p in det.get('Moves', []) if n.strip()]
-        abu = [[n, p, ab_ko(n)] for n, p in det.get('Abilities', [])]
+        abu = [[n, p, ab_ko(n)] for n, p in pick_ab(x['name'], e, det.get('Abilities', []))]
         usage.append(dict(rank=x['rank'], name=x['name'], id=e['id'] if e else None, pct=x['pct'], win=x['win'], games=x['games'],
                           mv=mvu, it=det.get('Items', []), ab=abu, tm=tm))
         if e is not None and 'use' not in e:
             e['use'] = x['rank']
     print('unmatched', unmatched, file=sys.stderr)
+    print('ability source', ab_src, file=sys.stderr)
 else:
     itemko = {}
 
