@@ -58,6 +58,9 @@ test('4타 안에 못 잡는 기술은 필요 타수 범위로 표시', () => {
   const [r] = M.damageTable(att, def, FIELD);
   assert.match(r.koText, /^\d+(~\d+)?타$|^확정 \d+타$/);
   assert.doesNotMatch(r.koText, /0%/);
+  // 확률이 아주 작은 경우(43×4 = 172 = HP 딱 맞음)도 0%로 표시하지 않음
+  const [r2] = M.damageTable(att, M.defaultSet('Incineroar'), FIELD);
+  assert.doesNotMatch(r2.koText, /\(0%\)/);
 });
 
 test('스피드: 순풍 2배', () => {

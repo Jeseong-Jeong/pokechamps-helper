@@ -171,7 +171,8 @@ export function createModel(D) {
 
   function koKo(k, lo, hi, cur) {
     if (!hi) return '데미지 없음';
-    if (!k || !k.n || !k.chance) {  // 4타 안에 못 잡으면 calc가 chance 0을 줌 → 필요한 타수 범위로 표시
+    // 4타 안에 못 잡거나(chance 0) 확률이 0.1%도 안 되면 → 필요한 타수 범위로 표시
+    if (!k || !k.n || !(k.chance >= 0.001)) {
       const n = Math.ceil(cur / hi), n2 = Math.ceil(cur / Math.max(lo, 1));
       return n === n2 ? `확정 ${n}타` : `${n}~${n2}타`;
     }
