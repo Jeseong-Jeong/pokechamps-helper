@@ -35,7 +35,9 @@ export function initPick({M, T, P, ty, esc, $, findMon, getMySets, gotoTeam}) {
   }
 
   function result(mine) {
+    const t0 = performance.now();
     const R = P.recommend(mine, opp);
+    window.__pcPickMs = performance.now() - t0;
     const top = R.picks[0], lead = R.leads[0];
     const nm = i => esc(byId[mine[i].id].ko);
     const megaNote = p => (p.megaI != null ? `메가진화: <b>${nm(p.megaI)}</b>` : '');

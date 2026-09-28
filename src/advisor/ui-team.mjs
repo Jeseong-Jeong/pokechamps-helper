@@ -147,6 +147,21 @@ export function initTeam({M, T, ty, esc, $, findMon, onSendToCalc, onChange}) {
   render();
   return {
     getIds: () => ids.slice(), getSets,
+    // i번 멤버의 세트만 바꿈 (팀 진단 → 세트 다듬기)
+    setSet(i, set) {
+      if (!ids[i]) return;
+      const {baseId, custom: _c, ...s} = set;
+      custom[ids[i]] = s; save(); render(); onChange && onChange();
+    },
+    // i번 멤버를 다른 포켓몬으로 교체 (팀 진단 → 교체 추천)
+    replaceAt(i, set) {
+      const base = T.baseOf(set.id);
+      if (ids.some((x, k) => k !== i && byId[x].no === byId[base].no)) return;
+      delete custom[ids[i]];
+      ids[i] = base;
+      const {baseId, custom: _c, ...s} = set;
+      custom[base] = s; save(); render(); onChange && onChange();
+    },
     // 불러온 세트로 팀 전체를 바꿈 (sets: model 세트 형식, id는 메가 형태여도 됨)
     importSets(sets) {
       const next = [], nextCustom = {};

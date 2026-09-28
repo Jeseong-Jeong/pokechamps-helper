@@ -5,11 +5,15 @@ import {initTeam} from './ui-team.mjs';
 import {createPickAdvisor} from './pick.mjs';
 import {initPick} from './ui-pick.mjs';
 import {initImport} from './ui-import.mjs';
+import {createImprover} from './improve.mjs';
+import {initImprove} from './ui-improve.mjs';
 
 const DATA = window.__DATA__;
 const M = createModel(DATA);
 const T = createTeamAdvisor(M);
 const P = createPickAdvisor(M, T);
+const I = createImprover(M, T, P, {natureko: DATA.natureko});
+let improveUI = null;
 const {byId} = M;
 const TK = DATA.typeko, NK = DATA.natureko;
 const TYC = {normal:'#9A9A7C',fire:'#E0662E',water:'#4A7FE0',grass:'#4E9F3D',electric:'#E9C21A',ice:'#6CC3C4',fighting:'#B8322A',poison:'#9243A0',ground:'#C9A24A',flying:'#8C8AE8',psychic:'#E5487A',bug:'#95A11E',rock:'#AD9437',ghost:'#6450A0',dragon:'#5A3CE8',dark:'#5E4A3E',steel:'#8E8EAA',fairy:'#D77FB0'};
@@ -41,6 +45,7 @@ function showTab(p) {
   document.querySelectorAll('nav.tabs button').forEach(x => x.setAttribute('aria-selected', x.dataset.p === p));
   document.querySelectorAll('.panel').forEach(el => { el.hidden = el.id !== 'p-' + p; });
   try { localStorage.setItem('pc-advisor-tab', p); } catch (e) { /* 저장 불가 */ }
+  if (p === 'improve' && improveUI) improveUI.run();
 }
 document.querySelectorAll('nav.tabs button').forEach(b => b.addEventListener('click', () => showTab(b.dataset.p)));
 try { const t = localStorage.getItem('pc-advisor-tab'); if (t && $('p-' + t)) showTab(t); } catch (e) { /* 저장값 없음 */ }
@@ -256,13 +261,18 @@ const teamUI = initTeam({
     const {baseId, custom, ...s} = set;
     S.L = s; save(); render(); showTab('calc'); scrollTo(0, 0);
   },
-  onChange: () => pickUI && pickUI.render(),
+  onChange: () => {
+    if (pickUI) pickUI.render();
+    if (improveUI && !$('p-improve').hidden) improveUI.run();  // 팀 진단 탭을 보고 있으면 바로 다시 진단
+  },
 });
 const importUI = initImport({
   M, itemDict: DATA.itemdict, esc, ty, $, findMon, natureko: NK,
   onImport: sets => { teamUI.importSets(sets); $('team-msg').textContent = `스크린샷에서 ${sets.length}마리를 불러왔습니다.`; },
 });
 $('import-open').addEventListener('click', () => importUI.open());
+improveUI = initImprove({M, I, ty, esc, $, getSets: () => teamUI.getSets(), teamUI, gotoTeam: () => showTab('team')});
+if (!$('p-improve').hidden) improveUI.run();
 pickUI = initPick({
   M, T, P, ty, esc, $, findMon,
   getMySets: () => teamUI.getSets(),
