@@ -98,3 +98,19 @@ test('교체해 들어온 포켓몬이 대신 맞고, 맞은 뒤 남은 HP가 �
   const d = r.dmg('o1', 'Close Combat', 'b0');
   assert.ok(d && d.maxPct > 0);
 });
+
+test('메가진화 전에는 원래 모습으로 계산 (메가스톤만 들고 있음)', () => {
+  const b = B.baseForm(gol);
+  assert.equal(b.id, 'Golisopod');
+  assert.equal(b.item, 'Golisopite');
+  assert.ok(M.byId.Golisopod.ab.some(a => a.en === b.ability));
+  assert.ok(B.canMega(gol) && !B.canMega(b) && !B.canMega(inc));
+  assert.ok(M.finalStats(b).atk < M.finalStats(gol).atk);
+  // 상대: megaOpp 가 비어 있으면 메가 전, 그 포켓몬 id 면 메가
+  const s = {id: 'Metagross', item: 'Metagrossite'};
+  assert.equal(B.oppSetOf({...s, mega: false}).id, 'Metagross');
+  assert.equal(B.oppSetOf({...s, mega: true}).id, 'Mega Metagross');
+  const st = megaOpp => ({field: {}, me: [slot(inc), slot(ora)], bench: [], opp: [{id: 'Metagross', item: 'Metagrossite', hpPct: 100}, {id: 'Rillaboom', hpPct: 100}], megaOpp});
+  assert.equal(B.advise(st('')).opps[0].set.id, 'Metagross');
+  assert.equal(B.advise(st('Metagross')).opps[0].set.id, 'Mega Metagross');
+});

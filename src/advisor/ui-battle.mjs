@@ -6,7 +6,8 @@ const BOOSTS = ['atk', 'def', 'spa', 'spd', 'spe'];
 const SCREENS = [['reflect', '리플렉터'], ['lightScreen', '빛의장막'], ['auroraVeil', '오로라베일']];
 const blankSlot = () => ({id: '', hpPct: 100, status: '', boosts: {}, fresh: true, protected: false});
 const blankState = () => ({field: {weather: '', terrain: '', trickRoom: false, tailwind: {me: false, opp: false}, screens: {me: {}, opp: {}}},
-  me: [blankSlot(), blankSlot()], opp: [blankSlot(), blankSlot()], bench: [], benchHp: {}, oppOut: [], oppHp: {}, history: [], turn: 1});
+  me: [blankSlot(), blankSlot()], opp: [blankSlot(), blankSlot()], bench: [], benchHp: {}, oppOut: [], oppHp: {}, history: [], turn: 1,
+  mega: {me: '', opp: ''}});  // 메가진화한 포켓몬 (한 배틀에 한쪽 1마리, 교체해도 유지)
 
 export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, getLead}) {
   const {byId, D} = M;
@@ -18,14 +19,25 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
   function load() {
     try {
       const v = JSON.parse(localStorage.getItem(STORE));
-      if (v && v.me && v.opp && v.field) return {...blankState(), ...v, oppOut: v.oppOut || [], oppHp: v.oppHp || {}, history: v.history || []};
+      if (v && v.me && v.opp && v.field) return {...blankState(), ...v, oppOut: v.oppOut || [], oppHp: v.oppHp || {}, history: v.history || [], mega: v.mega || {me: '', opp: ''}};
     } catch (e) { /* 없음 */ }
     return blankState();
   }
   function save() { try { localStorage.setItem(STORE, JSON.stringify(S)); } catch (e) { /* 저장 불가 */ } }
 
   const mySets = () => getMySets();
-  const mySetOf = id => mySets().find(s => (s.baseId || s.id) === id);
+  const rawSetOf = id => mySets().find(s => (s.baseId || s.id) === id);
+  // 메가스톤을 들었어도 메가진화 버튼을 누르기 전에는 메가 전 모습으로 계산
+  const mySetOf = id => { const s = rawSetOf(id); return s && B.canMega(s) && S.mega.me !== id ? B.baseForm(s) : s; };
+  const oppSlot = s => ({...s, mega: S.mega.opp === s.id});
+  // 메가진화 버튼: 이 포켓몬이 메가스톤을 들었고, 그쪽이 아직 메가진화를 안 했거나 이 포켓몬이 한 경우
+  function megaBtn(side, id) {
+    const can = side === 'me' ? B.canMega(rawSetOf(id)) : B.canMega(B.oppSetOf({...S.opp.find(o => o.id === id), mega: true}));
+    if (!can) return '';
+    const done = S.mega[side];
+    if (done && done !== id) return '';
+    return `<button class="tog${done === id ? ' on' : ''}" data-f="mega" data-side="${side}" data-v="${id}" title="${done === id ? '메가진화함 (다시 누르면 취소)' : '메가진화하면 누르세요 · 한 배틀에 한 마리'}">${done === id ? '메가진화함' : '메가진화'}</button>`;
+  }
   const nm = id => esc(byId[id] ? byId[id].ko : id);
 
   // 처음 열 때: 선출 추천의 선봉·후발, 상대 목록 앞 2마리로 채움
@@ -49,10 +61,10 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
   function toState() {
     const me = S.me.map(s => (s.id && mySetOf(s.id) ? {...s, set: mySetOf(s.id)} : null));
     const bench = S.bench.filter(id => mySetOf(id) && !S.me.some(s => s.id === id)).map(id => ({id, set: mySetOf(id), hpPct: S.benchHp[id] ?? 100}));
-    const opp = S.opp.map(s => (s.id ? s : null));
+    const opp = S.opp.map(s => (s.id ? oppSlot(s) : null));
     const planTR = mySets().some(s => s.moves.includes('Trick Room'));
     const oppBench = getOppIds().filter(id => !S.opp.some(o => o.id === id) && !S.oppOut.includes(id));
-    return {field: S.field, me, opp, bench, planTR, oppBench, oppHp: S.oppHp};
+    return {field: S.field, me, opp, bench, planTR, oppBench, oppHp: S.oppHp, megaOpp: S.mega.opp};
   }
 
   // ---------------- 그리기 (게임 화면처럼: 위 상대 두 마리, 아래 내 두 마리) ----------------
@@ -75,6 +87,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
         <select data-f="status" data-side="${side}" data-k="${k}" aria-label="상태이상">${Object.entries(STATUS).map(([v, t]) => `<option value="${v}"${v === s.status ? ' selected' : ''}>${v ? t : '상태 정상'}</option>`).join('')}</select>
         <button class="tog${s.fresh ? ' on' : ''}" data-f="tog" data-side="${side}" data-k="${k}" data-v="fresh" title="이번 턴에 나옴 (속이다·만나자마자 가능)">방금 나옴</button>
         <button class="tog${s.protected ? ' on' : ''}" data-f="tog" data-side="${side}" data-k="${k}" data-v="protected" title="지난 턴에 방어를 써서 이번엔 방어 불가">지난 턴 방어</button>
+        ${megaBtn(side, s.id)}
       </div>
       <details class="fold"><summary>랭크${bs ? ` <b>${bs}</b>` : ''}</summary>${boostRow(side, k, s.boosts || {})}</details>`;
   }
@@ -97,7 +110,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
     let body = '';
     if (s.id && byId[s.id]) {
       const I = B.oppInfo(s.id);
-      const set = B.oppSetOf(s);
+      const set = B.oppSetOf(oppSlot(s));
       const u = I.usage;
       const abKo = n => { const a = byId[set.id].ab.find(x => x.en === n); return a ? a.ko || a.en : n; };
       const pctTag = p => (p ? ` <span class="num">${p.toFixed(0)}%</span>` : '');
@@ -116,7 +129,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
           </div>
         </details>`;
     }
-    const e = s.id && byId[s.id] ? byId[B.oppSetOf(s).id] : null;
+    const e = s.id && byId[s.id] ? byId[B.oppSetOf(oppSlot(s)).id] : null;
     return `<div class="mon-box opp">
       <div class="mb-h"><span class="who">상대 ${k === 0 ? '왼쪽' : '오른쪽'}</span>
         ${e ? `<b class="mb-name">${nm(e.id)}</b><span class="types">${e.ty.map(ty).join('')}</span>` : '<b class="mb-name mini">누가 나왔나요?</b>'}
@@ -604,6 +617,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
       note = '다음 턴: "방금 나옴"을 해제했어요. HP·랭크·필드를 바꾸고, 교체된 포켓몬은 다시 고르세요.';
     }
     if (f === 'reset') { S = blankState(); note = ''; draft = null; }
+    if (f === 'mega') { const sd = b.dataset.side; S.mega[sd] = S.mega[sd] === b.dataset.v ? '' : b.dataset.v; draft = null; save(); render(); return; }
     if (f === 'next') draft = null;
     save(); render();
   });

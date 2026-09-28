@@ -37,7 +37,19 @@ export function createBattle(M, P) {
     };
   }
 
+  // 메가진화 전 모습: 메가스톤은 들고 있지만 종족값·특성은 원래 포켓몬
+  function baseForm(set) {
+    const e = byId[set.id];
+    if (!e || !e.mega) return set;
+    const base = byId[e.parent], u = usageById[base.id];
+    const ability = base.ab.some(a => a.en === set.ability) ? set.ability
+      : ((u && u.ab.find(([n]) => base.ab.some(x => x.en === n))) || [base.ab[0].en])[0];
+    return {...set, id: base.id, ability};
+  }
+  const canMega = set => !!(set && byId[set.id] && byId[set.id].mega);
+
   // 상대 세트 = 사용률 1순위 + 사용자가 확인한 도구·특성·기술
+  // slot.mega === false 이면 (아직 메가진화 안 함) 메가 전 모습
   function oppSetOf(slot) {
     const info = oppInfo(slot.id);
     const s = JSON.parse(JSON.stringify(info.set));
@@ -52,7 +64,7 @@ export function createBattle(M, P) {
     }
     if (slot.ability) s.ability = slot.ability;
     if (slot.moves && slot.moves.length) s.moves = slot.moves.slice(0, 4);  // 화면에서 고른 기술 4개
-    return s;
+    return slot.mega === false ? baseForm(s) : s;
   }
 
   // 상태(HP·상태이상·랭크)를 세트에 반영
@@ -92,11 +104,13 @@ export function createBattle(M, P) {
     const field = toModelField(f);
     const tr = !!f.trickRoom;
     const mine = state.me.map(s => (s && s.set && (s.hpPct ?? 100) > 0 ? {...s, set: withState(s.set, s)} : null));
-    const opps = state.opp.map(s => (s && s.id && (s.hpPct ?? 100) > 0 ? {...s, set: withState(oppSetOf(s), s)} : null));
+    // state.megaOpp: 상대가 메가진화한 포켓몬 id ('' = 아직 안 함). 없으면 예전처럼 메가 모습으로 가정
+    const megaFlag = id => (state.megaOpp == null ? undefined : state.megaOpp === id);
+    const opps = state.opp.map(s => (s && s.id && (s.hpPct ?? 100) > 0 ? {...s, set: withState(oppSetOf({...s, mega: megaFlag(s.id)}), s)} : null));
     const bench = (state.bench || []).map(s => (s && s.set && (s.hpPct ?? 100) > 0 ? {...s, set: withState(s.set, s)} : null)).filter(Boolean);
     // 상대 뒤에 있을 수 있는 포켓몬 (선출 탭의 상대 6마리 중 필드에 없는 것)
     const oppBench = (state.oppBench || []).filter(id => byId[id] && !opps.some(o => o && o.id === id))
-      .map(id => { const hp = (state.oppHp || {})[id] ?? 100; return {id, hpPct: hp, set: withState(oppSetOf({id}), {hpPct: hp})}; })
+      .map(id => { const hp = (state.oppHp || {})[id] ?? 100; return {id, hpPct: hp, set: withState(oppSetOf({id, mega: megaFlag(id)}), {hpPct: hp})}; })
       .filter(b => b.hpPct > 0);
     const spd = {me: mine.map(m => m && M.speed(m.set, field, true)), opp: opps.map(o => o && M.speed(o.set, field, false))};
 
@@ -447,7 +461,7 @@ export function createBattle(M, P) {
     return {top, oppPred, defense, scenarios, speeds: spd, grid, incoming, mine, opps, bench, oppBench, trickRoom: tr, count: combos.length, dmg};
   }
 
-  return {advise, oppInfo, oppSetOf, priorityOf, isSpread, hitsAlly, entryConditions};
+  return {advise, oppInfo, oppSetOf, baseForm, canMega, priorityOf, isSpread, hitsAlly, entryConditions};
 }
 
 export {STAT_KO};
