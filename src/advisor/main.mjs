@@ -8,13 +8,15 @@ import {initImport} from './ui-import.mjs';
 import {createImprover} from './improve.mjs';
 import {initImprove} from './ui-improve.mjs';
 import {createChat} from './chat.mjs';
+import {createBattle} from './battle.mjs';
+import {initBattle} from './ui-battle.mjs';
 
 const DATA = window.__DATA__;
 const M = createModel(DATA);
 const T = createTeamAdvisor(M);
 const P = createPickAdvisor(M, T);
 const I = createImprover(M, T, P, {natureko: DATA.natureko});
-let improveUI = null;
+let improveUI = null, battleUI = null;
 const {byId} = M;
 const TK = DATA.typeko, NK = DATA.natureko;
 const TYC = {normal:'#9A9A7C',fire:'#E0662E',water:'#4A7FE0',grass:'#4E9F3D',electric:'#E9C21A',ice:'#6CC3C4',fighting:'#B8322A',poison:'#9243A0',ground:'#C9A24A',flying:'#8C8AE8',psychic:'#E5487A',bug:'#95A11E',rock:'#AD9437',ghost:'#6450A0',dragon:'#5A3CE8',dark:'#5E4A3E',steel:'#8E8EAA',fairy:'#D77FB0'};
@@ -47,6 +49,7 @@ function showTab(p) {
   document.querySelectorAll('.panel').forEach(el => { el.hidden = el.id !== 'p-' + p; });
   try { localStorage.setItem('pc-advisor-tab', p); } catch (e) { /* 저장 불가 */ }
   if (p === 'improve' && improveUI) improveUI.run();
+  if (p === 'battle' && battleUI) battleUI.render();
 }
 document.querySelectorAll('nav.tabs button').forEach(b => b.addEventListener('click', () => showTab(b.dataset.p)));
 try { const t = localStorage.getItem('pc-advisor-tab'); if (t && $('p-' + t)) showTab(t); } catch (e) { /* 저장값 없음 */ }
@@ -279,3 +282,16 @@ pickUI = initPick({
   getMySets: () => teamUI.getSets(),
   gotoTeam: () => showTab('team'),
 });
+
+// ---------------- 배틀 도우미 탭 ----------------
+battleUI = initBattle({
+  M, B: createBattle(M, P), ty, esc, $, findMon,
+  getMySets: () => teamUI.getSets(),
+  getOppIds: () => pickUI.getOpp(),
+  getLead: () => {  // 선출 추천의 1순위 선봉·후발
+    const mine = teamUI.getSets(), opp = pickUI.getOpp();
+    if (mine.length < 4 || !opp.length) return null;
+    try { return P.recommend(mine, opp).leads[0] || null; } catch (e) { return null; }
+  },
+});
+if (!$('p-battle').hidden) battleUI.render();

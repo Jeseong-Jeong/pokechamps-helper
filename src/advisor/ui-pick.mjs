@@ -124,5 +124,5 @@ export function initPick({M, T, P, ty, esc, $, findMon, getMySets, gotoTeam}) {
   });
 
   render();
-  return {render, setOpp(ids) { opp = ids.map(T.baseOf).filter(id => byId[id]).slice(0, 6); save(); render(); }};
+  return {render, getOpp: () => opp.slice(), setOpp(ids) { opp = ids.map(T.baseOf).filter(id => byId[id]).slice(0, 6); save(); render(); }};
 }

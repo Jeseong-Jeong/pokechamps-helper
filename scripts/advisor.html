@@ -261,6 +261,48 @@ label.chk input{margin:0}
 .chat-ex{display:flex;flex-wrap:wrap;gap:4px}
 .chip-ex{appearance:none;border:1px dashed var(--line);background:transparent;color:var(--muted);border-radius:999px;font:12px var(--f-body);padding:3px 9px;cursor:pointer}
 .chip-ex:hover{color:var(--ink);border-color:var(--accent)}
+#p-battle{display:grid;gap:12px}
+.bt-field{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}
+.bt-field .sp{flex:1}
+.bt-note{flex-basis:100%;margin:2px 0 0;color:var(--accent)}
+.bt-sides h3{margin:0 0 8px;font-size:15px}
+.bt-slot{border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:10px;display:flex;flex-direction:column;gap:6px}
+.bt-slot.opp{background:color-mix(in srgb,var(--bad) 4%,transparent)}
+.bt-h{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center}
+.bt-h .pick{flex:1;min-width:180px;font-size:15px;padding:6px 8px}
+.bt-h select{font-size:15px;font-weight:600}
+.bt-row{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}
+.bt-row label:not(.chk){flex-direction:row;align-items:center;gap:4px}
+.bt-row input[type=number]{width:62px;padding:4px 6px}
+.bst{display:flex;flex-wrap:wrap;gap:4px 8px}
+.bst label{flex-direction:row;align-items:center;gap:3px;font-size:11.5px}
+.bst select{padding:2px 4px;font-size:12px}
+.quick{display:flex;flex-wrap:wrap;gap:4px}
+.usage-box{background:var(--sunk);border-radius:8px;padding:8px 10px;display:flex;flex-direction:column;gap:6px;font-size:13px}
+.uchips{display:flex;flex-wrap:wrap;gap:4px;margin-top:3px}
+.uchip{appearance:none;border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:999px;font:12px var(--f-body);padding:3px 8px;cursor:pointer}
+.uchip.on{background:var(--accent-soft);color:var(--ink);border-color:var(--accent);font-weight:600}
+.u2{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.u2 label{font-size:12px;color:var(--ink)}
+.usage-box p{margin:0}
+.bench{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;border-top:1px dashed var(--line);padding-top:8px}
+.bench-item{display:flex;align-items:center;gap:4px}
+.bench-item input[type=number]{width:56px;padding:3px 5px}
+.bt-res h3{margin:0 0 8px;font-size:15px}
+.bt-res h4{margin:14px 0 6px;font-size:12px;letter-spacing:.06em;color:var(--muted)}
+.bt-recs{display:grid;gap:8px}
+.bt-rec{border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.bt-rec.first{border-color:var(--accent);background:var(--accent-soft)}
+.bt-rec-h{display:flex;flex-wrap:wrap;gap:4px 16px;align-items:center;font-size:15px}
+.bt-rec-h .tag{font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:4px;padding:2px 6px}
+:root[data-theme="dark"] .bt-rec-h .tag{color:#0E121A}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bt-rec-h .tag{color:#0E121A}}
+.bt-rec ul{margin:6px 0 0;padding-left:18px;font-size:13px}
+.bt-rec li{margin:2px 0}
+.bt-two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:720px){.bt-two{grid-template-columns:1fr}}
+.bt-grids{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:720px){.bt-grids{grid-template-columns:1fr}}
 .planbar{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center}
 .planbar label{flex-direction:row;align-items:center;gap:6px;font-size:13px;color:var(--ink)}
 .planbar .mini{flex-basis:100%}
@@ -319,7 +361,7 @@ footer a{color:var(--accent)}
     <button role="tab" aria-selected="false" data-p="team">팀 추천</button>
     <button role="tab" aria-selected="false" data-p="improve">팀 진단</button>
     <button role="tab" aria-selected="false" data-p="pick">선출 추천</button>
-    <button role="tab" aria-selected="false" data-p="battle">배틀 도우미<span class="soon">준비 중</span></button>
+    <button role="tab" aria-selected="false" data-p="battle">배틀 도우미</button>
   </nav>
 
   <div class="panel" id="p-calc">
@@ -394,7 +436,7 @@ footer a{color:var(--accent)}
     <div id="pick-result" class="card pick-res"></div>
     <p class="mini" style="margin-top:12px">상대는 사용률 1순위 세트(메가스톤 40%+ 이면 메가)로 가정합니다. 4마리 조합 15개를 "상대 각 포켓몬에 대한 가장 좋은 대답"으로 평가하고, 메가가 2마리 이상이면 누구를 메가진화할지까지 골라 계산합니다. 선봉은 상대 전체 압박과 속이다·스피드 조절·위협 조합으로 고릅니다.</p>
   </div>
-  <div class="panel" id="p-battle" hidden><div class="card todo"><b>배틀 도우미</b>필드 상황을 입력하면 이번 턴에 쓸 기술과 대상을 추천합니다.</div></div>
+  <div class="panel" id="p-battle" hidden></div>
 
   <footer>
     데미지 계산: <a href="https://github.com/smogon/damage-calc" target="_blank" rel="noopener">@smogon/calc</a> 챔피언스 규칙
