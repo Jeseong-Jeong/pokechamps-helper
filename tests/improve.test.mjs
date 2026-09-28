@@ -89,3 +89,16 @@ test('세트 다듬기 결과는 SP 합계 66 이하, 능력치당 32 이하', (
     }
   }
 });
+
+test('선출: 트릭룸 팀은 트릭룸 담당 + 속이다 선봉, 게임 플랜·상대별 대응 6개', () => {
+  const r = P.recommend(TEAM, ['Rillaboom', 'Sneasler', 'Incineroar', 'Salamence', 'Kingambit', 'Indeedee-F']);
+  assert.equal(r.picks[0].idx.length, 4);
+  assert.ok(r.picks[0].useTR, '트릭룸 담당을 데려감');
+  const lead = r.leads[0].lead.map(i => TEAM[i].baseId);
+  assert.ok(lead.includes('Oranguru') && lead.includes('Incineroar'), lead.join(','));
+  assert.equal(r.answers.length, 6);
+  assert.ok(r.gamePlan[0].startsWith('1턴'));
+  // 메가는 선출 4마리 안에서 1마리만
+  const megas = r.picks[0].idx.filter(i => TEAM[i].id !== TEAM[i].baseId);
+  if (megas.length) assert.ok(megas.includes(r.picks[0].megaI));
+});

@@ -47,6 +47,21 @@ export function initPick({M, T, P, ty, esc, $, findMon, getMySets, gotoTeam}) {
       return `<div class="pick-card"><span class="tag">${tag}</span><b>${nm(i)}</b><span class="types">${e.ty.map(ty).join('')}</span>
         <span class="mini">${vs.length ? '유리: ' + vs.map(x => esc(byId[R.opp[x.j].id].ko)).join(', ') : '받쳐주는 역할'}</span></div>`;
     };
+    const pct = x => (x >= 100 ? '한 방' : `${x.toFixed(0)}%`);
+    const on = n => esc(byId[R.opp[n].id].ko);
+    const WK = {Rain: '비', Sun: '쾌청', Sand: '모래바람', Snow: '설경'}, TK = {Grassy: '그래스필드', Psychic: '사이코필드', Electric: '일렉트릭필드', Misty: '미스트필드'};
+    const modeNote = [top.useTR ? `트릭룸(${esc(byId[mine[R.plan.trIdx.find(i => top.idx.includes(i))].id].ko)}) 있을 때 60%로 계산` : '',
+      top.useW ? `${WK[R.plan.weather] || TK[R.plan.terrain]} 위에서 계산` : ''].filter(Boolean).join(' · ');
+    // 게임 플랜
+    const planHtml = R.gamePlan.length ? `<div class="gameplan"><h3>게임 플랜</h3><ol>${R.gamePlan.map(l => `<li>${esc(l)}</li>`).join('')}</ol>
+      ${modeNote ? `<p class="mini">${modeNote}</p>` : ''}</div>` : '';
+    // 상대별 대응
+    const ansHtml = `<h4>상대별 대응 <span class="mini">(이 선출 기준, 가장 유리한 멤버)</span></h4><div class="answers">${R.answers.map(a => `
+      <div class="ans${a.v < 0 ? ' bad-ans' : ''}"><b>${on(a.j)}</b><span class="arrow">→</span><b>${nm(a.i)}</b>
+        <span class="mini">${a.move ? `${esc(M.moveKo(a.move))} ${pct(a.off)}` : '공격기 없음'} · 받는 피해 ${a.def >= 100 ? '<span class="bad">한 방</span>' : a.def.toFixed(0) + '%'}${a.faster ? (top.useTR ? ' · ↻트릭룸에서 먼저' : ' · ⚡먼저') : ''}</span>
+        ${a.second != null ? `<span class="mini">다음 대안: ${nm(a.second)}</span>` : ''}</div>`).join('')}</div>`;
+    // 주의할 상대
+    const dangerHtml = R.dangers.length ? `<div class="notes"><p><b>주의</b> — 한 방에 여러 마리를 잡을 수 있는 상대:</p><ul>${R.dangers.map(d => `<li><b>${on(d.j)}</b>: ${d.list.map(x => `${nm(x.i)}(${esc(M.moveKo(x.move))}, ${x.sure ? '확정' : '난수'})`).join(', ')}</li>`).join('')}</ul></div>` : '';
     const alt = R.picks.slice(1).map(p => `<li>${p.idx.map(nm).join(' · ')} <span class="mini">${megaNote(p)}</span></li>`).join('');
     const altLeads = R.leads.slice(1).map(l => `<li>${l.lead.map(nm).join(' + ')} <span class="mini">${esc(l.why.join(' · '))}</span></li>`).join('');
 
@@ -56,8 +71,9 @@ export function initPick({M, T, P, ty, esc, $, findMon, getMySets, gotoTeam}) {
       const chosen = top.idx.includes(i);
       return `<tr class="${chosen ? 'chosen' : ''}"><th>${nm(i)}${i === top.megaI ? ' <span class="badge b-mega">메가</span>' : ''}</th>${top.rows[i].map(c => {
         const cls = c.v >= 0.6 ? 'g2' : c.v >= 0.15 ? 'g1' : c.v > -0.15 ? 'n' : c.v > -0.6 ? 'b1' : 'b2';
+        const fast = top.useTR ? c.trFaster : c.faster;
         return `<td class="${cls}" title="${esc(M.moveKo(c.off.move || ''))} ${c.off.pct.toFixed(0)}% / 받는 ${esc(M.moveKo(c.def.move || ''))} ${c.def.pct.toFixed(0)}%">
-          <span class="num">${c.off.pct.toFixed(0)}</span><span class="sep">/</span><span class="num">${c.def.pct.toFixed(0)}</span>${c.faster ? '<i class="fast" title="내가 빠름">⚡</i>' : ''}</td>`;
+          <span class="num">${c.off.pct.toFixed(0)}</span><span class="sep">/</span><span class="num">${c.def.pct.toFixed(0)}</span>${fast ? `<i class="fast" title="${top.useTR ? '트릭룸에서 ' : ''}내가 먼저">${top.useTR ? '↻' : '⚡'}</i>` : ''}</td>`;
       }).join('')}</tr>`;
     }).join('');
 
@@ -74,12 +90,15 @@ export function initPick({M, T, P, ty, esc, $, findMon, getMySets, gotoTeam}) {
           <p class="mini why">${megaNote(top)}</p>
         </div>
       </div>
+      ${planHtml}
+      ${dangerHtml}
       ${R.threats.length ? `<div class="notes"><p>이 선출로 유리하게 상대하기 어려운 포켓몬: <b>${R.threats.map(t => esc(byId[R.opp[t.j].id].ko)).join(', ')}</b>. 교체나 방어로 버티는 계획이 필요합니다.</p></div>` : ''}
+      ${ansHtml}
       <div class="pick-alt">
         <div><h4>다른 선출 후보</h4><ol>${alt || '<li class="mini">없음</li>'}</ol></div>
         <div><h4>다른 선봉 조합</h4><ol>${altLeads || '<li class="mini">없음</li>'}</ol></div>
       </div>
-      <h4>상성표 <span class="mini">칸 = 내가 주는 % / 내가 받는 % (서로 가장 센 기술, 상대는 사용률 1순위 세트) · ⚡ 내가 먼저</span></h4>
+      <h4>상성표 <span class="mini">칸 = 내가 주는 % / 내가 받는 % (서로 가장 센 기술, 상대는 사용률 1순위 세트) · ${top.useTR ? '↻ 트릭룸에서 내가 먼저' : '⚡ 내가 먼저'}</span></h4>
       <div class="tbl"><table class="mxtbl"><thead><tr><th></th>${head}</tr></thead><tbody>${rows}</tbody></table></div>`;
   }
 
