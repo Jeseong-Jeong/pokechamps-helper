@@ -55,97 +55,122 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
     return {field: S.field, me, opp, bench, planTR, oppBench, oppHp: S.oppHp};
   }
 
-  // ---------------- 그리기 ----------------
+  // ---------------- 그리기 (게임 화면처럼: 위 상대 두 마리, 아래 내 두 마리) ----------------
+  let pickOpen = {};  // 'opp0' 등: 포켓몬 고르기 칸 열림
+  const hpColor = p => (p > 50 ? 'var(--good)' : p > 20 ? 'var(--gold)' : 'var(--bad)');
+  const boostSummary = b => BOOSTS.filter(s => b && b[s]).map(s => `${STAT_KO[s]}${b[s] > 0 ? '+' : ''}${b[s]}`).join(' ');
+
   function boostRow(side, k, b) {
     return `<div class="bst">${BOOSTS.map(s => `<label>${STAT_KO[s]}<select data-f="boost" data-side="${side}" data-k="${k}" data-s="${s}">${[6, 5, 4, 3, 2, 1, 0, -1, -2, -3, -4, -5, -6]
       .map(v => `<option value="${v}"${v === (b[s] || 0) ? ' selected' : ''}>${v > 0 ? '+' + v : v}</option>`).join('')}</select></label>`).join('')}</div>`;
   }
-  function common(side, k, s) {
-    return `<div class="bt-row">
-      <label>HP<input type="number" min="0" max="100" data-f="hp" data-side="${side}" data-k="${k}" value="${s.hpPct}">%</label>
-      <label>상태<select data-f="status" data-side="${side}" data-k="${k}">${Object.entries(STATUS).map(([v, t]) => `<option value="${v}"${v === s.status ? ' selected' : ''}>${t}</option>`).join('')}</select></label>
-      <label class="chk"><input type="checkbox" data-f="fresh" data-side="${side}" data-k="${k}"${s.fresh ? ' checked' : ''}> 방금 나옴</label>
-      <label class="chk"><input type="checkbox" data-f="protected" data-side="${side}" data-k="${k}"${s.protected ? ' checked' : ''}> 지난 턴 방어</label>
-    </div>${boostRow(side, k, s.boosts || {})}`;
+
+  // 칸 공통: HP 막대·숫자, 상태이상, 방금 나옴·지난 턴 방어, 랭크(접힘)
+  function stateRows(side, k, s) {
+    const bs = boostSummary(s.boosts);
+    return `
+      <div class="hp-row"><span class="hpbar"><i style="width:${s.hpPct}%;background:${hpColor(s.hpPct)}"></i></span>
+        <input type="number" min="0" max="100" data-f="hp" data-side="${side}" data-k="${k}" value="${s.hpPct}" aria-label="남은 HP">%</div>
+      <div class="tog-row">
+        <select data-f="status" data-side="${side}" data-k="${k}" aria-label="상태이상">${Object.entries(STATUS).map(([v, t]) => `<option value="${v}"${v === s.status ? ' selected' : ''}>${v ? t : '상태 정상'}</option>`).join('')}</select>
+        <button class="tog${s.fresh ? ' on' : ''}" data-f="tog" data-side="${side}" data-k="${k}" data-v="fresh" title="이번 턴에 나옴 (속이다·만나자마자 가능)">방금 나옴</button>
+        <button class="tog${s.protected ? ' on' : ''}" data-f="tog" data-side="${side}" data-k="${k}" data-v="protected" title="지난 턴에 방어를 써서 이번엔 방어 불가">지난 턴 방어</button>
+      </div>
+      <details class="fold"><summary>랭크${bs ? ` <b>${bs}</b>` : ''}</summary>${boostRow(side, k, s.boosts || {})}</details>`;
   }
 
-  function mySlot(k) {
-    const s = S.me[k];
-    const sets = mySets();
-    const opts = sets.map(x => x.baseId || x.id);
-    const set = s.id && mySetOf(s.id);
-    return `<div class="bt-slot">
-      <div class="bt-h"><span class="who">내 ${k === 0 ? '왼쪽' : '오른쪽'}</span>
-        <select data-f="pick" data-side="me" data-k="${k}"><option value="">(비움)</option>${opts.map(id => `<option value="${id}"${id === s.id ? ' selected' : ''}>${nm(id)}</option>`).join('')}</select>
-        ${set ? `<span class="types">${byId[set.id].ty.map(ty).join('')}</span>` : ''}</div>
-      ${set ? `<p class="mini">${esc(M.itemKo(set.item) || '도구 없음')} · ${set.moves.filter(Boolean).map(m => esc(M.moveKo(m))).join(', ')}</p>${common('me', k, s)}` : '<p class="mini">팀 추천 탭의 내 팀에서 고르세요.</p>'}
-    </div>`;
+  // 포켓몬 고르기 버튼들
+  function picker(side, k) {
+    if (side === 'opp') {
+      const ids = getOppIds().filter(id => !S.opp.some((o, j) => j !== k && o.id === id) && !S.oppOut.includes(id));
+      return `<div class="pickgrid">${ids.map(id => `<button class="pk${S.opp[k].id === id ? ' on' : ''}" data-f="oquick" data-k="${k}" data-v="${id}">${nm(id)}</button>`).join('')}
+        <input class="pick" list="mon-list" data-f="opick" data-k="${k}" placeholder="${ids.length ? '다른 포켓몬 검색' : '상대 포켓몬 검색'}" autocomplete="off"></div>
+        ${ids.length ? '' : '<p class="mini">선출 추천 탭에 상대 6마리를 넣어두면 여기서 누르기만 하면 됩니다.</p>'}`;
+    }
+    const ids = mySets().map(x => x.baseId || x.id).filter(id => !S.me.some((o, j) => j !== k && o.id === id) && (S.benchHp[id] ?? 100) > 0);
+    return `<div class="pickgrid">${ids.map(id => `<button class="pk${S.me[k].id === id ? ' on' : ''}" data-f="mquick" data-k="${k}" data-v="${id}">${nm(id)}${S.bench.includes(id) ? ' <span class="mini">뒤</span>' : ''}</button>`).join('')}</div>`;
   }
 
-  function oppSlot(k) {
+  function oppBox(k) {
     const s = S.opp[k];
-    const quick = getOppIds().filter(id => !S.opp.some(o => o.id === id));
-    let info = '';
+    const open = pickOpen['opp' + k] || !s.id;
+    let body = '';
     if (s.id && byId[s.id]) {
       const I = B.oppInfo(s.id);
       const set = B.oppSetOf(s);
       const u = I.usage;
+      const abKo = n => { const a = byId[set.id].ab.find(x => x.en === n); return a ? a.ko || a.en : n; };
       const pctTag = p => (p ? ` <span class="num">${p.toFixed(0)}%</span>` : '');
-      info = `
-        <div class="types">${byId[set.id].ty.map(ty).join('')}${set.id !== I.id ? `<span class="badge b-mega">${nm(set.id)}</span>` : ''}
-          ${u ? `<span class="mini">사용률 ${u.rank}위 · ${u.pct.toFixed(1)}%</span>` : '<span class="mini">사용률 기록 없음</span>'}</div>
-        <div class="usage-box">
-          <div><b>기술</b><div class="uchips">${I.moves.slice(0, 8).map(([m, p]) => `<button class="uchip${set.moves.includes(m) ? ' on' : ''}" data-f="omove" data-k="${k}" data-v="${esc(m)}" title="켜진 기술 4개로 계산합니다. 게임에서 본 기술을 켜고 안 쓸 것 같은 기술을 끄세요">${esc(M.moveKo(m))}${pctTag(p)}</button>`).join('')}</div></div>
-          <div class="u2">
-            <label><b>도구</b><select data-f="oitem" data-k="${k}">${I.items.length ? '' : `<option value="">${esc(M.itemKo(set.item) || '없음')}</option>`}${I.items.slice(0, 8).map(([n, p]) => `<option value="${esc(n)}"${n === set.item ? ' selected' : ''}>${esc(M.itemKo(n))} ${p.toFixed(0)}%</option>`).join('')}</select></label>
-            <label><b>특성</b><select data-f="oab" data-k="${k}">${(set.id !== I.id ? byId[set.id].ab.map(a => [a.en, 0]) : I.abilities).map(([n, p]) => { const a = byId[set.id].ab.find(x => x.en === n); return `<option value="${esc(n)}"${n === set.ability ? ' selected' : ''}>${esc(a ? a.ko || a.en : n)}${p ? ' ' + p.toFixed(0) + '%' : ''}</option>`; }).join('')}</select></label>
+      body = `
+        <p class="mini sum">스피드 ${M.finalStats(set).spe} · ${esc(M.itemKo(set.item) || '도구 ?')} · ${esc(abKo(set.ability))}${u ? ` · 사용률 ${u.rank}위` : ''}</p>
+        ${stateRows('opp', k, s)}
+        <details class="fold"><summary>사용률 정보 (기술·도구·특성·스피드)</summary>
+          <div class="usage-box">
+            <div><b>기술</b> <span class="mini">켜진 4개로 계산 · 게임에서 본 기술을 켜세요</span><div class="uchips">${I.moves.slice(0, 8).map(([m, p]) => `<button class="uchip${set.moves.includes(m) ? ' on' : ''}" data-f="omove" data-k="${k}" data-v="${esc(m)}">${esc(M.moveKo(m))}${pctTag(p)}</button>`).join('')}</div></div>
+            <div class="u2">
+              <label><b>도구</b><select data-f="oitem" data-k="${k}">${I.items.length ? '' : `<option value="">${esc(M.itemKo(set.item) || '없음')}</option>`}${I.items.slice(0, 8).map(([n, p]) => `<option value="${esc(n)}"${n === set.item ? ' selected' : ''}>${esc(M.itemKo(n))} ${p.toFixed(0)}%</option>`).join('')}</select></label>
+              <label><b>특성</b><select data-f="oab" data-k="${k}">${(set.id !== I.id ? byId[set.id].ab.map(a => [a.en, 0]) : I.abilities).map(([n, p]) => `<option value="${esc(n)}"${n === set.ability ? ' selected' : ''}>${esc(abKo(n))}${p ? ' ' + p.toFixed(0) + '%' : ''}</option>`).join('')}</select></label>
+            </div>
+            <p class="mini">스피드: 최저 ${I.speed.min} · 무보정 최대 ${I.speed.neutral} · 최속 ${I.speed.max}</p>
+            ${I.mates.length ? `<p class="mini">같이 자주 나옴: ${I.mates.slice(0, 5).map(([id, p]) => `${nm(id)} ${p.toFixed(0)}%`).join(', ')}</p>` : ''}
           </div>
-          <p class="mini">스피드 실수치: 최저 ${I.speed.min} · 무보정 최대 ${I.speed.neutral} · 최속 ${I.speed.max} · <b>계산 가정 ${M.finalStats(set).spe}</b></p>
-          ${I.mates.length ? `<p class="mini">같이 자주 나옴: ${I.mates.slice(0, 5).map(([id, p]) => `${nm(id)} ${p.toFixed(0)}%`).join(', ')}</p>` : ''}
-        </div>
-        ${common('opp', k, s)}`;
+        </details>`;
     }
-    return `<div class="bt-slot opp">
-      <div class="bt-h"><span class="who">상대 ${k === 0 ? '왼쪽' : '오른쪽'}</span>
-        <input class="pick" list="mon-list" data-f="opick" data-k="${k}" value="${s.id && byId[s.id] ? esc(byId[s.id].ko + ' · ' + byId[s.id].en) : ''}" placeholder="상대 포켓몬 (이름 검색)" autocomplete="off">
-        ${s.id ? `<button class="link danger" data-f="oclear" data-k="${k}">✕</button>` : ''}</div>
-      ${quick.length ? `<div class="quick">${quick.map(id => `<button class="chip-ex" data-f="oquick" data-k="${k}" data-v="${id}">${nm(id)}</button>`).join('')}</div>` : ''}
-      ${info}
+    const e = s.id && byId[s.id] ? byId[B.oppSetOf(s).id] : null;
+    return `<div class="mon-box opp">
+      <div class="mb-h"><span class="who">상대 ${k === 0 ? '왼쪽' : '오른쪽'}</span>
+        ${e ? `<b class="mb-name">${nm(e.id)}</b><span class="types">${e.ty.map(ty).join('')}</span>` : '<b class="mb-name mini">누가 나왔나요?</b>'}
+        ${s.id ? `<button class="link" data-f="pickopen" data-v="opp${k}">${open ? '닫기' : '바꾸기'}</button>` : ''}</div>
+      ${open ? picker('opp', k) : ''}
+      ${body}
     </div>`;
   }
 
-  function benchBox() {
-    const sets = mySets();
-    const cand = sets.map(x => x.baseId || x.id).filter(id => !S.me.some(s => s.id === id));
-    return `<div class="bench"><span class="mini">교체 가능 (데려온 멤버, 최대 2)</span>${cand.map(id => {
-      const on = S.bench.includes(id);
-      return `<span class="bench-item${on ? ' on' : ''}"><label class="chk"><input type="checkbox" data-f="bench" data-v="${id}"${on ? ' checked' : ''}> ${nm(id)}</label>
-        ${on ? `<input type="number" min="0" max="100" data-f="bhp" data-v="${id}" value="${S.benchHp[id] ?? 100}" aria-label="${nm(id)} HP">%` : ''}</span>`;
-    }).join('') || '<span class="mini">없음</span>'}</div>`;
+  function myBox(k) {
+    const s = S.me[k];
+    const set = s.id && mySetOf(s.id);
+    const open = pickOpen['me' + k] || !set;
+    return `<div class="mon-box me">
+      <div class="mb-h"><span class="who">내 ${k === 0 ? '왼쪽' : '오른쪽'}</span>
+        ${set ? `<b class="mb-name">${nm(set.id)}</b><span class="types">${byId[set.id].ty.map(ty).join('')}</span>` : '<b class="mb-name mini">누구를 냈나요?</b>'}
+        ${set ? `<button class="link" data-f="pickopen" data-v="me${k}">${open ? '닫기' : '바꾸기'}</button>` : ''}</div>
+      ${open ? picker('me', k) : ''}
+      ${set ? `<p class="mini sum">스피드 ${M.finalStats(set).spe} · ${esc(M.itemKo(set.item) || '도구 없음')} · ${set.moves.filter(Boolean).map(m => esc(M.moveKo(m))).join(', ')}</p>${stateRows('me', k, s)}` : ''}
+    </div>`;
   }
 
-  function oppBenchBox() {
-    const ids = getOppIds().filter(id => !S.opp.some(o => o.id === id));
-    if (!ids.length) return '<p class="mini">선출 추천 탭에 상대 6마리를 넣으면, 상대가 교체할 만한 포켓몬도 예측합니다.</p>';
-    return `<div class="bench"><span class="mini">상대 뒤에 있을 수 있음 (교체 예측에 사용 · 누르면 쓰러짐/안 나옴으로 제외)</span>${ids.map(id => {
-      const out = S.oppOut.includes(id);
-      return `<button class="uchip${out ? '' : ' on'}" data-f="oout" data-v="${id}">${nm(id)}${out ? ' (제외)' : ''}</button>`;
-    }).join('')}</div>`;
+  // 뒤에 있는 포켓몬: 내 쪽(교체 후보, 최대 2) / 상대 쪽(교체 예측용)
+  function backRow() {
+    const mine = mySets().map(x => x.baseId || x.id).filter(id => !S.me.some(s => s.id === id));
+    const opp = getOppIds().filter(id => !S.opp.some(o => o.id === id));
+    return `<div class="back-row">
+      <div><span class="who">내 뒤 (교체 가능, 최대 2)</span><div class="uchips">${mine.map(id => {
+        const on = S.bench.includes(id), hp = S.benchHp[id] ?? 100;
+        return `<span class="bench-item"><button class="uchip${on ? ' on' : ''}${hp <= 0 ? ' dead' : ''}" data-f="benchtog" data-v="${id}">${nm(id)}</button>${on ? `<input type="number" min="0" max="100" data-f="bhp" data-v="${id}" value="${hp}" aria-label="${nm(id)} HP">%` : ''}</span>`;
+      }).join('') || '<span class="mini">없음</span>'}</div></div>
+      <div><span class="who">상대 뒤 (교체 예측에 사용 · 누르면 제외)</span><div class="uchips">${opp.map(id => {
+        const out = S.oppOut.includes(id);
+        return `<button class="uchip${out ? ' dead' : ' on'}" data-f="oout" data-v="${id}">${nm(id)}${out ? ' ✕' : ''}</button>`;
+      }).join('') || '<span class="mini">선출 추천 탭에 상대 6마리를 넣으면 표시됩니다</span>'}</div></div>
+    </div>`;
   }
 
   function fieldBar() {
     const f = S.field;
+    const scr = side => SCREENS.filter(([k]) => f.screens[side][k]).map(([, t]) => t).join('·');
     return `<div class="card bt-field">
       <b>${S.turn}턴</b>
       <select data-f="weather">${Object.entries(WEATHER).map(([k, v]) => `<option value="${k}"${k === f.weather ? ' selected' : ''}>날씨: ${v}</option>`).join('')}</select>
       <select data-f="terrain">${Object.entries(TERRAIN).map(([k, v]) => `<option value="${k}"${k === f.terrain ? ' selected' : ''}>필드: ${v}</option>`).join('')}</select>
-      <label class="chk"><input type="checkbox" data-f="tr"${f.trickRoom ? ' checked' : ''}> 트릭룸</label>
-      <label class="chk"><input type="checkbox" data-f="twme"${f.tailwind.me ? ' checked' : ''}> 우리 순풍</label>
-      <label class="chk"><input type="checkbox" data-f="twopp"${f.tailwind.opp ? ' checked' : ''}> 상대 순풍</label>
-      <span class="mini">우리 벽</span>${SCREENS.map(([k, t]) => `<label class="chk"><input type="checkbox" data-f="scr" data-side="me" data-v="${k}"${f.screens.me[k] ? ' checked' : ''}> ${t}</label>`).join('')}
-      <span class="mini">상대 벽</span>${SCREENS.map(([k, t]) => `<label class="chk"><input type="checkbox" data-f="scr" data-side="opp" data-v="${k}"${f.screens.opp[k] ? ' checked' : ''}> ${t}</label>`).join('')}
+      <button class="tog${f.trickRoom ? ' on' : ''}" data-f="ftog" data-v="tr">트릭룸</button>
+      <button class="tog${f.tailwind.me ? ' on' : ''}" data-f="ftog" data-v="twme">우리 순풍</button>
+      <button class="tog${f.tailwind.opp ? ' on' : ''}" data-f="ftog" data-v="twopp">상대 순풍</button>
+      <details class="fold inline"><summary>벽${scr('me') || scr('opp') ? ` <b>${[scr('me') && '우리 ' + scr('me'), scr('opp') && '상대 ' + scr('opp')].filter(Boolean).join(' / ')}</b>` : ''}</summary>
+        <span class="mini">우리</span>${SCREENS.map(([k, t]) => `<label class="chk"><input type="checkbox" data-f="scr" data-side="me" data-v="${k}"${f.screens.me[k] ? ' checked' : ''}> ${t}</label>`).join('')}
+        <span class="mini">상대</span>${SCREENS.map(([k, t]) => `<label class="chk"><input type="checkbox" data-f="scr" data-side="opp" data-v="${k}"${f.screens.opp[k] ? ' checked' : ''}> ${t}</label>`).join('')}
+      </details>
       <span class="sp"></span>
-      <button class="btn" data-f="next">다음 턴 →</button>
+      <button class="btn" data-f="next" title="결과 기록 없이 턴만 넘김">기록 없이 다음 턴</button>
       <button class="btn" data-f="reset">새 배틀</button>
       ${note ? `<p class="mini bt-note">${note}</p>` : ''}
     </div>`;
@@ -419,9 +444,9 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
   function render() {
     prefill();
     $('p-battle').innerHTML = `${fieldBar()}
-      <div class="grid bt-sides">
-        <div class="card"><h3>내 필드</h3>${mySlot(0)}${mySlot(1)}${benchBox()}</div>
-        <div class="card"><h3>상대 필드</h3>${oppSlot(0)}${oppSlot(1)}${oppBenchBox()}</div>
+      <div class="card board">
+        <div class="board-grid">${oppBox(0)}${oppBox(1)}${myBox(0)}${myBox(1)}</div>
+        ${backRow()}
       </div>
       <div class="card bt-res" id="bt-res">${results()}</div>`;
   }
@@ -491,7 +516,32 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
     const b = e.target.closest('button[data-f]');
     if (!b) return;
     const f = b.dataset.f, k = +b.dataset.k;
-    if (f === 'oquick') { S.opp[k] = {...blankSlot(), id: b.dataset.v}; applyEntry(); }
+    if (f === 'oquick') {
+      const id = b.dataset.v, old = S.opp[k].id;
+      if (old && old !== id) S.oppHp[old] = S.opp[k].hpPct;  // 들어갔다 나온 상대 HP 기억
+      if (old !== id) { S.opp[k] = {...blankSlot(), id, hpPct: S.oppHp[id] ?? 100}; applyEntry(); }
+      pickOpen['opp' + k] = false;
+    }
+    if (f === 'mquick') {
+      const id = b.dataset.v, old = S.me[k].id;
+      if (old !== id) {
+        if (old) { S.benchHp[old] = S.me[k].hpPct; if (!S.bench.includes(old) && S.me[k].hpPct > 0) S.bench = [...S.bench, old].slice(-2); }
+        S.bench = S.bench.filter(x => x !== id);
+        S.me[k] = {...blankSlot(), id, hpPct: S.benchHp[id] ?? 100};
+        applyEntry();
+      }
+      pickOpen['me' + k] = false;
+    }
+    if (f === 'pickopen') { pickOpen[b.dataset.v] = !pickOpen[b.dataset.v]; render(); return; }
+    if (f === 'tog') { const sl = b.dataset.side === 'me' ? S.me[k] : S.opp[k]; sl[b.dataset.v] = !sl[b.dataset.v]; draft = null; save(); b.dataset.v === 'fresh' ? render() : (b.classList.toggle('on'), renderResults()); return; }
+    if (f === 'ftog') {
+      const v = b.dataset.v;
+      if (v === 'tr') S.field.trickRoom = !S.field.trickRoom;
+      if (v === 'twme') S.field.tailwind.me = !S.field.tailwind.me;
+      if (v === 'twopp') S.field.tailwind.opp = !S.field.tailwind.opp;
+      draft = null; save(); b.classList.toggle('on'); renderResults(); return;
+    }
+    if (f === 'benchtog') { const id = b.dataset.v; S.bench = S.bench.includes(id) ? S.bench.filter(x => x !== id) : [...S.bench, id].slice(-2); }
     if (f === 'ract') {
       const side = b.dataset.side, a = draft[side][k];
       a.act = b.dataset.v;
