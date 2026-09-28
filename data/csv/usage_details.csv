@@ -1,0 +1,4526 @@
+﻿rank,pokemon_id,kind,name_en,name_ko,pct
+1,Rillaboom,move,Fake Out,속이다,57.084
+1,Rillaboom,move,Grassy Glide,그래스슬라이더,37.687
+1,Rillaboom,move,Wood Hammer,우드해머,31.98
+1,Rillaboom,move,U-turn,유턴,19.291
+1,Rillaboom,move,High Horsepower,10만마력,12.972
+1,Rillaboom,move,Protect,방어,3.933
+1,Rillaboom,move,Knock Off,탁쳐서떨구기,1.452
+1,Rillaboom,move,Drum Beating,드럼어택,1.057
+1,Rillaboom,move,Superpower,엄청난힘,0.551
+1,Rillaboom,move,Taunt,도발,0.334
+1,Rillaboom,item,Life Orb,생명의구슬,28.147
+1,Rillaboom,item,Sitrus Berry,자뭉열매,18.635
+1,Rillaboom,item,Rocky Helmet,울퉁불퉁멧,12.526
+1,Rillaboom,item,Grassy Seed,그래스시드,12.177
+1,Rillaboom,item,Leftovers,먹다남은음식,10.394
+1,Rillaboom,item,Eject Button,탈출버튼,9.082
+1,Rillaboom,item,Occa Berry,오카열매,3.465
+1,Rillaboom,item,Miracle Seed,기적의씨,3.116
+1,Rillaboom,ability,Grassy Surge,그래스메이커,99.186
+1,Rillaboom,ability,Trace,트레이스,0.659
+1,Rillaboom,teammate,Incineroar,어흥염,39.141
+1,Rillaboom,teammate,Sneasler,포푸니크,38.478
+1,Rillaboom,teammate,Salamence,보만다,36.459
+1,Rillaboom,teammate,Gholdengo,타부자고,23.006
+1,Rillaboom,teammate,Kingambit,대도각참,22.642
+1,Rillaboom,teammate,Basculegion,대쓰여너 (수컷),18.899
+1,Rillaboom,teammate,Arcanine-Hisui,히스이 윈디,17.59
+1,Rillaboom,teammate,Farigiraf,키키링,16.45
+2,Sneasler,move,Close Combat,인파이트,48.747
+2,Sneasler,move,Dire Claw,페이탈클로,39.2
+2,Sneasler,move,Fake Out,속이다,27.835
+2,Sneasler,move,Protect,방어,20.135
+2,Sneasler,move,Rock Slide,스톤샤워,11.106
+2,Sneasler,move,Coaching,코칭,7.724
+2,Sneasler,move,Throat Chop,지옥찌르기,2.741
+2,Sneasler,move,Poison Jab,독찌르기,2.471
+2,Sneasler,move,Acrobatics,애크러뱃,2.147
+2,Sneasler,move,Rock Tomb,암석봉인,1.771
+2,Sneasler,move,Swords Dance,칼춤,1.618
+2,Sneasler,move,Gunk Shot,더스트슈트,1.159
+2,Sneasler,item,Psychic Seed,사이코시드,31.448
+2,Sneasler,item,Grassy Seed,그래스시드,27.419
+2,Sneasler,item,White Herb,하양허브,22.137
+2,Sneasler,item,Focus Sash,기합의띠,10.339
+2,Sneasler,item,Rocky Helmet,울퉁불퉁멧,5.244
+2,Sneasler,item,Electric Seed,일렉트릭시드,1.047
+2,Sneasler,item,Life Orb,생명의구슬,0.608
+2,Sneasler,item,Normal Gem,노말주얼,0.561
+2,Sneasler,ability,Poison Touch,독수,41.62
+2,Sneasler,ability,Pressure,프레셔,27.374
+2,Sneasler,ability,Trace,트레이스,19.832
+2,Sneasler,ability,Hospitality,대접,9.078
+2,Sneasler,teammate,Rillaboom,고릴타,41.725
+2,Sneasler,teammate,Salamence,보만다,36.455
+2,Sneasler,teammate,Kingambit,대도각참,29.167
+2,Sneasler,teammate,Incineroar,어흥염,27.868
+2,Sneasler,teammate,Basculegion,대쓰여너 (수컷),25.883
+2,Sneasler,teammate,Indeedee-F,에써르 (암컷),25.581
+2,Sneasler,teammate,Gholdengo,타부자고,14.677
+2,Sneasler,teammate,Golisopod,갑주무사,13.936
+3,Incineroar,move,Fake Out,속이다,54.95
+3,Incineroar,move,Parting Shot,막말내뱉기,42.398
+3,Incineroar,move,Flare Blitz,플레어드라이브,41.149
+3,Incineroar,move,Darkest Lariat,DD래리어트,15.625
+3,Incineroar,move,Throat Chop,지옥찌르기,14.565
+3,Incineroar,move,Protect,방어,4.343
+3,Incineroar,move,Snarl,바크아웃,1.929
+3,Incineroar,move,Will-O-Wisp,도깨비불,1.354
+3,Incineroar,move,Taunt,도발,1.144
+3,Incineroar,move,Helping Hand,도우미,1.102
+3,Incineroar,move,Close Combat,인파이트,1.017
+3,Incineroar,item,Sitrus Berry,자뭉열매,75.474
+3,Incineroar,item,Rocky Helmet,울퉁불퉁멧,5.934
+3,Incineroar,item,Leftovers,먹다남은음식,4.735
+3,Incineroar,item,Chople Berry,로플열매,4.098
+3,Incineroar,item,Passho Berry,꼬시개열매,2.717
+3,Incineroar,item,Life Orb,생명의구슬,2.17
+3,Incineroar,item,Eject Button,탈출버튼,1.639
+3,Incineroar,item,White Herb,하양허브,1.381
+3,Incineroar,ability,Intimidate,위협,98.596
+3,Incineroar,ability,Hospitality,대접,0.769
+3,Incineroar,ability,Trace,트레이스,0.452
+3,Incineroar,teammate,Rillaboom,고릴타,54.365
+3,Incineroar,teammate,Sneasler,포푸니크,35.695
+3,Incineroar,teammate,Salamence,보만다,23.903
+3,Incineroar,teammate,Garchomp,한카리아스,19.123
+3,Incineroar,teammate,Farigiraf,키키링,18.599
+3,Incineroar,teammate,Kingambit,대도각참,18.164
+3,Incineroar,teammate,Floette-Eternal,영원의 꽃 플라엣테,16.409
+3,Incineroar,teammate,Gholdengo,타부자고,16.256
+4,Salamence,move,Hyper Voice,하이퍼보이스,56.282
+4,Salamence,move,Protect,방어,41.324
+4,Salamence,move,Tailwind,순풍,23.833
+4,Salamence,move,Double-Edge,이판사판태클,18.401
+4,Salamence,move,Draco Meteor,용성군,14.592
+4,Salamence,move,Flamethrower,화염방사,5.144
+4,Salamence,move,Heat Wave,열풍,2.948
+4,Salamence,move,Dragon Dance,용의춤,2.543
+4,Salamence,move,Dragon Claw,드래곤크루,2.394
+4,Salamence,move,Dragon Pulse,용의파동,2.236
+4,Salamence,move,Roost,날개쉬기,1.019
+4,Salamence,move,Slash,베어가르기,0.782
+4,Salamence,item,Salamencite,보만다나이트,98.08
+4,Salamence,item,Rocky Helmet,울퉁불퉁멧,1.05
+4,Salamence,item,Life Orb,생명의구슬,0.565
+4,Salamence,ability,Intimidate,위협,98.003
+4,Salamence,ability,Trace,트레이스,1.22
+4,Salamence,ability,Hospitality,대접,0.605
+4,Salamence,teammate,Rillaboom,고릴타,58.571
+4,Salamence,teammate,Sneasler,포푸니크,54.008
+4,Salamence,teammate,Kingambit,대도각참,29.799
+4,Salamence,teammate,Incineroar,어흥염,27.647
+4,Salamence,teammate,Gholdengo,타부자고,23.691
+4,Salamence,teammate,Basculegion,대쓰여너 (수컷),21.451
+4,Salamence,teammate,Arcanine-Hisui,히스이 윈디,19.476
+4,Salamence,teammate,Milotic,밀로틱,16.695
+5,Kingambit,move,Kowtow Cleave,도각참,53.698
+5,Kingambit,move,Sucker Punch,기습,45.908
+5,Kingambit,move,Protect,방어,24.2
+5,Kingambit,move,Iron Head,아이언헤드,20.758
+5,Kingambit,move,Low Kick,안다리걸기,9.647
+5,Kingambit,move,Swords Dance,칼춤,7.2
+5,Kingambit,item,Chople Berry,로플열매,40.285
+5,Kingambit,item,Life Orb,생명의구슬,30.876
+5,Kingambit,item,Focus Sash,기합의띠,13.708
+5,Kingambit,item,Rocky Helmet,울퉁불퉁멧,9.085
+5,Kingambit,item,Occa Berry,오카열매,1.52
+5,Kingambit,item,Leftovers,먹다남은음식,1.067
+5,Kingambit,item,Air Balloon,풍선,0.873
+5,Kingambit,item,Black Glasses,검은안경,0.744
+5,Kingambit,ability,Defiant,오기,93.017
+5,Kingambit,ability,Trace,트레이스,4.798
+5,Kingambit,ability,Hospitality,대접,1.71
+5,Kingambit,teammate,Sneasler,포푸니크,44.566
+5,Kingambit,teammate,Rillaboom,고릴타,37.516
+5,Kingambit,teammate,Basculegion,대쓰여너 (수컷),35.234
+5,Kingambit,teammate,Salamence,보만다,30.733
+5,Kingambit,teammate,Garchomp,한카리아스,26.317
+5,Kingambit,teammate,Charizard,리자몽,22.698
+5,Kingambit,teammate,Incineroar,어흥염,21.668
+5,Kingambit,teammate,Sylveon,님피아,20.234
+6,Indeedee-F,move,Follow Me,날따름,58.243
+6,Indeedee-F,move,Helping Hand,도우미,28.988
+6,Indeedee-F,move,Trick Room,트릭룸,24.87
+6,Indeedee-F,move,Protect,방어,5.503
+6,Indeedee-F,move,Terrain Pulse,대지의파동,5.221
+6,Indeedee-F,move,Imprison,봉인,2.177
+6,Indeedee-F,move,Dazzling Gleam,매지컬샤인,1.681
+6,Indeedee-F,move,Mystical Fire,매지컬플레임,1.615
+6,Indeedee-F,move,Hyper Voice,하이퍼보이스,0.896
+6,Indeedee-F,move,Heal Pulse,치유파동,0.881
+6,Indeedee-F,move,Psyshock,사이코쇼크,0.785
+6,Indeedee-F,item,Psychic Seed,사이코시드,54.78
+6,Indeedee-F,item,Sitrus Berry,자뭉열매,16.796
+6,Indeedee-F,item,Colbur Berry,마코열매,14.95
+6,Indeedee-F,item,Eject Button,탈출버튼,4.633
+6,Indeedee-F,item,Focus Sash,기합의띠,2.215
+6,Indeedee-F,item,Rocky Helmet,울퉁불퉁멧,2.104
+6,Indeedee-F,item,Leftovers,먹다남은음식,2.012
+6,Indeedee-F,item,Choice Scarf,구애스카프,0.794
+6,Indeedee-F,ability,Psychic Surge,사이코메이커,98.192
+6,Indeedee-F,ability,Trace,트레이스,1.085
+6,Indeedee-F,ability,Hospitality,대접,0.402
+6,Indeedee-F,teammate,Sneasler,포푸니크,40.283
+6,Indeedee-F,teammate,Gardevoir,가디안,33.486
+6,Indeedee-F,teammate,Golisopod,갑주무사,28.583
+6,Indeedee-F,teammate,Armarouge,카디나르마,24.073
+6,Indeedee-F,teammate,Basculegion,대쓰여너 (수컷),19.382
+6,Indeedee-F,teammate,Pelipper,패리퍼,17.441
+6,Indeedee-F,teammate,Kingambit,대도각참,16.614
+6,Indeedee-F,teammate,Salamence,보만다,15.535
+7,Basculegion,move,Wave Crash,웨이브태클,41.712
+7,Basculegion,move,Last Respects,성묘,36.552
+7,Basculegion,move,Aqua Jet,아쿠아제트,20.772
+7,Basculegion,move,Protect,방어,17.968
+7,Basculegion,move,Flip Turn,퀵턴,12.727
+7,Basculegion,move,Liquidation,아쿠아브레이크,1.253
+7,Basculegion,item,Life Orb,생명의구슬,65.408
+7,Basculegion,item,Sitrus Berry,자뭉열매,15.477
+7,Basculegion,item,Rocky Helmet,울퉁불퉁멧,9.025
+7,Basculegion,item,Choice Scarf,구애스카프,3.912
+7,Basculegion,item,Focus Sash,기합의띠,2.711
+7,Basculegion,item,Mystic Water,신비의물방울,2.334
+7,Basculegion,item,Leftovers,먹다남은음식,0.309
+7,Basculegion,ability,Trace,트레이스,72.222
+7,Basculegion,ability,Mold Breaker,틀깨기,12.346
+7,Basculegion,ability,Hospitality,대접,8.642
+7,Basculegion,ability,Pickpocket,나쁜손버릇,2.469
+7,Basculegion,teammate,Sneasler,포푸니크,41.85
+7,Basculegion,teammate,Kingambit,대도각참,37.285
+7,Basculegion,teammate,Rillaboom,고릴타,33.137
+7,Basculegion,teammate,Whimsicott,엘풍,27.494
+7,Basculegion,teammate,Garchomp,한카리아스,26.633
+7,Basculegion,teammate,Salamence,보만다,23.412
+7,Basculegion,teammate,Charizard,리자몽,22.527
+7,Basculegion,teammate,Indeedee-F,에써르 (암컷),19.901
+8,Golisopod,move,Leech Life,흡혈,53.994
+8,Golisopod,move,Iron Head,아이언헤드,33.077
+8,Golisopod,move,Protect,방어,25.983
+8,Golisopod,move,Swords Dance,칼춤,24.378
+8,Golisopod,move,First Impression,만나자마자,17.261
+8,Golisopod,move,Liquidation,아쿠아브레이크,12.344
+8,Golisopod,move,Sucker Punch,기습,10.59
+8,Golisopod,move,U-turn,유턴,4.252
+8,Golisopod,move,Close Combat,인파이트,3.198
+8,Golisopod,move,Aqua Jet,아쿠아제트,3.163
+8,Golisopod,move,Drill Run,드릴라이너,2.418
+8,Golisopod,move,Bulk Up,벌크업,2.029
+8,Golisopod,item,Golisopite,갑주무사나이트,94.632
+8,Golisopod,item,Rocky Helmet,울퉁불퉁멧,4.605
+8,Golisopod,item,Life Orb,생명의구슬,0.401
+8,Golisopod,ability,Hospitality,대접,61.491
+8,Golisopod,ability,Trace,트레이스,27.64
+8,Golisopod,ability,Water Bubble,수포,7.143
+8,Golisopod,ability,Intimidate,위협,0.932
+8,Golisopod,teammate,Pelipper,패리퍼,41.652
+8,Golisopod,teammate,Farigiraf,키키링,33.895
+8,Golisopod,teammate,Indeedee-F,에써르 (암컷),33.667
+8,Golisopod,teammate,Rillaboom,고릴타,28.708
+8,Golisopod,teammate,Sneasler,포푸니크,25.848
+8,Golisopod,teammate,Archaludon,브리두라스,25.026
+8,Golisopod,teammate,Incineroar,어흥염,22.097
+8,Golisopod,teammate,Basculegion,대쓰여너 (수컷),18.968
+9,Garchomp,move,Protect,방어,29.05
+9,Garchomp,move,Earthquake,지진,25.879
+9,Garchomp,move,Rock Slide,스톤샤워,19.969
+9,Garchomp,move,Dragon Claw,드래곤크루,19.969
+9,Garchomp,move,Stomping Tantrum,분함의발구르기,13.436
+9,Garchomp,move,Draco Meteor,용성군,9.966
+9,Garchomp,move,Flamethrower,화염방사,7.968
+9,Garchomp,move,Earth Power,대지의힘,7.933
+9,Garchomp,move,Power Gem,파워젬,7.55
+9,Garchomp,move,Dragon Pulse,용의파동,5.839
+9,Garchomp,move,Poison Jab,독찌르기,3.506
+9,Garchomp,move,Swords Dance,칼춤,1.4
+9,Garchomp,item,Life Orb,생명의구슬,47.514
+9,Garchomp,item,Garchompite Z,한카리아스나이트Z,39.771
+9,Garchomp,item,Sitrus Berry,자뭉열매,6.061
+9,Garchomp,item,Garchompite,한카리아스나이트,2.409
+9,Garchomp,item,Rocky Helmet,울퉁불퉁멧,1.319
+9,Garchomp,item,Roseli Berry,로셀열매,1.185
+9,Garchomp,item,Choice Scarf,구애스카프,0.497
+9,Garchomp,item,White Herb,하양허브,0.325
+9,Garchomp,ability,Rough Skin,까칠한피부,92.453
+9,Garchomp,ability,Levitate,부유,3.012
+9,Garchomp,ability,Trace,트레이스,2.714
+9,Garchomp,ability,Hospitality,대접,1.655
+9,Garchomp,teammate,Charizard,리자몽,35.87
+9,Garchomp,teammate,Kingambit,대도각참,34.505
+9,Garchomp,teammate,Whimsicott,엘풍,34.229
+9,Garchomp,teammate,Basculegion,대쓰여너 (수컷),32.998
+9,Garchomp,teammate,Incineroar,어흥염,29.909
+9,Garchomp,teammate,Rillaboom,고릴타,25.91
+9,Garchomp,teammate,Sylveon,님피아,22.59
+9,Garchomp,teammate,Sneasler,포푸니크,21.673
+10,Farigiraf,move,Trick Room,트릭룸,49.003
+10,Farigiraf,move,Helping Hand,도우미,24.397
+10,Farigiraf,move,Thunderbolt,10만볼트,15.846
+10,Farigiraf,move,Protect,방어,14.259
+10,Farigiraf,move,Hyper Voice,하이퍼보이스,10.261
+10,Farigiraf,move,Twin Beam,트윈빔,9.449
+10,Farigiraf,move,Expanding Force,와이드포스,7.222
+10,Farigiraf,move,Psychic Noise,사이코노이즈,5.413
+10,Farigiraf,move,Imprison,봉인,3.654
+10,Farigiraf,move,Ally Switch,사이드체인지,3.457
+10,Farigiraf,move,Nasty Plot,나쁜음모,2.99
+10,Farigiraf,item,Sitrus Berry,자뭉열매,65.634
+10,Farigiraf,item,Colbur Berry,마코열매,11.464
+10,Farigiraf,item,Grassy Seed,그래스시드,10.431
+10,Farigiraf,item,Leftovers,먹다남은음식,3.77
+10,Farigiraf,item,Life Orb,생명의구슬,1.678
+10,Farigiraf,item,Psychic Seed,사이코시드,1.601
+10,Farigiraf,item,Choice Scarf,구애스카프,1.601
+10,Farigiraf,item,Electric Seed,일렉트릭시드,1.084
+10,Farigiraf,ability,Trace,트레이스,55.758
+10,Farigiraf,ability,Hospitality,대접,23.636
+10,Farigiraf,ability,Sap Sipper,초식,10.909
+10,Farigiraf,ability,Intimidate,위협,2.424
+10,Farigiraf,teammate,Golisopod,갑주무사,39.42
+10,Farigiraf,teammate,Rillaboom,고릴타,38.48
+10,Farigiraf,teammate,Incineroar,어흥염,31.322
+10,Farigiraf,teammate,Sneasler,포푸니크,22.871
+10,Farigiraf,teammate,Kingambit,대도각참,20.766
+10,Farigiraf,teammate,Torkoal,코터스,18.509
+10,Farigiraf,teammate,Pelipper,패리퍼,17.087
+10,Farigiraf,teammate,Salamence,보만다,16.228
+11,Gholdengo,move,Make It Rain,골드러시,47.644
+11,Gholdengo,move,Shadow Ball,섀도볼,47.004
+11,Gholdengo,move,Protect,방어,37.787
+11,Gholdengo,move,Nasty Plot,나쁜음모,37.634
+11,Gholdengo,move,Power Gem,파워젬,4.755
+11,Gholdengo,move,Thunderbolt,10만볼트,1.182
+11,Gholdengo,move,Trick,트릭,1.001
+11,Gholdengo,move,Dazzling Gleam,매지컬샤인,0.542
+11,Gholdengo,move,Focus Blast,기합구슬,0.361
+11,Gholdengo,move,Flash Cannon,러스터캐논,0.348
+11,Gholdengo,move,Substitute,대타출동,0.32
+11,Gholdengo,item,Life Orb,생명의구슬,81.955
+11,Gholdengo,item,Grassy Seed,그래스시드,7.293
+11,Gholdengo,item,Leftovers,먹다남은음식,3.459
+11,Gholdengo,item,Air Balloon,풍선,2.417
+11,Gholdengo,item,White Herb,하양허브,1.146
+11,Gholdengo,item,Focus Sash,기합의띠,1.146
+11,Gholdengo,item,Sitrus Berry,자뭉열매,0.875
+11,Gholdengo,item,Choice Scarf,구애스카프,0.396
+11,Gholdengo,ability,Good as Gold,황금몸,64.407
+11,Gholdengo,ability,Trace,트레이스,20.581
+11,Gholdengo,ability,Hospitality,대접,14.286
+11,Gholdengo,ability,Mold Breaker,틀깨기,0.726
+11,Gholdengo,teammate,Rillaboom,고릴타,56.157
+11,Gholdengo,teammate,Salamence,보만다,35.996
+11,Gholdengo,teammate,Sneasler,포푸니크,33.037
+11,Gholdengo,teammate,Incineroar,어흥염,28.569
+11,Gholdengo,teammate,Staraptor,찌르호크,27.613
+11,Gholdengo,teammate,Raichu,라이츄,25.945
+11,Gholdengo,teammate,Arcanine-Hisui,히스이 윈디,22.299
+11,Gholdengo,teammate,Milotic,밀로틱,22.215
+12,Pelipper,move,Hurricane,폭풍,40.361
+12,Pelipper,move,Weather Ball,웨더볼,37.54
+12,Pelipper,move,Tailwind,순풍,28.575
+12,Pelipper,move,Wide Guard,와이드가드,17.818
+12,Pelipper,move,Protect,방어,9.896
+12,Pelipper,move,Muddy Water,탁류,3.113
+12,Pelipper,move,U-turn,유턴,1.807
+12,Pelipper,move,Ice Beam,냉동빔,1.445
+12,Pelipper,move,Helping Hand,도우미,0.959
+12,Pelipper,move,Hydro Pump,하이드로펌프,0.514
+12,Pelipper,move,Soak,물붓기,0.486
+12,Pelipper,move,Icy Wind,얼다바람,0.403
+12,Pelipper,item,Sitrus Berry,자뭉열매,48.127
+12,Pelipper,item,Focus Sash,기합의띠,34.363
+12,Pelipper,item,Life Orb,생명의구슬,8.708
+12,Pelipper,item,Leftovers,먹다남은음식,3.137
+12,Pelipper,item,Eject Button,탈출버튼,1.264
+12,Pelipper,item,Choice Scarf,구애스카프,0.936
+12,Pelipper,item,Wacan Berry,초나열매,0.796
+12,Pelipper,item,Damp Rock,축축한바위,0.749
+12,Pelipper,ability,Drizzle,잔비,98.409
+12,Pelipper,ability,Trace,트레이스,0.903
+12,Pelipper,ability,Hospitality,대접,0.645
+12,Pelipper,teammate,Golisopod,갑주무사,58.835
+12,Pelipper,teammate,Archaludon,브리두라스,52.434
+12,Pelipper,teammate,Indeedee-F,에써르 (암컷),29.017
+12,Pelipper,teammate,Sneasler,포푸니크,28.061
+12,Pelipper,teammate,Basculegion,대쓰여너 (수컷),27.456
+12,Pelipper,teammate,Rillaboom,고릴타,27.271
+12,Pelipper,teammate,Swampert,대짱이,21.612
+12,Pelipper,teammate,Farigiraf,키키링,20.753
+13,Whimsicott,move,Tailwind,순풍,66.461
+13,Whimsicott,move,Moonblast,문포스,51.007
+13,Whimsicott,move,Protect,방어,23.297
+13,Whimsicott,move,Encore,앵콜,21.099
+13,Whimsicott,move,Charm,애교부리기,3.847
+13,Whimsicott,move,Sunny Day,쾌청,3.664
+13,Whimsicott,move,Fake Tears,거짓울음,2.515
+13,Whimsicott,move,Helping Hand,도우미,2.032
+13,Whimsicott,move,Light Screen,빛의장막,2.015
+13,Whimsicott,move,Taunt,도발,1.882
+13,Whimsicott,move,Energy Ball,에너지볼,1.682
+13,Whimsicott,move,Tickle,간지르기,1.449
+13,Whimsicott,item,Focus Sash,기합의띠,83.023
+13,Whimsicott,item,Life Orb,생명의구슬,9.256
+13,Whimsicott,item,Occa Berry,오카열매,1.581
+13,Whimsicott,item,Sitrus Berry,자뭉열매,1.395
+13,Whimsicott,item,Leftovers,먹다남은음식,1.349
+13,Whimsicott,item,Eject Button,탈출버튼,1.209
+13,Whimsicott,item,Choice Scarf,구애스카프,0.512
+13,Whimsicott,item,Mental Herb,멘탈허브,0.326
+13,Whimsicott,ability,Trace,트레이스,82.418
+13,Whimsicott,ability,Hospitality,대접,9.89
+13,Whimsicott,ability,Intimidate,위협,3.297
+13,Whimsicott,ability,Insomnia,불면,3.297
+13,Whimsicott,teammate,Garchomp,한카리아스,46.32
+13,Whimsicott,teammate,Basculegion,대쓰여너 (수컷),46.098
+13,Whimsicott,teammate,Charizard,리자몽,36.779
+13,Whimsicott,teammate,Kingambit,대도각참,31.964
+13,Whimsicott,teammate,Staraptor,찌르호크,22.857
+13,Whimsicott,teammate,Incineroar,어흥염,18.455
+13,Whimsicott,teammate,Sylveon,님피아,16.577
+13,Whimsicott,teammate,Sneasler,포푸니크,16.557
+14,Charizard,move,Heat Wave,열풍,61.98
+14,Charizard,move,Protect,방어,48.522
+14,Charizard,move,Weather Ball,웨더볼,23.76
+14,Charizard,move,Ancient Power,원시의힘,10.686
+14,Charizard,move,Solar Beam,솔라빔,8.432
+14,Charizard,move,Dragon Claw,드래곤크루,1.62
+14,Charizard,move,Flare Blitz,플레어드라이브,1.586
+14,Charizard,move,Dragon Dance,용의춤,1.536
+14,Charizard,move,Air Slash,에어슬래시,1.002
+14,Charizard,move,Hurricane,폭풍,0.852
+14,Charizard,move,Breaking Swipe,와이드브레이커,0.768
+14,Charizard,move,Belly Drum,배북,0.568
+14,Charizard,item,Charizardite Y,리자몽나이트Y,95.217
+14,Charizard,item,Charizardite X,리자몽나이트X,4.471
+14,Charizard,ability,Drought,가뭄,97.831
+14,Charizard,ability,Solar Power,선파워,1.043
+14,Charizard,ability,Hospitality,대접,0.73
+14,Charizard,ability,Trace,트레이스,0.355
+14,Charizard,teammate,Garchomp,한카리아스,51.632
+14,Charizard,teammate,Kingambit,대도각참,42.837
+14,Charizard,teammate,Basculegion,대쓰여너 (수컷),40.174
+14,Charizard,teammate,Whimsicott,엘풍,39.122
+14,Charizard,teammate,Sylveon,님피아,33.484
+14,Charizard,teammate,Incineroar,어흥염,24.42
+14,Charizard,teammate,Sneasler,포푸니크,23.228
+14,Charizard,teammate,Rillaboom,고릴타,22.058
+15,Milotic,move,Scald,열탕,42.833
+15,Milotic,move,Protect,방어,30.359
+15,Milotic,move,Coil,똬리틀기,23.429
+15,Milotic,move,Icy Wind,얼다바람,22.764
+15,Milotic,move,Muddy Water,탁류,21.473
+15,Milotic,move,Ice Beam,냉동빔,16.537
+15,Milotic,move,Hypnosis,최면술,15.758
+15,Milotic,move,Recover,HP회복,6.474
+15,Milotic,move,Life Dew,생명의물방울,4.879
+15,Milotic,move,Haze,흑안개,2.943
+15,Milotic,move,Dragon Tail,드래곤테일,0.835
+15,Milotic,move,Hydro Pump,하이드로펌프,0.684
+15,Milotic,item,Leftovers,먹다남은음식,62.724
+15,Milotic,item,Sitrus Berry,자뭉열매,26.358
+15,Milotic,item,Psychic Seed,사이코시드,4.88
+15,Milotic,item,Grassy Seed,그래스시드,3.722
+15,Milotic,item,Rindo Berry,린드열매,0.662
+15,Milotic,item,Life Orb,생명의구슬,0.634
+15,Milotic,item,Choice Scarf,구애스카프,0.524
+15,Milotic,ability,Competitive,승기,90.098
+15,Milotic,ability,Hospitality,대접,6.027
+15,Milotic,ability,Trace,트레이스,3.014
+15,Milotic,teammate,Rillaboom,고릴타,42.864
+15,Milotic,teammate,Salamence,보만다,33.848
+15,Milotic,teammate,Sneasler,포푸니크,31.242
+15,Milotic,teammate,Gholdengo,타부자고,29.642
+15,Milotic,teammate,Tyranitar,마기라스,26.89
+15,Milotic,teammate,Excadrill,몰드류,21.969
+15,Milotic,teammate,Incineroar,어흥염,21.465
+15,Milotic,teammate,Indeedee-F,에써르 (암컷),16.6
+16,Sylveon,move,Hyper Voice,하이퍼보이스,60.112
+16,Sylveon,move,Hyper Beam,파괴광선,27.159
+16,Sylveon,move,Detect,판별,26.987
+16,Sylveon,move,Quick Attack,전광석화,9.778
+16,Sylveon,move,Protect,방어,7.172
+16,Sylveon,move,Calm Mind,명상,3.984
+16,Sylveon,move,Yawn,하품,1.615
+16,Sylveon,move,Round,돌림노래,1.292
+16,Sylveon,move,Mystical Fire,매지컬플레임,1.228
+16,Sylveon,move,Moonblast,문포스,1.055
+16,Sylveon,move,Shadow Ball,섀도볼,0.366
+16,Sylveon,item,Life Orb,생명의구슬,53.894
+16,Sylveon,item,Fairy Feather,요정의깃털,15.576
+16,Sylveon,item,Leftovers,먹다남은음식,14.642
+16,Sylveon,item,Grassy Seed,그래스시드,6.854
+16,Sylveon,item,Sitrus Berry,자뭉열매,2.492
+16,Sylveon,item,Kebia Berry,으름열매,1.869
+16,Sylveon,item,Electric Seed,일렉트릭시드,1.558
+16,Sylveon,item,Focus Sash,기합의띠,0.935
+16,Sylveon,ability,Trace,트레이스,55.556
+16,Sylveon,ability,Hospitality,대접,26.984
+16,Sylveon,ability,Insomnia,불면,6.349
+16,Sylveon,ability,Intimidate,위협,3.175
+16,Sylveon,teammate,Kingambit,대도각참,42.74
+16,Sylveon,teammate,Charizard,리자몽,37.476
+16,Sylveon,teammate,Garchomp,한카리아스,36.394
+16,Sylveon,teammate,Rillaboom,고릴타,34.279
+16,Sylveon,teammate,Incineroar,어흥염,29.772
+16,Sylveon,teammate,Basculegion,대쓰여너 (수컷),25.505
+16,Sylveon,teammate,Farigiraf,키키링,22.873
+16,Sylveon,teammate,Sneasler,포푸니크,22.813
+17,Archaludon,move,Electro Shot,일렉트로빔,63.418
+17,Archaludon,move,Protect,방어,45.668
+17,Archaludon,move,Dragon Pulse,용의파동,33.999
+17,Archaludon,move,Flash Cannon,러스터캐논,20.938
+17,Archaludon,move,Draco Meteor,용성군,6.32
+17,Archaludon,move,Aura Sphere,파동탄,4.928
+17,Archaludon,move,Snarl,바크아웃,3.755
+17,Archaludon,move,Thunderbolt,10만볼트,0.495
+17,Archaludon,move,Dark Pulse,악의파동,0.476
+17,Archaludon,move,Substitute,대타출동,0.366
+17,Archaludon,item,Leftovers,먹다남은음식,89.478
+17,Archaludon,item,Sitrus Berry,자뭉열매,2.609
+17,Archaludon,item,Psychic Seed,사이코시드,2.469
+17,Archaludon,item,Life Orb,생명의구슬,1.74
+17,Archaludon,item,Chople Berry,로플열매,1.291
+17,Archaludon,item,Air Balloon,풍선,0.786
+17,Archaludon,item,Choice Scarf,구애스카프,0.365
+17,Archaludon,item,Grassy Seed,그래스시드,0.337
+17,Archaludon,ability,Stamina,지구력,97.2
+17,Archaludon,ability,Hospitality,대접,1.154
+17,Archaludon,ability,Sturdy,옹골참,1.056
+17,Archaludon,ability,Trace,트레이스,0.393
+17,Archaludon,teammate,Pelipper,패리퍼,68.748
+17,Archaludon,teammate,Golisopod,갑주무사,46.348
+17,Archaludon,teammate,Rillaboom,고릴타,34.016
+17,Archaludon,teammate,Swampert,대짱이,24.779
+17,Archaludon,teammate,Incineroar,어흥염,23.602
+17,Archaludon,teammate,Politoed,왕구리,21.901
+17,Archaludon,teammate,Grimmsnarl,오롱털,19.342
+17,Archaludon,teammate,Farigiraf,키키링,18.498
+18,Arcanine-Hisui,move,Flare Blitz,플레어드라이브,50.882
+18,Arcanine-Hisui,move,Head Smash,양날박치기,45.715
+18,Arcanine-Hisui,move,Protect,방어,36.522
+18,Arcanine-Hisui,move,Extreme Speed,신속,22.723
+18,Arcanine-Hisui,move,Rock Slide,스톤샤워,7.802
+18,Arcanine-Hisui,move,Close Combat,인파이트,0.56
+18,Arcanine-Hisui,move,Wild Charge,와일드볼트,0.457
+18,Arcanine-Hisui,move,Will-O-Wisp,도깨비불,0.353
+18,Arcanine-Hisui,item,Focus Sash,기합의띠,76.956
+18,Arcanine-Hisui,item,Rocky Helmet,울퉁불퉁멧,9.824
+18,Arcanine-Hisui,item,Life Orb,생명의구슬,8.247
+18,Arcanine-Hisui,item,Air Balloon,풍선,1.637
+18,Arcanine-Hisui,item,Sitrus Berry,자뭉열매,0.97
+18,Arcanine-Hisui,item,Choice Scarf,구애스카프,0.546
+18,Arcanine-Hisui,item,Passho Berry,꼬시개열매,0.364
+18,Arcanine-Hisui,item,Leftovers,먹다남은음식,0.364
+18,Arcanine-Hisui,ability,Intimidate,위협,84.487
+18,Arcanine-Hisui,ability,Trace,트레이스,12.411
+18,Arcanine-Hisui,ability,Hospitality,대접,1.909
+18,Arcanine-Hisui,ability,Pickpocket,나쁜손버릇,0.955
+18,Arcanine-Hisui,teammate,Rillaboom,고릴타,69.706
+18,Arcanine-Hisui,teammate,Salamence,보만다,48.04
+18,Arcanine-Hisui,teammate,Sneasler,포푸니크,47.21
+18,Arcanine-Hisui,teammate,Gholdengo,타부자고,36.2
+18,Arcanine-Hisui,teammate,Raichu,라이츄,32.975
+18,Arcanine-Hisui,teammate,Kingambit,대도각참,28.947
+18,Arcanine-Hisui,teammate,Sylveon,님피아,22.469
+18,Arcanine-Hisui,teammate,Basculegion,대쓰여너 (수컷),21.802
+19,Raichu,move,Zap Cannon,전자포,55.786
+19,Raichu,move,Fake Out,속이다,38.371
+19,Raichu,move,Protect,방어,36.462
+19,Raichu,move,Focus Blast,기합구슬,26.294
+19,Raichu,move,Volt Switch,볼트체인지,5.498
+19,Raichu,move,Volt Tackle,볼트태클,5.015
+19,Raichu,move,Encore,앵콜,4.67
+19,Raichu,move,Rising Voltage,라이징볼트,3.842
+19,Raichu,move,Nuzzle,볼부비부비,0.989
+19,Raichu,move,Discharge,방전,0.851
+19,Raichu,move,Drain Punch,드레인펀치,0.713
+19,Raichu,move,Thunderbolt,10만볼트,0.713
+19,Raichu,item,Raichunite Y,라이츄나이트Y,82.767
+19,Raichu,item,Raichunite X,라이츄나이트X,15.468
+19,Raichu,item,Rocky Helmet,울퉁불퉁멧,0.597
+19,Raichu,item,Focus Sash,기합의띠,0.441
+19,Raichu,item,Air Balloon,풍선,0.389
+19,Raichu,ability,Electric Surge,일렉트릭메이커,76.718
+19,Raichu,ability,Lightning Rod,피뢰침,16.031
+19,Raichu,ability,Trace,트레이스,4.835
+19,Raichu,ability,Hospitality,대접,0.891
+19,Raichu,teammate,Rillaboom,고릴타,60.289
+19,Raichu,teammate,Gholdengo,타부자고,42.944
+19,Raichu,teammate,Arcanine-Hisui,히스이 윈디,33.62
+19,Raichu,teammate,Sneasler,포푸니크,29.111
+19,Raichu,teammate,Incineroar,어흥염,24.448
+19,Raichu,teammate,Staraptor,찌르호크,23.269
+19,Raichu,teammate,Sylveon,님피아,22.797
+19,Raichu,teammate,Salamence,보만다,18.538
+20,Staraptor,move,Close Combat,인파이트,54.593
+20,Staraptor,move,Protect,방어,30.794
+20,Staraptor,move,Brave Bird,브레이브버드,27.633
+20,Staraptor,move,Tailwind,순풍,14.688
+20,Staraptor,move,Final Gambit,목숨걸기,11.999
+20,Staraptor,move,Dual Wingbeat,더블윙,9.833
+20,Staraptor,move,Roost,날개쉬기,9.435
+20,Staraptor,move,U-turn,유턴,1.842
+20,Staraptor,move,Blaze Kick,브레이즈킥,0.498
+20,Staraptor,item,Staraptite,찌르호크나이트,94.011
+20,Staraptor,item,Rocky Helmet,울퉁불퉁멧,5.315
+20,Staraptor,ability,Intimidate,위협,97.028
+20,Staraptor,ability,Hospitality,대접,1.727
+20,Staraptor,ability,Trace,트레이스,1.092
+20,Staraptor,teammate,Gholdengo,타부자고,47.03
+20,Staraptor,teammate,Whimsicott,엘풍,32.324
+20,Staraptor,teammate,Rillaboom,고릴타,30.026
+20,Staraptor,teammate,Garchomp,한카리아스,26.228
+20,Staraptor,teammate,Basculegion,대쓰여너 (수컷),24.457
+20,Staraptor,teammate,Raichu,라이츄,23.943
+20,Staraptor,teammate,Arcanine-Hisui,히스이 윈디,20.445
+20,Staraptor,teammate,Milotic,밀로틱,20.388
+21,Tyranitar,move,Rock Slide,스톤샤워,47.596
+21,Tyranitar,move,Protect,방어,41.296
+21,Tyranitar,move,Knock Off,탁쳐서떨구기,38.646
+21,Tyranitar,move,Dragon Dance,용의춤,9.862
+21,Tyranitar,move,Low Kick,안다리걸기,7.391
+21,Tyranitar,move,High Horsepower,10만마력,2.961
+21,Tyranitar,move,Ice Punch,냉동펀치,2.048
+21,Tyranitar,move,Crunch,깨물어부수기,1.625
+21,Tyranitar,move,Fire Punch,불꽃펀치,0.846
+21,Tyranitar,move,Earthquake,지진,0.445
+21,Tyranitar,move,Stone Edge,스톤에지,0.378
+21,Tyranitar,item,Tyranitarite,마기라스나이트,84.138
+21,Tyranitar,item,Rocky Helmet,울퉁불퉁멧,4.918
+21,Tyranitar,item,Chople Berry,로플열매,3.234
+21,Tyranitar,item,Life Orb,생명의구슬,2.525
+21,Tyranitar,item,Focus Sash,기합의띠,1.329
+21,Tyranitar,item,Leftovers,먹다남은음식,1.152
+21,Tyranitar,item,Air Balloon,풍선,0.886
+21,Tyranitar,item,Passho Berry,꼬시개열매,0.399
+21,Tyranitar,ability,Sand Stream,모래날림,97.202
+21,Tyranitar,ability,Hospitality,대접,1.896
+21,Tyranitar,ability,Trace,트레이스,0.7
+21,Tyranitar,teammate,Excadrill,몰드류,64.108
+21,Tyranitar,teammate,Salamence,보만다,43.388
+21,Tyranitar,teammate,Sneasler,포푸니크,36.383
+21,Tyranitar,teammate,Milotic,밀로틱,35.758
+21,Tyranitar,teammate,Gholdengo,타부자고,30.879
+21,Tyranitar,teammate,Rillaboom,고릴타,27.056
+21,Tyranitar,teammate,Indeedee,에써르 (수컷),22.43
+21,Tyranitar,teammate,Sinistcha,그우린차,21.776
+22,Gardevoir,move,Hyper Voice,하이퍼보이스,57.598
+22,Gardevoir,move,Protect,방어,41.439
+22,Gardevoir,move,Expanding Force,와이드포스,40.289
+22,Gardevoir,move,Trick Room,트릭룸,8.24
+22,Gardevoir,move,Calm Mind,명상,6.314
+22,Gardevoir,move,Mystical Fire,매지컬플레임,3.826
+22,Gardevoir,move,Moonblast,문포스,2.515
+22,Gardevoir,move,Thunderbolt,10만볼트,2.274
+22,Gardevoir,move,Aura Sphere,파동탄,1.284
+22,Gardevoir,move,Hyper Beam,파괴광선,0.749
+22,Gardevoir,move,Dazzling Gleam,매지컬샤인,0.722
+22,Gardevoir,item,Gardevoirite,가디안나이트,99.016
+22,Gardevoir,ability,Intimidate,위협,10.361
+22,Gardevoir,ability,Psychic Surge,사이코메이커,5.157
+22,Gardevoir,ability,Prankster,짓궂은마음,4.518
+22,Gardevoir,ability,Unburden,곡예,4.382
+22,Gardevoir,teammate,Indeedee-F,에써르 (암컷),86.673
+22,Gardevoir,teammate,Sneasler,포푸니크,55.859
+22,Gardevoir,teammate,Basculegion,대쓰여너 (수컷),34.107
+22,Gardevoir,teammate,Golisopod,갑주무사,23.634
+22,Gardevoir,teammate,Pelipper,패리퍼,19.475
+22,Gardevoir,teammate,Armarouge,카디나르마,18.701
+22,Gardevoir,teammate,Kingambit,대도각참,17.016
+22,Gardevoir,teammate,Incineroar,어흥염,15.134
+23,Sinistcha,move,Matcha Gotcha,휘적휘적포,40.044
+23,Sinistcha,move,Rage Powder,분노가루,39.11
+23,Sinistcha,move,Protect,방어,17.393
+23,Sinistcha,move,Trick Room,트릭룸,15.059
+23,Sinistcha,move,Shadow Ball,섀도볼,9.956
+23,Sinistcha,move,Life Dew,생명의물방울,9.894
+23,Sinistcha,move,Strength Sap,힘흡수,2.894
+23,Sinistcha,move,Scald,열탕,0.342
+23,Sinistcha,move,Nasty Plot,나쁜음모,0.311
+23,Sinistcha,item,Sitrus Berry,자뭉열매,41.076
+23,Sinistcha,item,Leftovers,먹다남은음식,23.513
+23,Sinistcha,item,Colbur Berry,마코열매,13.409
+23,Sinistcha,item,Kasib Berry,수불열매,5.194
+23,Sinistcha,item,Eject Button,탈출버튼,4.344
+23,Sinistcha,item,Occa Berry,오카열매,3.588
+23,Sinistcha,item,Coba Berry,바코열매,3.211
+23,Sinistcha,item,Focus Sash,기합의띠,2.361
+23,Sinistcha,ability,Trace,트레이스,76.19
+23,Sinistcha,ability,Simple,단순,9.524
+23,Sinistcha,ability,No Guard,노가드,4.762
+23,Sinistcha,ability,Hospitality,대접,4.762
+23,Sinistcha,teammate,Incineroar,어흥염,28.9
+23,Sinistcha,teammate,Golisopod,갑주무사,24.042
+23,Sinistcha,teammate,Tyranitar,마기라스,23.095
+23,Sinistcha,teammate,Milotic,밀로틱,20.934
+23,Sinistcha,teammate,Sneasler,포푸니크,20.035
+23,Sinistcha,teammate,Excadrill,몰드류,18.678
+23,Sinistcha,teammate,Gholdengo,타부자고,17.684
+23,Sinistcha,teammate,Pelipper,패리퍼,16.738
+24,Floette-Eternal,move,Dazzling Gleam,매지컬샤인,58.233
+24,Floette-Eternal,move,Protect,방어,53.506
+24,Floette-Eternal,move,Calm Mind,명상,35.49
+24,Floette-Eternal,move,Moonblast,문포스,29.872
+24,Floette-Eternal,move,Light of Ruin,파멸의빛,11.74
+24,Floette-Eternal,move,Draining Kiss,드레인키스,11.275
+24,Floette-Eternal,item,Floettite,플라엣테나이트,99.045
+24,Floette-Eternal,item,Rocky Helmet,울퉁불퉁멧,0.651
+24,Floette-Eternal,ability,Fairy Aura,페어리오라,97.908
+24,Floette-Eternal,ability,Hospitality,대접,1.307
+24,Floette-Eternal,ability,Trace,트레이스,0.697
+24,Floette-Eternal,teammate,Rillaboom,고릴타,67.93
+24,Floette-Eternal,teammate,Incineroar,어흥염,56.925
+24,Floette-Eternal,teammate,Sneasler,포푸니크,54.394
+24,Floette-Eternal,teammate,Salamence,보만다,37.912
+24,Floette-Eternal,teammate,Kingambit,대도각참,31.64
+24,Floette-Eternal,teammate,Basculegion,대쓰여너 (수컷),30.995
+24,Floette-Eternal,teammate,Gholdengo,타부자고,25.17
+24,Floette-Eternal,teammate,Garchomp,한카리아스,15.985
+25,Torkoal,move,Eruption,분화,53.89
+25,Torkoal,move,Protect,방어,25.543
+25,Torkoal,move,Weather Ball,웨더볼,19.466
+25,Torkoal,move,Heat Wave,열풍,17.462
+25,Torkoal,move,Earth Power,대지의힘,11.386
+25,Torkoal,move,Helping Hand,도우미,5.242
+25,Torkoal,move,Solar Beam,솔라빔,3.873
+25,Torkoal,move,Flamethrower,화염방사,1.636
+25,Torkoal,move,Yawn,하품,1.402
+25,Torkoal,move,Ancient Power,원시의힘,1.135
+25,Torkoal,move,Body Press,바디프레스,0.868
+25,Torkoal,move,Lava Plume,분연,0.735
+25,Torkoal,item,Life Orb,생명의구슬,26.423
+25,Torkoal,item,Leftovers,먹다남은음식,18.293
+25,Torkoal,item,Eject Button,탈출버튼,14.228
+25,Torkoal,item,Charcoal,목탄,12.602
+25,Torkoal,item,Sitrus Berry,자뭉열매,10.569
+25,Torkoal,item,Air Balloon,풍선,7.317
+25,Torkoal,item,Heat Rock,뜨거운바위,2.439
+25,Torkoal,item,White Herb,하양허브,1.22
+25,Torkoal,ability,Drought,가뭄,98.586
+25,Torkoal,ability,Trace,트레이스,0.919
+25,Torkoal,teammate,Indeedee-F,에써르 (암컷),46.683
+25,Torkoal,teammate,Farigiraf,키키링,46.602
+25,Torkoal,teammate,Sneasler,포푸니크,32.322
+25,Torkoal,teammate,Incineroar,어흥염,25.425
+25,Torkoal,teammate,Hatterene,브리무음,20.692
+25,Torkoal,teammate,Sylveon,님피아,19.741
+25,Torkoal,teammate,Golisopod,갑주무사,17.638
+25,Torkoal,teammate,Gardevoir,가디안,17.597
+26,Armarouge,move,Expanding Force,와이드포스,48.342
+26,Armarouge,move,Armor Cannon,아머캐논,36.517
+26,Armarouge,move,Protect,방어,22.666
+26,Armarouge,move,Trick Room,트릭룸,18.366
+26,Armarouge,move,Heat Wave,열풍,13.421
+26,Armarouge,move,Wide Guard,와이드가드,12.838
+26,Armarouge,move,Aura Sphere,파동탄,3.686
+26,Armarouge,move,Ally Switch,사이드체인지,1.689
+26,Armarouge,move,Dark Pulse,악의파동,0.891
+26,Armarouge,move,Calm Mind,명상,0.86
+26,Armarouge,move,Energy Ball,에너지볼,0.706
+26,Armarouge,item,Life Orb,생명의구슬,69.725
+26,Armarouge,item,Focus Sash,기합의띠,12.099
+26,Armarouge,item,Psychic Seed,사이코시드,8.142
+26,Armarouge,item,Sitrus Berry,자뭉열매,2.408
+26,Armarouge,item,Colbur Berry,마코열매,1.778
+26,Armarouge,item,Leftovers,먹다남은음식,1.147
+26,Armarouge,item,Choice Scarf,구애스카프,1.032
+26,Armarouge,item,Air Balloon,풍선,0.917
+26,Armarouge,ability,Weak Armor,깨어진갑옷,53.304
+26,Armarouge,ability,Flash Fire,타오르는불꽃,17.621
+26,Armarouge,ability,Trace,트레이스,16.3
+26,Armarouge,ability,Hospitality,대접,10.573
+26,Armarouge,teammate,Indeedee-F,에써르 (암컷),83.3
+26,Armarouge,teammate,Sneasler,포푸니크,39.813
+26,Armarouge,teammate,Golisopod,갑주무사,32.772
+26,Armarouge,teammate,Gardevoir,가디안,25
+26,Armarouge,teammate,Kingambit,대도각참,19.602
+26,Armarouge,teammate,Torkoal,코터스,16.031
+26,Armarouge,teammate,Salamence,보만다,14.894
+26,Armarouge,teammate,Milotic,밀로틱,12.399
+27,Lucario,move,Aura Sphere,파동탄,47.918
+27,Lucario,move,Flash Cannon,러스터캐논,33.171
+27,Lucario,move,Protect,방어,30.014
+27,Lucario,move,Detect,판별,17.002
+27,Lucario,move,Calm Mind,명상,16.308
+27,Lucario,move,Nasty Plot,나쁜음모,12.422
+27,Lucario,move,Steel Beam,철제광선,9.368
+27,Lucario,move,Dark Pulse,악의파동,5.482
+27,Lucario,move,Terrain Pulse,대지의파동,4.06
+27,Lucario,move,Vacuum Wave,진공파,2.741
+27,Lucario,move,Coaching,코칭,2.047
+27,Lucario,item,Lucarionite Z,루카리오나이트Z,94.431
+27,Lucario,item,Lucarionite,루카리오나이트,4.98
+27,Lucario,ability,Inner Focus,정신력,75.351
+27,Lucario,ability,Hospitality,대접,11.423
+27,Lucario,ability,Trace,트레이스,5.01
+27,Lucario,ability,Justified,정의의마음,4.208
+27,Lucario,teammate,Rillaboom,고릴타,52.198
+27,Lucario,teammate,Incineroar,어흥염,38.08
+27,Lucario,teammate,Salamence,보만다,21.713
+27,Lucario,teammate,Basculegion,대쓰여너 (수컷),21.321
+27,Lucario,teammate,Indeedee-F,에써르 (암컷),18.039
+27,Lucario,teammate,Sneasler,포푸니크,15.975
+27,Lucario,teammate,Garchomp,한카리아스,14.18
+27,Lucario,teammate,Kingambit,대도각참,12.26
+28,Excadrill,move,Protect,방어,39.766
+28,Excadrill,move,High Horsepower,10만마력,37.043
+28,Excadrill,move,Iron Head,아이언헤드,35.941
+28,Excadrill,move,Rock Slide,스톤샤워,34.252
+28,Excadrill,move,Earthquake,지진,19.607
+28,Excadrill,move,Swords Dance,칼춤,1.585
+28,Excadrill,move,Drill Run,드릴라이너,0.793
+28,Excadrill,move,Stomping Tantrum,분함의발구르기,0.689
+28,Excadrill,move,Horn Drill,뿔드릴,0.517
+28,Excadrill,move,Fissure,땅가르기,0.345
+28,Excadrill,item,Focus Sash,기합의띠,68.263
+28,Excadrill,item,Life Orb,생명의구슬,21.044
+28,Excadrill,item,Rocky Helmet,울퉁불퉁멧,4.192
+28,Excadrill,item,Excadrite,몰드류나이트,3.849
+28,Excadrill,item,Air Balloon,풍선,0.941
+28,Excadrill,item,Choice Scarf,구애스카프,0.599
+28,Excadrill,item,Leftovers,먹다남은음식,0.513
+28,Excadrill,ability,Mold Breaker,틀깨기,48.207
+28,Excadrill,ability,Hospitality,대접,35.458
+28,Excadrill,ability,Trace,트레이스,11.952
+28,Excadrill,ability,Piercing Drill,관통드릴,2.789
+28,Excadrill,teammate,Tyranitar,마기라스,93.716
+28,Excadrill,teammate,Salamence,보만다,54.621
+28,Excadrill,teammate,Milotic,밀로틱,42.705
+28,Excadrill,teammate,Sneasler,포푸니크,39.291
+28,Excadrill,teammate,Gholdengo,타부자고,36.551
+28,Excadrill,teammate,Indeedee,에써르 (수컷),29.376
+28,Excadrill,teammate,Sinistcha,그우린차,25.745
+28,Excadrill,teammate,Rillaboom,고릴타,21.505
+29,Baxcalibur,move,Protect,방어,49.374
+29,Baxcalibur,move,Glaive Rush,대검돌격,47.642
+29,Baxcalibur,move,Ice Shard,얼음뭉치,34.083
+29,Baxcalibur,move,Icicle Crash,고드름떨구기,18.312
+29,Baxcalibur,move,Dragon Dance,용의춤,13.965
+29,Baxcalibur,move,Swords Dance,칼춤,12.27
+29,Baxcalibur,move,High Horsepower,10만마력,11.975
+29,Baxcalibur,move,Earthquake,지진,2.321
+29,Baxcalibur,move,Icicle Spear,고드름침,2.211
+29,Baxcalibur,move,Dragon Claw,드래곤크루,1.584
+29,Baxcalibur,move,Scale Shot,스케일샷,1.4
+29,Baxcalibur,move,Iron Head,아이언헤드,0.958
+29,Baxcalibur,item,Baxcalibrite,드닐레이브나이트,89.59
+29,Baxcalibur,item,Life Orb,생명의구슬,5.955
+29,Baxcalibur,item,Rocky Helmet,울퉁불퉁멧,2.779
+29,Baxcalibur,item,Leftovers,먹다남은음식,0.97
+29,Baxcalibur,ability,Thermal Exchange,열교환,79.493
+29,Baxcalibur,ability,Hospitality,대접,9.091
+29,Baxcalibur,ability,Ice Body,아이스바디,6.131
+29,Baxcalibur,ability,Trace,트레이스,4.651
+29,Baxcalibur,teammate,Rillaboom,고릴타,48.163
+29,Baxcalibur,teammate,Sneasler,포푸니크,45.296
+29,Baxcalibur,teammate,Ninetales-Alola,알로라 나인테일,33.244
+29,Baxcalibur,teammate,Incineroar,어흥염,32.953
+29,Baxcalibur,teammate,Kingambit,대도각참,18.683
+29,Baxcalibur,teammate,Gholdengo,타부자고,18.459
+29,Baxcalibur,teammate,Basculegion,대쓰여너 (수컷),18.123
+29,Baxcalibur,teammate,Indeedee-F,에써르 (암컷),14.651
+30,Volcarona,move,Quiver Dance,나비춤,39.571
+30,Volcarona,move,Protect,방어,33.506
+30,Volcarona,move,Heat Wave,열풍,26.886
+30,Volcarona,move,Rage Powder,분노가루,20.562
+30,Volcarona,move,Fiery Dance,불꽃춤,15.422
+30,Volcarona,move,Struggle,발버둥,10.614
+30,Volcarona,move,Giga Drain,기가드레인,9.985
+30,Volcarona,move,Tailwind,순풍,9.246
+30,Volcarona,move,Bug Buzz,벌레의야단법석,8.21
+30,Volcarona,move,Flamethrower,화염방사,6.694
+30,Volcarona,move,Overheat,오버히트,4.734
+30,Volcarona,move,Will-O-Wisp,도깨비불,1.886
+30,Volcarona,item,Grassy Seed,그래스시드,52.888
+30,Volcarona,item,Sitrus Berry,자뭉열매,16.429
+30,Volcarona,item,Leftovers,먹다남은음식,15.154
+30,Volcarona,item,Life Orb,생명의구슬,5.326
+30,Volcarona,item,Focus Sash,기합의띠,3.901
+30,Volcarona,item,Charti Berry,루미열매,1.5
+30,Volcarona,item,Psychic Seed,사이코시드,1.35
+30,Volcarona,item,Electric Seed,일렉트릭시드,1.275
+30,Volcarona,ability,Flame Body,불꽃몸,91.61
+30,Volcarona,ability,Trace,트레이스,4.082
+30,Volcarona,ability,Hospitality,대접,2.268
+30,Volcarona,ability,Simple,단순,0.68
+30,Volcarona,teammate,Rillaboom,고릴타,59.797
+30,Volcarona,teammate,Sneasler,포푸니크,31.488
+30,Volcarona,teammate,Salamence,보만다,28.144
+30,Volcarona,teammate,Incineroar,어흥염,21.479
+30,Volcarona,teammate,Garchomp,한카리아스,21.008
+30,Volcarona,teammate,Kingambit,대도각참,17.169
+30,Volcarona,teammate,Gholdengo,타부자고,16.769
+30,Volcarona,teammate,Basculegion,대쓰여너 (수컷),16.604
+31,Ninetales-Alola,move,Aurora Veil,오로라베일,44.726
+31,Ninetales-Alola,move,Blizzard,눈보라,42.005
+31,Ninetales-Alola,move,Freeze-Dry,프리즈드라이,17.07
+31,Ninetales-Alola,move,Protect,방어,15.281
+31,Ninetales-Alola,move,Moonblast,문포스,9.728
+31,Ninetales-Alola,move,Encore,앵콜,6.373
+31,Ninetales-Alola,move,Icy Wind,얼다바람,3.578
+31,Ninetales-Alola,move,Dazzling Gleam,매지컬샤인,2.534
+31,Ninetales-Alola,move,Disable,사슬묶기,0.932
+31,Ninetales-Alola,move,Rain Dance,비바라기,0.82
+31,Ninetales-Alola,move,Fake Tears,거짓울음,0.783
+31,Ninetales-Alola,move,Snowscape,설경,0.596
+31,Ninetales-Alola,item,Focus Sash,기합의띠,61.261
+31,Ninetales-Alola,item,Life Orb,생명의구슬,11.261
+31,Ninetales-Alola,item,Light Clay,빛의점토,7.658
+31,Ninetales-Alola,item,Leftovers,먹다남은음식,3.153
+31,Ninetales-Alola,item,Never-Melt Ice,녹지않는얼음,2.703
+31,Ninetales-Alola,item,Choice Scarf,구애스카프,2.703
+31,Ninetales-Alola,item,Grassy Seed,그래스시드,1.802
+31,Ninetales-Alola,item,Eject Button,탈출버튼,1.802
+31,Ninetales-Alola,ability,Snow Warning,눈퍼뜨리기,98.799
+31,Ninetales-Alola,ability,Trace,트레이스,0.736
+31,Ninetales-Alola,ability,Hospitality,대접,0.349
+31,Ninetales-Alola,teammate,Sneasler,포푸니크,42.116
+31,Ninetales-Alola,teammate,Rillaboom,고릴타,35.305
+31,Ninetales-Alola,teammate,Baxcalibur,드닐레이브,34.975
+31,Ninetales-Alola,teammate,Incineroar,어흥염,29.177
+31,Ninetales-Alola,teammate,Kingambit,대도각참,27.221
+31,Ninetales-Alola,teammate,Basculegion,대쓰여너 (수컷),26.844
+31,Ninetales-Alola,teammate,Froslass,눈여아,19.208
+31,Ninetales-Alola,teammate,Dragonite,망나뇽,18.454
+32,Indeedee,move,Expanding Force,와이드포스,59.201
+32,Indeedee,move,Mystical Fire,매지컬플레임,10.116
+32,Indeedee,move,Trick,트릭,8.253
+32,Indeedee,move,Protect,방어,6.656
+32,Indeedee,move,Trick Room,트릭룸,6.556
+32,Indeedee,move,Imprison,봉인,5.092
+32,Indeedee,move,Dazzling Gleam,매지컬샤인,4.26
+32,Indeedee,move,Helping Hand,도우미,4.06
+32,Indeedee,move,Hyper Voice,하이퍼보이스,2.03
+32,Indeedee,move,Gravity,중력,1.597
+32,Indeedee,move,Shadow Ball,섀도볼,1.065
+32,Indeedee,move,Encore,앵콜,0.832
+32,Indeedee,item,Focus Sash,기합의띠,30.99
+32,Indeedee,item,Psychic Seed,사이코시드,15.925
+32,Indeedee,item,Sitrus Berry,자뭉열매,11.047
+32,Indeedee,item,Life Orb,생명의구슬,10.473
+32,Indeedee,item,Choice Scarf,구애스카프,9.326
+32,Indeedee,item,Colbur Berry,마코열매,5.308
+32,Indeedee,item,Leftovers,먹다남은음식,4.591
+32,Indeedee,item,Miracle Seed,기적의씨,2.726
+32,Indeedee,ability,Psychic Surge,사이코메이커,98.776
+32,Indeedee,ability,Trace,트레이스,0.699
+32,Indeedee,teammate,Sneasler,포푸니크,68.79
+32,Indeedee,teammate,Salamence,보만다,48.057
+32,Indeedee,teammate,Tyranitar,마기라스,37.088
+32,Indeedee,teammate,Excadrill,몰드류,33.227
+32,Indeedee,teammate,Milotic,밀로틱,21.176
+32,Indeedee,teammate,Metagross,메타그로스,14.191
+32,Indeedee,teammate,Corviknight,아머까오,13.724
+32,Indeedee,teammate,Arcanine-Hisui,히스이 윈디,11.977
+33,Froslass,move,Blizzard,눈보라,64.204
+33,Froslass,move,Aurora Veil,오로라베일,39.126
+33,Froslass,move,Protect,방어,34.964
+33,Froslass,move,Shadow Ball,섀도볼,31.686
+33,Froslass,move,Frost Breath,얼음숨결,2.966
+33,Froslass,move,Nasty Plot,나쁜음모,1.873
+33,Froslass,move,Destiny Bond,길동무,1.145
+33,Froslass,move,Thunderbolt,10만볼트,1.041
+33,Froslass,move,Rain Dance,비바라기,1.041
+33,Froslass,move,Icy Wind,얼다바람,0.78
+33,Froslass,move,Will-O-Wisp,도깨비불,0.676
+33,Froslass,item,Froslassite,눈여아나이트,99.58
+33,Froslass,item,Focus Sash,기합의띠,0.3
+33,Froslass,ability,Snow Warning,눈퍼뜨리기,97.899
+33,Froslass,ability,Cursed Body,저주받은바디,1.174
+33,Froslass,ability,Trace,트레이스,0.556
+33,Froslass,ability,Hospitality,대접,0.371
+33,Froslass,teammate,Sneasler,포푸니크,54.313
+33,Froslass,teammate,Kingambit,대도각참,50.152
+33,Froslass,teammate,Rillaboom,고릴타,42.187
+33,Froslass,teammate,Basculegion,대쓰여너 (수컷),37.976
+33,Froslass,teammate,Incineroar,어흥염,23.44
+33,Froslass,teammate,Dragonite,망나뇽,20.776
+33,Froslass,teammate,Ninetales-Alola,알로라 나인테일,20.675
+33,Froslass,teammate,Arcanine-Hisui,히스이 윈디,14.333
+34,Metagross,move,Psychic Fangs,사이코팽,51.761
+34,Metagross,move,Protect,방어,45.698
+34,Metagross,move,Steel Roller,아이언롤러,22.247
+34,Metagross,move,Iron Head,아이언헤드,19.305
+34,Metagross,move,Body Press,바디프레스,11.993
+34,Metagross,move,Ice Punch,냉동펀치,8.872
+34,Metagross,move,Bullet Punch,불릿펀치,8.827
+34,Metagross,move,Stomping Tantrum,분함의발구르기,7.312
+34,Metagross,move,Meteor Mash,코멧펀치,4.28
+34,Metagross,move,Psych Up,자기암시,2.809
+34,Metagross,move,Explosion,대폭발,2.541
+34,Metagross,move,Cosmic Power,코스믹파워,1.739
+34,Metagross,item,Metagrossite,메타그로스나이트,89.216
+34,Metagross,item,Rocky Helmet,울퉁불퉁멧,5.263
+34,Metagross,item,Normal Gem,노말주얼,1.703
+34,Metagross,item,Life Orb,생명의구슬,1.548
+34,Metagross,item,Leftovers,먹다남은음식,0.774
+34,Metagross,item,Air Balloon,풍선,0.361
+34,Metagross,item,Grassy Seed,그래스시드,0.31
+34,Metagross,ability,Clear Body,클리어바디,81.336
+34,Metagross,ability,Hospitality,대접,11.984
+34,Metagross,ability,Trace,트레이스,5.894
+34,Metagross,ability,Simple,단순,0.393
+34,Metagross,teammate,Rillaboom,고릴타,39.853
+34,Metagross,teammate,Sneasler,포푸니크,38.202
+34,Metagross,teammate,Incineroar,어흥염,28.829
+34,Metagross,teammate,Indeedee-F,에써르 (암컷),25.705
+34,Metagross,teammate,Milotic,밀로틱,23.749
+34,Metagross,teammate,Salamence,보만다,21.92
+34,Metagross,teammate,Garchomp,한카리아스,21.412
+34,Metagross,teammate,Volcarona,불카모스,16.408
+35,Politoed,move,Weather Ball,웨더볼,42.313
+35,Politoed,move,Protect,방어,31.991
+35,Politoed,move,Muddy Water,탁류,19.229
+35,Politoed,move,Perish Song,멸망의노래,14.433
+35,Politoed,move,Ice Beam,냉동빔,14.347
+35,Politoed,move,Encore,앵콜,8.051
+35,Politoed,move,Icy Wind,얼다바람,4.368
+35,Politoed,move,Helping Hand,도우미,3.683
+35,Politoed,move,Earth Power,대지의힘,2.313
+35,Politoed,move,Hypnosis,최면술,1.927
+35,Politoed,move,Surf,파도타기,1.499
+35,Politoed,move,Psych Up,자기암시,0.771
+35,Politoed,item,Sitrus Berry,자뭉열매,51.287
+35,Politoed,item,Life Orb,생명의구슬,28.614
+35,Politoed,item,Leftovers,먹다남은음식,11.683
+35,Politoed,item,Eject Button,탈출버튼,2.475
+35,Politoed,item,Grassy Seed,그래스시드,1.683
+35,Politoed,item,Mystic Water,신비의물방울,1.287
+35,Politoed,item,Rindo Berry,린드열매,1.089
+35,Politoed,item,Choice Scarf,구애스카프,0.594
+35,Politoed,ability,Drizzle,잔비,98.002
+35,Politoed,ability,Trace,트레이스,0.977
+35,Politoed,ability,Hospitality,대접,0.755
+35,Politoed,teammate,Golisopod,갑주무사,49.713
+35,Politoed,teammate,Archaludon,브리두라스,49.083
+35,Politoed,teammate,Rillaboom,고릴타,45.958
+35,Politoed,teammate,Incineroar,어흥염,45.929
+35,Politoed,teammate,Gengar,팬텀,39.536
+35,Politoed,teammate,Farigiraf,키키링,30.132
+35,Politoed,teammate,Kingambit,대도각참,14.908
+35,Politoed,teammate,Pawmot,빠르모트,11.554
+36,Pawmot,move,Double Shock,전광쌍격,41.027
+36,Pawmot,move,Close Combat,인파이트,35.269
+36,Pawmot,move,Fake Out,속이다,32.534
+36,Pawmot,move,Revival Blessing,회생의기도,31.43
+36,Pawmot,move,Protect,방어,11.996
+36,Pawmot,move,Ice Punch,냉동펀치,6.19
+36,Pawmot,move,Coaching,코칭,5.806
+36,Pawmot,move,Mach Punch,마하펀치,1.775
+36,Pawmot,move,Thunder Punch,번개펀치,1.296
+36,Pawmot,move,Nuzzle,볼부비부비,1.296
+36,Pawmot,move,Electroweb,일렉트릭네트,0.576
+36,Pawmot,move,Brick Break,깨트리다,0.48
+36,Pawmot,item,Focus Sash,기합의띠,57.821
+36,Pawmot,item,Leppa Berry,과사열매,15.102
+36,Pawmot,item,Life Orb,생명의구슬,12.406
+36,Pawmot,item,Rocky Helmet,울퉁불퉁멧,6.149
+36,Pawmot,item,Air Balloon,풍선,4.315
+36,Pawmot,item,White Herb,하양허브,1.51
+36,Pawmot,item,Sitrus Berry,자뭉열매,1.402
+36,Pawmot,item,Leftovers,먹다남은음식,0.324
+36,Pawmot,ability,Volt Absorb,축전,42.222
+36,Pawmot,ability,Trace,트레이스,28.889
+36,Pawmot,ability,Hospitality,대접,20
+36,Pawmot,ability,Pickpocket,나쁜손버릇,2.222
+36,Pawmot,teammate,Rillaboom,고릴타,35.408
+36,Pawmot,teammate,Golisopod,갑주무사,30.006
+36,Pawmot,teammate,Farigiraf,키키링,24.721
+36,Pawmot,teammate,Kingambit,대도각참,22.725
+36,Pawmot,teammate,Incineroar,어흥염,20.934
+36,Pawmot,teammate,Salamence,보만다,20.023
+36,Pawmot,teammate,Indeedee-F,에써르 (암컷),15.473
+36,Pawmot,teammate,Basculegion,대쓰여너 (수컷),15.385
+37,Grimmsnarl,move,Light Screen,빛의장막,58.603
+37,Grimmsnarl,move,Reflect,리플렉터,54.895
+37,Grimmsnarl,move,Parting Shot,막말내뱉기,44.867
+37,Grimmsnarl,move,Spirit Break,소울크래시,28.232
+37,Grimmsnarl,move,Fake Out,속이다,11.359
+37,Grimmsnarl,move,Foul Play,속임수,4.658
+37,Grimmsnarl,move,Scary Face,겁나는얼굴,1.854
+37,Grimmsnarl,move,Sucker Punch,기습,1.806
+37,Grimmsnarl,move,Fake Tears,거짓울음,1.711
+37,Grimmsnarl,move,Misty Terrain,미스트필드,1.568
+37,Grimmsnarl,move,Play Rough,치근거리기,1.331
+37,Grimmsnarl,move,Swagger,뽐내기,1.141
+37,Grimmsnarl,item,Rocky Helmet,울퉁불퉁멧,25.294
+37,Grimmsnarl,item,Light Clay,빛의점토,18.824
+37,Grimmsnarl,item,Sitrus Berry,자뭉열매,14.118
+37,Grimmsnarl,item,Leftovers,먹다남은음식,8.824
+37,Grimmsnarl,item,Choice Scarf,구애스카프,6.471
+37,Grimmsnarl,item,Roseli Berry,로셀열매,5.882
+37,Grimmsnarl,item,Life Orb,생명의구슬,4.706
+37,Grimmsnarl,item,Eject Button,탈출버튼,4.118
+37,Grimmsnarl,ability,Trace,트레이스,49.275
+37,Grimmsnarl,ability,Hospitality,대접,33.333
+37,Grimmsnarl,ability,Frisk,통찰,11.594
+37,Grimmsnarl,ability,Magic Bounce,매직미러,4.348
+37,Grimmsnarl,teammate,Archaludon,브리두라스,45.971
+37,Grimmsnarl,teammate,Pelipper,패리퍼,40.468
+37,Grimmsnarl,teammate,Golisopod,갑주무사,37.124
+37,Grimmsnarl,teammate,Rillaboom,고릴타,22.925
+37,Grimmsnarl,teammate,Charizard,리자몽,22.834
+37,Grimmsnarl,teammate,Swampert,대짱이,20.158
+37,Grimmsnarl,teammate,Farigiraf,키키링,18.212
+37,Grimmsnarl,teammate,Sinistcha,그우린차,17.27
+38,Dragonite,move,Dragon Pulse,용의파동,44.273
+38,Dragonite,move,Heat Wave,열풍,29.515
+38,Dragonite,move,Protect,방어,27.064
+38,Dragonite,move,Tailwind,순풍,17.208
+38,Dragonite,move,Extreme Speed,신속,16.516
+38,Dragonite,move,Hurricane,폭풍,8.578
+38,Dragonite,move,Dragon Claw,드래곤크루,6.18
+38,Dragonite,move,Draco Meteor,용성군,3.676
+38,Dragonite,move,Dragon Dance,용의춤,3.303
+38,Dragonite,move,Flamethrower,화염방사,3.037
+38,Dragonite,move,Ice Spinner,아이스스피너,2.877
+38,Dragonite,move,Thunder,번개,2.77
+38,Dragonite,item,Dragoninite,망나뇽나이트,85.705
+38,Dragonite,item,Life Orb,생명의구슬,10.006
+38,Dragonite,item,Leftovers,먹다남은음식,1.884
+38,Dragonite,item,Rocky Helmet,울퉁불퉁멧,0.715
+38,Dragonite,item,Sitrus Berry,자뭉열매,0.52
+38,Dragonite,item,White Herb,하양허브,0.455
+38,Dragonite,item,Yache Berry,플카열매,0.325
+38,Dragonite,ability,Inner Focus,정신력,73.964
+38,Dragonite,ability,Hospitality,대접,17.16
+38,Dragonite,ability,Trace,트레이스,8.284
+38,Dragonite,ability,Plus,플러스,0.592
+38,Dragonite,teammate,Sneasler,포푸니크,49.796
+38,Dragonite,teammate,Basculegion,대쓰여너 (수컷),42.036
+38,Dragonite,teammate,Kingambit,대도각참,39.177
+38,Dragonite,teammate,Rillaboom,고릴타,27.176
+38,Dragonite,teammate,Froslass,눈여아,25.73
+38,Dragonite,teammate,Ninetales-Alola,알로라 나인테일,24.599
+38,Dragonite,teammate,Incineroar,어흥염,20.358
+38,Dragonite,teammate,Indeedee-F,에써르 (암컷),15.426
+39,Glimmora,move,Power Gem,파워젬,50.831
+39,Glimmora,move,Spiky Shield,니들가드,44.789
+39,Glimmora,move,Sludge Bomb,오물폭탄,34.867
+39,Glimmora,move,Earth Power,대지의힘,33.315
+39,Glimmora,move,Mortal Spin,킬러스핀,6.264
+39,Glimmora,move,Protect,방어,2.716
+39,Glimmora,move,Sludge Wave,오물웨이브,1.608
+39,Glimmora,move,Stealth Rock,스텔스록,1.33
+39,Glimmora,move,Toxic,맹독,0.721
+39,Glimmora,move,Energy Ball,에너지볼,0.61
+39,Glimmora,move,Venoshock,베놈쇼크,0.61
+39,Glimmora,move,Dazzling Gleam,매지컬샤인,0.443
+39,Glimmora,item,Glimmoranite,킬라플로르나이트,61.799
+39,Glimmora,item,Focus Sash,기합의띠,31.721
+39,Glimmora,item,Air Balloon,풍선,2.901
+39,Glimmora,item,Life Orb,생명의구슬,1.838
+39,Glimmora,item,Rocky Helmet,울퉁불퉁멧,0.677
+39,Glimmora,item,Red Card,레드카드,0.58
+39,Glimmora,ability,Trace,트레이스,68.966
+39,Glimmora,ability,Hospitality,대접,27.586
+39,Glimmora,ability,No Guard,노가드,3.448
+39,Glimmora,teammate,Whimsicott,엘풍,39.477
+39,Glimmora,teammate,Basculegion,대쓰여너 (수컷),34.814
+39,Glimmora,teammate,Garchomp,한카리아스,30.403
+39,Glimmora,teammate,Rillaboom,고릴타,29.805
+39,Glimmora,teammate,Staraptor,찌르호크,28.387
+39,Glimmora,teammate,Charizard,리자몽,27.505
+39,Glimmora,teammate,Incineroar,어흥염,20.762
+39,Glimmora,teammate,Kingambit,대도각참,16.352
+40,Gengar,move,Protect,방어,66.051
+40,Gengar,move,Perish Song,멸망의노래,43.468
+40,Gengar,move,Shadow Ball,섀도볼,40.602
+40,Gengar,move,Sludge Bomb,오물폭탄,27.732
+40,Gengar,move,Disable,사슬묶기,9.373
+40,Gengar,move,Substitute,대타출동,4.517
+40,Gengar,move,Icy Wind,얼다바람,2.817
+40,Gengar,move,Sludge Wave,오물웨이브,2.283
+40,Gengar,move,Hypnosis,최면술,1.651
+40,Gengar,move,Trick Room,트릭룸,1.457
+40,Gengar,move,Focus Blast,기합구슬,1.311
+40,Gengar,move,Nasty Plot,나쁜음모,1.263
+40,Gengar,item,Gengarite,팬텀나이트,96.322
+40,Gengar,item,Focus Sash,기합의띠,2.838
+40,Gengar,item,Life Orb,생명의구슬,0.42
+40,Gengar,ability,Cursed Body,저주받은바디,66.667
+40,Gengar,ability,Trace,트레이스,15.873
+40,Gengar,ability,Hospitality,대접,11.111
+40,Gengar,ability,Magic Bounce,매직미러,1.587
+40,Gengar,teammate,Incineroar,어흥염,69.746
+40,Gengar,teammate,Rillaboom,고릴타,64.254
+40,Gengar,teammate,Politoed,왕구리,43.778
+40,Gengar,teammate,Archaludon,브리두라스,34.222
+40,Gengar,teammate,Kingambit,대도각참,14.254
+40,Gengar,teammate,Golisopod,갑주무사,12.381
+40,Gengar,teammate,Sneasler,포푸니크,11.143
+40,Gengar,teammate,Kommo-o,짜랑고우거,10.571
+41,Aerodactyl,move,Rock Slide,스톤샤워,58.649
+41,Aerodactyl,move,Tailwind,순풍,42.394
+41,Aerodactyl,move,Dual Wingbeat,더블윙,19.769
+41,Aerodactyl,move,Wide Guard,와이드가드,13.948
+41,Aerodactyl,move,Protect,방어,11.312
+41,Aerodactyl,move,Ice Fang,얼음엄니,8.127
+41,Aerodactyl,move,Taunt,도발,2.746
+41,Aerodactyl,move,Rock Tomb,암석봉인,0.604
+41,Aerodactyl,move,Sunny Day,쾌청,0.439
+41,Aerodactyl,move,Stone Edge,스톤에지,0.329
+41,Aerodactyl,item,Aerodactylite,프테라나이트,66.081
+41,Aerodactyl,item,Focus Sash,기합의띠,27.991
+41,Aerodactyl,item,Life Orb,생명의구슬,2.744
+41,Aerodactyl,item,Rocky Helmet,울퉁불퉁멧,1.207
+41,Aerodactyl,item,White Herb,하양허브,0.768
+41,Aerodactyl,ability,Unnerve,긴장감,96.782
+41,Aerodactyl,ability,Pressure,프레셔,2.019
+41,Aerodactyl,ability,Trace,트레이스,0.757
+41,Aerodactyl,ability,Hospitality,대접,0.315
+41,Aerodactyl,teammate,Kingambit,대도각참,45.862
+41,Aerodactyl,teammate,Incineroar,어흥염,44.379
+41,Aerodactyl,teammate,Garchomp,한카리아스,41.939
+41,Aerodactyl,teammate,Charizard,리자몽,39.631
+41,Aerodactyl,teammate,Sylveon,님피아,37.751
+41,Aerodactyl,teammate,Rillaboom,고릴타,25.75
+41,Aerodactyl,teammate,Sneasler,포푸니크,20.772
+41,Aerodactyl,teammate,Indeedee-F,에써르 (암컷),14.375
+42,Primarina,move,Hyper Voice,하이퍼보이스,58.419
+42,Primarina,move,Protect,방어,39.404
+42,Primarina,move,Moonblast,문포스,37.285
+42,Primarina,move,Calm Mind,명상,16.323
+42,Primarina,move,Dazzling Gleam,매지컬샤인,2.921
+42,Primarina,move,Ice Beam,냉동빔,2.749
+42,Primarina,move,Icy Wind,얼다바람,2.635
+42,Primarina,move,Perish Song,멸망의노래,1.432
+42,Primarina,move,Aqua Jet,아쿠아제트,1.317
+42,Primarina,move,Draining Kiss,드레인키스,0.916
+42,Primarina,move,Haze,흑안개,0.745
+42,Primarina,move,Round,돌림노래,0.63
+42,Primarina,item,Life Orb,생명의구슬,43.157
+42,Primarina,item,Leftovers,먹다남은음식,38.462
+42,Primarina,item,Grassy Seed,그래스시드,8.591
+42,Primarina,item,Sitrus Berry,자뭉열매,6.793
+42,Primarina,item,Psychic Seed,사이코시드,0.599
+42,Primarina,item,Shell Bell,조개껍질방울,0.4
+42,Primarina,item,Mystic Water,신비의물방울,0.4
+42,Primarina,item,Choice Scarf,구애스카프,0.3
+42,Primarina,ability,Hospitality,대접,63.793
+42,Primarina,ability,Trace,트레이스,29.31
+42,Primarina,ability,Intimidate,위협,3.448
+42,Primarina,ability,Psychic Surge,사이코메이커,1.724
+42,Primarina,teammate,Rillaboom,고릴타,47.495
+42,Primarina,teammate,Incineroar,어흥염,31.584
+42,Primarina,teammate,Salamence,보만다,30.23
+42,Primarina,teammate,Farigiraf,키키링,24.78
+42,Primarina,teammate,Golisopod,갑주무사,21.767
+42,Primarina,teammate,Sneasler,포푸니크,19.431
+42,Primarina,teammate,Kingambit,대도각참,19.397
+42,Primarina,teammate,Indeedee-F,에써르 (암컷),15.166
+43,Hatterene,move,Trick Room,트릭룸,43.26
+43,Hatterene,move,Expanding Force,와이드포스,42.224
+43,Hatterene,move,Dazzling Gleam,매지컬샤인,39.804
+43,Hatterene,move,Protect,방어,22.293
+43,Hatterene,move,Mystical Fire,매지컬플레임,5.588
+43,Hatterene,move,Magic Powder,마법가루,4.032
+43,Hatterene,move,Draining Kiss,드레인키스,2.419
+43,Hatterene,move,Parting Shot,막말내뱉기,2.189
+43,Hatterene,move,Calm Mind,명상,1.44
+43,Hatterene,move,Heal Pulse,치유파동,0.518
+43,Hatterene,move,Helping Hand,도우미,0.461
+43,Hatterene,item,Life Orb,생명의구슬,80.866
+43,Hatterene,item,Psychic Seed,사이코시드,6.143
+43,Hatterene,item,Focus Sash,기합의띠,3.625
+43,Hatterene,item,Leftovers,먹다남은음식,3.525
+43,Hatterene,item,Sitrus Berry,자뭉열매,2.92
+43,Hatterene,item,Babiri Berry,바리비열매,1.511
+43,Hatterene,item,Choice Scarf,구애스카프,0.604
+43,Hatterene,ability,Trace,트레이스,46.154
+43,Hatterene,ability,Hospitality,대접,23.077
+43,Hatterene,ability,Magic Bounce,매직미러,17.949
+43,Hatterene,ability,Anticipation,위험예지,10.256
+43,Hatterene,teammate,Indeedee-F,에써르 (암컷),84.196
+43,Hatterene,teammate,Golisopod,갑주무사,42.954
+43,Hatterene,teammate,Torkoal,코터스,36.497
+43,Hatterene,teammate,Camerupt,폭타,19.122
+43,Hatterene,teammate,Incineroar,어흥염,18.373
+43,Hatterene,teammate,Kingambit,대도각참,18.302
+43,Hatterene,teammate,Farigiraf,키키링,17.838
+43,Hatterene,teammate,Sneasler,포푸니크,17.66
+44,Swampert,move,Protect,방어,41.406
+44,Swampert,move,Wave Crash,웨이브태클,37.926
+44,Swampert,move,Earthquake,지진,33.403
+44,Swampert,move,Ice Punch,냉동펀치,24.217
+44,Swampert,move,High Horsepower,10만마력,15.658
+44,Swampert,move,Waterfall,폭포오르기,4.106
+44,Swampert,move,Liquidation,아쿠아브레이크,3.479
+44,Swampert,move,Flip Turn,퀵턴,3.201
+44,Swampert,move,Rock Slide,스톤샤워,2.296
+44,Swampert,move,Yawn,하품,2.227
+44,Swampert,move,Wide Guard,와이드가드,1.949
+44,Swampert,move,Bulk Up,벌크업,1.461
+44,Swampert,item,Swampertite,대짱이나이트,90.286
+44,Swampert,item,Leftovers,먹다남은음식,3.102
+44,Swampert,item,Rocky Helmet,울퉁불퉁멧,2.939
+44,Swampert,item,Life Orb,생명의구슬,1.469
+44,Swampert,item,Sitrus Berry,자뭉열매,1.388
+44,Swampert,item,Rindo Berry,린드열매,0.327
+44,Swampert,ability,Hospitality,대접,42.5
+44,Swampert,ability,Trace,트레이스,37.5
+44,Swampert,ability,Sap Sipper,초식,15
+44,Swampert,ability,Water Bubble,수포,5
+44,Swampert,teammate,Pelipper,패리퍼,79.849
+44,Swampert,teammate,Archaludon,브리두라스,69.827
+44,Swampert,teammate,Golisopod,갑주무사,36.914
+44,Swampert,teammate,Grimmsnarl,오롱털,23.901
+44,Swampert,teammate,Incineroar,어흥염,20.872
+44,Swampert,teammate,Rillaboom,고릴타,19.503
+44,Swampert,teammate,Farigiraf,키키링,16.366
+44,Swampert,teammate,Sneasler,포푸니크,16.114
+45,Absol,move,Night Slash,깜짝베기,50.979
+45,Absol,move,Shadow Claw,섀도크루,31.775
+45,Absol,move,Protect,방어,19.836
+45,Absol,move,Close Combat,인파이트,15.73
+45,Absol,move,Detect,판별,13.645
+45,Absol,move,Psycho Cut,사이코커터,8.086
+45,Absol,move,Focus Energy,기충전,5.938
+45,Absol,move,Swords Dance,칼춤,5.622
+45,Absol,move,Rock Slide,스톤샤워,4.422
+45,Absol,move,Sucker Punch,기습,2.653
+45,Absol,move,Icy Wind,얼다바람,2.148
+45,Absol,move,Will-O-Wisp,도깨비불,1.706
+45,Absol,item,Absolite Z,앱솔나이트Z,94.521
+45,Absol,item,Rocky Helmet,울퉁불퉁멧,4.438
+45,Absol,item,Absolite,앱솔나이트,0.763
+45,Absol,ability,Pressure,프레셔,78.855
+45,Absol,ability,Justified,정의의마음,15.103
+45,Absol,ability,Trace,트레이스,3.816
+45,Absol,ability,Hospitality,대접,1.908
+45,Absol,teammate,Sneasler,포푸니크,36.048
+45,Absol,teammate,Rillaboom,고릴타,31.957
+45,Absol,teammate,Indeedee-F,에써르 (암컷),27.943
+45,Absol,teammate,Incineroar,어흥염,22.694
+45,Absol,teammate,Whimsicott,엘풍,16.017
+45,Absol,teammate,Salamence,보만다,15.863
+45,Absol,teammate,Milotic,밀로틱,14.357
+45,Absol,teammate,Gholdengo,타부자고,13.122
+46,Delphox,move,Heat Wave,열풍,55.636
+46,Delphox,move,Protect,방어,51.681
+46,Delphox,move,Expanding Force,와이드포스,23.533
+46,Delphox,move,Nasty Plot,나쁜음모,19.512
+46,Delphox,move,Substitute,대타출동,4.153
+46,Delphox,move,Flamethrower,화염방사,3.889
+46,Delphox,move,Psyshock,사이코쇼크,3.56
+46,Delphox,move,Skill Swap,스킬스웹,2.637
+46,Delphox,move,Encore,앵콜,1.912
+46,Delphox,move,Calm Mind,명상,1.912
+46,Delphox,move,Dazzling Gleam,매지컬샤인,1.714
+46,Delphox,item,Delphoxite,마폭시나이트,91.647
+46,Delphox,item,Life Orb,생명의구슬,4.98
+46,Delphox,item,Focus Sash,기합의띠,0.723
+46,Delphox,item,Psychic Seed,사이코시드,0.643
+46,Delphox,item,Miracle Seed,기적의씨,0.321
+46,Delphox,item,Rocky Helmet,울퉁불퉁멧,0.321
+46,Delphox,ability,Levitate,부유,36.782
+46,Delphox,ability,Hospitality,대접,29.885
+46,Delphox,ability,Trace,트레이스,15.517
+46,Delphox,ability,Magician,매지션,4.598
+46,Delphox,teammate,Sneasler,포푸니크,40.832
+46,Delphox,teammate,Indeedee-F,에써르 (암컷),34.139
+46,Delphox,teammate,Rillaboom,고릴타,28.515
+46,Delphox,teammate,Kingambit,대도각참,26.693
+46,Delphox,teammate,Incineroar,어흥염,21.307
+46,Delphox,teammate,Salamence,보만다,21.149
+46,Delphox,teammate,Whimsicott,엘풍,20.634
+46,Delphox,teammate,Garchomp,한카리아스,20.515
+47,Sableye,move,Light Screen,빛의장막,35.705
+47,Sableye,move,Reflect,리플렉터,28.59
+47,Sableye,move,Rain Dance,비바라기,28.329
+47,Sableye,move,Encore,앵콜,21.736
+47,Sableye,move,Fake Out,속이다,19.386
+47,Sableye,move,Foul Play,속임수,16.188
+47,Sableye,move,Will-O-Wisp,도깨비불,15.405
+47,Sableye,move,Quash,순서미루기,14.23
+47,Sableye,move,Disable,사슬묶기,11.227
+47,Sableye,move,Gravity,중력,7.115
+47,Sableye,move,Sunny Day,쾌청,5.679
+47,Sableye,move,Protect,방어,3.329
+47,Sableye,item,Roseli Berry,로셀열매,28.615
+47,Sableye,item,Sitrus Berry,자뭉열매,16.615
+47,Sableye,item,Focus Sash,기합의띠,12.308
+47,Sableye,item,Sablenite,깜까미나이트,10.769
+47,Sableye,item,Rocky Helmet,울퉁불퉁멧,7.077
+47,Sableye,item,Leftovers,먹다남은음식,7.077
+47,Sableye,item,Light Clay,빛의점토,5.538
+47,Sableye,item,Eject Button,탈출버튼,3.385
+47,Sableye,ability,Hospitality,대접,43.478
+47,Sableye,ability,Trace,트레이스,36.957
+47,Sableye,ability,Intimidate,위협,6.522
+47,Sableye,ability,Magic Bounce,매직미러,4.348
+47,Sableye,teammate,Golisopod,갑주무사,33.798
+47,Sableye,teammate,Archaludon,브리두라스,23.925
+47,Sableye,teammate,Rillaboom,고릴타,23.925
+47,Sableye,teammate,Pelipper,패리퍼,21.221
+47,Sableye,teammate,Sneasler,포푸니크,17.206
+47,Sableye,teammate,Farigiraf,키키링,15.772
+47,Sableye,teammate,Sinistcha,그우린차,15.608
+47,Sableye,teammate,Milotic,밀로틱,11.143
+48,Talonflame,move,Tailwind,순풍,58.57
+48,Talonflame,move,Brave Bird,브레이브버드,22.97
+48,Talonflame,move,Flare Blitz,플레어드라이브,21.027
+48,Talonflame,move,Protect,방어,19.084
+48,Talonflame,move,Dual Wingbeat,더블윙,14.296
+48,Talonflame,move,Quick Guard,퍼스트가드,8.675
+48,Talonflame,move,Will-O-Wisp,도깨비불,5.899
+48,Talonflame,move,Acrobatics,애크러뱃,5.829
+48,Talonflame,move,Taunt,도발,4.997
+48,Talonflame,move,Overheat,오버히트,3.886
+48,Talonflame,move,Heat Wave,열풍,2.568
+48,Talonflame,move,Upper Hand,기선제압,1.804
+48,Talonflame,item,Focus Sash,기합의띠,45.455
+48,Talonflame,item,Life Orb,생명의구슬,24.138
+48,Talonflame,item,Rocky Helmet,울퉁불퉁멧,7.837
+48,Talonflame,item,Leftovers,먹다남은음식,5.329
+48,Talonflame,item,Charti Berry,루미열매,2.821
+48,Talonflame,item,Sharp Beak,예리한부리,2.508
+48,Talonflame,item,White Herb,하양허브,1.881
+48,Talonflame,item,Sitrus Berry,자뭉열매,1.881
+48,Talonflame,ability,Trace,트레이스,39.394
+48,Talonflame,ability,Hospitality,대접,33.333
+48,Talonflame,ability,Flame Body,불꽃몸,21.212
+48,Talonflame,ability,Insomnia,불면,6.061
+48,Talonflame,teammate,Rillaboom,고릴타,28.319
+48,Talonflame,teammate,Sneasler,포푸니크,23.952
+48,Talonflame,teammate,Garchomp,한카리아스,21.129
+48,Talonflame,teammate,Indeedee-F,에써르 (암컷),18.571
+48,Talonflame,teammate,Kingambit,대도각참,16.365
+48,Talonflame,teammate,Basculegion,대쓰여너 (수컷),15.924
+48,Talonflame,teammate,Gholdengo,타부자고,12.969
+48,Talonflame,teammate,Salamence,보만다,11.866
+49,Venusaur,move,Sludge Bomb,오물폭탄,41.253
+49,Venusaur,move,Sleep Powder,수면가루,40.713
+49,Venusaur,move,Protect,방어,30.67
+49,Venusaur,move,Earth Power,대지의힘,25.162
+49,Venusaur,move,Leaf Storm,리프스톰,10.907
+49,Venusaur,move,Giga Drain,기가드레인,10.583
+49,Venusaur,move,Leech Seed,씨뿌리기,4.104
+49,Venusaur,move,Solar Beam,솔라빔,3.888
+49,Venusaur,move,Energy Ball,에너지볼,3.348
+49,Venusaur,move,Weather Ball,웨더볼,2.268
+49,Venusaur,move,Sludge Wave,오물웨이브,0.756
+49,Venusaur,move,Toxic,맹독,0.648
+49,Venusaur,item,Venusaurite,이상해꽃나이트,42.472
+49,Venusaur,item,Life Orb,생명의구슬,28.539
+49,Venusaur,item,Focus Sash,기합의띠,21.573
+49,Venusaur,item,Leftovers,먹다남은음식,3.82
+49,Venusaur,item,Occa Berry,오카열매,0.899
+49,Venusaur,item,Sitrus Berry,자뭉열매,0.674
+49,Venusaur,item,Wide Lens,광각렌즈,0.449
+49,Venusaur,ability,Trace,트레이스,41.176
+49,Venusaur,ability,Hospitality,대접,23.529
+49,Venusaur,ability,Magic Bounce,매직미러,23.529
+49,Venusaur,ability,Magician,매지션,5.882
+49,Venusaur,teammate,Charizard,리자몽,64.653
+49,Venusaur,teammate,Archaludon,브리두라스,26.91
+49,Venusaur,teammate,Pelipper,패리퍼,26.111
+49,Venusaur,teammate,Sneasler,포푸니크,24.863
+49,Venusaur,teammate,Indeedee-F,에써르 (암컷),24.363
+49,Venusaur,teammate,Grimmsnarl,오롱털,20.22
+49,Venusaur,teammate,Basculegion,대쓰여너 (수컷),19.77
+49,Venusaur,teammate,Incineroar,어흥염,18.922
+50,Corviknight,move,Brave Bird,브레이브버드,46.033
+50,Corviknight,move,Bulk Up,벌크업,35.397
+50,Corviknight,move,Tailwind,순풍,27.55
+50,Corviknight,move,Roost,날개쉬기,23.278
+50,Corviknight,move,Body Press,바디프레스,20.75
+50,Corviknight,move,Iron Head,아이언헤드,13.165
+50,Corviknight,move,Power Trip,기어오르기,12.293
+50,Corviknight,move,Iron Defense,철벽,10.549
+50,Corviknight,move,Protect,방어,9.067
+50,Corviknight,move,Taunt,도발,1.569
+50,Corviknight,move,U-turn,유턴,1.308
+50,Corviknight,move,Dual Wingbeat,더블윙,0.872
+50,Corviknight,item,Leftovers,먹다남은음식,43.621
+50,Corviknight,item,Psychic Seed,사이코시드,29.081
+50,Corviknight,item,Sitrus Berry,자뭉열매,10.837
+50,Corviknight,item,Life Orb,생명의구슬,4.252
+50,Corviknight,item,Grassy Seed,그래스시드,4.115
+50,Corviknight,item,Rocky Helmet,울퉁불퉁멧,3.567
+50,Corviknight,item,Occa Berry,오카열매,1.646
+50,Corviknight,item,Electric Seed,일렉트릭시드,1.372
+50,Corviknight,ability,Mirror Armor,미러아머,79.778
+50,Corviknight,ability,Pressure,프레셔,9.111
+50,Corviknight,ability,Unnerve,긴장감,5.333
+50,Corviknight,ability,Hospitality,대접,2.444
+50,Corviknight,teammate,Sneasler,포푸니크,40.951
+50,Corviknight,teammate,Tyranitar,마기라스,39.417
+50,Corviknight,teammate,Excadrill,몰드류,30.215
+50,Corviknight,teammate,Salamence,보만다,29.55
+50,Corviknight,teammate,Indeedee,에써르 (수컷),28.528
+50,Corviknight,teammate,Garchomp,한카리아스,24.233
+50,Corviknight,teammate,Indeedee-F,에써르 (암컷),17.638
+50,Corviknight,teammate,Rillaboom,고릴타,16.769
+51,Annihilape,move,Rage Fist,분노의주먹,34.81
+51,Annihilape,move,Drain Punch,드레인펀치,27.373
+51,Annihilape,move,Protect,방어,23.418
+51,Annihilape,move,Bulk Up,벌크업,19.62
+51,Annihilape,move,Close Combat,인파이트,15.585
+51,Annihilape,move,Ice Punch,냉동펀치,8.386
+51,Annihilape,move,Phantom Force,고스트다이브,6.329
+51,Annihilape,move,Shadow Claw,섀도크루,5.222
+51,Annihilape,move,Coaching,코칭,4.905
+51,Annihilape,move,Rock Slide,스톤샤워,3.877
+51,Annihilape,move,U-turn,유턴,3.481
+51,Annihilape,move,Taunt,도발,2.294
+51,Annihilape,item,Leftovers,먹다남은음식,36.439
+51,Annihilape,item,Sitrus Berry,자뭉열매,28.364
+51,Annihilape,item,Life Orb,생명의구슬,9.731
+51,Annihilape,item,Focus Sash,기합의띠,6.832
+51,Annihilape,item,Rocky Helmet,울퉁불퉁멧,6.004
+51,Annihilape,item,Psychic Seed,사이코시드,5.176
+51,Annihilape,item,Choice Scarf,구애스카프,2.484
+51,Annihilape,item,Grassy Seed,그래스시드,1.656
+51,Annihilape,ability,Defiant,오기,90.933
+51,Annihilape,ability,Trace,트레이스,4.8
+51,Annihilape,ability,Hospitality,대접,4
+51,Annihilape,teammate,Rillaboom,고릴타,32.195
+51,Annihilape,teammate,Indeedee-F,에써르 (암컷),24.327
+51,Annihilape,teammate,Golisopod,갑주무사,20.135
+51,Annihilape,teammate,Salamence,보만다,18.737
+51,Annihilape,teammate,Incineroar,어흥염,18.53
+51,Annihilape,teammate,Armarouge,카디나르마,12.578
+51,Annihilape,teammate,Pelipper,패리퍼,12.371
+51,Annihilape,teammate,Sneasler,포푸니크,12.319
+52,Blastoise,move,Water Spout,해수스파우팅,59.087
+52,Blastoise,move,Protect,방어,36.067
+52,Blastoise,move,Shell Smash,껍질깨기,32.898
+52,Blastoise,move,Dark Pulse,악의파동,24.045
+52,Blastoise,move,Fake Out,속이다,12.861
+52,Blastoise,move,Aura Sphere,파동탄,12.022
+52,Blastoise,move,Terrain Pulse,대지의파동,10.624
+52,Blastoise,move,Ice Beam,냉동빔,6.244
+52,Blastoise,move,Water Pulse,물의파동,4.66
+52,Blastoise,move,Dragon Pulse,용의파동,2.423
+52,Blastoise,move,Muddy Water,탁류,2.05
+52,Blastoise,move,Yawn,하품,0.652
+52,Blastoise,item,Blastoisinite,거북왕나이트,94.896
+52,Blastoise,item,White Herb,하양허브,2.292
+52,Blastoise,item,Leftovers,먹다남은음식,0.938
+52,Blastoise,item,Sitrus Berry,자뭉열매,0.729
+52,Blastoise,item,Life Orb,생명의구슬,0.417
+52,Blastoise,ability,Hospitality,대접,59.756
+52,Blastoise,ability,Rain Dish,젖은접시,23.171
+52,Blastoise,ability,Trace,트레이스,14.634
+52,Blastoise,ability,Water Bubble,수포,1.22
+52,Blastoise,teammate,Indeedee-F,에써르 (암컷),48.642
+52,Blastoise,teammate,Sneasler,포푸니크,32.341
+52,Blastoise,teammate,Rillaboom,고릴타,29.258
+52,Blastoise,teammate,Incineroar,어흥염,26.907
+52,Blastoise,teammate,Farigiraf,키키링,25.235
+52,Blastoise,teammate,Pelipper,패리퍼,24.869
+52,Blastoise,teammate,Golisopod,갑주무사,20.272
+52,Blastoise,teammate,Kingambit,대도각참,19.906
+53,Sinistcha,move,Matcha Gotcha,휘적휘적포,37.473
+53,Sinistcha,move,Rage Powder,분노가루,37.152
+53,Sinistcha,move,Trick Room,트릭룸,17.666
+53,Sinistcha,move,Protect,방어,13.062
+53,Sinistcha,move,Life Dew,생명의물방울,11.884
+53,Sinistcha,move,Shadow Ball,섀도볼,6.424
+53,Sinistcha,move,Strength Sap,힘흡수,4.39
+53,Sinistcha,move,Nasty Plot,나쁜음모,0.749
+53,Sinistcha,move,Scald,열탕,0.749
+53,Sinistcha,move,Calm Mind,명상,0.642
+53,Sinistcha,move,Imprison,봉인,0.428
+53,Sinistcha,move,Psych Up,자기암시,0.428
+53,Sinistcha,item,Sitrus Berry,자뭉열매,44.248
+53,Sinistcha,item,Leftovers,먹다남은음식,24.189
+53,Sinistcha,item,Colbur Berry,마코열매,7.67
+53,Sinistcha,item,Eject Button,탈출버튼,5.9
+53,Sinistcha,item,Kasib Berry,수불열매,4.13
+53,Sinistcha,item,Focus Sash,기합의띠,3.54
+53,Sinistcha,item,Occa Berry,오카열매,3.245
+53,Sinistcha,item,Red Card,레드카드,1.18
+53,Sinistcha,ability,Trace,트레이스,60
+53,Sinistcha,ability,Simple,단순,20
+53,Sinistcha,ability,Intimidate,위협,20
+53,Sinistcha,teammate,Incineroar,어흥염,31.127
+53,Sinistcha,teammate,Golisopod,갑주무사,28.665
+53,Sinistcha,teammate,Pelipper,패리퍼,22.046
+53,Sinistcha,teammate,Sneasler,포푸니크,21.335
+53,Sinistcha,teammate,Indeedee-F,에써르 (암컷),17.779
+53,Sinistcha,teammate,Archaludon,브리두라스,14.77
+53,Sinistcha,teammate,Salamence,보만다,14.168
+53,Sinistcha,teammate,Kingambit,대도각참,13.895
+54,Ceruledge,move,Bitter Blade,원념의칼,59.946
+54,Ceruledge,move,Shadow Sneak,야습,33.333
+54,Ceruledge,move,Protect,방어,27.975
+54,Ceruledge,move,Bulk Up,벌크업,22.525
+54,Ceruledge,move,Swords Dance,칼춤,18.983
+54,Ceruledge,move,Poltergeist,폴터가이스트,10.808
+54,Ceruledge,move,Ally Switch,사이드체인지,4.995
+54,Ceruledge,move,Close Combat,인파이트,2.271
+54,Ceruledge,move,Lava Plume,분연,2.089
+54,Ceruledge,move,Shadow Claw,섀도크루,1.362
+54,Ceruledge,move,Taunt,도발,1.09
+54,Ceruledge,move,Destiny Bond,길동무,0.817
+54,Ceruledge,item,Grassy Seed,그래스시드,30.021
+54,Ceruledge,item,Focus Sash,기합의띠,18.393
+54,Ceruledge,item,Life Orb,생명의구슬,15.222
+54,Ceruledge,item,Colbur Berry,마코열매,14.165
+54,Ceruledge,item,Rocky Helmet,울퉁불퉁멧,5.92
+54,Ceruledge,item,Leftovers,먹다남은음식,5.074
+54,Ceruledge,item,Air Balloon,풍선,3.171
+54,Ceruledge,item,Kasib Berry,수불열매,3.171
+54,Ceruledge,ability,Weak Armor,깨어진갑옷,51.02
+54,Ceruledge,ability,Flash Fire,타오르는불꽃,28.571
+54,Ceruledge,ability,Trace,트레이스,10.204
+54,Ceruledge,ability,Hospitality,대접,9.184
+54,Ceruledge,teammate,Rillaboom,고릴타,50.788
+54,Ceruledge,teammate,Milotic,밀로틱,31.64
+54,Ceruledge,teammate,Sneasler,포푸니크,26.386
+54,Ceruledge,teammate,Raichu,라이츄,22.008
+54,Ceruledge,teammate,Kingambit,대도각참,20.724
+54,Ceruledge,teammate,Lucario,루카리오,17.513
+54,Ceruledge,teammate,Gholdengo,타부자고,16.579
+54,Ceruledge,teammate,Salamence,보만다,16.462
+55,Camerupt,move,Heat Wave,열풍,48.98
+55,Camerupt,move,Earth Power,대지의힘,46.846
+55,Camerupt,move,Protect,방어,29.128
+55,Camerupt,move,Ancient Power,원시의힘,18.182
+55,Camerupt,move,Eruption,분화,15.213
+55,Camerupt,move,Flamethrower,화염방사,0.835
+55,Camerupt,move,Flash Cannon,러스터캐논,0.649
+55,Camerupt,move,Rock Slide,스톤샤워,0.464
+55,Camerupt,move,Growth,성장,0.464
+55,Camerupt,move,Earthquake,지진,0.371
+55,Camerupt,item,Cameruptite,폭타나이트,99.69
+55,Camerupt,ability,Hospitality,대접,65
+55,Camerupt,ability,Trace,트레이스,20
+55,Camerupt,ability,Anger Point,분노의경혈,10
+55,Camerupt,ability,Insomnia,불면,5
+55,Camerupt,teammate,Indeedee-F,에써르 (암컷),51.256
+55,Camerupt,teammate,Farigiraf,키키링,48.744
+55,Camerupt,teammate,Hatterene,브리무음,32.057
+55,Camerupt,teammate,Kingambit,대도각참,25.957
+55,Camerupt,teammate,Torkoal,코터스,20.634
+55,Camerupt,teammate,Rillaboom,고릴타,17.344
+55,Camerupt,teammate,Staraptor,찌르호크,16.627
+55,Camerupt,teammate,Incineroar,어흥염,15.072
+56,Dragapult,move,Shadow Ball,섀도볼,25
+56,Dragapult,move,Draco Meteor,용성군,23.566
+56,Dragapult,move,Will-O-Wisp,도깨비불,21.721
+56,Dragapult,move,Dragon Darts,드래곤애로,18.135
+56,Dragapult,move,Protect,방어,16.906
+56,Dragapult,move,Dragon Cheer,드래곤옐,15.574
+56,Dragapult,move,Phantom Force,고스트다이브,9.939
+56,Dragapult,move,Light Screen,빛의장막,8.197
+56,Dragapult,move,U-turn,유턴,4.611
+56,Dragapult,move,Flamethrower,화염방사,4.201
+56,Dragapult,move,Reflect,리플렉터,3.893
+56,Dragapult,move,Dragon Pulse,용의파동,2.869
+56,Dragapult,item,Life Orb,생명의구슬,72.428
+56,Dragapult,item,Focus Sash,기합의띠,12.963
+56,Dragapult,item,Red Card,레드카드,6.173
+56,Dragapult,item,Sitrus Berry,자뭉열매,1.852
+56,Dragapult,item,Light Clay,빛의점토,0.823
+56,Dragapult,item,White Herb,하양허브,0.823
+56,Dragapult,item,Choice Scarf,구애스카프,0.823
+56,Dragapult,item,Rocky Helmet,울퉁불퉁멧,0.617
+56,Dragapult,ability,Clear Body,클리어바디,72.816
+56,Dragapult,ability,Cursed Body,저주받은바디,17.961
+56,Dragapult,ability,Trace,트레이스,5.825
+56,Dragapult,ability,Hospitality,대접,2.913
+56,Dragapult,teammate,Indeedee-F,에써르 (암컷),34.555
+56,Dragapult,teammate,Rillaboom,고릴타,24.018
+56,Dragapult,teammate,Milotic,밀로틱,18.914
+56,Dragapult,teammate,Sneasler,포푸니크,18.652
+56,Dragapult,teammate,Incineroar,어흥염,17.277
+56,Dragapult,teammate,Golisopod,갑주무사,16.688
+56,Dragapult,teammate,Salamence,보만다,12.5
+56,Dragapult,teammate,Lucario,루카리오,11.649
+57,Kommo-o,move,Clanging Scales,스케일노이즈,53.179
+57,Kommo-o,move,Protect,방어,47.052
+57,Kommo-o,move,Clangorous Soul,소울비트,44.046
+57,Kommo-o,move,Aura Sphere,파동탄,33.41
+57,Kommo-o,move,Flamethrower,화염방사,10.289
+57,Kommo-o,move,Body Press,바디프레스,3.699
+57,Kommo-o,move,Drain Punch,드레인펀치,3.121
+57,Kommo-o,move,Iron Defense,철벽,1.965
+57,Kommo-o,move,Vacuum Wave,진공파,1.734
+57,Kommo-o,move,Dragon Pulse,용의파동,1.272
+57,Kommo-o,move,Boomburst,폭음파,1.04
+57,Kommo-o,move,Draco Meteor,용성군,0.925
+57,Kommo-o,item,Leftovers,먹다남은음식,56.149
+57,Kommo-o,item,Life Orb,생명의구슬,31.23
+57,Kommo-o,item,Grassy Seed,그래스시드,5.502
+57,Kommo-o,item,Sitrus Berry,자뭉열매,4.369
+57,Kommo-o,item,Electric Seed,일렉트릭시드,0.971
+57,Kommo-o,item,Roseli Berry,로셀열매,0.324
+57,Kommo-o,item,Psychic Seed,사이코시드,0.324
+57,Kommo-o,item,White Herb,하양허브,0.324
+57,Kommo-o,ability,Soundproof,방음,76.129
+57,Kommo-o,ability,Hospitality,대접,14.839
+57,Kommo-o,ability,Bulletproof,방탄,3.871
+57,Kommo-o,ability,Trace,트레이스,3.226
+57,Kommo-o,teammate,Rillaboom,고릴타,45.399
+57,Kommo-o,teammate,Incineroar,어흥염,37.821
+57,Kommo-o,teammate,Indeedee-F,에써르 (암컷),26.116
+57,Kommo-o,teammate,Gengar,팬텀,22.53
+57,Kommo-o,teammate,Gardevoir,가디안,21.922
+57,Kommo-o,teammate,Basculegion,대쓰여너 (수컷),21.38
+57,Kommo-o,teammate,Kingambit,대도각참,18.809
+57,Kommo-o,teammate,Whimsicott,엘풍,18.539
+58,Typhlosion-Hisui,move,Eruption,분화,59.669
+58,Typhlosion-Hisui,move,Shadow Ball,섀도볼,18.201
+58,Typhlosion-Hisui,move,Burn Up,불사르기,7.963
+58,Typhlosion-Hisui,move,Heat Wave,열풍,6.515
+58,Typhlosion-Hisui,move,Protect,방어,3.206
+58,Typhlosion-Hisui,move,Lava Plume,분연,2.585
+58,Typhlosion-Hisui,move,Infernal Parade,백귀야행,0.931
+58,Typhlosion-Hisui,move,Overheat,오버히트,0.931
+58,Typhlosion-Hisui,move,Will-O-Wisp,도깨비불,0.724
+58,Typhlosion-Hisui,move,Focus Blast,기합구슬,0.62
+58,Typhlosion-Hisui,move,Flamethrower,화염방사,0.31
+58,Typhlosion-Hisui,item,Choice Scarf,구애스카프,68.919
+58,Typhlosion-Hisui,item,Life Orb,생명의구슬,16.216
+58,Typhlosion-Hisui,item,Leftovers,먹다남은음식,5.405
+58,Typhlosion-Hisui,item,Focus Sash,기합의띠,5.405
+58,Typhlosion-Hisui,item,Electric Seed,일렉트릭시드,1.351
+58,Typhlosion-Hisui,item,Sitrus Berry,자뭉열매,1.351
+58,Typhlosion-Hisui,item,Charcoal,목탄,1.351
+58,Typhlosion-Hisui,ability,Frisk,통찰,98.644
+58,Typhlosion-Hisui,ability,Trace,트레이스,1.356
+58,Typhlosion-Hisui,teammate,Whimsicott,엘풍,61.646
+58,Typhlosion-Hisui,teammate,Garchomp,한카리아스,51.883
+58,Typhlosion-Hisui,teammate,Basculegion,대쓰여너 (수컷),50.488
+58,Typhlosion-Hisui,teammate,Gholdengo,타부자고,50.209
+58,Typhlosion-Hisui,teammate,Staraptor,찌르호크,49.024
+58,Typhlosion-Hisui,teammate,Sneasler,포푸니크,13.947
+58,Typhlosion-Hisui,teammate,Indeedee-F,에써르 (암컷),13.598
+58,Typhlosion-Hisui,teammate,Rillaboom,고릴타,12.831
+59,Blaziken,move,Flare Blitz,플레어드라이브,34.977
+59,Blaziken,move,Protect,방어,32.913
+59,Blaziken,move,Detect,판별,28.44
+59,Blaziken,move,Close Combat,인파이트,23.509
+59,Blaziken,move,Rock Slide,스톤샤워,19.495
+59,Blaziken,move,Heat Wave,열풍,8.257
+59,Blaziken,move,Aura Sphere,파동탄,7.454
+59,Blaziken,move,Coaching,코칭,6.078
+59,Blaziken,move,Swords Dance,칼춤,5.734
+59,Blaziken,move,Overheat,오버히트,2.408
+59,Blaziken,move,Baton Pass,바톤터치,2.179
+59,Blaziken,move,Blaze Kick,브레이즈킥,2.179
+59,Blaziken,item,Blazikenite,번치코나이트,70.826
+59,Blaziken,item,Life Orb,생명의구슬,13.828
+59,Blaziken,item,Focus Sash,기합의띠,9.106
+59,Blaziken,item,Rocky Helmet,울퉁불퉁멧,2.867
+59,Blaziken,item,White Herb,하양허브,0.843
+59,Blaziken,item,Air Balloon,풍선,0.675
+59,Blaziken,item,Psychic Seed,사이코시드,0.675
+59,Blaziken,item,Leftovers,먹다남은음식,0.506
+59,Blaziken,ability,Speed Boost,가속,99.191
+59,Blaziken,teammate,Rillaboom,고릴타,40.948
+59,Blaziken,teammate,Kingambit,대도각참,28.359
+59,Blaziken,teammate,Farigiraf,키키링,21.782
+59,Blaziken,teammate,Indeedee-F,에써르 (암컷),20.863
+59,Blaziken,teammate,Salamence,보만다,20.438
+59,Blaziken,teammate,Basculegion,대쓰여너 (수컷),15.771
+59,Blaziken,teammate,Gholdengo,타부자고,15.205
+59,Blaziken,teammate,Sneasler,포푸니크,13.154
+60,Rotom-Wash,move,Hydro Pump,하이드로펌프,37.091
+60,Rotom-Wash,move,Will-O-Wisp,도깨비불,32.727
+60,Rotom-Wash,move,Thunderbolt,10만볼트,24.97
+60,Rotom-Wash,move,Volt Switch,볼트체인지,20
+60,Rotom-Wash,move,Protect,방어,14.303
+60,Rotom-Wash,move,Electroweb,일렉트릭네트,11.879
+60,Rotom-Wash,move,Light Screen,빛의장막,8.242
+60,Rotom-Wash,move,Discharge,방전,4.97
+60,Rotom-Wash,move,Trick,트릭,3.636
+60,Rotom-Wash,move,Thunder,번개,2.545
+60,Rotom-Wash,move,Thunder Wave,전기자석파,2.061
+60,Rotom-Wash,move,Reflect,리플렉터,1.212
+60,Rotom-Wash,item,Leftovers,먹다남은음식,48.541
+60,Rotom-Wash,item,Sitrus Berry,자뭉열매,33.687
+60,Rotom-Wash,item,Life Orb,생명의구슬,5.305
+60,Rotom-Wash,item,Choice Scarf,구애스카프,2.387
+60,Rotom-Wash,item,Grassy Seed,그래스시드,1.857
+60,Rotom-Wash,item,Rindo Berry,린드열매,1.857
+60,Rotom-Wash,item,Focus Sash,기합의띠,1.061
+60,Rotom-Wash,item,Colbur Berry,마코열매,0.796
+60,Rotom-Wash,ability,Levitate,부유,71.429
+60,Rotom-Wash,ability,Hospitality,대접,17.143
+60,Rotom-Wash,ability,Trace,트레이스,11.429
+60,Rotom-Wash,teammate,Sneasler,포푸니크,29.833
+60,Rotom-Wash,teammate,Rillaboom,고릴타,26.358
+60,Rotom-Wash,teammate,Incineroar,어흥염,24.403
+60,Rotom-Wash,teammate,Garchomp,한카리아스,22.665
+60,Rotom-Wash,teammate,Salamence,보만다,21.434
+60,Rotom-Wash,teammate,Tyranitar,마기라스,17.524
+60,Rotom-Wash,teammate,Kingambit,대도각참,14.337
+60,Rotom-Wash,teammate,Indeedee-F,에써르 (암컷),13.613
+61,Hydreigon,move,Dark Pulse,악의파동,35.499
+61,Hydreigon,move,Draco Meteor,용성군,19.735
+61,Hydreigon,move,Protect,방어,13.478
+61,Hydreigon,move,Earth Power,대지의힘,13.357
+61,Hydreigon,move,Snarl,바크아웃,12.395
+61,Hydreigon,move,Tailwind,순풍,6.98
+61,Hydreigon,move,Heat Wave,열풍,6.137
+61,Hydreigon,move,Flamethrower,화염방사,4.934
+61,Hydreigon,move,Dragon Pulse,용의파동,3.129
+61,Hydreigon,move,U-turn,유턴,1.805
+61,Hydreigon,move,Nasty Plot,나쁜음모,0.963
+61,Hydreigon,move,Focus Blast,기합구슬,0.842
+61,Hydreigon,item,Life Orb,생명의구슬,60.417
+61,Hydreigon,item,Focus Sash,기합의띠,19.444
+61,Hydreigon,item,Choice Scarf,구애스카프,4.861
+61,Hydreigon,item,Leftovers,먹다남은음식,2.778
+61,Hydreigon,item,Sitrus Berry,자뭉열매,2.778
+61,Hydreigon,item,Haban Berry,하반열매,2.083
+61,Hydreigon,item,White Herb,하양허브,2.083
+61,Hydreigon,item,Roseli Berry,로셀열매,2.083
+61,Hydreigon,ability,Levitate,부유,78.049
+61,Hydreigon,ability,Trace,트레이스,17.073
+61,Hydreigon,ability,Hospitality,대접,4.878
+61,Hydreigon,teammate,Rillaboom,고릴타,27.218
+61,Hydreigon,teammate,Sneasler,포푸니크,25.625
+61,Hydreigon,teammate,Metagross,메타그로스,25.171
+61,Hydreigon,teammate,Indeedee-F,에써르 (암컷),21.531
+61,Hydreigon,teammate,Golisopod,갑주무사,15.315
+61,Hydreigon,teammate,Milotic,밀로틱,14.708
+61,Hydreigon,teammate,Pelipper,패리퍼,13.798
+61,Hydreigon,teammate,Charizard,리자몽,12.434
+62,Sirfetch'd,move,Meteor Assault,스타어설트,34.585
+62,Sirfetch'd,move,Close Combat,인파이트,29.793
+62,Sirfetch'd,move,Detect,판별,14.508
+62,Sirfetch'd,move,First Impression,만나자마자,10.104
+62,Sirfetch'd,move,Feint,페인트,8.031
+62,Sirfetch'd,move,Protect,방어,6.995
+62,Sirfetch'd,move,Leaf Blade,리프블레이드,6.088
+62,Sirfetch'd,move,Brave Bird,브레이브버드,4.275
+62,Sirfetch'd,move,Simple Beam,심플빔,3.109
+62,Sirfetch'd,move,Knock Off,탁쳐서떨구기,2.85
+62,Sirfetch'd,move,Night Slash,깜짝베기,2.72
+62,Sirfetch'd,move,Dual Wingbeat,더블윙,1.684
+62,Sirfetch'd,item,Life Orb,생명의구슬,58.065
+62,Sirfetch'd,item,Rocky Helmet,울퉁불퉁멧,13.978
+62,Sirfetch'd,item,Focus Sash,기합의띠,10.753
+62,Sirfetch'd,item,Leek,대파,7.527
+62,Sirfetch'd,item,Choice Scarf,구애스카프,3.226
+62,Sirfetch'd,item,Leftovers,먹다남은음식,3.226
+62,Sirfetch'd,item,Sharp Beak,예리한부리,1.075
+62,Sirfetch'd,item,Eject Button,탈출버튼,1.075
+62,Sirfetch'd,ability,Scrappy,배짱,93.529
+62,Sirfetch'd,ability,Trace,트레이스,4.706
+62,Sirfetch'd,ability,Pickpocket,나쁜손버릇,0.588
+62,Sirfetch'd,ability,Steadfast,불굴의마음,0.588
+62,Sirfetch'd,teammate,Golisopod,갑주무사,38.523
+62,Sirfetch'd,teammate,Farigiraf,키키링,32.665
+62,Sirfetch'd,teammate,Indeedee-F,에써르 (암컷),29.454
+62,Sirfetch'd,teammate,Incineroar,어흥염,21.429
+62,Sirfetch'd,teammate,Salamence,보만다,19.743
+62,Sirfetch'd,teammate,Whimsicott,엘풍,18.138
+62,Sirfetch'd,teammate,Rillaboom,고릴타,17.576
+62,Sirfetch'd,teammate,Armarouge,카디나르마,12.52
+63,Mawile,move,Play Rough,치근거리기,53.612
+63,Mawile,move,Protect,방어,34.029
+63,Mawile,move,Sucker Punch,기습,31.782
+63,Mawile,move,Iron Head,아이언헤드,24.559
+63,Mawile,move,Rock Slide,스톤샤워,15.088
+63,Mawile,move,Swords Dance,칼춤,8.026
+63,Mawile,move,Knock Off,탁쳐서떨구기,2.889
+63,Mawile,move,Fire Fang,불꽃엄니,1.766
+63,Mawile,move,Brick Break,깨트리다,1.605
+63,Mawile,move,Ice Punch,냉동펀치,1.124
+63,Mawile,move,Thunder Punch,번개펀치,0.642
+63,Mawile,move,Substitute,대타출동,0.482
+63,Mawile,item,Mawilite,입치트나이트,95.833
+63,Mawile,item,Rocky Helmet,울퉁불퉁멧,3.986
+63,Mawile,ability,Intimidate,위협,81.471
+63,Mawile,ability,Hyper Cutter,괴력집게,13.896
+63,Mawile,ability,Hospitality,대접,3.27
+63,Mawile,ability,Trace,트레이스,1.09
+63,Mawile,teammate,Indeedee-F,에써르 (암컷),37.886
+63,Mawile,teammate,Farigiraf,키키링,36.016
+63,Mawile,teammate,Incineroar,어흥염,25.61
+63,Mawile,teammate,Torkoal,코터스,24.959
+63,Mawile,teammate,Rillaboom,고릴타,20.244
+63,Mawile,teammate,Sneasler,포푸니크,19.024
+63,Mawile,teammate,Hatterene,브리무음,18.699
+63,Mawile,teammate,Armarouge,카디나르마,14.797
+64,Pincurchin,move,Rising Voltage,라이징볼트,53.506
+64,Pincurchin,move,Sucker Punch,기습,13.776
+64,Pincurchin,move,Protect,방어,13.407
+64,Pincurchin,move,Zing Zap,찌리리따끔따끔,9.102
+64,Pincurchin,move,Thunder Wave,전기자석파,7.872
+64,Pincurchin,move,Electroweb,일렉트릭네트,7.38
+64,Pincurchin,move,Scald,열탕,6.765
+64,Pincurchin,move,Acupressure,경혈찌르기,5.535
+64,Pincurchin,move,Discharge,방전,4.305
+64,Pincurchin,move,Toxic Spikes,독압정,3.198
+64,Pincurchin,move,Recover,HP회복,2.952
+64,Pincurchin,move,Memento,추억의선물,1.722
+64,Pincurchin,item,Electric Seed,일렉트릭시드,36.134
+64,Pincurchin,item,Life Orb,생명의구슬,26.05
+64,Pincurchin,item,Air Balloon,풍선,12.885
+64,Pincurchin,item,Sitrus Berry,자뭉열매,7.563
+64,Pincurchin,item,Leftovers,먹다남은음식,7.283
+64,Pincurchin,item,Eject Button,탈출버튼,5.322
+64,Pincurchin,item,Focus Sash,기합의띠,1.12
+64,Pincurchin,item,Rocky Helmet,울퉁불퉁멧,0.84
+64,Pincurchin,ability,Electric Surge,일렉트릭메이커,98.377
+64,Pincurchin,ability,Trace,트레이스,0.874
+64,Pincurchin,ability,Hospitality,대접,0.749
+64,Pincurchin,teammate,Raichu-Alola,알로라 라이츄,25.85
+64,Pincurchin,teammate,Garchomp,한카리아스,24.235
+64,Pincurchin,teammate,Incineroar,어흥염,22.449
+64,Pincurchin,teammate,Farigiraf,키키링,20.748
+64,Pincurchin,teammate,Indeedee-F,에써르 (암컷),19.303
+64,Pincurchin,teammate,Lucario,루카리오,18.452
+64,Pincurchin,teammate,Golisopod,갑주무사,16.837
+64,Pincurchin,teammate,Froslass,눈여아,16.412
+65,Clefable,move,Follow Me,날따름,57.295
+65,Clefable,move,Moonblast,문포스,23.556
+65,Clefable,move,Skill Swap,스킬스웹,16.413
+65,Clefable,move,Protect,방어,14.59
+65,Clefable,move,Life Dew,생명의물방울,6.535
+65,Clefable,move,Dazzling Gleam,매지컬샤인,6.231
+65,Clefable,move,Helping Hand,도우미,5.775
+65,Clefable,move,Thunder Wave,전기자석파,5.471
+65,Clefable,move,Calm Mind,명상,3.647
+65,Clefable,move,Flamethrower,화염방사,3.647
+65,Clefable,move,Encore,앵콜,2.736
+65,Clefable,move,Draining Kiss,드레인키스,2.736
+65,Clefable,item,Leftovers,먹다남은음식,53.825
+65,Clefable,item,Sitrus Berry,자뭉열매,22.951
+65,Clefable,item,Clefablite,픽시나이트,16.94
+65,Clefable,item,Babiri Berry,바리비열매,1.366
+65,Clefable,item,Grassy Seed,그래스시드,1.093
+65,Clefable,item,Focus Sash,기합의띠,0.546
+65,Clefable,item,Red Card,레드카드,0.546
+65,Clefable,item,Psychic Seed,사이코시드,0.546
+65,Clefable,ability,Hospitality,대접,32.258
+65,Clefable,ability,Intimidate,위협,22.581
+65,Clefable,ability,Cute Charm,헤롱헤롱바디,16.129
+65,Clefable,ability,Simple,단순,9.677
+65,Clefable,teammate,Lucario,루카리오,30.487
+65,Clefable,teammate,Rillaboom,고릴타,26.985
+65,Clefable,teammate,Incineroar,어흥염,26.815
+65,Clefable,teammate,Sneasler,포푸니크,16.14
+65,Clefable,teammate,Sinistcha,그우린차,13.066
+65,Clefable,teammate,Ninetales-Alola,알로라 나인테일,13.066
+65,Clefable,teammate,Salamence,보만다,12.212
+65,Clefable,teammate,Garchomp,한카리아스,11.272
+66,Alakazam,move,Expanding Force,와이드포스,61.885
+66,Alakazam,move,Protect,방어,34.177
+66,Alakazam,move,Dazzling Gleam,매지컬샤인,14.346
+66,Alakazam,move,Focus Blast,기합구슬,10.408
+66,Alakazam,move,Speed Swap,스피드스웹,8.439
+66,Alakazam,move,Nasty Plot,나쁜음모,8.298
+66,Alakazam,move,Shadow Ball,섀도볼,7.032
+66,Alakazam,move,Encore,앵콜,2.25
+66,Alakazam,move,Calm Mind,명상,1.969
+66,Alakazam,move,Taunt,도발,1.828
+66,Alakazam,move,Trick Room,트릭룸,1.828
+66,Alakazam,item,Alakazite,후디나이트,90.328
+66,Alakazam,item,Focus Sash,기합의띠,6.934
+66,Alakazam,item,Life Orb,생명의구슬,1.46
+66,Alakazam,item,Psychic Seed,사이코시드,0.73
+66,Alakazam,ability,Intimidate,위협,6.718
+66,Alakazam,ability,Grassy Surge,그래스메이커,6.334
+66,Alakazam,ability,Psychic Surge,사이코메이커,6.142
+66,Alakazam,ability,Inner Focus,정신력,5.758
+66,Alakazam,teammate,Indeedee-F,에써르 (암컷),69.198
+66,Alakazam,teammate,Sneasler,포푸니크,32.528
+66,Alakazam,teammate,Torkoal,코터스,15.186
+66,Alakazam,teammate,Kingambit,대도각참,14.668
+66,Alakazam,teammate,Golisopod,갑주무사,14.495
+66,Alakazam,teammate,Incineroar,어흥염,13.632
+66,Alakazam,teammate,Indeedee,에써르 (수컷),13.374
+66,Alakazam,teammate,Garchomp,한카리아스,11.734
+67,Maushold,move,Follow Me,날따름,48.666
+67,Maushold,move,Population Bomb,찍찍베기,28.414
+67,Maushold,move,Protect,방어,25.589
+67,Maushold,move,Super Fang,분노의앞니,14.914
+67,Maushold,move,Beat Up,집단구타,11.774
+67,Maushold,move,Taunt,도발,8.006
+67,Maushold,move,Encore,앵콜,5.808
+67,Maushold,move,Helping Hand,도우미,4.396
+67,Maushold,move,Feint,페인트,2.512
+67,Maushold,move,Tidy Up,정리정돈,1.57
+67,Maushold,move,Thunder Wave,전기자석파,1.57
+67,Maushold,move,After You,당신먼저,1.413
+67,Maushold,item,Focus Sash,기합의띠,40.789
+67,Maushold,item,Chople Berry,로플열매,19.079
+67,Maushold,item,Sitrus Berry,자뭉열매,15.789
+67,Maushold,item,Rocky Helmet,울퉁불퉁멧,11.842
+67,Maushold,item,Grassy Seed,그래스시드,3.289
+67,Maushold,item,Leftovers,먹다남은음식,1.974
+67,Maushold,item,Life Orb,생명의구슬,1.974
+67,Maushold,item,Wide Lens,광각렌즈,1.316
+67,Maushold,ability,Trace,트레이스,36.364
+67,Maushold,ability,Hospitality,대접,27.273
+67,Maushold,ability,Cheek Pouch,볼주머니,9.091
+67,Maushold,ability,Pickpocket,나쁜손버릇,9.091
+67,Maushold,teammate,Rillaboom,고릴타,36.497
+67,Maushold,teammate,Sneasler,포푸니크,17.343
+67,Maushold,teammate,Salamence,보만다,16.911
+67,Maushold,teammate,Incineroar,어흥염,16.221
+67,Maushold,teammate,Indeedee-F,에써르 (암컷),15.186
+67,Maushold,teammate,Annihilape,저승갓숭,14.236
+67,Maushold,teammate,Golisopod,갑주무사,13.374
+67,Maushold,teammate,Kingambit,대도각참,11.303
+68,Gallade,move,Sacred Sword,성스러운칼,47.761
+68,Gallade,move,Psycho Cut,사이코커터,32.687
+68,Gallade,move,Wide Guard,와이드가드,18.955
+68,Gallade,move,Trick Room,트릭룸,14.776
+68,Gallade,move,Protect,방어,11.642
+68,Gallade,move,Drain Punch,드레인펀치,4.328
+68,Gallade,move,Night Slash,깜짝베기,3.134
+68,Gallade,move,Leaf Blade,리프블레이드,2.836
+68,Gallade,move,Shadow Sneak,야습,2.388
+68,Gallade,move,Knock Off,탁쳐서떨구기,2.09
+68,Gallade,move,Rock Slide,스톤샤워,1.642
+68,Gallade,move,Bulk Up,벌크업,1.194
+68,Gallade,item,Life Orb,생명의구슬,26.621
+68,Gallade,item,Galladite,엘레이드나이트,24.573
+68,Gallade,item,Sitrus Berry,자뭉열매,20.819
+68,Gallade,item,Focus Sash,기합의띠,8.191
+68,Gallade,item,Psychic Seed,사이코시드,4.778
+68,Gallade,item,Rocky Helmet,울퉁불퉁멧,4.778
+68,Gallade,item,White Herb,하양허브,4.096
+68,Gallade,item,Grassy Seed,그래스시드,2.389
+68,Gallade,ability,Justified,정의의마음,50
+68,Gallade,ability,Inner Focus,정신력,20.833
+68,Gallade,ability,Hospitality,대접,16.667
+68,Gallade,ability,Trace,트레이스,10.417
+68,Gallade,teammate,Indeedee-F,에써르 (암컷),49.34
+68,Gallade,teammate,Hatterene,브리무음,27.089
+68,Gallade,teammate,Camerupt,폭타,20.229
+68,Gallade,teammate,Kingambit,대도각참,17.766
+68,Gallade,teammate,Torkoal,코터스,16.271
+68,Gallade,teammate,Golisopod,갑주무사,15.831
+68,Gallade,teammate,Armarouge,카디나르마,15.215
+68,Gallade,teammate,Salamence,보만다,14.6
+69,Toxapex,move,Baneful Bunker,토치카,56.766
+69,Toxapex,move,Infestation,엉겨붙기,53.251
+69,Toxapex,move,Toxic,맹독,53.076
+69,Toxapex,move,Wide Guard,와이드가드,26.011
+69,Toxapex,move,Recover,HP회복,10.369
+69,Toxapex,move,Muddy Water,탁류,10.369
+69,Toxapex,move,Venoshock,베놈쇼크,5.272
+69,Toxapex,move,Toxic Spikes,독압정,2.812
+69,Toxapex,move,Liquidation,아쿠아브레이크,2.109
+69,Toxapex,move,Stockpile,비축하기,2.109
+69,Toxapex,move,Haze,흑안개,1.757
+69,Toxapex,move,Chilling Water,찬물끼얹기,1.582
+69,Toxapex,item,Leftovers,먹다남은음식,83.152
+69,Toxapex,item,Sitrus Berry,자뭉열매,4.62
+69,Toxapex,item,Eject Button,탈출버튼,2.717
+69,Toxapex,item,Choice Scarf,구애스카프,1.359
+69,Toxapex,item,Poison Barb,독바늘,1.359
+69,Toxapex,item,Light Clay,빛의점토,0.815
+69,Toxapex,item,Payapa Berry,야파열매,0.815
+69,Toxapex,item,Red Card,레드카드,0.815
+69,Toxapex,ability,Regenerator,재생력,88.889
+69,Toxapex,ability,Hospitality,대접,4.938
+69,Toxapex,ability,Trace,트레이스,3.704
+69,Toxapex,ability,Simple,단순,1.235
+69,Toxapex,teammate,Rillaboom,고릴타,31.011
+69,Toxapex,teammate,Incineroar,어흥염,30.913
+69,Toxapex,teammate,Sneasler,포푸니크,20.118
+69,Toxapex,teammate,Garchomp,한카리아스,15.407
+69,Toxapex,teammate,Glimmora,킬라플로르,14.622
+69,Toxapex,teammate,Charizard,리자몽,14.23
+69,Toxapex,teammate,Golisopod,갑주무사,13.837
+69,Toxapex,teammate,Overqwil,장침바루,13.346
+70,Golurk,move,Headlong Rush,들이받기,55.388
+70,Golurk,move,Poltergeist,폴터가이스트,33.333
+70,Golurk,move,Protect,방어,28.822
+70,Golurk,move,Ice Punch,냉동펀치,17.544
+70,Golurk,move,Drain Punch,드레인펀치,3.509
+70,Golurk,move,High Horsepower,10만마력,2.757
+70,Golurk,move,Phantom Force,고스트다이브,2.506
+70,Golurk,move,Earthquake,지진,2.506
+70,Golurk,move,Rock Slide,스톤샤워,1.754
+70,Golurk,move,Dynamic Punch,폭발펀치,1.504
+70,Golurk,move,Stone Edge,스톤에지,1.253
+70,Golurk,move,Fire Punch,불꽃펀치,1.003
+70,Golurk,item,Golurkite,골루그나이트,92.918
+70,Golurk,item,Rocky Helmet,울퉁불퉁멧,4.533
+70,Golurk,item,Life Orb,생명의구슬,0.85
+70,Golurk,ability,Unseen Fist,보이지않는주먹,73.016
+70,Golurk,ability,Trace,트레이스,17.46
+70,Golurk,ability,Hospitality,대접,9.524
+70,Golurk,teammate,Farigiraf,키키링,76.604
+70,Golurk,teammate,Torkoal,코터스,76.407
+70,Golurk,teammate,Incineroar,어흥염,74.432
+70,Golurk,teammate,Sneasler,포푸니크,71.668
+70,Golurk,teammate,Sylveon,님피아,69.398
+70,Golurk,teammate,Golisopod,갑주무사,7.897
+70,Golurk,teammate,Indeedee-F,에써르 (암컷),7.502
+70,Golurk,teammate,Sinistcha,그우린차,6.811
+71,Scovillain,move,Rage Powder,분노가루,57.559
+71,Scovillain,move,Protect,방어,45.719
+71,Scovillain,move,Overheat,오버히트,24.954
+71,Scovillain,move,Giga Drain,기가드레인,19.854
+71,Scovillain,move,Leech Seed,씨뿌리기,19.308
+71,Scovillain,move,Flamethrower,화염방사,14.936
+71,Scovillain,move,Leaf Storm,리프스톰,3.461
+71,Scovillain,move,Fire Spin,회오리불꽃,1.821
+71,Scovillain,move,Energy Ball,에너지볼,1.639
+71,Scovillain,move,Spicy Extract,하바네로엑기스,1.457
+71,Scovillain,move,Solar Beam,솔라빔,1.093
+71,Scovillain,move,Will-O-Wisp,도깨비불,0.911
+71,Scovillain,item,Scovillainite,스코빌런나이트,97.124
+71,Scovillain,item,Focus Sash,기합의띠,1.549
+71,Scovillain,item,Life Orb,생명의구슬,0.664
+71,Scovillain,ability,Spicy Spray,하바네로분출,83.893
+71,Scovillain,ability,Moody,변덕쟁이,16.107
+71,Scovillain,teammate,Sneasler,포푸니크,44.577
+71,Scovillain,teammate,Kingambit,대도각참,35.025
+71,Scovillain,teammate,Basculegion,대쓰여너 (수컷),32.338
+71,Scovillain,teammate,Froslass,눈여아,23.184
+71,Scovillain,teammate,Lycanroc,루가루암 (한낮의 모습),17.612
+71,Scovillain,teammate,Rillaboom,고릴타,16.318
+71,Scovillain,teammate,Incineroar,어흥염,12.338
+71,Scovillain,teammate,Indeedee-F,에써르 (암컷),11.542
+72,Tsareena,move,Triple Axel,트리플악셀,35.253
+72,Tsareena,move,Power Whip,파워휩,20.593
+72,Tsareena,move,Protect,방어,19.721
+72,Tsareena,move,Trop Kick,트로피컬킥,11.867
+72,Tsareena,move,Low Kick,안다리걸기,10.471
+72,Tsareena,move,High Jump Kick,무릎차기,8.028
+72,Tsareena,move,U-turn,유턴,6.806
+72,Tsareena,move,Knock Off,탁쳐서떨구기,4.014
+72,Tsareena,move,Taunt,도발,2.967
+72,Tsareena,move,Helping Hand,도우미,2.967
+72,Tsareena,move,Acupressure,경혈찌르기,2.618
+72,Tsareena,move,Zen Headbutt,사념의박치기,1.047
+72,Tsareena,item,Focus Sash,기합의띠,23.333
+72,Tsareena,item,Sitrus Berry,자뭉열매,20
+72,Tsareena,item,Rocky Helmet,울퉁불퉁멧,18.889
+72,Tsareena,item,Life Orb,생명의구슬,17.778
+72,Tsareena,item,Leftovers,먹다남은음식,5.556
+72,Tsareena,item,Choice Scarf,구애스카프,2.222
+72,Tsareena,item,Red Card,레드카드,2.222
+72,Tsareena,item,Expert Belt,달인의띠,2.222
+72,Tsareena,ability,Trace,트레이스,87.5
+72,Tsareena,ability,Mold Breaker,틀깨기,12.5
+72,Tsareena,teammate,Raichu,라이츄,24.061
+72,Tsareena,teammate,Garchomp,한카리아스,20.914
+72,Tsareena,teammate,Kingambit,대도각참,16.447
+72,Tsareena,teammate,Sneasler,포푸니크,15.838
+72,Tsareena,teammate,Aerodactyl,프테라,15.838
+72,Tsareena,teammate,Salamence,보만다,14.112
+72,Tsareena,teammate,Indeedee-F,에써르 (암컷),12.995
+72,Tsareena,teammate,Absol,앱솔,11.168
+73,Weavile,move,Fake Out,속이다,44.427
+73,Weavile,move,Knock Off,탁쳐서떨구기,39.319
+73,Weavile,move,Ice Spinner,아이스스피너,23.684
+73,Weavile,move,Triple Axel,트리플악셀,15.015
+73,Weavile,move,Protect,방어,14.706
+73,Weavile,move,Throat Chop,지옥찌르기,8.359
+73,Weavile,move,Low Kick,안다리걸기,8.204
+73,Weavile,move,Icicle Crash,고드름떨구기,3.715
+73,Weavile,move,Ice Shard,얼음뭉치,3.096
+73,Weavile,move,Taunt,도발,2.632
+73,Weavile,move,Swords Dance,칼춤,1.548
+73,Weavile,move,Fling,내던지기,1.393
+73,Weavile,item,Focus Sash,기합의띠,73.154
+73,Weavile,item,Life Orb,생명의구슬,10.403
+73,Weavile,item,Rocky Helmet,울퉁불퉁멧,7.383
+73,Weavile,item,King's Rock,왕의징표석,2.349
+73,Weavile,item,Sitrus Berry,자뭉열매,1.342
+73,Weavile,item,Miracle Seed,기적의씨,1.007
+73,Weavile,item,Leftovers,먹다남은음식,0.671
+73,Weavile,item,Chople Berry,로플열매,0.671
+73,Weavile,ability,Pressure,프레셔,96.346
+73,Weavile,ability,Hospitality,대접,1.993
+73,Weavile,ability,Trace,트레이스,1.661
+73,Weavile,teammate,Rillaboom,고릴타,20.296
+73,Weavile,teammate,Sinistcha,그우린차,15.539
+73,Weavile,teammate,Salamence,보만다,13.742
+73,Weavile,teammate,Milotic,밀로틱,13.636
+73,Weavile,teammate,Raichu,라이츄,13.214
+73,Weavile,teammate,Gholdengo,타부자고,11.734
+73,Weavile,teammate,Indeedee-F,에써르 (암컷),11.522
+73,Weavile,teammate,Lucario,루카리오,11.416
+74,Aegislash,move,King's Shield,킹실드,44.024
+74,Aegislash,move,Poltergeist,폴터가이스트,24.9
+74,Aegislash,move,Iron Head,아이언헤드,24.502
+74,Aegislash,move,Wide Guard,와이드가드,20.518
+74,Aegislash,move,Shadow Sneak,야습,19.323
+74,Aegislash,move,Shadow Ball,섀도볼,14.343
+74,Aegislash,move,Sacred Sword,성스러운칼,11.753
+74,Aegislash,move,Swords Dance,칼춤,7.968
+74,Aegislash,move,Flash Cannon,러스터캐논,7.57
+74,Aegislash,move,Close Combat,인파이트,7.57
+74,Aegislash,move,Shadow Claw,섀도크루,3.984
+74,Aegislash,move,Substitute,대타출동,1.594
+74,Aegislash,item,Leftovers,먹다남은음식,31.646
+74,Aegislash,item,Life Orb,생명의구슬,29.536
+74,Aegislash,item,Focus Sash,기합의띠,11.392
+74,Aegislash,item,Air Balloon,풍선,10.127
+74,Aegislash,item,Rocky Helmet,울퉁불퉁멧,4.219
+74,Aegislash,item,Sitrus Berry,자뭉열매,3.797
+74,Aegislash,item,Choice Scarf,구애스카프,1.688
+74,Aegislash,item,Colbur Berry,마코열매,1.688
+74,Aegislash,ability,Hospitality,대접,100
+74,Aegislash,teammate,Rillaboom,고릴타,25.166
+74,Aegislash,teammate,Garchomp,한카리아스,22.075
+74,Aegislash,teammate,Indeedee-F,에써르 (암컷),18.433
+74,Aegislash,teammate,Salamence,보만다,17.991
+74,Aegislash,teammate,Incineroar,어흥염,16.556
+74,Aegislash,teammate,Sneasler,포푸니크,15.453
+74,Aegislash,teammate,Farigiraf,키키링,14.68
+74,Aegislash,teammate,Milotic,밀로틱,14.459
+75,Grapploct,move,Storm Throw,업어후리기,57.746
+75,Grapploct,move,Octolock,문어굳히기,21.831
+75,Grapploct,move,Mach Punch,마하펀치,16.549
+75,Grapploct,move,Detect,판별,15.141
+75,Grapploct,move,Protect,방어,12.5
+75,Grapploct,move,Feint,페인트,7.042
+75,Grapploct,move,Coaching,코칭,4.577
+75,Grapploct,move,Ice Punch,냉동펀치,4.577
+75,Grapploct,move,Payback,보복,4.401
+75,Grapploct,move,Circle Throw,배대뒤치기,3.873
+75,Grapploct,move,Sucker Punch,기습,3.521
+75,Grapploct,move,Brutal Swing,세차게휘두르기,2.641
+75,Grapploct,item,Life Orb,생명의구슬,44.928
+75,Grapploct,item,Psychic Seed,사이코시드,18.357
+75,Grapploct,item,Sitrus Berry,자뭉열매,10.628
+75,Grapploct,item,Focus Sash,기합의띠,5.797
+75,Grapploct,item,Leftovers,먹다남은음식,5.314
+75,Grapploct,item,Rocky Helmet,울퉁불퉁멧,5.314
+75,Grapploct,item,Red Card,레드카드,3.865
+75,Grapploct,item,Grassy Seed,그래스시드,1.932
+75,Grapploct,ability,Hospitality,대접,40
+75,Grapploct,ability,Trace,트레이스,40
+75,Grapploct,ability,Pickpocket,나쁜손버릇,20
+75,Grapploct,teammate,Indeedee-F,에써르 (암컷),33.148
+75,Grapploct,teammate,Golisopod,갑주무사,31.479
+75,Grapploct,teammate,Farigiraf,키키링,28.365
+75,Grapploct,teammate,Incineroar,어흥염,25.028
+75,Grapploct,teammate,Rillaboom,고릴타,15.239
+75,Grapploct,teammate,Malamar,칼라마네로,14.572
+75,Grapploct,teammate,Staraptor,찌르호크,14.238
+75,Grapploct,teammate,Torkoal,코터스,13.348
+76,Meganium,move,Weather Ball,웨더볼,49.772
+76,Meganium,move,Protect,방어,44.292
+76,Meganium,move,Dazzling Gleam,매지컬샤인,42.009
+76,Meganium,move,Solar Beam,솔라빔,35.388
+76,Meganium,move,Earth Power,대지의힘,3.881
+76,Meganium,move,Synthesis,광합성,1.826
+76,Meganium,move,Pollen Puff,꽃가루경단,0.685
+76,Meganium,move,Ancient Power,원시의힘,0.457
+76,Meganium,item,Meganiumite,메가니움나이트,99.75
+76,Meganium,ability,Trace,트레이스,62.5
+76,Meganium,ability,Leaf Guard,리프가드,12.5
+76,Meganium,ability,Hospitality,대접,12.5
+76,Meganium,ability,Intimidate,위협,12.5
+76,Meganium,teammate,Pelipper,패리퍼,40.832
+76,Meganium,teammate,Indeedee-F,에써르 (암컷),26.209
+76,Meganium,teammate,Archaludon,브리두라스,23.847
+76,Meganium,teammate,Sneasler,포푸니크,20.922
+76,Meganium,teammate,Milotic,밀로틱,18.335
+76,Meganium,teammate,Farigiraf,키키링,15.636
+76,Meganium,teammate,Basculegion,대쓰여너 (수컷),15.523
+76,Meganium,teammate,Incineroar,어흥염,14.623
+77,Mamoswine,move,High Horsepower,10만마력,42.116
+77,Mamoswine,move,Protect,방어,31.138
+77,Mamoswine,move,Ice Shard,얼음뭉치,27.345
+77,Mamoswine,move,Icicle Crash,고드름떨구기,23.154
+77,Mamoswine,move,Earthquake,지진,17.964
+77,Mamoswine,move,Rock Slide,스톤샤워,7.585
+77,Mamoswine,move,Knock Off,탁쳐서떨구기,1.397
+77,Mamoswine,move,Icicle Spear,고드름침,1.198
+77,Mamoswine,move,Stomping Tantrum,분함의발구르기,0.798
+77,Mamoswine,move,Trailblaze,개척하기,0.798
+77,Mamoswine,move,Stone Edge,스톤에지,0.599
+77,Mamoswine,move,Freeze-Dry,프리즈드라이,0.599
+77,Mamoswine,item,Life Orb,생명의구슬,48.913
+77,Mamoswine,item,Focus Sash,기합의띠,42.935
+77,Mamoswine,item,Rocky Helmet,울퉁불퉁멧,4.348
+77,Mamoswine,item,Leftovers,먹다남은음식,1.63
+77,Mamoswine,item,Sitrus Berry,자뭉열매,0.543
+77,Mamoswine,item,Chople Berry,로플열매,0.543
+77,Mamoswine,item,Choice Scarf,구애스카프,0.543
+77,Mamoswine,item,Expert Belt,달인의띠,0.543
+77,Mamoswine,ability,Oblivious,둔감,97.222
+77,Mamoswine,ability,Trace,트레이스,2.778
+77,Mamoswine,teammate,Indeedee-F,에써르 (암컷),24.773
+77,Mamoswine,teammate,Rillaboom,고릴타,22.273
+77,Mamoswine,teammate,Sneasler,포푸니크,20.114
+77,Mamoswine,teammate,Gardevoir,가디안,19.205
+77,Mamoswine,teammate,Farigiraf,키키링,15.114
+77,Mamoswine,teammate,Salamence,보만다,14.659
+77,Mamoswine,teammate,Incineroar,어흥염,14.318
+77,Mamoswine,teammate,Ninetales-Alola,알로라 나인테일,12.841
+78,Maushold,move,Follow Me,날따름,52.5
+78,Maushold,move,Population Bomb,찍찍베기,22.917
+78,Maushold,move,Protect,방어,19.792
+78,Maushold,move,Super Fang,분노의앞니,12.5
+78,Maushold,move,Taunt,도발,10.833
+78,Maushold,move,Beat Up,집단구타,8.542
+78,Maushold,move,Encore,앵콜,8.125
+78,Maushold,move,Helping Hand,도우미,5.417
+78,Maushold,move,Feint,페인트,4.583
+78,Maushold,move,After You,당신먼저,1.875
+78,Maushold,move,Thunder Wave,전기자석파,1.667
+78,Maushold,move,Charm,애교부리기,1.458
+78,Maushold,item,Focus Sash,기합의띠,32.353
+78,Maushold,item,Chople Berry,로플열매,30.392
+78,Maushold,item,Sitrus Berry,자뭉열매,12.745
+78,Maushold,item,Rocky Helmet,울퉁불퉁멧,9.804
+78,Maushold,item,Wide Lens,광각렌즈,2.941
+78,Maushold,item,Eject Button,탈출버튼,1.961
+78,Maushold,item,Leftovers,먹다남은음식,1.961
+78,Maushold,item,Red Card,레드카드,1.961
+78,Maushold,ability,Hospitality,대접,33.333
+78,Maushold,ability,Trace,트레이스,33.333
+78,Maushold,ability,Cheek Pouch,볼주머니,33.333
+78,Maushold,teammate,Rillaboom,고릴타,34.226
+78,Maushold,teammate,Incineroar,어흥염,20.955
+78,Maushold,teammate,Sneasler,포푸니크,16.647
+78,Maushold,teammate,Indeedee-F,에써르 (암컷),15.367
+78,Maushold,teammate,Farigiraf,키키링,13.737
+78,Maushold,teammate,Salamence,보만다,13.388
+78,Maushold,teammate,Absol,앱솔,13.271
+78,Maushold,teammate,Sinistcha,그우린차,12.689
+79,Inteleon,move,Snipe Shot,노려맞히기,64.332
+79,Inteleon,move,Protect,방어,34.365
+79,Inteleon,move,Focus Energy,기충전,29.479
+79,Inteleon,move,Ice Beam,냉동빔,24.593
+79,Inteleon,move,Dark Pulse,악의파동,5.7
+79,Inteleon,move,Muddy Water,탁류,4.56
+79,Inteleon,move,Air Cutter,에어컷터,2.443
+79,Inteleon,move,Icy Wind,얼다바람,2.28
+79,Inteleon,move,Substitute,대타출동,2.28
+79,Inteleon,move,Soak,물붓기,1.792
+79,Inteleon,move,Vacuum Wave,진공파,1.629
+79,Inteleon,move,Taunt,도발,1.466
+79,Inteleon,item,Life Orb,생명의구슬,40
+79,Inteleon,item,Focus Sash,기합의띠,38.667
+79,Inteleon,item,Scope Lens,초점렌즈,12
+79,Inteleon,item,Red Card,레드카드,2.667
+79,Inteleon,item,Quick Claw,선제공격손톱,1.333
+79,Inteleon,item,Iron Ball,검은철구,1.333
+79,Inteleon,item,Rindo Berry,린드열매,1.333
+79,Inteleon,item,Grassy Seed,그래스시드,1.333
+79,Inteleon,ability,Trace,트레이스,50
+79,Inteleon,ability,Hospitality,대접,25
+79,Inteleon,ability,Receiver,리시버,12.5
+79,Inteleon,ability,Simple,단순,12.5
+79,Inteleon,teammate,Indeedee-F,에써르 (암컷),30.058
+79,Inteleon,teammate,Pelipper,패리퍼,27.719
+79,Inteleon,teammate,Rillaboom,고릴타,23.977
+79,Inteleon,teammate,Golisopod,갑주무사,22.222
+79,Inteleon,teammate,Salamence,보만다,16.959
+79,Inteleon,teammate,Sneasler,포푸니크,16.725
+79,Inteleon,teammate,Incineroar,어흥염,13.333
+79,Inteleon,teammate,Lucario,루카리오,11.93
+80,Araquanid,move,Liquidation,아쿠아브레이크,52.463
+80,Araquanid,move,Wide Guard,와이드가드,34.69
+80,Araquanid,move,Protect,방어,16.916
+80,Araquanid,move,Leech Life,흡혈,16.274
+80,Araquanid,move,Entrainment,동료만들기,8.137
+80,Araquanid,move,Hydro Pump,하이드로펌프,7.281
+80,Araquanid,move,Sticky Web,끈적끈적네트,5.353
+80,Araquanid,move,Infestation,엉겨붙기,4.283
+80,Araquanid,move,Mirror Coat,미러코트,2.998
+80,Araquanid,move,Rain Dance,비바라기,2.998
+80,Araquanid,move,Lunge,덤벼들기,2.998
+80,Araquanid,move,Icy Wind,얼다바람,2.57
+80,Araquanid,item,Leftovers,먹다남은음식,44.079
+80,Araquanid,item,Sitrus Berry,자뭉열매,19.079
+80,Araquanid,item,Life Orb,생명의구슬,11.184
+80,Araquanid,item,Rocky Helmet,울퉁불퉁멧,7.895
+80,Araquanid,item,White Herb,하양허브,4.605
+80,Araquanid,item,Focus Sash,기합의띠,3.289
+80,Araquanid,item,Grassy Seed,그래스시드,2.632
+80,Araquanid,item,Air Balloon,풍선,2.632
+80,Araquanid,ability,Trace,트레이스,53.846
+80,Araquanid,ability,Hospitality,대접,30.769
+80,Araquanid,ability,Water Bubble,수포,15.385
+80,Araquanid,teammate,Golisopod,갑주무사,37.952
+80,Araquanid,teammate,Indeedee-F,에써르 (암컷),24.819
+80,Araquanid,teammate,Farigiraf,키키링,17.952
+80,Araquanid,teammate,Incineroar,어흥염,15.06
+80,Araquanid,teammate,Rillaboom,고릴타,14.578
+80,Araquanid,teammate,Pelipper,패리퍼,13.012
+80,Araquanid,teammate,Sneasler,포푸니크,12.651
+80,Araquanid,teammate,Sinistcha,그우린차,11.687
+81,Empoleon,move,Protect,방어,37.325
+81,Empoleon,move,Hydro Pump,하이드로펌프,33.333
+81,Empoleon,move,Flash Cannon,러스터캐논,32.735
+81,Empoleon,move,Ice Beam,냉동빔,23.154
+81,Empoleon,move,Surf,파도타기,10.18
+81,Empoleon,move,Icy Wind,얼다바람,7.784
+81,Empoleon,move,Yawn,하품,4.591
+81,Empoleon,move,Blizzard,눈보라,3.792
+81,Empoleon,move,Chilling Water,찬물끼얹기,2.994
+81,Empoleon,move,Vacuum Wave,진공파,2.196
+81,Empoleon,move,Hydro Cannon,하이드로캐논,2.196
+81,Empoleon,move,Grass Knot,풀묶기,1.996
+81,Empoleon,item,Leftovers,먹다남은음식,36.916
+81,Empoleon,item,Life Orb,생명의구슬,23.832
+81,Empoleon,item,Chople Berry,로플열매,16.355
+81,Empoleon,item,Grassy Seed,그래스시드,7.944
+81,Empoleon,item,Sitrus Berry,자뭉열매,5.14
+81,Empoleon,item,Air Balloon,풍선,4.206
+81,Empoleon,item,Psychic Seed,사이코시드,2.804
+81,Empoleon,item,Choice Scarf,구애스카프,0.935
+81,Empoleon,ability,Competitive,승기,96.335
+81,Empoleon,ability,Trace,트레이스,3.141
+81,Empoleon,ability,Hospitality,대접,0.524
+81,Empoleon,teammate,Rillaboom,고릴타,35.792
+81,Empoleon,teammate,Indeedee-F,에써르 (암컷),20.556
+81,Empoleon,teammate,Sneasler,포푸니크,19.831
+81,Empoleon,teammate,Incineroar,어흥염,18.259
+81,Empoleon,teammate,Salamence,보만다,17.412
+81,Empoleon,teammate,Garchomp,한카리아스,15.478
+81,Empoleon,teammate,Farigiraf,키키링,14.148
+81,Empoleon,teammate,Golisopod,갑주무사,12.576
+82,Zoroark-Hisui,move,Shadow Ball,섀도볼,26.667
+82,Zoroark-Hisui,move,Protect,방어,16.667
+82,Zoroark-Hisui,move,Hyper Voice,하이퍼보이스,16.667
+82,Zoroark-Hisui,move,Bitter Malice,천추지한,16.667
+82,Zoroark-Hisui,move,Snarl,바크아웃,10
+82,Zoroark-Hisui,move,Flamethrower,화염방사,6.667
+82,Zoroark-Hisui,move,Nasty Plot,나쁜음모,6.667
+82,Zoroark-Hisui,move,Taunt,도발,6.667
+82,Zoroark-Hisui,move,Trick,트릭,3.333
+82,Zoroark-Hisui,move,Icy Wind,얼다바람,3.333
+82,Zoroark-Hisui,item,Focus Sash,기합의띠,50
+82,Zoroark-Hisui,item,Life Orb,생명의구슬,33.333
+82,Zoroark-Hisui,item,Twisted Spoon,휘어진스푼,16.667
+82,Zoroark-Hisui,ability,Shadow Ball,,26.667
+82,Zoroark-Hisui,ability,Protect,,16.667
+82,Zoroark-Hisui,ability,Hyper Voice,,16.667
+82,Zoroark-Hisui,ability,Bitter Malice,,16.667
+82,Zoroark-Hisui,teammate,Whimsicott,엘풍,18.688
+82,Zoroark-Hisui,teammate,Rillaboom,고릴타,15.718
+82,Zoroark-Hisui,teammate,Kingambit,대도각참,14.356
+82,Zoroark-Hisui,teammate,Sneasler,포푸니크,14.109
+82,Zoroark-Hisui,teammate,Indeedee-F,에써르 (암컷),13.861
+82,Zoroark-Hisui,teammate,Incineroar,어흥염,13.366
+82,Zoroark-Hisui,teammate,Basculegion,대쓰여너 (수컷),12.871
+82,Zoroark-Hisui,teammate,Salamence,보만다,12.748
+83,Tinkaton,move,Fake Out,속이다,60.179
+83,Tinkaton,move,Gigaton Hammer,거대해머,57.271
+83,Tinkaton,move,Protect,방어,32.662
+83,Tinkaton,move,Play Rough,치근거리기,21.924
+83,Tinkaton,move,Encore,앵콜,10.962
+83,Tinkaton,move,Ice Hammer,아이스해머,8.277
+83,Tinkaton,move,Feint,페인트,5.817
+83,Tinkaton,move,Helping Hand,도우미,3.803
+83,Tinkaton,move,Knock Off,탁쳐서떨구기,2.908
+83,Tinkaton,move,Rock Tomb,암석봉인,2.908
+83,Tinkaton,move,Thunder Wave,전기자석파,2.237
+83,Tinkaton,move,Skill Swap,스킬스웹,1.79
+83,Tinkaton,item,Air Balloon,풍선,23.494
+83,Tinkaton,item,Leftovers,먹다남은음식,14.458
+83,Tinkaton,item,Focus Sash,기합의띠,13.855
+83,Tinkaton,item,Life Orb,생명의구슬,11.446
+83,Tinkaton,item,Sitrus Berry,자뭉열매,10.843
+83,Tinkaton,item,Eject Button,탈출버튼,7.229
+83,Tinkaton,item,Occa Berry,오카열매,5.422
+83,Tinkaton,item,Rocky Helmet,울퉁불퉁멧,4.217
+83,Tinkaton,ability,Mold Breaker,틀깨기,84.894
+83,Tinkaton,ability,Own Tempo,마이페이스,12.387
+83,Tinkaton,ability,Trace,트레이스,2.115
+83,Tinkaton,ability,Hospitality,대접,0.302
+83,Tinkaton,teammate,Rillaboom,고릴타,25.292
+83,Tinkaton,teammate,Indeedee-F,에써르 (암컷),24.903
+83,Tinkaton,teammate,Delphox,마폭시,23.217
+83,Tinkaton,teammate,Samurott-Hisui,히스이 대검귀,21.141
+83,Tinkaton,teammate,Decidueye-Hisui,히스이 모크나이퍼,19.585
+83,Tinkaton,teammate,Salamence,보만다,19.326
+83,Tinkaton,teammate,Incineroar,어흥염,17.899
+83,Tinkaton,teammate,Pelipper,패리퍼,15.694
+84,Gyarados,move,Waterfall,폭포오르기,56.01
+84,Gyarados,move,Dragon Dance,용의춤,37.852
+84,Gyarados,move,Protect,방어,37.596
+84,Gyarados,move,Crunch,깨물어부수기,30.179
+84,Gyarados,move,Thunder Wave,전기자석파,6.65
+84,Gyarados,move,Taunt,도발,5.627
+84,Gyarados,move,Ice Fang,얼음엄니,4.604
+84,Gyarados,move,Earthquake,지진,3.325
+84,Gyarados,move,Helping Hand,도우미,3.069
+84,Gyarados,move,Power Whip,파워휩,2.813
+84,Gyarados,move,Dragon Cheer,드래곤옐,2.558
+84,Gyarados,move,Lash Out,분풀이,2.302
+84,Gyarados,item,Gyaradosite,갸라도스나이트,66.368
+84,Gyarados,item,Sitrus Berry,자뭉열매,13.901
+84,Gyarados,item,Leftovers,먹다남은음식,9.865
+84,Gyarados,item,Rocky Helmet,울퉁불퉁멧,6.726
+84,Gyarados,item,Life Orb,생명의구슬,1.345
+84,Gyarados,item,Choice Scarf,구애스카프,0.448
+84,Gyarados,item,Red Card,레드카드,0.448
+84,Gyarados,item,Eject Button,탈출버튼,0.448
+84,Gyarados,ability,Intimidate,위협,58.247
+84,Gyarados,ability,Mold Breaker,틀깨기,40.206
+84,Gyarados,ability,Hospitality,대접,0.773
+84,Gyarados,ability,Trace,트레이스,0.515
+84,Gyarados,teammate,Rillaboom,고릴타,41.61
+84,Gyarados,teammate,Sneasler,포푸니크,24.693
+84,Gyarados,teammate,Indeedee-F,에써르 (암컷),23.602
+84,Gyarados,teammate,Lucario,루카리오,19.645
+84,Gyarados,teammate,Ninetales-Alola,알로라 나인테일,19.372
+84,Gyarados,teammate,Raichu,라이츄,18.417
+84,Gyarados,teammate,Gholdengo,타부자고,15.962
+84,Gyarados,teammate,Chandelure,샹델라,14.188
+85,Scizor,move,Bullet Punch,불릿펀치,55.495
+85,Scizor,move,Bug Bite,벌레먹음,33.791
+85,Scizor,move,Swords Dance,칼춤,28.022
+85,Scizor,move,Protect,방어,27.198
+85,Scizor,move,Close Combat,인파이트,9.89
+85,Scizor,move,Dual Wingbeat,더블윙,7.143
+85,Scizor,move,Tailwind,순풍,5.769
+85,Scizor,move,U-turn,유턴,3.571
+85,Scizor,move,Knock Off,탁쳐서떨구기,2.747
+85,Scizor,move,X-Scissor,시저크로스,1.374
+85,Scizor,move,Pounce,달려들기,0.549
+85,Scizor,move,Feint,페인트,0.549
+85,Scizor,item,Scizorite,핫삼나이트,51.883
+85,Scizor,item,Life Orb,생명의구슬,32.636
+85,Scizor,item,Sitrus Berry,자뭉열매,5.439
+85,Scizor,item,Rocky Helmet,울퉁불퉁멧,5.439
+85,Scizor,item,Occa Berry,오카열매,1.255
+85,Scizor,item,Focus Sash,기합의띠,0.837
+85,Scizor,item,White Herb,하양허브,0.837
+85,Scizor,item,Eject Button,탈출버튼,0.418
+85,Scizor,ability,Hospitality,대접,71.429
+85,Scizor,ability,Trace,트레이스,14.286
+85,Scizor,ability,Intimidate,위협,14.286
+85,Scizor,teammate,Rillaboom,고릴타,27.808
+85,Scizor,teammate,Salamence,보만다,19.589
+85,Scizor,teammate,Sneasler,포푸니크,16.575
+85,Scizor,teammate,Incineroar,어흥염,15.068
+85,Scizor,teammate,Pelipper,패리퍼,14.795
+85,Scizor,teammate,Garchomp,한카리아스,14.795
+85,Scizor,teammate,Basculegion,대쓰여너 (수컷),11.507
+85,Scizor,teammate,Volcarona,불카모스,11.233
+86,Scrafty,move,Fake Out,속이다,46.602
+86,Scrafty,move,Knock Off,탁쳐서떨구기,42.718
+86,Scrafty,move,Drain Punch,드레인펀치,23.544
+86,Scrafty,move,Protect,방어,17.476
+86,Scrafty,move,Close Combat,인파이트,17.233
+86,Scrafty,move,Coaching,코칭,5.34
+86,Scrafty,move,Detect,판별,5.097
+86,Scrafty,move,Throat Chop,지옥찌르기,4.369
+86,Scrafty,move,Bulk Up,벌크업,3.883
+86,Scrafty,move,Swords Dance,칼춤,3.398
+86,Scrafty,move,Rock Slide,스톤샤워,2.427
+86,Scrafty,move,Ice Punch,냉동펀치,1.456
+86,Scrafty,item,Scraftinite,곤율거니나이트,70
+86,Scrafty,item,Leftovers,먹다남은음식,8.462
+86,Scrafty,item,Focus Sash,기합의띠,4.231
+86,Scrafty,item,Sitrus Berry,자뭉열매,3.846
+86,Scrafty,item,Life Orb,생명의구슬,3.846
+86,Scrafty,item,Eject Button,탈출버튼,3.462
+86,Scrafty,item,Rocky Helmet,울퉁불퉁멧,2.692
+86,Scrafty,item,White Herb,하양허브,1.923
+86,Scrafty,ability,Intimidate,위협,97.317
+86,Scrafty,ability,Moxie,자기과신,1.463
+86,Scrafty,ability,Hospitality,대접,0.732
+86,Scrafty,ability,Trace,트레이스,0.488
+86,Scrafty,teammate,Rillaboom,고릴타,28.794
+86,Scrafty,teammate,Farigiraf,키키링,20.709
+86,Scrafty,teammate,Incineroar,어흥염,19.574
+86,Scrafty,teammate,Indeedee-F,에써르 (암컷),18.582
+86,Scrafty,teammate,Torkoal,코터스,18.014
+86,Scrafty,teammate,Golisopod,갑주무사,17.163
+86,Scrafty,teammate,Gengar,팬텀,16.596
+86,Scrafty,teammate,Snorlax,잠만보,13.475
+87,Rotom-Heat,move,Overheat,오버히트,38.696
+87,Rotom-Heat,move,Volt Switch,볼트체인지,25
+87,Rotom-Heat,move,Thunderbolt,10만볼트,22.391
+87,Rotom-Heat,move,Will-O-Wisp,도깨비불,19.13
+87,Rotom-Heat,move,Discharge,방전,10.87
+87,Rotom-Heat,move,Protect,방어,10.87
+87,Rotom-Heat,move,Electroweb,일렉트릭네트,10
+87,Rotom-Heat,move,Trick,트릭,4.13
+87,Rotom-Heat,move,Light Screen,빛의장막,3.478
+87,Rotom-Heat,move,Nasty Plot,나쁜음모,1.957
+87,Rotom-Heat,move,Helping Hand,도우미,1.304
+87,Rotom-Heat,move,Thunder Wave,전기자석파,1.304
+87,Rotom-Heat,item,Sitrus Berry,자뭉열매,51.875
+87,Rotom-Heat,item,Leftovers,먹다남은음식,22.5
+87,Rotom-Heat,item,Life Orb,생명의구슬,10.625
+87,Rotom-Heat,item,Choice Scarf,구애스카프,5
+87,Rotom-Heat,item,White Herb,하양허브,3.75
+87,Rotom-Heat,item,Focus Sash,기합의띠,1.25
+87,Rotom-Heat,item,Quick Claw,선제공격손톱,0.625
+87,Rotom-Heat,item,Red Card,레드카드,0.625
+87,Rotom-Heat,ability,Levitate,부유,84.783
+87,Rotom-Heat,ability,Hospitality,대접,8.696
+87,Rotom-Heat,ability,Trace,트레이스,6.522
+87,Rotom-Heat,teammate,Sneasler,포푸니크,28.261
+87,Rotom-Heat,teammate,Salamence,보만다,25.507
+87,Rotom-Heat,teammate,Rillaboom,고릴타,25.362
+87,Rotom-Heat,teammate,Garchomp,한카리아스,24.058
+87,Rotom-Heat,teammate,Tyranitar,마기라스,16.812
+87,Rotom-Heat,teammate,Kingambit,대도각참,16.522
+87,Rotom-Heat,teammate,Indeedee-F,에써르 (암컷),16.087
+87,Rotom-Heat,teammate,Basculegion,대쓰여너 (수컷),14.058
+88,Starmie,move,Liquidation,아쿠아브레이크,41.114
+88,Starmie,move,Protect,방어,34.483
+88,Starmie,move,Expanding Force,와이드포스,17.241
+88,Starmie,move,Ice Spinner,아이스스피너,15.65
+88,Starmie,move,Aqua Jet,아쿠아제트,7.958
+88,Starmie,move,Flip Turn,퀵턴,6.631
+88,Starmie,move,Zen Headbutt,사념의박치기,6.101
+88,Starmie,move,Psycho Cut,사이코커터,5.836
+88,Starmie,move,Scald,열탕,4.244
+88,Starmie,move,Self-Destruct,자폭,3.714
+88,Starmie,move,Skill Swap,스킬스웹,3.714
+88,Starmie,move,Ice Beam,냉동빔,3.183
+88,Starmie,item,Starminite,아쿠스타나이트,91.667
+88,Starmie,item,Rocky Helmet,울퉁불퉁멧,3.571
+88,Starmie,item,Life Orb,생명의구슬,2.381
+88,Starmie,item,Choice Scarf,구애스카프,1.19
+88,Starmie,item,Focus Sash,기합의띠,0.893
+88,Starmie,ability,Trace,트레이스,47.059
+88,Starmie,ability,Hospitality,대접,17.647
+88,Starmie,ability,Receiver,리시버,11.765
+88,Starmie,ability,Intimidate,위협,5.882
+88,Starmie,teammate,Indeedee-F,에써르 (암컷),44.331
+88,Starmie,teammate,Pelipper,패리퍼,42.297
+88,Starmie,teammate,Archaludon,브리두라스,31.831
+88,Starmie,teammate,Sneasler,포푸니크,28.198
+88,Starmie,teammate,Rillaboom,고릴타,21.366
+88,Starmie,teammate,Golisopod,갑주무사,19.477
+88,Starmie,teammate,Kingambit,대도각참,17.006
+88,Starmie,teammate,Farigiraf,키키링,15.988
+89,Lycanroc,move,Rock Slide,스톤샤워,52.469
+89,Lycanroc,move,Accelerock,액셀록,40.123
+89,Lycanroc,move,Protect,방어,36.42
+89,Lycanroc,move,Close Combat,인파이트,28.395
+89,Lycanroc,move,Psychic Fangs,사이코팽,3.704
+89,Lycanroc,move,Crunch,깨물어부수기,2.778
+89,Lycanroc,move,Play Rough,치근거리기,1.543
+89,Lycanroc,move,Sucker Punch,기습,1.235
+89,Lycanroc,move,Swords Dance,칼춤,0.926
+89,Lycanroc,move,Stealth Rock,스텔스록,0.926
+89,Lycanroc,move,Endeavor,죽기살기,0.926
+89,Lycanroc,move,Howl,멀리짖음,0.617
+89,Lycanroc,item,Focus Sash,기합의띠,78.082
+89,Lycanroc,item,Life Orb,생명의구슬,12.329
+89,Lycanroc,item,Rocky Helmet,울퉁불퉁멧,6.164
+89,Lycanroc,item,Choice Scarf,구애스카프,2.055
+89,Lycanroc,item,White Herb,하양허브,1.37
+89,Lycanroc,ability,Steadfast,불굴의마음,33.333
+89,Lycanroc,ability,Trace,트레이스,33.333
+89,Lycanroc,ability,Magician,매지션,33.333
+89,Lycanroc,teammate,Basculegion,대쓰여너 (수컷),40.828
+89,Lycanroc,teammate,Sneasler,포푸니크,40.68
+89,Lycanroc,teammate,Froslass,눈여아,36.686
+89,Lycanroc,teammate,Kingambit,대도각참,35.651
+89,Lycanroc,teammate,Rillaboom,고릴타,31.657
+89,Lycanroc,teammate,Scovillain,스코빌런,26.183
+89,Lycanroc,teammate,Golisopod,갑주무사,20.71
+89,Lycanroc,teammate,Incineroar,어흥염,19.822
+90,Malamar,move,Superpower,엄청난힘,55.115
+90,Malamar,move,Protect,방어,29.436
+90,Malamar,move,Skill Swap,스킬스웹,21.712
+90,Malamar,move,Knock Off,탁쳐서떨구기,21.503
+90,Malamar,move,Trick Room,트릭룸,16.075
+90,Malamar,move,Psycho Cut,사이코커터,10.021
+90,Malamar,move,Throat Chop,지옥찌르기,8.768
+90,Malamar,move,Topsy-Turvy,뒤집어엎기,6.681
+90,Malamar,move,Expanding Force,와이드포스,3.758
+90,Malamar,move,Zen Headbutt,사념의박치기,2.505
+90,Malamar,move,Taunt,도발,1.879
+90,Malamar,move,Rock Slide,스톤샤워,1.461
+90,Malamar,item,Malamarite,칼라마네로나이트,71.885
+90,Malamar,item,Sitrus Berry,자뭉열매,8.307
+90,Malamar,item,Leftovers,먹다남은음식,5.751
+90,Malamar,item,Rocky Helmet,울퉁불퉁멧,5.431
+90,Malamar,item,Focus Sash,기합의띠,3.195
+90,Malamar,item,Roseli Berry,로셀열매,3.195
+90,Malamar,item,Choice Scarf,구애스카프,1.597
+90,Malamar,item,Life Orb,생명의구슬,0.319
+90,Malamar,ability,Hospitality,대접,69.355
+90,Malamar,ability,Intimidate,위협,8.065
+90,Malamar,ability,Trace,트레이스,8.065
+90,Malamar,ability,Supersweet Syrup,감미로운꿀,3.226
+90,Malamar,teammate,Indeedee-F,에써르 (암컷),27.176
+90,Malamar,teammate,Garchomp,한카리아스,20.763
+90,Malamar,teammate,Grapploct,케오퍼스,20
+90,Malamar,teammate,Incineroar,어흥염,18.321
+90,Malamar,teammate,Sinistcha,그우린차,17.863
+90,Malamar,teammate,Whimsicott,엘풍,16.489
+90,Malamar,teammate,Sneasler,포푸니크,15.267
+90,Malamar,teammate,Grimmsnarl,오롱털,14.046
+91,Kleavor,move,Stone Axe,암석액스,60
+91,Kleavor,move,X-Scissor,시저크로스,27.253
+91,Kleavor,move,Protect,방어,13.626
+91,Kleavor,move,Tailwind,순풍,8.352
+91,Kleavor,move,Rock Slide,스톤샤워,5.495
+91,Kleavor,move,Night Slash,깜짝베기,4.835
+91,Kleavor,move,Close Combat,인파이트,4.396
+91,Kleavor,move,U-turn,유턴,3.956
+91,Kleavor,move,Feint,페인트,3.077
+91,Kleavor,move,Lunge,덤벼들기,1.758
+91,Kleavor,move,Helping Hand,도우미,0.879
+91,Kleavor,move,Aerial Ace,제비반환,0.659
+91,Kleavor,item,Focus Sash,기합의띠,47.826
+91,Kleavor,item,Life Orb,생명의구슬,19.13
+91,Kleavor,item,Rocky Helmet,울퉁불퉁멧,13.913
+91,Kleavor,item,Red Card,레드카드,6.087
+91,Kleavor,item,Choice Scarf,구애스카프,5.217
+91,Kleavor,item,Passho Berry,꼬시개열매,1.739
+91,Kleavor,item,Psychic Seed,사이코시드,1.739
+91,Kleavor,item,White Herb,하양허브,1.739
+91,Kleavor,ability,Trace,트레이스,77.778
+91,Kleavor,ability,Intimidate,위협,11.111
+91,Kleavor,ability,Hospitality,대접,11.111
+91,Kleavor,teammate,Rillaboom,고릴타,26.893
+91,Kleavor,teammate,Golisopod,갑주무사,24.884
+91,Kleavor,teammate,Indeedee-F,에써르 (암컷),17.62
+91,Kleavor,teammate,Volcarona,불카모스,17.62
+91,Kleavor,teammate,Kingambit,대도각참,14.838
+91,Kleavor,teammate,Salamence,보만다,14.219
+91,Kleavor,teammate,Basculegion,대쓰여너 (수컷),13.91
+91,Kleavor,teammate,Incineroar,어흥염,13.447
+92,Samurott-Hisui,move,Ceaseless Edge,비검천중파,32.658
+92,Samurott-Hisui,move,Aqua Cutter,아쿠아커터,22.785
+92,Samurott-Hisui,move,Sucker Punch,기습,20.506
+92,Samurott-Hisui,move,Sacred Sword,성스러운칼,19.747
+92,Samurott-Hisui,move,Night Slash,깜짝베기,10.127
+92,Samurott-Hisui,move,Protect,방어,9.62
+92,Samurott-Hisui,move,Razor Shell,셸블레이드,6.329
+92,Samurott-Hisui,move,Flip Turn,퀵턴,4.557
+92,Samurott-Hisui,move,Detect,판별,2.278
+92,Samurott-Hisui,move,Aqua Jet,아쿠아제트,1.519
+92,Samurott-Hisui,move,Knock Off,탁쳐서떨구기,1.266
+92,Samurott-Hisui,move,Swords Dance,칼춤,0.759
+92,Samurott-Hisui,item,Life Orb,생명의구슬,47.967
+92,Samurott-Hisui,item,White Herb,하양허브,24.39
+92,Samurott-Hisui,item,Rocky Helmet,울퉁불퉁멧,13.008
+92,Samurott-Hisui,item,Focus Sash,기합의띠,8.943
+92,Samurott-Hisui,item,Roseli Berry,로셀열매,2.439
+92,Samurott-Hisui,item,Sitrus Berry,자뭉열매,1.626
+92,Samurott-Hisui,item,Red Card,레드카드,0.813
+92,Samurott-Hisui,item,Leftovers,먹다남은음식,0.813
+92,Samurott-Hisui,ability,Trace,트레이스,71.429
+92,Samurott-Hisui,ability,Hospitality,대접,28.571
+92,Samurott-Hisui,teammate,Indeedee-F,에써르 (암컷),39.13
+92,Samurott-Hisui,teammate,Delphox,마폭시,30.28
+92,Samurott-Hisui,teammate,Salamence,보만다,27.64
+92,Samurott-Hisui,teammate,Decidueye-Hisui,히스이 모크나이퍼,25.466
+92,Samurott-Hisui,teammate,Tinkaton,두드리짱,25.311
+92,Samurott-Hisui,teammate,Rillaboom,고릴타,22.826
+92,Samurott-Hisui,teammate,Sneasler,포푸니크,13.354
+92,Samurott-Hisui,teammate,Garchomp,한카리아스,11.957
+93,Meowscarada,move,Flower Trick,트릭플라워,29.679
+93,Meowscarada,move,Knock Off,탁쳐서떨구기,28.877
+93,Meowscarada,move,Triple Axel,트리플악셀,24.866
+93,Meowscarada,move,Protect,방어,10.16
+93,Meowscarada,move,U-turn,유턴,9.091
+93,Meowscarada,move,Play Rough,치근거리기,3.209
+93,Meowscarada,move,Throat Chop,지옥찌르기,2.406
+93,Meowscarada,move,Low Kick,안다리걸기,2.406
+93,Meowscarada,move,Trick Room,트릭룸,2.406
+93,Meowscarada,move,Sucker Punch,기습,1.604
+93,Meowscarada,move,Taunt,도발,1.337
+93,Meowscarada,move,Aura Sphere,파동탄,1.07
+93,Meowscarada,item,Life Orb,생명의구슬,41.414
+93,Meowscarada,item,Focus Sash,기합의띠,38.384
+93,Meowscarada,item,Rocky Helmet,울퉁불퉁멧,8.081
+93,Meowscarada,item,Tanga Berry,리체열매,3.03
+93,Meowscarada,item,White Herb,하양허브,2.02
+93,Meowscarada,item,Choice Scarf,구애스카프,2.02
+93,Meowscarada,item,Psychic Seed,사이코시드,1.01
+93,Meowscarada,item,Leftovers,먹다남은음식,1.01
+93,Meowscarada,ability,Protean,변환자재,99.257
+93,Meowscarada,ability,Trace,트레이스,0.743
+93,Meowscarada,teammate,Indeedee-F,에써르 (암컷),31.09
+93,Meowscarada,teammate,Sneasler,포푸니크,21.635
+93,Meowscarada,teammate,Garchomp,한카리아스,14.423
+93,Meowscarada,teammate,Salamence,보만다,14.263
+93,Meowscarada,teammate,Gardevoir,가디안,11.058
+93,Meowscarada,teammate,Incineroar,어흥염,10.897
+93,Meowscarada,teammate,Whimsicott,엘풍,10.577
+93,Meowscarada,teammate,Lucario,루카리오,10.256
+94,Chandelure,move,Heat Wave,열풍,49.046
+94,Chandelure,move,Shadow Ball,섀도볼,39.237
+94,Chandelure,move,Protect,방어,30.79
+94,Chandelure,move,Trick Room,트릭룸,14.714
+94,Chandelure,move,Overheat,오버히트,10.899
+94,Chandelure,move,Flamethrower,화염방사,4.632
+94,Chandelure,move,Calm Mind,명상,4.36
+94,Chandelure,move,Energy Ball,에너지볼,3.27
+94,Chandelure,move,Imprison,봉인,1.362
+94,Chandelure,move,Will-O-Wisp,도깨비불,1.09
+94,Chandelure,move,Trick,트릭,1.09
+94,Chandelure,move,Fire Blast,불대문자,0.817
+94,Chandelure,item,Chandelurite,샹델라나이트,67.143
+94,Chandelure,item,Focus Sash,기합의띠,18.095
+94,Chandelure,item,Life Orb,생명의구슬,6.19
+94,Chandelure,item,Air Balloon,풍선,4.286
+94,Chandelure,item,Leftovers,먹다남은음식,1.429
+94,Chandelure,item,Choice Scarf,구애스카프,0.952
+94,Chandelure,item,Colbur Berry,마코열매,0.952
+94,Chandelure,item,Sitrus Berry,자뭉열매,0.476
+94,Chandelure,ability,Hospitality,대접,25
+94,Chandelure,ability,Flame Body,불꽃몸,25
+94,Chandelure,ability,Flash Fire,타오르는불꽃,25
+94,Chandelure,ability,Trace,트레이스,16.667
+94,Chandelure,teammate,Rillaboom,고릴타,39.967
+94,Chandelure,teammate,Indeedee-F,에써르 (암컷),32.895
+94,Chandelure,teammate,Ninetales-Alola,알로라 나인테일,22.039
+94,Chandelure,teammate,Lucario,루카리오,19.901
+94,Chandelure,teammate,Whimsicott,엘풍,17.599
+94,Chandelure,teammate,Sneasler,포푸니크,17.434
+94,Chandelure,teammate,Gyarados,갸라도스,17.105
+94,Chandelure,teammate,Golisopod,갑주무사,15.625
+95,Toxtricity,move,Overdrive,오버드라이브,53.922
+95,Toxtricity,move,Protect,방어,25.98
+95,Toxtricity,move,Boomburst,폭음파,20.833
+95,Toxtricity,move,Sludge Bomb,오물폭탄,20.833
+95,Toxtricity,move,Volt Switch,볼트체인지,6.863
+95,Toxtricity,move,Shift Gear,기어체인지,3.431
+95,Toxtricity,move,Snarl,바크아웃,3.186
+95,Toxtricity,move,Sludge Wave,오물웨이브,2.696
+95,Toxtricity,move,Gunk Shot,더스트슈트,2.206
+95,Toxtricity,move,Discharge,방전,1.961
+95,Toxtricity,move,Psychic Noise,사이코노이즈,1.961
+95,Toxtricity,move,Rising Voltage,라이징볼트,1.716
+95,Toxtricity,item,Life Orb,생명의구슬,73.604
+95,Toxtricity,item,Air Balloon,풍선,16.751
+95,Toxtricity,item,Focus Sash,기합의띠,3.046
+95,Toxtricity,item,Normal Gem,노말주얼,1.523
+95,Toxtricity,item,Grassy Seed,그래스시드,1.015
+95,Toxtricity,item,Leftovers,먹다남은음식,1.015
+95,Toxtricity,item,Choice Scarf,구애스카프,1.015
+95,Toxtricity,item,Shuca Berry,슈캐열매,0.508
+95,Toxtricity,ability,Trace,트레이스,60
+95,Toxtricity,ability,Hospitality,대접,20
+95,Toxtricity,ability,Protean,변환자재,20
+95,Toxtricity,teammate,Rillaboom,고릴타,20.661
+95,Toxtricity,teammate,Sneasler,포푸니크,18.678
+95,Toxtricity,teammate,Garchomp,한카리아스,15.372
+95,Toxtricity,teammate,Whimsicott,엘풍,13.719
+95,Toxtricity,teammate,Golisopod,갑주무사,13.058
+95,Toxtricity,teammate,Raichu,라이츄,12.893
+95,Toxtricity,teammate,Froslass,눈여아,12.727
+95,Toxtricity,teammate,Indeedee-F,에써르 (암컷),11.901
+96,Espathra,move,Calm Mind,명상,68.868
+96,Espathra,move,Protect,방어,61.321
+96,Espathra,move,Baton Pass,바톤터치,48.585
+96,Espathra,move,Lumina Crash,루미나콜리전,39.858
+96,Espathra,move,Expanding Force,와이드포스,10.849
+96,Espathra,move,Dazzling Gleam,매지컬샤인,3.538
+96,Espathra,move,Stored Power,어시스트파워,2.358
+96,Espathra,move,Hypnosis,최면술,1.887
+96,Espathra,move,Trick,트릭,0.943
+96,Espathra,move,Energy Ball,에너지볼,0.943
+96,Espathra,move,Substitute,대타출동,0.943
+96,Espathra,item,Grassy Seed,그래스시드,25.847
+96,Espathra,item,Electric Seed,일렉트릭시드,22.881
+96,Espathra,item,Life Orb,생명의구슬,13.559
+96,Espathra,item,Sitrus Berry,자뭉열매,10.169
+96,Espathra,item,Focus Sash,기합의띠,9.322
+96,Espathra,item,Leftovers,먹다남은음식,5.932
+96,Espathra,item,Psychic Seed,사이코시드,5.085
+96,Espathra,item,Colbur Berry,마코열매,3.39
+96,Espathra,ability,Speed Boost,가속,97.662
+96,Espathra,ability,Hospitality,대접,1.558
+96,Espathra,ability,Opportunist,편승,0.779
+96,Espathra,teammate,Archaludon,브리두라스,33.665
+96,Espathra,teammate,Indeedee-F,에써르 (암컷),29.187
+96,Espathra,teammate,Rillaboom,고릴타,25.871
+96,Espathra,teammate,Salamence,보만다,24.544
+96,Espathra,teammate,Incineroar,어흥염,21.559
+96,Espathra,teammate,Sneasler,포푸니크,20.398
+96,Espathra,teammate,Politoed,왕구리,19.569
+96,Espathra,teammate,Kingambit,대도각참,16.75
+97,Oranguru,move,Trick Room,트릭룸,66.287
+97,Oranguru,move,Instruct,지휘,56.72
+97,Oranguru,move,Protect,방어,17.768
+97,Oranguru,move,Encore,앵콜,11.39
+97,Oranguru,move,Foul Play,속임수,5.011
+97,Oranguru,move,Expanding Force,와이드포스,5.011
+97,Oranguru,move,Psychic Noise,사이코노이즈,3.872
+97,Oranguru,move,Yawn,하품,2.733
+97,Oranguru,move,Hyper Voice,하이퍼보이스,2.278
+97,Oranguru,move,Taunt,도발,1.822
+97,Oranguru,move,Imprison,봉인,1.595
+97,Oranguru,item,Sitrus Berry,자뭉열매,28.682
+97,Oranguru,item,Leftovers,먹다남은음식,27.907
+97,Oranguru,item,Mental Herb,멘탈허브,17.829
+97,Oranguru,item,Colbur Berry,마코열매,12.403
+97,Oranguru,item,Focus Sash,기합의띠,4.651
+97,Oranguru,item,Psychic Seed,사이코시드,3.101
+97,Oranguru,item,Grassy Seed,그래스시드,2.326
+97,Oranguru,item,Rocky Helmet,울퉁불퉁멧,1.55
+97,Oranguru,ability,Inner Focus,정신력,91.589
+97,Oranguru,ability,Hospitality,대접,4.673
+97,Oranguru,ability,Trace,트레이스,2.804
+97,Oranguru,ability,Receiver,리시버,0.935
+97,Oranguru,teammate,Torkoal,코터스,31.857
+97,Oranguru,teammate,Golisopod,갑주무사,19.25
+97,Oranguru,teammate,Indeedee-F,에써르 (암컷),17.717
+97,Oranguru,teammate,Incineroar,어흥염,17.547
+97,Oranguru,teammate,Rillaboom,고릴타,17.206
+97,Oranguru,teammate,Camerupt,폭타,12.947
+97,Oranguru,teammate,Mawile,입치트,12.095
+97,Oranguru,teammate,Kingambit,대도각참,10.903
+98,Crabominable,move,Drain Punch,드레인펀치,43.75
+98,Crabominable,move,Ice Hammer,아이스해머,34.766
+98,Crabominable,move,Protect,방어,28.125
+98,Crabominable,move,Mach Punch,마하펀치,11.719
+98,Crabominable,move,Rock Slide,스톤샤워,7.813
+98,Crabominable,move,Close Combat,인파이트,7.031
+98,Crabominable,move,Ice Punch,냉동펀치,5.859
+98,Crabominable,move,Thunder Punch,번개펀치,4.688
+98,Crabominable,move,Wide Guard,와이드가드,4.688
+98,Crabominable,move,Crabhammer,찝게햄머,2.734
+98,Crabominable,move,Ice Spinner,아이스스피너,1.563
+98,Crabominable,move,Bulk Up,벌크업,1.172
+98,Crabominable,item,Crabominite,모단단게나이트,90.338
+98,Crabominable,item,Life Orb,생명의구슬,4.831
+98,Crabominable,item,Rocky Helmet,울퉁불퉁멧,3.382
+98,Crabominable,item,Focus Sash,기합의띠,0.966
+98,Crabominable,item,Shell Bell,조개껍질방울,0.483
+98,Crabominable,ability,Hyper Cutter,괴력집게,70.968
+98,Crabominable,ability,Anger Point,분노의경혈,22.581
+98,Crabominable,ability,No Guard,노가드,3.226
+98,Crabominable,ability,Trace,트레이스,3.226
+98,Crabominable,teammate,Indeedee-F,에써르 (암컷),54.219
+98,Crabominable,teammate,Hatterene,브리무음,39.677
+98,Crabominable,teammate,Armarouge,카디나르마,28.905
+98,Crabominable,teammate,Torkoal,코터스,28.007
+98,Crabominable,teammate,Farigiraf,키키링,19.749
+98,Crabominable,teammate,Camerupt,폭타,19.569
+98,Crabominable,teammate,Gallade,엘레이드,15.44
+98,Crabominable,teammate,Golisopod,갑주무사,14.183
+99,Vivillon,move,Sleep Powder,수면가루,62.759
+99,Vivillon,move,Hurricane,폭풍,23.448
+99,Vivillon,move,Tailwind,순풍,20
+99,Vivillon,move,Protect,방어,20
+99,Vivillon,move,Rage Powder,분노가루,18.966
+99,Vivillon,move,Pollen Puff,꽃가루경단,3.103
+99,Vivillon,move,Air Slash,에어슬래시,2.414
+99,Vivillon,move,Quiver Dance,나비춤,1.034
+99,Vivillon,move,U-turn,유턴,0.69
+99,Vivillon,move,Bug Buzz,벌레의야단법석,0.69
+99,Vivillon,move,Struggle,발버둥,0.69
+99,Vivillon,move,Weather Ball,웨더볼,0.345
+99,Vivillon,item,Focus Sash,기합의띠,95.833
+99,Vivillon,item,Rocky Helmet,울퉁불퉁멧,0.833
+99,Vivillon,item,Choice Scarf,구애스카프,0.833
+99,Vivillon,item,Mental Herb,멘탈허브,0.833
+99,Vivillon,item,Sitrus Berry,자뭉열매,0.833
+99,Vivillon,item,Leftovers,먹다남은음식,0.833
+99,Vivillon,ability,Hospitality,대접,100
+99,Vivillon,teammate,Rillaboom,고릴타,41.547
+99,Vivillon,teammate,Incineroar,어흥염,40.827
+99,Vivillon,teammate,Gengar,팬텀,34.353
+99,Vivillon,teammate,Archaludon,브리두라스,31.475
+99,Vivillon,teammate,Politoed,왕구리,29.676
+99,Vivillon,teammate,Golisopod,갑주무사,14.209
+99,Vivillon,teammate,Indeedee-F,에써르 (암컷),12.95
+99,Vivillon,teammate,Volcarona,불카모스,10.252
+100,Slowking-Galar,move,Trick Room,트릭룸,44.186
+100,Slowking-Galar,move,Chilly Reception,썰렁개그,21.221
+100,Slowking-Galar,move,Sludge Bomb,오물폭탄,19.477
+100,Slowking-Galar,move,Psychic Noise,사이코노이즈,13.663
+100,Slowking-Galar,move,Protect,방어,11.047
+100,Slowking-Galar,move,Expanding Force,와이드포스,9.884
+100,Slowking-Galar,move,Flamethrower,화염방사,8.721
+100,Slowking-Galar,move,Acid Spray,애시드봄,7.849
+100,Slowking-Galar,move,Light Screen,빛의장막,6.686
+100,Slowking-Galar,move,Heal Pulse,치유파동,4.07
+100,Slowking-Galar,move,Rain Dance,비바라기,3.779
+100,Slowking-Galar,item,Sitrus Berry,자뭉열매,27.338
+100,Slowking-Galar,item,Leftovers,먹다남은음식,23.741
+100,Slowking-Galar,item,Colbur Berry,마코열매,12.95
+100,Slowking-Galar,item,Life Orb,생명의구슬,12.23
+100,Slowking-Galar,item,Air Balloon,풍선,8.633
+100,Slowking-Galar,item,Psychic Seed,사이코시드,5.036
+100,Slowking-Galar,item,Mental Herb,멘탈허브,2.158
+100,Slowking-Galar,item,Focus Sash,기합의띠,2.158
+100,Slowking-Galar,ability,Regenerator,재생력,50
+100,Slowking-Galar,ability,Curious Medicine,기묘한약,44.253
+100,Slowking-Galar,ability,Hospitality,대접,2.874
+100,Slowking-Galar,ability,Trace,트레이스,1.724
+100,Slowking-Galar,teammate,Golisopod,갑주무사,19.367
+100,Slowking-Galar,teammate,Indeedee-F,에써르 (암컷),17.877
+100,Slowking-Galar,teammate,Incineroar,어흥염,17.132
+100,Slowking-Galar,teammate,Sneasler,포푸니크,17.132
+100,Slowking-Galar,teammate,Baxcalibur,드닐레이브,16.946
+100,Slowking-Galar,teammate,Rillaboom,고릴타,16.387
+100,Slowking-Galar,teammate,Toxapex,더시마사리,14.898
+100,Slowking-Galar,teammate,Overqwil,장침바루,13.966
+101,Overqwil,move,Minimize,작아지기,32.821
+101,Overqwil,move,Crunch,깨물어부수기,28.462
+101,Overqwil,move,Protect,방어,26.667
+101,Overqwil,move,Stockpile,비축하기,25.897
+101,Overqwil,move,Barb Barrage,독침천발,23.59
+101,Overqwil,move,Throat Chop,지옥찌르기,14.615
+101,Overqwil,move,Swords Dance,칼춤,8.718
+101,Overqwil,move,Poison Jab,독찌르기,8.462
+101,Overqwil,move,Gunk Shot,더스트슈트,5.641
+101,Overqwil,move,Toxic,맹독,5.385
+101,Overqwil,move,Liquidation,아쿠아브레이크,4.872
+101,Overqwil,move,Icy Wind,얼다바람,2.821
+101,Overqwil,item,Leftovers,먹다남은음식,43.75
+101,Overqwil,item,Sitrus Berry,자뭉열매,25
+101,Overqwil,item,Life Orb,생명의구슬,14.167
+101,Overqwil,item,Air Balloon,풍선,4.167
+101,Overqwil,item,Rocky Helmet,울퉁불퉁멧,2.5
+101,Overqwil,item,Red Card,레드카드,2.5
+101,Overqwil,item,Normal Gem,노말주얼,1.25
+101,Overqwil,item,Choice Scarf,구애스카프,1.25
+101,Overqwil,ability,Intimidate,위협,80.612
+101,Overqwil,ability,Simple,단순,13.946
+101,Overqwil,ability,Hospitality,대접,3.741
+101,Overqwil,ability,Poison Point,독가시,1.02
+101,Overqwil,teammate,Sneasler,포푸니크,32.703
+101,Overqwil,teammate,Toxapex,더시마사리,25.709
+101,Overqwil,teammate,Glimmora,킬라플로르,25.52
+101,Overqwil,teammate,Pelipper,패리퍼,15.879
+101,Overqwil,teammate,Sableye,깜까미,15.69
+101,Overqwil,teammate,Ariados,아리아도스,15.501
+101,Overqwil,teammate,Slowking-Galar,가라르 야도킹,14.178
+101,Overqwil,teammate,Audino,다부니,13.233
+102,Bellibolt,move,Parabolic Charge,파라볼라차지,57.513
+102,Bellibolt,move,Thunderbolt,10만볼트,37.824
+102,Bellibolt,move,Soak,물붓기,29.793
+102,Bellibolt,move,Protect,방어,17.617
+102,Bellibolt,move,Muddy Water,탁류,9.845
+102,Bellibolt,move,Volt Switch,볼트체인지,9.067
+102,Bellibolt,move,Discharge,방전,4.145
+102,Bellibolt,move,Charge,충전,3.368
+102,Bellibolt,move,Light Screen,빛의장막,2.332
+102,Bellibolt,move,Electroweb,일렉트릭네트,2.073
+102,Bellibolt,move,Slack Off,태만함,2.073
+102,Bellibolt,move,Thunder,번개,1.554
+102,Bellibolt,item,Leftovers,먹다남은음식,30.818
+102,Bellibolt,item,Sitrus Berry,자뭉열매,28.302
+102,Bellibolt,item,Electric Seed,일렉트릭시드,17.61
+102,Bellibolt,item,Grassy Seed,그래스시드,7.547
+102,Bellibolt,item,Life Orb,생명의구슬,3.774
+102,Bellibolt,item,Magnet,자석,3.774
+102,Bellibolt,item,Shell Bell,조개껍질방울,3.774
+102,Bellibolt,item,Shuca Berry,슈캐열매,2.516
+102,Bellibolt,ability,Hospitality,대접,50
+102,Bellibolt,ability,Trace,트레이스,42.857
+102,Bellibolt,ability,Intimidate,위협,7.143
+102,Bellibolt,teammate,Garchomp,한카리아스,39.806
+102,Bellibolt,teammate,Pincurchin,찌르성게,37.087
+102,Bellibolt,teammate,Incineroar,어흥염,34.175
+102,Bellibolt,teammate,Froslass,눈여아,29.126
+102,Bellibolt,teammate,Lucario,루카리오,28.35
+102,Bellibolt,teammate,Rillaboom,고릴타,18.835
+102,Bellibolt,teammate,Raichu,라이츄,15.146
+102,Bellibolt,teammate,Farigiraf,키키링,14.757
+103,Sceptile,move,Dragon Pulse,용의파동,32.911
+103,Sceptile,move,Earth Power,대지의힘,31.013
+103,Sceptile,move,Protect,방어,26.899
+103,Sceptile,move,Energy Ball,에너지볼,13.608
+103,Sceptile,move,Shed Tail,꼬리자르기,12.342
+103,Sceptile,move,Detect,판별,12.025
+103,Sceptile,move,Leaf Storm,리프스톰,8.861
+103,Sceptile,move,Giga Drain,기가드레인,6.962
+103,Sceptile,move,Leaf Blade,리프블레이드,2.848
+103,Sceptile,move,Dragon Cheer,드래곤옐,2.532
+103,Sceptile,move,Focus Blast,기합구슬,1.899
+103,Sceptile,move,Substitute,대타출동,1.582
+103,Sceptile,item,Sceptilite,나무킹나이트,79.851
+103,Sceptile,item,Psychic Seed,사이코시드,7.09
+103,Sceptile,item,Sitrus Berry,자뭉열매,5.597
+103,Sceptile,item,Grassy Seed,그래스시드,2.985
+103,Sceptile,item,White Herb,하양허브,2.612
+103,Sceptile,item,Electric Seed,일렉트릭시드,0.746
+103,Sceptile,item,Lum Berry,리샘열매,0.373
+103,Sceptile,item,Focus Sash,기합의띠,0.373
+103,Sceptile,ability,Lightning Rod,피뢰침,97.872
+103,Sceptile,ability,Trace,트레이스,2.128
+103,Sceptile,teammate,Indeedee-F,에써르 (암컷),22.288
+103,Sceptile,teammate,Garchomp,한카리아스,16.765
+103,Sceptile,teammate,Rotom-Heat,히트로토무,15.582
+103,Sceptile,teammate,Incineroar,어흥염,12.821
+103,Sceptile,teammate,Rillaboom,고릴타,12.623
+103,Sceptile,teammate,Pelipper,패리퍼,12.229
+103,Sceptile,teammate,Sneasler,포푸니크,12.229
+103,Sceptile,teammate,Golisopod,갑주무사,11.243
+104,Pyroar,move,Heat Wave,열풍,56.419
+104,Pyroar,move,Protect,방어,41.216
+104,Pyroar,move,Flamethrower,화염방사,16.216
+104,Pyroar,move,Overheat,오버히트,12.5
+104,Pyroar,move,Scorching Sands,열사의대지,9.459
+104,Pyroar,move,Fire Blast,불대문자,7.432
+104,Pyroar,move,Solar Beam,솔라빔,5.405
+104,Pyroar,move,Hyper Voice,하이퍼보이스,5.068
+104,Pyroar,move,Dark Pulse,악의파동,2.703
+104,Pyroar,move,Snarl,바크아웃,1.689
+104,Pyroar,move,Entrainment,동료만들기,1.014
+104,Pyroar,move,Shadow Ball,섀도볼,0.676
+104,Pyroar,item,Pyroarite,화염레오나이트,100
+104,Pyroar,ability,Unnerve,긴장감,98.253
+104,Pyroar,ability,Trace,트레이스,0.873
+104,Pyroar,ability,Insomnia,불면,0.437
+104,Pyroar,ability,Moxie,자기과신,0.437
+104,Pyroar,teammate,Torkoal,코터스,40.041
+104,Pyroar,teammate,Whimsicott,엘풍,33.265
+104,Pyroar,teammate,Indeedee-F,에써르 (암컷),26.283
+104,Pyroar,teammate,Farigiraf,키키링,24.641
+104,Pyroar,teammate,Basculegion,대쓰여너 (수컷),23.819
+104,Pyroar,teammate,Ninetales,나인테일,22.177
+104,Pyroar,teammate,Rillaboom,고릴타,19.097
+104,Pyroar,teammate,Kingambit,대도각참,16.427
+105,Lopunny,move,Fake Out,속이다,54.181
+105,Lopunny,move,Close Combat,인파이트,51.171
+105,Lopunny,move,Triple Axel,트리플악셀,16.722
+105,Lopunny,move,U-turn,유턴,10.368
+105,Lopunny,move,Protect,방어,9.699
+105,Lopunny,move,Encore,앵콜,8.027
+105,Lopunny,move,After You,당신먼저,7.023
+105,Lopunny,move,Thunder Punch,번개펀치,4.013
+105,Lopunny,move,Drain Punch,드레인펀치,3.344
+105,Lopunny,move,Ice Punch,냉동펀치,2.676
+105,Lopunny,move,High Jump Kick,무릎차기,2.007
+105,Lopunny,move,Baton Pass,바톤터치,2.007
+105,Lopunny,item,Lopunnite,이어롭나이트,91.882
+105,Lopunny,item,Rocky Helmet,울퉁불퉁멧,6.273
+105,Lopunny,item,Focus Sash,기합의띠,0.369
+105,Lopunny,item,Life Orb,생명의구슬,0.369
+105,Lopunny,item,Sitrus Berry,자뭉열매,0.369
+105,Lopunny,item,Leftovers,먹다남은음식,0.369
+105,Lopunny,item,Chople Berry,로플열매,0.369
+105,Lopunny,ability,Scrappy,배짱,75
+105,Lopunny,ability,Trace,트레이스,12.5
+105,Lopunny,ability,Hospitality,대접,9.375
+105,Lopunny,ability,Cute Charm,헤롱헤롱바디,3.125
+105,Lopunny,teammate,Indeedee-F,에써르 (암컷),35.537
+105,Lopunny,teammate,Sneasler,포푸니크,25.207
+105,Lopunny,teammate,Gardevoir,가디안,24.174
+105,Lopunny,teammate,Ceruledge,파라블레이즈,21.074
+105,Lopunny,teammate,Dragonite,망나뇽,20.455
+105,Lopunny,teammate,Rillaboom,고릴타,17.975
+105,Lopunny,teammate,Incineroar,어흥염,15.702
+105,Lopunny,teammate,Farigiraf,키키링,15.083
+106,Vanilluxe,move,Blizzard,눈보라,54.511
+106,Vanilluxe,move,Freeze-Dry,프리즈드라이,18.045
+106,Vanilluxe,move,Aurora Veil,오로라베일,16.917
+106,Vanilluxe,move,Protect,방어,10.526
+106,Vanilluxe,move,Icy Wind,얼다바람,6.767
+106,Vanilluxe,move,Sheer Cold,절대영도,5.263
+106,Vanilluxe,move,Ice Shard,얼음뭉치,3.008
+106,Vanilluxe,move,Weather Ball,웨더볼,1.504
+106,Vanilluxe,move,Frost Breath,얼음숨결,1.504
+106,Vanilluxe,move,Chilling Water,찬물끼얹기,1.128
+106,Vanilluxe,move,Ally Switch,사이드체인지,1.128
+106,Vanilluxe,move,Taunt,도발,0.752
+106,Vanilluxe,item,Life Orb,생명의구슬,20.833
+106,Vanilluxe,item,Choice Scarf,구애스카프,16.667
+106,Vanilluxe,item,Focus Sash,기합의띠,16.667
+106,Vanilluxe,item,Sitrus Berry,자뭉열매,16.667
+106,Vanilluxe,item,Never-Melt Ice,녹지않는얼음,8.333
+106,Vanilluxe,item,Leftovers,먹다남은음식,8.333
+106,Vanilluxe,item,Chople Berry,로플열매,4.167
+106,Vanilluxe,item,Eject Button,탈출버튼,4.167
+106,Vanilluxe,ability,Snow Warning,눈퍼뜨리기,96.85
+106,Vanilluxe,ability,No Guard,노가드,1.575
+106,Vanilluxe,ability,Trace,트레이스,0.787
+106,Vanilluxe,ability,Hospitality,대접,0.394
+106,Vanilluxe,teammate,Indeedee-F,에써르 (암컷),31.983
+106,Vanilluxe,teammate,Kingambit,대도각참,26.652
+106,Vanilluxe,teammate,Rillaboom,고릴타,25.16
+106,Vanilluxe,teammate,Sneasler,포푸니크,21.535
+106,Vanilluxe,teammate,Camerupt,폭타,20.896
+106,Vanilluxe,teammate,Incineroar,어흥염,19.403
+106,Vanilluxe,teammate,Farigiraf,키키링,16.631
+106,Vanilluxe,teammate,Baxcalibur,드닐레이브,15.778
+107,Altaria,move,Hyper Voice,하이퍼보이스,37.815
+107,Altaria,move,Tailwind,순풍,26.891
+107,Altaria,move,Protect,방어,24.79
+107,Altaria,move,Will-O-Wisp,도깨비불,13.445
+107,Altaria,move,Ice Beam,냉동빔,8.403
+107,Altaria,move,Roost,날개쉬기,6.723
+107,Altaria,move,Perish Song,멸망의노래,6.303
+107,Altaria,move,Flamethrower,화염방사,5.462
+107,Altaria,move,Moonblast,문포스,5.042
+107,Altaria,move,Cotton Guard,코튼가드,5.042
+107,Altaria,move,Dragon Pulse,용의파동,4.622
+107,Altaria,move,Draco Meteor,용성군,4.622
+107,Altaria,item,Altarianite,파비코리나이트,74.699
+107,Altaria,item,Leftovers,먹다남은음식,10.843
+107,Altaria,item,Sitrus Berry,자뭉열매,6.627
+107,Altaria,item,Haban Berry,하반열매,5.422
+107,Altaria,item,Roseli Berry,로셀열매,0.602
+107,Altaria,item,Life Orb,생명의구슬,0.602
+107,Altaria,item,Focus Sash,기합의띠,0.602
+107,Altaria,item,Rocky Helmet,울퉁불퉁멧,0.602
+107,Altaria,ability,Cloud Nine,날씨부정,98.02
+107,Altaria,ability,Hospitality,대접,0.99
+107,Altaria,ability,Trace,트레이스,0.495
+107,Altaria,ability,Insomnia,불면,0.495
+107,Altaria,teammate,Indeedee-F,에써르 (암컷),31.718
+107,Altaria,teammate,Milotic,밀로틱,29.515
+107,Altaria,teammate,Rillaboom,고릴타,25.33
+107,Altaria,teammate,Metagross,메타그로스,21.586
+107,Altaria,teammate,Arcanine-Hisui,히스이 윈디,21.145
+107,Altaria,teammate,Dragapult,드래펄트,18.502
+107,Altaria,teammate,Incineroar,어흥염,17.401
+107,Altaria,teammate,Kingambit,대도각참,14.537
+108,Snorlax,move,Protect,방어,37.838
+108,Snorlax,move,Fissure,땅가르기,33.784
+108,Snorlax,move,Stockpile,비축하기,25.676
+108,Snorlax,move,Yawn,하품,15.203
+108,Snorlax,move,Belly Drum,배북,13.176
+108,Snorlax,move,Body Slam,누르기,12.162
+108,Snorlax,move,Body Press,바디프레스,11.824
+108,Snorlax,move,Curse,저주,6.419
+108,Snorlax,move,Earthquake,지진,5.743
+108,Snorlax,move,Heavy Slam,헤비봄버,5.405
+108,Snorlax,move,Self-Destruct,자폭,4.392
+108,Snorlax,move,Rock Slide,스톤샤워,3.716
+108,Snorlax,item,Leftovers,먹다남은음식,69.585
+108,Snorlax,item,Sitrus Berry,자뭉열매,19.816
+108,Snorlax,item,Rocky Helmet,울퉁불퉁멧,3.687
+108,Snorlax,item,Normal Gem,노말주얼,2.765
+108,Snorlax,item,Chesto Berry,유루열매,1.843
+108,Snorlax,item,Chople Berry,로플열매,0.922
+108,Snorlax,item,Choice Scarf,구애스카프,0.922
+108,Snorlax,item,Psychic Seed,사이코시드,0.461
+108,Snorlax,ability,Hospitality,대접,45.946
+108,Snorlax,ability,No Guard,노가드,36.486
+108,Snorlax,ability,Simple,단순,12.162
+108,Snorlax,ability,Trace,트레이스,5.405
+108,Snorlax,teammate,Incineroar,어흥염,46.444
+108,Snorlax,teammate,Rillaboom,고릴타,34.889
+108,Snorlax,teammate,Gengar,팬텀,27.556
+108,Snorlax,teammate,Hawlucha,루차불,23.778
+108,Snorlax,teammate,Scrafty,곤율거니,21.111
+108,Snorlax,teammate,Sinistcha,그우린차,19.333
+108,Snorlax,teammate,Dragonite,망나뇽,16.444
+108,Snorlax,teammate,Indeedee-F,에써르 (암컷),15.556
+109,Drampa,move,Hyper Voice,하이퍼보이스,35.294
+109,Drampa,move,Protect,방어,25.339
+109,Drampa,move,Earth Power,대지의힘,21.719
+109,Drampa,move,Dragon Pulse,용의파동,14.932
+109,Drampa,move,Flamethrower,화염방사,10.407
+109,Drampa,move,Thunderbolt,10만볼트,9.05
+109,Drampa,move,Calm Mind,명상,8.597
+109,Drampa,move,Heat Wave,열풍,6.787
+109,Drampa,move,Ice Beam,냉동빔,5.43
+109,Drampa,move,Draco Meteor,용성군,4.977
+109,Drampa,move,Shadow Ball,섀도볼,3.62
+109,Drampa,move,Blizzard,눈보라,1.81
+109,Drampa,item,Drampanite,할비롱나이트,79.167
+109,Drampa,item,Life Orb,생명의구슬,13.889
+109,Drampa,item,Sitrus Berry,자뭉열매,2.083
+109,Drampa,item,Haban Berry,하반열매,1.389
+109,Drampa,item,Leftovers,먹다남은음식,1.389
+109,Drampa,item,Chople Berry,로플열매,1.389
+109,Drampa,item,Psychic Seed,사이코시드,0.694
+109,Drampa,ability,Cloud Nine,날씨부정,63.043
+109,Drampa,ability,Berserk,발끈,33.152
+109,Drampa,ability,Hospitality,대접,3.261
+109,Drampa,ability,Simple,단순,0.543
+109,Drampa,teammate,Indeedee-F,에써르 (암컷),35.635
+109,Drampa,teammate,Farigiraf,키키링,26.058
+109,Drampa,teammate,Golisopod,갑주무사,22.494
+109,Drampa,teammate,Incineroar,어흥염,22.272
+109,Drampa,teammate,Torkoal,코터스,17.149
+109,Drampa,teammate,Sneasler,포푸니크,16.927
+109,Drampa,teammate,Kingambit,대도각참,13.808
+109,Drampa,teammate,Hatterene,브리무음,13.363
+110,Klefki,move,Light Screen,빛의장막,39.414
+110,Klefki,move,Reflect,리플렉터,38.762
+110,Klefki,move,Dazzling Gleam,매지컬샤인,24.104
+110,Klefki,move,Thunder Wave,전기자석파,21.173
+110,Klefki,move,Trick Room,트릭룸,19.544
+110,Klefki,move,Rain Dance,비바라기,19.218
+110,Klefki,move,Foul Play,속임수,9.121
+110,Klefki,move,Calm Mind,명상,8.469
+110,Klefki,move,Draining Kiss,드레인키스,7.818
+110,Klefki,move,Psych Up,자기암시,6.84
+110,Klefki,move,Substitute,대타출동,6.189
+110,Klefki,move,Sandstorm,모래바람,4.235
+110,Klefki,item,Sitrus Berry,자뭉열매,31.884
+110,Klefki,item,Air Balloon,풍선,17.391
+110,Klefki,item,Red Card,레드카드,8.696
+110,Klefki,item,Leftovers,먹다남은음식,7.246
+110,Klefki,item,Light Clay,빛의점토,5.797
+110,Klefki,item,Occa Berry,오카열매,5.797
+110,Klefki,item,Misty Seed,미스트시드,5.797
+110,Klefki,item,Eject Button,탈출버튼,4.348
+110,Klefki,ability,Trace,트레이스,71.429
+110,Klefki,ability,Hospitality,대접,28.571
+110,Klefki,teammate,Rillaboom,고릴타,24.664
+110,Klefki,teammate,Archaludon,브리두라스,20.404
+110,Klefki,teammate,Garchomp,한카리아스,20.404
+110,Klefki,teammate,Golisopod,갑주무사,19.731
+110,Klefki,teammate,Salamence,보만다,17.937
+110,Klefki,teammate,Volcarona,불카모스,16.143
+110,Klefki,teammate,Milotic,밀로틱,14.798
+110,Klefki,teammate,Sneasler,포푸니크,14.798
+111,Cinderace,move,Pyro Ball,화염볼,49.057
+111,Cinderace,move,High Jump Kick,무릎차기,18.113
+111,Cinderace,move,U-turn,유턴,15.849
+111,Cinderace,move,Protect,방어,12.83
+111,Cinderace,move,Sucker Punch,기습,11.698
+111,Cinderace,move,Coaching,코칭,6.792
+111,Cinderace,move,Iron Head,아이언헤드,5.283
+111,Cinderace,move,Gunk Shot,더스트슈트,4.906
+111,Cinderace,move,Will-O-Wisp,도깨비불,3.774
+111,Cinderace,move,Smack Down,떨어뜨리기,3.019
+111,Cinderace,move,Court Change,코트체인지,2.642
+111,Cinderace,move,Low Kick,안다리걸기,2.264
+111,Cinderace,item,Life Orb,생명의구슬,51.685
+111,Cinderace,item,Focus Sash,기합의띠,10.112
+111,Cinderace,item,Air Balloon,풍선,8.989
+111,Cinderace,item,White Herb,하양허브,8.989
+111,Cinderace,item,Rocky Helmet,울퉁불퉁멧,6.742
+111,Cinderace,item,Red Card,레드카드,2.247
+111,Cinderace,item,Psychic Seed,사이코시드,2.247
+111,Cinderace,item,Eject Button,탈출버튼,2.247
+111,Cinderace,ability,Libero,리베로,99.383
+111,Cinderace,ability,Trace,트레이스,0.617
+111,Cinderace,teammate,Rillaboom,고릴타,29.009
+111,Cinderace,teammate,Indeedee-F,에써르 (암컷),25.943
+111,Cinderace,teammate,Sneasler,포푸니크,19.575
+111,Cinderace,teammate,Golisopod,갑주무사,18.396
+111,Cinderace,teammate,Salamence,보만다,14.858
+111,Cinderace,teammate,Farigiraf,키키링,13.443
+111,Cinderace,teammate,Gardevoir,가디안,13.208
+111,Cinderace,teammate,Whimsicott,엘풍,12.264
+112,Heliolisk,move,Thunderbolt,10만볼트,17.69
+112,Heliolisk,move,Shed Tail,꼬리자르기,15.162
+112,Heliolisk,move,Volt Switch,볼트체인지,12.635
+112,Heliolisk,move,Hyper Voice,하이퍼보이스,11.913
+112,Heliolisk,move,Electroweb,일렉트릭네트,10.108
+112,Heliolisk,move,Discharge,방전,9.386
+112,Heliolisk,move,Protect,방어,8.664
+112,Heliolisk,move,Rising Voltage,라이징볼트,6.498
+112,Heliolisk,move,Hyper Beam,파괴광선,4.332
+112,Heliolisk,move,Weather Ball,웨더볼,4.332
+112,Heliolisk,move,Thunder,번개,2.888
+112,Heliolisk,move,Dark Pulse,악의파동,2.166
+112,Heliolisk,item,Life Orb,생명의구슬,49.18
+112,Heliolisk,item,Air Balloon,풍선,22.951
+112,Heliolisk,item,Sitrus Berry,자뭉열매,16.393
+112,Heliolisk,item,Focus Sash,기합의띠,4.918
+112,Heliolisk,item,Leftovers,먹다남은음식,3.279
+112,Heliolisk,item,Choice Scarf,구애스카프,3.279
+112,Heliolisk,ability,Solar Power,선파워,50.442
+112,Heliolisk,ability,Dry Skin,건조피부,45.133
+112,Heliolisk,ability,Trace,트레이스,3.54
+112,Heliolisk,ability,Hospitality,대접,0.885
+112,Heliolisk,teammate,Sneasler,포푸니크,31.991
+112,Heliolisk,teammate,Indeedee-F,에써르 (암컷),26.54
+112,Heliolisk,teammate,Pelipper,패리퍼,21.564
+112,Heliolisk,teammate,Charizard,리자몽,20.853
+112,Heliolisk,teammate,Golisopod,갑주무사,18.483
+112,Heliolisk,teammate,Sylveon,님피아,14.929
+112,Heliolisk,teammate,Gholdengo,타부자고,14.692
+112,Heliolisk,teammate,Farigiraf,키키링,13.744
+113,Slowbro,move,Expanding Force,와이드포스,34.109
+113,Slowbro,move,Trick Room,트릭룸,31.783
+113,Slowbro,move,Scald,열탕,22.868
+113,Slowbro,move,Iron Defense,철벽,20.543
+113,Slowbro,move,Body Press,바디프레스,18.992
+113,Slowbro,move,Protect,방어,17.054
+113,Slowbro,move,Calm Mind,명상,15.116
+113,Slowbro,move,Slack Off,태만함,14.341
+113,Slowbro,move,Stored Power,어시스트파워,8.915
+113,Slowbro,move,Ice Beam,냉동빔,6.977
+113,Slowbro,move,Psych Up,자기암시,6.589
+113,Slowbro,move,Amnesia,망각술,5.814
+113,Slowbro,item,Slowbronite,야도란나이트,94.366
+113,Slowbro,item,Leftovers,먹다남은음식,2.817
+113,Slowbro,item,Rocky Helmet,울퉁불퉁멧,1.408
+113,Slowbro,item,Mental Herb,멘탈허브,0.469
+113,Slowbro,item,Psychic Seed,사이코시드,0.469
+113,Slowbro,item,Sitrus Berry,자뭉열매,0.469
+113,Slowbro,ability,Hospitality,대접,36
+113,Slowbro,ability,Oblivious,둔감,34
+113,Slowbro,ability,Regenerator,재생력,16
+113,Slowbro,ability,Trace,트레이스,10
+113,Slowbro,teammate,Indeedee-F,에써르 (암컷),50.249
+113,Slowbro,teammate,Sinistcha,그우린차,23.632
+113,Slowbro,teammate,Incineroar,어흥염,23.134
+113,Slowbro,teammate,Kingambit,대도각참,18.159
+113,Slowbro,teammate,Sneasler,포푸니크,16.418
+113,Slowbro,teammate,Torkoal,코터스,15.92
+113,Slowbro,teammate,Farigiraf,키키링,14.925
+113,Slowbro,teammate,Audino,다부니,14.179
+114,Kangaskhan,move,Fake Out,속이다,77.5
+114,Kangaskhan,move,Double-Edge,이판사판태클,28.333
+114,Kangaskhan,move,Last Resort,뒀다쓰기,27.917
+114,Kangaskhan,move,Hammer Arm,암해머,10.833
+114,Kangaskhan,move,Sucker Punch,기습,7.5
+114,Kangaskhan,move,Protect,방어,7.083
+114,Kangaskhan,move,Ice Punch,냉동펀치,6.667
+114,Kangaskhan,move,Drain Punch,드레인펀치,5.417
+114,Kangaskhan,move,Low Kick,안다리걸기,4.583
+114,Kangaskhan,move,Body Slam,누르기,2.5
+114,Kangaskhan,move,Rock Slide,스톤샤워,2.5
+114,Kangaskhan,move,Brick Break,깨트리다,1.25
+114,Kangaskhan,item,Kangaskhanite,캥카나이트,51.969
+114,Kangaskhan,item,Life Orb,생명의구슬,33.071
+114,Kangaskhan,item,Rocky Helmet,울퉁불퉁멧,7.087
+114,Kangaskhan,item,Lum Berry,리샘열매,3.15
+114,Kangaskhan,item,Leftovers,먹다남은음식,1.575
+114,Kangaskhan,item,Chople Berry,로플열매,0.787
+114,Kangaskhan,item,Eject Button,탈출버튼,0.787
+114,Kangaskhan,item,Focus Sash,기합의띠,0.787
+114,Kangaskhan,ability,Scrappy,배짱,96.203
+114,Kangaskhan,ability,Hospitality,대접,2.532
+114,Kangaskhan,ability,Trace,트레이스,1.266
+114,Kangaskhan,teammate,Farigiraf,키키링,44.11
+114,Kangaskhan,teammate,Kingambit,대도각참,23.058
+114,Kangaskhan,teammate,Sylveon,님피아,21.053
+114,Kangaskhan,teammate,Rillaboom,고릴타,20.551
+114,Kangaskhan,teammate,Torkoal,코터스,19.799
+114,Kangaskhan,teammate,Camerupt,폭타,17.544
+114,Kangaskhan,teammate,Salamence,보만다,16.04
+114,Kangaskhan,teammate,Sinistcha,그우린차,12.782
+115,Skarmory,move,Brave Bird,브레이브버드,42.929
+115,Skarmory,move,Iron Head,아이언헤드,34.343
+115,Skarmory,move,Protect,방어,27.778
+115,Skarmory,move,Tailwind,순풍,24.747
+115,Skarmory,move,Swords Dance,칼춤,10.101
+115,Skarmory,move,Drill Peck,회전부리,9.091
+115,Skarmory,move,Drill Run,드릴라이너,8.081
+115,Skarmory,move,Rock Slide,스톤샤워,6.566
+115,Skarmory,move,Body Press,바디프레스,4.04
+115,Skarmory,move,Stealth Rock,스텔스록,4.04
+115,Skarmory,move,Dual Wingbeat,더블윙,3.03
+115,Skarmory,move,Roost,날개쉬기,3.03
+115,Skarmory,item,Skarmorite,무장조나이트,91.216
+115,Skarmory,item,Leftovers,먹다남은음식,3.378
+115,Skarmory,item,Rocky Helmet,울퉁불퉁멧,2.703
+115,Skarmory,item,Focus Sash,기합의띠,1.351
+115,Skarmory,item,Eject Button,탈출버튼,0.676
+115,Skarmory,item,Sitrus Berry,자뭉열매,0.676
+115,Skarmory,ability,Weak Armor,깨어진갑옷,64.286
+115,Skarmory,ability,Sturdy,옹골참,14.286
+115,Skarmory,ability,Hospitality,대접,14.286
+115,Skarmory,ability,Trace,트레이스,7.143
+115,Skarmory,teammate,Milotic,밀로틱,25.758
+115,Skarmory,teammate,Sneasler,포푸니크,25
+115,Skarmory,teammate,Rillaboom,고릴타,22.475
+115,Skarmory,teammate,Meganium,메가니움,16.919
+115,Skarmory,teammate,Pelipper,패리퍼,13.889
+115,Skarmory,teammate,Tyranitar,마기라스,13.131
+115,Skarmory,teammate,Garchomp,한카리아스,13.131
+115,Skarmory,teammate,Indeedee-F,에써르 (암컷),11.869
+116,Goodra-Hisui,move,Shelter,농성,33.058
+116,Goodra-Hisui,move,Body Press,바디프레스,30.579
+116,Goodra-Hisui,move,Protect,방어,27.686
+116,Goodra-Hisui,move,Flamethrower,화염방사,15.289
+116,Goodra-Hisui,move,Flash Cannon,러스터캐논,14.05
+116,Goodra-Hisui,move,Dragon Pulse,용의파동,12.397
+116,Goodra-Hisui,move,Draco Meteor,용성군,12.397
+116,Goodra-Hisui,move,Heavy Slam,헤비봄버,11.57
+116,Goodra-Hisui,move,Thunderbolt,10만볼트,9.504
+116,Goodra-Hisui,move,Life Dew,생명의물방울,9.091
+116,Goodra-Hisui,move,Curse,저주,4.959
+116,Goodra-Hisui,move,Ice Beam,냉동빔,4.959
+116,Goodra-Hisui,item,Leftovers,먹다남은음식,65.672
+116,Goodra-Hisui,item,Sitrus Berry,자뭉열매,7.463
+116,Goodra-Hisui,item,Chople Berry,로플열매,5.224
+116,Goodra-Hisui,item,Grassy Seed,그래스시드,4.478
+116,Goodra-Hisui,item,Psychic Seed,사이코시드,3.731
+116,Goodra-Hisui,item,Life Orb,생명의구슬,2.239
+116,Goodra-Hisui,item,White Herb,하양허브,2.239
+116,Goodra-Hisui,item,Choice Scarf,구애스카프,2.239
+116,Goodra-Hisui,ability,Gooey,미끈미끈,61.818
+116,Goodra-Hisui,ability,Hospitality,대접,23.636
+116,Goodra-Hisui,ability,Sap Sipper,초식,7.273
+116,Goodra-Hisui,ability,Trace,트레이스,3.636
+116,Goodra-Hisui,teammate,Indeedee-F,에써르 (암컷),20.876
+116,Goodra-Hisui,teammate,Rillaboom,고릴타,20.619
+116,Goodra-Hisui,teammate,Salamence,보만다,14.691
+116,Goodra-Hisui,teammate,Incineroar,어흥염,13.144
+116,Goodra-Hisui,teammate,Sinistcha,그우린차,13.144
+116,Goodra-Hisui,teammate,Sneasler,포푸니크,12.371
+116,Goodra-Hisui,teammate,Whimsicott,엘풍,12.113
+116,Goodra-Hisui,teammate,Sableye,깜까미,10.567
+117,Glalie,move,Explosion,대폭발,65.683
+117,Glalie,move,Protect,방어,53.137
+117,Glalie,move,Body Slam,누르기,9.963
+117,Glalie,move,Freeze-Dry,프리즈드라이,4.428
+117,Glalie,move,Ice Shard,얼음뭉치,4.059
+117,Glalie,move,Substitute,대타출동,3.321
+117,Glalie,move,Icy Wind,얼다바람,2.583
+117,Glalie,move,Crunch,깨물어부수기,2.214
+117,Glalie,move,Sheer Cold,절대영도,2.214
+117,Glalie,move,Earthquake,지진,1.845
+117,Glalie,move,Taunt,도발,1.845
+117,Glalie,move,Steel Roller,아이언롤러,1.845
+117,Glalie,item,Glalitite,얼음귀신나이트,98.76
+117,Glalie,item,Rocky Helmet,울퉁불퉁멧,1.24
+117,Glalie,ability,Moody,변덕쟁이,51.807
+117,Glalie,ability,Inner Focus,정신력,43.373
+117,Glalie,ability,No Guard,노가드,3.614
+117,Glalie,ability,Hospitality,대접,1.205
+117,Glalie,teammate,Pawmot,빠르모트,62.402
+117,Glalie,teammate,Basculegion,대쓰여너 (수컷),33.42
+117,Glalie,teammate,Noivern,음번,21.149
+117,Glalie,teammate,Sneasler,포푸니크,15.927
+117,Glalie,teammate,Indeedee-F,에써르 (암컷),13.838
+117,Glalie,teammate,Whimsicott,엘풍,13.838
+117,Glalie,teammate,Incineroar,어흥염,13.055
+117,Glalie,teammate,Farigiraf,키키링,13.055
+118,Decidueye-Hisui,move,Triple Arrows,3연화살,27.273
+118,Decidueye-Hisui,move,Close Combat,인파이트,25.541
+118,Decidueye-Hisui,move,Leaf Blade,리프블레이드,22.511
+118,Decidueye-Hisui,move,Protect,방어,18.182
+118,Decidueye-Hisui,move,Brave Bird,브레이브버드,6.494
+118,Decidueye-Hisui,move,Tailwind,순풍,6.061
+118,Decidueye-Hisui,move,Sucker Punch,기습,6.061
+118,Decidueye-Hisui,move,Coaching,코칭,4.762
+118,Decidueye-Hisui,move,Rock Tomb,암석봉인,4.762
+118,Decidueye-Hisui,move,Swords Dance,칼춤,1.299
+118,Decidueye-Hisui,move,Shadow Sneak,야습,0.866
+118,Decidueye-Hisui,move,Shadow Claw,섀도크루,0.866
+118,Decidueye-Hisui,item,Life Orb,생명의구슬,25.926
+118,Decidueye-Hisui,item,Focus Sash,기합의띠,25.926
+118,Decidueye-Hisui,item,Rocky Helmet,울퉁불퉁멧,25.926
+118,Decidueye-Hisui,item,Scope Lens,초점렌즈,7.407
+118,Decidueye-Hisui,item,Roseli Berry,로셀열매,7.407
+118,Decidueye-Hisui,item,Choice Scarf,구애스카프,3.704
+118,Decidueye-Hisui,item,Psychic Seed,사이코시드,3.704
+118,Decidueye-Hisui,ability,Scrappy,배짱,93.333
+118,Decidueye-Hisui,ability,Trace,트레이스,3.333
+118,Decidueye-Hisui,ability,Hospitality,대접,1.667
+118,Decidueye-Hisui,ability,Magician,매지션,1.667
+118,Decidueye-Hisui,teammate,Indeedee-F,에써르 (암컷),61.417
+118,Decidueye-Hisui,teammate,Delphox,마폭시,45.932
+118,Decidueye-Hisui,teammate,Samurott-Hisui,히스이 대검귀,43.045
+118,Decidueye-Hisui,teammate,Tinkaton,두드리짱,39.633
+118,Decidueye-Hisui,teammate,Salamence,보만다,35.696
+118,Decidueye-Hisui,teammate,Kingambit,대도각참,16.273
+118,Decidueye-Hisui,teammate,Ceruledge,파라블레이즈,12.861
+118,Decidueye-Hisui,teammate,Milotic,밀로틱,12.336
+119,Noivern,move,Tailwind,순풍,53.219
+119,Noivern,move,Draco Meteor,용성군,29.614
+119,Noivern,move,Protect,방어,16.309
+119,Noivern,move,Air Slash,에어슬래시,10.73
+119,Noivern,move,Taunt,도발,9.871
+119,Noivern,move,Super Fang,분노의앞니,8.584
+119,Noivern,move,Flamethrower,화염방사,7.725
+119,Noivern,move,Boomburst,폭음파,7.296
+119,Noivern,move,Dragon Cheer,드래곤옐,7.296
+119,Noivern,move,Hurricane,폭풍,6.867
+119,Noivern,move,Heat Wave,열풍,5.579
+119,Noivern,move,U-turn,유턴,3.863
+119,Noivern,item,Focus Sash,기합의띠,42.647
+119,Noivern,item,Life Orb,생명의구슬,14.706
+119,Noivern,item,Sitrus Berry,자뭉열매,8.824
+119,Noivern,item,Leftovers,먹다남은음식,8.824
+119,Noivern,item,Normal Gem,노말주얼,8.824
+119,Noivern,item,White Herb,하양허브,5.882
+119,Noivern,item,Yache Berry,플카열매,2.941
+119,Noivern,item,Eject Button,탈출버튼,1.471
+119,Noivern,ability,Frisk,통찰,97.561
+119,Noivern,ability,Trace,트레이스,2.439
+119,Noivern,teammate,Pawmot,빠르모트,23.098
+119,Noivern,teammate,Glalie,얼음귀신,22.011
+119,Noivern,teammate,Basculegion,대쓰여너 (수컷),20.924
+119,Noivern,teammate,Rillaboom,고릴타,16.304
+119,Noivern,teammate,Garchomp,한카리아스,13.043
+119,Noivern,teammate,Indeedee-F,에써르 (암컷),11.141
+119,Noivern,teammate,Sneasler,포푸니크,10.054
+119,Noivern,teammate,Arcanine-Hisui,히스이 윈디,10.054
+120,Hawlucha,move,Entrainment,동료만들기,30.085
+120,Hawlucha,move,Acrobatics,애크러뱃,20.339
+120,Hawlucha,move,Close Combat,인파이트,18.644
+120,Hawlucha,move,Protect,방어,16.525
+120,Hawlucha,move,Detect,판별,12.288
+120,Hawlucha,move,Swords Dance,칼춤,12.288
+120,Hawlucha,move,Brave Bird,브레이브버드,11.017
+120,Hawlucha,move,Flying Press,플라잉프레스,5.508
+120,Hawlucha,move,Rock Slide,스톤샤워,5.085
+120,Hawlucha,move,Coaching,코칭,4.237
+120,Hawlucha,move,Dual Wingbeat,더블윙,3.814
+120,Hawlucha,move,Drain Punch,드레인펀치,3.39
+120,Hawlucha,item,Hawluchanite,루차불나이트,56.614
+120,Hawlucha,item,Psychic Seed,사이코시드,16.402
+120,Hawlucha,item,Grassy Seed,그래스시드,11.111
+120,Hawlucha,item,Electric Seed,일렉트릭시드,6.878
+120,Hawlucha,item,Lum Berry,리샘열매,3.175
+120,Hawlucha,item,White Herb,하양허브,2.116
+120,Hawlucha,item,Rocky Helmet,울퉁불퉁멧,1.587
+120,Hawlucha,item,King's Rock,왕의징표석,1.058
+120,Hawlucha,ability,Mold Breaker,틀깨기,91.525
+120,Hawlucha,ability,Trace,트레이스,6.78
+120,Hawlucha,ability,Hospitality,대접,1.695
+120,Hawlucha,teammate,Incineroar,어흥염,31.694
+120,Hawlucha,teammate,Snorlax,잠만보,29.235
+120,Hawlucha,teammate,Indeedee-F,에써르 (암컷),25.41
+120,Hawlucha,teammate,Rillaboom,고릴타,22.678
+120,Hawlucha,teammate,Sinistcha,그우린차,12.842
+120,Hawlucha,teammate,Gardevoir,가디안,11.749
+120,Hawlucha,teammate,Blastoise,거북왕,11.475
+120,Hawlucha,teammate,Gengar,팬텀,9.836
+121,Raichu-Alola,move,Rising Voltage,라이징볼트,49.194
+121,Raichu-Alola,move,Protect,방어,33.468
+121,Raichu-Alola,move,Expanding Force,와이드포스,27.016
+121,Raichu-Alola,move,Fake Out,속이다,22.984
+121,Raichu-Alola,move,Volt Switch,볼트체인지,11.694
+121,Raichu-Alola,move,Discharge,방전,3.629
+121,Raichu-Alola,move,Psyshock,사이코쇼크,3.226
+121,Raichu-Alola,move,Grass Knot,풀묶기,3.226
+121,Raichu-Alola,move,Thunderbolt,10만볼트,2.419
+121,Raichu-Alola,move,Encore,앵콜,2.016
+121,Raichu-Alola,move,Dazzling Gleam,매지컬샤인,2.016
+121,Raichu-Alola,item,Life Orb,생명의구슬,76.829
+121,Raichu-Alola,item,Focus Sash,기합의띠,11.585
+121,Raichu-Alola,item,Electric Seed,일렉트릭시드,6.707
+121,Raichu-Alola,item,Air Balloon,풍선,3.049
+121,Raichu-Alola,item,Psychic Seed,사이코시드,0.61
+121,Raichu-Alola,item,Choice Scarf,구애스카프,0.61
+121,Raichu-Alola,item,Magnet,자석,0.61
+121,Raichu-Alola,ability,Moody,변덕쟁이,50
+121,Raichu-Alola,ability,Trace,트레이스,50
+121,Raichu-Alola,teammate,Pincurchin,찌르성게,83.06
+121,Raichu-Alola,teammate,Indeedee-F,에써르 (암컷),42.896
+121,Raichu-Alola,teammate,Garchomp,한카리아스,26.23
+121,Raichu-Alola,teammate,Gardevoir,가디안,24.59
+121,Raichu-Alola,teammate,Mamoswine,맘모꾸리,23.497
+121,Raichu-Alola,teammate,Golisopod,갑주무사,18.579
+121,Raichu-Alola,teammate,Lucario,루카리오,12.022
+121,Raichu-Alola,teammate,Salamence,보만다,10.656
+122,Greninja,move,Protect,방어,28.205
+122,Greninja,move,Ice Beam,냉동빔,23.504
+122,Greninja,move,Dark Pulse,악의파동,21.795
+122,Greninja,move,Hydro Pump,하이드로펌프,14.53
+122,Greninja,move,Water Shuriken,물수리검,11.111
+122,Greninja,move,Blizzard,눈보라,10.684
+122,Greninja,move,Surf,파도타기,4.274
+122,Greninja,move,Sludge Wave,오물웨이브,3.846
+122,Greninja,move,Night Slash,깜짝베기,3.419
+122,Greninja,move,Extrasensory,신통력,3.419
+122,Greninja,move,Flip Turn,퀵턴,2.991
+122,Greninja,move,Grass Knot,풀묶기,2.991
+122,Greninja,item,Greninjite,개굴닌자나이트,78.986
+122,Greninja,item,Life Orb,생명의구슬,12.319
+122,Greninja,item,Focus Sash,기합의띠,5.072
+122,Greninja,item,Rocky Helmet,울퉁불퉁멧,1.449
+122,Greninja,item,Red Card,레드카드,0.725
+122,Greninja,item,King's Rock,왕의징표석,0.725
+122,Greninja,item,Choice Scarf,구애스카프,0.725
+122,Greninja,ability,Protean,변환자재,98.396
+122,Greninja,ability,Trace,트레이스,1.07
+122,Greninja,ability,Hospitality,대접,0.535
+122,Greninja,teammate,Rillaboom,고릴타,22.865
+122,Greninja,teammate,Sneasler,포푸니크,19.284
+122,Greninja,teammate,Pelipper,패리퍼,17.631
+122,Greninja,teammate,Incineroar,어흥염,15.702
+122,Greninja,teammate,Whimsicott,엘풍,15.152
+122,Greninja,teammate,Garchomp,한카리아스,14.601
+122,Greninja,teammate,Archaludon,브리두라스,13.774
+122,Greninja,teammate,Indeedee-F,에써르 (암컷),12.948
+123,Perrserker,move,Fake Out,속이다,58.525
+123,Perrserker,move,Iron Head,아이언헤드,28.111
+123,Perrserker,move,Helping Hand,도우미,19.816
+123,Perrserker,move,Protect,방어,15.668
+123,Perrserker,move,Gyro Ball,자이로볼,9.677
+123,Perrserker,move,Close Combat,인파이트,9.217
+123,Perrserker,move,Knock Off,탁쳐서떨구기,9.217
+123,Perrserker,move,U-turn,유턴,4.608
+123,Perrserker,move,Endeavor,죽기살기,3.226
+123,Perrserker,move,Taunt,도발,2.765
+123,Perrserker,move,Rain Dance,비바라기,1.843
+123,Perrserker,move,Foul Play,속임수,1.382
+123,Perrserker,item,Focus Sash,기합의띠,25.352
+123,Perrserker,item,Rocky Helmet,울퉁불퉁멧,15.493
+123,Perrserker,item,Air Balloon,풍선,14.085
+123,Perrserker,item,Life Orb,생명의구슬,11.268
+123,Perrserker,item,Sitrus Berry,자뭉열매,8.451
+123,Perrserker,item,Chople Berry,로플열매,7.042
+123,Perrserker,item,White Herb,하양허브,5.634
+123,Perrserker,item,Occa Berry,오카열매,5.634
+123,Perrserker,ability,Trace,트레이스,100
+123,Perrserker,teammate,Gholdengo,타부자고,36.088
+123,Perrserker,teammate,Metagross,메타그로스,26.722
+123,Perrserker,teammate,Rillaboom,고릴타,22.039
+123,Perrserker,teammate,Lucario,루카리오,20.937
+123,Perrserker,teammate,Indeedee-F,에써르 (암컷),19.835
+123,Perrserker,teammate,Pelipper,패리퍼,18.457
+123,Perrserker,teammate,Salamence,보만다,17.906
+123,Perrserker,teammate,Golisopod,갑주무사,15.152
+124,Dragalge,move,Sludge Bomb,오물폭탄,39.752
+124,Dragalge,move,Protect,방어,33.54
+124,Dragalge,move,Draco Meteor,용성군,26.087
+124,Dragalge,move,Dragon Pulse,용의파동,21.739
+124,Dragalge,move,Flip Turn,퀵턴,15.528
+124,Dragalge,move,Scald,열탕,9.938
+124,Dragalge,move,Sludge Wave,오물웨이브,8.696
+124,Dragalge,move,Thunderbolt,10만볼트,6.211
+124,Dragalge,move,Toxic,맹독,4.348
+124,Dragalge,move,Focus Blast,기합구슬,2.484
+124,Dragalge,move,Acid Armor,녹기,1.863
+124,Dragalge,move,Waterfall,폭포오르기,0.621
+124,Dragalge,item,Dragalgite,드래캄나이트,94.531
+124,Dragalge,item,Leftovers,먹다남은음식,3.125
+124,Dragalge,item,Shuca Berry,슈캐열매,0.781
+124,Dragalge,item,Rocky Helmet,울퉁불퉁멧,0.781
+124,Dragalge,item,Life Orb,생명의구슬,0.781
+124,Dragalge,ability,Regenerator,재생력,85.185
+124,Dragalge,ability,Hospitality,대접,12.963
+124,Dragalge,ability,Poison Point,독가시,1.852
+124,Dragalge,teammate,Golisopod,갑주무사,32.353
+124,Dragalge,teammate,Farigiraf,키키링,27.647
+124,Dragalge,teammate,Incineroar,어흥염,25
+124,Dragalge,teammate,Rillaboom,고릴타,24.412
+124,Dragalge,teammate,Indeedee-F,에써르 (암컷),22.941
+124,Dragalge,teammate,Torkoal,코터스,16.176
+124,Dragalge,teammate,Sinistcha,그우린차,14.118
+124,Dragalge,teammate,Armarouge,카디나르마,14.118
+125,Palafin-Hero,move,Flip Turn,퀵턴,51.652
+125,Palafin-Hero,move,Wave Crash,웨이브태클,32.733
+125,Palafin-Hero,move,Jet Punch,제트펀치,31.832
+125,Palafin-Hero,move,Protect,방어,16.216
+125,Palafin-Hero,move,Close Combat,인파이트,14.414
+125,Palafin-Hero,move,Ice Punch,냉동펀치,7.508
+125,Palafin-Hero,move,Drain Punch,드레인펀치,5.706
+125,Palafin-Hero,move,Bulk Up,벌크업,4.805
+125,Palafin-Hero,move,Liquidation,아쿠아브레이크,2.402
+125,Palafin-Hero,move,Aqua Jet,아쿠아제트,2.402
+125,Palafin-Hero,move,Taunt,도발,1.201
+125,Palafin-Hero,move,Acrobatics,애크러뱃,0.901
+125,Palafin-Hero,item,Life Orb,생명의구슬,42.529
+125,Palafin-Hero,item,Leftovers,먹다남은음식,20.69
+125,Palafin-Hero,item,Rocky Helmet,울퉁불퉁멧,13.793
+125,Palafin-Hero,item,Eject Button,탈출버튼,6.897
+125,Palafin-Hero,item,Sitrus Berry,자뭉열매,5.747
+125,Palafin-Hero,item,Choice Scarf,구애스카프,4.598
+125,Palafin-Hero,item,Mystic Water,신비의물방울,2.299
+125,Palafin-Hero,item,Shell Bell,조개껍질방울,1.149
+125,Palafin-Hero,ability,Hospitality,대접,100
+125,Palafin-Hero,teammate,Rillaboom,고릴타,53.153
+125,Palafin-Hero,teammate,Incineroar,어흥염,52.553
+125,Palafin-Hero,teammate,Salamence,보만다,31.231
+125,Palafin-Hero,teammate,Gholdengo,타부자고,25.225
+125,Palafin-Hero,teammate,Floette-Eternal,영원의 꽃 플라엣테,24.925
+125,Palafin-Hero,teammate,Farigiraf,키키링,16.817
+125,Palafin-Hero,teammate,Golisopod,갑주무사,15.616
+125,Palafin-Hero,teammate,Sneasler,포푸니크,14.114
+126,Meowstic,move,Expanding Force,와이드포스,68.342
+126,Meowstic,move,Protect,방어,46.734
+126,Meowstic,move,Alluring Voice,매혹의보이스,18.593
+126,Meowstic,move,Thunderbolt,10만볼트,18.09
+126,Meowstic,move,Fake Out,속이다,17.085
+126,Meowstic,move,Nasty Plot,나쁜음모,9.045
+126,Meowstic,move,Shadow Ball,섀도볼,3.518
+126,Meowstic,move,Psychic Noise,사이코노이즈,3.518
+126,Meowstic,move,Dark Pulse,악의파동,3.015
+126,Meowstic,move,Calm Mind,명상,2.01
+126,Meowstic,move,Psychic Terrain,사이코필드,1.508
+126,Meowstic,item,Meowsticite,냐오닉스나이트,98.889
+126,Meowstic,item,Psychic Seed,사이코시드,1.111
+126,Meowstic,ability,Intimidate,위협,15.676
+126,Meowstic,ability,Psychic Surge,사이코메이커,7.027
+126,Meowstic,ability,Competitive,승기,6.486
+126,Meowstic,ability,Defiant,오기,5.946
+126,Meowstic,teammate,Indeedee-F,에써르 (암컷),66.254
+126,Meowstic,teammate,Sneasler,포푸니크,48.607
+126,Meowstic,teammate,Indeedee,에써르 (수컷),20.124
+126,Meowstic,teammate,Armarouge,카디나르마,17.957
+126,Meowstic,teammate,Kingambit,대도각참,17.028
+126,Meowstic,teammate,Gholdengo,타부자고,14.861
+126,Meowstic,teammate,Torkoal,코터스,14.551
+126,Meowstic,teammate,Blaziken,번치코,12.693
+127,Vileplume,move,Sleep Powder,수면가루,47.586
+127,Vileplume,move,After You,당신먼저,33.103
+127,Vileplume,move,Sludge Bomb,오물폭탄,20
+127,Vileplume,move,Protect,방어,15.862
+127,Vileplume,move,Solar Beam,솔라빔,10.345
+127,Vileplume,move,Leaf Storm,리프스톰,9.655
+127,Vileplume,move,Giga Drain,기가드레인,4.138
+127,Vileplume,move,Energy Ball,에너지볼,3.448
+127,Vileplume,move,Pollen Puff,꽃가루경단,3.448
+127,Vileplume,move,Moonblast,문포스,2.069
+127,Vileplume,move,Sunny Day,쾌청,1.379
+127,Vileplume,move,Weather Ball,웨더볼,1.379
+127,Vileplume,item,Focus Sash,기합의띠,70.588
+127,Vileplume,item,Leftovers,먹다남은음식,13.725
+127,Vileplume,item,Sitrus Berry,자뭉열매,5.882
+127,Vileplume,item,Life Orb,생명의구슬,5.882
+127,Vileplume,item,Occa Berry,오카열매,1.961
+127,Vileplume,item,Psychic Seed,사이코시드,1.961
+127,Vileplume,ability,Trace,트레이스,80
+127,Vileplume,ability,Simple,단순,20
+127,Vileplume,teammate,Torkoal,코터스,86.957
+127,Vileplume,teammate,Indeedee-F,에써르 (암컷),52.484
+127,Vileplume,teammate,Armarouge,카디나르마,25.776
+127,Vileplume,teammate,Sneasler,포푸니크,22.36
+127,Vileplume,teammate,Farigiraf,키키링,22.36
+127,Vileplume,teammate,Gardevoir,가디안,20.807
+127,Vileplume,teammate,Hatterene,브리무음,19.565
+127,Vileplume,teammate,Mawile,입치트,12.733
+128,Krookodile,move,Earthquake,지진,29.412
+128,Krookodile,move,Knock Off,탁쳐서떨구기,25.98
+128,Krookodile,move,Protect,방어,12.255
+128,Krookodile,move,High Horsepower,10만마력,11.765
+128,Krookodile,move,Rock Slide,스톤샤워,9.314
+128,Krookodile,move,Crunch,깨물어부수기,8.824
+128,Krookodile,move,Close Combat,인파이트,5.392
+128,Krookodile,move,Fissure,땅가르기,2.941
+128,Krookodile,move,Taunt,도발,1.471
+128,Krookodile,move,Iron Head,아이언헤드,1.471
+128,Krookodile,move,Gunk Shot,더스트슈트,1.471
+128,Krookodile,move,Throat Chop,지옥찌르기,1.471
+128,Krookodile,item,Life Orb,생명의구슬,50.943
+128,Krookodile,item,Focus Sash,기합의띠,18.868
+128,Krookodile,item,Sitrus Berry,자뭉열매,9.434
+128,Krookodile,item,Rocky Helmet,울퉁불퉁멧,9.434
+128,Krookodile,item,Leftovers,먹다남은음식,3.774
+128,Krookodile,item,Electric Seed,일렉트릭시드,1.887
+128,Krookodile,item,Iron Ball,검은철구,1.887
+128,Krookodile,item,Choice Scarf,구애스카프,1.887
+128,Krookodile,ability,Intimidate,위협,73.171
+128,Krookodile,ability,Moxie,자기과신,19.512
+128,Krookodile,ability,Trace,트레이스,2.439
+128,Krookodile,ability,Anger Point,분노의경혈,1.829
+128,Krookodile,teammate,Indeedee-F,에써르 (암컷),19.497
+128,Krookodile,teammate,Rillaboom,고릴타,18.868
+128,Krookodile,teammate,Salamence,보만다,15.723
+128,Krookodile,teammate,Sneasler,포푸니크,15.094
+128,Krookodile,teammate,Gardevoir,가디안,13.208
+128,Krookodile,teammate,Garchomp,한카리아스,13.208
+128,Krookodile,teammate,Farigiraf,키키링,12.893
+128,Krookodile,teammate,Armarouge,카디나르마,12.264
+129,Ampharos,move,Protect,방어,39.791
+129,Ampharos,move,Dragon Pulse,용의파동,30.366
+129,Ampharos,move,Rising Voltage,라이징볼트,24.084
+129,Ampharos,move,Parabolic Charge,파라볼라차지,20.942
+129,Ampharos,move,Thunderbolt,10만볼트,20.419
+129,Ampharos,move,Cotton Guard,코튼가드,15.707
+129,Ampharos,move,Power Gem,파워젬,10.995
+129,Ampharos,move,Dazzling Gleam,매지컬샤인,9.948
+129,Ampharos,move,Volt Switch,볼트체인지,5.759
+129,Ampharos,move,Charge,충전,5.759
+129,Ampharos,move,Thunder,번개,4.188
+129,Ampharos,move,Discharge,방전,4.188
+129,Ampharos,item,Ampharosite,전룡나이트,92.258
+129,Ampharos,item,Leftovers,먹다남은음식,2.581
+129,Ampharos,item,Air Balloon,풍선,1.935
+129,Ampharos,item,Sitrus Berry,자뭉열매,1.29
+129,Ampharos,item,Life Orb,생명의구슬,1.29
+129,Ampharos,item,Colbur Berry,마코열매,0.645
+129,Ampharos,ability,Mold Breaker,틀깨기,90.196
+129,Ampharos,ability,Static,정전기,5.229
+129,Ampharos,ability,Hospitality,대접,3.268
+129,Ampharos,ability,Plus,플러스,0.654
+129,Ampharos,teammate,Farigiraf,키키링,40.063
+129,Ampharos,teammate,Golisopod,갑주무사,29.968
+129,Ampharos,teammate,Pincurchin,찌르성게,26.498
+129,Ampharos,teammate,Incineroar,어흥염,23.028
+129,Ampharos,teammate,Indeedee-F,에써르 (암컷),18.612
+129,Ampharos,teammate,Sinistcha,그우린차,14.511
+129,Ampharos,teammate,Rillaboom,고릴타,14.196
+129,Ampharos,teammate,Sylveon,님피아,11.356
+130,Steelix,move,High Horsepower,10만마력,32.609
+130,Steelix,move,Protect,방어,31.522
+130,Steelix,move,Heavy Slam,헤비봄버,27.717
+130,Steelix,move,Wide Guard,와이드가드,19.022
+130,Steelix,move,Body Press,바디프레스,17.935
+130,Steelix,move,Earthquake,지진,7.065
+130,Steelix,move,Steel Roller,아이언롤러,7.065
+130,Steelix,move,Iron Defense,철벽,5.978
+130,Steelix,move,Rock Slide,스톤샤워,5.435
+130,Steelix,move,Earth Power,대지의힘,5.435
+130,Steelix,move,Gyro Ball,자이로볼,3.804
+130,Steelix,move,Curse,저주,3.261
+130,Steelix,item,Steelixite,강철톤나이트,82.353
+130,Steelix,item,Rocky Helmet,울퉁불퉁멧,5.882
+130,Steelix,item,Leftovers,먹다남은음식,2.521
+130,Steelix,item,Sitrus Berry,자뭉열매,2.521
+130,Steelix,item,Life Orb,생명의구슬,1.681
+130,Steelix,item,Psychic Seed,사이코시드,1.681
+130,Steelix,item,Expert Belt,달인의띠,0.84
+130,Steelix,item,Shuca Berry,슈캐열매,0.84
+130,Steelix,ability,Hospitality,대접,46.154
+130,Steelix,ability,Sturdy,옹골참,38.462
+130,Steelix,ability,Trace,트레이스,15.385
+130,Steelix,teammate,Tyranitar,마기라스,46.688
+130,Steelix,teammate,Sneasler,포푸니크,26.183
+130,Steelix,teammate,Rillaboom,고릴타,21.767
+130,Steelix,teammate,Indeedee-F,에써르 (암컷),20.505
+130,Steelix,teammate,Sinistcha,그우린차,16.719
+130,Steelix,teammate,Rotom-Wash,워시로토무,14.196
+130,Steelix,teammate,Incineroar,어흥염,12.934
+130,Steelix,teammate,Talonflame,파이어로,12.618
+131,Palafin,move,Wave Crash,웨이브태클,23.729
+131,Palafin,move,Jet Punch,제트펀치,15.254
+131,Palafin,move,Close Combat,인파이트,6.78
+131,Palafin,move,Ice Punch,냉동펀치,5.085
+131,Palafin,move,Drain Punch,드레인펀치,3.39
+131,Palafin,move,Flip Turn,퀵턴,3.39
+131,Palafin,move,Throat Chop,지옥찌르기,3.39
+131,Palafin,move,Outrage,역린,1.695
+131,Palafin,move,Protect,방어,1.695
+131,Palafin,move,Aqua Jet,아쿠아제트,1.695
+131,Palafin,item,Life Orb,생명의구슬,55.556
+131,Palafin,item,Leftovers,먹다남은음식,33.333
+131,Palafin,item,Choice Scarf,구애스카프,11.111
+131,Palafin,ability,Wave Crash,,23.729
+131,Palafin,ability,Jet Punch,,15.254
+131,Palafin,ability,Close Combat,,6.78
+131,Palafin,ability,Ice Punch,,5.085
+131,Palafin,teammate,Incineroar,어흥염,41.613
+131,Palafin,teammate,Rillaboom,고릴타,36.452
+131,Palafin,teammate,Salamence,보만다,16.452
+131,Palafin,teammate,Sneasler,포푸니크,16.129
+131,Palafin,teammate,Farigiraf,키키링,15.484
+131,Palafin,teammate,Pelipper,패리퍼,14.839
+131,Palafin,teammate,Indeedee-F,에써르 (암컷),13.226
+131,Palafin,teammate,Gholdengo,타부자고,12.903
+132,Ditto,move,Transform,변신,13.873
+132,Ditto,move,Protect,방어,10.983
+132,Ditto,move,Close Combat,인파이트,5.202
+132,Ditto,move,Fake Out,속이다,4.624
+132,Ditto,move,Hyper Voice,하이퍼보이스,4.624
+132,Ditto,move,Shadow Ball,섀도볼,3.468
+132,Ditto,move,Moonblast,문포스,3.468
+132,Ditto,move,Last Respects,성묘,2.89
+132,Ditto,move,Wave Crash,웨이브태클,2.89
+132,Ditto,move,Follow Me,날따름,2.89
+132,Ditto,move,Heat Wave,열풍,2.89
+132,Ditto,move,Leech Life,흡혈,2.312
+132,Ditto,item,Sitrus Berry,자뭉열매,32.353
+132,Ditto,item,Psychic Seed,사이코시드,17.647
+132,Ditto,item,Focus Sash,기합의띠,14.706
+132,Ditto,item,Leftovers,먹다남은음식,11.765
+132,Ditto,item,Air Balloon,풍선,8.824
+132,Ditto,item,Grassy Seed,그래스시드,5.882
+132,Ditto,item,White Herb,하양허브,2.941
+132,Ditto,item,Rocky Helmet,울퉁불퉁멧,2.941
+132,Ditto,ability,Imposter,괴짜,79.861
+132,Ditto,ability,Intimidate,위협,4.861
+132,Ditto,ability,Stamina,지구력,2.778
+132,Ditto,ability,Rough Skin,까칠한피부,2.083
+132,Ditto,teammate,Incineroar,어흥염,14.754
+132,Ditto,teammate,Whimsicott,엘풍,14.754
+132,Ditto,teammate,Farigiraf,키키링,14.098
+132,Ditto,teammate,Indeedee-F,에써르 (암컷),13.443
+132,Ditto,teammate,Salamence,보만다,12.787
+132,Ditto,teammate,Sneasler,포푸니크,11.803
+132,Ditto,teammate,Rillaboom,고릴타,11.803
+132,Ditto,teammate,Garchomp,한카리아스,10.164
+133,Eelektross,move,Protect,방어,35.385
+133,Eelektross,move,Flamethrower,화염방사,27.692
+133,Eelektross,move,Thunderbolt,10만볼트,22.051
+133,Eelektross,move,Discharge,방전,18.974
+133,Eelektross,move,Coil,똬리틀기,15.385
+133,Eelektross,move,Drain Punch,드레인펀치,12.308
+133,Eelektross,move,Dragon Pulse,용의파동,7.179
+133,Eelektross,move,Wild Charge,와일드볼트,6.667
+133,Eelektross,move,Supercell Slam,썬더다이브,6.154
+133,Eelektross,move,Giga Drain,기가드레인,6.154
+133,Eelektross,move,Rising Voltage,라이징볼트,3.077
+133,Eelektross,move,Rock Slide,스톤샤워,3.077
+133,Eelektross,item,Eelektrossite,저리더프나이트,97.727
+133,Eelektross,item,Rocky Helmet,울퉁불퉁멧,0.568
+133,Eelektross,item,Life Orb,생명의구슬,0.568
+133,Eelektross,item,Wide Lens,광각렌즈,0.568
+133,Eelektross,item,Sitrus Berry,자뭉열매,0.568
+133,Eelektross,ability,Eelevate,,88.119
+133,Eelektross,ability,Hospitality,대접,6.931
+133,Eelektross,ability,Levitate,부유,3.96
+133,Eelektross,ability,Trace,트레이스,0.99
+133,Eelektross,teammate,Garchomp,한카리아스,32.459
+133,Eelektross,teammate,Incineroar,어흥염,22.295
+133,Eelektross,teammate,Rillaboom,고릴타,19.672
+133,Eelektross,teammate,Basculegion,대쓰여너 (수컷),18.033
+133,Eelektross,teammate,Whimsicott,엘풍,17.705
+133,Eelektross,teammate,Ninetales-Alola,알로라 나인테일,13.77
+133,Eelektross,teammate,Sneasler,포푸니크,12.787
+133,Eelektross,teammate,Kingambit,대도각참,12.131
+134,Houndoom,move,Heat Wave,열풍,49.189
+134,Houndoom,move,Dark Pulse,악의파동,41.622
+134,Houndoom,move,Protect,방어,38.378
+134,Houndoom,move,Flamethrower,화염방사,8.108
+134,Houndoom,move,Nasty Plot,나쁜음모,7.568
+134,Houndoom,move,Snarl,바크아웃,7.027
+134,Houndoom,move,Solar Beam,솔라빔,7.027
+134,Houndoom,move,Overheat,오버히트,5.405
+134,Houndoom,move,Fire Blast,불대문자,3.243
+134,Houndoom,move,Scorching Sands,열사의대지,2.162
+134,Houndoom,move,Sludge Bomb,오물폭탄,1.622
+134,Houndoom,move,Sunny Day,쾌청,0.541
+134,Houndoom,item,Houndoominite,헬가나이트,96.183
+134,Houndoom,item,Focus Sash,기합의띠,3.053
+134,Houndoom,item,Life Orb,생명의구슬,0.763
+134,Houndoom,ability,Solar Power,선파워,85.526
+134,Houndoom,ability,Unnerve,긴장감,10.526
+134,Houndoom,ability,Trace,트레이스,2.632
+134,Houndoom,ability,Flash Fire,타오르는불꽃,1.316
+134,Houndoom,teammate,Torkoal,코터스,43.377
+134,Houndoom,teammate,Rillaboom,고릴타,23.51
+134,Houndoom,teammate,Indeedee-F,에써르 (암컷),18.874
+134,Houndoom,teammate,Milotic,밀로틱,18.874
+134,Houndoom,teammate,Whimsicott,엘풍,18.212
+134,Houndoom,teammate,Sneasler,포푸니크,17.881
+134,Houndoom,teammate,Garchomp,한카리아스,17.55
+134,Houndoom,teammate,Charizard,리자몽,15.894
+135,Infernape,move,Protect,방어,29.05
+135,Infernape,move,Drain Punch,드레인펀치,22.905
+135,Infernape,move,Fake Out,속이다,21.788
+135,Infernape,move,Fire Punch,불꽃펀치,21.229
+135,Infernape,move,Thunder Punch,번개펀치,16.76
+135,Infernape,move,Close Combat,인파이트,14.525
+135,Infernape,move,Flare Blitz,플레어드라이브,12.291
+135,Infernape,move,Heat Wave,열풍,11.732
+135,Infernape,move,Overheat,오버히트,3.911
+135,Infernape,move,Mach Punch,마하펀치,3.911
+135,Infernape,move,Focus Blast,기합구슬,3.352
+135,Infernape,move,Flamethrower,화염방사,2.793
+135,Infernape,item,Focus Sash,기합의띠,53.571
+135,Infernape,item,Life Orb,생명의구슬,27.381
+135,Infernape,item,Rocky Helmet,울퉁불퉁멧,9.524
+135,Infernape,item,Air Balloon,풍선,2.381
+135,Infernape,item,Passho Berry,꼬시개열매,2.381
+135,Infernape,item,Choice Scarf,구애스카프,2.381
+135,Infernape,item,Red Card,레드카드,1.19
+135,Infernape,item,Leftovers,먹다남은음식,1.19
+135,Infernape,ability,Pickpocket,나쁜손버릇,100
+135,Infernape,teammate,Whimsicott,엘풍,61.301
+135,Infernape,teammate,Salamence,보만다,57.877
+135,Infernape,teammate,Indeedee-F,에써르 (암컷),57.192
+135,Infernape,teammate,Milotic,밀로틱,55.479
+135,Infernape,teammate,Delphox,마폭시,47.945
+135,Infernape,teammate,Froslass,눈여아,8.904
+135,Infernape,teammate,Garchomp,한카리아스,7.534
+135,Infernape,teammate,Rillaboom,고릴타,5.822
+136,Meowstic,move,Fake Out,속이다,28.877
+136,Meowstic,move,Light Screen,빛의장막,20.321
+136,Meowstic,move,Reflect,리플렉터,17.112
+136,Meowstic,move,Psychic Terrain,사이코필드,16.578
+136,Meowstic,move,Skill Swap,스킬스웹,16.043
+136,Meowstic,move,Sunny Day,쾌청,14.973
+136,Meowstic,move,Expanding Force,와이드포스,14.973
+136,Meowstic,move,Gravity,중력,14.439
+136,Meowstic,move,Yawn,하품,13.369
+136,Meowstic,move,Rain Dance,비바라기,10.695
+136,Meowstic,move,Psychic Noise,사이코노이즈,6.417
+136,Meowstic,item,Focus Sash,기합의띠,21.429
+136,Meowstic,item,Sitrus Berry,자뭉열매,17.857
+136,Meowstic,item,Rocky Helmet,울퉁불퉁멧,10.714
+136,Meowstic,item,Colbur Berry,마코열매,10.714
+136,Meowstic,item,Bright Powder,반짝가루,7.143
+136,Meowstic,item,Mental Herb,멘탈허브,7.143
+136,Meowstic,item,Psychic Seed,사이코시드,7.143
+136,Meowstic,item,Eject Button,탈출버튼,7.143
+136,Meowstic,ability,Intimidate,위협,85.185
+136,Meowstic,ability,Minus,마이너스,7.407
+136,Meowstic,ability,Unnerve,긴장감,3.704
+136,Meowstic,ability,Hospitality,대접,3.704
+136,Meowstic,teammate,Indeedee-F,에써르 (암컷),24.138
+136,Meowstic,teammate,Delphox,마폭시,23.103
+136,Meowstic,teammate,Sneasler,포푸니크,18.276
+136,Meowstic,teammate,Milotic,밀로틱,15.517
+136,Meowstic,teammate,Golisopod,갑주무사,13.793
+136,Meowstic,teammate,Aegislash,킬가르도,13.103
+136,Meowstic,teammate,Overqwil,장침바루,12.759
+136,Meowstic,teammate,Klefki,클레피,12.069
+137,Salazzle,move,Fake Out,속이다,42.69
+137,Salazzle,move,Flamethrower,화염방사,21.053
+137,Salazzle,move,Dragon Cheer,드래곤옐,21.053
+137,Salazzle,move,Sludge Bomb,오물폭탄,20.468
+137,Salazzle,move,Heat Wave,열풍,14.62
+137,Salazzle,move,Protect,방어,8.772
+137,Salazzle,move,Encore,앵콜,7.018
+137,Salazzle,move,Overheat,오버히트,5.848
+137,Salazzle,move,Toxic,맹독,5.263
+137,Salazzle,move,Disable,사슬묶기,2.339
+137,Salazzle,move,Sludge Wave,오물웨이브,2.339
+137,Salazzle,move,Taunt,도발,1.754
+137,Salazzle,item,Focus Sash,기합의띠,61.176
+137,Salazzle,item,Air Balloon,풍선,22.353
+137,Salazzle,item,Life Orb,생명의구슬,9.412
+137,Salazzle,item,Shuca Berry,슈캐열매,3.529
+137,Salazzle,item,Red Card,레드카드,1.176
+137,Salazzle,item,Choice Scarf,구애스카프,1.176
+137,Salazzle,item,Rocky Helmet,울퉁불퉁멧,1.176
+137,Salazzle,ability,Oblivious,둔감,83.333
+137,Salazzle,ability,Magic Bounce,매직미러,5.556
+137,Salazzle,ability,Hospitality,대접,5.556
+137,Salazzle,ability,Trace,트레이스,5.556
+137,Salazzle,teammate,Salamence,보만다,24.138
+137,Salazzle,teammate,Rillaboom,고릴타,22.414
+137,Salazzle,teammate,Overqwil,장침바루,17.241
+137,Salazzle,teammate,Gholdengo,타부자고,16.207
+137,Salazzle,teammate,Tyranitar,마기라스,15.862
+137,Salazzle,teammate,Absol,앱솔,15.862
+137,Salazzle,teammate,Sneasler,포푸니크,14.138
+137,Salazzle,teammate,Glimmora,킬라플로르,14.138
+138,Chesnaught,move,Spiky Shield,니들가드,48.795
+138,Chesnaught,move,Belly Drum,배북,34.337
+138,Chesnaught,move,Grassy Glide,그래스슬라이더,30.723
+138,Chesnaught,move,Drain Punch,드레인펀치,28.313
+138,Chesnaught,move,Body Press,바디프레스,25.904
+138,Chesnaught,move,Iron Defense,철벽,12.651
+138,Chesnaught,move,Wood Hammer,우드해머,9.639
+138,Chesnaught,move,Leech Seed,씨뿌리기,8.434
+138,Chesnaught,move,Wide Guard,와이드가드,7.229
+138,Chesnaught,move,Protect,방어,6.627
+138,Chesnaught,move,Bulk Up,벌크업,5.422
+138,Chesnaught,move,Close Combat,인파이트,4.217
+138,Chesnaught,item,Chesnaughtite,브리가론나이트,85.816
+138,Chesnaught,item,Grassy Seed,그래스시드,3.546
+138,Chesnaught,item,Leftovers,먹다남은음식,3.546
+138,Chesnaught,item,Rocky Helmet,울퉁불퉁멧,2.837
+138,Chesnaught,item,Electric Seed,일렉트릭시드,2.128
+138,Chesnaught,item,Sitrus Berry,자뭉열매,1.418
+138,Chesnaught,item,Choice Scarf,구애스카프,0.709
+138,Chesnaught,ability,Bulletproof,방탄,88.889
+138,Chesnaught,ability,Hospitality,대접,11.111
+138,Chesnaught,teammate,Rillaboom,고릴타,45.965
+138,Chesnaught,teammate,Incineroar,어흥염,25.263
+138,Chesnaught,teammate,Farigiraf,키키링,22.456
+138,Chesnaught,teammate,Pelipper,패리퍼,18.947
+138,Chesnaught,teammate,Indeedee-F,에써르 (암컷),16.491
+138,Chesnaught,teammate,Corviknight,아머까오,12.281
+138,Chesnaught,teammate,Garchomp,한카리아스,11.579
+138,Chesnaught,teammate,Armarouge,카디나르마,9.474
+139,Squawkabilly,move,Final Gambit,목숨걸기,52.083
+139,Squawkabilly,move,Tailwind,순풍,18.229
+139,Squawkabilly,move,Parting Shot,막말내뱉기,16.667
+139,Squawkabilly,move,Brave Bird,브레이브버드,10.938
+139,Squawkabilly,move,Taunt,도발,4.688
+139,Squawkabilly,move,Dual Wingbeat,더블윙,3.125
+139,Squawkabilly,move,Foul Play,속임수,1.563
+139,Squawkabilly,move,Facade,객기,1.563
+139,Squawkabilly,move,Aerial Ace,제비반환,1.563
+139,Squawkabilly,move,Endeavor,죽기살기,1.563
+139,Squawkabilly,move,U-turn,유턴,1.563
+139,Squawkabilly,move,Copycat,흉내쟁이,1.042
+139,Squawkabilly,item,Focus Sash,기합의띠,38.889
+139,Squawkabilly,item,Choice Scarf,구애스카프,16.667
+139,Squawkabilly,item,Leftovers,먹다남은음식,16.667
+139,Squawkabilly,item,Rocky Helmet,울퉁불퉁멧,11.111
+139,Squawkabilly,item,Life Orb,생명의구슬,5.556
+139,Squawkabilly,item,Psychic Seed,사이코시드,5.556
+139,Squawkabilly,item,Red Card,레드카드,5.556
+139,Squawkabilly,ability,Intimidate,위협,98.78
+139,Squawkabilly,ability,Trace,트레이스,1.22
+139,Squawkabilly,teammate,Golisopod,갑주무사,37.943
+139,Squawkabilly,teammate,Indeedee-F,에써르 (암컷),26.596
+139,Squawkabilly,teammate,Farigiraf,키키링,23.05
+139,Squawkabilly,teammate,Rillaboom,고릴타,20.213
+139,Squawkabilly,teammate,Pelipper,패리퍼,18.794
+139,Squawkabilly,teammate,Spiritomb,화강돌,16.667
+139,Squawkabilly,teammate,Sylveon,님피아,15.603
+139,Squawkabilly,teammate,Kingambit,대도각참,14.539
+140,Scolipede,move,Protect,방어,42.568
+140,Scolipede,move,Leech Life,흡혈,42.568
+140,Scolipede,move,Swords Dance,칼춤,39.865
+140,Scolipede,move,Rock Slide,스톤샤워,15.541
+140,Scolipede,move,Baton Pass,바톤터치,11.486
+140,Scolipede,move,Poison Jab,독찌르기,10.811
+140,Scolipede,move,Earthquake,지진,8.784
+140,Scolipede,move,Steel Roller,아이언롤러,6.081
+140,Scolipede,move,Gunk Shot,더스트슈트,5.405
+140,Scolipede,move,Megahorn,메가폰,4.73
+140,Scolipede,move,Iron Defense,철벽,3.378
+140,Scolipede,move,Acid Spray,애시드봄,3.378
+140,Scolipede,item,Scolipite,펜드라나이트,76.087
+140,Scolipede,item,Focus Sash,기합의띠,9.783
+140,Scolipede,item,Life Orb,생명의구슬,6.522
+140,Scolipede,item,Grassy Seed,그래스시드,4.348
+140,Scolipede,item,Psychic Seed,사이코시드,1.087
+140,Scolipede,item,Rocky Helmet,울퉁불퉁멧,1.087
+140,Scolipede,item,Air Balloon,풍선,1.087
+140,Scolipede,ability,Speed Boost,가속,98.851
+140,Scolipede,ability,Hospitality,대접,1.149
+140,Scolipede,teammate,Overqwil,장침바루,23.358
+140,Scolipede,teammate,Toxapex,더시마사리,20.438
+140,Scolipede,teammate,Glimmora,킬라플로르,20.438
+140,Scolipede,teammate,Rillaboom,고릴타,19.708
+140,Scolipede,teammate,Sneasler,포푸니크,16.788
+140,Scolipede,teammate,Milotic,밀로틱,15.693
+140,Scolipede,teammate,Salamence,보만다,15.328
+140,Scolipede,teammate,Sinistcha,그우린차,14.599
+141,Arboliva,move,Protect,방어,30.147
+141,Arboliva,move,Giga Drain,기가드레인,25
+141,Arboliva,move,Strength Sap,힘흡수,16.912
+141,Arboliva,move,Leech Seed,씨뿌리기,15.441
+141,Arboliva,move,Earth Power,대지의힘,13.971
+141,Arboliva,move,Pollen Puff,꽃가루경단,12.5
+141,Arboliva,move,Energy Ball,에너지볼,11.765
+141,Arboliva,move,Hyper Voice,하이퍼보이스,11.029
+141,Arboliva,move,Weather Ball,웨더볼,9.559
+141,Arboliva,move,Terrain Pulse,대지의파동,8.824
+141,Arboliva,move,Helping Hand,도우미,4.412
+141,Arboliva,move,Dazzling Gleam,매지컬샤인,2.206
+141,Arboliva,item,Sitrus Berry,자뭉열매,37.5
+141,Arboliva,item,Leftovers,먹다남은음식,23.438
+141,Arboliva,item,Life Orb,생명의구슬,15.625
+141,Arboliva,item,Grassy Seed,그래스시드,12.5
+141,Arboliva,item,Red Card,레드카드,3.125
+141,Arboliva,item,Tanga Berry,리체열매,1.563
+141,Arboliva,item,Rocky Helmet,울퉁불퉁멧,1.563
+141,Arboliva,item,Coba Berry,바코열매,1.563
+141,Arboliva,ability,Seed Sower,넘치는씨,86.364
+141,Arboliva,ability,Harvest,수확,11.364
+141,Arboliva,ability,Magic Bounce,매직미러,1.136
+141,Arboliva,ability,Trace,트레이스,1.136
+141,Arboliva,teammate,Farigiraf,키키링,30.112
+141,Arboliva,teammate,Torkoal,코터스,21.933
+141,Arboliva,teammate,Garchomp,한카리아스,17.844
+141,Arboliva,teammate,Grimmsnarl,오롱털,17.844
+141,Arboliva,teammate,Indeedee-F,에써르 (암컷),16.729
+141,Arboliva,teammate,Pyroar,화염레오,14.498
+141,Arboliva,teammate,Annihilape,저승갓숭,14.126
+141,Arboliva,teammate,Golisopod,갑주무사,12.639
+142,Ninetales,move,Heat Wave,열풍,33.54
+142,Ninetales,move,Flamethrower,화염방사,14.907
+142,Ninetales,move,Protect,방어,11.18
+142,Ninetales,move,Solar Beam,솔라빔,9.317
+142,Ninetales,move,Overheat,오버히트,8.075
+142,Ninetales,move,Weather Ball,웨더볼,7.453
+142,Ninetales,move,Encore,앵콜,5.59
+142,Ninetales,move,Will-O-Wisp,도깨비불,4.348
+142,Ninetales,move,Helping Hand,도우미,3.727
+142,Ninetales,move,Scorching Sands,열사의대지,2.484
+142,Ninetales,move,Fake Tears,거짓울음,2.484
+142,Ninetales,move,Sunny Day,쾌청,1.863
+142,Ninetales,item,Life Orb,생명의구슬,22.727
+142,Ninetales,item,Focus Sash,기합의띠,18.182
+142,Ninetales,item,Sitrus Berry,자뭉열매,13.636
+142,Ninetales,item,Leftovers,먹다남은음식,9.091
+142,Ninetales,item,Air Balloon,풍선,9.091
+142,Ninetales,item,Eject Button,탈출버튼,9.091
+142,Ninetales,item,Heat Rock,뜨거운바위,9.091
+142,Ninetales,item,Shuca Berry,슈캐열매,4.545
+142,Ninetales,ability,Drought,가뭄,99.333
+142,Ninetales,ability,Hospitality,대접,0.667
+142,Ninetales,teammate,Pyroar,화염레오,40.299
+142,Ninetales,teammate,Whimsicott,엘풍,29.478
+142,Ninetales,teammate,Indeedee-F,에써르 (암컷),25.746
+142,Ninetales,teammate,Annihilape,저승갓숭,20.896
+142,Ninetales,teammate,Basculegion,대쓰여너 (수컷),20.149
+142,Ninetales,teammate,Grimmsnarl,오롱털,19.03
+142,Ninetales,teammate,Gardevoir,가디안,17.537
+142,Ninetales,teammate,Farigiraf,키키링,15.299
+143,Abomasnow,move,Blizzard,눈보라,57.143
+143,Abomasnow,move,Protect,방어,24.224
+143,Abomasnow,move,Aurora Veil,오로라베일,16.77
+143,Abomasnow,move,Earth Power,대지의힘,15.528
+143,Abomasnow,move,Giga Drain,기가드레인,11.801
+143,Abomasnow,move,Energy Ball,에너지볼,7.453
+143,Abomasnow,move,Ice Shard,얼음뭉치,5.59
+143,Abomasnow,move,Ice Hammer,아이스해머,3.106
+143,Abomasnow,move,Body Press,바디프레스,2.484
+143,Abomasnow,move,Leaf Storm,리프스톰,1.242
+143,Abomasnow,move,Wood Hammer,우드해머,1.242
+143,Abomasnow,move,Ice Beam,냉동빔,1.242
+143,Abomasnow,item,Abomasite,눈설왕나이트,95.327
+143,Abomasnow,item,Focus Sash,기합의띠,1.869
+143,Abomasnow,item,Leftovers,먹다남은음식,0.935
+143,Abomasnow,item,Rocky Helmet,울퉁불퉁멧,0.935
+143,Abomasnow,item,Grassy Seed,그래스시드,0.935
+143,Abomasnow,ability,Snow Warning,눈퍼뜨리기,98.052
+143,Abomasnow,ability,Hospitality,대접,1.299
+143,Abomasnow,ability,Trace,트레이스,0.649
+143,Abomasnow,teammate,Indeedee-F,에써르 (암컷),31.086
+143,Abomasnow,teammate,Farigiraf,키키링,23.97
+143,Abomasnow,teammate,Camerupt,폭타,19.101
+143,Abomasnow,teammate,Armarouge,카디나르마,17.228
+143,Abomasnow,teammate,Incineroar,어흥염,16.105
+143,Abomasnow,teammate,Kingambit,대도각참,14.232
+143,Abomasnow,teammate,Baxcalibur,드닐레이브,10.861
+143,Abomasnow,teammate,Rillaboom,고릴타,10.112
+144,Mimikyu,move,Trick Room,트릭룸,47.744
+144,Mimikyu,move,Play Rough,치근거리기,39.474
+144,Mimikyu,move,Swords Dance,칼춤,19.173
+144,Mimikyu,move,Shadow Sneak,야습,16.917
+144,Mimikyu,move,Shadow Claw,섀도크루,16.541
+144,Mimikyu,move,Curse,저주,13.91
+144,Mimikyu,move,Protect,방어,13.91
+144,Mimikyu,move,Drain Punch,드레인펀치,8.647
+144,Mimikyu,move,Will-O-Wisp,도깨비불,6.391
+144,Mimikyu,move,Rain Dance,비바라기,4.887
+144,Mimikyu,move,Destiny Bond,길동무,4.887
+144,Mimikyu,move,Taunt,도발,3.759
+144,Mimikyu,item,Life Orb,생명의구슬,53.535
+144,Mimikyu,item,Leftovers,먹다남은음식,14.141
+144,Mimikyu,item,Red Card,레드카드,13.131
+144,Mimikyu,item,Rocky Helmet,울퉁불퉁멧,5.051
+144,Mimikyu,item,Mental Herb,멘탈허브,4.04
+144,Mimikyu,item,Iron Ball,검은철구,2.02
+144,Mimikyu,item,Sitrus Berry,자뭉열매,2.02
+144,Mimikyu,item,Choice Scarf,구애스카프,2.02
+144,Mimikyu,ability,Hospitality,대접,75
+144,Mimikyu,ability,Pickpocket,나쁜손버릇,25
+144,Mimikyu,teammate,Golisopod,갑주무사,28.571
+144,Mimikyu,teammate,Rillaboom,고릴타,26.316
+144,Mimikyu,teammate,Gholdengo,타부자고,20.301
+144,Mimikyu,teammate,Incineroar,어흥염,19.549
+144,Mimikyu,teammate,Basculegion,대쓰여너 (수컷),17.293
+144,Mimikyu,teammate,Salamence,보만다,15.789
+144,Mimikyu,teammate,Camerupt,폭타,13.91
+144,Mimikyu,teammate,Zoroark-Hisui,히스이 조로아크,13.91
+145,Toxtricity,move,Overdrive,오버드라이브,47.59
+145,Toxtricity,move,Protect,방어,22.892
+145,Toxtricity,move,Sludge Bomb,오물폭탄,13.855
+145,Toxtricity,move,Boomburst,폭음파,10.843
+145,Toxtricity,move,Volt Switch,볼트체인지,7.229
+145,Toxtricity,move,Parabolic Charge,파라볼라차지,4.819
+145,Toxtricity,move,Electroweb,일렉트릭네트,4.217
+145,Toxtricity,move,Sludge Wave,오물웨이브,4.217
+145,Toxtricity,move,Snarl,바크아웃,3.012
+145,Toxtricity,move,Acid Spray,애시드봄,3.012
+145,Toxtricity,move,Thunderbolt,10만볼트,1.807
+145,Toxtricity,move,Encore,앵콜,1.807
+145,Toxtricity,item,Air Balloon,풍선,56.14
+145,Toxtricity,item,Life Orb,생명의구슬,31.579
+145,Toxtricity,item,Choice Scarf,구애스카프,3.509
+145,Toxtricity,item,Grassy Seed,그래스시드,1.754
+145,Toxtricity,item,Shuca Berry,슈캐열매,1.754
+145,Toxtricity,item,Focus Sash,기합의띠,1.754
+145,Toxtricity,item,Electric Seed,일렉트릭시드,1.754
+145,Toxtricity,item,Normal Gem,노말주얼,1.754
+145,Toxtricity,ability,Hospitality,대접,85.714
+145,Toxtricity,ability,Trace,트레이스,14.286
+145,Toxtricity,teammate,Salamence,보만다,26.82
+145,Toxtricity,teammate,Golisopod,갑주무사,18.774
+145,Toxtricity,teammate,Garchomp,한카리아스,18.008
+145,Toxtricity,teammate,Incineroar,어흥염,16.475
+145,Toxtricity,teammate,Indeedee-F,에써르 (암컷),13.793
+145,Toxtricity,teammate,Pelipper,패리퍼,13.027
+145,Toxtricity,teammate,Rillaboom,고릴타,13.027
+145,Toxtricity,teammate,Raichu,라이츄,12.644
+146,Feraligatr,move,Protect,방어,42.208
+146,Feraligatr,move,Liquidation,아쿠아브레이크,37.662
+146,Feraligatr,move,Dragon Dance,용의춤,28.571
+146,Feraligatr,move,Double-Edge,이판사판태클,20.779
+146,Feraligatr,move,Slash,베어가르기,16.883
+146,Feraligatr,move,Swords Dance,칼춤,13.636
+146,Feraligatr,move,Body Slam,누르기,10.39
+146,Feraligatr,move,Aqua Jet,아쿠아제트,9.091
+146,Feraligatr,move,Waterfall,폭포오르기,8.442
+146,Feraligatr,move,Ice Punch,냉동펀치,4.545
+146,Feraligatr,move,Rock Slide,스톤샤워,3.896
+146,Feraligatr,move,Crunch,깨물어부수기,3.247
+146,Feraligatr,item,Feraligite,장크로다일나이트,88.393
+146,Feraligatr,item,Rocky Helmet,울퉁불퉁멧,8.929
+146,Feraligatr,item,Life Orb,생명의구슬,1.786
+146,Feraligatr,item,Sitrus Berry,자뭉열매,0.893
+146,Feraligatr,ability,Hospitality,대접,81.25
+146,Feraligatr,ability,Simple,단순,12.5
+146,Feraligatr,ability,Water Bubble,수포,6.25
+146,Feraligatr,teammate,Indeedee-F,에써르 (암컷),24.806
+146,Feraligatr,teammate,Sinistcha,그우린차,23.643
+146,Feraligatr,teammate,Rillaboom,고릴타,19.38
+146,Feraligatr,teammate,Kingambit,대도각참,17.829
+146,Feraligatr,teammate,Pelipper,패리퍼,17.442
+146,Feraligatr,teammate,Farigiraf,키키링,17.054
+146,Feraligatr,teammate,Sneasler,포푸니크,16.667
+146,Feraligatr,teammate,Incineroar,어흥염,15.891
+147,Aggron,move,Body Press,바디프레스,58.228
+147,Aggron,move,Iron Defense,철벽,51.899
+147,Aggron,move,Protect,방어,37.975
+147,Aggron,move,Heavy Slam,헤비봄버,34.177
+147,Aggron,move,Rock Slide,스톤샤워,8.228
+147,Aggron,move,Steel Roller,아이언롤러,6.329
+147,Aggron,move,Iron Head,아이언헤드,3.797
+147,Aggron,move,Curse,저주,3.165
+147,Aggron,move,Rest,잠자기,3.165
+147,Aggron,move,Sleep Talk,잠꼬대,2.532
+147,Aggron,move,High Horsepower,10만마력,1.899
+147,Aggron,move,Head Smash,양날박치기,1.899
+147,Aggron,item,Aggronite,보스로라나이트,94.406
+147,Aggron,item,Rocky Helmet,울퉁불퉁멧,2.797
+147,Aggron,item,Life Orb,생명의구슬,1.399
+147,Aggron,item,Air Balloon,풍선,0.699
+147,Aggron,item,Leftovers,먹다남은음식,0.699
+147,Aggron,ability,Hospitality,대접,81.25
+147,Aggron,ability,Sturdy,옹골참,15.625
+147,Aggron,ability,Trace,트레이스,3.125
+147,Aggron,teammate,Sinistcha,그우린차,34.375
+147,Aggron,teammate,Rillaboom,고릴타,24.609
+147,Aggron,teammate,Incineroar,어흥염,24.219
+147,Aggron,teammate,Farigiraf,키키링,15.625
+147,Aggron,teammate,Pelipper,패리퍼,14.453
+147,Aggron,teammate,Grimmsnarl,오롱털,14.453
+147,Aggron,teammate,Indeedee-F,에써르 (암컷),13.281
+147,Aggron,teammate,Sneasler,포푸니크,13.281
+148,Serperior,move,Leaf Storm,리프스톰,66.667
+148,Serperior,move,Protect,방어,34.188
+148,Serperior,move,Glare,뱀눈초리,10.256
+148,Serperior,move,Synthesis,광합성,10.256
+148,Serperior,move,Dragon Pulse,용의파동,6.838
+148,Serperior,move,Substitute,대타출동,5.128
+148,Serperior,move,Giga Drain,기가드레인,5.128
+148,Serperior,move,Leech Seed,씨뿌리기,4.274
+148,Serperior,move,Reflect,리플렉터,3.419
+148,Serperior,move,Taunt,도발,3.419
+148,Serperior,move,Light Screen,빛의장막,2.564
+148,Serperior,move,Dragon Tail,드래곤테일,1.709
+148,Serperior,item,Leftovers,먹다남은음식,65.714
+148,Serperior,item,Sitrus Berry,자뭉열매,11.429
+148,Serperior,item,Life Orb,생명의구슬,11.429
+148,Serperior,item,Choice Scarf,구애스카프,2.857
+148,Serperior,item,Red Card,레드카드,2.857
+148,Serperior,item,Iron Ball,검은철구,2.857
+148,Serperior,item,Focus Sash,기합의띠,2.857
+148,Serperior,ability,Hospitality,대접,100
+148,Serperior,teammate,Grapploct,케오퍼스,40
+148,Serperior,teammate,Staraptor,찌르호크,20.4
+148,Serperior,teammate,Grimmsnarl,오롱털,20
+148,Serperior,teammate,Golisopod,갑주무사,17.6
+148,Serperior,teammate,Malamar,칼라마네로,16.8
+148,Serperior,teammate,Incineroar,어흥염,15.6
+148,Serperior,teammate,Whimsicott,엘풍,15.2
+148,Serperior,teammate,Glimmora,킬라플로르,10.8
+149,Skeledirge,move,Torch Song,플레어송,71.613
+149,Skeledirge,move,Protect,방어,29.677
+149,Skeledirge,move,Shadow Ball,섀도볼,23.226
+149,Skeledirge,move,Slack Off,태만함,19.355
+149,Skeledirge,move,Will-O-Wisp,도깨비불,17.419
+149,Skeledirge,move,Yawn,하품,7.742
+149,Skeledirge,move,Hex,병상첨병,5.806
+149,Skeledirge,move,Earth Power,대지의힘,5.806
+149,Skeledirge,move,Heat Wave,열풍,5.161
+149,Skeledirge,move,Roar,울부짖기,1.29
+149,Skeledirge,move,Alluring Voice,매혹의보이스,1.29
+149,Skeledirge,move,Snarl,바크아웃,1.29
+149,Skeledirge,item,Leftovers,먹다남은음식,61.765
+149,Skeledirge,item,Sitrus Berry,자뭉열매,29.412
+149,Skeledirge,item,Air Balloon,풍선,2.941
+149,Skeledirge,item,Grassy Seed,그래스시드,1.961
+149,Skeledirge,item,Charcoal,목탄,0.98
+149,Skeledirge,item,Electric Seed,일렉트릭시드,0.98
+149,Skeledirge,item,Life Orb,생명의구슬,0.98
+149,Skeledirge,item,Expert Belt,달인의띠,0.98
+149,Skeledirge,ability,Simple,단순,50
+149,Skeledirge,ability,Trace,트레이스,50
+149,Skeledirge,teammate,Rillaboom,고릴타,35.341
+149,Skeledirge,teammate,Garchomp,한카리아스,20.482
+149,Skeledirge,teammate,Kingambit,대도각참,15.261
+149,Skeledirge,teammate,Golisopod,갑주무사,13.655
+149,Skeledirge,teammate,Farigiraf,키키링,13.655
+149,Skeledirge,teammate,Tyranitar,마기라스,13.655
+149,Skeledirge,teammate,Basculegion,대쓰여너 (수컷),12.851
+149,Skeledirge,teammate,Whimsicott,엘풍,9.639
+150,Audino,move,Trick Room,트릭룸,56.452
+150,Audino,move,Simple Beam,심플빔,55.376
+150,Audino,move,Heal Pulse,치유파동,24.194
+150,Audino,move,Protect,방어,20.968
+150,Audino,move,Dazzling Gleam,매지컬샤인,11.828
+150,Audino,move,Life Dew,생명의물방울,10.753
+150,Audino,move,Ally Switch,사이드체인지,9.677
+150,Audino,move,Yawn,하품,9.677
+150,Audino,move,Hyper Voice,하이퍼보이스,6.452
+150,Audino,move,Helping Hand,도우미,5.376
+150,Audino,move,Calm Mind,명상,4.301
+150,Audino,move,Draining Kiss,드레인키스,3.763
+150,Audino,item,Audinite,다부니나이트,71.053
+150,Audino,item,Sitrus Berry,자뭉열매,9.211
+150,Audino,item,Leftovers,먹다남은음식,7.895
+150,Audino,item,Focus Sash,기합의띠,3.947
+150,Audino,item,Eject Button,탈출버튼,2.632
+150,Audino,item,Chople Berry,로플열매,1.316
+150,Audino,item,Red Card,레드카드,1.316
+150,Audino,item,Choice Scarf,구애스카프,1.316
+150,Audino,ability,Regenerator,재생력,57.576
+150,Audino,ability,Hospitality,대접,21.212
+150,Audino,ability,Trace,트레이스,12.121
+150,Audino,ability,Stamina,지구력,6.061
+150,Audino,teammate,Overqwil,장침바루,28.455
+150,Audino,teammate,Slowbro,야도란,23.171
+150,Audino,teammate,Sinistcha,그우린차,19.919
+150,Audino,teammate,Rillaboom,고릴타,19.106
+150,Audino,teammate,Incineroar,어흥염,15.854
+150,Audino,teammate,Snorlax,잠만보,15.447
+150,Audino,teammate,Indeedee-F,에써르 (암컷),15.447
+150,Audino,teammate,Zoroark-Hisui,히스이 조로아크,13.008
+151,Spiritomb,move,Trick Room,트릭룸,71.134
+151,Spiritomb,move,Snarl,바크아웃,40.206
+151,Spiritomb,move,Will-O-Wisp,도깨비불,35.052
+151,Spiritomb,move,Destiny Bond,길동무,26.804
+151,Spiritomb,move,Foul Play,속임수,10.825
+151,Spiritomb,move,Pain Split,아픔나누기,6.186
+151,Spiritomb,move,Ally Switch,사이드체인지,5.155
+151,Spiritomb,move,Helping Hand,도우미,4.124
+151,Spiritomb,move,Dark Pulse,악의파동,3.608
+151,Spiritomb,move,Shadow Ball,섀도볼,3.093
+151,Spiritomb,move,Toxic,맹독,2.577
+151,Spiritomb,move,Rain Dance,비바라기,2.577
+151,Spiritomb,item,Roseli Berry,로셀열매,50
+151,Spiritomb,item,Leftovers,먹다남은음식,16.667
+151,Spiritomb,item,Sitrus Berry,자뭉열매,13.333
+151,Spiritomb,item,Electric Seed,일렉트릭시드,5
+151,Spiritomb,item,Psychic Seed,사이코시드,5
+151,Spiritomb,item,Mental Herb,멘탈허브,1.667
+151,Spiritomb,item,Air Balloon,풍선,1.667
+151,Spiritomb,item,Rocky Helmet,울퉁불퉁멧,1.667
+151,Spiritomb,ability,Pressure,프레셔,87.931
+151,Spiritomb,ability,Trace,트레이스,8.621
+151,Spiritomb,ability,Magic Bounce,매직미러,1.724
+151,Spiritomb,ability,Intimidate,위협,1.724
+151,Spiritomb,teammate,Golisopod,갑주무사,43.933
+151,Spiritomb,teammate,Sylveon,님피아,41.423
+151,Spiritomb,teammate,Incineroar,어흥염,32.218
+151,Spiritomb,teammate,Pelipper,패리퍼,23.849
+151,Spiritomb,teammate,Politoed,왕구리,20.084
+151,Spiritomb,teammate,Squawkabilly,시비꼬,19.665
+151,Spiritomb,teammate,Kingambit,대도각참,16.318
+151,Spiritomb,teammate,Rillaboom,고릴타,12.971
+152,Persian-Alola,move,Fake Out,속이다,55.152
+152,Persian-Alola,move,Foul Play,속임수,40.606
+152,Persian-Alola,move,Parting Shot,막말내뱉기,38.788
+152,Persian-Alola,move,Snarl,바크아웃,22.424
+152,Persian-Alola,move,Icy Wind,얼다바람,9.697
+152,Persian-Alola,move,Taunt,도발,9.091
+152,Persian-Alola,move,Fake Tears,거짓울음,3.03
+152,Persian-Alola,move,Dark Pulse,악의파동,3.03
+152,Persian-Alola,move,Thunder Wave,전기자석파,3.03
+152,Persian-Alola,move,Protect,방어,2.424
+152,Persian-Alola,move,Beat Up,집단구타,2.424
+152,Persian-Alola,move,U-turn,유턴,1.818
+152,Persian-Alola,item,Sitrus Berry,자뭉열매,47.727
+152,Persian-Alola,item,Focus Sash,기합의띠,13.636
+152,Persian-Alola,item,Chople Berry,로플열매,11.364
+152,Persian-Alola,item,Rocky Helmet,울퉁불퉁멧,6.818
+152,Persian-Alola,item,Roseli Berry,로셀열매,6.818
+152,Persian-Alola,item,Life Orb,생명의구슬,4.545
+152,Persian-Alola,item,Wide Lens,광각렌즈,2.273
+152,Persian-Alola,item,Choice Scarf,구애스카프,2.273
+152,Persian-Alola,ability,Magic Bounce,매직미러,50
+152,Persian-Alola,ability,Rattled,주눅,50
+152,Persian-Alola,teammate,Salamence,보만다,31.224
+152,Persian-Alola,teammate,Rillaboom,고릴타,28.692
+152,Persian-Alola,teammate,Lucario,루카리오,17.3
+152,Persian-Alola,teammate,Indeedee-F,에써르 (암컷),14.768
+152,Persian-Alola,teammate,Charizard,리자몽,13.924
+152,Persian-Alola,teammate,Golisopod,갑주무사,13.08
+152,Persian-Alola,teammate,Sneasler,포푸니크,10.97
+152,Persian-Alola,teammate,Garchomp,한카리아스,10.97
+153,Wyrdeer,move,Skill Swap,스킬스웹,53.012
+153,Wyrdeer,move,Trick Room,트릭룸,40.361
+153,Wyrdeer,move,Psyshield Bash,배리어러시,18.675
+153,Wyrdeer,move,Expanding Force,와이드포스,15.663
+153,Wyrdeer,move,Protect,방어,13.855
+153,Wyrdeer,move,Hypnosis,최면술,10.241
+153,Wyrdeer,move,Gravity,중력,6.627
+153,Wyrdeer,move,Helping Hand,도우미,4.217
+153,Wyrdeer,move,Psychic Noise,사이코노이즈,3.614
+153,Wyrdeer,move,High Horsepower,10만마력,3.012
+153,Wyrdeer,move,Earth Power,대지의힘,3.012
+153,Wyrdeer,item,Sitrus Berry,자뭉열매,44.681
+153,Wyrdeer,item,Colbur Berry,마코열매,12.766
+153,Wyrdeer,item,Leftovers,먹다남은음식,10.638
+153,Wyrdeer,item,Focus Sash,기합의띠,6.383
+153,Wyrdeer,item,Mental Herb,멘탈허브,6.383
+153,Wyrdeer,item,Grassy Seed,그래스시드,4.255
+153,Wyrdeer,item,Psychic Seed,사이코시드,4.255
+153,Wyrdeer,item,Quick Claw,선제공격손톱,2.128
+153,Wyrdeer,ability,Intimidate,위협,89.744
+153,Wyrdeer,ability,Competitive,승기,1.923
+153,Wyrdeer,ability,Trace,트레이스,1.282
+153,Wyrdeer,ability,Defiant,오기,1.282
+153,Wyrdeer,teammate,Golisopod,갑주무사,19.149
+153,Wyrdeer,teammate,Milotic,밀로틱,18.723
+153,Wyrdeer,teammate,Indeedee-F,에써르 (암컷),18.723
+153,Wyrdeer,teammate,Empoleon,엠페르트,18.298
+153,Wyrdeer,teammate,Rillaboom,고릴타,17.021
+153,Wyrdeer,teammate,Incineroar,어흥염,15.745
+153,Wyrdeer,teammate,Wigglytuff,푸크린,14.468
+153,Wyrdeer,teammate,Salamence,보만다,13.617

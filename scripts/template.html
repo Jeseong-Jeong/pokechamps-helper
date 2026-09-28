@@ -1,0 +1,348 @@
+<title>포챔스 M-C 도감</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --ground:#F2F4F8; --surface:#FFFFFF; --sunk:#E9ECF2; --ink:#151A25; --muted:#5A6373; --line:#DCE0E8;
+  --accent:#2446B5; --accent-soft:#E3E9FB; --gold:#9A6A0E; --gold-soft:#F7EDD6; --good:#1E7A4F; --warn:#A6461B;
+  --bar:#2446B5; --bar-bg:#E4E8F0; --shadow:0 10px 40px rgba(20,28,48,.14);
+  --f-display:"Black Han Sans","IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --f-body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --ground:#0E121A; --surface:#161B26; --sunk:#1D2330; --ink:#E7EAF0; --muted:#98A1B2; --line:#2A3140;
+    --accent:#86A0FF; --accent-soft:#1F2A4D; --gold:#E6B654; --gold-soft:#3A2E14; --good:#5CC994; --warn:#F08A5D;
+    --bar:#86A0FF; --bar-bg:#252C3B; --shadow:0 10px 40px rgba(0,0,0,.5);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#0E121A; --surface:#161B26; --sunk:#1D2330; --ink:#E7EAF0; --muted:#98A1B2; --line:#2A3140;
+  --accent:#86A0FF; --accent-soft:#1F2A4D; --gold:#E6B654; --gold-soft:#3A2E14; --good:#5CC994; --warn:#F08A5D;
+  --bar:#86A0FF; --bar-bg:#252C3B; --shadow:0 10px 40px rgba(0,0,0,.5);
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--f-body);font-size:14px;line-height:1.55;padding-inline:16px;padding-block:0 48px}
+.wrap{max-width:1180px;margin:0 auto}
+header.top{padding-block:28px 18px;display:flex;flex-wrap:wrap;gap:14px 28px;align-items:flex-end;justify-content:space-between}
+h1{font-family:var(--f-display);font-weight:400;font-size:clamp(28px,4.6vw,42px);line-height:1.05;margin:0;letter-spacing:.01em;text-wrap:balance}
+h1 small{display:block;font-family:var(--f-body);font-size:13px;font-weight:500;color:var(--muted);letter-spacing:.02em;margin-top:8px}
+.reg{display:flex;flex-wrap:wrap;gap:8px}
+.reg .pill{font-family:var(--f-mono);font-size:12px;padding:5px 10px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--muted)}
+.reg .pill b{color:var(--ink);font-weight:500}
+.reg .pill.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.reg .pill.on b{color:#fff}
+:root[data-theme="dark"] .reg .pill.on, :root[data-theme="dark"] .reg .pill.on b{color:#0E121A}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .reg .pill.on, :root:not([data-theme="light"]) .reg .pill.on b{color:#0E121A}}
+nav.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:18px;overflow-x:auto}
+nav.tabs button{appearance:none;border:0;background:none;font:600 15px var(--f-body);color:var(--muted);padding:10px 14px 11px;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px;white-space:nowrap}
+nav.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+nav.tabs button:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, tr:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.panel[hidden]{display:none}
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.card h3{margin:0 0 8px;font-size:12px;letter-spacing:.06em;color:var(--muted);font-weight:600}
+.core{display:flex;justify-content:space-between;gap:10px;padding-block:4px;border-top:1px dashed var(--line);font-size:13px}
+.core:first-of-type{border-top:0}
+.core span:last-child{font-family:var(--f-mono);color:var(--muted);white-space:nowrap}
+.controls{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;margin-bottom:12px}
+.controls input[type=search], .controls select{font:inherit;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);min-width:0}
+.controls input[type=search]{flex:1 1 220px}
+.controls label.chk{display:flex;gap:6px;align-items:center;font-size:13px;color:var(--muted);cursor:pointer;user-select:none}
+.count{font-family:var(--f-mono);font-size:12px;color:var(--muted);margin-left:auto}
+.tbl{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th{position:sticky;top:0;background:var(--sunk);text-align:left;font-size:11.5px;letter-spacing:.04em;color:var(--muted);font-weight:600;padding:8px 10px;white-space:nowrap;cursor:default}
+th.sort{cursor:pointer}
+th.sort:hover{color:var(--ink)}
+td{padding:7px 10px;border-top:1px solid var(--line);vertical-align:middle}
+tbody tr{cursor:pointer}
+tbody tr:hover{background:var(--accent-soft)}
+.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.nm b{font-weight:600}
+.nm .en{display:block;font-size:11.5px;color:var(--muted)}
+.ty{display:inline-block;font-size:11px;font-weight:600;line-height:1;padding:4px 7px 4px;border-radius:4px;color:#fff;margin:1px 3px 1px 0;white-space:nowrap}
+.ty.light{color:#1a1a1a}
+.badge{display:inline-block;font-size:10.5px;font-weight:700;padding:2px 6px;border-radius:4px;margin-left:5px;vertical-align:1px;letter-spacing:.02em}
+.b-mega{background:var(--gold-soft);color:var(--gold)}
+.b-new{background:var(--accent-soft);color:var(--accent)}
+.b-form{background:var(--sunk);color:var(--muted)}
+.usebar{display:flex;align-items:center;gap:8px;min-width:150px}
+.usebar i{display:block;height:8px;border-radius:2px;background:var(--bar)}
+.usebar .track{flex:1;background:var(--bar-bg);border-radius:2px;height:8px}
+.mini{font-size:12px;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:4px}
+.chip{font-size:12px;padding:3px 8px;border-radius:999px;background:var(--sunk);border:1px solid var(--line);white-space:nowrap;display:inline-flex;align-items:center;gap:5px}
+.chip .dot{width:8px;height:8px;border-radius:50%}
+.chip .p{font-family:var(--f-mono);color:var(--muted);font-size:11px}
+.st-h{color:var(--muted);font-size:11.5px}
+/* detail drawer */
+.scrim{position:fixed;inset:0;background:rgba(10,14,22,.35);z-index:20}
+aside.drawer{position:fixed;top:0;right:0;bottom:0;width:min(560px,100%);background:var(--surface);z-index:21;box-shadow:var(--shadow);overflow-y:auto;padding:calc(env(safe-area-inset-top,0px) + 18px) 20px calc(env(safe-area-inset-bottom,0px) + 32px);border-left:1px solid var(--line)}
+.drawer .close{position:sticky;top:0;float:right;appearance:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;font:600 13px var(--f-body);padding:6px 10px;cursor:pointer}
+.drawer h2{font-family:var(--f-display);font-weight:400;font-size:30px;line-height:1.1;margin:4px 0 2px;text-wrap:balance}
+.drawer .sub{color:var(--muted);font-size:13px;margin-bottom:10px}
+.drawer section{margin-top:20px}
+.drawer section > h4{margin:0 0 8px;font-size:12px;letter-spacing:.06em;color:var(--muted);font-weight:600;display:flex;justify-content:space-between;gap:8px}
+.stats{display:grid;grid-template-columns:42px 38px 1fr;gap:5px 10px;align-items:center;font-size:13px}
+.stats .v{font-family:var(--f-mono);text-align:right;font-variant-numeric:tabular-nums}
+.stats .t{background:var(--bar-bg);height:9px;border-radius:2px;overflow:hidden}
+.stats .t i{display:block;height:100%;border-radius:2px}
+.stats .tot{grid-column:1/-1;border-top:1px solid var(--line);padding-top:6px;display:flex;justify-content:space-between;font-family:var(--f-mono)}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}
+.kv div{background:var(--sunk);border-radius:8px;padding:8px 10px}
+.kv b{display:block;font-family:var(--f-mono);font-size:18px;font-weight:500}
+.kv span{font-size:11.5px;color:var(--muted)}
+.list2 .row{display:flex;justify-content:space-between;gap:10px;padding-block:4px;border-top:1px dashed var(--line);font-size:13px;align-items:center}
+.list2 .row:first-child{border-top:0}
+.list2 .row .bar{flex:0 0 90px;height:6px;background:var(--bar-bg);border-radius:2px;overflow:hidden}
+.list2 .row .bar i{display:block;height:100%;background:var(--bar)}
+.list2 .row .l{flex:1;min-width:0}
+.list2 .row .r{font-family:var(--f-mono);font-size:12px;color:var(--muted);width:58px;text-align:right}
+.link{color:var(--accent);cursor:pointer;text-decoration:underline;text-underline-offset:2px;background:none;border:0;font:inherit;padding:0}
+.megacards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.megacards button{appearance:none;text-align:left;border:1px solid var(--line);background:var(--gold-soft);color:var(--ink);border-radius:8px;padding:9px 11px;cursor:pointer;font:inherit}
+.megacards button b{display:block}
+.megacards button span{font-size:12px;color:var(--muted)}
+.lset-filter{font:inherit;padding:6px 9px;border-radius:7px;border:1px solid var(--line);background:var(--surface);color:var(--ink);width:100%;margin-bottom:8px}
+.mvtbl td{padding:5px 8px}
+.mvtbl .eff{color:var(--muted);font-size:12px;max-width:340px}
+.chg{color:var(--warn);font-size:11.5px;font-family:var(--f-mono)}
+footer{margin-top:32px;color:var(--muted);font-size:12.5px;line-height:1.7}
+footer a{color:var(--accent)}
+.note{font-size:12.5px;color:var(--muted);margin:0 0 12px}
+@media (max-width:640px){ .hide-sm{display:none} td,th{padding:7px 7px} }
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1>포챔스 M-C 도감<small>Pokémon Champions · 참전 포켓몬 / 종족값 / 기술 / 사용률</small></h1>
+    <div class="reg" id="reg"></div>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button role="tab" id="t-usage" aria-selected="true" data-p="usage">사용률 순위</button>
+    <button role="tab" id="t-dex" aria-selected="false" data-p="dex">참전 포켓몬</button>
+    <button role="tab" id="t-moves" aria-selected="false" data-p="moves">기술</button>
+  </nav>
+
+  <div class="panel" id="p-usage">
+    <div class="summary" id="usage-summary"></div>
+    <p class="note">Pikalytics 기준 Reg M-C 더블(VGC) 통계, 레이팅 1760+ 대전 표본. 포켓몬 이름은 메가진화 전 모습 기준으로 합산됩니다(메가 사용 여부는 도구 채용률의 메가스톤으로 확인). 행을 누르면 상세 정보가 열립니다.</p>
+    <div class="controls">
+      <input type="search" id="u-q" placeholder="포켓몬 이름 검색 (한글/영문)">
+      <select id="u-type" aria-label="타입"></select>
+      <span class="count" id="u-count"></span>
+    </div>
+    <div class="tbl"><table>
+      <thead><tr><th class="num">#</th><th>포켓몬</th><th>타입</th><th>사용률</th><th class="num hide-sm">승률</th><th class="hide-sm">주요 기술</th><th class="hide-sm">주요 도구</th></tr></thead>
+      <tbody id="u-body"></tbody>
+    </table></div>
+  </div>
+
+  <div class="panel" id="p-dex" hidden>
+    <div class="controls">
+      <input type="search" id="d-q" placeholder="이름 또는 도감번호 검색">
+      <select id="d-type" aria-label="타입"></select>
+      <select id="d-sort" aria-label="정렬">
+        <option value="no">도감번호순</option><option value="bst">종족값 합계순</option>
+        <option value="0">HP순</option><option value="1">공격순</option><option value="2">방어순</option>
+        <option value="3">특공순</option><option value="4">특방순</option><option value="5">스피드순</option>
+        <option value="use">사용률 순위순</option>
+      </select>
+      <label class="chk"><input type="checkbox" id="d-mega"> 메가진화만</label>
+      <label class="chk"><input type="checkbox" id="d-hasmega"> 메가 가능 포켓몬</label>
+      <label class="chk"><input type="checkbox" id="d-new"> M-C 신규</label>
+      <span class="count" id="d-count"></span>
+    </div>
+    <div class="tbl"><table>
+      <thead><tr><th class="num">No.</th><th>포켓몬</th><th>타입</th><th class="num">HP</th><th class="num">공격</th><th class="num">방어</th><th class="num">특공</th><th class="num">특방</th><th class="num">스피드</th><th class="num">합계</th><th class="hide-sm">특성</th></tr></thead>
+      <tbody id="d-body"></tbody>
+    </table></div>
+  </div>
+
+  <div class="panel" id="p-moves" hidden>
+    <p class="note">포챔스에서 사용 가능한 기술 전체. <span class="chg">▲</span> 표시는 스칼렛·바이올렛 대비 수치가 바뀐 기술입니다. 행을 누르면 배울 수 있는 포켓몬이 표시됩니다.</p>
+    <div class="controls">
+      <input type="search" id="m-q" placeholder="기술 이름 검색 (한글/영문)">
+      <select id="m-type" aria-label="타입"></select>
+      <select id="m-cat" aria-label="분류"><option value="">분류 전체</option><option>물리</option><option>특수</option><option>변화</option></select>
+      <label class="chk"><input type="checkbox" id="m-chg"> 변경된 기술만</label>
+      <span class="count" id="m-count"></span>
+    </div>
+    <div class="tbl"><table class="mvtbl">
+      <thead><tr><th>기술</th><th>타입</th><th>분류</th><th class="num">위력</th><th class="num">명중</th><th class="num">PP</th><th class="hide-sm">효과</th><th class="num">습득</th></tr></thead>
+      <tbody id="m-body"></tbody>
+    </table></div>
+  </div>
+
+  <footer id="foot"></footer>
+</div>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" hidden aria-live="polite"></aside>
+
+<script>
+const DATA = /*DATA*/null;
+const CORES = /*CORES*/null;
+const TYC = {normal:'#9A9A7C',fire:'#E0662E',water:'#4A7FE0',grass:'#4E9F3D',electric:'#E9C21A',ice:'#6CC3C4',fighting:'#B8322A',poison:'#9243A0',ground:'#C9A24A',flying:'#8C8AE8',psychic:'#E5487A',bug:'#95A11E',rock:'#AD9437',ghost:'#6450A0',dragon:'#5A3CE8',dark:'#5E4A3E',steel:'#8E8EAA',fairy:'#D77FB0'};
+const LIGHT = new Set(['electric','ice','ground','normal','steel','fairy','bug','rock','flying']);
+const TK = DATA.typeko, E = DATA.entries, MV = DATA.moves, U = DATA.usage;
+const byId = Object.fromEntries(E.map(e=>[e.id,e]));
+const SL = ['HP','공격','방어','특공','특방','스피드'];
+const esc = s => String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ty = t => `<span class="ty${LIGHT.has(t)?' light':''}" style="background:${TYC[t]}">${TK[t]}</span>`;
+const mvName = i => typeof i==='number' ? (MV[i].ko||MV[i].en) : i;
+const itemName = n => DATA.itemko[n] || n;
+const $ = id => document.getElementById(id);
+
+// header pills
+$('reg').innerHTML = `<span class="pill on">레귤레이션 <b>M-C</b> 9.9–12.2</span><span class="pill">시즌 <b>M-6</b> 9.9–10.7</span><span class="pill">수집 <b>${DATA.meta.fetched.slice(0,10)}</b></span><a class="pill" href="advisor.html" style="text-decoration:none"><b>추천 봇 →</b></a>`;
+
+// type selects
+for (const id of ['u-type','d-type','m-type']) {
+  $(id).innerHTML = '<option value="">타입 전체</option>' + Object.keys(TK).map(t=>`<option value="${t}">${TK[t]}</option>`).join('');
+}
+
+// tabs
+document.querySelectorAll('nav.tabs button').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.p)));
+function showTab(p){
+  document.querySelectorAll('nav.tabs button').forEach(b=>b.setAttribute('aria-selected', b.dataset.p===p));
+  for (const x of ['usage','dex','moves']) $('p-'+x).hidden = x!==p;
+  try{localStorage.setItem('pc-tab',p)}catch(e){}
+}
+try{const t=localStorage.getItem('pc-tab'); if(t) showTab(t)}catch(e){}
+
+// ---------- usage ----------
+function renderSummary(){
+  const top = U.slice(0,3);
+  const megaTop = U.map(u=>({u, st:(u.it||[]).find(([n])=>/ite( [XYZ])?$|ite$/.test(n) && !/^(White|Light|Eviolite)/.test(n))})).filter(x=>x.st && x.st[1]>=40).slice(0,6);
+  $('usage-summary').innerHTML =
+   `<div class="card"><h3>사용률 TOP 3</h3>${top.map(u=>`<div class="core"><span>${u.rank}. ${esc(nameOf(u))}</span><span>${u.pct.toFixed(2)}%</span></div>`).join('')}</div>`+
+   (CORES? `<div class="card"><h3>자주 쓰이는 3마리 조합</h3>${CORES.c3.map(c=>`<div class="core"><span>${esc(c[0])}</span><span>${c[1]}</span></div>`).join('')}</div>`:'')+
+   `<div class="card"><h3>메가진화로 주로 쓰이는 포켓몬</h3>${megaTop.map(({u,st})=>`<div class="core"><span>${esc(nameOf(u))} · ${esc(itemName(st[0]))}</span><span>${st[1].toFixed(0)}%</span></div>`).join('')}</div>`;
+}
+function nameOf(u){ const e=byId[u.id]; return e? e.ko : u.name; }
+function renderUsage(){
+  const q=$('u-q').value.trim().toLowerCase(), t=$('u-type').value;
+  const max = U[0]?.pct||1;
+  const rows = U.filter(u=>{ const e=byId[u.id]; const types=e?e.ty:[];
+    if(t && !types.includes(t)) return false;
+    if(q && !((e?.ko||'')+' '+u.name).toLowerCase().includes(q)) return false; return true;});
+  $('u-count').textContent = `${rows.length}종`;
+  $('u-body').innerHTML = rows.map(u=>{ const e=byId[u.id];
+    const topm=(u.mv||[]).slice(0,4).map(([m])=>esc(mvName(m))).join(', ');
+    const it=(u.it||[])[0];
+    return `<tr tabindex="0" data-id="${esc(u.id||'')}" data-u="${esc(u.name)}"><td class="num">${u.rank}</td>
+      <td class="nm"><b>${esc(e?e.ko:u.name)}</b>${e&&e.megas?'<span class="badge b-mega">메가</span>':''}${e&&e.new?'<span class="badge b-new">M-C 신규</span>':''}<span class="en">${esc(u.name)}</span></td>
+      <td>${(e?e.ty:[]).map(ty).join('')}</td>
+      <td><div class="usebar"><div class="track"><i style="width:${(u.pct/max*100).toFixed(1)}%"></i></div><span class="num">${u.pct.toFixed(2)}%</span></div></td>
+      <td class="num hide-sm">${u.win.toFixed(1)}%</td>
+      <td class="hide-sm mini">${topm||'—'}</td>
+      <td class="hide-sm mini">${it?esc(itemName(it[0]))+` <span class="num">${it[1].toFixed(0)}%</span>`:'—'}</td></tr>`;}).join('');
+}
+['u-q','u-type'].forEach(i=>$(i).addEventListener('input',renderUsage));
+$('u-body').addEventListener('click',ev=>{const tr=ev.target.closest('tr'); if(tr) openMon(tr.dataset.id, tr.dataset.u);});
+$('u-body').addEventListener('keydown',ev=>{if(ev.key==='Enter'){const tr=ev.target.closest('tr'); if(tr) openMon(tr.dataset.id, tr.dataset.u);}});
+
+// ---------- dex ----------
+function renderDex(){
+  const q=$('d-q').value.trim().toLowerCase(), t=$('d-type').value, s=$('d-sort').value;
+  let rows = E.filter(e=>{
+    if($('d-mega').checked && !e.mega) return false;
+    if($('d-hasmega').checked && !(e.megas||e.mega)) return false;
+    if($('d-new').checked && !e.new) return false;
+    if(t && !e.ty.includes(t)) return false;
+    if(q && !(e.ko+' '+e.en+' '+e.id+' '+String(e.no).padStart(4,'0')).toLowerCase().includes(q)) return false;
+    return true;});
+  if(s==='bst') rows.sort((a,b)=>b.bst-a.bst);
+  else if(s==='use') rows.sort((a,b)=>(a.use||9999)-(b.use||9999));
+  else if(s!=='no') rows.sort((a,b)=>b.st[+s]-a.st[+s]);
+  $('d-count').textContent = `${rows.length}개 항목`;
+  $('d-body').innerHTML = rows.map(e=>`<tr tabindex="0" data-id="${esc(e.id)}"><td class="num">${String(e.no).padStart(4,'0')}</td>
+    <td class="nm"><b>${esc(e.ko)}</b>${e.mega?'<span class="badge b-mega">메가</span>':''}${e.form&&!e.mega?`<span class="badge b-form">${e.form}</span>`:''}${e.new?'<span class="badge b-new">M-C 신규</span>':''}${e.use?`<span class="badge b-form">${e.use}위</span>`:''}<span class="en">${esc(e.en)}</span></td>
+    <td>${e.ty.map(ty).join('')}</td>${e.st.map(v=>`<td class="num">${v}</td>`).join('')}<td class="num"><b>${e.bst}</b></td>
+    <td class="hide-sm mini">${e.ab.map(a=>esc(a.ko||a.en)+(a.note?`<span class="st-h"> (${esc(a.note)})</span>`:'')).join(' · ')}</td></tr>`).join('');
+}
+['d-q','d-type','d-sort','d-mega','d-hasmega','d-new'].forEach(i=>$(i).addEventListener('input',renderDex));
+$('d-body').addEventListener('click',ev=>{const tr=ev.target.closest('tr'); if(tr) openMon(tr.dataset.id);});
+$('d-body').addEventListener('keydown',ev=>{if(ev.key==='Enter'){const tr=ev.target.closest('tr'); if(tr) openMon(tr.dataset.id);}});
+
+// ---------- moves ----------
+const learners = MV.map(()=>[]);
+E.forEach(e=>{ if(!e.mega) new Set(e.mv).forEach(i=>learners[i].push(e.id)); });
+function renderMoves(){
+  const q=$('m-q').value.trim().toLowerCase(), t=$('m-type').value, c=$('m-cat').value, ch=$('m-chg').checked;
+  const rows = MV.map((m,i)=>[m,i]).filter(([m])=>(!t||m.t===t)&&(!c||m.c===c)&&(!ch||m.ch)&&(!q||(m.ko+' '+m.en).toLowerCase().includes(q)));
+  $('m-count').textContent = `${rows.length}개`;
+  $('m-body').innerHTML = rows.map(([m,i])=>`<tr tabindex="0" data-m="${i}"><td class="nm"><b>${esc(m.ko||m.en)}</b>${m.ch?' <span class="chg">▲</span>':''}<span class="en">${esc(m.en)}</span></td>
+    <td>${ty(m.t)}</td><td class="mini">${m.c}</td>
+    <td class="num">${m.pw}${m.ch&&m.ch.pw!==m.pw?`<div class="chg">SV ${esc(m.ch.pw)}</div>`:''}</td>
+    <td class="num">${m.acc}${m.ch&&m.ch.acc!==m.acc&&!(m.ch.acc==='101'&&m.acc==='—')?`<div class="chg">SV ${esc(m.ch.acc)}</div>`:''}</td>
+    <td class="num">${m.pp}${m.ch&&m.ch.pp!==m.pp?`<div class="chg">SV ${esc(m.ch.pp)}</div>`:''}</td>
+    <td class="eff hide-sm">${esc(m.eff)}</td><td class="num">${learners[i].length}</td></tr>`).join('');
+}
+['m-q','m-type','m-cat','m-chg'].forEach(i=>$(i).addEventListener('input',renderMoves));
+$('m-body').addEventListener('click',ev=>{const tr=ev.target.closest('tr'); if(tr) openMove(+tr.dataset.m);});
+$('m-body').addEventListener('keydown',ev=>{if(ev.key==='Enter'){const tr=ev.target.closest('tr'); if(tr) openMove(+tr.dataset.m);}});
+
+// ---------- drawer ----------
+const drawer=$('drawer'), scrim=$('scrim');
+function openDrawer(html){ drawer.innerHTML = `<button class="close" id="dclose">닫기 ✕</button>`+html; drawer.hidden=false; scrim.hidden=false; drawer.scrollTop=0; $('dclose').onclick=closeDrawer; $('dclose').focus(); }
+function closeDrawer(){ drawer.hidden=true; scrim.hidden=true; }
+scrim.onclick=closeDrawer; document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeDrawer(); });
+drawer.addEventListener('click',ev=>{ const b=ev.target.closest('[data-go]'); if(b) openMon(b.dataset.go); const m=ev.target.closest('[data-mv]'); if(m) openMove(+m.dataset.mv); });
+
+function statColor(v){ return v>=130?'var(--good)': v>=90?'var(--bar)': v>=60?'var(--muted)':'var(--warn)'; }
+function usageFor(e){ if(!e) return null; const id=e.mega? e.parent : e.id; return U.find(u=>u.id===id); }
+function openMon(id, uname){
+  const e = byId[id];
+  const u = e? usageFor(e) : U.find(x=>x.name===uname);
+  if(!e){ if(u) openDrawer(`<h2>${esc(u.name)}</h2><p class="sub">도감 데이터와 매칭되지 않은 항목입니다.</p>`+usageHtml(u)); return; }
+  const parent = e.parent? byId[e.parent]:null;
+  const stats = `<div class="stats">${e.st.map((v,i)=>`<span class="st-h">${SL[i]}</span><span class="v">${v}</span><span class="t"><i style="width:${Math.min(100,v/200*100)}%;background:${statColor(v)}"></i></span>`).join('')}<div class="tot"><span>합계</span><b>${e.bst}</b></div></div>`;
+  const megas = (e.megas||[]).map(m=>byId[m]).filter(Boolean);
+  const mvs = [...new Set(e.mv)].map(i=>[MV[i],i]).sort((a,b)=>a[0].t.localeCompare(b[0].t)||(a[0].ko||a[0].en).localeCompare(b[0].ko||b[0].en,'ko'));
+  let html = `<div class="sub">No.${String(e.no).padStart(4,'0')} · ${esc(e.en)}</div><h2>${esc(e.ko)}</h2>
+    <div>${e.ty.map(ty).join('')}${e.mega?'<span class="badge b-mega">메가진화</span>':''}${e.new?'<span class="badge b-new">M-C 신규</span>':''}${u?`<span class="badge b-form">사용률 ${u.rank}위</span>`:''}</div>
+    ${parent?`<p class="sub" style="margin-top:8px">메가진화 전: <button class="link" data-go="${esc(parent.id)}">${esc(parent.ko)}</button> · 기술폭은 메가진화 전과 같습니다.</p>`:''}
+    <section><h4>종족값</h4>${stats}</section>
+    <section><h4>특성</h4><div class="chips">${e.ab.map(a=>`<span class="chip">${esc(a.ko||a.en)}${a.ko?` <span class="p">${esc(a.en)}</span>`:''}${a.note?` <span class="p">${esc(a.note)}</span>`:''}</span>`).join('')}</div></section>`;
+  if(megas.length) html += `<section><h4>메가진화</h4><div class="megacards">${megas.map(m=>`<button data-go="${esc(m.id)}"><b>${esc(m.ko)}</b><span>${m.ty.map(t=>TK[t]).join('/')} · ${esc(m.ab[0].ko||m.ab[0].en)} · 합계 ${m.bst}</span></button>`).join('')}</div></section>`;
+  if(u) html += usageHtml(u);
+  html += `<section><h4><span>배울 수 있는 기술</span><span>${mvs.length}개</span></h4><input class="lset-filter" id="lsf" type="search" placeholder="기술 검색"><div class="chips" id="lsc">${mvs.map(([m,i])=>`<button class="chip" style="cursor:pointer" data-mv="${i}" data-s="${esc((m.ko+' '+m.en).toLowerCase())}" title="${esc(m.en)} · ${m.c} · 위력 ${m.pw} · 명중 ${m.acc}"><span class="dot" style="background:${TYC[m.t]}"></span>${esc(m.ko||m.en)}</button>`).join('')}</div></section>`;
+  openDrawer(html);
+  $('lsf').addEventListener('input',ev=>{const q=ev.target.value.trim().toLowerCase(); document.querySelectorAll('#lsc .chip').forEach(c=>c.hidden = q && !c.dataset.s.includes(q));});
+}
+function bars(list, fmt){ return `<div class="list2">${list.map(([n,p,x])=>`<div class="row"><span class="l">${fmt(n,x)}</span><span class="bar"><i style="width:${Math.min(100,p)}%"></i></span><span class="r">${p.toFixed(1)}%</span></div>`).join('')}</div>`; }
+function usageHtml(u){
+  let h = `<section><h4>M-C 사용 데이터 (Pikalytics)</h4><div class="kv"><div><b>${u.pct.toFixed(2)}%</b><span>사용률 · ${u.rank}위</span></div><div><b>${u.win.toFixed(1)}%</b><span>승률</span></div><div><b>${u.games.toLocaleString()}</b><span>표본 게임 수</span></div></div></section>`;
+  if(u.mv.length) h += `<section><h4>채용 기술</h4>${bars(u.mv,(m)=>typeof m==='number'?`<button class="link" data-mv="${m}">${esc(mvName(m))}</button>`:esc(m))}</section>`;
+  if(u.it.length) h += `<section><h4>지닌 도구</h4>${bars(u.it,(n)=>esc(itemName(n))+(DATA.itemko[n]?` <span class="st-h">${esc(n)}</span>`:''))}</section>`;
+  if(u.ab.length) h += `<section><h4>특성 채용률</h4>${bars(u.ab,(n,ko)=>esc(ko||n))}</section>`;
+  if(u.tm.length) h += `<section><h4>같이 쓰이는 포켓몬</h4>${bars(u.tm,(n,id)=>id?`<button class="link" data-go="${esc(id)}">${esc(byId[id].ko)}</button>`:esc(n))}</section>`;
+  if(!u.mv.length) h += `<p class="note" style="margin-top:12px">채용률이 낮아 세부 채용 데이터는 수집하지 않았습니다.</p>`;
+  return h;
+}
+function openMove(i){
+  const m=MV[i]; const ls=learners[i].map(id=>byId[id]).sort((a,b)=>(a.use||9999)-(b.use||9999)||a.no-b.no);
+  openDrawer(`<div class="sub">${esc(m.en)}</div><h2>${esc(m.ko||m.en)}</h2><div>${ty(m.t)}<span class="badge b-form">${m.c}</span>${m.ch?'<span class="badge b-new">포챔스 변경</span>':''}</div>
+   <section><div class="kv"><div><b>${m.pw}</b><span>위력</span></div><div><b>${m.acc}</b><span>명중</span></div><div><b>${m.pp}</b><span>PP</span></div></div>
+   ${m.ch?`<p class="chg" style="margin-top:8px">스칼렛·바이올렛: 위력 ${esc(m.ch.pw)} · 명중 ${esc(m.ch.acc==='101'?'—':m.ch.acc)} · PP ${esc(m.ch.pp)}</p>`:''}
+   <p style="margin-top:10px">${esc(m.eff)||'<span class="mini">효과 설명 없음</span>'}</p></section>
+   <section><h4><span>배울 수 있는 포켓몬</span><span>${ls.length}</span></h4><div class="chips">${ls.map(e=>`<button class="chip" style="cursor:pointer" data-go="${esc(e.id)}">${esc(e.ko)}${e.use?` <span class="p">${e.use}위</span>`:''}</button>`).join('')}</div></section>`);
+}
+
+// footer
+$('foot').innerHTML = `<b>출처</b> — 참전 포켓몬·종족값·특성·기술폭·기술 수치: <a href="https://www.serebii.net/pokemonchampions/pokemon.shtml" target="_blank" rel="noopener">Serebii.net Pokémon Champions</a> (도감 <a href="https://www.serebii.net/pokedex-champions/" target="_blank" rel="noopener">pokedex-champions</a>, <a href="https://www.serebii.net/pokemonchampions/moves.shtml" target="_blank" rel="noopener">사용 가능 기술</a>, <a href="https://www.serebii.net/pokemonchampions/updatedattacks.shtml" target="_blank" rel="noopener">변경 기술</a>, <a href="https://www.serebii.net/pokemonchampions/patch.shtml" target="_blank" rel="noopener">패치 1.2.0</a>, <a href="https://www.serebii.net/pokemonchampions/rankedbattle.shtml" target="_blank" rel="noopener">랭크배틀 일정</a>) ·
+ 사용률: <a href="https://www.pikalytics.com/pokedex/gen9championsvgc2026regmc/" target="_blank" rel="noopener">Pikalytics · Champions VGC 2026 Reg M-C</a> ·
+ 한글 기술·특성·도구명: <a href="https://pokeapi.co/" target="_blank" rel="noopener">PokeAPI</a> (한글명이 없는 포챔스 신규 특성 일부는 영문 표기, 신규 메가스톤은 '포켓몬명+나이트' 규칙으로 표기) · 참고: <a href="https://namu.wiki/w/Pok%C3%A9mon%20Champions" target="_blank" rel="noopener">나무위키</a>.<br>
+ 수집 시각 ${DATA.meta.fetched.replace('T',' ').slice(0,16)} UTC. 사용률은 게임 내 공식 랭크배틀 통계가 아닌 Pikalytics 집계(시뮬레이터 대전·대회)입니다.`;
+
+renderSummary(); renderUsage(); renderDex(); renderMoves();
+</script>

@@ -1,0 +1,513 @@
+﻿move_en,move_ko,type,category,power,accuracy,pp,effect,changed_vs_sv,sv_power,sv_accuracy,sv_pp,learner_count
+Accelerock,액셀록,rock,물리,40,100,20,,0,,,,2
+Acid Armor,녹기,poison,변화,--,—,20,Boosts the user's Defense stat by 2 stages.,0,,,,9
+Acid Spray,애시드봄,poison,특수,40,100,20,Lowers the target's Sp. Def stat by 2 stages.,0,,,,27
+Acrobatics,애크러뱃,flying,물리,55,100,16,This move's power is doubled if the user isn't holding an item.,0,,,,45
+Acupressure,경혈찌르기,normal,변화,--,—,20,Boosts the Attack Defense Sp. Atk Sp. Def Speed accuracy or evasiveness of the user or an ally by 2 stages.,0,,,,6
+Aerial Ace,제비반환,flying,물리,60,—,20,This move never misses.,0,,,,72
+After You,당신먼저,normal,변화,--,—,16,Makes the target move immediately after the user.,0,,,,13
+Agility,고속이동,psychic,변화,--,—,20,Boosts the user's Speed stat by 2 stages.,0,,,,75
+Air Cutter,에어컷터,flying,특수,60,95,20,This move has a 1-stage Critical-Hit Ratio Boost.,0,,,,21
+Air Slash,에어슬래시,flying,특수,75,95,16,Has a 30% chance of making the target flinch.,0,,,,34
+Alluring Voice,매혹의보이스,fairy,특수,80,100,12,Confuses the target if its stats were boosted during the turn this move is used.,0,,,,27
+Ally Switch,사이드체인지,psychic,변화,--,—,16,The user switches spots with one of its allies. With each consecutive use this move's chance of success becomes 1/3 of what it was before.,0,,,,26
+Amnesia,망각술,psychic,변화,--,—,20,Boosts the user's Sp. Def stat by 2 stages.,0,,,,34
+Ancient Power,원시의힘,rock,특수,60,100,8,Has a 10% chance of boosting the user's Attack Defense Sp. Atk Sp. Def and Speed stats by 1 stage.,0,,,,25
+Apple Acid,사과산,grass,특수,90,100,12,Lowers the target's Sp. Def stat by 1 stage.,1,80,100,10,1
+Aqua Cutter,아쿠아커터,water,물리,70,100,20,This move has a 1-stage Critical-Hit Ratio Boost.,0,,,,5
+Aqua Jet,아쿠아제트,water,물리,40,100,20,,0,,,,21
+Aqua Ring,아쿠아링,water,변화,--,—,20,The user gains the Aqua Ring status.,0,,,,11
+Aqua Step,아쿠아스텝,water,물리,80,100,12,Boosts the user's Speed stat by 1 stage.,0,,,,1
+Aqua Tail,아쿠아테일,water,물리,90,90,12,,0,,,,17
+Armor Cannon,아머캐논,fire,특수,120,100,8,Lowers the user's Defense and Sp. Def stats by 1 stage.,0,,,,1
+Aromatic Mist,아로마미스트,fairy,변화,--,—,20,Boosts an ally's Sp. Def stat by 1 stage.,0,,,,5
+Assurance,승부굳히기,dark,물리,60,100,12,This move's power is doubled if the target has already taken damage during the turn this move is used.,0,,,,59
+Attract,헤롱헤롱,normal,변화,--,100,16,Gives the target the Infatuated status. This move will fail against a target that is the same gender as the user or whose gender is unknown.,0,,,,77
+Aura Sphere,파동탄,fighting,특수,80,—,20,This move never misses.,0,,,,16
+Aura Wheel,오라휠,electric,물리,110,100,12,Boosts the user's Speed stat by 1 stage. This move's type depends on Morpeko's form.,0,,,,1
+Aurora Veil,오로라베일,ice,변화,--,—,20,Gives the user's side the Aurora Veil status for 5 turns. This move can be used only in snow.,0,,,,7
+Avalanche,눈사태,ice,물리,60,100,12,This move's power is doubled if the target has already dealt damage to the user with a move in the same turn.,0,,,,37
+Axe Kick,발꿈치찍기,fighting,물리,120,90,12,Has a 30% chance of confusing the target. If this move misses or fails the user takes damage equal to 1/2 of its max HP.,0,,,,1
+Baby-Doll Eyes,초롱초롱눈동자,fairy,변화,--,100,20,Lowers the target's Attack stat by 1 stage.,0,,,,20
+Baneful Bunker,토치카,poison,변화,--,—,8,The user protects itself from incoming moves for the turn. Any attackers that use contact moves against the user during this turn become poisoned. With each consecutive use this move's chance of success becomes 1/3 of what it was before.,0,,,,1
+Barb Barrage,독침천발,poison,물리,60,100,12,Has a 50% chance of poisoning the target. This move's power is doubled if the target is poisoned or badly poisoned.,0,,,,2
+Baton Pass,바톤터치,normal,변화,--,—,20,The user switches out of battle to be replaced by another party Pokémon. If the user had any stat changes a substitute or other such effects they will be passed on to the Pokémon switching in.,0,,,,55
+Beak Blast,부리캐논,flying,물리,120,100,8,If the user is hit by a contact move before it uses this move the attacker will be burned.,1,100,100,15,1
+Beat Up,집단구타,dark,물리,--,100,12,The target is attacked as many times as the number of Pokémon in the user's party. Pokémon that have fainted or have a status condition are not counted. This move's power is calculated based on the Attack stats of the party Pokémon.,0,,,,22
+Belch,트림,poison,특수,120,90,12,This move fails unless the user has eaten a Berry during the battle.,0,,,,17
+Belly Drum,배북,normal,변화,--,—,12,The user loses 1/2 of its max HP to boost its Attack stat to its sixth stage. This move fails if the user doesn't have enough remaining HP.,0,,,,10
+Bind,조이기,normal,물리,15,85,20,Gives the target the Bound status.,0,,,,5
+Bite,물기,dark,물리,60,100,20,Has a 30% chance of making the target flinch.,0,,,,73
+Bitter Blade,원념의칼,fire,물리,90,100,12,The user's HP is restored by 1/2 of the damage dealt by this move.,0,,,,1
+Bitter Malice,천추지한,ghost,특수,75,100,12,Lowers the target's Attack stat by 1 stage.,0,,,,1
+Blast Burn,블러스트번,fire,특수,150,90,8,The user gains the Recharging status on the turn after this move is used.,0,,,,10
+Blaze Kick,브레이즈킥,fire,물리,85,90,12,Has a 10% chance of burning the target. This move has a 1-stage Critical-Hit Ratio Boost.,0,,,,9
+Blizzard,눈보라,ice,특수,110,70,8,Has a 10% chance of freezing targets. This move never misses in snow.,0,,,,67
+Block,블록,normal,변화,--,—,8,Gives the target the Can't Escape status.,0,,,,14
+Body Press,바디프레스,fighting,물리,80,100,12,The damage dealt by this move is calculated using the user's Defense stat instead of its Attack stat.,0,,,,53
+Body Slam,누르기,normal,물리,85,100,16,Has a 30% chance of paralyzing the target. If the target has the Minimized status this move's power is doubled and it will be sure to hit.,0,,,,163
+Bone Rush,본러쉬,ground,물리,30,90,12,The user attacks 2 to 5 times in a row.,1,25,90,10,1
+Boomburst,폭음파,normal,특수,140,100,12,,0,,,,8
+Bounce,뛰어오르다,flying,물리,85,85,8,The user gains the Sky-High status on the turn this move is used then attacks on the following turn. This move has a 30% chance of paralyzing the target.,0,,,,25
+Brave Bird,브레이브버드,flying,물리,120,100,16,The user takes 1/3 of the damage dealt by this move.,0,,,,17
+Breaking Swipe,와이드브레이커,dragon,물리,60,100,16,Lowers targets' Attack stats by 1 stage.,0,,,,31
+Brick Break,깨트리다,fighting,물리,75,100,16,Removes the Light Screen Reflect and Aurora Veil statuses on the target's side.,0,,,,108
+Brutal Swing,세차게휘두르기,dark,물리,60,100,20,,0,,,,60
+Bug Bite,벌레먹음,bug,물리,60,100,20,If the target is holding a Berry the user eats that Berry and gains its effect.,0,,,,14
+Bug Buzz,벌레의야단법석,bug,특수,90,100,12,Has a 10% chance of lowering the target's Sp. Def stat by 1 stage.,0,,,,10
+Bulk Up,벌크업,fighting,변화,--,—,20,Boosts the user's Attack and Defense stats by 1 stage.,0,,,,51
+Bulldoze,땅고르기,ground,물리,60,100,20,Lowers targets' Speed stats by 1 stage. When Grassy Terrain is active this move's power is halved.,0,,,,106
+Bullet Punch,불릿펀치,steel,물리,40,100,20,,0,,,,7
+Bullet Seed,기관총,grass,물리,25,100,20,The user attacks 2 to 5 times in a row.,0,,,,33
+Burn Up,불사르기,fire,특수,130,100,8,The user loses the Fire type. Cures the user of being frozen. This move fails unless it is used by a Fire type.,0,,,,8
+Burning Jealousy,질투의불꽃,fire,특수,70,100,8,Burns targets if their stats were boosted during the turn this move is used.,0,,,,26
+Calm Mind,명상,psychic,변화,--,—,20,Boosts the user's Sp. Atk and Sp. Def stats by 1 stage.,0,,,,67
+Ceaseless Edge,비검천중파,dark,물리,65,90,16,Gives the opponent's side the Spikes status.,0,,,,1
+Charge,충전,electric,변화,--,—,20,Boosts the user's Sp. Def stat by 1 stage. The user gains the Electric Boost status.,0,,,,23
+Charge Beam,차지빔,electric,특수,50,90,12,Has a 70% chance of boosting the user's Sp. Atk stat by 1 stage.,0,,,,36
+Charm,애교부리기,fairy,변화,--,100,20,Lowers the target's Attack stat by 2 stages.,0,,,,70
+Chilling Water,찬물끼얹기,water,특수,50,100,20,Lowers the target's Attack stat by 1 stage.,0,,,,70
+Chilly Reception,썰렁개그,ice,변화,--,—,12,Summons snow for 5 turns. The user switches out of battle to be replaced by another party Pokémon.,0,,,,2
+Circle Throw,배대뒤치기,fighting,물리,60,90,12,If there are other Pokémon in the target's party that can switch into battle the target is forced to switch out of battle and is replaced by one of those Pokémon at random.,0,,,,7
+Clanging Scales,스케일노이즈,dragon,특수,110,100,8,Lowers the user's Defense stat by 1 stage.,0,,,,1
+Clangorous Soul,소울비트,dragon,변화,--,—,8,The user loses 1/3 of its max HP to boost its Attack Defense Sp. Atk Sp. Def and Speed stats by 1 stage. This move fails if the user doesn't have enough remaining HP.,0,,,,1
+Clear Smog,클리어스모그,poison,특수,50,—,16,Removes all stat changes from the target. This move never misses.,0,,,,8
+Close Combat,인파이트,fighting,물리,120,100,8,Lowers the user's Defense and Sp. Def stats by 1 stage.,0,,,,55
+Coaching,코칭,fighting,변화,--,—,12,Boosts allies' Attack and Defense stats by 1 stage.,0,,,,26
+Coil,똬리틀기,poison,변화,--,—,20,Boosts the user's Attack and Defense stats as well as its accuracy by 1 stage.,0,,,,6
+Comeuppance,앙갚음,dark,물리,--,100,12,The user retaliates to deal 150% of the damage it took from an opponent's move during the turn this move is used.,0,,,,4
+Confuse Ray,이상한빛,ghost,변화,--,100,12,Confuses the target.,0,,,,58
+Copycat,흉내쟁이,normal,변화,--,—,20,The user mimics the move that was last used. This move fails if no other move has been used yet.,0,,,,26
+Corrosive Gas,부식가스,poison,변화,--,100,20,Causes all other Pokémon on the field to lose their held items.,0,,,,6
+Cosmic Power,코스믹파워,psychic,변화,--,—,20,Boosts the user's Defense and Sp. Def stats by 1 stage.,0,,,,6
+Cotton Guard,코튼가드,grass,변화,--,—,12,Boosts the user's Defense stat by 3 stages.,0,,,,6
+Cotton Spore,목화포자,grass,변화,--,100,20,Lowers targets' Speed stats by 2 stages.,0,,,,4
+Counter,카운터,fighting,물리,--,100,20,The user retaliates to deal double the damage it took from an opponent's physical move during the turn this move is used.,0,,,,42
+Court Change,코트체인지,normal,변화,--,100,12,Swaps the statuses affecting the user's side of the field with the statuses affecting the opponent's side of the field.,0,,,,1
+Covet,탐내다,normal,물리,60,100,20,If the user is not already holding an item it steals the target's held item.,0,,,,24
+Crabhammer,찝게햄머,water,물리,100,95,12,This move has a 1-stage Critical-Hit Ratio Boost.,1,100,90,10,3
+Cross Chop,크로스촙,fighting,물리,100,80,8,This move has a 1-stage Critical-Hit Ratio Boost.,0,,,,7
+Cross Poison,크로스포이즌,poison,물리,70,100,20,Has a 10% chance of poisoning the target. This move has a 1-stage Critical-Hit Ratio Boost.,0,,,,10
+Crunch,깨물어부수기,dark,물리,80,100,16,Has a 20% chance of lowering the target's Defense stat by 1 stage.,0,,,,71
+Crush Claw,브레이크크루,normal,물리,75,95,12,Has a 50% chance of lowering the target's Defense stat by 1 stage.,0,,,,4
+Curse,저주,ghost,변화,--,—,12,Ghost-type: The user loses 1/2 of its max HP to give the target the Cursed status.Non-Ghost-type: Lowers the user's Speed stat by 1 stage and boosts its Attack and Defense stats by 1 stage.,0,,,,99
+Dark Pulse,악의파동,dark,특수,80,100,16,Has a 20% chance of making the target flinch.,0,,,,75
+Darkest Lariat,DD래리어트,dark,물리,85,100,12,This move ignores the target's stat changes when dealing damage.,0,,,,3
+Dazzling Gleam,매지컬샤인,fairy,특수,80,100,12,,0,,,,45
+Decorate,데코레이션,fairy,변화,--,—,16,Boosts the target's Attack and Sp. Atk stats by 2 stages.,0,,,,1
+Defog,안개제거,flying,변화,--,—,16,Lowers the target's evasiveness by 1 stage. Removes statuses such as Reflect Spikes and Safeguard as well as any terrain.,0,,,,12
+Destiny Bond,길동무,ghost,변화,--,—,8,The user gains the Destiny Bound status. This move fails if used in succession.,0,,,,26
+Detect,판별,fighting,변화,--,—,8,The user protects itself from incoming moves for the turn. With each consecutive use this move's chance of success becomes 1/3 of what it was before.,0,,,,29
+Dig,구멍파기,ground,물리,80,100,12,The user gains the Underground status on the turn this move is used then attacks on the following turn.,0,,,,116
+Dire Claw,페이탈클로,poison,물리,80,100,16,Has a 30% chance of leaving the target poisoned paralyzed or asleep.,1,80,100,15,1
+Disable,사슬묶기,normal,변화,--,100,20,Gives the target the Move Disabled status for 4 turns.,0,,,,34
+Discharge,방전,electric,특수,80,100,16,Has a 30% chance of paralyzing targets.,0,,,,23
+Dive,다이빙,water,물리,80,100,12,The user gains the Submerged status on the turn this move is used then attacks on the following turn.,0,,,,33
+Double Hit,더블어택,normal,물리,35,90,12,The user attacks twice in a row.,0,,,,26
+Double Shock,전광쌍격,electric,물리,120,--,8,The user loses the Electric type. This move fails unless it is used by an Electric type.,1,120,100,5,1
+Double Team,그림자분신,normal,변화,--,—,16,Boosts the user's evasiveness by 1 stage.,0,,,,40
+Double-Edge,이판사판태클,normal,물리,120,100,16,The user takes 1/3 of the damage dealt by this move.,0,,,,123
+Draco Meteor,용성군,dragon,특수,130,90,8,Lowers the user's Sp. Atk stat by 2 stages.,0,,,,18
+Dragon Cheer,드래곤옐,dragon,변화,--,—,16,Gives allies a Critical-Hit Ratio Boost. Dragon types receive a 2-stage boost. All other types receive a 1-stage boost.,0,,,,22
+Dragon Claw,드래곤크루,dragon,물리,80,100,16,,0,,,,28
+Dragon Dance,용의춤,dragon,변화,--,—,20,Boosts the user's Attack and Speed stats by 1 stage.,0,,,,21
+Dragon Darts,드래곤애로,dragon,물리,50,100,12,The user attacks twice in a row. If there are 2 opposing Pokémon each of them is attacked once.,0,,,,1
+Dragon Pulse,용의파동,dragon,특수,85,100,12,,0,,,,43
+Dragon Rush,드래곤다이브,dragon,물리,100,75,12,Has a 20% chance of making the target flinch. If the target has the Minimized status this move's power is doubled and it will be sure to hit.,0,,,,17
+Dragon Tail,드래곤테일,dragon,물리,60,90,12,If there are other Pokémon in the target's party that can switch into battle the target is forced to switch out of battle and is replaced by one of those Pokémon at random.,0,,,,33
+Drain Punch,드레인펀치,fighting,물리,75,100,12,The user's HP is restored by 1/2 of the damage dealt by this move.,0,,,,50
+Draining Kiss,드레인키스,fairy,특수,50,100,12,The user's HP is restored by 3/4 of the damage dealt by this move.,0,,,,35
+Drill Peck,회전부리,flying,물리,80,100,20,,0,,,,5
+Drill Run,드릴라이너,ground,물리,80,95,12,This move has a 1-stage Critical-Hit Ratio Boost.,0,,,,13
+Drum Beating,드럼어택,grass,물리,80,100,12,Lowers the target's Speed stat by 1 stage.,0,,,,1
+Dual Wingbeat,더블윙,flying,물리,40,90,12,The user attacks twice in a row.,0,,,,27
+Dynamic Punch,폭발펀치,fighting,물리,100,50,8,Confuses the target.,0,,,,12
+Earth Power,대지의힘,ground,특수,90,100,12,Has a 10% chance of lowering the target's Sp. Def stat by 1 stage.,0,,,,46
+Earthquake,지진,ground,물리,100,100,12,This move's power is doubled against targets that have the Underground status. When Grassy Terrain is active this move's power is halved.,0,,,,94
+Eerie Impulse,괴전파,electric,변화,--,100,16,Lowers the target's Sp. Atk stat by 2 stages.,0,,,,22
+Eerie Spell,섬뜩한주문,psychic,특수,80,100,8,Removes 3 PP from the move last used by the target.,0,,,,1
+Electric Terrain,일렉트릭필드,electric,변화,--,—,12,Turns the entire field into Electric Terrain for 5 turns.,0,,,,22
+Electrify,송전,electric,변화,--,—,20,If this move hits the target before it uses a move its move becomes Electric type for that turn.,0,,,,1
+Electro Ball,일렉트릭볼,electric,특수,--,100,12,The higher the user's Speed stat compared to the target's the greater this move's power (ranging between 40 and 150).,0,,,,24
+Electro Shot,일렉트로빔,electric,특수,130,100,12,The user gains the Charging status on the turn this move is used then attacks on the following turn. In rain the user does not gain the Charging status and can attack immediately. The user's Sp. Atk stat is boosted by 1 stage on the turn this move is used.,0,,,,1
+Electroweb,일렉트릭네트,electric,특수,55,95,16,Lowers targets' Speed stats by 1 stage.,0,,,,25
+Encore,앵콜,normal,변화,--,100,8,Gives the target the Encore status.,0,,,,55
+Endeavor,죽기살기,normal,물리,--,100,8,Deals damage to the target equal to its remaining HP minus the user's remaining HP. This move fails if the target's HP is the same as or lower than the user's.,0,,,,78
+Endure,버티기,normal,변화,--,—,12,During the turn this move is used if the user takes damage from a move that would knock it out it will endure the hit with 1 HP. With each consecutive use this move's chance of success becomes 1/3 of what it was before.,0,,,,258
+Energy Ball,에너지볼,grass,특수,90,100,12,Has a 10% chance of lowering the target's Sp. Def stat by 1 stage.,0,,,,66
+Entrainment,동료만들기,normal,변화,--,100,16,Changes the target's Ability to be the same as the user's.,0,,,,10
+Eruption,분화,fire,특수,150,100,8,The less HP the user has left the lower this move's power (ranging between 1 and 150).,0,,,,4
+Expanding Force,와이드포스,psychic,특수,80,100,12,If the user is under the effect of Psychic Terrain this move's power is boosted by 50% and its range extends to all opponents.,0,,,,28
+Explosion,대폭발,normal,물리,250,100,8,The user faints upon using this move.,0,,,,11
+Extrasensory,신통력,psychic,특수,80,100,20,Has a 10% chance of making the target flinch.,0,,,,13
+Extreme Speed,신속,normal,물리,80,100,8,,0,,,,4
+Facade,객기,normal,물리,70,100,20,This move's power is doubled if the user is poisoned badly poisoned burned or paralyzed. Although this move is a physical move the damage it deals is not halved when the user is burned.,0,,,,255
+Fairy Lock,페어리록,fairy,변화,--,—,12,Gives all Pokémon on the field the Fairy Locked status.,0,,,,1
+Fake Out,속이다,normal,물리,40,100,12,Makes the target flinch. This move fails unless it is the first move used by the user after it enters a battle.,0,,,,32
+Fake Tears,거짓울음,dark,변화,--,100,20,Lowers the target's Sp. Def stat by 2 stages.,0,,,,52
+Feather Dance,깃털댄스,flying,변화,--,100,16,Lowers the target's Attack stat by 2 stages.,0,,,,17
+Feint,페인트,normal,물리,30,100,12,This move can hit a target using a move such as Protect or Detect and removes the effects of those moves.,0,,,,34
+Fell Stinger,마지막일침,bug,물리,50,100,20,Boosts the user's Attack stat by 3 stages if this move knocks out the target.,0,,,,5
+Fickle Beam,변덕레이저,dragon,특수,80,100,8,This move has a 30% chance of its power being doubled.,0,,,,1
+Fiery Dance,불꽃춤,fire,특수,80,100,12,Has a 50% chance of boosting the user's Sp. Atk stat by 1 stage.,0,,,,1
+Final Gambit,목숨걸기,fighting,특수,--,100,8,The user faints. This move deals damage to the target equal to the user's remaining HP at the time this move was used.,0,,,,5
+Fire Blast,불대문자,fire,특수,110,85,8,Has a 10% chance of burning the target.,0,,,,60
+Fire Fang,불꽃엄니,fire,물리,65,95,16,Has a 10% chance of burning the target and a 10% chance of making the target flinch.,0,,,,38
+Fire Lash,불꽃채찍,fire,물리,90,100,16,Lowers the target's Defense stat by 1 stage.,1,80,100,15,1
+Fire Punch,불꽃펀치,fire,물리,75,100,16,Has a 10% chance of burning the target.,0,,,,53
+Fire Spin,회오리불꽃,fire,특수,35,85,16,Gives the target the Bound status.,0,,,,29
+First Impression,만나자마자,bug,물리,100,100,12,This move fails unless it is the first move used by the user after it enters a battle.,1,90,100,10,6
+Fissure,땅가르기,ground,물리,--,30,8,Knocks out the target. The accuracy of this move is fixed at 30%.,0,,,,14
+Flail,바둥바둥,normal,물리,--,100,16,The less HP the user has left the greater this move's power (ranging between 20 and 200).,0,,,,49
+Flame Charge,니트로차지,fire,물리,50,100,20,Boosts the user's Speed stat by 1 stage.,0,,,,26
+Flamethrower,화염방사,fire,특수,90,100,16,Has a 10% chance of burning the target.,0,,,,69
+Flare Blitz,플레어드라이브,fire,물리,120,100,16,Has a 10% chance of burning the target. Cures the user of being frozen. The user also takes 1/3 of the damage dealt by this move.,0,,,,26
+Flash Cannon,러스터캐논,steel,특수,80,100,12,Has a 10% chance of lowering the target's Sp. Def stat by 1 stage.,0,,,,42
+Flatter,부추기기,dark,변화,--,100,16,Boosts the target's Sp. Atk stat by 1 stage and confuses it.,0,,,,10
+Fling,내던지기,dark,물리,--,100,12,This move's power and effects depend on the user's held item. The held item is lost after this move is used.,0,,,,114
+Flip Turn,퀵턴,water,물리,60,100,20,After attacking the user switches out of battle to be replaced by another party Pokémon.,0,,,,22
+Flower Trick,트릭플라워,grass,물리,70,—,12,This move never misses and is always a critical hit.,0,,,,1
+Fly,공중날기,flying,물리,90,95,16,The user gains the Sky-High status on the turn this move is used then attacks on the following turn.,0,,,,22
+Flying Press,플라잉프레스,fighting,물리,100,95,12,The damage dealt by this move is calculated by combining the effectiveness of the move's own type with that of the Flying type. If the target has the Minimized status this move's power is doubled and it will be sure to hit.,0,,,,1
+Focus Blast,기합구슬,fighting,특수,120,70,8,Has a 10% chance of lowering the target's Sp. Def stat by 1 stage.,0,,,,97
+Focus Energy,기충전,normal,변화,--,—,20,The user gains a 2-stage Critical-Hit Ratio Boost.,0,,,,51
+Focus Punch,힘껏펀치,fighting,물리,150,100,20,This move fails if the user has already taken damage from a move in the same turn.,0,,,,62
+Follow Me,날따름,normal,변화,--,—,20,The user redirects opponents' moves toward itself. This effect works only on single-target moves.,0,,,,3
+Forest's Curse,숲의저주,grass,변화,--,100,20,Gives the target the Forest Cursed status.,0,,,,1
+Foul Play,속임수,dark,물리,95,100,16,The damage dealt by this move is calculated using the target's Attack stat instead of the user's Attack stat.,0,,,,64
+Freeze-Dry,프리즈드라이,ice,특수,70,100,20,This move is also super effective against Water-type Pokémon.,0,,,,8
+Frenzy Plant,하드플랜트,grass,특수,150,90,8,The user gains the Recharging status on the turn after this move is used.,0,,,,10
+Frost Breath,얼음숨결,ice,특수,60,90,12,Always a critical hit.,0,,,,9
+Future Sight,미래예지,psychic,특수,120,100,12,Gives the target's spot the Future Attack status.,0,,,,27
+Gastro Acid,위액,poison,변화,--,100,12,Gives the target the No Ability status.,0,,,,6
+Giga Drain,기가드레인,grass,특수,75,100,12,The user's HP is restored by 1/2 of the damage dealt by this move.,0,,,,51
+Giga Impact,기가임팩트,normal,물리,150,90,8,The user gains the Recharging status on the turn after this move is used.,0,,,,237
+Gigaton Hammer,거대해머,steel,물리,160,100,8,This move can't be used twice in a row.,0,,,,1
+Glaive Rush,대검돌격,dragon,물리,120,100,8,The user gains the Wide Open status until the next time it takes an action.,0,,,,1
+Glare,뱀눈초리,normal,변화,--,100,20,Paralyzes the target.,0,,,,5
+Grass Knot,풀묶기,grass,특수,--,100,20,The heavier the target the greater this move's power (ranging between 20 and 120).,0,,,,93
+Grassy Glide,그래스슬라이더,grass,물리,55,100,20,If the user is under the effect of Grassy Terrain this move's priority becomes +1.,0,,,,30
+Grassy Terrain,그래스필드,grass,변화,--,—,12,Turns the entire field into Grassy Terrain for 5 turns.,0,,,,25
+Grav Apple,G의힘,grass,물리,90,100,12,Lowers the target's Defense stat by 1 stage. This move's power is boosted by 50% when the Gravity status is active.,1,80,100,10,1
+Gravity,중력,psychic,변화,--,—,8,Gives the entire field the Gravity status for 5 turns.,0,,,,21
+Growth,성장,grass,변화,--,—,20,Boosts the user's Attack and Sp. Atk stats by 1 stage. In harsh sunlight these stats will be boosted by 2 stages instead.,1,--,101,20,18
+Guard Split,가드셰어,psychic,변화,--,—,12,The user adds its Defense stat to the target's Defense stat then splits the total in half for them to share. It does the same with each of their Sp. Def stats.,0,,,,6
+Guard Swap,가드스웹,psychic,변화,--,—,12,The user swaps the changes to its Defense and Sp. Def stats with the changes to the target's Defense and Sp. Def stats.,0,,,,16
+Guillotine,가위자르기,normal,물리,--,30,8,Knocks out the target. The accuracy of this move is fixed at 30%.,0,,,,2
+Gunk Shot,더스트슈트,poison,물리,120,80,8,Has a 30% chance of poisoning the target.,0,,,,39
+Gyro Ball,자이로볼,steel,물리,--,100,8,The lower the user's Speed stat compared to the target's the greater this move's power (ranging between 1 and 150).,0,,,,34
+Hammer Arm,암해머,fighting,물리,100,90,12,Lowers the user's Speed stat by 1 stage.,0,,,,16
+Hard Press,하드프레스,steel,물리,--,100,12,The more HP the target has left the greater this move's power (ranging between 1 and 100).,0,,,,23
+Haze,흑안개,ice,변화,--,—,20,Eliminates every stat change on the entire field.,0,,,,31
+Head Smash,양날박치기,rock,물리,150,80,8,The user takes 1/2 of the damage dealt by this move.,0,,,,12
+Headlong Rush,들이받기,ground,물리,120,100,8,Lowers the user's Defense and Sp. Def stats by 1 stage.,0,,,,3
+Heal Bell,치료방울,normal,변화,--,—,8,The user cures the status conditions of all the Pokémon in its party including itself as well as its allies.,0,,,,1
+Heal Pulse,치유파동,psychic,변화,--,—,12,Restores 1/2 of the target's max HP.,0,,,,16
+Healing Wish,치유소원,psychic,변화,--,—,12,The user faints. The Pokémon taking its place will have its HP fully restored and its status conditions cured.,0,,,,10
+Heat Crash,히트스탬프,fire,물리,--,100,12,The more the user outweighs the target the greater this move's power (ranging between 40 and 120). If the target has the Minimized status this move's power is doubled and it will be sure to hit.,0,,,,12
+Heat Wave,열풍,fire,특수,95,90,12,Has a 10% chance of burning targets.,0,,,,37
+Heavy Slam,헤비봄버,steel,물리,--,100,12,The more the user outweighs the target the greater this move's power (ranging between 40 and 120). If the target has the Minimized status this move's power is doubled and it will be sure to hit.,0,,,,32
+Helping Hand,도우미,normal,변화,--,—,20,Boosts the power of an ally's move by 50% during the turn this move is used.,0,,,,171
+Hex,병상첨병,ghost,특수,65,100,12,This move's power is doubled if the target has a status condition.,0,,,,51
+High Horsepower,10만마력,ground,물리,95,95,12,,0,,,,36
+High Jump Kick,무릎차기,fighting,물리,130,90,12,If this move misses or fails the user takes damage equal to 1/2 of its max HP.,0,,,,8
+Horn Drill,뿔드릴,normal,물리,--,30,8,Knocks out the target. The accuracy of this move is fixed at 30%.,0,,,,3
+Horn Leech,우드호른,grass,물리,75,100,12,The user's HP is restored by 1/2 of the damage dealt by this move.,0,,,,2
+Howl,멀리짖음,normal,변화,--,—,20,Boosts the Attack stats of the user and its allies by 1 stage.,0,,,,17
+Hurricane,폭풍,flying,특수,110,70,12,Has a 30% chance of confusing the target. This move never misses in rain and can hit a target that has the Sky-High status.,0,,,,23
+Hydro Cannon,하이드로캐논,water,특수,150,90,8,The user gains the Recharging status on the turn after this move is used.,0,,,,10
+Hydro Pump,하이드로펌프,water,특수,110,80,8,,0,,,,51
+Hyper Beam,파괴광선,normal,특수,150,90,8,The user gains the Recharging status on the turn after this move is used.,0,,,,234
+Hyper Voice,하이퍼보이스,normal,특수,90,100,12,,0,,,,71
+Hypnosis,최면술,psychic,변화,--,60,20,Puts the target to sleep.,0,,,,24
+Ice Beam,냉동빔,ice,특수,90,100,12,Has a 10% chance of freezing the target.,0,,,,70
+Ice Fang,얼음엄니,ice,물리,65,95,16,Has a 10% chance of freezing the target and a 10% chance of making the target flinch.,0,,,,33
+Ice Hammer,아이스해머,ice,물리,100,90,12,Lowers the user's Speed stat by 1 stage.,0,,,,3
+Ice Punch,냉동펀치,ice,물리,75,100,16,Has a 10% chance of freezing the target.,0,,,,56
+Ice Shard,얼음뭉치,ice,물리,40,100,20,,0,,,,11
+Ice Spinner,아이스스피너,ice,물리,80,100,16,Removes any terrain.,0,,,,21
+Icicle Crash,고드름떨구기,ice,물리,85,90,12,Has a 30% chance of making the target flinch.,0,,,,8
+Icicle Spear,고드름침,ice,물리,25,100,20,The user attacks 2 to 5 times in a row.,0,,,,16
+Icy Wind,얼다바람,ice,특수,55,95,16,Lowers targets' Speed stats by 1 stage.,0,,,,79
+Imprison,봉인,psychic,변화,--,—,12,The user gains the Sealing Off status.,0,,,,48
+Infernal Parade,백귀야행,ghost,특수,65,100,16,Has a 30% chance of burning the target. This move's power is doubled if the target has a status condition.,1,60,100,15,1
+Inferno,연옥,fire,특수,100,50,8,Burns the target.,0,,,,7
+Infestation,엉겨붙기,bug,특수,20,100,20,Gives the target the Bound status.,0,,,,5
+Ingrain,뿌리박기,grass,변화,--,—,20,The user gains the Ingrained status.,0,,,,8
+Instruct,지휘,psychic,변화,--,—,16,The user makes the target reuse the last move it used.,0,,,,1
+Iron Defense,철벽,steel,변화,--,—,16,Boosts the user's Defense stat by 2 stages.,0,,,,68
+Iron Head,아이언헤드,steel,물리,80,100,16,Has a 20% chance of making the target flinch.,1,80,100,15,71
+Iron Tail,아이언테일,steel,물리,100,75,16,Has a 30% chance of lowering the target's Defense stat by 1 stage.,0,,,,89
+Jaw Lock,물고버티기,dark,물리,80,100,12,The user and target gain the Jaw Locked status.,0,,,,1
+Jet Punch,제트펀치,water,물리,60,100,16,,0,,,,2
+King's Shield,킹실드,steel,변화,--,—,8,The user protects itself from incoming attacks for the turn and changes into its Shield Forme. Any attackers that use contact moves against the user during this turn will have their Attack stats lowered by 1 stage. With each consecutive use this move's chance of success becomes 1/3 of what it was before.,0,,,,2
+Knock Off,탁쳐서떨구기,dark,물리,65,100,20,This move's power is boosted by 50% if the target is holding an item. Causes the target to lose its held item.,0,,,,76
+Kowtow Cleave,도각참,dark,물리,85,—,12,This move never misses.,0,,,,1
+Lash Out,분풀이,dark,물리,75,100,8,This move's power is doubled if the user's stats were lowered during the turn this move is used.,0,,,,49
+Last Resort,뒀다쓰기,normal,물리,140,100,8,This move fails unless the user has already used all the other moves it knows.,0,,,,26
+Last Respects,성묘,ghost,물리,50,100,12,This move's power is increased by 50 for each time that a Pokémon in the user's party has fainted.,0,,,,3
+Lava Plume,분연,fire,특수,80,100,16,Has a 30% chance of burning targets.,0,,,,7
+Leaf Blade,리프블레이드,grass,물리,90,100,16,This move has a 1-stage Critical-Hit Ratio Boost.,0,,,,11
+Leaf Storm,리프스톰,grass,특수,130,90,8,Lowers the user's Sp. Atk stat by 2 stages.,0,,,,26
+Leech Life,흡혈,bug,물리,80,100,12,The user's HP is restored by 1/2 of the damage dealt by this move.,0,,,,12
+Leech Seed,씨뿌리기,grass,변화,--,90,12,Gives the target the Leech Seeded status.,0,,,,24
+Life Dew,생명의물방울,water,변화,--,—,12,Restores 1/4 of the max HP of the user and its allies.,0,,,,13
+Light Screen,빛의장막,psychic,변화,--,—,20,Gives the user's side the Light Screen status for 5 turns.,0,,,,98
+Light of Ruin,파멸의빛,fairy,특수,140,90,8,The user takes 1/2 of the damage dealt by this move.,0,,,,1
+Liquidation,아쿠아브레이크,water,물리,85,100,12,Has a 20% chance of lowering the target's Defense stat by 1 stage.,0,,,,40
+Lock-On,록온,normal,변화,--,—,8,The user gains the Locked On status.,0,,,,1
+Low Kick,안다리걸기,fighting,물리,--,100,20,The heavier the target the greater this move's power (ranging between 20 and 120).,0,,,,64
+Low Sweep,로킥,fighting,물리,65,100,20,Lowers the target's Speed stat by 1 stage.,0,,,,46
+Lumina Crash,루미나콜리전,psychic,특수,80,100,12,Lowers the target's Sp. Def stat by 2 stages.,0,,,,1
+Lunge,덤벼들기,bug,물리,80,100,16,Lowers the target's Attack stat by 1 stage.,0,,,,18
+Mach Punch,마하펀치,fighting,물리,40,100,20,,0,,,,6
+Magic Powder,마법가루,psychic,변화,--,100,20,Changes the target's type to Psychic.,0,,,,1
+Magic Room,매직룸,psychic,변화,--,—,12,Gives the entire field the Magic Room status for 5 turns.,0,,,,18
+Magnet Rise,전자부유,electric,변화,--,—,12,The user gains the Magnet Rise status.,0,,,,6
+Magnetic Flux,자기장조작,electric,변화,--,—,20,If the user or its allies have the Plus Ability or the Minus Ability their Defense and Sp. Def stats are boosted by 1 stage.,0,,,,1
+Make It Rain,골드러시,steel,특수,120,95,8,Lowers the user's Sp. Atk stat by 2 stages.,1,120,100,5,1
+Matcha Gotcha,휘적휘적포,grass,특수,80,90,16,Has a 20% chance of burning targets. The user's HP is restored by 1/2 of the damage dealt by this move.,0,,,,1
+Mean Look,검은눈빛,normal,변화,--,—,8,Gives the target the Can't Escape status.,0,,,,14
+Mega Kick,메가톤킥,normal,물리,120,75,8,,0,,,,56
+Megahorn,메가폰,bug,물리,120,85,12,,0,,,,13
+Memento,추억의선물,dark,변화,--,100,12,Lowers the target's Attack and Sp. Atk stats by 2 stages. The user faints upon using this move.,0,,,,17
+Metal Burst,메탈버스트,steel,물리,--,100,12,The user retaliates to deal 150% of the damage it took from an opponent's move during the turn this move is used.,0,,,,7
+Metal Sound,금속음,steel,변화,--,85,20,Lowers the target's Sp. Def stat by 2 stages.,0,,,,22
+Meteor Assault,스타어설트,fighting,물리,170,100,8,The user gains the Recharging status on the turn after this move is used.,1,150,100,5,1
+Meteor Beam,메테오빔,rock,특수,120,90,12,The user gains the Charging status on the turn this move is used then attacks on the following turn. The user's Sp. Atk stat is boosted by 1 stage on the turn this move is used.,0,,,,18
+Meteor Mash,코멧펀치,steel,물리,90,90,12,Has a 20% chance of boosting the user's Attack stat by 1 stage.,0,,,,3
+Milk Drink,우유마시기,normal,변화,--,—,8,Restores 1/2 of the max HP of the user or an ally.,0,,,,1
+Minimize,작아지기,normal,변화,--,—,12,Boosts the user's evasiveness by 2 stages. The user gains the Minimized status.,0,,,,5
+Mirror Coat,미러코트,psychic,특수,--,100,20,The user retaliates to deal double the damage it took from an opponent's special move during the turn this move is used.,0,,,,14
+Misty Explosion,미스트버스트,fairy,특수,100,100,8,If the user is under the effect of Misty Terrain this move's power is boosted by 50%. The user faints upon using this move.,0,,,,12
+Misty Terrain,미스트필드,fairy,변화,--,—,12,Turns the entire field into Misty Terrain for 5 turns.,0,,,,24
+Moonblast,문포스,fairy,특수,95,100,16,Has a 10% chance of lowering the target's Sp. Atk stat by 1 stage.,1,95,100,15,17
+Moonlight,달의불빛,fairy,변화,--,—,8,Restores 1/2 of the user's max HP. In harsh sunlight 2/3 of its max HP will be restored instead. In all other weather conditions 1/4 of its max HP will be restored instead.,0,,,,5
+Morning Sun,아침햇살,normal,변화,--,—,8,Restores 1/2 of the user's max HP. In harsh sunlight 2/3 of its max HP will be restored instead. In all other weather conditions 1/4 of its max HP will be restored instead.,0,,,,5
+Mortal Spin,킬러스핀,poison,물리,30,100,16,Removes the Bound and Leech Seeded statuses from the user and removes the Sticky Web Stealth Rock Spikes and Toxic Spikes statuses from the user's side. Poisons targets.,0,,,,1
+Mountain Gale,빙산바람,ice,물리,120,85,12,Has a 30% chance of making the target flinch.,1,100,85,10,1
+Mud Shot,머드숏,ground,특수,55,95,16,Lowers the target's Speed stat by 1 stage.,0,,,,63
+Mud-Slap,진흙뿌리기,ground,특수,20,100,12,Lowers the target's accuracy by 1 stage.,0,,,,67
+Muddy Water,탁류,water,특수,90,85,12,Has a 30% chance of lowering targets' accuracy by 1 stage.,0,,,,31
+Mystical Fire,매지컬플레임,fire,특수,75,100,12,Lowers the target's Sp. Atk stat by 1 stage.,0,,,,19
+Nasty Plot,나쁜음모,dark,변화,--,—,20,Boosts the user's Sp. Atk stat by 2 stages.,0,,,,66
+Night Daze,나이트버스트,dark,특수,90,95,12,Has a 40% chance of lowering the target's accuracy by 1 stage.,1,85,95,10,1
+Night Shade,나이트헤드,ghost,특수,--,100,16,Deals 50 HP of damage.,0,,,,43
+Night Slash,깜짝베기,dark,물리,70,100,20,This move has a 1-stage Critical-Hit Ratio Boost.,0,,,,38
+No Retreat,배수의진,fighting,변화,--,—,8,"Boosts the user's Attack, Defense, Sp. Atk, Sp. Def, and Speed stats by 1 stage. The user gains the Can't Escape status. This move can only be used once per time the user enters battle— otherwise it will fail.",0,,,,1
+Noble Roar,부르짖기,normal,변화,--,100,20,Lowers the target's Attack and Sp. Atk stats by 1 stage.,0,,,,4
+Nuzzle,볼부비부비,electric,물리,20,100,20,Paralyzes the target.,0,,,,8
+Octolock,문어굳히기,fighting,변화,--,100,16,Gives the target the Octolocked and Can't Escape statuses.,0,,,,1
+Outrage,역린,dragon,물리,120,100,12,The user gains the Rampaging status.,0,,,,58
+Overdrive,오버드라이브,electric,특수,80,100,12,,0,,,,1
+Overheat,오버히트,fire,특수,130,90,8,Lowers the user's Sp. Atk stat by 2 stages.,0,,,,30
+Pain Split,아픔나누기,normal,변화,--,—,20,The user adds its remaining HP to the target's remaining HP then splits the total in half for them to share.,0,,,,51
+Parabolic Charge,파라볼라차지,electric,특수,65,100,20,The user's HP is restored by 1/2 of the damage dealt by this move.,0,,,,4
+Parting Shot,막말내뱉기,dark,변화,--,100,20,Lowers the target's Attack and Sp. Atk stats by 1 stage. The user then switches out of battle to be replaced by another party Pokémon.,0,,,,7
+Payback,보복,dark,물리,50,100,12,This move's power is doubled if the user attacks after the target.,0,,,,82
+Perish Song,멸망의노래,normal,변화,--,—,8,Gives all Pokémon on the field the Perishing status.,0,,,,7
+Petal Blizzard,꽃보라,grass,물리,90,100,16,,0,,,,10
+Petal Dance,꽃잎댄스,grass,특수,120,100,12,The user gains the Rampaging status.,0,,,,7
+Phantom Force,고스트다이브,ghost,물리,90,100,12,The user gains the Concealed status on the turn this move is used then attacks on the following turn. This move can hit a target using a move such as Protect or Detect and removes the effects of those moves.,0,,,,25
+Pin Missile,바늘미사일,bug,물리,25,95,20,The user attacks 2 to 5 times in a row.,0,,,,14
+Play Rough,치근거리기,fairy,물리,90,90,12,Has a 10% chance of lowering the target's Attack stat by 1 stage.,0,,,,48
+Pluck,쪼아대기,flying,물리,60,100,20,If the target is holding a Berry the user eats that Berry and gains its effect.,0,,,,7
+Poison Fang,독엄니,poison,물리,50,100,16,Has a 50% chance of badly poisoning the target.,0,,,,6
+Poison Jab,독찌르기,poison,물리,80,100,20,Has a 30% chance of poisoning the target.,0,,,,55
+Poison Powder,독가루,poison,변화,--,75,20,Poisons the target.,0,,,,6
+Pollen Puff,꽃가루경단,bug,특수,90,100,16,When used on an ally this move restores 1/2 of its max HP instead of dealing damage.,0,,,,9
+Poltergeist,폴터가이스트,ghost,물리,110,90,8,This move fails if the target isn't holding an item.,0,,,,31
+Population Bomb,찍찍베기,normal,물리,20,90,12,The user attacks 1 to 10 times in a row. The attack ends if the user misses.,0,,,,1
+Pounce,달려들기,bug,물리,50,100,20,Lowers the target's Speed stat by 1 stage.,0,,,,28
+Pound,막치기,normal,물리,40,100,20,,0,,,,0
+Power Gem,파워젬,rock,특수,80,100,20,,0,,,,17
+Power Split,파워셰어,psychic,변화,--,—,12,The user adds its Attack stat to the target's Attack stat then splits the total in half for them to share. It does the same with each of their Sp. Atk stats.,0,,,,7
+Power Swap,파워스웹,psychic,변화,--,—,12,The user swaps the changes to its Attack and Sp. Atk stats with the changes to the target's Attack and Sp. Atk stats.,0,,,,17
+Power Trick,파워트릭,psychic,변화,--,—,12,The user gains the Atk/Def Swapped status.,0,,,,4
+Power Trip,기어오르기,dark,물리,20,100,12,This move's power is increased by 20 for each stage that the user's stats have been boosted.,0,,,,6
+Power Whip,파워휩,grass,물리,120,85,12,,0,,,,14
+Protect,방어,normal,변화,--,—,8,The user protects itself from incoming moves for the turn. With each consecutive use this move's chance of success becomes 1/3 of what it was before.,0,,,,258
+Psych Up,자기암시,normal,변화,--,—,12,The user copies the target's stat changes.,0,,,,61
+Psychic,사이코키네시스,psychic,특수,90,100,12,Has a 10% chance of lowering the target's Sp. Def stat by 1 stage.,0,,,,69
+Psychic Fangs,사이코팽,psychic,물리,85,100,12,Removes the Light Screen Reflect and Aurora Veil statuses on the target's side.,0,,,,30
+Psychic Noise,사이코노이즈,psychic,특수,75,100,12,Gives the target the Healing Prevented status for 2 turns.,0,,,,24
+Psychic Terrain,사이코필드,psychic,변화,--,—,12,Turns the entire field into Psychic Terrain for 5 turns.,0,,,,23
+Psycho Cut,사이코커터,psychic,물리,70,100,20,This move has a 1-stage Critical-Hit Ratio Boost.,0,,,,15
+Psyshield Bash,배리어러시,psychic,물리,90,90,12,Boosts the user's Defense stat by 1 stage.,1,70,90,10,1
+Psyshock,사이코쇼크,psychic,특수,80,100,12,This is a special move but the damage it deals is calculated using the target's Defense stat.,0,,,,41
+Pyro Ball,화염볼,fire,물리,120,90,8,Has a 10% chance of burning the target. Cures the user of being frozen.,0,,,,1
+Quash,순서미루기,dark,변화,--,100,16,Causes the target to move last in the turn.,0,,,,7
+Quick Attack,전광석화,normal,물리,40,100,20,,0,,,,49
+Quick Guard,퍼스트가드,fighting,변화,--,—,16,The user protects itself and its allies from priority moves for the turn.,0,,,,23
+Quiver Dance,나비춤,bug,변화,--,—,20,Boosts the user's Sp. Atk Sp. Def and Speed stats by 1 stage.,0,,,,2
+Rage Fist,분노의주먹,ghost,물리,50,100,12,"This move's power is increased by 50 each time the user takes damage from a move, up to a maximum power of 350. If the user switches out of battle, the move's power returns to its usual value.",0,,,,1
+Rage Powder,분노가루,bug,변화,--,—,20,The user redirects opponents' moves toward itself. This effect works only on single-target moves.,0,,,,5
+Raging Bull,레이징불,normal,물리,90,100,12,Removes the Light Screen Reflect and Aurora Veil statuses on the target's side. This move's type depends on the user's form.,0,,,,2
+Raging Fury,대격분,fire,물리,120,100,12,The user gains the Rampaging status.,0,,,,3
+Rain Dance,비바라기,water,변화,--,—,8,Summons rain for 5 turns.,0,,,,186
+Rapid Spin,고속스핀,normal,물리,50,100,20,Removes the Bound and Leech Seeded statuses from the user and removes the Sticky Web Stealth Rock Spikes and Toxic Spikes statuses from the user's side. Boosts the user's Speed stat by 1 stage.,0,,,,11
+Razor Shell,셸블레이드,water,물리,75,95,12,Has a 50% chance of lowering the target's Defense stat by 1 stage.,0,,,,8
+Recover,HP회복,normal,변화,--,—,8,Restores 1/2 of the user's max HP.,0,,,,16
+Recycle,리사이클,normal,변화,--,—,12,Regenerates the last held item that the user consumed. The user then holds this item once more.,0,,,,12
+Reflect,리플렉터,psychic,변화,--,—,20,Gives the user's side the Reflect status for 5 turns.,0,,,,75
+Reflect Type,미러타입,normal,변화,--,—,16,The user becomes the same type or types as the target.,0,,,,3
+Rest,잠자기,psychic,변화,--,—,8,Fully restores the user's HP and cures any status conditions. The user falls asleep for 2 turns. This move fails if the user's HP is full.,0,,,,258
+Reversal,기사회생,fighting,물리,--,100,16,The less HP the user has left the greater this move's power (ranging between 20 and 200).,0,,,,63
+Revival Blessing,회생의기도,normal,변화,--,--,1,Revives a Pokémon in the user's party that has fainted and restores 1/2 of that Pokémon's max HP.,1,--,101,1,1
+Rising Voltage,라이징볼트,electric,특수,70,100,20,This move's power is doubled if the target is under the effect of Electric Terrain.,0,,,,20
+Roar,울부짖기,normal,변화,--,—,20,If there are other Pokémon in the target's party that can switch into battle the target is forced to switch out of battle and is replaced by one of those Pokémon at random.,0,,,,70
+Rock Blast,락블레스트,rock,물리,25,90,12,The user attacks 2 to 5 times in a row.,0,,,,31
+Rock Polish,록커트,rock,변화,--,—,20,Boosts the user's Speed stat by 2 stages.,0,,,,6
+Rock Slide,스톤샤워,rock,물리,75,90,12,Has a 30% chance of making targets flinch.,0,,,,107
+Rock Tomb,암석봉인,rock,물리,60,95,16,Lowers the target's Speed stat by 1 stage.,0,,,,99
+Rock Wrecker,암석포,rock,물리,150,90,8,The user gains the Recharging status on the turn after this move is used.,0,,,,1
+Role Play,역할,psychic,변화,--,—,12,Changes the user's Ability to be the same as the target's.,0,,,,8
+Roost,날개쉬기,flying,변화,--,—,8,Restores 1/2 of the user's max HP. If the user is a Flying type it will lose the Flying type for the turn.,0,,,,24
+Round,돌림노래,normal,특수,60,100,16,If multiple Pokémon use this move in the same turn the second user onward will act immediately after the first and the power of the second Round onward will be doubled.,0,,,,222
+Sacred Sword,성스러운칼,fighting,물리,90,100,16,This move ignores the target's stat changes when dealing damage.,0,,,,5
+Safeguard,신비의부적,normal,변화,--,—,20,Gives the user's side the Safeguard status for 5 turns.,0,,,,54
+Salt Cure,소금절이,rock,물리,40,100,16,Gives the target the Salt Cured status.,0,,,,1
+Sand Tomb,모래지옥,ground,물리,35,85,16,Gives the target the Bound status.,0,,,,20
+Sandstorm,모래바람,rock,변화,--,—,8,Summons a sandstorm for 5 turns.,0,,,,60
+Scald,열탕,water,특수,80,100,16,Has a 30% chance of burning the target. Cures the user and target of being frozen.,0,,,,19
+Scale Shot,스케일샷,dragon,물리,25,90,20,The user attacks 2 to 5 times in a row. This move lowers the user's Defense stat by 1 stage and boosts its Speed stat by 1 stage.,0,,,,26
+Scary Face,겁나는얼굴,normal,변화,--,100,12,Lowers the target's Speed stat by 2 stages.,0,,,,116
+Scorching Sands,열사의대지,ground,특수,70,100,12,Has a 30% chance of burning the target. Cures the user and target of being frozen.,0,,,,30
+Screech,싫은소리,normal,변화,--,85,20,Lowers the target's Defense stat by 2 stages.,0,,,,53
+Seed Bomb,씨폭탄,grass,물리,80,100,16,,0,,,,53
+Seismic Toss,지구던지기,fighting,물리,--,100,20,Deals 50 HP of damage.,0,,,,8
+Self-Destruct,자폭,normal,물리,200,100,8,The user faints upon using this move.,0,,,,26
+Shadow Ball,섀도볼,ghost,특수,80,100,16,Has a 20% chance of lowering the target's Sp. Def stat by 1 stage.,0,,,,108
+Shadow Claw,섀도크루,ghost,물리,70,100,16,This move has a 1-stage Critical-Hit Ratio Boost.,0,,,,63
+Shadow Punch,섀도펀치,ghost,물리,60,—,20,This move never misses.,0,,,,10
+Shadow Sneak,야습,ghost,물리,40,100,20,,0,,,,20
+Shed Tail,꼬리자르기,normal,변화,--,—,12,The user loses 1/2 of its max HP to create a substitute then switches out of battle to be replaced by another party Pokémon. The substitute will be hit by moves instead of that Pokémon and it will vanish when it takes damage equal to 1/4 of the user's max HP.,0,,,,3
+Sheer Cold,절대영도,ice,특수,--,30,8,Knocks out the target. This move does not affect Ice types. The accuracy of this move is fixed at 30%. If used by Pokémon other than Ice types the accuracy of this move is 20%.,0,,,,5
+Shell Side Arm,셸암즈,poison,특수,90,100,12,Has a 20% chance of poisoning the target. Becomes a physical move if that will deal more damage.,0,,,,1
+Shell Smash,껍질깨기,normal,변화,--,—,16,Lowers the user's Defense and Sp. Def stats by 1 stage and boosts its Attack Sp. Atk and Speed stats by 2 stages.,0,,,,5
+Shelter,농성,steel,변화,--,—,12,Boosts the user's Defense stat by 2 stages.,0,,,,1
+Shift Gear,기어체인지,steel,변화,--,—,12,Boosts the user's Attack stat by 1 stage and Speed stat by 2 stages.,0,,,,1
+Simple Beam,심플빔,normal,변화,--,100,16,Changes the target's Ability to Simple.,0,,,,3
+Sing,노래하기,normal,변화,--,55,16,Puts the target to sleep.,0,,,,7
+Skill Swap,스킬스웹,psychic,변화,--,—,12,The user and the target swap their Abilities.,0,,,,48
+Skitter Smack,엄습하는일격,bug,물리,70,90,12,Lowers the target's Sp. Atk stat by 1 stage.,0,,,,39
+Sky Attack,불새,flying,물리,140,90,8,The user gains the Charging status on the turn this move is used then attacks on the following turn. This move has a 30% chance of making the target flinch and it has a 1-stage Critical-Hit Ratio Boost.,0,,,,12
+Slack Off,태만함,normal,변화,--,—,8,Restores 1/2 of the user's max HP.,0,,,,9
+Slash,베어가르기,normal,물리,80,100,20,This move has a 1-stage Critical-Hit Ratio Boost.,1,70,100,20,37
+Sleep Powder,수면가루,grass,변화,--,75,16,Puts the target to sleep.,0,,,,5
+Sleep Talk,잠꼬대,normal,변화,--,—,12,Can be used only if the user is asleep. The user uses one of the other moves it knows at random.,0,,,,258
+Sludge Bomb,오물폭탄,poison,특수,90,100,12,Has a 30% chance of poisoning the target.,0,,,,47
+Sludge Wave,오물웨이브,poison,특수,95,100,12,Has a 10% chance of poisoning targets.,0,,,,28
+Smack Down,떨어뜨리기,rock,물리,50,100,16,If the target is off the ground it gains the Landed status. This move can hit a target that has the Sky-High status.,0,,,,39
+Smart Strike,스마트호른,steel,물리,70,—,12,This move never misses.,0,,,,14
+Snap Trap,집게덫,steel,물리,35,100,16,Gives the target the Bound status.,1,35,100,15,1
+Snarl,바크아웃,dark,특수,55,95,16,Lowers targets' Sp. Atk stats by 1 stage.,0,,,,46
+Snipe Shot,노려맞히기,water,특수,85,100,16,This move ignores the effects of Abilities and moves that draw in moves. It has a 1-stage Critical-Hit Ratio Boost.,1,80,100,15,1
+Snore,코골기,normal,특수,50,100,16,Can be used only if the user is asleep. Has a 30% chance of making the target flinch.,0,,,,221
+Snowscape,설경,ice,변화,--,—,8,Summons snow for 5 turns.,0,,,,34
+Soak,물붓기,water,변화,--,100,20,Changes the target's type to Water.,0,,,,10
+Solar Beam,솔라빔,grass,특수,120,100,12,The user gains the Charging status on the turn this move is used then attacks on the following turn. In harsh sunlight the user does not gain the Charging status and can attack immediately. This move's power is halved in any other weather condition.,0,,,,82
+Solar Blade,솔라블레이드,grass,물리,125,100,12,The user gains the Charging status on the turn this move is used then attacks on the following turn. In harsh sunlight the user does not gain the Charging status and can attack immediately. This move's power is halved in any other weather condition.,0,,,,16
+Sparkling Aria,물거품아리아,water,특수,90,100,12,Cures targets of their burns.,0,,,,1
+Speed Swap,스피드스웹,psychic,변화,--,—,12,The user and the target swap their Speed stats.,0,,,,3
+Spicy Extract,하바네로엑기스,grass,변화,--,—,16,Lowers the target's Defense stat by 2 stages and boosts its Attack stat by 2 stages.,0,,,,1
+Spikes,압정뿌리기,ground,변화,--,—,20,Gives the opponent's side the Spikes status.,0,,,,22
+Spiky Shield,니들가드,grass,변화,--,—,8,The user protects itself from incoming moves for the turn. Any attackers that use contact moves against the user during this turn take damage equal to 1/8 of their max HP. With each consecutive use this move's chance of success becomes 1/3 of what it was before.,0,,,,2
+Spirit Break,소울크래시,fairy,물리,75,100,16,Lowers the target's Sp. Atk stat by 1 stage.,0,,,,1
+Spirit Shackle,그림자꿰매기,ghost,물리,90,100,12,Gives the target the Can't Escape status.,1,80,100,10,1
+Spit Up,토해내기,normal,특수,--,100,12,The higher the user's Stockpiling level the greater this move's power (ranging between 100 and 300). This move fails unless the user has the Stockpiling status.,0,,,,13
+Spite,원한,ghost,변화,--,100,12,Removes 4 PP from the move last used by the target.,0,,,,56
+Stealth Rock,스텔스록,rock,변화,--,—,20,Gives the opponent's side the Stealth Rock status.,0,,,,51
+Steel Beam,철제광선,steel,특수,140,95,8,After attacking the user takes damage equal to 1/2 of its max HP.,0,,,,23
+Steel Roller,아이언롤러,steel,물리,130,100,8,Removes any terrain. This move fails if there is no terrain on the field.,0,,,,11
+Steel Wing,강철날개,steel,물리,70,90,20,Has a 10% chance of boosting the user's Defense stat by 1 stage.,0,,,,24
+Sticky Web,끈적끈적네트,bug,변화,--,—,20,Gives the opponent's side the Sticky Web status.,0,,,,3
+Stockpile,비축하기,normal,변화,--,—,20,Boosts the user's Defense and Sp. Def stats by 1 stage. Raises the user's Stockpiling level by 1. Can be used up to 3 times.,0,,,,15
+Stomping Tantrum,분함의발구르기,ground,물리,75,100,12,This move's power is doubled if the user couldn't act or its move missed or failed on the previous turn.,0,,,,73
+Stone Axe,암석액스,rock,물리,65,90,16,Gives the opponent's side the Stealth Rock status.,0,,,,1
+Stone Edge,스톤에지,rock,물리,100,80,8,This move has a 1-stage Critical-Hit Ratio Boost.,0,,,,64
+Stored Power,어시스트파워,psychic,특수,20,100,12,This move's power is increased by 20 for each stage that the user's stats have been boosted.,0,,,,52
+Storm Throw,업어후리기,fighting,물리,60,100,12,Always a critical hit.,0,,,,6
+Strength Sap,힘흡수,grass,변화,--,100,8,Restores the user's HP by an amount equal to the target's Attack stat. Lowers the target's Attack stat by 1 stage.,0,,,,5
+String Shot,실뿜기,bug,변화,--,95,20,Lowers targets' Speed stats by 2 stages.,0,,,,5
+Struggle,발버둥,normal,물리,50,—,1,,0,,,,0
+Struggle Bug,벌레의저항,bug,특수,50,100,20,Lowers targets' Sp. Atk stats by 1 stage.,0,,,,9
+Stuff Cheeks,볼가득넣기,normal,변화,--,—,12,The user eats its held Berry and boosts its Defense stat by 2 stages. This move can't be used if the user is not holding a Berry.,0,,,,4
+Stun Spore,저리가루,grass,변화,--,75,20,Paralyzes the target.,0,,,,6
+Substitute,대타출동,normal,변화,--,—,12,The user loses 1/4 of its max HP to create a substitute. The substitute will be hit by moves instead of the user and it will vanish when it takes damage equal to 1/4 of the user's max HP.,0,,,,258
+Sucker Punch,기습,dark,물리,70,100,8,This move fails unless the target has chosen an attack and has not yet attacked during the turn this move is used.,0,,,,43
+Sunny Day,쾌청,fire,변화,--,—,8,Summons harsh sunlight for 5 turns.,0,,,,185
+Super Fang,분노의앞니,normal,물리,--,90,12,Deals damage to the target equal to 1/2 of its remaining HP. Deals 1 HP of damage to a target that has only 1 HP left.,0,,,,14
+Supercell Slam,썬더다이브,electric,물리,100,95,16,If this move misses or fails the user takes damage equal to 1/2 of its max HP. If the target has the Minimized status this move's power is doubled and it will be sure to hit.,0,,,,10
+Superpower,엄청난힘,fighting,물리,120,100,8,Lowers the user's Attack and Defense stats by 1 stage.,0,,,,56
+Surf,파도타기,water,특수,90,100,16,This move's power is doubled against targets that have the Submerged status.,0,,,,68
+Swagger,뽐내기,normal,변화,--,85,16,Boosts the target's Attack stat by 2 stages and confuses it.,0,,,,44
+Swallow,꿀꺽,normal,변화,--,—,12,The higher the user's Stockpiling level the more HP the user restores. Level 1 1/4 of the user's max HP is restored. Level 2 1/2 of the user's max HP is restored. Level 3 The user's HP is fully restored. This move fails unless the user has the Stockpiling status.,0,,,,12
+Sweet Kiss,천사의키스,fairy,변화,--,75,12,Confuses the target.,0,,,,11
+Sweet Scent,달콤한향기,normal,변화,--,100,20,Lowers targets' evasiveness by 2 stages.,0,,,,16
+Switcheroo,바꿔치기,dark,변화,--,100,12,The user and the target swap their held items.,0,,,,17
+Swords Dance,칼춤,normal,변화,--,—,20,Boosts the user's Attack stat by 2 stages.,0,,,,81
+Synthesis,광합성,grass,변화,--,—,8,Restores 1/2 of the user's max HP. In harsh sunlight 2/3 of its max HP will be restored instead. In all other weather conditions 1/4 of its max HP will be restored instead.,0,,,,17
+Syrup Bomb,시럽봄,grass,특수,60,90,12,Gives the target the Syrupy status for 3 turns.,1,60,85,10,1
+Tail Slap,스위프뺨치기,normal,물리,25,85,12,The user attacks 2 to 5 times in a row.,0,,,,6
+Tailwind,순풍,flying,변화,--,—,16,Gives the user's side the Tailwind status for 4 turns.,0,,,,22
+Taunt,도발,dark,변화,--,100,20,Gives the target the Taunted status.,0,,,,97
+Tearful Look,눈물그렁그렁,normal,변화,--,—,20,Lowers the target's Attack and Sp. Atk stats by 1 stage. This move ignores the target's evasiveness and can hit a target using a move such as Protect.,0,,,,7
+Teatime,다과회,normal,변화,--,—,12,Causes all Pokémon on the field to eat their held Berries.,0,,,,1
+Teeter Dance,흔들흔들댄스,normal,변화,--,100,20,Confuses all other Pokémon on the field.,0,,,,5
+Temper Flare,열불내기,fire,물리,75,100,12,This move's power is doubled if the user couldn't act or its move missed or failed on the previous turn.,0,,,,25
+Terrain Pulse,대지의파동,normal,특수,50,100,12,This move's power is doubled if the user is under the effect of a terrain. This move's type depends on the terrain.,0,,,,11
+Thief,도둑질,dark,물리,60,100,20,If the user is not already holding an item it steals the target's held item.,0,,,,131
+Thrash,난동부리기,normal,물리,120,100,12,The user gains the Rampaging status.,0,,,,32
+Throat Chop,지옥찌르기,dark,물리,80,100,16,Gives the target the Throat Chopped status.,0,,,,68
+Thunder,번개,electric,특수,110,70,12,Has a 30% chance of paralyzing the target. This move never misses in rain and can hit a target that has the Sky-High status.,0,,,,65
+Thunder Fang,번개엄니,electric,물리,65,95,16,Has a 10% chance of paralyzing the target and a 10% chance of making the target flinch.,0,,,,36
+Thunder Punch,번개펀치,electric,물리,75,100,16,Has a 10% chance of paralyzing the target.,0,,,,64
+Thunder Wave,전기자석파,electric,변화,--,90,20,Paralyzes the target.,0,,,,77
+Thunderbolt,10만볼트,electric,특수,90,100,16,Has a 10% chance of paralyzing the target.,0,,,,70
+Tickle,간지르기,normal,변화,--,100,20,Lowers the target's Attack and Defense stats by 1 stage.,0,,,,29
+Tidy Up,정리정돈,normal,변화,--,—,12,Removes the Sticky Web Stealth Rock Substitute Spikes and Toxic Spikes statuses from the entire field. Boosts the user's Attack and Speed stats by 1 stage.,0,,,,1
+Topsy-Turvy,뒤집어엎기,dark,변화,--,—,20,Inverts all stat changes affecting the target.,0,,,,2
+Torch Song,플레어송,fire,특수,80,100,12,Boosts the user's Sp. Atk stat by 1 stage.,0,,,,1
+Torment,트집,dark,변화,--,100,16,Gives the target the Unable to Repeat status.,0,,,,22
+Toxic,맹독,poison,변화,--,90,12,Badly poisons the target. If the user is a Poison type this move will never miss.,0,,,,30
+Toxic Spikes,독압정,poison,변화,--,—,20,Gives the opponent's side the Toxic Spikes status.,0,,,,26
+Toxic Thread,독실,poison,변화,--,100,20,Lowers the target's Speed stat by 2 stages and poisons it.,0,,,,1
+Trailblaze,개척하기,grass,물리,50,100,20,Boosts the user's Speed stat by 1 stage.,0,,,,104
+Transform,변신,normal,변화,--,—,12,The user transforms into a copy of the target. It also copies all of the target's stats apart from its HP.,0,,,,1
+Tri Attack,트라이어택,normal,특수,80,100,12,Has a 20% chance of leaving the target burned frozen or paralyzed.,0,,,,13
+Trick,트릭,psychic,변화,--,100,12,The user and the target swap their held items.,0,,,,59
+Trick Room,트릭룸,psychic,변화,--,—,8,Gives the entire field the Trick Room status for 5 turns.,0,,,,45
+Trick-or-Treat,핼러윈,ghost,변화,--,100,20,Gives the target the Trick-or-Treating status.,0,,,,4
+Triple Arrows,3연화살,fighting,물리,90,100,12,Has a 50% chance of lowering the target's Defense stat by 1 stage and has a 30% chance of making the target flinch. This move has a 1-stage Critical-Hit Ratio Boost.,0,,,,1
+Triple Axel,트리플악셀,ice,물리,20,90,12,The user attacks 3 times in a rowâ€”first with a power of 20 then with a power of 40 then with a power of 60. The attack ends if the user misses.,0,,,,14
+Trop Kick,트로피컬킥,grass,물리,85,100,16,Lowers the target's Attack stat by 1 stage.,1,70,100,15,1
+Twin Beam,트윈빔,psychic,특수,40,100,12,The user attacks twice in a row.,0,,,,1
+U-turn,유턴,bug,물리,70,100,20,After attacking the user switches out of battle to be replaced by another party Pokémon.,0,,,,52
+Upper Hand,기선제압,fighting,물리,65,100,16,Makes the target flinch. This move fails if the target isn't about to use a priority move.,0,,,,28
+Uproar,소란피기,normal,특수,90,100,12,The user gains the Uproar status.,0,,,,80
+Vacuum Wave,진공파,fighting,특수,40,100,20,,0,,,,20
+Venoshock,베놈쇼크,poison,특수,65,100,12,This move's power is doubled if the target is poisoned or badly poisoned.,0,,,,27
+Volt Switch,볼트체인지,electric,특수,70,100,20,After attacking the user switches out of battle to be replaced by another party Pokémon.,0,,,,22
+Volt Tackle,볼트태클,electric,물리,120,100,16,Has a 10% chance of paralyzing the target. The user also takes 1/3 of the damage dealt by this move.,0,,,,3
+Water Pulse,물의파동,water,특수,60,100,20,Has a 20% chance of confusing the target.,0,,,,50
+Water Shuriken,물수리검,water,특수,15,100,20,The user attacks 2 to 5 times in a row.,0,,,,1
+Water Spout,해수스파우팅,water,특수,150,100,8,The less HP the user has left the lower this move's power (ranging between 1 and 150).,0,,,,1
+Waterfall,폭포오르기,water,물리,80,100,16,Has a 20% chance of making the target flinch.,0,,,,36
+Wave Crash,웨이브태클,water,물리,120,100,12,The user takes 1/3 of the damage dealt by this move.,0,,,,8
+Weather Ball,웨더볼,normal,특수,50,100,12,When a weather condition is present this move's power is doubled and its type changes. Harsh sunlight Fire type. Rain Water type. Snow Ice type. Sandstorm Rock type.,0,,,,47
+Whirlpool,바다회오리,water,특수,35,85,16,Gives the target the Bound status. This move's power is doubled if the target has the Submerged status.,0,,,,32
+Whirlwind,날려버리기,normal,변화,--,—,20,If there are other Pokémon in the target's party that can switch into battle the target is forced to switch out of battle and is replaced by one of those Pokémon at random.,0,,,,12
+Wide Guard,와이드가드,rock,변화,--,—,12,During the turn this move is used the user protects its side from moves that target all allies.,0,,,,21
+Wild Charge,와일드볼트,electric,물리,90,100,16,The user takes 1/4 of the damage dealt by this move.,0,,,,34
+Will-O-Wisp,도깨비불,fire,변화,--,85,16,Burns the target.,0,,,,53
+Wish,희망사항,normal,변화,--,—,8,Gives the user's spot the Wish status.,0,,,,26
+Wonder Room,원더룸,psychic,변화,--,—,12,Gives the entire field the Wonder Room status for 5 turns.,0,,,,30
+Wood Hammer,우드해머,grass,물리,120,100,16,The user takes 1/3 of the damage dealt by this move.,0,,,,7
+Worry Seed,고민씨,grass,변화,--,100,12,Changes the target's Ability to Insomnia.,0,,,,14
+Wrap,김밥말이,normal,물리,15,90,20,Gives the target the Bound status.,0,,,,9
+X-Scissor,시저크로스,bug,물리,80,100,16,,0,,,,32
+Yawn,하품,normal,변화,--,—,12,Makes the target drowsy. This move never misses.,0,,,,36
+Zap Cannon,전자포,electric,특수,120,50,8,Paralyzes the target.,0,,,,8
+Zen Headbutt,사념의박치기,psychic,물리,80,90,16,Has a 20% chance of making the target flinch.,0,,,,86
+Zing Zap,찌리리따끔따끔,electric,물리,80,100,12,Has a 30% chance of making the target flinch.,0,,,,1

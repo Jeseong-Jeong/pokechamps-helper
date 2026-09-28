@@ -1,0 +1,341 @@
+﻿id,dex_no,name_ko,name_en,type1,type2,hp,atk,def,spa,spd,spe,bst,abilities_en,abilities_ko,is_mega,mega_of,megas,form_kind,new_in_mc,usage_rank,learnset_size
+Venusaur,3,이상해꽃,Venusaur,grass,poison,80,82,83,100,100,80,525,Overgrow / Chlorophyll,심록 / 엽록소,0,,Mega Venusaur,,0,49,57
+Mega Venusaur,3,메가이상해꽃,Mega Venusaur,grass,poison,80,100,123,122,120,80,625,Thick Fat,두꺼운지방,1,Venusaur,,메가,0,,57
+Charizard,6,리자몽,Charizard,fire,flying,78,84,78,109,85,100,534,Blaze / Solar Power,맹화 / 선파워,0,,Mega Charizard X / Mega Charizard Y,,0,14,73
+Mega Charizard X,6,메가리자몽 X,Mega Charizard X,fire,dragon,78,130,111,130,85,100,634,Tough Claws,단단한발톱,1,Charizard,,메가,0,,73
+Mega Charizard Y,6,메가리자몽 Y,Mega Charizard Y,fire,flying,78,104,78,159,115,100,634,Drought,가뭄,1,Charizard,,메가,0,,73
+Blastoise,9,거북왕,Blastoise,water,,79,83,100,85,105,78,530,Torrent / Rain Dish,급류 / 젖은접시,0,,Mega Blastoise,,0,52,73
+Mega Blastoise,9,메가거북왕,Mega Blastoise,water,,79,103,120,135,115,78,630,Mega Launcher,메가런처,1,Blastoise,,메가,0,,73
+Beedrill,15,독침붕,Beedrill,bug,poison,65,90,40,45,80,75,395,Swarm / Sniper,벌레의알림 / 스나이퍼,0,,Mega Beedrill,,0,158,53
+Mega Beedrill,15,메가독침붕,Mega Beedrill,bug,poison,65,150,40,15,80,145,495,Adaptability,적응력,1,Beedrill,,메가,0,,53
+Pidgeot,18,피죤투,Pidgeot,normal,flying,83,80,75,70,70,101,479,Keen Eye / Tangled Feet / Big Pecks,날카로운눈 / 갈지자걸음 / 부풀린가슴,0,,Mega Pidgeot,,0,210,31
+Mega Pidgeot,18,메가피죤투,Mega Pidgeot,normal,flying,83,80,80,135,80,121,579,No Guard,노가드,1,Pidgeot,,메가,0,,31
+Arbok,24,아보크,Arbok,poison,,60,95,69,65,79,80,448,Intimidate / Shed Skin / Unnerve,위협 / 탈피 / 긴장감,0,,,,0,243,70
+Pikachu,25,피카츄,Pikachu,electric,,35,55,40,50,50,90,320,Static / Lightning Rod,정전기 / 피뢰침,0,,,,0,205,60
+Raichu,26,라이츄,Raichu,electric,,60,90,55,90,80,110,485,Static / Lightning Rod,정전기 / 피뢰침,0,,Mega Raichu X / Mega Raichu Y,,0,19,66
+Raichu-Alola,26,알로라 라이츄,Raichu (Alola),electric,psychic,60,85,50,95,85,110,485,Surge Surfer,서핑테일,0,,,,0,121,74
+Mega Raichu X,26,메가라이츄 X,Mega Raichu X,electric,,60,135,95,90,95,110,585,Electric Surge,일렉트릭메이커,1,Raichu,,메가,0,,66
+Mega Raichu Y,26,메가라이츄 Y,Mega Raichu Y,electric,,60,100,55,160,80,130,585,No Guard,노가드,1,Raichu,,메가,0,,66
+Clefable,36,픽시,Clefable,fairy,,95,70,73,95,90,60,483,Cute Charm / Magic Guard / Unaware,헤롱헤롱바디 / 매직가드 / 천진,0,,Mega Clefable,,0,65,91
+Mega Clefable,36,메가픽시,Mega Clefable,fairy,flying,95,80,93,135,110,70,583,Magic Bounce,매직미러,1,Clefable,,메가,0,,91
+Ninetales,38,나인테일,Ninetales,fire,,73,76,75,81,100,100,505,Flash Fire / Drought,타오르는불꽃 / 가뭄,0,,,,0,142,67
+Ninetales-Alola,38,알로라 나인테일,Ninetales (Alola),ice,fairy,73,67,75,81,100,109,505,Snow Cloak / Snow Warning,눈숨기 / 눈퍼뜨리기,0,,,,0,31,64
+Wigglytuff,40,푸크린,Wigglytuff,normal,fairy,140,70,45,85,50,45,435,Cute Charm / Competitive / Frisk,헤롱헤롱바디 / 승기 / 통찰,0,,,,1,157,98
+Vileplume,45,라플레시아,Vileplume,grass,poison,75,80,85,110,90,50,490,Chlorophyll / Effect Spore,엽록소 / 포자,0,,,,0,127,54
+Persian,53,페르시온,Persian,normal,,65,70,60,65,65,115,440,Limber / Technician / Unnerve,유연 / 테크니션 / 긴장감,0,,,,1,238,66
+Persian-Alola,53,알로라 페르시온,Persian (Alola),dark,,65,60,60,75,65,115,440,Fur Coat / Technician / Rattled,퍼코트 / 테크니션 / 주눅,0,,,,1,152,73
+Arcanine,59,윈디,Arcanine,fire,,90,110,80,100,80,95,555,Intimidate / Flash Fire / Justified,위협 / 타오르는불꽃 / 정의의마음,0,,,,0,154,57
+Arcanine-Hisui,59,히스이 윈디,Arcanine (Hisui),fire,rock,95,115,80,95,80,90,555,Intimidate / Flash Fire / Rock Head,위협 / 타오르는불꽃 / 돌머리,0,,,,0,18,64
+Alakazam,65,후딘,Alakazam,psychic,,55,50,45,135,95,120,500,Synchronize / Inner Focus / Magic Guard,싱크로 / 정신력 / 매직가드,0,,Mega Alakazam,,0,66,60
+Mega Alakazam,65,메가후딘,Mega Alakazam,psychic,,55,50,65,175,105,150,600,Trace,트레이스,1,Alakazam,,메가,0,,60
+Machamp,68,괴력몬,Machamp,fighting,,90,130,80,65,85,55,505,Guts / No Guard / Steadfast,근성 / 노가드 / 불굴의마음,0,,,,0,230,66
+Victreebel,71,우츠보트,Victreebel,grass,poison,80,105,65,100,70,70,490,Chlorophyll / Gluttony,엽록소 / 먹보,0,,Mega Victreebel,,0,190,59
+Mega Victreebel,71,메가우츠보트,Mega Victreebel,grass,poison,80,125,85,135,95,70,590,Innards Out,내용물분출,1,Victreebel,,메가,0,,59
+Slowbro,80,야도란,Slowbro,water,psychic,95,75,110,100,80,30,490,Oblivious / Own Tempo / Regenerator,둔감 / 마이페이스 / 재생력,0,,Mega Slowbro,,0,113,78
+Slowbro-Galar,80,가라르 야도란,Slowbro (Galar),poison,psychic,95,100,95,100,70,30,490,Quick Draw / Own Tempo / Regenerator,퀵드로 / 마이페이스 / 재생력,0,,,,0,211,92
+Mega Slowbro,80,메가야도란,Mega Slowbro,water,psychic,95,75,180,130,80,30,590,Shell Armor,조가비갑옷,1,Slowbro,,메가,0,,78
+Farfetch'd,83,파오리,Farfetch'd,normal,flying,52,90,55,58,62,60,377,Keen Eye / Inner Focus / Defiant,날카로운눈 / 정신력 / 오기,0,,,,1,180,50
+Gengar,94,팬텀,Gengar,ghost,poison,60,65,60,130,75,110,500,Cursed Body,저주받은바디,0,,Mega Gengar,,0,40,76
+Mega Gengar,94,메가팬텀,Mega Gengar,ghost,poison,60,65,80,170,95,130,600,Shadow Tag,그림자밟기,1,Gengar,,메가,0,,76
+Kangaskhan,115,캥카,Kangaskhan,normal,,105,95,80,40,80,90,490,Early Bird / Scrappy / Inner Focus,일찍기상 / 배짱 / 정신력,0,,Mega Kangaskhan,,0,114,67
+Mega Kangaskhan,115,메가캥카,Mega Kangaskhan,normal,,105,125,100,60,100,100,590,Parental Bond,부자유친,1,Kangaskhan,,메가,0,,67
+Starmie,121,아쿠스타,Starmie,water,psychic,60,75,85,100,85,115,520,Illuminate / Natural Cure / Analytic,발광 / 자연회복 / 애널라이즈,0,,Mega Starmie,,0,88,62
+Mega Starmie,121,메가아쿠스타,Mega Starmie,water,psychic,60,100,105,130,105,120,620,Huge Power,천하장사,1,Starmie,,메가,0,,62
+Mr. Mime,122,마임맨,Mr. Mime,psychic,fairy,40,45,65,100,120,90,460,Soundproof / Filter / Technician,방음 / 필터 / 테크니션,0,,,,1,155,77
+Pinsir,127,쁘사이저,Pinsir,bug,,65,125,100,55,70,85,500,Hyper Cutter / Mold Breaker / Moxie,괴력집게 / 틀깨기 / 자기과신,0,,Mega Pinsir,,0,227,54
+Mega Pinsir,127,메가쁘사이저,Mega Pinsir,bug,flying,65,155,120,65,90,105,600,Aerilate,스카이스킨,1,Pinsir,,메가,0,,54
+Tauros,128,켄타로스,Tauros,normal,,75,100,95,40,70,110,490,Intimidate / Anger Point / Sheer Force,위협 / 분노의경혈 / 우격다짐,0,,,,0,260,57
+Tauros-Paldea-Combat,128,팔데아 켄타로스 (컴뱃종),Tauros (Paldea),fighting,,75,110,105,30,70,100,490,Intimidate / Anger Point / Cud Chew,위협 / 분노의경혈 / 되새김질,0,,,,0,284,48
+Gyarados,130,갸라도스,Gyarados,water,flying,95,125,79,60,100,81,540,Intimidate / Moxie,위협 / 자기과신,0,,Mega Gyarados,,0,84,67
+Mega Gyarados,130,메가갸라도스,Mega Gyarados,water,dark,95,155,109,70,130,81,640,Mold Breaker,틀깨기,1,Gyarados,,메가,0,,67
+Ditto,132,메타몽,Ditto,normal,,48,48,48,48,48,48,288,Limber / Imposter,유연 / 괴짜,0,,,,0,132,1
+Vaporeon,134,샤미드,Vaporeon,water,,130,65,60,110,95,65,525,Water Absorb / Hydration,저수 / 촉촉바디,0,,,,0,197,59
+Jolteon,135,쥬피썬더,Jolteon,electric,,65,65,60,110,95,130,525,Volt Absorb / Quick Feet,축전 / 속보,0,,,,0,160,59
+Flareon,136,부스터,Flareon,fire,,65,130,60,95,110,65,525,Flash Fire / Guts,타오르는불꽃 / 근성,0,,,,0,246,57
+Aerodactyl,142,프테라,Aerodactyl,rock,flying,80,105,65,60,75,130,515,Rock Head / Pressure / Unnerve,돌머리 / 프레셔 / 긴장감,0,,Mega Aerodactyl,,0,41,58
+Mega Aerodactyl,142,메가프테라,Mega Aerodactyl,rock,flying,80,135,85,70,95,150,615,Tough Claws,단단한발톱,1,Aerodactyl,,메가,0,,58
+Snorlax,143,잠만보,Snorlax,normal,,160,110,65,65,110,30,540,Immunity / Thick Fat / Gluttony,면역 / 두꺼운지방 / 먹보,0,,,,0,108,83
+Dragonite,149,망나뇽,Dragonite,dragon,flying,91,134,95,100,100,80,600,Inner Focus / Multiscale,정신력 / 멀티스케일,0,,Mega Dragonite,,0,38,83
+Mega Dragonite,149,메가망나뇽,Mega Dragonite,dragon,flying,91,124,115,145,125,100,700,Multiscale,멀티스케일,1,Dragonite,,메가,0,,83
+Meganium,154,메가니움,Meganium,grass,,80,82,100,83,100,80,525,Overgrow / Leaf Guard,심록 / 리프가드,0,,Mega Meganium,,0,76,61
+Mega Meganium,154,메가메가니움,Mega Meganium,grass,fairy,80,92,115,143,115,80,625,Mega Sol,메가솔라,1,Meganium,,메가,0,,61
+Typhlosion,157,블레이범,Typhlosion,fire,,78,84,78,109,85,100,534,Blaze / Flash Fire,맹화 / 타오르는불꽃,0,,,,0,201,63
+Typhlosion-Hisui,157,히스이 블레이범,Typhlosion (Hisui),fire,ghost,73,84,78,119,85,95,534,Blaze / Frisk,맹화 / 통찰,0,,,,0,58,66
+Feraligatr,160,장크로다일,Feraligatr,water,,85,105,100,79,83,78,530,Torrent / Sheer Force,급류 / 우격다짐,0,,Mega Feraligatr,,0,146,83
+Mega Feraligatr,160,메가장크로다일,Mega Feraligatr,water,dragon,85,160,125,89,93,78,630,Dragonize,드래곤스킨,1,Feraligatr,,메가,0,,83
+Ariados,168,아리아도스,Ariados,bug,poison,70,90,70,60,70,40,400,Swarm / Insomnia / Sniper,벌레의알림 / 불면 / 스나이퍼,0,,,,0,183,64
+Ampharos,181,전룡,Ampharos,electric,,90,75,85,115,90,55,510,Static / Plus,정전기 / 플러스,0,,Mega Ampharos,,0,129,67
+Mega Ampharos,181,메가전룡,Mega Ampharos,electric,dragon,90,95,105,165,110,45,610,Mold Breaker,틀깨기,1,Ampharos,,메가,0,,67
+Azumarill,184,마릴리,Azumarill,water,fairy,100,50,80,60,80,50,420,Thick Fat / Huge Power / Sap Sipper,두꺼운지방 / 천하장사 / 초식,0,,,,0,177,66
+Politoed,186,왕구리,Politoed,water,,90,75,75,90,100,70,500,Water Absorb / Damp / Drizzle,저수 / 습기 / 잔비,0,,,,0,35,56
+Espeon,196,에브이,Espeon,psychic,,65,65,60,130,95,110,525,Synchronize / Magic Bounce,싱크로 / 매직미러,0,,,,0,208,67
+Umbreon,197,블래키,Umbreon,dark,,95,65,110,60,130,65,525,Synchronize / Inner Focus,싱크로 / 정신력,0,,,,0,164,67
+Slowking,199,야도킹,Slowking,water,psychic,95,75,80,100,110,30,490,Oblivious / Own Tempo / Regenerator,둔감 / 마이페이스 / 재생력,0,,,,0,191,85
+Slowking-Galar,199,가라르 야도킹,Slowking (Galar),poison,psychic,95,65,80,110,110,30,490,Curious Medicine / Own Tempo / Regenerator,기묘한약 / 마이페이스 / 재생력,0,,,,0,100,95
+Forretress,205,쏘콘,Forretress,bug,steel,75,90,140,60,60,40,465,Sturdy / Overcoat,옹골참 / 방진,0,,,,0,247,69
+Steelix,208,강철톤,Steelix,steel,ground,75,85,200,55,65,30,510,Rock Head / Sturdy / Sheer Force,돌머리 / 옹골참 / 우격다짐,0,,Mega Steelix,,0,130,66
+Mega Steelix,208,메가강철톤,Mega Steelix,steel,ground,75,125,230,55,95,30,610,Sand Force,모래의힘,1,Steelix,,메가,0,,66
+Qwilfish,211,침바루,Qwilfish,water,poison,65,95,85,55,55,85,440,Poison Point / Swift Swim / Intimidate,독가시 / 쓱쓱 / 위협,0,,,,0,270,64
+Scizor,212,핫삼,Scizor,bug,steel,70,130,100,55,80,65,500,Swarm / Technician / Light Metal,벌레의알림 / 테크니션 / 라이트메탈,0,,Mega Scizor,,0,85,65
+Mega Scizor,212,메가핫삼,Mega Scizor,bug,steel,70,150,140,65,100,75,600,Technician,테크니션,1,Scizor,,메가,0,,65
+Heracross,214,헤라크로스,Heracross,bug,fighting,80,125,75,40,95,85,500,Swarm / Guts / Moxie,벌레의알림 / 근성 / 자기과신,0,,Mega Heracross,,0,173,66
+Mega Heracross,214,메가헤라크로스,Mega Heracross,bug,fighting,80,185,115,40,105,75,600,Skill Link,스킬링크,1,Heracross,,메가,0,,66
+Skarmory,227,무장조,Skarmory,steel,flying,65,80,140,40,70,70,465,Keen Eye / Sturdy / Weak Armor,날카로운눈 / 옹골참 / 깨어진갑옷,0,,Mega Skarmory,,0,115,52
+Mega Skarmory,227,메가무장조,Mega Skarmory,steel,flying,65,140,110,40,100,110,565,Stalwart,굳건한신념,1,Skarmory,,메가,0,,52
+Houndoom,229,헬가,Houndoom,dark,fire,75,90,50,110,80,95,500,Early Bird / Flash Fire / Unnerve,일찍기상 / 타오르는불꽃 / 긴장감,0,,Mega Houndoom,,0,134,67
+Mega Houndoom,229,메가헬가,Mega Houndoom,dark,fire,75,90,90,140,90,115,600,Solar Power,선파워,1,Houndoom,,메가,0,,67
+Tyranitar,248,마기라스,Tyranitar,rock,dark,100,134,110,95,100,61,600,Sand Stream / Unnerve,모래날림 / 긴장감,0,,Mega Tyranitar,,0,21,92
+Mega Tyranitar,248,메가마기라스,Mega Tyranitar,rock,dark,100,164,150,95,120,71,700,Sand Stream,모래날림,1,Tyranitar,,메가,0,,92
+Sceptile,254,나무킹,Sceptile,grass,,70,85,65,105,85,120,530,Overgrow / Unburden,심록 / 곡예,0,,Mega Sceptile,,0,103,78
+Mega Sceptile,254,메가나무킹,Mega Sceptile,grass,dragon,70,110,75,145,85,145,630,Lightning Rod,피뢰침,1,Sceptile,,메가,0,,78
+Blaziken,257,번치코,Blaziken,fire,fighting,80,120,70,110,70,80,530,Blaze / Speed Boost,맹화 / 가속,0,,Mega Blaziken,,0,59,79
+Mega Blaziken,257,메가번치코,Mega Blaziken,fire,fighting,80,160,80,130,80,100,630,Speed Boost,가속,1,Blaziken,,메가,0,,79
+Swampert,260,대짱이,Swampert,water,ground,100,110,90,85,90,60,535,Torrent / Damp,급류 / 습기,0,,Mega Swampert,,0,44,77
+Mega Swampert,260,메가대짱이,Mega Swampert,water,ground,100,150,110,95,110,70,635,Swift Swim,쓱쓱,1,Swampert,,메가,0,,77
+Pelipper,279,패리퍼,Pelipper,water,flying,60,50,100,95,70,65,440,Keen Eye / Drizzle / Rain Dish,날카로운눈 / 잔비 / 젖은접시,0,,,,0,12,53
+Gardevoir,282,가디안,Gardevoir,psychic,fairy,68,65,65,125,115,80,518,Synchronize / Trace / Telepathy,싱크로 / 트레이스 / 텔레파시,0,,Mega Gardevoir,,0,22,80
+Mega Gardevoir,282,메가가디안,Mega Gardevoir,psychic,fairy,68,85,65,165,135,100,618,Pixilate,페어리스킨,1,Gardevoir,,메가,0,,80
+Sableye,302,깜까미,Sableye,dark,ghost,50,75,75,65,65,50,380,Keen Eye / Stall / Prankster,날카로운눈 / 시간벌기 / 짓궂은마음,0,,Mega Sableye,,0,47,88
+Mega Sableye,302,메가깜까미,Mega Sableye,dark,ghost,50,85,125,85,115,20,480,Magic Bounce,매직미러,1,Sableye,,메가,0,,88
+Mawile,303,입치트,Mawile,steel,fairy,50,85,85,55,55,50,380,Hyper Cutter / Intimidate / Sheer Force,괴력집게 / 위협 / 우격다짐,0,,Mega Mawile,,0,63,71
+Mega Mawile,303,메가입치트,Mega Mawile,steel,fairy,50,105,125,55,95,50,480,Huge Power,천하장사,1,Mawile,,메가,0,,71
+Aggron,306,보스로라,Aggron,steel,rock,70,110,180,60,60,50,530,Sturdy / Rock Head / Heavy Metal,옹골참 / 돌머리 / 헤비메탈,0,,Mega Aggron,,0,147,83
+Mega Aggron,306,메가보스로라,Mega Aggron,steel,,70,140,230,60,80,50,630,Filter,필터,1,Aggron,,메가,0,,83
+Medicham,308,요가램,Medicham,fighting,psychic,60,60,75,60,75,80,410,Pure Power / Telepathy,순수한힘 / 텔레파시,0,,Mega Medicham,,0,174,77
+Mega Medicham,308,메가요가램,Mega Medicham,fighting,psychic,60,100,85,80,85,100,510,Pure Power,순수한힘,1,Medicham,,메가,0,,77
+Manectric,310,썬더볼트,Manectric,electric,,70,75,60,105,60,105,475,Static / Lightning Rod / Minus,정전기 / 피뢰침 / 마이너스,0,,Mega Manectric,,0,167,49
+Mega Manectric,310,메가썬더볼트,Mega Manectric,electric,,70,75,80,135,80,135,575,Intimidate,위협,1,Manectric,,메가,0,,49
+Swalot,317,꿀꺽몬,Swalot,poison,,100,73,83,73,83,55,467,Liquid Ooze / Sticky Hold / Gluttony,해감액 / 점착 / 먹보,0,,,,1,225,62
+Sharpedo,319,샤크니아,Sharpedo,water,dark,70,120,40,95,40,95,460,Rough Skin / Speed Boost,까칠한피부 / 가속,0,,Mega Sharpedo,,0,219,58
+Mega Sharpedo,319,메가샤크니아,Mega Sharpedo,water,dark,70,140,70,110,65,105,560,Strong Jaw,옹골찬턱,1,Sharpedo,,메가,0,,58
+Camerupt,323,폭타,Camerupt,fire,ground,70,100,70,105,75,40,460,Magma Armor / Solid Rock / Anger Point,마그마의무장 / 하드록 / 분노의경혈,0,,Mega Camerupt,,0,55,67
+Mega Camerupt,323,메가폭타,Mega Camerupt,fire,ground,70,120,100,145,105,20,560,Sheer Force,우격다짐,1,Camerupt,,메가,0,,67
+Torkoal,324,코터스,Torkoal,fire,,70,85,140,85,70,20,470,White Smoke / Drought / Shell Armor,하얀연기 / 가뭄 / 조가비갑옷,0,,,,0,25,57
+Altaria,334,파비코리,Altaria,dragon,flying,75,70,90,70,105,80,490,Natural Cure / Cloud Nine,자연회복 / 날씨부정,0,,Mega Altaria,,0,107,65
+Mega Altaria,334,메가파비코리,Mega Altaria,dragon,fairy,75,110,110,110,105,80,590,Pixilate,페어리스킨,1,Altaria,,메가,0,,65
+Milotic,350,밀로틱,Milotic,water,,95,60,79,100,125,81,540,Marvel Scale / Competitive / Cute Charm,이상한비늘 / 승기 / 헤롱헤롱바디,0,,,,0,15,61
+Castform,351,캐스퐁,Castform,normal,,70,70,70,70,70,70,420,Forecast,기분파,0,,,,0,253,37
+Banette,354,다크펫,Banette,ghost,,64,115,65,83,63,65,455,Insomnia / Frisk / Cursed Body,불면 / 통찰 / 저주받은바디,0,,Mega Banette,,0,188,67
+Mega Banette,354,메가다크펫,Mega Banette,ghost,,64,165,75,93,83,75,555,Prankster,짓궂은마음,1,Banette,,메가,0,,67
+Chimecho,358,치렁,Chimecho,psychic,,75,50,80,95,90,65,455,Levitate,부유,0,,Mega Chimecho,,0,181,65
+Mega Chimecho,358,메가치렁,Mega Chimecho,psychic,steel,75,50,110,135,120,65,555,Levitate,부유,1,Chimecho,,메가,0,,65
+Absol,359,앱솔,Absol,dark,,65,130,60,75,60,75,465,Pressure / Super Luck / Justified,프레셔 / 대운 / 정의의마음,0,,Mega Absol / Mega Absol Z,,0,45,72
+Mega Absol,359,메가앱솔,Mega Absol,dark,,65,150,60,115,60,115,565,Magic Bounce,매직미러,1,Absol,,메가,0,,72
+Mega Absol Z,359,메가앱솔 Z,Mega Absol Z,dark,ghost,65,154,60,75,60,151,565,Sharpness,예리함,1,Absol,,메가,1,,72
+Glalie,362,얼음귀신,Glalie,ice,,80,80,80,80,80,80,480,Inner Focus / Ice Body / Moody,정신력 / 아이스바디 / 변덕쟁이,0,,Mega Glalie,,0,117,54
+Mega Glalie,362,메가얼음귀신,Mega Glalie,ice,,80,120,80,120,80,100,580,Refrigerate,프리즈스킨,1,Glalie,,메가,0,,54
+Salamence,373,보만다,Salamence,dragon,flying,95,135,80,110,80,100,600,Intimidate / Moxie,위협 / 자기과신,0,,Mega Salamence,,1,4,62
+Mega Salamence,373,메가보만다,Mega Salamence,dragon,flying,95,145,130,120,90,120,700,Aerilate,스카이스킨,1,Salamence,,메가,1,,62
+Metagross,376,메타그로스,Metagross,steel,psychic,80,135,130,95,90,70,600,Clear Body / Light Metal,클리어바디 / 라이트메탈,0,,Mega Metagross,,0,34,68
+Mega Metagross,376,메가메타그로스,Mega Metagross,steel,psychic,80,145,150,105,110,110,700,Tough Claws,단단한발톱,1,Metagross,,메가,0,,68
+Torterra,389,토대부기,Torterra,grass,ground,95,109,105,75,85,56,525,Overgrow / Shell Armor,심록 / 조가비갑옷,0,,,,0,186,72
+Infernape,392,초염몽,Infernape,fire,fighting,76,104,71,104,71,108,534,Blaze / Iron Fist,맹화 / 철주먹,0,,,,0,135,88
+Empoleon,395,엠페르트,Empoleon,water,steel,84,86,88,111,101,60,530,Torrent / Competitive,급류 / 승기,0,,,,0,81,74
+Staraptor,398,찌르호크,Staraptor,normal,flying,85,120,70,50,60,100,485,Intimidate / Reckless,위협 / 이판사판,0,,Mega Staraptor,,0,20,43
+Mega Staraptor,398,메가찌르호크,Mega Staraptor,fighting,flying,85,140,100,60,90,110,585,Contrary,심술꾸러기,1,Staraptor,,메가,0,,43
+Luxray,405,렌트라,Luxray,electric,,80,120,79,95,79,70,523,Rivalry / Intimidate / Guts,투쟁심 / 위협 / 근성,0,,,,0,216,53
+Roserade,407,로즈레이드,Roserade,grass,poison,60,70,65,125,105,90,515,Natural Cure / Poison Point / Technician,자연회복 / 독가시 / 테크니션,0,,,,0,232,51
+Rampardos,409,램펄드,Rampardos,rock,,97,165,60,65,50,58,495,Mold Breaker / Sheer Force,틀깨기 / 우격다짐,0,,,,0,207,74
+Bastiodon,411,바리톱스,Bastiodon,rock,steel,60,52,168,47,138,30,495,Sturdy / Soundproof,옹골참 / 방음,0,,,,0,234,68
+Lopunny,428,이어롭,Lopunny,normal,,65,76,84,54,96,105,480,Cute Charm / Klutz / Limber,헤롱헤롱바디 / 서투름 / 유연,0,,Mega Lopunny,,0,105,76
+Mega Lopunny,428,메가이어롭,Mega Lopunny,normal,fighting,65,136,94,54,96,135,580,Scrappy,배짱,1,Lopunny,,메가,0,,76
+Spiritomb,442,화강돌,Spiritomb,ghost,dark,50,92,108,92,108,35,485,Pressure / Infiltrator,프레셔 / 틈새포착,0,,,,0,151,54
+Garchomp,445,한카리아스,Garchomp,dragon,ground,108,130,95,80,85,102,600,Sand Veil / Rough Skin,모래숨기 / 까칠한피부,0,,Mega Garchomp / Mega Garchomp Z,,0,9,59
+Mega Garchomp,445,메가한카리아스,Mega Garchomp,dragon,ground,108,170,115,120,95,92,700,Sand Force,모래의힘,1,Garchomp,,메가,0,,59
+Mega Garchomp Z,445,메가한카리아스 Z,Mega Garchomp Z,dragon,,108,130,85,141,85,151,700,Levitate,부유,1,Garchomp,,메가,1,,59
+Lucario,448,루카리오,Lucario,fighting,steel,70,110,70,115,70,90,525,Steadfast / Inner Focus / Justified,불굴의마음 / 정신력 / 정의의마음,0,,Mega Lucario / Mega Lucario Z,,0,27,83
+Mega Lucario,448,메가루카리오,Mega Lucario,fighting,steel,70,145,88,140,70,112,625,Adaptability,적응력,1,Lucario,,메가,0,,83
+Mega Lucario Z,448,메가루카리오 Z,Mega Lucario Z,fighting,steel,70,100,70,164,70,151,625,Aura Guard,Aura Guard,1,Lucario,,메가,1,,83
+Hippowdon,450,하마돈,Hippowdon,ground,,108,112,118,68,72,47,525,Sand Stream / Sand Force,모래날림 / 모래의힘,0,,,,0,163,51
+Toxicroak,454,독개굴,Toxicroak,poison,fighting,83,106,65,86,65,85,490,Anticipation / Dry Skin / Poison Touch,위험예지 / 건조피부 / 독수,0,,,,0,199,81
+Abomasnow,460,눈설왕,Abomasnow,grass,ice,90,92,75,92,85,60,494,Snow Warning / Soundproof,눈퍼뜨리기 / 방음,0,,Mega Abomasnow,,0,143,65
+Mega Abomasnow,460,메가눈설왕,Mega Abomasnow,grass,ice,90,132,105,132,105,30,594,Snow Warning,눈퍼뜨리기,1,Abomasnow,,메가,0,,65
+Weavile,461,포푸니라,Weavile,dark,ice,70,120,65,45,85,125,510,Pressure / Pickpocket,프레셔 / 나쁜손버릇,0,,,,0,73,73
+Rhyperior,464,거대코뿌리,Rhyperior,ground,rock,115,140,130,55,55,40,535,Lightning Rod / Solid Rock / Reckless,피뢰침 / 하드록 / 이판사판,0,,,,0,176,91
+Leafeon,470,리피아,Leafeon,grass,,65,110,130,60,65,95,525,Leaf Guard / Chlorophyll,리프가드 / 엽록소,0,,,,0,239,58
+Glaceon,471,글레이시아,Glaceon,ice,,65,60,110,130,95,65,525,Snow Cloak / Ice Body,눈숨기 / 아이스바디,0,,,,0,212,58
+Gliscor,472,글라이온,Gliscor,ground,flying,75,95,125,45,75,95,510,Hyper Cutter / Sand Veil / Poison Heal,괴력집게 / 모래숨기 / 포이즌힐,0,,,,0,166,75
+Mamoswine,473,맘모꾸리,Mamoswine,ice,ground,110,130,80,70,60,80,530,Oblivious / Snow Cloak / Thick Fat,둔감 / 눈숨기 / 두꺼운지방,0,,,,0,77,63
+Gallade,475,엘레이드,Gallade,psychic,fighting,68,125,65,65,115,80,518,Steadfast / Sharpness / Justified,불굴의마음 / 예리함 / 정의의마음,0,,Mega Gallade,,0,68,106
+Mega Gallade,475,메가엘레이드,Mega Gallade,psychic,fighting,68,165,95,65,115,110,618,Inner Focus,정신력,1,Gallade,,메가,0,,106
+Froslass,478,눈여아,Froslass,ice,ghost,70,80,70,80,70,110,480,Snow Cloak / Cursed Body,눈숨기 / 저주받은바디,0,,Mega Froslass,,0,33,68
+Mega Froslass,478,메가눈여아,Mega Froslass,ice,ghost,70,80,70,140,100,120,580,Snow Warning,눈퍼뜨리기,1,Froslass,,메가,0,,68
+Rotom,479,로토무,Rotom,electric,ghost,50,50,77,95,77,91,440,Levitate,부유,0,,,,0,255,42
+Rotom-Heat,479,히트로토무,Rotom Heat,electric,fire,50,65,107,105,107,86,520,Levitate,부유,0,,,폼,0,87,43
+Rotom-Wash,479,워시로토무,Rotom Wash,electric,water,50,65,107,105,107,86,520,Levitate,부유,0,,,폼,0,60,43
+Rotom-Frost,479,프로스트로토무,Rotom Frost,electric,ice,50,65,107,105,107,86,520,Levitate,부유,0,,,폼,0,193,43
+Rotom-Fan,479,스핀로토무,Rotom Fan,electric,flying,50,65,107,105,107,86,520,Levitate,부유,0,,,폼,0,242,43
+Rotom-Mow,479,커트로토무,Rotom Mow,electric,grass,50,65,107,105,107,86,520,Levitate,부유,0,,,폼,0,189,43
+Serperior,497,샤로다,Serperior,grass,,75,75,95,75,95,113,528,Overgrow / Contrary,심록 / 심술꾸러기,0,,,,0,148,53
+Emboar,500,염무왕,Emboar,fire,fighting,110,123,65,100,65,65,528,Blaze / Reckless,맹화 / 이판사판,0,,Mega Emboar,,0,178,79
+Mega Emboar,500,메가염무왕,Mega Emboar,fire,fighting,110,148,75,110,110,75,628,Mold Breaker,틀깨기,1,Emboar,,메가,0,,79
+Samurott,503,대검귀,Samurott,water,,95,100,85,108,70,70,528,Torrent / Shell Armor,급류 / 조가비갑옷,0,,,,0,271,62
+Samurott-Hisui,503,히스이 대검귀,Samurott (Hisui),water,dark,90,108,80,100,65,85,528,Torrent / Sharpness,급류 / 예리함,0,,,,0,92,68
+Watchog,505,보르그,Watchog,normal,,60,85,69,60,69,77,420,Illuminate / Keen Eye / Analytic,발광 / 날카로운눈 / 애널라이즈,0,,,,0,262,52
+Liepard,510,레파르다스,Liepard,dark,,64,88,50,88,50,106,446,Limber / Unburden / Prankster,유연 / 곡예 / 짓궂은마음,0,,,,0,192,61
+Simisage,512,야나키,Simisage,grass,,75,98,63,98,63,101,498,Gluttony / Overgrow,먹보 / 심록,0,,,,0,263,50
+Simisear,514,바오키,Simisear,fire,,75,98,63,98,63,101,498,Gluttony / Blaze,먹보 / 맹화,0,,,,0,264,55
+Simipour,516,앗차키,Simipour,water,,75,98,63,98,63,101,498,Gluttony / Torrent,먹보 / 급류,0,,,,0,259,52
+Musharna,518,몽얌나,Musharna,psychic,,116,55,85,107,95,29,487,Forewarn / Synchronize / Telepathy,예지몽 / 싱크로 / 텔레파시,0,,,,0,244,50
+Excadrill,530,몰드류,Excadrill,ground,steel,110,135,60,50,65,88,508,Sand Rush / Sand Force / Mold Breaker,모래헤치기 / 모래의힘 / 틀깨기,0,,Mega Excadrill,,0,28,54
+Mega Excadrill,530,메가몰드류,Mega Excadrill,ground,steel,110,165,100,65,65,103,608,Piercing Drill,관통드릴,1,Excadrill,,메가,0,,54
+Audino,531,다부니,Audino,normal,,103,60,86,60,86,50,445,Healer / Regenerator / Klutz,치유의마음 / 재생력 / 서투름,0,,Mega Audino,,0,150,69
+Mega Audino,531,메가다부니,Mega Audino,normal,fairy,103,60,126,80,126,50,545,Healer,치유의마음,1,Audino,,메가,0,,69
+Conkeldurr,534,노보청,Conkeldurr,fighting,,105,140,95,55,65,45,505,Guts / Sheer Force / Iron Fist,근성 / 우격다짐 / 철주먹,0,,,,0,195,61
+Scolipede,545,펜드라,Scolipede,bug,poison,60,100,89,55,69,112,485,Poison Point / Swarm / Speed Boost,독가시 / 벌레의알림 / 가속,0,,Mega Scolipede,,0,140,53
+Mega Scolipede,545,메가펜드라,Mega Scolipede,bug,poison,60,140,149,75,99,62,585,Shell Armor,조가비갑옷,1,Scolipede,,메가,0,,53
+Whimsicott,547,엘풍,Whimsicott,grass,fairy,60,67,85,77,75,116,480,Prankster / Infiltrator / Chlorophyll,짓궂은마음 / 틈새포착 / 엽록소,0,,,,0,13,50
+Krookodile,553,악비아르,Krookodile,ground,dark,95,117,80,65,70,92,519,Intimidate / Moxie / Anger Point,위협 / 자기과신 / 분노의경혈,0,,,,0,128,83
+Scrafty,560,곤율거니,Scrafty,dark,fighting,65,90,115,45,115,58,488,Shed Skin / Moxie / Intimidate,탈피 / 자기과신 / 위협,0,,Mega Scrafty,,0,86,82
+Mega Scrafty,560,메가곤율거니,Mega Scrafty,dark,fighting,65,130,135,55,135,68,588,Intimidate,위협,1,Scrafty,,메가,0,,82
+Cofagrigus,563,데스니칸,Cofagrigus,ghost,,58,50,145,95,105,30,483,Mummy,미라,0,,,,0,156,54
+Garbodor,569,더스트나,Garbodor,poison,,80,95,82,60,82,75,474,Stench / Weak Armor / Aftermath,악취 / 깨어진갑옷 / 유폭,0,,,,0,279,53
+Zoroark,571,조로아크,Zoroark,dark,,60,105,60,120,60,105,510,Illusion,일루전,0,,,,0,221,70
+Zoroark-Hisui,571,히스이 조로아크,Zoroark (Hisui),normal,ghost,55,100,60,125,60,110,510,Illusion,일루전,0,,,,0,82,73
+Reuniclus,579,란쿨루스,Reuniclus,psychic,,110,65,75,125,85,30,490,Overcoat / Magic Guard / Regenerator,방진 / 매직가드 / 재생력,0,,,,0,175,66
+Vanilluxe,584,배바닐라,Vanilluxe,ice,,71,95,85,110,95,79,535,Ice Body / Snow Warning / Weak Armor,아이스바디 / 눈퍼뜨리기 / 깨어진갑옷,0,,,,0,106,41
+Emolga,587,에몽가,Emolga,electric,flying,55,75,60,75,60,103,428,Static / Motor Drive,정전기 / 전기엔진,0,,,,0,202,46
+Eelektross,604,저리더프,Eelektross,electric,,85,115,80,105,80,50,515,Levitate,부유,0,,Mega Eelektross,,0,133,75
+Mega Eelektross,604,메가저리더프,Mega Eelektross,electric,,85,145,80,135,90,80,615,Eelevate,Eelevate,1,Eelektross,,메가,0,,75
+Chandelure,609,샹델라,Chandelure,ghost,fire,60,55,90,145,90,80,520,Flash Fire / Flame Body / Infiltrator,타오르는불꽃 / 불꽃몸 / 틈새포착,0,,Mega Chandelure,,0,94,54
+Mega Chandelure,609,메가샹델라,Mega Chandelure,ghost,fire,60,75,110,175,110,90,620,Infiltrator,틈새포착,1,Chandelure,,메가,0,,54
+Beartic,614,툰베어,Beartic,ice,,95,130,80,70,80,50,505,Snow Cloak / Slush Rush / Swift Swim,눈숨기 / 눈치우기 / 쓱쓱,0,,,,0,229,76
+Stunfisk,618,메더,Stunfisk,ground,electric,109,66,84,81,99,32,471,Static / Limber / Sand Veil,정전기 / 유연 / 모래숨기,0,,,,0,252,48
+Stunfisk-Galar,618,가라르 메더,Stunfisk (Galar),ground,steel,109,81,99,66,84,32,471,Mimicry,의태,0,,,,0,241,52
+Golurk,623,골루그,Golurk,ground,ghost,89,124,80,55,80,55,483,Iron Fist / Klutz / No Guard,철주먹 / 서투름 / 노가드,0,,Mega Golurk,,0,70,78
+Mega Golurk,623,메가골루그,Mega Golurk,ground,ghost,89,159,105,70,105,55,583,Unseen Fist,보이지않는주먹,1,Golurk,,메가,0,,78
+Hydreigon,635,삼삼드래,Hydreigon,dark,dragon,92,105,90,125,90,98,600,Levitate,부유,0,,,,0,61,78
+Volcarona,637,불카모스,Volcarona,bug,fire,85,60,65,135,105,100,550,Flame Body / Swarm,불꽃몸 / 벌레의알림,0,,,,0,30,57
+Chesnaught,652,브리가론,Chesnaught,grass,fighting,88,107,122,74,75,64,530,Overgrow / Bulletproof,심록 / 방탄,0,,Mega Chesnaught,,0,138,87
+Mega Chesnaught,652,메가브리가론,Mega Chesnaught,grass,fighting,88,137,172,74,115,44,630,Bulletproof,방탄,1,Chesnaught,,메가,0,,87
+Delphox,655,마폭시,Delphox,fire,psychic,75,69,72,114,100,104,534,Blaze / Magician,맹화 / 매지션,0,,Mega Delphox,,0,46,72
+Mega Delphox,655,메가마폭시,Mega Delphox,fire,psychic,75,69,72,159,125,134,634,Levitate,부유,1,Delphox,,메가,0,,72
+Greninja,658,개굴닌자,Greninja,water,dark,72,95,67,103,71,122,530,Torrent / Protean,급류 / 변환자재,0,,Mega Greninja,,0,122,64
+Mega Greninja,658,메가개굴닌자,Mega Greninja,water,dark,72,125,77,133,81,142,630,Protean,변환자재,1,Greninja,,메가,0,,64
+Diggersby,660,파르토,Diggersby,normal,ground,85,56,77,50,77,78,423,Pickup / Cheek Pouch / Huge Power,픽업 / 볼주머니 / 천하장사,0,,,,0,196,58
+Talonflame,663,파이어로,Talonflame,fire,flying,78,81,71,74,69,126,499,Flame Body / Gale Wings,불꽃몸 / 질풍날개,0,,,,0,48,50
+Vivillon,666,비비용,Vivillon,bug,flying,80,52,50,90,50,89,411,Shield Dust / Compoundeyes / Friend Guard,인분 / 복안 / 프렌드가드,0,,,,0,99,43
+Pyroar,668,화염레오,Pyroar,fire,normal,86,68,72,109,66,106,507,Rivalry / Unnerve / Moxie,투쟁심 / 긴장감 / 자기과신,0,,Mega Pyroar,,0,104,49
+Mega Pyroar,668,메가화염레오,Mega Pyroar,fire,normal,86,88,92,129,86,126,607,Fire Mane,Fire Mane,1,Pyroar,,메가,0,,49
+Floette-Eternal,670,영원의 꽃 플라엣테,Floette,fairy,,74,65,67,125,128,92,551,Flower Veil / Symbiosis,플라워베일 / 공생,0,,Mega Floette,,0,24,41
+Mega Floette,670,메가플라엣테,Mega Floette,fairy,,74,85,87,155,148,102,651,Fairy Aura,페어리오라,1,Floette-Eternal,,메가,0,,41
+Florges,671,플라제스,Florges,fairy,,78,65,68,112,154,75,552,Flower Veil / Symbiosis,플라워베일 / 공생,0,,,,0,206,46
+Gogoat,673,고고트,Gogoat,grass,,123,100,62,97,81,68,531,Sap Sipper / Grass Pelt,초식 / 풀모피,0,,,,1,182,54
+Pangoro,675,부란다,Pangoro,fighting,dark,95,124,78,69,71,58,495,Iron Fist / Mold Breaker / Scrappy,철주먹 / 틀깨기 / 배짱,0,,,,0,214,81
+Furfrou,676,트리미앙,Furfrou,normal,,75,80,60,65,90,102,472,Fur Coat,퍼코트,0,,,,0,286,40
+Meowstic,678,냐오닉스,Meowstic,psychic,,74,48,76,83,81,104,466,Keen Eye (수컷 숨특) / Infiltrator (수컷 숨특) / Prankster (수컷 숨특) / Competitive (암컷 숨특),날카로운눈 / 틈새포착 / 짓궂은마음 / 승기,0,,Mega Meowstic,,0,126,59
+Mega Meowstic,678,메가냐오닉스,Mega Meowstic,psychic,,74,48,76,143,101,124,566,Trace,트레이스,1,Meowstic,,메가,0,,59
+Aegislash,681,킬가르도,Aegislash,steel,ghost,60,50,140,50,140,60,500,Stance Change,배틀스위치,0,,,,0,74,46
+Aegislash-Blade,681,킬가르도 (블레이드폼),Aegislash Blade,steel,ghost,60,140,50,140,50,60,500,Stance Change,배틀스위치,0,,,폼,0,,46
+Aromatisse,683,프레프티르,Aromatisse,fairy,,101,72,72,99,89,29,462,Healer / Aroma Veil,치유의마음 / 아로마베일,0,,,,0,217,48
+Slurpuff,685,나루림,Slurpuff,fairy,,82,80,86,85,75,72,480,Sweet Veil / Unburden,스위트베일 / 곡예,0,,,,0,194,42
+Malamar,687,칼라마네로,Malamar,dark,psychic,86,92,88,68,75,73,482,Contrary / Suction Cups / Infiltrator,심술꾸러기 / 흡반 / 틈새포착,0,,Mega Malamar,,0,90,69
+Mega Malamar,687,메가칼라마네로,Mega Malamar,dark,psychic,86,102,88,98,120,88,582,Contrary,심술꾸러기,1,Malamar,,메가,0,,69
+Barbaracle,689,거북손데스,Barbaracle,rock,water,72,105,115,54,86,68,500,Tough Claws / Sniper / Pickpocket,단단한발톱 / 스나이퍼 / 나쁜손버릇,0,,Mega Barbaracle,,0,228,72
+Mega Barbaracle,689,메가거북손데스,Mega Barbaracle,rock,fighting,72,140,130,64,106,88,600,Tough Claws,단단한발톱,1,Barbaracle,,메가,0,,72
+Dragalge,691,드래캄,Dragalge,poison,dragon,65,75,90,97,123,44,494,Poison Point / Poison Touch / Adaptability,독가시 / 독수 / 적응력,0,,Mega Dragalge,,0,124,52
+Mega Dragalge,691,메가드래캄,Mega Dragalge,poison,dragon,65,85,105,132,163,44,594,Regenerator,재생력,1,Dragalge,,메가,0,,52
+Clawitzer,693,블로스터,Clawitzer,water,,71,73,88,120,89,59,500,Mega Launcher,메가런처,0,,,,0,159,52
+Heliolisk,695,일레도리자드,Heliolisk,electric,normal,62,55,52,109,94,109,481,Dry Skin / Sand Veil / Solar Power,건조피부 / 모래숨기 / 선파워,0,,,,0,112,63
+Tyrantrum,697,견고라스,Tyrantrum,rock,dragon,82,121,119,69,59,71,521,Strong Jaw / Rock Head,옹골찬턱 / 돌머리,0,,,,0,226,64
+Aurorus,699,아마루르가,Aurorus,rock,ice,123,77,72,99,92,58,521,Refrigerate / Snow Warning,프리즈스킨 / 눈퍼뜨리기,0,,,,0,184,56
+Sylveon,700,님피아,Sylveon,fairy,,95,65,65,110,130,60,525,Cute Charm / Pixilate,헤롱헤롱바디 / 페어리스킨,0,,,,0,16,55
+Hawlucha,701,루차불,Hawlucha,fighting,flying,78,92,75,74,63,118,500,Limber / Unburden / Mold Breaker,유연 / 곡예 / 틀깨기,0,,Mega Hawlucha,,0,120,74
+Mega Hawlucha,701,메가루차불,Mega Hawlucha,fighting,flying,78,137,100,74,93,118,600,No Guard,노가드,1,Hawlucha,,메가,0,,74
+Dedenne,702,데덴네,Dedenne,electric,fairy,67,58,57,81,67,101,431,Cheek Pouch / Pickup / Plus,볼주머니 / 픽업 / 플러스,0,,,,0,224,50
+Goodra,706,미끄래곤,Goodra,dragon,,90,100,70,110,150,80,600,Sap Sipper / Hydration / Gooey,초식 / 촉촉바디 / 미끈미끈,0,,,,0,222,65
+Goodra-Hisui,706,히스이 미끄래곤,Goodra (Hisui),steel,dragon,80,100,100,110,150,60,600,Sap Sipper / Shell Armor / Gooey,초식 / 조가비갑옷 / 미끈미끈,0,,,,0,116,63
+Klefki,707,클레피,Klefki,steel,fairy,57,80,91,80,87,75,470,Prankster / Magician,짓궂은마음 / 매지션,0,,,,0,110,44
+Trevenant,709,대로트,Trevenant,ghost,grass,85,110,76,65,82,56,474,Natural Cure / Frisk / Harvest,자연회복 / 통찰 / 수확,0,,,,0,215,73
+Gourgeist,711,펌킨인,Gourgeist,ghost,grass,65,90,122,58,75,84,494,Pickup / Frisk / Insomnia,픽업 / 통찰 / 불면,0,,,,0,273,60
+Gourgeist-Small,711,펌킨인 (작은 사이즈),Gourgeist Small,ghost,grass,55,85,122,58,75,99,494,Pickup / Frisk / Insomnia,픽업 / 통찰 / 불면,0,,,폼,0,257,60
+Gourgeist-Large,711,펌킨인 (큰 사이즈),Gourgeist Large,ghost,grass,75,95,122,58,75,69,494,Pickup / Frisk / Insomnia,픽업 / 통찰 / 불면,0,,,폼,0,287,60
+Gourgeist-Super,711,펌킨인 (특대 사이즈),Gourgeist Super,ghost,grass,85,100,122,58,75,54,494,Pickup / Frisk / Insomnia,픽업 / 통찰 / 불면,0,,,폼,0,231,60
+Avalugg,713,크레베이스,Avalugg,ice,,95,117,184,44,46,28,514,Own Tempo / Ice Body / Sturdy,마이페이스 / 아이스바디 / 옹골참,0,,,,0,248,49
+Avalugg-Hisui,713,히스이 크레베이스,Avalugg (Hisui),ice,rock,95,127,184,34,36,38,514,Strong Jaw / Ice Body / Sturdy,옹골찬턱 / 아이스바디 / 옹골참,0,,,,0,240,49
+Noivern,715,음번,Noivern,flying,dragon,85,70,80,97,80,123,535,Frisk / Infiltrator / Telepathy,통찰 / 틈새포착 / 텔레파시,0,,,,0,119,64
+Decidueye,724,모크나이퍼,Decidueye,grass,ghost,78,107,75,100,100,70,530,Overgrow / Long Reach,심록 / 원격,0,,,,0,250,66
+Decidueye-Hisui,724,히스이 모크나이퍼,Decidueye (Hisui),grass,fighting,88,112,80,95,95,60,530,Overgrow / Scrappy,심록 / 배짱,0,,,,0,118,66
+Incineroar,727,어흥염,Incineroar,fire,dark,95,115,90,80,90,60,530,Blaze / Intimidate,맹화 / 위협,0,,,,0,3,77
+Primarina,730,누리레느,Primarina,water,fairy,80,74,74,126,116,60,530,Torrent / Liquid Voice,급류 / 촉촉보이스,0,,,,0,42,63
+Toucannon,733,왕큰부리,Toucannon,normal,flying,80,120,75,75,75,60,485,Keen Eye / Skill Link / Sheer Force,날카로운눈 / 스킬링크 / 우격다짐,0,,,,0,223,53
+Crabominable,740,모단단게,Crabominable,fighting,ice,97,132,77,62,67,43,478,Hyper Cutter / Iron Fist / Anger Point,괴력집게 / 철주먹 / 분노의경혈,0,,Mega Crabominable,,0,98,63
+Mega Crabominable,740,메가모단단게,Mega Crabominable,fighting,ice,97,157,122,62,107,33,578,Iron Fist,철주먹,1,Crabominable,,메가,0,,63
+Lycanroc,745,루가루암 (한낮의 모습),Lycanroc,rock,,75,115,65,55,65,112,487,Keen Eye / Sand Rush / Steadfast,날카로운눈 / 모래헤치기 / 불굴의마음,0,,,,0,89,58
+Lycanroc-Midnight,745,루가루암 (한밤중의 모습),Lycanroc Midnight,rock,,85,115,75,55,75,82,487,Keen Eye / Vital Spirit / No Guard,날카로운눈 / 의기양양 / 노가드,0,,,폼,0,236,68
+Lycanroc-Dusk,745,루가루암 (황혼의 모습),Lycanroc Dusk,rock,,75,117,65,55,65,110,487,Tough Claws,단단한발톱,0,,,폼,0,,61
+Toxapex,748,더시마사리,Toxapex,poison,water,50,63,152,53,142,35,495,Merciless / Limber / Regenerator,무도한행동 / 유연 / 재생력,0,,,,0,69,51
+Mudsdale,750,만마드,Mudsdale,ground,,100,125,100,55,85,35,500,Own Tempo / Stamina / Inner Focus,마이페이스 / 지구력 / 정신력,0,,,,0,169,45
+Araquanid,752,깨비물거미,Araquanid,water,bug,68,70,92,50,132,42,454,Water Bubble / Water Absorb,수포 / 저수,0,,,,0,80,51
+Salazzle,758,염뉴트,Salazzle,poison,fire,68,64,60,111,60,117,480,Corrosion / Oblivious,부식 / 둔감,0,,,,0,137,70
+Tsareena,763,달코퀸,Tsareena,grass,,72,120,98,50,98,72,510,Leaf Guard / Queenly Majesty / Sweet Veil,리프가드 / 여왕의위엄 / 스위트베일,0,,,,0,72,54
+Oranguru,765,하랑우탄,Oranguru,normal,psychic,90,60,80,90,110,60,490,Inner Focus / Telepathy / Symbiosis,정신력 / 텔레파시 / 공생,0,,,,0,97,64
+Passimian,766,내던숭이,Passimian,fighting,,100,120,90,40,60,80,490,Receiver / Defiant,리시버 / 오기,0,,,,0,245,66
+Golisopod,768,갑주무사,Golisopod,bug,water,75,125,140,60,90,40,530,Emergency Exit,위기회피,0,,Mega Golisopod,,1,8,67
+Mega Golisopod,768,메가갑주무사,Mega Golisopod,bug,steel,75,150,175,70,120,40,630,Tough Claws,단단한발톱,1,Golisopod,,메가,1,,67
+Mimikyu,778,따라큐,Mimikyu,ghost,fairy,55,90,80,50,105,96,476,Disguise,탈,0,,,,0,144,61
+Drampa,780,할비롱,Drampa,normal,dragon,78,60,85,135,91,36,485,Berserk / Sap Sipper / Cloud Nine,발끈 / 초식 / 날씨부정,0,,Mega Drampa,,0,109,66
+Mega Drampa,780,메가할비롱,Mega Drampa,normal,dragon,78,85,110,160,116,36,585,Berserk,발끈,1,Drampa,,메가,0,,66
+Kommo-o,784,짜랑고우거,Kommo-o,dragon,fighting,75,110,125,100,105,85,600,Bulletproof / Soundproof / Overcoat,방탄 / 방음 / 방진,0,,,,0,57,78
+Rillaboom,812,고릴타,Rillaboom,grass,,100,125,90,60,70,85,530,Overgrow / Grassy Surge,심록 / 그래스메이커,0,,,,1,1,67
+Cinderace,815,에이스번,Cinderace,fire,,80,116,75,65,75,119,530,Blaze / Libero,맹화 / 리베로,0,,,,1,111,64
+Inteleon,818,인텔리레온,Inteleon,water,,70,85,65,125,65,120,530,Torrent / Sniper,급류 / 스나이퍼,0,,,,1,79,62
+Corviknight,823,아머까오,Corviknight,flying,steel,98,87,105,53,85,67,495,Pressure / Unnerve / Mirror Armor,프레셔 / 긴장감 / 미러아머,0,,,,0,50,55
+Thievul,828,폭슬라이,Thievul,dark,,70,58,58,87,92,90,455,Run Away / Unburden / Stakeout,도주 / 곡예 / 잠복,0,,,,1,198,51
+Flapple,841,애프룡,Flapple,grass,dragon,70,110,80,95,60,70,485,Ripen / Gluttony / Hustle,숙성 / 먹보 / 의욕,0,,,,0,235,44
+Appletun,842,단지래플,Appletun,grass,dragon,110,85,80,100,80,30,485,Ripen / Gluttony / Thick Fat,숙성 / 먹보 / 두꺼운지방,0,,,,0,249,51
+Sandaconda,844,사다이사,Sandaconda,ground,,72,107,125,65,70,71,510,Sand Spit / Shed Skin / Sand Veil,모래뿜기 / 탈피 / 모래숨기,0,,,,0,237,48
+Toxtricity,849,스트린더,Toxtricity,electric,poison,75,98,70,114,70,75,502,Punk Rock / Plus (하이한 모습) / Minus (로우한 모습) / Technician,펑크록 / 플러스 / 마이너스 / 테크니션,0,,,,1,95,68
+Grapploct,853,케오퍼스,Grapploct,fighting,,80,118,90,70,80,42,480,Limber / Technician,유연 / 테크니션,0,,,,1,75,49
+Polteageist,855,포트데스,Polteageist,ghost,,60,65,65,134,114,70,508,Weak Armor / Cursed Body,깨어진갑옷 / 저주받은바디,0,,,,0,251,46
+Hatterene,858,브리무음,Hatterene,psychic,fairy,57,90,95,136,103,29,510,Healer / Anticipation / Magic Bounce,치유의마음 / 위험예지 / 매직미러,0,,,,0,43,59
+Grimmsnarl,861,오롱털,Grimmsnarl,dark,fairy,95,120,65,95,75,60,510,Prankster / Frisk / Pickpocket,짓궂은마음 / 통찰 / 나쁜손버릇,0,,,,0,37,64
+Perrserker,863,나이킹,Perrserker,steel,,70,110,100,50,60,50,440,Battle Armor / Tough Claws / Steely Spirit,전투무장 / 단단한발톱 / 강철정신,0,,,,1,123,74
+Sirfetch'd,865,창파나이트,Sirfetch'd,fighting,,62,135,95,68,82,65,507,Steadfast / Scrappy,불굴의마음 / 배짱,0,,,,1,62,49
+Mr. Rime,866,마임꽁꽁,Mr. Rime,ice,psychic,80,85,75,110,100,70,520,Tangled Feet / Screen Cleaner / Ice Body,갈지자걸음 / 배리어프리 / 아이스바디,0,,,,0,172,93
+Runerigus,867,데스판,Runerigus,ground,ghost,58,95,145,50,105,30,483,Wandering Spirit,떠도는영혼,0,,,,0,165,69
+Alcremie,869,마휘핑,Alcremie,fairy,,65,60,75,110,121,64,495,Sweet Veil / Aroma Veil,스위트베일 / 아로마베일,0,,,,0,187,49
+Falinks,870,대여르,Falinks,fighting,,65,100,100,70,60,75,470,Battle Armor / Defiant,전투무장 / 오기,0,,Mega Falinks,,0,209,51
+Mega Falinks,870,메가대여르,Mega Falinks,fighting,,65,135,135,70,65,100,570,Defiant,오기,1,Falinks,,메가,0,,51
+Pincurchin,871,찌르성게,Pincurchin,electric,,48,101,95,91,85,15,435,Lightning Rod / Electric Surge,피뢰침 / 일렉트릭메이커,0,,,,1,64,48
+Indeedee,876,에써르 (수컷),Indeedee,psychic,normal,60,65,55,105,95,95,475,Inner Focus / Synchronize / Psychic Surge,정신력 / 싱크로 / 사이코메이커,0,,,,1,32,46
+Indeedee-F,876,에써르 (암컷),Indeedee (Female),psychic,normal,70,55,65,95,105,85,475,Own Tempo / Synchronize / Psychic Surge,마이페이스 / 싱크로 / 사이코메이커,0,,,성별,1,6,45
+Morpeko,877,모르페코,Morpeko,electric,dark,58,95,58,70,58,97,436,Hunger Switch,꼬르륵스위치,0,,,,0,218,65
+Dragapult,887,드래펄트,Dragapult,dragon,ghost,88,120,75,100,75,142,600,Clear Body / Infiltrator / Cursed Body,클리어바디 / 틈새포착 / 저주받은바디,0,,,,0,56,63
+Wyrdeer,899,신비록,Wyrdeer,normal,psychic,103,105,72,105,75,65,525,Intimidate / Frisk / Sap Sipper,위협 / 통찰 / 초식,0,,,,0,153,61
+Kleavor,900,사마자르,Kleavor,bug,rock,70,135,95,45,70,85,500,Swarm / Sheer Force / Sharpness,벌레의알림 / 우격다짐 / 예리함,0,,,,0,91,57
+Basculegion,902,대쓰여너 (수컷),Basculegion,water,ghost,120,112,65,80,75,78,530,Swift Swim / Adaptability / Mold Breaker,쓱쓱 / 적응력 / 틀깨기,0,,,,0,7,49
+Basculegion-F,902,대쓰여너 (암컷),Basculegion (Female),water,ghost,120,92,65,100,75,78,530,Swift Swim / Adaptability / Mold Breaker,쓱쓱 / 적응력 / 틀깨기,0,,,성별,0,161,49
+Sneasler,903,포푸니크,Sneasler,fighting,poison,80,130,60,40,80,120,510,Pressure / Unburden / Poison Touch,프레셔 / 곡예 / 독수,0,,,,0,2,62
+Overqwil,904,장침바루,Overqwil,dark,poison,85,115,95,65,65,85,510,Poison Point / Swift Swim / Intimidate,독가시 / 쓱쓱 / 위협,0,,,,0,101,60
+Meowscarada,908,마스카나,Meowscarada,grass,dark,76,110,70,81,70,123,530,Overgrow / Protean,심록 / 변환자재,0,,,,0,93,66
+Skeledirge,911,라우드본,Skeledirge,fire,ghost,104,75,100,110,75,66,530,Blaze / Unaware,맹화 / 천진,0,,,,0,149,56
+Quaquaval,914,웨이니발,Quaquaval,water,fighting,85,120,80,85,75,85,530,Torrent / Moxie,급류 / 자기과신,0,,,,0,200,59
+Pawmot,923,빠르모트,Pawmot,electric,fighting,70,115,70,70,60,105,490,Volt Absorb / Natural Cure / Iron Fist,축전 / 자연회복 / 철주먹,0,,,,1,36,64
+Maushold,925,파밀리쥐,Maushold,normal,,74,75,70,65,75,111,470,Friend Guard / Cheek Pouch / Technician,프렌드가드 / 볼주머니 / 테크니션,0,,,,0,67,50
+Arboliva,930,올리르바,Arboliva,grass,normal,78,69,90,125,109,39,510,Seed Sower / Harvest,넘치는씨 / 수확,0,,,,1,141,44
+Squawkabilly,931,시비꼬,Squawkabilly,normal,flying,82,96,51,45,51,92,417,Intimidate (그린·블루) / Hustle (그린·블루) / Guts (그린·블루) / Intimidate (옐로·화이트) / Hustle (옐로·화이트) / Sheer Force (옐로·화이트),위협 / 의욕 / 근성 / 위협 / 의욕 / 우격다짐,0,,,,1,139,43
+Garganacl,934,콜로솔트,Garganacl,rock,,100,100,130,45,90,35,500,Purifying Salt / Sturdy / Clear Body,정화의소금 / 옹골참 / 클리어바디,0,,,,0,170,54
+Armarouge,936,카디나르마,Armarouge,fire,psychic,85,60,100,125,80,75,525,Flash Fire / Weak Armor,타오르는불꽃 / 깨어진갑옷,0,,,,0,26,55
+Ceruledge,937,파라블레이즈,Ceruledge,fire,ghost,75,125,80,60,100,85,525,Flash Fire / Weak Armor,타오르는불꽃 / 깨어진갑옷,0,,,,0,54,55
+Bellibolt,939,찌리배리,Bellibolt,electric,,109,64,91,103,83,45,495,Electromorphosis / Static / Damp,전기로바꾸기 / 정전기 / 습기,0,,,,0,102,39
+Mabosstiff,943,마피티프,Mabosstiff,dark,,80,120,90,60,70,85,505,Intimidate / Guard Dog / Stakeout,위협 / 파수견 / 잠복,0,,,,1,213,44
+Scovillain,952,스코빌런,Scovillain,grass,fire,65,108,65,108,65,75,486,Chlorophyll / Insomnia / Moody,엽록소 / 불면 / 변덕쟁이,0,,Mega Scovillain,,0,71,48
+Mega Scovillain,952,메가스코빌런,Mega Scovillain,grass,fire,65,138,85,138,85,75,586,Spicy Spray,하바네로분출,1,Scovillain,,메가,0,,48
+Espathra,956,클레스퍼트라,Espathra,psychic,,95,60,60,101,60,105,481,Opportunist / Frisk / Speed Boost,편승 / 통찰 / 가속,0,,,,0,96,57
+Tinkaton,959,두드리짱,Tinkaton,fairy,steel,85,75,77,70,105,94,506,Mold Breaker / Own Tempo / Pickpocket,틀깨기 / 마이페이스 / 나쁜손버릇,0,,,,0,83,47
+Palafin,964,돌핀맨,Palafin,water,,100,70,72,53,62,100,457,Zero to Hero,마이티체인지,0,,,,0,131,58
+Palafin-Hero,964,돌핀맨 (마이티폼),Palafin Hero,water,,100,160,97,106,87,100,650,Zero to Hero,마이티체인지,0,,,폼,0,125,58
+Orthworm,968,꿈트렁,Orthworm,steel,,70,85,145,60,55,65,480,Earth Eater / Sand Veil,흙먹기 / 모래숨기,0,,,,0,171,40
+Glimmora,970,킬라플로르,Glimmora,rock,poison,83,55,90,130,81,86,525,Toxic Debris / Corrosion,독치장 / 부식,0,,Mega Glimmora,,0,39,46
+Mega Glimmora,970,메가킬라플로르,Mega Glimmora,rock,poison,83,90,105,150,96,101,625,Adaptability,적응력,1,Glimmora,,메가,0,,46
+Houndstone,972,묘두기,Houndstone,ghost,,72,101,100,50,97,68,488,Sand Rush / Fluffy,모래헤치기 / 복슬복슬,0,,,,0,162,52
+Annihilape,979,저승갓숭,Annihilape,fighting,ghost,110,115,80,50,90,90,535,Vital Spirit / Inner Focus / Defiant,의기양양 / 정신력 / 오기,0,,,,0,51,75
+Farigiraf,981,키키링,Farigiraf,normal,psychic,120,90,70,110,70,60,520,Cud Chew / Armor Tail / Sap Sipper,되새김질 / 테일아머 / 초식,0,,,,0,10,70
+Kingambit,983,대도각참,Kingambit,dark,steel,100,135,120,60,85,50,550,Defiant / Supreme Overlord / Pressure,오기 / 총대장 / 프레셔,0,,,,0,5,53
+Baxcalibur,998,드닐레이브,Baxcalibur,dragon,ice,115,145,92,75,86,87,600,Thermal Exchange / Ice Body,열교환 / 아이스바디,0,,Mega Baxcalibur,,1,29,51
+Mega Baxcalibur,998,메가드닐레이브,Mega Baxcalibur,dragon,ice,115,175,117,105,101,87,700,Thermal Exchange,열교환,1,Baxcalibur,,메가,1,,51
+Gholdengo,1000,타부자고,Gholdengo,steel,ghost,87,60,95,133,91,84,550,Good as Gold,황금몸,0,,,,0,11,42
+Sinistcha,1013,그우린차,Sinistcha,grass,ghost,71,60,106,121,80,70,508,Hospitality / Heatproof,대접 / 내열,0,,,,0,23,35
+Archaludon,1018,브리두라스,Archaludon,steel,dragon,90,105,130,125,65,85,600,Stamina / Sturdy / Stalwart,지구력 / 옹골참 / 굳건한신념,0,,,,0,17,50
+Hydrapple,1019,과미드라,Hydrapple,grass,dragon,106,80,110,120,80,44,540,Supersweet Syrup / Regenerator / Sticky Hold,감미로운꿀 / 재생력 / 점착,0,,,,0,185,51

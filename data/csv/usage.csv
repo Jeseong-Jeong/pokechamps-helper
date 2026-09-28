@@ -1,0 +1,278 @@
+﻿rank,pikalytics_name,pokemon_id,pokemon_ko,usage_pct,win_pct,games
+1,Rillaboom,Rillaboom,고릴타,37.18,51.803,29118
+2,Sneasler,Sneasler,포푸니크,34.29,49.944,26852
+3,Incineroar,Incineroar,어흥염,26.77,50.215,20964
+4,Salamence,Salamence,보만다,23.15,50.968,18125
+5,Kingambit,Kingambit,대도각참,22.44,49.408,17574
+6,Indeedee-F,Indeedee-F,에써르 (암컷),21.78,51.015,17052
+7,Basculegion,Basculegion,대쓰여너 (수컷),21.21,48.239,16607
+8,Golisopod,Golisopod,갑주무사,18.49,50.846,14477
+9,Garchomp,Garchomp,한카리아스,17.12,48.06,13404
+10,Farigiraf,Farigiraf,키키링,15.9,51.358,12448
+11,Gholdengo,Gholdengo,타부자고,15.23,52.251,11929
+12,Pelipper,Pelipper,패리퍼,13.09,49.244,10249
+13,Whimsicott,Whimsicott,엘풍,12.65,46.058,9905
+14,Charizard,Charizard,리자몽,11.89,49.173,9312
+15,Milotic,Milotic,밀로틱,11.42,51.488,8940
+16,Sylveon,Sylveon,님피아,10.63,49.82,8320
+17,Archaludon,Archaludon,브리두라스,9.98,51.772,7817
+18,Arcanine-Hisui,Arcanine-Hisui,히스이 윈디,9.38,52.94,7348
+19,Raichu,Raichu,라이츄,9.2,54.031,7207
+20,Staraptor,Staraptor,찌르호크,8.94,49.5,7004
+21,Tyranitar,Tyranitar,마기라스,8.59,50.84,6723
+22,Gardevoir,Gardevoir,가디안,8.41,49.241,6588
+23,Sinistcha,Sinistcha,그우린차,8.1,47.61,6339
+24,Floette-Eternal,Floette-Eternal,영원의 꽃 플라엣테,7.72,51.282,6043
+25,Torkoal,Torkoal,코터스,6.31,51.78,4944
+26,Armarouge,Armarouge,카디나르마,6.29,51.583,4928
+27,Lucario,Lucario,루카리오,6.19,48.731,4845
+28,Excadrill,Excadrill,몰드류,5.87,49.793,4599
+29,Baxcalibur,Baxcalibur,드닐레이브,5.7,45.251,4464
+30,Volcarona,Volcarona,불카모스,5.42,50.942,4246
+31,Ninetales-Alola,Ninetales-Alola,알로라 나인테일,5.42,48.48,4243
+32,Indeedee,Indeedee,에써르 (수컷),5.19,49.533,4066
+33,Froslass,Froslass,눈여아,5.03,51.446,3942
+34,Metagross,Metagross,메타그로스,5.03,48.565,3937
+35,Politoed,Politoed,왕구리,4.45,51.347,3488
+36,Pawmot,Pawmot,빠르모트,4.35,49.002,3406
+37,Grimmsnarl,Grimmsnarl,오롱털,4.2,49.62,3289
+38,Dragonite,Dragonite,망나뇽,4.07,49.167,3183
+39,Glimmora,Glimmora,킬라플로르,4.05,51.071,3174
+40,Gengar,Gengar,팬텀,4.02,51.27,3150
+41,Aerodactyl,Aerodactyl,프테라,3.87,50.313,3033
+42,Primarina,Primarina,누리레느,3.77,50.169,2954
+43,Hatterene,Hatterene,브리무음,3.58,50.268,2803
+44,Swampert,Swampert,대짱이,3.54,48.198,2774
+45,Absol,Absol,앱솔,3.31,46.932,2591
+46,Delphox,Delphox,마폭시,3.22,50.653,2525
+47,Sableye,Sableye,깜까미,3.12,51.536,2441
+48,Talonflame,Talonflame,파이어로,2.9,46.978,2267
+49,Venusaur,Venusaur,이상해꽃,2.56,51.922,2003
+50,Corviknight,Corviknight,아머까오,2.5,50.102,1956
+51,Annihilape,Annihilape,저승갓숭,2.47,47.567,1932
+52,Blastoise,Blastoise,거북왕,2.44,51.411,1914
+53,Sinistcha-Masterpiece,Sinistcha,그우린차,2.33,43.162,1828
+54,Ceruledge,Ceruledge,파라블레이즈,2.19,51.605,1713
+55,Camerupt,Camerupt,폭타,2.13,59.27,1672
+56,Dragapult,Dragapult,드래펄트,1.95,47.186,1528
+57,Kommo-o,Kommo-o,짜랑고우거,1.89,55.21,1478
+58,Typhlosion-Hisui,Typhlosion-Hisui,히스이 블레이범,1.83,43.445,1434
+59,Blaziken,Blaziken,번치코,1.81,47.242,1414
+60,Rotom-Wash,Rotom-Wash,워시로토무,1.76,44.533,1381
+61,Hydreigon,Hydreigon,삼삼드래,1.68,48.067,1319
+62,Sirfetch’d,Sirfetch'd,창파나이트,1.59,47.753,1246
+63,Mawile,Mawile,입치트,1.57,49.35,1230
+64,Pincurchin,Pincurchin,찌르성게,1.5,51.02,1176
+65,Clefable,Clefable,픽시,1.5,43.296,1171
+66,Alakazam,Alakazam,후딘,1.48,48.49,1159
+67,Maushold-Four,Maushold,파밀리쥐,1.48,46.592,1159
+68,Gallade,Gallade,엘레이드,1.45,52.946,1137
+69,Toxapex,Toxapex,더시마사리,1.3,50.245,1019
+70,Golurk,Golurk,골루그,1.29,44.62,1013
+71,Scovillain,Scovillain,스코빌런,1.28,54.428,1005
+72,Tsareena,Tsareena,달코퀸,1.26,51.777,985
+73,Weavile,Weavile,포푸니라,1.21,48.837,946
+74,Aegislash,Aegislash,킬가르도,1.16,44.702,906
+75,Grapploct,Grapploct,케오퍼스,1.15,53.059,899
+76,Meganium,Meganium,메가니움,1.14,53.093,889
+77,Mamoswine,Mamoswine,맘모꾸리,1.12,51.818,880
+78,Maushold,Maushold,파밀리쥐,1.1,48.545,859
+79,Inteleon,Inteleon,인텔리레온,1.09,47.251,855
+80,Araquanid,Araquanid,깨비물거미,1.06,48.313,830
+81,Empoleon,Empoleon,엠페르트,1.06,52.842,827
+82,Zoroark-Hisui,Zoroark-Hisui,히스이 조로아크,1.03,50.124,808
+83,Tinkaton,Tinkaton,두드리짱,0.98,56.809,771
+84,Gyarados,Gyarados,갸라도스,0.94,55.662,733
+85,Scizor,Scizor,핫삼,0.93,47.808,730
+86,Scrafty,Scrafty,곤율거니,0.9,48.652,705
+87,Rotom-Heat,Rotom-Heat,히트로토무,0.88,47.826,690
+88,Starmie,Starmie,아쿠스타,0.88,55.087,688
+89,Lycanroc,Lycanroc,루가루암 (한낮의 모습),0.86,50.444,676
+90,Malamar,Malamar,칼라마네로,0.84,44.885,655
+91,Kleavor,Kleavor,사마자르,0.83,47.913,647
+92,Samurott-Hisui,Samurott-Hisui,히스이 대검귀,0.82,52.95,644
+93,Meowscarada,Meowscarada,마스카나,0.8,44.872,624
+94,Chandelure,Chandelure,샹델라,0.78,48.191,608
+95,Toxtricity,Toxtricity,스트린더,0.77,49.421,605
+96,Espathra,Espathra,클레스퍼트라,0.77,50.415,603
+97,Oranguru,Oranguru,하랑우탄,0.75,49.063,587
+98,Crabominable,Crabominable,모단단게,0.71,44.524,557
+99,Vivillon,Vivillon,비비용,0.71,53.777,556
+100,Slowking-Galar,Slowking-Galar,가라르 야도킹,0.69,49.907,537
+101,Overqwil,Overqwil,장침바루,0.68,58.979,529
+102,Bellibolt,Bellibolt,찌리배리,0.66,52.427,515
+103,Sceptile,Sceptile,나무킹,0.65,40.631,507
+104,Pyroar,Pyroar,화염레오,0.62,56.879,487
+105,Lopunny,Lopunny,이어롭,0.62,48.14,484
+106,Vanilluxe,Vanilluxe,배바닐라,0.6,53.305,469
+107,Altaria,Altaria,파비코리,0.58,49.559,454
+108,Snorlax,Snorlax,잠만보,0.57,44.667,450
+109,Drampa,Drampa,할비롱,0.57,44.989,449
+110,Klefki,Klefki,클레피,0.57,53.363,446
+111,Cinderace,Cinderace,에이스번,0.54,46.934,424
+112,Heliolisk,Heliolisk,일레도리자드,0.54,61.374,422
+113,Slowbro,Slowbro,야도란,0.51,52.488,402
+114,Kangaskhan,Kangaskhan,캥카,0.51,51.629,399
+115,Skarmory,Skarmory,무장조,0.51,57.071,396
+116,Goodra-Hisui,Goodra-Hisui,히스이 미끄래곤,0.49,46.134,388
+117,Glalie,Glalie,얼음귀신,0.49,45.17,383
+118,Decidueye-Hisui,Decidueye-Hisui,히스이 모크나이퍼,0.49,59.58,381
+119,Noivern,Noivern,음번,0.47,47.826,368
+120,Hawlucha,Hawlucha,루차불,0.47,46.175,366
+121,Raichu-Alola,Raichu-Alola,알로라 라이츄,0.47,50.82,366
+122,Greninja,Greninja,개굴닌자,0.46,37.741,363
+123,Perrserker,Perrserker,나이킹,0.46,44.628,363
+124,Dragalge,Dragalge,드래캄,0.43,40,340
+125,Palafin-Hero,Palafin-Hero,돌핀맨 (마이티폼),0.42,50.45,333
+126,Meowstic-F,Meowstic,냐오닉스,0.41,54.489,323
+127,Vileplume,Vileplume,라플레시아,0.41,57.453,322
+128,Krookodile,Krookodile,악비아르,0.41,50.629,318
+129,Ampharos,Ampharos,전룡,0.41,49.842,317
+130,Steelix,Steelix,강철톤,0.41,48.265,317
+131,Palafin,Palafin,돌핀맨,0.4,44.516,310
+132,Ditto,Ditto,메타몽,0.39,40.984,305
+133,Eelektross,Eelektross,저리더프,0.39,42.623,305
+134,Houndoom,Houndoom,헬가,0.39,56.954,302
+135,Infernape,Infernape,초염몽,0.37,50.685,292
+136,Meowstic,Meowstic,냐오닉스,0.37,41.034,290
+137,Salazzle,Salazzle,염뉴트,0.37,53.448,290
+138,Chesnaught,Chesnaught,브리가론,0.36,45.614,285
+139,Squawkabilly,Squawkabilly,시비꼬,0.36,55.319,282
+140,Scolipede,Scolipede,펜드라,0.35,59.854,274
+141,Arboliva,Arboliva,올리르바,0.34,50.558,269
+142,Ninetales,Ninetales,나인테일,0.34,56.343,268
+143,Abomasnow,Abomasnow,눈설왕,0.34,52.06,267
+144,Mimikyu-Busted,Mimikyu,따라큐,0.34,50.752,266
+145,Toxtricity-Low-Key,Toxtricity,스트린더,0.33,46.743,261
+146,Feraligatr,Feraligatr,장크로다일,0.33,46.899,258
+147,Aggron,Aggron,보스로라,0.33,39.063,256
+148,Serperior,Serperior,샤로다,0.32,39.2,250
+149,Skeledirge,Skeledirge,라우드본,0.32,50.201,249
+150,Audino,Audino,다부니,0.31,49.187,246
+151,Spiritomb,Spiritomb,화강돌,0.3,46.862,239
+152,Persian-Alola,Persian-Alola,알로라 페르시온,0.3,52.321,237
+153,Wyrdeer,Wyrdeer,신비록,0.3,48.085,235
+154,Arcanine,Arcanine,윈디,0.29,43.043,230
+155,Mr. Mime,Mr. Mime,마임맨,0.29,54.585,229
+156,Cofagrigus,Cofagrigus,데스니칸,0.29,44.737,228
+157,Wigglytuff,Wigglytuff,푸크린,0.29,54.825,228
+158,Beedrill,Beedrill,독침붕,0.29,43.304,224
+159,Clawitzer,Clawitzer,블로스터,0.28,45.946,222
+160,Jolteon,Jolteon,쥬피썬더,0.28,46.119,219
+161,Basculegion-F,Basculegion-F,대쓰여너 (암컷),0.27,46.89,209
+162,Houndstone,Houndstone,묘두기,0.27,43.541,209
+163,Hippowdon,Hippowdon,하마돈,0.26,57.488,207
+164,Umbreon,Umbreon,블래키,0.26,46.569,204
+165,Runerigus,Runerigus,데스판,0.25,47.739,199
+166,Gliscor,Gliscor,글라이온,0.25,40.909,198
+167,Manectric,Manectric,썬더볼트,0.25,50.769,195
+168,Mimikyu,Mimikyu,따라큐,0.24,53.125,192
+169,Mudsdale,Mudsdale,만마드,0.24,42.932,191
+170,Garganacl,Garganacl,콜로솔트,0.23,47.283,184
+171,Orthworm,Orthworm,꿈트렁,0.23,44.565,184
+172,Mr. Rime,Mr. Rime,마임꽁꽁,0.23,50,180
+173,Heracross,Heracross,헤라크로스,0.23,50.562,178
+174,Medicham,Medicham,요가램,0.23,37.64,178
+175,Reuniclus,Reuniclus,란쿨루스,0.22,40,175
+176,Rhyperior,Rhyperior,거대코뿌리,0.22,55.03,169
+177,Azumarill,Azumarill,마릴리,0.21,49.405,168
+178,Emboar,Emboar,염무왕,0.21,65.269,167
+180,Farfetch’d,Farfetch'd,파오리,0.21,48.171,164
+181,Chimecho,Chimecho,치렁,0.2,43.125,160
+182,Gogoat,Gogoat,고고트,0.2,48.75,160
+183,Ariados,Ariados,아리아도스,0.2,63.522,159
+184,Aurorus,Aurorus,아마루르가,0.19,53.947,152
+185,Hydrapple,Hydrapple,과미드라,0.19,43.046,151
+186,Torterra,Torterra,토대부기,0.19,43.709,151
+187,Alcremie,Alcremie,마휘핑,0.19,38.255,149
+188,Banette,Banette,다크펫,0.18,34.028,144
+189,Rotom-Mow,Rotom-Mow,커트로토무,0.18,58.042,143
+190,Victreebel,Victreebel,우츠보트,0.18,57.746,142
+191,Slowking,Slowking,야도킹,0.18,53.957,139
+192,Liepard,Liepard,레파르다스,0.18,39.13,138
+193,Rotom-Frost,Rotom-Frost,프로스트로토무,0.17,37.594,133
+194,Slurpuff,Slurpuff,나루림,0.17,45.385,130
+195,Conkeldurr,Conkeldurr,노보청,0.16,38.4,125
+196,Diggersby,Diggersby,파르토,0.16,62.097,124
+197,Vaporeon,Vaporeon,샤미드,0.16,43.548,124
+198,Thievul,Thievul,폭슬라이,0.15,55.462,119
+199,Toxicroak,Toxicroak,독개굴,0.15,47.059,119
+200,Quaquaval,Quaquaval,웨이니발,0.15,40.171,117
+201,Typhlosion,Typhlosion,블레이범,0.14,42.342,111
+202,Emolga,Emolga,에몽가,0.14,53.211,109
+203,Vivillon-Pokeball,Vivillon,비비용,0.13,45,100
+205,Pikachu,Pikachu,피카츄,0.12,44.792,96
+206,Florges,Florges,플라제스,0.12,53.191,94
+207,Rampardos,Rampardos,램펄드,0.12,46.809,94
+208,Espeon,Espeon,에브이,0.12,60.215,93
+209,Falinks,Falinks,대여르,0.12,38.462,91
+210,Pidgeot,Pidgeot,피죤투,0.12,60,90
+211,Slowbro-Galar,Slowbro-Galar,가라르 야도란,0.11,46.591,88
+212,Glaceon,Glaceon,글레이시아,0.11,42.529,87
+213,Mabosstiff,Mabosstiff,마피티프,0.11,32.184,87
+214,Pangoro,Pangoro,부란다,0.11,54.651,86
+215,Trevenant,Trevenant,대로트,0.11,46.988,83
+216,Luxray,Luxray,렌트라,0.1,51.852,81
+217,Aromatisse,Aromatisse,프레프티르,0.1,44.304,79
+218,Morpeko,Morpeko,모르페코,0.1,46.835,79
+219,Sharpedo,Sharpedo,샤크니아,0.1,50.649,77
+220,Vivillon-Fancy,Vivillon,비비용,0.1,41.333,75
+221,Zoroark,Zoroark,조로아크,0.09,26.761,71
+222,Goodra,Goodra,미끄래곤,0.09,44.928,69
+223,Toucannon,Toucannon,왕큰부리,0.09,54.412,68
+224,Dedenne,Dedenne,데덴네,0.08,36.508,63
+225,Swalot,Swalot,꿀꺽몬,0.07,33.898,59
+226,Tyrantrum,Tyrantrum,견고라스,0.07,37.5,56
+227,Pinsir,Pinsir,쁘사이저,0.07,52.727,55
+228,Barbaracle,Barbaracle,거북손데스,0.07,37.736,53
+229,Beartic,Beartic,툰베어,0.07,32.075,53
+230,Machamp,Machamp,괴력몬,0.07,50,52
+231,Gourgeist-Super,Gourgeist-Super,펌킨인 (특대 사이즈),0.07,45.098,51
+232,Roserade,Roserade,로즈레이드,0.06,50,50
+233,Alcremie-Rainbow-Swirl,Alcremie,마휘핑,0.06,50,48
+234,Bastiodon,Bastiodon,바리톱스,0.06,27.083,48
+235,Flapple,Flapple,애프룡,0.06,37.5,48
+236,Lycanroc-Midnight,Lycanroc-Midnight,루가루암 (한밤중의 모습),0.06,48.936,47
+237,Sandaconda,Sandaconda,사다이사,0.06,53.333,45
+238,Persian,Persian,페르시온,0.05,30.952,42
+239,Leafeon,Leafeon,리피아,0.05,50,40
+240,Avalugg-Hisui,Avalugg-Hisui,히스이 크레베이스,0.05,55.263,38
+241,Stunfisk-Galar,Stunfisk-Galar,가라르 메더,0.05,48.649,37
+242,Rotom-Fan,Rotom-Fan,스핀로토무,0.05,66.667,36
+243,Arbok,Arbok,아보크,0.04,57.143,35
+244,Musharna,Musharna,몽얌나,0.04,29.412,34
+245,Passimian,Passimian,내던숭이,0.04,29.412,34
+246,Flareon,Flareon,부스터,0.04,43.75,32
+247,Forretress,Forretress,쏘콘,0.04,34.375,32
+248,Avalugg,Avalugg,크레베이스,0.04,31.034,29
+249,Appletun,Appletun,단지래플,0.03,48.148,27
+250,Decidueye,Decidueye,모크나이퍼,0.03,48.148,27
+251,Polteageist,Polteageist,포트데스,0.03,32,25
+252,Stunfisk,Stunfisk,메더,0.03,44,25
+253,Castform,Castform,캐스퐁,0.03,60.87,23
+254,Vivillon-Icy Snow,Vivillon,비비용,0.03,50,20
+255,Rotom,Rotom,로토무,0.02,26.316,19
+256,Alcremie-Ruby-Swirl,Alcremie,마휘핑,0.02,33.333,18
+257,Gourgeist-Small,Gourgeist-Small,펌킨인 (작은 사이즈),0.02,72.222,18
+258,Meowstic-M,Meowstic,냐오닉스,0.02,41.176,17
+259,Simipour,Simipour,앗차키,0.02,31.25,16
+260,Tauros,Tauros,켄타로스,0.02,31.25,16
+261,Alcremie-Mint-Cream,Alcremie,마휘핑,0.02,66.667,15
+262,Watchog,Watchog,보르그,0.02,66.667,15
+263,Simisage,Simisage,야나키,0.01,58.333,12
+264,Simisear,Simisear,바오키,0.01,75,12
+265,Alcremie-Lemon-Cream,Alcremie,마휘핑,0.01,18.182,11
+266,Vivillon-Jungle,Vivillon,비비용,0.01,60,10
+267,Alcremie-Salted-Cream,Alcremie,마휘핑,0.01,44.444,9
+268,Vivillon-Continental,Vivillon,비비용,0.01,44.444,9
+269,Alcremie-Matcha-Cream,Alcremie,마휘핑,0.01,50,8
+270,Qwilfish,Qwilfish,침바루,0.01,37.5,8
+271,Samurott,Samurott,대검귀,0.01,37.5,8
+272,Vivillon-Sandstorm,Vivillon,비비용,0.01,50,8
+273,Gourgeist,Gourgeist,펌킨인,0.01,28.571,7
+274,Polteageist-Antique,Polteageist,포트데스,0.01,28.571,7
+276,Vivillon-High Plains,Vivillon,비비용,0.01,33.333,6
+279,Garbodor,Garbodor,더스트나,0.01,0,5
+284,Tauros-Paldea-Combat,Tauros-Paldea-Combat,팔데아 켄타로스 (컴뱃종),0.01,60,5
+286,Furfrou-Dandy,Furfrou,트리미앙,0.01,0,4
+287,Gourgeist-Large,Gourgeist-Large,펌킨인 (큰 사이즈),0.01,0,4

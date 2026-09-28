@@ -1,0 +1,167 @@
+# 포챔스 M-C 도감 데이터
+
+Pokémon Champions(포켓몬 챔피언스) 레귤레이션 M-C 기준 데이터 묶음입니다.
+참전 포켓몬, 종족값, 특성, 배울 수 있는 기술, 메가진화, 기술 수치, 사용률 순위가 들어 있습니다.
+이 데이터로 만든 **추천 봇**(`site/advisor.html`)도 함께 있습니다. 봇은 추천만 하고 게임 조작은 사람이 직접 합니다.
+
+## 추천 봇 (site/advisor.html)
+
+더블클릭해서 브라우저로 열면 됩니다(인터넷 없이 동작, 입력값은 브라우저에 저장).
+
+| 기능 | 상태 |
+|---|---|
+| 데미지 계산 — 포켓몬·SP·성격·특성·도구·랭크·상태이상·날씨·필드·벽을 넣으면 기술별 데미지%와 확정 몇 타, 스피드 비교 | ✅ |
+| 팀 추천 — 넣은 포켓몬에 맞춰 다음 팀원 후보를 점수·이유와 함께 추천, 6마리 자동 채우기, 팀 약점·역할·스피드 분석 | ✅ |
+| 선출 추천 — 상대 6마리를 넣으면 낼 4마리·선봉 2마리 추천 | 준비 중 |
+| 배틀 도우미 — 필드 상황을 넣으면 이번 턴 기술·대상 추천 | 준비 중 |
+
+- 데미지 계산은 [@smogon/calc](https://github.com/smogon/damage-calc)의 챔피언스 규칙을 씁니다.
+  Lv.50, 개체값 고정, SP(능력치당 최대 32, 합계 66). HP = 종족값+75+SP, 나머지 = ⌊(종족값+20+SP)×성격⌋.
+- 기본 세트는 Pikalytics 사용률 1순위 특성·도구·기술입니다. 능력치 배분 데이터는 없어서 공격형 예시(공격 또는 특공 32, 스피드 32, HP 2)로 채웁니다.
+- 위협, 필드 특성(그래스메이커 등)은 자동 적용되지 않으니 랭크·필드를 직접 맞추세요.
+- 팀 추천 점수 = 파트너 궁합(Pikalytics 같이 쓰인 비율, 양방향 평균) + 팀 약점 보완 + 빠진 역할(속이다·스피드 조절·위협·유인·날씨/필드·전체 공격) + 사용률·승률 − 메가 과다.
+  종 클로즈(같은 도감번호 1마리)와 아이템 클로즈(같은 도구 1개)를 지키고, 메가스톤 채용률 40% 이상이면 메가 세트로 넣습니다.
+
+빌드·테스트 (Node 18+ 필요, 처음 한 번 `npm install`):
+
+```bash
+npm run build:advisor   # site/advisor.html 만들기
+npm test                # 계산 로직 테스트
+```
+
+- 레귤레이션 M-C: 2026-09-09 ~ 2026-12-02 / 랭크 시즌 M-6: 2026-09-09 ~ 2026-10-07
+- 게임 버전 1.2.0(2026-09-09) 기준
+- 수집일: 2026-09-28
+
+## 웹사이트 (GitHub Pages)
+
+- 주소: https://jeseong-jeong.github.io/pokechamps-mc/ (첫 화면 → 추천 봇 / 도감)
+- 저장소: https://github.com/Jeseong-Jeong/pokechamps-mc
+- `site/` 폴더가 그대로 사이트가 됩니다. 고친 뒤에는 빌드 → 커밋 → 배포:
+
+```bash
+npm run build:advisor
+git add -A && git commit -m "..." && git push
+npm run deploy          # site/ 만 gh-pages 브랜치로 올림, 1~2분 뒤 반영
+```
+
+## 폴더 구성
+
+```
+pokechamps-mc/
+├─ README.md                  이 파일
+├─ 포챔스_M-C_도감.md          전체 데이터를 읽기 좋게 정리한 문서 (build.py가 생성)
+├─ 포챔스_M-C_도감.xlsx        같은 내용의 엑셀 (시트 7개, build.py가 생성)
+├─ data/
+│  ├─ pokechamps_mc.json      가공된 전체 데이터 (앱/사이트는 이것 하나만 읽으면 됨)
+│  └─ csv/                    같은 데이터를 표로 풀어놓은 것 (UTF-8 BOM, 엑셀에서 바로 열림)
+│     ├─ pokemon.csv          340행: 포켓몬·폼·메가 1개당 1행
+│     ├─ moves.csv            512행: 사용 가능 기술
+│     ├─ learnsets.csv        포켓몬 × 배울 수 있는 기술 (1행 = 1쌍)
+│     ├─ usage.csv            277행: 사용률 순위
+│     └─ usage_details.csv    순위별 채용 기술/도구/특성/같이 쓰는 포켓몬 (long format)
+├─ raw/                       사이트에서 긁어온 원본 (가공 전)
+│  ├─ pchamps_serebii.json
+│  ├─ pchamps_pikalytics.json
+│  └─ ko_extra.json           PokeAPI REST에서 보충한 한글명 (fetch_ko_extra.js가 생성)
+├─ package.json               추천 봇 빌드용 (npm install → @smogon/calc, esbuild)
+├─ src/advisor/
+│  ├─ model.mjs               계산·추천 로직 (DOM 없음, 테스트 대상)
+│  └─ main.mjs                추천 봇 화면
+├─ tests/model.test.mjs       node --test 로 도는 계산 테스트
+├─ scripts/
+│  ├─ build.py                raw → data/*.json, data/csv/*, site/*.html, 도감 md/xlsx 생성
+│  ├─ export_docs.py          도감 md/xlsx 생성 (build.py가 호출, 단독 실행도 가능)
+│  ├─ fetch_ko_extra.js       빠진 한글명 보충용 Node 스크립트
+│  ├─ template.html           도감 페이지 템플릿 (/*DATA*/ 자리에 JSON 주입)
+│  ├─ advisor.html            추천 봇 페이지 템플릿
+│  ├─ build_advisor.mjs       추천 봇 빌드 (src + 데이터 → site/advisor.html 한 파일)
+│  ├─ calc_names.mjs          도감 id → @smogon/calc 종 이름 매칭
+│  ├─ scrape_serebii.js       원본 재수집용 브라우저 콘솔 스크립트
+│  └─ scrape_pikalytics.js    원본 재수집용 브라우저 콘솔 스크립트
+└─ site/
+   ├─ pokechamps-mc.html      완성된 단일 파일 도감 페이지 (브라우저로 열면 됨)
+   └─ advisor.html            추천 봇 (브라우저로 열면 됨)
+```
+
+## 다시 빌드하기
+
+```bash
+python scripts/build.py       # Python 3.8+, 외부 패키지 없음 (xlsx도 표준 라이브러리로 씀)
+```
+
+raw 폴더의 JSON을 읽어 `data/`, `site/`, `포챔스_M-C_도감.md`, `포챔스_M-C_도감.xlsx`를 모두 새로 만듭니다.
+md/xlsx는 직접 고치지 말고 `scripts/export_docs.py`를 고친 뒤 다시 빌드하세요.
+
+## 데이터를 새로 받기 (시즌·레귤레이션 갱신 시)
+
+두 사이트 모두 서버에서 바로 받으면 막히는 경우가 있어서, 브라우저 콘솔에서 돌리는 방식으로 만들었습니다.
+
+1. `https://www.serebii.net/pokemonchampions/pokemon.shtml` 열기 → F12 콘솔에 `scripts/scrape_serebii.js` 붙여넣기 → `pchamps_serebii.json` 다운로드
+2. `https://www.pikalytics.com/pokedex/gen9championsvgc2026regmc/` 열기 → 콘솔에 `scripts/scrape_pikalytics.js` 붙여넣기 → 5~15분 뒤 `pchamps_pikalytics.json` 다운로드
+3. 두 파일을 `raw/`에 덮어쓰고 `python scripts/build.py`
+4. 한글명 보충: `node scripts/fetch_ko_extra.js` (Node 18+) → `python scripts/build.py` 한 번 더
+
+레귤레이션이 바뀌면 확인할 것:
+- `scrape_pikalytics.js`의 `FORMAT`, `API` 값 (Pikalytics 페이지 네트워크 탭의 `/api/l/...` 요청에서 확인)
+- `build.py`의 `NEW_MC` 목록 (해당 패치의 추가 포켓몬, Serebii `patch.shtml` 참고)
+- `build.py`의 `C3` (Pikalytics 메인의 3마리 코어, 손으로 옮겨 적은 값)
+- `template.html` 상단의 레귤레이션/시즌 날짜 문구
+
+## pokechamps_mc.json 스키마
+
+```jsonc
+{
+  "entries": [            // 포켓몬·폼·메가 340개
+    {
+      "id": "Venusaur",     // 고유 키. 폼은 "Raichu-Alola", "Rotom-Wash", 메가는 "Mega Venusaur"
+      "no": 3,              // 전국도감 번호
+      "en": "Venusaur", "ko": "이상해꽃",
+      "ty": ["grass","poison"],
+      "st": [80,82,83,100,100,80],   // HP 공격 방어 특공 특방 스피드
+      "bst": 525,
+      "ab": [{"en":"Overgrow","ko":"심록","note":"(선택) 수컷 숨특 등"}],
+      "mv": [2,12,46,...],  // moves 배열 인덱스. 메가는 메가 전 모습과 같은 기술폭
+      "mega": false,        // 이 항목이 메가진화 형태인지
+      "megas": ["Mega Venusaur"],   // (메가 가능할 때만) 메가 항목 id
+      "parent": "Venusaur", // (메가일 때만) 메가진화 전 id
+      "form": null,         // null | "메가" | "폼" | "성별"
+      "new": false,         // M-C(1.2.0)에서 새로 추가됨
+      "use": 49,            // (있으면) 사용률 순위
+      "img": "003.png"      // Serebii 이미지 파일명 (폼 구분용: -a 알로라, -g 가라르, -h 히스이, -p 팔데아, -m 메가)
+    }
+  ],
+  "moves": [              // 512개, entries[].mv / usage[].mv 가 이 인덱스를 참조
+    {"en":"Accelerock","ko":"액셀록","t":"rock","c":"물리","pw":"40","acc":"100","pp":"20",
+     "eff":"효과 설명(영문)","ch":null /* 또는 {"pw","acc","pp"}: 스칼렛·바이올렛 수치 */,"n":2 /* 배우는 포켓몬 수 */}
+  ],
+  "usage": [              // 277개, Pikalytics 순위
+    {"rank":1,"name":"Rillaboom","id":"Rillaboom","pct":37.18,"win":51.803,"games":29118,
+     "mv":[[moveIndex, pct]], "it":[["Life Orb",28.1]], "ab":[["Grassy Surge",99.2,"그래스메이커"]],
+     "tm":[["Incineroar",39.1,"Incineroar"]]}   // tm 세 번째 값 = entries id (없으면 null)
+  ],
+  "itemko": {"Life Orb":"생명의구슬"},  // 사용률에 나온 도구의 한글명
+  "typeko": {"grass":"풀"},
+  "newab": ["Piercing Drill | 효과..."],  // 포챔스 신규 특성
+  "meta": {"fetched":"...","pfetched":"..."}
+}
+```
+
+## 알아둘 점
+
+- **사용률은 게임 안 공식 순위가 아닙니다.** Pikalytics가 대전 시뮬레이터 더블배틀(레이팅 1760 이상)과 대회 데이터로 집계한 값입니다. 이름은 메가진화 전 모습으로 합산되고, 메가 사용 여부는 도구(메가스톤) 채용률로 확인합니다.
+- 세부 채용 데이터(기술/도구/특성/파트너)는 사용률 0.3% 이상인 153종만 있고, 나머지는 사용률·승률만 있습니다.
+- 참전 명단에 없는 10종(토네로스, 앤테이, 무쇠손, 팔데아 켄타로스 워터종·블레이즈종 등)은 사용률에서 뺐습니다.
+- 한글명: 포켓몬은 Serebii, 기술·특성·도구는 PokeAPI 기준입니다. GraphQL(베타)에 없는 9세대 이름은 PokeAPI REST에서 받아 `raw/ko_extra.json`에 보충했습니다.
+  - 그래도 없는 포챔스 신규 특성 3개(Aura Guard, Eelevate, Fire Mane)는 `ko`가 빈 문자열입니다(화면에는 영문 표시).
+  - PokeAPI에 없는 신규 메가스톤은 공식 표기 규칙(`<포켓몬>나이트` + X/Y/Z)으로 만든 이름입니다. 예: Golisopite → 갑주무사나이트.
+- 예전 `scrape_pikalytics.js`는 사용률 기술명 끝을 잘라먹는 버그가 있었습니다(Stealth Rock → Stealth). 수집 스크립트는 고쳤고, 기존 raw 데이터는 `build.py`가 복원합니다.
+- 기술 효과 설명(`eff`)은 영문입니다.
+- 로토무 가전 폼 5종은 Serebii에 종족값이 하나로만 나와 있어 같은 값을 쓰고, 각 폼 전용 기술(오버히트 등)을 더했습니다.
+
+## 출처
+
+- Serebii.net Pokémon Champions: https://www.serebii.net/pokemonchampions/ (참전 포켓몬, 도감 `/pokedex-champions/`, 사용 가능 기술, 변경 기술, 메가 특성, 신규 특성, 패치, 랭크배틀 일정)
+- Pikalytics Champions VGC 2026 Reg M-C: https://www.pikalytics.com/pokedex/gen9championsvgc2026regmc/
+- PokeAPI GraphQL: https://beta.pokeapi.co/graphql/v1beta (한글 기술·특성·도구명)
+- 나무위키 Pokémon Champions (레귤레이션별 참전 정보 참고)
