@@ -230,6 +230,28 @@ label.chk input{margin:0}
 .probs{margin:6px 0 8px;padding-left:18px;font-size:14px}
 .probs li{margin:3px 0}
 .good{color:var(--good);font-weight:600}
+.planbar{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center}
+.planbar label{flex-direction:row;align-items:center;gap:6px;font-size:13px;color:var(--ink)}
+.planbar .mini{flex-basis:100%}
+.mrow .badge.b-form{margin-left:4px}
+.drops{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
+@media (max-width:820px){.drops{grid-template-columns:1fr}}
+.drop{border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.drop.first{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 6%,transparent)}
+.drop-h{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px}
+.drop-h b{font-size:18px}
+.drop .tag{font-size:11px;font-weight:700;color:#fff;background:var(--bad);border-radius:4px;padding:2px 6px}
+.why-list{margin:8px 0 6px;padding-left:18px;font-size:13.5px}
+.why-list li{margin:2px 0}
+.instead{margin:8px 0 0;display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:13.5px}
+.mrank{margin-top:12px;font-size:13px}
+.mrank summary{cursor:pointer;color:var(--accent)}
+.mrow{display:grid;grid-template-columns:minmax(110px,auto) 1fr 44px;gap:2px 10px;align-items:center;padding:6px 0;border-top:1px dashed var(--line)}
+.mrow .badge{grid-column:1}
+.mrow .mini{grid-column:1/-1}
+.mbar{height:8px;background:var(--bar-bg);border-radius:3px;overflow:hidden}
+.mbar i{display:block;height:100%;background:var(--bar)}
+.mrow .num{text-align:right}
 .swaps{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
 @media (max-width:820px){.swaps{grid-template-columns:1fr}}
 .swap{border:1px solid var(--line);border-radius:10px;padding:10px 12px}

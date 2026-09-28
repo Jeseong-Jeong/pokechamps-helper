@@ -11,11 +11,26 @@ export function createPickAdvisor(M, T) {
   // 상대 세트: 사용률 1순위 (메가스톤 40%+ 이면 메가 형태)
   const oppSet = id => T.teamSets([T.baseOf(id)])[0];
 
-  function best(att, def, attIsLeft) {
-    const rows = M.damageTable(att, def, FIELD, attIsLeft).filter(r => r.maxPct != null);
+  function best(att, def, attIsLeft, field = FIELD) {
+    const rows = M.damageTable(att, def, field, attIsLeft, {fast: true}).filter(r => r.maxPct != null);
     if (!rows.length) return {pct: 0, move: null, row: null};
     const top = rows.reduce((a, b) => (avg(b) > avg(a) ? b : a));
     return {pct: avg(top), move: top.name, row: top};
+  }
+
+  // 등장하면 날씨·필드를 까는 특성
+  const WEATHER_OF = {Drought: 'Sun', Drizzle: 'Rain', 'Sand Stream': 'Sand', 'Snow Warning': 'Snow'};
+  const TERRAIN_OF = {'Grassy Surge': 'Grassy', 'Psychic Surge': 'Psychic', 'Electric Surge': 'Electric', 'Misty Surge': 'Misty'};
+  const condOf = s => ({weather: WEATHER_OF[s.ability] || '', terrain: TERRAIN_OF[s.ability] || ''});
+  // 한 칸에서 싸우는 필드: 내 쪽(내 특성 → 팀 운영 ctx) vs 상대 특성. 서로 다르면 두 경우 모두 계산해서 평균
+  function fieldsFor(a, b, ctx) {
+    const mine = condOf(a), theirs = condOf(b);
+    const my = {weather: mine.weather || ctx.weather || '', terrain: mine.terrain || ctx.terrain || ''};
+    const out = [{...my}];
+    if ((theirs.weather && theirs.weather !== my.weather) || (theirs.terrain && theirs.terrain !== my.terrain)) {
+      out.push({weather: theirs.weather || my.weather, terrain: theirs.terrain || my.terrain});
+    }
+    return out.map(f => ({...FIELD, ...f}));
   }
 
   // 한 칸의 유불리 (+ 유리, − 불리). 데미지는 150%에서 자름
@@ -28,11 +43,18 @@ export function createPickAdvisor(M, T) {
     return v;
   }
 
-  function matrix(mine, opp) {
+  // ctx = {weather, terrain, trickRoom}: 내 팀 운영(트릭룸이면 느린 쪽이 먼저)
+  function matrix(mine, opp, ctx = {}) {
     return mine.map(a => opp.map(b => {
-      const off = best(a, b, true), def = best(b, a, false);
-      const sa = M.speed(a, FIELD, true), sb = M.speed(b, FIELD, false);
-      return {off, def, sa, sb, faster: sa > sb, v: cellValue(off.pct, def.pct, sa > sb)};
+      const cells = fieldsFor(a, b, ctx).map(f => {
+        const off = best(a, b, true, f), def = best(b, a, false, f);
+        const sa = M.speed(a, f, true), sb = M.speed(b, f, false);
+        const faster = ctx.trickRoom ? sa < sb : sa > sb;
+        return {off, def, sa, sb, faster, field: f, v: cellValue(off.pct, def.pct, faster)};
+      });
+      if (cells.length === 1) return cells[0];
+      // 날씨·필드 싸움: 두 경우 평균 (표시는 첫 번째 = 내 필드)
+      return {...cells[0], v: (cells[0].v + cells[1].v) / 2, alt: cells[1]};
     }));
   }
 
@@ -133,5 +155,5 @@ export function createPickAdvisor(M, T) {
       .filter(t => t.best < 0).sort((a, b) => a.best - b.best);
   }
 
-  return {recommend, matrix, oppSet, cellValue};
+  return {recommend, matrix, oppSet, cellValue, condOf};
 }

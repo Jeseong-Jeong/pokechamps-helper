@@ -58,24 +58,79 @@ export function createImprover(M, T, P, {threatCount = 20, poolMinPct = 0.5, nat
   const weights = threatIds.map(id => usageById[id].pct);
   const W = weights.reduce((a, b) => a + b, 0);
 
-  // 세트별 상대 16마리 상성 줄 (캐시)
+  // ---------------- 운영 방식 (트릭룸·날씨·필드) ----------------
+  // 자동: 트릭룸 기술이 있으면 트릭룸 팀, 날씨·필드 특성이 있으면 그 날씨·필드 팀
+  // 트릭룸 팀은 "트릭룸 있을 때 / 없을 때"를 반반으로, 날씨·필드 팀은 그 날씨·필드 위에서 계산
+  let override = {tr: 'auto', weather: 'auto', terrain: 'auto'};
+  const setOverride = o => { override = {...override, ...o}; };
+  function planOf(sets) {
+    const trUser = sets.find(s => s.moves.includes('Trick Room'));
+    const wSetter = sets.find(s => P.condOf(s).weather), tSetter = sets.find(s => P.condOf(s).terrain);
+    return {
+      tr: override.tr === 'on' ? true : override.tr === 'off' ? false : !!trUser,
+      weather: override.weather === 'off' ? '' : wSetter ? P.condOf(wSetter).weather : '',
+      terrain: override.terrain === 'off' ? '' : tSetter ? P.condOf(tSetter).terrain : '',
+      trUser: trUser && trUser.id, wSetter: wSetter && wSetter.id, tSetter: tSetter && tSetter.id,
+    };
+  }
+  const contexts = plan => {
+    const base = {weather: plan.weather, terrain: plan.terrain};
+    return plan.tr ? [{...base, trickRoom: false, w: 0.5}, {...base, trickRoom: true, w: 0.5}] : [{...base, trickRoom: false, w: 1}];
+  };
+
+  // 세트 × 상황별 상대 상성 줄 (캐시)
   const rowCache = new Map();
   const keyOf = s => JSON.stringify([s.id, s.item, s.ability, s.nature, s.sp, s.moves, s.boosts]);
-  function row(set) {
-    const k = keyOf(set);
-    if (!rowCache.has(k)) rowCache.set(k, P.matrix([set], threats)[0]);
+  function rowIn(set, ctx, n = threats.length) {
+    const k = keyOf(set) + '|' + [ctx.weather, ctx.terrain, ctx.trickRoom ? 1 : 0, n].join(',');
+    if (!rowCache.has(k)) {
+      if (n < threats.length) {
+        const full = rowCache.get(keyOf(set) + '|' + [ctx.weather, ctx.terrain, ctx.trickRoom ? 1 : 0, threats.length].join(','));
+        if (full) { rowCache.set(k, full.slice(0, n)); return rowCache.get(k); }
+      }
+      if (ctx.trickRoom) {
+        // 트릭룸은 데미지가 같고 행동 순서만 뒤집힘 → 트릭룸 없는 줄에서 순서만 바꿔 다시 평가 (계산 절반)
+        const flip = c => { const faster = c.sa < c.sb; return {...c, faster, v: P.cellValue(c.off.pct, c.def.pct, faster)}; };
+        rowCache.set(k, rowIn(set, {...ctx, trickRoom: false}, n).map(c => {
+          if (!c.alt) return flip(c);
+          const a = flip(c), b = flip(c.alt);
+          return {...a, alt: b, v: (a.v + b.v) / 2};
+        }));
+      } else {
+        rowCache.set(k, P.matrix([set], threats.slice(0, n), ctx)[0]);
+      }
+    }
     return rowCache.get(k);
   }
+  // 운영 방식 가중 평균 (표시용 칸 정보는 첫 번째 상황)
+  function row(set, plan, n) {
+    const cs = contexts(plan);
+    const rs = cs.map(c => rowIn(set, c, n));
+    return rs[0].map((cell, j) => ({...cell, v: rs.reduce((a, r, k) => a + cs[k].w * r[j].v, 0)}));
+  }
+
+  // 상대의 필드·날씨 전개: 필드를 지우는 기술(아이언롤러·아이스스피너)이나 자기 필드·날씨로 덮어쓰는 멤버가 있으면 가산
+  const TERRAIN_REMOVERS = ['Steel Roller', 'Ice Spinner'];
+  const terrainShare = threats.reduce((a, t, j) => a + (P.condOf(t).terrain ? weights[j] : 0), 0) / W;
+  const weatherShare = threats.reduce((a, t, j) => a + (P.condOf(t).weather ? weights[j] : 0), 0) / W;
+  const terrainThreats = threats.filter(t => P.condOf(t).terrain).map(t => byId[t.id].ko);
+  const fieldAnswer = sets => ({
+    terrain: sets.filter(s => s.moves.some(m => TERRAIN_REMOVERS.includes(m)) || P.condOf(s).terrain),
+    weather: sets.filter(s => P.condOf(s).weather),
+  });
 
   // ---------------- 팀 점수 ----------------
-  function score(sets) {
-    const rows = sets.map(row);
+  // n: 앞 n마리 상대로만 보는 가벼운 점수 (교체 후보 1차 선별용)
+  function score(sets, n = threats.length) {
+    const plan = planOf(sets);
+    const rows = sets.map(s => row(s, plan, n));
     // 메타 대응: 상대마다 가장 좋은 대답 + 두 번째 대답 약간
-    const per = threats.map((_, j) => {
+    const per = threats.slice(0, n).map((_, j) => {
       const v = rows.map(r => r[j].v).sort((a, b) => b - a);
       return (v[0] ?? -1) + 0.3 * (v[1] ?? v[0] ?? -1);
     });
-    const meta = per.reduce((a, x, j) => a + weights[j] * x, 0) / W;
+    const Wn = weights.slice(0, n).reduce((a, b) => a + b, 0);
+    const meta = per.reduce((a, x, j) => a + weights[j] * x, 0) / Wn;
     const ids = sets.map(s => s.baseId || s.id);
     const A = T.analyze(ids, sets);
     const danger = A.types.filter(x => x.danger);
@@ -88,12 +143,15 @@ export function createImprover(M, T, P, {threatCount = 20, poolMinPct = 0.5, nat
       syn += (tm(ids[a], ids[b]) + tm(ids[b], ids[a])) / 2; pairs++;
     }
     syn = pairs ? syn / pairs : 0;
+    const fa = fieldAnswer(sets);
     const parts = {
       meta, types: -0.12 * danger.length - 0.04 * gaps, cover: -0.04 * noHit.length,
       roles: -0.08 * missing.length, syn: syn / 100 * 0.4, mega: A.megas > 2 ? -0.1 * (A.megas - 2) : 0,
+      // 필드 제거는 한 상대와의 싸움이 아니라 팀 전체(선공기 봉쇄·그래스슬라이더 등)에 영향 → 넉넉히 가산
+      field: (fa.terrain.length ? 0.5 * terrainShare : 0) + (fa.weather.length ? 0.2 * weatherShare : 0),
     };
     const total = Object.values(parts).reduce((a, b) => a + b, 0);
-    return {total, parts, per, danger: danger.map(x => x.t), noHit, missing, A};
+    return {total, parts, per, danger: danger.map(x => x.t), noHit, missing, A, plan, fa};
   }
   // 사람이 보기 좋은 0~100 점수
   const pretty = t => Math.max(0, Math.min(100, Math.round(t * 60)));
@@ -101,14 +159,102 @@ export function createImprover(M, T, P, {threatCount = 20, poolMinPct = 0.5, nat
   // ---------------- 약한 멤버 ----------------
   // 트릭룸은 계산에 안 들어가므로, 느린 멤버가 2마리 이상인 팀의 트릭룸 사용자는 "핵심"으로 보고 교체 대상에서 뺌
   const slowish = s => (NATURES[s.nature] || [])[1] === 'spe' || M.finalStats(s).spe <= 70;
+  // 날씨·필드 담당도, 그 날씨·필드로 확실히 강해지는 멤버가 2마리 이상이면 핵심
+  function gainsFrom(set, cond) {
+    const a = rowIn(set, {weather: '', terrain: '', trickRoom: false}), b = rowIn(set, {...cond, trickRoom: false});
+    return b.reduce((s, c, j) => s + weights[j] * (c.v - a[j].v), 0) / W;
+  }
   function coreOf(sets) {
-    return sets.map((s, i) => s.moves.includes('Trick Room') && sets.filter((o, k) => k !== i && slowish(o)).length >= 2);
+    const plan = planOf(sets);
+    return sets.map((s, i) => {
+      if (plan.tr && s.moves.includes('Trick Room') && sets.filter((o, k) => k !== i && slowish(o)).length >= 2) return 'tr';
+      const c = P.condOf(s);
+      if ((c.weather && c.weather === plan.weather) || (c.terrain && c.terrain === plan.terrain)) {
+        const cond = {weather: c.weather || '', terrain: c.terrain || ''};
+        if (sets.filter((o, k) => k !== i && gainsFrom(o, cond) >= 0.1).length >= 2) return c.weather ? 'weather' : 'terrain';
+      }
+      return false;
+    });
   }
   function weakest(sets) {
     const full = score(sets).total;
     const core = coreOf(sets);
     return sets.map((s, i) => ({i, core: core[i], contrib: full - score(sets.filter((_, k) => k !== i)).total}))
       .sort((a, b) => (a.core - b.core) || a.contrib - b.contrib);
+  }
+
+  // 멤버별 기여도와 빼도 되는/남겨야 하는 이유
+  //   혼자 막는 상대: 이 멤버가 가장 잘 받고 두 번째 멤버와 차이가 큼 → 남길 이유
+  //   겹치는 상대: 잘 받긴 하지만 다른 멤버가 더 잘 받음 → 빼도 되는 이유
+  //   약점 겹침: 팀에 이미 많은 약점 타입을 이 멤버도 가짐 / 역할 겹침: 같은 역할을 다른 멤버도 함
+  function members(sets) {
+    const full = score(sets);
+    const rows = sets.map(s => row(s, planOf(sets)));
+    const core = coreOf(sets);
+    const ids = sets.map(s => s.baseId || s.id);
+    const A = full.A;
+    const RK = {fakeout: '속이다', speed: '스피드 조절', intimidate: '위협', redirect: '유인', setter: '날씨·필드', spread: '전체 공격'};
+    return sets.map((s, i) => {
+      const without = score(sets.filter((_, k) => k !== i));
+      const keep = [], drop = [];
+      const solo = [], shared = [];
+      threats.forEach((t, j) => {
+        const mine = rows[i][j].v;
+        const others = rows.filter((_, k) => k !== i).map(r => r[j].v);
+        const bestOther = Math.max(...others);
+        if (mine >= 0.3 && mine - bestOther >= 0.4) solo.push(j);
+        else if (mine >= 0.3 && bestOther >= mine) shared.push(j);
+      });
+      const tname = j => byId[threats[j].id].ko;
+      if (solo.length) keep.push(`${solo.slice(0, 3).map(tname).join('·')}를 혼자 받아침`);
+      const good = threats.map((_, j) => j).filter(j => rows[i][j].v >= 0.3);
+      if (!good.length) drop.push('자주 만나는 상대 중 확실히 유리한 상대가 없음');
+      else if (!solo.length && shared.length >= good.length * 0.7) drop.push(`유리한 상대(${shared.slice(0, 3).map(tname).join('·')} 등)를 다른 멤버가 더 잘 받음`);
+      const e = byId[s.id];
+      const weakTo = A.types.filter(x => x.weak >= 3 && effectiveness(x.t, e.ty, s.ability) > 1).map(x => D.typeko[x.t]);
+      if (weakTo.length) drop.push(`${weakTo.join('·')} 약점이 겹침 (팀에 ${A.types.find(x => D.typeko[x.t] === weakTo[0]).weak}마리)`);
+      const fixed = without.danger.length < full.danger.length ? [] : full.danger.filter(t => !without.danger.includes(t));
+      const myRoles = T.rolesOf(ids[i], s);
+      const unique = myRoles.filter(r => A.roles[r].length === 1);
+      const dup = myRoles.filter(r => ['fakeout', 'intimidate', 'redirect', 'setter'].includes(r) && A.roles[r].length >= 2);
+      if (unique.filter(r => r !== 'spread').length) keep.push(`팀에서 혼자 ${unique.filter(r => r !== 'spread').map(r => RK[r]).join('·')} 담당`);
+      if (dup.length && !unique.filter(r => r !== 'spread').length) {
+        drop.push(`${dup.map(r => `${RK[r]}(${A.roles[r].filter(x => x !== ids[i]).map(x => byId[x].ko).join('·')}도 가능)`).join(', ')} 역할이 겹침`);
+      }
+      if (without.danger.length < full.danger.length) drop.push(`빼면 ${full.danger.filter(t => !without.danger.includes(t)).map(t => D.typeko[t]).join('·')} 약점이 사라짐`);
+      const WK = {Rain: '비', Sun: '쾌청', Sand: '모래바람', Snow: '설경'}, TK = {Grassy: '그래스필드', Psychic: '사이코필드', Electric: '일렉트릭필드', Misty: '미스트필드'};
+      const plan = full.plan;
+      // 운영 방식에서의 장점
+      const mode = {};
+      if (plan.tr) {
+        const n = rowIn(s, {weather: plan.weather, terrain: plan.terrain, trickRoom: false});
+        const t = rowIn(s, {weather: plan.weather, terrain: plan.terrain, trickRoom: true});
+        mode.trFirst = [n.filter(c => c.faster).length, t.filter(c => c.faster).length];
+        const gain = t.reduce((a, c, j) => a + weights[j] * (c.v - n[j].v), 0) / W;
+        mode.trGain = gain;
+        if (gain >= 0.2) keep.push(`트릭룸일 때 강해짐 (먼저 움직이는 상대 ${mode.trFirst[0]}→${mode.trFirst[1]}마리)`);
+        else if (gain <= -0.15) drop.push(`트릭룸일 때 오히려 약해짐 (먼저 움직이는 상대 ${mode.trFirst[0]}→${mode.trFirst[1]}마리)`);
+      }
+      if (plan.weather || plan.terrain) {
+        const cond = {weather: plan.weather, terrain: plan.terrain};
+        const g = gainsFrom(s, cond);
+        mode.condGain = g;
+        const nm2 = [WK[plan.weather], TK[plan.terrain]].filter(Boolean).join('·');
+        if (g >= 0.1) keep.push(`${nm2}일 때 강해짐`);
+        else if (g <= -0.1) drop.push(`${nm2}일 때 약해짐`);
+      }
+      if (s.moves.some(m => TERRAIN_REMOVERS.includes(m)) && terrainThreats.length) {
+        const fa = fieldAnswer(sets);
+        if (fa.terrain.length === 1) keep.unshift('팀에서 혼자 상대 필드 대응');
+        keep.push(`${s.moves.filter(m => TERRAIN_REMOVERS.includes(m)).map(m => M.moveKo(m)).join('·')}로 상대 필드(${terrainThreats.slice(0, 2).join('·')}) 제거`);
+      }
+      const c = P.condOf(s);
+      if (c.weather && c.weather === plan.weather) keep.unshift(`팀의 ${WK[c.weather]} 담당`);
+      if (c.terrain && c.terrain === plan.terrain) keep.unshift(`팀의 ${TK[c.terrain]} 담당`);
+      if (core[i] === 'tr') keep.unshift('트릭룸 팀의 핵심');
+      if (core[i] === 'weather' || core[i] === 'terrain') keep.unshift('날씨·필드 운영의 핵심');
+      return {i, core: core[i], contrib: full.total - without.total, keep, drop, fixed, mode};
+    });
   }
 
   // 새 멤버 세트: 사용률 1순위, 팀 도구와 안 겹치게
@@ -170,13 +316,22 @@ export function createImprover(M, T, P, {threatCount = 20, poolMinPct = 0.5, nat
     if (worse.length) out.push({good: false, text: `${worse.map(x => byId[threats[x.j].id].ko).join('·')} 대응 약해짐`});
     if (newDanger.length) out.push({good: false, text: `${newDanger.map(t => D.typeko[t]).join('·')} 약점 생김`});
     if (lost.length) out.push({good: false, text: `${lost.map(r => T2[r]).join('·')} 담당 없어짐`});
+    // 상대 필드·날씨 대응 (아이언롤러 등)이 사라지거나 생기는지
+    if (before.fa && after.fa) {
+      if (before.fa.terrain.length && !after.fa.terrain.length) out.push({good: false, text: `상대 필드(${terrainThreats.slice(0, 2).join('·')}) 대응 없어짐`});
+      if (!before.fa.terrain.length && after.fa.terrain.length) out.push({good: true, text: `상대 필드(${terrainThreats.slice(0, 2).join('·')}) 대응 생김`});
+      if (before.plan && after.plan && before.plan.tr && !after.plan.tr) out.push({good: false, text: '트릭룸 없어짐'});
+      if (before.plan && after.plan && before.plan.weather && !after.plan.weather) out.push({good: false, text: '날씨 담당 없어짐'});
+    }
     return out;
   }
 
   // 한 자리 교체 후보. onProgress(done, total) 는 화면 갱신용
-  async function swaps(sets, {slots = 2, per = 3, shortlist = Infinity, pairTop = 10, onProgress, yieldMs = 100} = {}) {
+  // shortlist: 가벼운 사전 점수로 추린 뒤 전부 계산할 후보 수 (브라우저에서 15초 안쪽)
+  async function swaps(sets, {slots = 2, per = 3, shortlist = 50, lite = 10, finalists = 12, pairTop = 10, onProgress, yieldMs = 100} = {}) {
     let last = now();
     const base = score(sets);
+    const baseLite = score(sets, lite);
     const weak = weakest(sets).filter(w => !w.core).slice(0, slots);
     const results = [];
     let done = 0;
@@ -187,10 +342,18 @@ export function createImprover(M, T, P, {threatCount = 20, poolMinPct = 0.5, nat
       const used = new Set(others.map(s => s.item).filter(Boolean));
       const shortl = pool.filter(id => !nos.has(byId[id].no) && id !== (sets[w.i].baseId || sets[w.i].id))
         .map(id => ({id, q: quick(id, others)})).sort((a, b) => b.q - a.q).slice(0, shortlist);
-      const cands = [];
+      // 1차: 상위 lite마리 상대로만 빠르게 → 2차: 남은 finalists마리를 전체 상대로 정밀하게
+      const pre = [];
       for (const {id} of shortl) {
         done++;
         const next = sets.slice(); next[w.i] = freeSet(id);   // 점수는 대표 세트로 (상성 줄 재사용)
+        pre.push({id, d: score(next, lite).total - baseLite.total});
+        if (onProgress && now() - last > yieldMs) { onProgress(done, total); await yieldNow(); last = now(); }
+      }
+      pre.sort((a, b) => b.d - a.d);
+      const cands = [];
+      for (const {id} of pre.slice(0, finalists)) {
+        const next = sets.slice(); next[w.i] = freeSet(id);
         const sc = score(next);
         cands.push({id, set: setFor(id, used), delta: sc.total - base.total, after: sc});
         if (onProgress && now() - last > yieldMs) { onProgress(done, total); await yieldNow(); last = now(); }
@@ -211,7 +374,7 @@ export function createImprover(M, T, P, {threatCount = 20, poolMinPct = 0.5, nat
         if (!pair || d > pair.delta) pair = {slots: [A.slot, B.slot], sets: [sA, sB], delta: d, why: reasons(base, sc)};
       }
     }
-    return {base, pretty: pretty(base.total), results, pair, core: coreOf(sets)};
+    return {base, pretty: pretty(base.total), results, pair, core: coreOf(sets), members: members(sets)};
   }
 
   // ---------------- 세트 다듬기 ----------------
@@ -353,7 +516,7 @@ export function createImprover(M, T, P, {threatCount = 20, poolMinPct = 0.5, nat
     // 내구 기준점: 자주 만나는 상대의 가장 센 기술을 간당간당하게 못 버티면 HP·방어(특방)로 확정 버티기
     const tries = [];
     threats.forEach((t, j) => {
-      const rows = M.damageTable(t, set, FIELD, false).filter(r => r.maxPct != null);
+      const rows = M.damageTable(t, set, FIELD, false, {fast: true}).filter(r => r.maxPct != null);
       if (!rows.length) return;
       const r = rows.reduce((a, b) => (b.maxPct > a.maxPct ? b : a));
       if (r.maxPct >= 100 && r.maxPct <= 125) tries.push({j, r});
@@ -368,7 +531,7 @@ export function createImprover(M, T, P, {threatCount = 20, poolMinPct = 0.5, nat
         let lo = 0, hi = 32 - (set.sp[defStat] || 0), ok = null;
         const test = d => {
           const next = clone(set); next.sp.hp += a; next.sp[defStat] += d;
-          const rr = M.damageTable({...t, moves: [r.name]}, next, FIELD, false)[0];
+          const rr = M.damageTable({...t, moves: [r.name]}, next, FIELD, false, {fast: true})[0];
           return rr && rr.maxPct < 100 ? next : null;
         };
         if (!test(hi)) continue;
@@ -401,5 +564,5 @@ export function createImprover(M, T, P, {threatCount = 20, poolMinPct = 0.5, nat
     return out.filter(x => x.offScore || x.delta > -0.05).sort((a, b) => b.delta - a.delta);
   }
 
-  return {score, pretty, weakest, swaps, tune, threats, threatIds, setFor};
+  return {score, pretty, weakest, members, swaps, tune, threats, threatIds, setFor, planOf, setOverride, getOverride: () => override};
 }

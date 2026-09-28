@@ -55,6 +55,31 @@ test('세트 다듬기: 방어 없는 메타그로스에 방어 추천, 생명�
   assert.ok(!I.tune(TEAM, 4).some(x => /스피드 SP/.test(x.text)));
 });
 
+test('운영 방식 자동 감지: 트릭룸(하랑우탄) + 비(패리퍼), 무시로 바꿀 수 있음', () => {
+  const plan = I.planOf(TEAM);
+  assert.equal(plan.tr, true);
+  assert.equal(plan.weather, 'Rain');
+  assert.equal(plan.trUser, 'Oranguru');
+  I.setOverride({tr: 'off', weather: 'off'});
+  assert.equal(I.planOf(TEAM).tr, false);
+  assert.equal(I.planOf(TEAM).weather, '');
+  I.setOverride({tr: 'auto', weather: 'auto'});
+});
+
+test('트릭룸일 때 느린 멤버가 먼저 움직이는 상대가 늘어남', () => {
+  const ms = I.members(TEAM);
+  const gol = ms[2];  // 용감 갑주무사 (스피드 54)
+  assert.ok(gol.mode.trFirst[1] > gol.mode.trFirst[0], JSON.stringify(gol.mode));
+  assert.ok(gol.keep.some(t => t.includes('트릭룸')));
+});
+
+test('아이언롤러 메타그로스: 상대 필드 제거가 남길 이유로 잡힘', () => {
+  const meta = I.members(TEAM)[5];
+  assert.ok(meta.keep.some(t => t.includes('필드')), meta.keep.join(' / '));
+  const noRoller = TEAM.map((s, i) => (i === 5 ? {...s, moves: ['Iron Head', 'Bullet Punch', 'Ice Punch', 'Psychic Fangs']} : s));
+  assert.ok(I.score(TEAM).parts.field > I.score(noRoller).parts.field);
+});
+
 test('세트 다듬기 결과는 SP 합계 66 이하, 능력치당 32 이하', () => {
   for (let i = 0; i < TEAM.length; i++) {
     for (const x of I.tune(TEAM, i)) {

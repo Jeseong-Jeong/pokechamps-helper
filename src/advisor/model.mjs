@@ -137,8 +137,10 @@ export function createModel(D) {
   }
 
   // 한 방향(공격 세트 → 방어 세트)의 기술별 결과
-  function damageTable(att, def, field, attackerIsLeft = true) {
+  // fast: 상성표·진단처럼 데미지 범위만 필요할 때 (몇 타인지 계산·설명문 생략 → 훨씬 빠름)
+  function damageTable(att, def, field, attackerIsLeft = true, {fast = false} = {}) {
     const out = [];
+    let a = null, d = null, f = null;  // 기술마다 새로 만들지 않고 재사용 (calculate가 안에서 복사함)
     for (const name of att.moves) {
       if (!name) continue;
       const i = moveByEn[name];
@@ -146,9 +148,9 @@ export function createModel(D) {
       if (!m || m.c === '변화') { out.push({name, ko: moveKo(name), status: true}); continue; }
       if (!GEN.moves.get(toID(name))) { out.push({name, ko: moveKo(name), unsupported: true}); continue; }
       try {
-        const r = calculate(GEN, toCalcMon(att), toCalcMon(def), new Move(GEN, name, {isCrit: field.crit}),
-                            toField(field, attackerIsLeft));
-        out.push(summarize(r, name));
+        if (!a) { a = toCalcMon(att); d = toCalcMon(def); f = toField(field, attackerIsLeft); }
+        const r = calculate(GEN, a, d, new Move(GEN, name, {isCrit: field.crit}), f);
+        out.push(summarize(r, name, fast));
       } catch (err) {
         out.push({name, ko: moveKo(name), error: String(err && err.message || err)});
       }
@@ -156,17 +158,18 @@ export function createModel(D) {
     return out;
   }
 
-  function summarize(r, name) {
+  function summarize(r, name, fast) {
     const hp = r.defender.maxHP();
     const [lo, hi] = r.range();
-    let ko = null;
-    try { ko = r.kochance(); } catch (e) { /* 0 데미지 등 */ }
-    return {
+    const base = {
       name, ko: moveKo(name), type: r.move.type, category: r.move.category,
       min: lo, max: hi, hp, minPct: lo / hp * 100, maxPct: hi / hp * 100,
-      koText: koKo(ko, lo, hi, r.defender.curHP()), spread: r.move.target && /all/i.test(r.move.target) && r.field.gameType === 'Doubles',
-      desc: r.desc && safe(() => r.desc()),
+      spread: r.move.target && /all/i.test(r.move.target) && r.field.gameType === 'Doubles',
     };
+    if (fast) return base;
+    let ko = null;
+    try { ko = r.kochance(); } catch (e) { /* 0 데미지 등 */ }
+    return {...base, koText: koKo(ko, lo, hi, r.defender.curHP()), desc: r.desc && safe(() => r.desc())};
   }
 
   function koKo(k, lo, hi, cur) {
