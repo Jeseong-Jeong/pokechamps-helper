@@ -105,8 +105,8 @@ export function createTeamAdvisor(M) {
     return Object.fromEntries(TYPES.map(t => [t, effectiveness(t, e.ty, set.ability)]));
   }
 
-  function analyze(ids) {
-    const sets = teamSets(ids);
+  function analyze(ids, givenSets) {
+    const sets = givenSets || teamSets(ids);
     const prof = sets.map(defProfile);
     const types = TYPES.map(t => {
       const weak = prof.filter(p => p[t] > 1).length;

@@ -4,19 +4,32 @@ import {ROLES} from './team.mjs';
 const STORE = 'pc-team-v1';
 const ROLE_ORDER = ['fakeout', 'speed', 'intimidate', 'redirect', 'setter', 'spread'];
 
-export function initTeam({M, T, ty, esc, $, findMon, onSendToCalc}) {
+export function initTeam({M, T, ty, esc, $, findMon, onSendToCalc, onChange}) {
   const {byId, D} = M;
-  let ids = load();
+  // ids: 원래 모습 id 6개까지, custom: {원래 id: 직접 넣은 세트} (스크린샷 불러오기 등)
+  let {ids, custom} = load();
 
   function load() {
     try {
       const v = JSON.parse(localStorage.getItem(STORE));
-      if (Array.isArray(v)) return v.filter(id => byId[id]).slice(0, 6);
+      const list = Array.isArray(v) ? v : v && v.ids;  // 예전 형식은 id 배열
+      if (Array.isArray(list)) {
+        const c = (v && v.custom) || {};
+        return {ids: list.filter(id => byId[id]).slice(0, 6), custom: Object.fromEntries(Object.entries(c).filter(([k, x]) => byId[k] && x && byId[x.id]))};
+      }
     } catch (e) { /* 저장값 없음 */ }
-    return [];
+    return {ids: [], custom: {}};
   }
-  function save() { try { localStorage.setItem(STORE, JSON.stringify(ids)); } catch (e) { /* 저장 불가 */ } }
-  function setIds(next) { ids = next.map(T.baseOf).slice(0, 6); save(); render(); }
+  function save() { try { localStorage.setItem(STORE, JSON.stringify({ids, custom})); } catch (e) { /* 저장 불가 */ } }
+  function setIds(next) {
+    ids = next.map(T.baseOf).slice(0, 6);
+    for (const k of Object.keys(custom)) if (!ids.includes(k)) delete custom[k];
+    save(); render(); onChange && onChange();
+  }
+  // 기본 세트(아이템 클로즈 반영) 위에 직접 넣은 세트를 덮어씀
+  function getSets() {
+    return T.teamSets(ids).map((s, i) => (custom[ids[i]] ? {...custom[ids[i]], baseId: ids[i], custom: true} : s));
+  }
 
   function add(id) {
     id = T.baseOf(id);
@@ -29,7 +42,7 @@ export function initTeam({M, T, ty, esc, $, findMon, onSendToCalc}) {
 
   // ---------------- 그리기 ----------------
   function render() {
-    const A = ids.length ? T.analyze(ids) : null;
+    const A = ids.length ? T.analyze(ids, getSets()) : null;
     $('team-slots').innerHTML = [0, 1, 2, 3, 4, 5].map(i => slot(i, A && A.sets[i])).join('');
     $('team-count').textContent = `${ids.length} / 6`;
     $('team-cands').innerHTML = ids.length < 6 ? candList() : '<p class="mini">팀이 다 찼습니다. 멤버를 빼면 다시 추천합니다.</p>';
@@ -45,16 +58,18 @@ export function initTeam({M, T, ty, esc, $, findMon, onSendToCalc}) {
     const base = byId[set.baseId], e = byId[set.id];
     const u = M.usageOf(base);
     return `<div class="slot" data-i="${i}">
-      <div class="slot-h"><b>${esc(base.ko)}</b>${set.id !== set.baseId ? `<span class="badge b-mega">${esc(e.ko)}</span>` : ''}
+      <div class="slot-h"><b>${esc(base.ko)}</b>${set.id !== set.baseId ? `<span class="badge b-mega">${esc(e.ko)}</span>` : ''}${set.custom ? '<span class="badge b-mine">내 세트</span>' : ''}
         ${u ? `<span class="mini">${u.rank}위</span>` : ''}</div>
       <div class="types">${e.ty.map(ty).join('')}</div>
       <dl class="setl">
         <dt>도구</dt><dd>${esc(set.item ? M.itemKo(set.item) : '없음')}</dd>
         <dt>특성</dt><dd>${esc(abKo(e, set.ability))}</dd>
-        <dt>기술</dt><dd>${set.moves.map(n => esc(M.moveKo(n))).join(', ')}</dd>
+        <dt>기술</dt><dd>${set.moves.filter(Boolean).map(n => esc(M.moveKo(n))).join(', ')}</dd>
+        ${set.custom ? `<dt>성격</dt><dd>${esc(D.natureko[set.nature] || set.nature)} · SP ${['hp', 'atk', 'def', 'spa', 'spd', 'spe'].map(k => set.sp[k] || 0).join('-')}</dd>` : ''}
       </dl>
       <div class="slot-a">
         <button class="link" data-k="calc" data-i="${i}">데미지 계산 →</button>
+        ${set.custom ? `<button class="link" data-k="uncustom" data-i="${i}">기본 세트로</button>` : ''}
         <button class="link danger" data-k="remove" data-i="${i}">빼기</button>
       </div>
     </div>`;
@@ -123,11 +138,25 @@ export function initTeam({M, T, ty, esc, $, findMon, onSendToCalc}) {
     const k = b.dataset.k;
     if (k === 'pick') $('team-msg').textContent = add(b.dataset.id);
     if (k === 'remove') setIds(ids.filter((_, i) => i !== +b.dataset.i));
-    if (k === 'calc') onSendToCalc(T.teamSets(ids)[+b.dataset.i]);
+    if (k === 'calc') onSendToCalc(getSets()[+b.dataset.i]);
+    if (k === 'uncustom') { delete custom[ids[+b.dataset.i]]; save(); render(); onChange && onChange(); }
     if (k === 'auto') { setIds(T.autoFill(ids)); $('team-msg').textContent = ''; }
     if (k === 'clear') { setIds([]); $('team-msg').textContent = ''; }
   });
 
   render();
-  return {getIds: () => ids.slice(), getSets: () => T.teamSets(ids)};
+  return {
+    getIds: () => ids.slice(), getSets,
+    // 불러온 세트로 팀 전체를 바꿈 (sets: model 세트 형식, id는 메가 형태여도 됨)
+    importSets(sets) {
+      const next = [], nextCustom = {};
+      for (const s of sets) {
+        const base = T.baseOf(s.id);
+        if (next.length >= 6 || next.some(x => byId[x].no === byId[base].no)) continue;
+        next.push(base);
+        nextCustom[base] = s;
+      }
+      ids = next; custom = nextCustom; save(); render(); onChange && onChange();
+    },
+  };
 }

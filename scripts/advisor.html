@@ -158,6 +158,45 @@ label.chk input{margin:0}
 .typetbl .num{text-align:right}
 .typetbl tr.danger td{background:var(--gold-soft)}
 .bad{color:var(--bad);font-weight:600}
+.b-mine{background:var(--accent-soft);color:var(--accent)}
+.pick-in{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+.pick-mine-row{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
+.mon-chips{display:flex;flex-wrap:wrap;gap:4px}
+.mon-chip{font-size:13px;padding:3px 9px;border-radius:999px;background:var(--sunk)}
+.pick-opp-h{display:flex;justify-content:space-between;align-items:baseline;margin-top:6px}
+.opp-slots{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+@media (max-width:640px){.opp-slots{grid-template-columns:repeat(2,1fr)}}
+.opp-slot{display:flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:8px;padding:6px 8px;min-height:40px}
+.opp-slot b{flex:1;font-size:14px}
+.opp-slot.empty{border-style:dashed;padding:3px}
+.opp-slot.empty input{width:100%;font-size:14px;padding:5px 7px;border:0;background:transparent}
+.opp-slot.empty input:disabled{visibility:hidden}
+.pick-res h3{margin:0 0 8px;font-size:13px;letter-spacing:.06em;color:var(--muted)}
+.pick-res h4{margin:18px 0 6px;font-size:12px;letter-spacing:.06em;color:var(--muted)}
+.pick-top{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:640px){.pick-top{grid-template-columns:1fr}}
+.pick-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pick-card{display:flex;flex-direction:column;gap:4px;border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--sunk)}
+.pick-card b{font-size:16px}
+.pick-card .tag{font-size:11px;font-weight:700;color:var(--accent)}
+.why{margin:6px 0 0}
+.pick-res .notes{margin-top:12px}
+.pick-alt{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:640px){.pick-alt{grid-template-columns:1fr}}
+.pick-alt ol{margin:0;padding-left:20px;font-size:13.5px}
+.pick-alt li{padding:2px 0}
+.mxtbl{border-collapse:collapse;width:100%;font-size:12.5px}
+.mxtbl th{font-weight:600;padding:6px 6px;text-align:center;white-space:nowrap;font-size:12px}
+.mxtbl thead th{background:var(--sunk);color:var(--muted)}
+.mxtbl tbody th{text-align:left;background:var(--sunk)}
+.mxtbl tr.chosen th{color:var(--accent)}
+.mxtbl td{text-align:center;padding:6px 4px;border:1px solid var(--line);white-space:nowrap;position:relative}
+.mxtbl td .sep{color:var(--muted);margin:0 2px}
+.mxtbl td .fast{font-style:normal;font-size:10px;position:absolute;top:1px;right:2px}
+.mxtbl td.g2{background:color-mix(in srgb,var(--good) 32%,transparent)}
+.mxtbl td.g1{background:color-mix(in srgb,var(--good) 14%,transparent)}
+.mxtbl td.b1{background:color-mix(in srgb,var(--bad) 12%,transparent)}
+.mxtbl td.b2{background:color-mix(in srgb,var(--bad) 28%,transparent)}
 .todo{padding:28px 18px;text-align:center;color:var(--muted)}
 .todo b{display:block;color:var(--ink);font-size:16px;margin-bottom:6px}
 footer{margin-top:28px;color:var(--muted);font-size:12.5px;line-height:1.7}
@@ -174,7 +213,7 @@ footer a{color:var(--accent)}
   <nav class="tabs" role="tablist">
     <button role="tab" aria-selected="true" data-p="calc">데미지 계산</button>
     <button role="tab" aria-selected="false" data-p="team">팀 추천</button>
-    <button role="tab" aria-selected="false" data-p="pick">선출 추천<span class="soon">준비 중</span></button>
+    <button role="tab" aria-selected="false" data-p="pick">선출 추천</button>
     <button role="tab" aria-selected="false" data-p="battle">배틀 도우미<span class="soon">준비 중</span></button>
   </nav>
 
@@ -218,7 +257,16 @@ footer a{color:var(--accent)}
     </div>
     <p class="mini" style="margin-top:12px">세트는 사용률 1순위 기준이고, 같은 도구가 겹치지 않게(아이템 클로즈) 다음 순위 도구로 바꿉니다. 메가스톤 채용률이 40% 이상이면 메가 세트로 넣습니다.</p>
   </div>
-  <div class="panel" id="p-pick" hidden><div class="card todo"><b>선출 추천</b>상대 6마리를 입력하면 낼 4마리와 선봉 2마리를 추천합니다.</div></div>
+  <div class="panel" id="p-pick" hidden>
+    <div class="card pick-in">
+      <div class="pick-mine-row"><span class="who">내 팀</span><span id="pick-mine" class="mon-chips"></span></div>
+      <p class="mini" id="pick-mine-note"></p>
+      <div class="pick-opp-h"><span class="who">상대 팀 (팀 미리보기에서 본 6마리)</span><button class="link danger" data-k="opp-clear">상대 비우기</button></div>
+      <div class="opp-slots" id="pick-opp"></div>
+    </div>
+    <div id="pick-result" class="card pick-res"></div>
+    <p class="mini" style="margin-top:12px">상대는 사용률 1순위 세트(메가스톤 40%+ 이면 메가)로 가정합니다. 4마리 조합 15개를 "상대 각 포켓몬에 대한 가장 좋은 대답"으로 평가하고, 메가가 2마리 이상이면 누구를 메가진화할지까지 골라 계산합니다. 선봉은 상대 전체 압박과 속이다·스피드 조절·위협 조합으로 고릅니다.</p>
+  </div>
   <div class="panel" id="p-battle" hidden><div class="card todo"><b>배틀 도우미</b>필드 상황을 입력하면 이번 턴에 쓸 기술과 대상을 추천합니다.</div></div>
 
   <footer>

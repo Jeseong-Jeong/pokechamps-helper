@@ -2,10 +2,13 @@
 import {createModel, STATS, STAT_KO, SP_MAX, SP_TOTAL, NATURES, WEATHER, TERRAIN, STATUS} from './model.mjs';
 import {createTeamAdvisor} from './team.mjs';
 import {initTeam} from './ui-team.mjs';
+import {createPickAdvisor} from './pick.mjs';
+import {initPick} from './ui-pick.mjs';
 
 const DATA = window.__DATA__;
 const M = createModel(DATA);
 const T = createTeamAdvisor(M);
+const P = createPickAdvisor(M, T);
 const {byId} = M;
 const TK = DATA.typeko, NK = DATA.natureko;
 const TYC = {normal:'#9A9A7C',fire:'#E0662E',water:'#4A7FE0',grass:'#4E9F3D',electric:'#E9C21A',ice:'#6CC3C4',fighting:'#B8322A',poison:'#9243A0',ground:'#C9A24A',flying:'#8C8AE8',psychic:'#E5487A',bug:'#95A11E',rock:'#AD9437',ghost:'#6450A0',dragon:'#5A3CE8',dark:'#5E4A3E',steel:'#8E8EAA',fairy:'#D77FB0'};
@@ -244,11 +247,18 @@ $('reset').addEventListener('click', () => {
 
 render();
 
-// ---------------- 팀 추천 탭 ----------------
-initTeam({
+// ---------------- 팀 추천 / 선출 추천 탭 ----------------
+let pickUI = null;
+const teamUI = initTeam({
   M, T, ty, esc, $, findMon,
   onSendToCalc(set) {  // 팀 멤버를 계산기 왼쪽(내 포켓몬)으로
-    const {baseId, ...s} = set;
+    const {baseId, custom, ...s} = set;
     S.L = s; save(); render(); showTab('calc'); scrollTo(0, 0);
   },
+  onChange: () => pickUI && pickUI.render(),
+});
+pickUI = initPick({
+  M, T, P, ty, esc, $, findMon,
+  getMySets: () => teamUI.getSets(),
+  gotoTeam: () => showTab('team'),
 });
