@@ -303,6 +303,23 @@ label.chk input{margin:0}
 @media (max-width:720px){.bt-two{grid-template-columns:1fr}}
 .bt-grids{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 @media (max-width:720px){.bt-grids{grid-template-columns:1fr}}
+.turnres{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}
+.turnres h3 .mini{font-weight:400}
+.rcols{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:720px){.rcols{grid-template-columns:1fr}}
+.rrow{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:6px 0;border-top:1px dashed var(--line)}
+.rrow b{min-width:80px}
+.rrow label{flex-direction:row;align-items:center;gap:4px}
+.rrow input[type=number]{width:58px;padding:3px 5px}
+.segs{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.seg{appearance:none;border:0;border-right:1px solid var(--line);background:var(--surface);color:var(--ink);font:500 12.5px var(--f-body);padding:5px 9px;cursor:pointer}
+.seg:last-child{border-right:0}
+.seg.on{background:var(--accent);color:#fff}
+:root[data-theme="dark"] .seg.on{color:#0E121A}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .seg.on{color:#0E121A}}
+.turnres .btn.primary{margin-top:10px}
+.histl{margin:6px 0 0;padding-left:18px;font-size:13px}
+.histl li{margin:3px 0}
 .planbar{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center}
 .planbar label{flex-direction:row;align-items:center;gap:6px;font-size:13px;color:var(--ink)}
 .planbar .mini{flex-basis:100%}

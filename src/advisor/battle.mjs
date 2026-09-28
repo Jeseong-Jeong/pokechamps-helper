@@ -96,7 +96,8 @@ export function createBattle(M, P) {
     const bench = (state.bench || []).map(s => (s && s.set && (s.hpPct ?? 100) > 0 ? {...s, set: withState(s.set, s)} : null)).filter(Boolean);
     // 상대 뒤에 있을 수 있는 포켓몬 (선출 탭의 상대 6마리 중 필드에 없는 것)
     const oppBench = (state.oppBench || []).filter(id => byId[id] && !opps.some(o => o && o.id === id))
-      .map(id => ({id, hpPct: 100, set: withState(oppSetOf({id}), {hpPct: 100})}));
+      .map(id => { const hp = (state.oppHp || {})[id] ?? 100; return {id, hpPct: hp, set: withState(oppSetOf({id}), {hpPct: hp})}; })
+      .filter(b => b.hpPct > 0);
     const spd = {me: mine.map(m => m && M.speed(m.set, field, true)), opp: opps.map(o => o && M.speed(o.set, field, false))};
 
     // 데미지표 (최소·최대 %). key: 'm0','m1','o0','o1','b0','b1'
