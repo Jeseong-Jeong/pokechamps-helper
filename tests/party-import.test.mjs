@@ -130,6 +130,43 @@ test('이름 줄에 아이콘 쓰레기 글자·첫 기술이 붙어도 이름�
   assert.equal(slots.filter(Boolean).length, 1);
 });
 
+test('화면 위쪽 플레이어 이름이 포켓몬 이름이어도 6번째 카드까지 제자리', () => {
+  const top = [W('왕구리', 1215, 110), W('팀1', 760, 110), W('능력', 830, 207), W('스테이터스', 1090, 207)];
+  const ab = {...ABILITY, words: [...top, ...ABILITY.words]};
+  // 스테이터스 화면은 "스피드"를 "스미드"(샤미드와 비슷)로 잘못 읽었다고 가정
+  const st = {...STAT, words: [...top, ...STAT.words.map(w => (w.text === '스피드' ? {...w, text: '스미드'} : w))]};
+  const out = R.readSlots([ab, st]);
+  assert.deepEqual(out.map(x => x && x.baseId), ['Oranguru', 'Incineroar', 'Golisopod', 'Pelipper', 'Archaludon', 'Metagross']);
+  assert.equal(out[0].set.nature, 'Bold');      // 하랑우탄: 방어↑ 공격↓
+  assert.equal(out[5].set.nature, 'Adamant');
+});
+
+test('위쪽 카드를 못 읽어도 아래 카드가 한 칸씩 밀리지 않음', () => {
+  const drop = shot => ({...shot, words: shot.words.filter(w => !(w.x0 > 1000 && w.y0 < 420))});  // 2번(오른쪽 위) 카드 통째로 없음
+  const out = R.readSlots([drop(ABILITY), drop(STAT)]);
+  assert.equal(out[1], null);
+  assert.equal(out[3].baseId, 'Pelipper');
+  assert.equal(out[5].baseId, 'Metagross');
+  assert.equal(out[3].set.nature, 'Modest');
+});
+
+test('실제 오인식: 메타그로스 특공 103→123, 특방 112→12 여도 고집 32-32-0-0-2-0', () => {
+  const w = (text, x0, x1, y0, y1) => ({text, x0, x1, y0, y1, conf: 80});
+  const words = [
+    w('메', 1096, 1120, 259, 286), w('타', 1130, 1151, 259, 286), w('그로스', 1155, 1240, 259, 286), w('ㅎㅇ', 1300, 1315, 264, 279),
+    w('10', 1102, 1130, 303, 320), w('187', 1218, 1254, 303, 320), w('32', 1300, 1324, 303, 320),
+    w('특', 1404, 1440, 300, 321), w('수', 1452, 1467, 300, 320), w('공', 1477, 1495, 299, 321), w('격', 1494, 1515, 295, 328), w('123', 1513, 1548, 303, 320), w('ㅇ', 1602, 1614, 303, 320),
+    w('공격', 1101, 1144, 337, 360), w('205', 1216, 1253, 341, 358), w('32', 1300, 1324, 341, 358),
+    w('특', 1404, 1440, 338, 360), w('수', 1454, 1466, 337, 359), w('방', 1477, 1495, 337, 360), w('어', 1494, 1515, 333, 370), w('12_', 1513, 1549, 341, 358), w('2', 1603, 1614, 341, 358),
+    w('방어', 1102, 1144, 375, 397), w('150', 1217, 1254, 379, 395), w('0', 1312, 1324, 379, 395),
+    w('스피드', 1404, 1473, 375, 397), w('90', 1525, 1549, 379, 395), w('0', 1602, 1614, 379, 395),
+  ];
+  const [r] = R.read([{words, width: 2000, height: 923}]);
+  assert.equal(r.baseId, 'Metagross');
+  assert.equal(r.set.nature, 'Adamant');
+  assert.deepEqual(r.set.sp, {hp: 32, atk: 32, def: 0, spa: 0, spd: 2, spe: 0});
+});
+
 test('실수치 역산: 무보정 성격', () => {
   const e = M.byId.Incineroar;
   const r = R.solve(e, {hp: 170, atk: 135, def: 110, spa: 100, spd: 110, spe: 80}, null);

@@ -126,30 +126,65 @@ export function createPartyReader(M, itemDict) {
 
   // ---------------- 카드 나누기 ----------------
   // 이름 구절(포켓몬 사전과 잘 맞고 기술·도구보다 더 잘 맞는 것)을 기준으로 2열×3행
+  // 화면 글자(능력치 이름·탭 이름)는 이름 후보에서 뺌 ("스피드"는 "샤미드"와 비슷함)
+  const UI_WORDS = ['HP', '공격', '방어', '특수공격', '특수방어', '스피드', '능력', '스테이터스', '팀'];
+  const isUiWord = t => UI_WORDS.some(u => similarity(t, u) >= 0.6);
+
   function cards(ps, width) {
     const mid = width / 2;
     const heads = [];
     for (const p of ps) {
+      if (isUiWord(p.text)) continue;
       const m = findMon(p.text);
       if (!m || m.score < 0.7) continue;
-      const other = Math.max(findMove(p.text)?.score || 0, findItem(p.text)?.score || 0);
+      const other = Math.max(findMove(p.text)?.score || 0, findItem(p.text)?.score || 0, findAbility(p.text)?.score || 0);
       if (other >= m.score) continue;
       heads.push({...p, mon: m, col: p.x0 < mid ? 0 : 1});
     }
-    const cols = [0, 1].map(c => heads.filter(h => h.col === c).sort((a, b) => a.cy - b.cy)
-      .filter((h, i, arr) => !arr.slice(0, i).some(o => Math.abs(o.cy - h.cy) < h.y1 - h.y0))  // 같은 줄 중복 제거
-      .slice(0, 3));
-    const out = [];
-    for (let r = 0; r < 3; r++) for (let c = 0; c < 2; c++) {
-      const h = cols[c][r];
-      if (!h) continue;
-      const next = cols[c][r + 1];
-      const top = h.y0 - (h.y1 - h.y0) * 0.3;
-      const bottom = next ? next.y0 - (next.y1 - next.y0) * 0.3 : Infinity;
-      const inCol = p => (c === 0 ? p.x0 < mid : p.x0 >= mid);
-      const body = ps.filter(p => p !== h && inCol(p) && p.cy > top && p.cy < bottom);
-      out.push({slot: r * 2 + c, head: h, body});
+    // 열마다 이름 후보가 3개보다 많으면: 왼쪽 끝이 나란하고 간격이 일정하고 점수가 높은 3개
+    const pickCol = list => {
+      list = list.sort((a, b) => a.cy - b.cy)
+        .filter((h, i, arr) => !arr.slice(0, i).some(o => Math.abs(o.cy - h.cy) < (h.y1 - h.y0)));  // 같은 줄 중복 제거
+      if (list.length <= 3) return list;
+      let best = null;
+      for (let a = 0; a < list.length; a++) for (let b = a + 1; b < list.length; b++) for (let c = b + 1; c < list.length; c++) {
+        const t = [list[a], list[b], list[c]];
+        const h = t[0].y1 - t[0].y0;
+        const gap1 = t[1].cy - t[0].cy, gap2 = t[2].cy - t[1].cy;
+        if (Math.min(gap1, gap2) < h * 2.5) continue;
+        const xs = t.map(x => x.x0), xm = xs.reduce((s, v) => s + v, 0) / 3;
+        const cost = Math.abs(gap1 - gap2) / h + xs.reduce((s, v) => s + Math.abs(v - xm), 0) / h - 5 * t.reduce((s, x) => s + x.mon.score, 0);
+        if (!best || cost < best.cost) best = {cost, t};
+      }
+      return best ? best.t : list.slice(-3);  // 카드는 화면 아래쪽에 있음
+    };
+    const chosen = [...pickCol(heads.filter(h => h.col === 0)), ...pickCol(heads.filter(h => h.col === 1))];
+    if (!chosen.length) return [];
+    // 행 번호: 두 열의 이름을 높이로 묶어서 정함 (한 칸을 못 읽어도 아래 칸이 밀리지 않게)
+    const hh = chosen.reduce((s, h) => s + (h.y1 - h.y0), 0) / chosen.length;
+    const rows = [];
+    for (const h of chosen.sort((a, b) => a.cy - b.cy)) {
+      const r = rows.find(r => Math.abs(r.cy - h.cy) < hh * 1.5);
+      if (r) r.hs.push(h); else rows.push({cy: h.cy, hs: [h]});
     }
+    // 행이 2개 이하로 잡히면 간격을 보고 몇 번째 행인지 추정
+    let rowIdx = rows.map((_, i) => i);
+    if (rows.length === 2) {
+      const gap = rows[1].cy - rows[0].cy;
+      const pitch = hh * 6.3;  // 카드 한 칸 높이 ≈ 이름 글자 높이의 6배
+      if (gap > pitch * 1.6) rowIdx = [0, 2];
+    }
+    const out = [];
+    rows.slice(0, 3).forEach((row, ri) => {
+      for (const h of row.hs) {
+        const next = rows[ri + 1];
+        const top = h.y0 - (h.y1 - h.y0) * 0.3;
+        const bottom = next ? next.cy - hh * 0.8 : Infinity;
+        const inCol = p => (h.col === 0 ? p.x0 < mid : p.x0 >= mid);
+        const body = ps.filter(p => p !== h && inCol(p) && p.cy > top && p.cy < bottom);
+        out.push({slot: rowIdx[ri] * 2 + h.col, head: h, body});
+      }
+    });
     return out;
   }
 
@@ -205,7 +240,8 @@ export function createPartyReader(M, itemDict) {
         if (ns[i] < 20 || ns[i] > 400) continue;
         return [ns[i], i + 1 < ns.length && ns[i + 1] <= 32 ? ns[i + 1] : null];
       }
-      return [null, null];
+      // 실수치를 못 읽었어도 오른쪽 끝 SP(0~32)는 살림 ("112"→"12_" 같은 경우)
+      return [null, ns.length >= 2 && ns[ns.length - 1] <= 32 ? ns[ns.length - 1] : null];
     };
     const got = rows.filter(r => r.ns.length).slice(0, 3).map(r => [side(r.ns.filter(n => n.x < split)), side(r.ns.filter(n => n.x >= split))]);
     if (got.length < 3) return null;
@@ -220,27 +256,45 @@ export function createPartyReader(M, itemDict) {
 
   // 실수치·SP → 성격·SP 역산. 틀린 숫자가 섞여도 맞는 증거가 가장 많은 성격을 고름
   //   실수치와 읽은 SP가 서로 맞음 2점 / 실수치만으로 SP가 나옴 1점 / 읽은 SP만 있음 0.5점
+  //   능력치마다 가능한 해석을 모두 조합해서 SP 합계 66 이하 중 점수가 가장 높은 것
+  //   (한 칸의 숫자를 잘못 읽어 합계가 넘치면 그 칸은 읽은 SP 쪽 해석이 선택됨)
+  //   그 성격으로는 나올 수 없는 실수치가 있으면 감점 (예: 공격↓ 성격인데 공격 205)
   function solve(entry, val, spRead) {
     let best = null;
     for (const nature of Object.keys(NATURES)) {
       if (!NATURES[nature].length && nature !== 'Serious') continue;  // 무보정은 하나만
-      const sp = {};
-      let points = 0;
-      const unknown = [];
-      for (const k of STATS) {
+      const opts = STATS.map(k => {
         const base = entry.st[STATS.indexOf(k)];
         const v = val[k], r = spRead ? spRead[k] : null;
         const cands = [];
         if (v != null) for (let s = 0; s <= 32; s++) if (statValue(base, s, k, nature) === v) cands.push(s);
-        if (cands.length && cands.includes(r)) { sp[k] = r; points += 2; }
-        else if (cands.length) { sp[k] = cands[0]; points += 1; }
-        else if (r != null && r <= 32) { sp[k] = r; points += 0.5; }
-        else { sp[k] = 0; unknown.push(k); }
-      }
-      let total = STATS.reduce((a, k) => a + sp[k], 0);
-      if (unknown.length === 1 && total < 66) { sp[unknown[0]] = Math.min(32, 66 - total); total = STATS.reduce((a, k) => a + sp[k], 0); }
-      if (total > 66) continue;
-      if (!best || points > best.points) best = {nature, sp, points, total, sure: points >= 12, agree: points};
+        const o = [];
+        if (cands.includes(r)) o.push({sp: r, pt: 2});
+        else if (cands.length) o.push({sp: cands[0], pt: 1});
+        if (r != null && r <= 32 && !cands.includes(r)) o.push({sp: r, pt: 0.5});
+        o.push({sp: null, pt: 0});                     // 모름
+        const penalty = v != null && !cands.length ? -1 : 0;
+        return o.map(x => ({...x, pt: x.pt + penalty}));
+      });
+      const pick = new Array(6);
+      const go = (i, total, pts) => {
+        if (i === 6) {
+          const sp = {};
+          let t = total;
+          const unknown = [];
+          STATS.forEach((k, j) => { sp[k] = pick[j] ?? 0; if (pick[j] == null) unknown.push(k); });
+          if (unknown.length === 1 && t < 66) { sp[unknown[0]] = Math.min(32, 66 - t); t += sp[unknown[0]]; }
+          if (!best || pts > best.points) best = {nature, sp, points: pts, total: t, sure: pts >= 12, agree: pts};
+          return;
+        }
+        for (const o of opts[i]) {
+          const t = total + (o.sp ?? 0);
+          if (t > 66) continue;
+          pick[i] = o.sp;
+          go(i + 1, t, pts + o.pt);
+        }
+      };
+      go(0, 0, 0);
     }
     return best && best.points >= 6 ? best : null;
   }
