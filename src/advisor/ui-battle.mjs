@@ -6,7 +6,7 @@ const BOOSTS = ['atk', 'def', 'spa', 'spd', 'spe'];
 const SCREENS = [['reflect', '리플렉터'], ['lightScreen', '빛의장막'], ['auroraVeil', '오로라베일']];
 const blankSlot = () => ({id: '', hpPct: 100, status: '', boosts: {}, fresh: true, protected: false});
 const blankState = () => ({field: {weather: '', terrain: '', trickRoom: false, tailwind: {me: false, opp: false}, screens: {me: {}, opp: {}}},
-  me: [blankSlot(), blankSlot()], opp: [blankSlot(), blankSlot()], bench: [], benchHp: {}, turn: 1});
+  me: [blankSlot(), blankSlot()], opp: [blankSlot(), blankSlot()], bench: [], benchHp: {}, oppOut: [], turn: 1});
 
 export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, getLead}) {
   const {byId, D} = M;
@@ -16,7 +16,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
   function load() {
     try {
       const v = JSON.parse(localStorage.getItem(STORE));
-      if (v && v.me && v.opp && v.field) return {...blankState(), ...v};
+      if (v && v.me && v.opp && v.field) return {...blankState(), ...v, oppOut: v.oppOut || []};
     } catch (e) { /* 없음 */ }
     return blankState();
   }
@@ -49,7 +49,8 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
     const bench = S.bench.filter(id => mySetOf(id) && !S.me.some(s => s.id === id)).map(id => ({id, set: mySetOf(id), hpPct: S.benchHp[id] ?? 100}));
     const opp = S.opp.map(s => (s.id ? s : null));
     const planTR = mySets().some(s => s.moves.includes('Trick Room'));
-    return {field: S.field, me, opp, bench, planTR};
+    const oppBench = getOppIds().filter(id => !S.opp.some(o => o.id === id) && !S.oppOut.includes(id));
+    return {field: S.field, me, opp, bench, planTR, oppBench};
   }
 
   // ---------------- 그리기 ----------------
@@ -62,7 +63,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
       <label>HP<input type="number" min="0" max="100" data-f="hp" data-side="${side}" data-k="${k}" value="${s.hpPct}">%</label>
       <label>상태<select data-f="status" data-side="${side}" data-k="${k}">${Object.entries(STATUS).map(([v, t]) => `<option value="${v}"${v === s.status ? ' selected' : ''}>${t}</option>`).join('')}</select></label>
       <label class="chk"><input type="checkbox" data-f="fresh" data-side="${side}" data-k="${k}"${s.fresh ? ' checked' : ''}> 방금 나옴</label>
-      ${side === 'me' ? `<label class="chk"><input type="checkbox" data-f="protected" data-side="me" data-k="${k}"${s.protected ? ' checked' : ''}> 지난 턴 방어</label>` : ''}
+      <label class="chk"><input type="checkbox" data-f="protected" data-side="${side}" data-k="${k}"${s.protected ? ' checked' : ''}> 지난 턴 방어</label>
     </div>${boostRow(side, k, s.boosts || {})}`;
   }
 
@@ -121,6 +122,15 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
     }).join('') || '<span class="mini">없음</span>'}</div>`;
   }
 
+  function oppBenchBox() {
+    const ids = getOppIds().filter(id => !S.opp.some(o => o.id === id));
+    if (!ids.length) return '<p class="mini">선출 추천 탭에 상대 6마리를 넣으면, 상대가 교체할 만한 포켓몬도 예측합니다.</p>';
+    return `<div class="bench"><span class="mini">상대 뒤에 있을 수 있음 (교체 예측에 사용 · 누르면 쓰러짐/안 나옴으로 제외)</span>${ids.map(id => {
+      const out = S.oppOut.includes(id);
+      return `<button class="uchip${out ? '' : ' on'}" data-f="oout" data-v="${id}">${nm(id)}${out ? ' (제외)' : ''}</button>`;
+    }).join('')}</div>`;
+  }
+
   function fieldBar() {
     const f = S.field;
     return `<div class="card bt-field">
@@ -155,7 +165,10 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
     const who = k => (k[0] === 'o' ? nm(R.opps[+k[1]].set.id) : k[0] === 'b' ? nm(R.bench[+k[1]].set.id) : nm(R.mine[+k[1]].set.id));
     const lines = [];
     for (const x of c.log) {
-      if (x.k === 'hit' && x.from[0] !== 'o') lines.push(`${who(x.from)}의 ${esc(M.moveKo(x.move))} → ${who(x.to)} ${x.r.minPct.toFixed(0)}~${x.r.maxPct.toFixed(0)}%${x.mult > 1 ? ' (도우미)' : ''}${x.ko ? (x.sure ? ' <b class="good">확정으로 쓰러짐</b>' : ' <b class="good">쓰러질 가능성 큼</b>') : ''}`);
+      if (x.k === 'oppSwitch') lines.push(`상대 ${nm(R.opps[x.j].set.id)} 교체 → ${nm(x.to)}`);
+      if (x.k === 'oppProtect') lines.push(`상대 ${nm(R.opps[x.j].set.id)} 방어`);
+      if (x.k === 'oppBlocked') lines.push(`<span class="mini">${who(x.from)}의 ${esc(M.moveKo(x.move))}는 방어에 막힘</span>`);
+      if (x.k === 'hit' && x.from[0] !== 'o') lines.push(`${who(x.from)}의 ${esc(M.moveKo(x.move))} → ${x.toId ? nm(x.toId) + '(교체해 들어옴)' : who(x.to)} ${rng(x.r)}${x.mult > 1 ? ' (도우미)' : ''}${x.ko ? (x.sure ? ' <b class="good">확정으로 쓰러짐</b>' : ' <b class="good">쓰러질 가능성 큼</b>') : ''}`);
       if (x.k === 'redirected') lines.push(`${who(x.from)}의 공격이 ${who(x.to)}에게 끌려감 (유인)`);
       if (x.k === 'ally') lines.push(`<span class="bad">⚠ ${who(x.from)}의 ${esc(M.moveKo(x.move))}가 우리 편 ${who(x.to)}도 맞춤 ${x.r.minPct.toFixed(0)}~${x.r.maxPct.toFixed(0)}%</span>`);
       if (x.k === 'flinch') lines.push(`${who(x.who)} 풀죽어서 행동 못 함`);
@@ -166,17 +179,36 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
     return lines;
   }
 
+  const rng = r => (r.maxPct <= 0 ? '효과 없음' : `${r.minPct.toFixed(0)}~${r.maxPct.toFixed(0)}%`);
+  // 가장 가능성 높은 경우 말고, 상대가 교체·방어하는 경우의 결과 요약
+  function ifElse(c, R) {
+    const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+    const alts = (c.sims || []).filter(x => !same(x.scen, c.scen) && x.p >= 0.1)
+      .sort((a, b) => b.p - a.p).slice(0, 2);
+    if (!alts.length) return '';
+    return `<p class="mini">${alts.map(x => {
+      const what = x.scen.map((y, j) => (y.type === 'switch' ? `${nm(R.opps[j].set.id)} 교체 → ${nm(R.oppBench[y.k].id)}` : y.type === 'protect' ? `${nm(R.opps[j].set.id)} 방어` : '')).filter(Boolean).join(', ') || '상대가 그대로 공격';
+      const hits = x.log.filter(l => l.k === 'hit' && l.from[0] !== 'o').map(l => `${esc(M.moveKo(l.move))} → ${l.toId ? nm(l.toId) : nm(R.opps[+l.to[1]].set.id)} ${rng(l.r)}`);
+      const blocked = x.log.filter(l => l.k === 'oppBlocked').length;
+      return `만약 ${what} (${Math.round(x.p * 100)}%): ${hits.join(', ') || '공격 없음'}${blocked ? ` · ${blocked}번 방어에 막힘` : ''}`;
+    }).join('<br>')}</p>`;
+  }
+
   function results() {
     const st = toState();
     if (!st.me.some(Boolean) || !st.opp.some(Boolean)) return '<p class="mini">내 포켓몬과 상대 포켓몬을 한 마리 이상 넣으면 추천이 나옵니다.</p>';
     const R = B.advise(st);
     window.__pcBattle = R;
+    const pct = x => `${Math.round(x * 100)}%`;
     const pred = R.oppPred.filter(Boolean).map(p => {
       const o = nm(R.opps[p.j].set.id);
-      if (!p.move) return `<li>${o}: 공격기 없음</li>`;
-      if (p.redirect) return `<li>${o}: <b>${esc(M.moveKo(p.move))}</b> (우리 단일 공격을 끌어감)</li>`;
-      const tgt = p.target === 'spread' ? '우리 전체' : nm(R.mine[p.target].set.id);
-      return `<li>${o}: <b>${esc(M.moveKo(p.move))}</b> → ${tgt}${p.alts && p.alts.length ? ` <span class="mini">(또는 ${p.alts.map(a => esc(M.moveKo(a.move))).join(', ')})</span>` : ''}</li>`;
+      const d = R.defense[p.j];
+      let atk;
+      if (!p.move) atk = '공격기 없음';
+      else if (p.redirect) atk = `<b>${esc(M.moveKo(p.move))}</b> (우리 단일 공격을 끌어감)`;
+      else atk = `<b>${esc(M.moveKo(p.move))}</b> → ${p.target === 'spread' ? '우리 전체' : nm(R.mine[p.target].set.id)}${p.like != null && p.like < 1 ? ` <span class="mini">(이 기술을 가졌을 가능성 ${pct(p.like)})</span>` : ''}${p.alts && p.alts.length ? ` <span class="mini">또는 ${p.alts.map(a => esc(M.moveKo(a.move))).join(', ')}</span>` : ''}`;
+      const def = d && (d.pP > 0 || d.pS > 0) ? `<br><span class="mini">공격 ${pct(d.pA)}${d.pP > 0 ? ` · 방어 ${pct(d.pP)}` : ''}${d.pS > 0 ? ` · <b>교체 ${pct(d.pS)} → ${nm(d.switchTo.id)}</b>` : ''}${d.why.length ? ` (이유: ${d.why.join(', ')})` : ''}</span>` : '';
+      return `<li>${o}: ${atk}${def}</li>`;
     }).join('');
     const order = [];
     R.mine.forEach((m, i) => m && order.push({n: nm(m.set.id), s: R.speeds.me[i], me: true}));
@@ -185,6 +217,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
     const top = R.top.map((c, k) => `<div class="bt-rec${k === 0 ? ' first' : ''}">
       <div class="bt-rec-h"><span class="tag">${k + 1}순위</span>${c.acts.map((a, i) => (R.mine[i] ? `<span>${nm(R.mine[i].set.id)}: ${actText(a, R, c, i)}</span>` : '')).join('')}</div>
       <ul>${logText(c, R).map(l => `<li>${l}</li>`).join('')}${c.notes.map(n => `<li>${esc(n)}</li>`).join('')}</ul>
+      ${ifElse(c, R)}
     </div>`).join('');
     const pctCell = r => (r ? `${r.minPct.toFixed(0)}~${r.maxPct.toFixed(0)}` : '—');
     const grid = R.grid.map((rows, i) => (R.mine[i] ? `<table class="typetbl bt-grid"><thead><tr><th>${nm(R.mine[i].set.id)}</th>${R.opps.map(o => `<th>${o ? nm(o.set.id) : '—'}</th>`).join('')}</tr></thead>
@@ -207,7 +240,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
     $('p-battle').innerHTML = `${fieldBar()}
       <div class="grid bt-sides">
         <div class="card"><h3>내 필드</h3>${mySlot(0)}${mySlot(1)}${benchBox()}</div>
-        <div class="card"><h3>상대 필드</h3>${oppSlot(0)}${oppSlot(1)}</div>
+        <div class="card"><h3>상대 필드</h3>${oppSlot(0)}${oppSlot(1)}${oppBenchBox()}</div>
       </div>
       <div class="card bt-res" id="bt-res">${results()}</div>`;
   }
@@ -272,6 +305,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
     if (!b) return;
     const f = b.dataset.f, k = +b.dataset.k;
     if (f === 'oquick') { S.opp[k] = {...blankSlot(), id: b.dataset.v}; applyEntry(); }
+    if (f === 'oout') { const id = b.dataset.v; S.oppOut = S.oppOut.includes(id) ? S.oppOut.filter(x => x !== id) : [...S.oppOut, id]; }
     if (f === 'oclear') S.opp[k] = blankSlot();
     if (f === 'omove') {
       // 켜진 기술 = 계산에 쓰는 기술 4개. 누르면 빼거나(켜짐) 넣음(꺼짐, 4개 넘으면 마지막 것을 뺌)
@@ -283,6 +317,8 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
     if (f === 'next') {
       S.turn++;
       S.me.forEach(s => { s.fresh = false; }); S.opp.forEach(s => { s.fresh = false; });
+      // 쓰러진 상대(HP 0)는 뒤 목록에서도 제외
+      S.opp.forEach(s => { if (s.id && s.hpPct <= 0 && !S.oppOut.includes(s.id)) S.oppOut.push(s.id); });
       note = '다음 턴: "방금 나옴"을 해제했어요. HP·랭크·필드를 바꾸고, 교체된 포켓몬은 다시 고르세요.';
     }
     if (f === 'reset') { S = blankState(); note = ''; }

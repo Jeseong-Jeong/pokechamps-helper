@@ -59,3 +59,29 @@ test('사이코필드에서는 상대 속이다가 막힘', () => {
     opp: [{id: 'Rillaboom', hpPct: 100, fresh: true}, {id: 'Sneasler', hpPct: 100, fresh: true}]});
   assert.notEqual(r.oppPred[0].move, 'Fake Out');
 });
+
+test('사람처럼 교체 예측: 4배·먼저 확정으로 잡히는 포푸니크는 뒤의 대도각참으로 교체 가능성', () => {
+  const r = B.advise({field: {trickRoom: true}, me: [slot(met), slot(gol)], bench: [],
+    opp: [{id: 'Sneasler', hpPct: 100}, {id: 'Rillaboom', hpPct: 100}], oppBench: ['Kingambit', 'Salamence', 'Incineroar', 'Indeedee-F']});
+  const d = r.defense[0];
+  assert.ok(d.pS > 0.2, JSON.stringify(d));
+  assert.equal(d.switchTo.id, 'Kingambit');
+  assert.ok(d.why.includes('4배 약점'));
+  // 두 상대가 같은 포켓몬으로 동시에 교체하는 경우는 없음
+  for (const sc of r.scenarios) {
+    const sw = sc.s.filter(x => x.type === 'switch').map(x => x.k);
+    assert.equal(new Set(sw).size, sw.length);
+  }
+  const total = r.scenarios.reduce((a, x) => a + x.p, 0);
+  assert.ok(Math.abs(total - 1) < 1e-9);
+});
+
+test('뒤 포켓몬 정보가 없으면 교체 예측 안 함, 방금 나온 상대는 교체 확률 낮음', () => {
+  const r0 = B.advise({field: {trickRoom: true}, me: [slot(met), slot(gol)], bench: [], opp: [{id: 'Sneasler', hpPct: 100}, {id: 'Rillaboom', hpPct: 100}]});
+  assert.equal(r0.defense[0].pS, 0);
+  const r1 = B.advise({field: {trickRoom: true}, me: [slot(met), slot(gol)], bench: [],
+    opp: [{id: 'Sneasler', hpPct: 100, fresh: true}, {id: 'Rillaboom', hpPct: 100}], oppBench: ['Kingambit']});
+  const r2 = B.advise({field: {trickRoom: true}, me: [slot(met), slot(gol)], bench: [],
+    opp: [{id: 'Sneasler', hpPct: 100}, {id: 'Rillaboom', hpPct: 100}], oppBench: ['Kingambit']});
+  assert.ok(r1.defense[0].pS < r2.defense[0].pS);
+});
