@@ -25,7 +25,8 @@ async function getWorker(onProgress) {
   return workerP;
 }
 
-// 흰 글씨 + 보라색 카드 → 검은 글씨 + 흰 바탕 (배경의 연노랑은 채도로 걸러냄)
+// 연보라빛 흰 글씨(≈233,222,255) + 보라색 카드 → 검은 글씨 + 흰 바탕
+// 밝고(휘도 175+) 파랑이 빨강 이상인 픽셀만 글씨로: 바깥 연노랑 배경(파랑<빨강)과 주황 막대는 빠짐
 function preprocess(img) {
   const scale = Math.min(2, 2400 / img.width);
   const w = Math.round(img.width * scale), h = Math.round(img.height * scale);
@@ -36,9 +37,8 @@ function preprocess(img) {
   const d = g.getImageData(0, 0, w, h), p = d.data;
   for (let i = 0; i < p.length; i += 4) {
     const r = p[i], gg = p[i + 1], b = p[i + 2];
-    const mn = Math.min(r, gg, b), mx = Math.max(r, gg, b);
-    const textness = mn - (mx - mn) * 1.5;  // 밝고 무채색일수록 글씨
-    const v = textness > 165 ? 0 : 255;
+    const lum = 0.3 * r + 0.59 * gg + 0.11 * b;
+    const v = lum > 175 && b >= r - 4 && b > 200 ? 0 : 255;
     p[i] = p[i + 1] = p[i + 2] = v;
   }
   g.putImageData(d, 0, 0);

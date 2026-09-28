@@ -18,7 +18,8 @@ export function jamo(s) {
     if (c >= 0xAC00 && c <= 0xD7A3) {
       const i = c - 0xAC00;
       out += CHO[Math.floor(i / 588)] + JUNG[Math.floor((i % 588) / 28)] + (i % 28 ? JONG[i % 28] : '');
-    } else if (/[0-9a-zA-Zㄱ-ㅣ]/.test(ch)) out += ch.toLowerCase();
+    } else if (/[0-9a-zA-Z]/.test(ch)) out += ch.toLowerCase();
+    // 따로 떨어진 자음·모음(ㅁ, ㄴ …)은 기술·특성 아이콘을 잘못 읽은 것 → 무시 (실제 이름에는 없음)
   }
   return out;
 }
@@ -60,7 +61,10 @@ export function createPartyReader(M, itemDict) {
   const byPlain = {};
   for (const e of D.entries) if (!e.mega) (byPlain[plain(e.ko)] = byPlain[plain(e.ko)] || []).push(e.id);
   const findMon = makeDict(Object.keys(byPlain).map(k => [k, k]));
-  const findMove = makeDict(D.moves.map(m => [m.ko || m.en, m.en]));
+  // 챔피언스 게임 표기가 도감 데이터(PokeAPI)와 다른 이름
+  const GAME_NAMES = {'Fake Out': ['속이기']};
+  const movePairs = m => [[m.ko || m.en, m.en], ...(GAME_NAMES[m.en] || []).map(k => [k, m.en])];
+  const findMove = makeDict(D.moves.flatMap(movePairs));
   const abilities = new Map();
   for (const e of D.entries) for (const a of e.ab) abilities.set(a.ko || a.en, a.en);
   const findAbility = makeDict([...abilities]);
@@ -69,7 +73,7 @@ export function createPartyReader(M, itemDict) {
   // ---------------- 단어 → 구절 ----------------
   // 같은 줄에서 간격이 넓으면 다른 구절 (이름 줄과 첫 기술이 같은 높이에 있음)
   function phrases(words) {
-    let ws = words.filter(w => w.text && /[가-힣0-9a-zA-Z]/.test(w.text)).map(w => ({...w, cy: (w.y0 + w.y1) / 2, h: w.y1 - w.y0}));
+    let ws = words.filter(w => w.text && /[가-힣0-9a-zA-Zㄱ-ㅣ]/.test(w.text))  /* ㅇ은 숫자 0으로 읽히는 경우가 있어 남김 */.map(w => ({...w, cy: (w.y0 + w.y1) / 2, h: w.y1 - w.y0}));
     if (!ws.length) return [];
     // 기준 글자 높이 = 중앙값. 테두리·아이콘을 글자로 잘못 읽은 거대한 상자(확신도 낮음)는 버림
     const med = ws.map(w => w.h).sort((a, b) => a - b)[Math.floor(ws.length / 2)];
@@ -91,7 +95,17 @@ export function createPartyReader(M, itemDict) {
         else { cur = {text: w.text, x0: w.x0, x1: w.x1, y0: l.cy - med / 2, y1: l.cy + med / 2, cy: l.cy, parts: [w]}; out.push(cur); }
       }
     }
-    return out.flatMap(refine);
+    return out.map(trimJunk).flatMap(refine);
+  }
+
+  // 구절 앞뒤에 붙은 쓰레기 조각(한글 음절도 숫자도 아닌 것: ㅎ, U, @ …)을 떼어냄 → 시작 위치가 바로잡혀 왼쪽·오른쪽 칸 판단이 맞음
+  const junkPart = w => !/[가-힣]/.test(w.text) && !/^\d+[_.]?$/.test(w.text);
+  function trimJunk(p) {
+    let P = p.parts;
+    while (P.length > 1 && junkPart(P[0])) P = P.slice(1);
+    while (P.length > 1 && junkPart(P[P.length - 1])) P = P.slice(0, -1);
+    if (P === p.parts) return p;
+    return {...p, text: P.map(w => w.text).join(''), x0: P[0].x0, x1: P[P.length - 1].x1, parts: P};
   }
 
   // 아이콘(캐릭터·성별·타입)을 글자로 잘못 읽어 이름·기술이 쓰레기 글자와 한 구절로 붙는 경우
@@ -118,7 +132,7 @@ export function createPartyReader(M, itemDict) {
     if (!best || best.score < 0.75 || best.score < whole + 0.1) return [p];
     const mk = parts => ({...p, text: parts.map(w => w.text).join(''), x0: parts[0].x0, x1: parts[parts.length - 1].x1, parts});
     const out = [];
-    if (best.i > 0) out.push(mk(P.slice(0, best.i)));
+    if (best.i > 0) out.push(...refine(mk(P.slice(0, best.i))));  // 앞쪽에도 이름이 붙어 있을 수 있음
     out.push(mk(P.slice(best.i, best.j + 1)));
     if (best.j < P.length - 1) out.push(...refine(mk(P.slice(best.j + 1))));
     return out;
@@ -139,7 +153,7 @@ export function createPartyReader(M, itemDict) {
       if (!m || m.score < 0.7) continue;
       const other = Math.max(findMove(p.text)?.score || 0, findItem(p.text)?.score || 0, findAbility(p.text)?.score || 0);
       if (other >= m.score) continue;
-      heads.push({...p, mon: m, col: p.x0 < mid ? 0 : 1});
+      heads.push({...p, src: p, mon: m, col: p.x0 < mid ? 0 : 1});
     }
     // 열마다 이름 후보가 3개보다 많으면: 왼쪽 끝이 나란하고 간격이 일정하고 점수가 높은 3개
     const pickCol = list => {
@@ -181,7 +195,7 @@ export function createPartyReader(M, itemDict) {
         const top = h.y0 - (h.y1 - h.y0) * 0.3;
         const bottom = next ? next.cy - hh * 0.8 : Infinity;
         const inCol = p => (h.col === 0 ? p.x0 < mid : p.x0 >= mid);
-        const body = ps.filter(p => p !== h && inCol(p) && p.cy > top && p.cy < bottom);
+        const body = ps.filter(p => p !== h.src && inCol(p) && p.cy > top && p.cy < bottom);
         out.push({slot: rowIdx[ri] * 2 + h.col, head: h, body});
       }
     });
@@ -202,10 +216,11 @@ export function createPartyReader(M, itemDict) {
       for (const p of list) { const m = find(p.text); if (m && m.score >= min && (!best || m.score > best.score)) best = {...m, raw: p.text, p}; }
       return best;
     };
-    const ability = pick(L.slice(0, 2), findAbility, 0.5);
+    const ability = pick(L.slice(0, 3), findAbility, 0.5);
     const item = pick(L.filter(p => !ability || p !== ability.p), findItem, 0.5);
     const moves = R.map(p => ({raw: p.text, m: findMove(p.text)})).filter(x => x.m && x.m.score >= 0.5).slice(0, 4);
-    return {ability, item, moves: moves.map(x => ({...x.m, raw: x.raw}))};
+    // leftRaw/rightRaw: 포켓몬이 정해진 뒤 그 포켓몬의 특성·배울 수 있는 기술 안에서 다시 비교
+    return {ability, item, moves: moves.map(x => ({...x.m, raw: x.raw})), leftRaw: L.map(p => p.text), rightRaw: R.map(p => p.text)};
   }
 
   // ---------------- 스테이터스 화면 ----------------
@@ -337,10 +352,27 @@ export function createPartyReader(M, itemDict) {
     if (s.name.score < 0.85) warn.push('이름');
     let item = s.item ? s.item.value : '';
     let ability = s.ability && e.ab.some(a => a.en === s.ability.value) ? s.ability.value : null;
-    if (s.ability && !ability) warn.push('특성');
     const learn = new Set(M.learnset(e).map(m => m.en));
-    const moves = (s.moves || []).map(m => m.value).filter(n => learn.has(n));
-    if ((s.moves || []).length && moves.length < (s.moves || []).length) warn.push('기술');
+    let moves = (s.moves || []).map(m => m.value).filter(n => learn.has(n));
+    let expectMoves = (s.moves || []).length;
+    if (s.leftRaw) {
+      // 이 포켓몬의 특성 중에서
+      const abDict = makeDict(e.ab.map(a => [a.ko || a.en, a.en]));
+      const abBest = s.leftRaw.slice(0, 3).map(t => abDict(t)).filter(m => m && m.score >= 0.5).sort((a, b) => b.score - a.score)[0];
+      if (abBest) ability = abBest.value;
+      // 이 포켓몬이 배울 수 있는 기술 중에서 (위에서부터 4개, 중복 없이)
+      const mvDict = makeDict(M.learnset(e).flatMap(movePairs));
+      const got = [];
+      for (const t of s.rightRaw) {
+        const m = mvDict(t);
+        if (m && m.score >= 0.55 && !got.includes(m.value)) got.push(m.value);
+        if (got.length >= 4) break;
+      }
+      expectMoves = Math.min(4, s.rightRaw.filter(t => jamo(t).length >= 3).length);
+      if (got.length >= moves.length) moves = got;
+    }
+    if (s.ability && !ability) warn.push('특성');
+    if (expectMoves && moves.length < Math.min(4, expectMoves)) warn.push('기술');
     if (s.statTried && !(solved && solved.sure)) warn.push('능력치');  // 스테이터스 화면인데 확실히 못 읽음
     const base = M.defaultSet(pickId);
     // 메가스톤을 들고 있으면 메가 형태로 (특성은 메가 특성)
@@ -359,5 +391,5 @@ export function createPartyReader(M, itemDict) {
     return {set, baseId: pickId, found: {name: s.name, ability: !!s.ability, item: !!s.item, moves: moves.length, stats: !!solved}, warn};
   }
 
-  return {read, readSlots, phrases, cards, solve, findMon, findMove, findItem, findAbility, byPlain};
+  return {read, readSlots, phrases, cards, solve, readStatCard, findMon, findMove, findItem, findAbility, byPlain};
 }

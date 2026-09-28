@@ -173,3 +173,29 @@ test('실수치 역산: 무보정 성격', () => {
   assert.equal(r.nature, 'Serious');
   assert.equal(r.total, 0);
 });
+
+test('실제 게임 스크린샷 두 장(능력·스테이터스)의 OCR 결과 → 6마리 세트 전부 정답, 경고 없음', () => {
+  // tests/fixtures/real_shots.json: 사용자가 준 실제 팀 화면을 브라우저 Tesseract로 읽은 단어 목록 (맨 위 플레이어 이름 줄 제외)
+  const shots = JSON.parse(readFileSync(new URL('./fixtures/real_shots.json', import.meta.url), 'utf8'));
+  const out = R.readSlots(shots);
+  const want = [
+    ['Oranguru', 'Oranguru', 'Mental Herb', 'Inner Focus', ['Instruct', 'Trick Room', 'Rain Dance', 'Psychic'], 'Bold', [21, 0, 30, 0, 0, 15]],
+    ['Incineroar', 'Incineroar', 'Life Orb', 'Intimidate', ['Throat Chop', 'Flare Blitz', 'Fake Out', 'Parting Shot'], 'Adamant', [32, 32, 2, 0, 0, 0]],
+    ['Golisopod', 'Mega Golisopod', 'Golisopite', null, ['First Impression', 'Leech Life', 'Liquidation', 'Swords Dance'], 'Brave', [32, 32, 0, 0, 2, 0]],
+    ['Pelipper', 'Pelipper', 'Focus Sash', 'Drizzle', ['Hurricane', 'Wide Guard', 'U-turn', 'Weather Ball'], 'Modest', [2, 0, 0, 32, 0, 32]],
+    ['Archaludon', 'Archaludon', 'Leftovers', 'Stamina', ['Electro Shot', 'Flash Cannon', 'Dragon Pulse', 'Protect'], 'Quiet', [32, 0, 0, 2, 32, 0]],
+    ['Metagross', 'Mega Metagross', 'Metagrossite', null, ['Steel Roller', 'Bullet Punch', 'Ice Punch', 'Psychic Fangs'], 'Adamant', [32, 32, 0, 0, 2, 0]],
+  ];
+  want.forEach(([base, id, item, ability, moves, nature, sp], i) => {
+    const x = out[i];
+    assert.ok(x, `${i + 1}번 칸`);
+    assert.equal(x.baseId, base);
+    assert.equal(x.set.id, id);
+    assert.equal(x.set.item, item);
+    if (ability) assert.equal(x.set.ability, ability);
+    assert.deepEqual(x.set.moves, moves, base);
+    assert.equal(x.set.nature, nature, base);
+    assert.deepEqual(['hp', 'atk', 'def', 'spa', 'spd', 'spe'].map(k => x.set.sp[k]), sp, base);
+    assert.deepEqual(x.warn, [], base + ' 경고: ' + x.warn.join(','));
+  });
+});
