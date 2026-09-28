@@ -4,6 +4,7 @@ import {createTeamAdvisor} from './team.mjs';
 import {initTeam} from './ui-team.mjs';
 import {createPickAdvisor} from './pick.mjs';
 import {initPick} from './ui-pick.mjs';
+import {initImport} from './ui-import.mjs';
 
 const DATA = window.__DATA__;
 const M = createModel(DATA);
@@ -257,6 +258,11 @@ const teamUI = initTeam({
   },
   onChange: () => pickUI && pickUI.render(),
 });
+const importUI = initImport({
+  M, itemDict: DATA.itemdict, esc, ty, $, findMon, natureko: NK,
+  onImport: sets => { teamUI.importSets(sets); $('team-msg').textContent = `스크린샷에서 ${sets.length}마리를 불러왔습니다.`; },
+});
+$('import-open').addEventListener('click', () => importUI.open());
 pickUI = initPick({
   M, T, P, ty, esc, $, findMon,
   getMySets: () => teamUI.getSets(),

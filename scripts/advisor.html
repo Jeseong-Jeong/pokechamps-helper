@@ -42,7 +42,7 @@ nav.tabs button{appearance:none;border:0;background:none;font:600 15px var(--f-b
 nav.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
 nav.tabs button .soon{font-size:11px;font-weight:500;color:var(--muted);margin-left:4px}
 button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.panel[hidden]{display:none}
+[hidden]{display:none!important}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
 .mini{font-size:12px;color:var(--muted)}
 .num{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
@@ -197,6 +197,25 @@ label.chk input{margin:0}
 .mxtbl td.g1{background:color-mix(in srgb,var(--good) 14%,transparent)}
 .mxtbl td.b1{background:color-mix(in srgb,var(--bad) 12%,transparent)}
 .mxtbl td.b2{background:color-mix(in srgb,var(--bad) 28%,transparent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+:root[data-theme="dark"] .btn.primary{color:#0E121A}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.primary{color:#0E121A}}
+.import{margin-bottom:12px;display:flex;flex-direction:column;gap:8px}
+.import h3{margin:0;font-size:15px}
+.import.drag{outline:2px dashed var(--accent);outline-offset:-6px}
+.filebox{flex-direction:row;align-items:center;gap:10px;border:1px dashed var(--line);border-radius:8px;padding:12px;color:var(--ink);font-size:13px;cursor:pointer}
+.filebox input{max-width:220px}
+.imp-row{border-top:1px dashed var(--line);padding:10px 0;display:flex;flex-direction:column;gap:6px}
+.imp-h{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.imp-h .pick{font-size:15px;padding:5px 8px;min-width:200px;flex:0 1 260px}
+.imp-g{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.imp-mv{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+@media (max-width:640px){.imp-g{grid-template-columns:1fr 1fr}.imp-mv{grid-template-columns:1fr 1fr}}
+.imp-sp{display:flex;flex-wrap:wrap;gap:6px}
+.imp-sp label{flex-direction:row;align-items:center;gap:4px}
+.imp-sp input{width:56px;padding:3px 5px}
+.warn,.imp-mv.warn select{background:var(--gold-soft);border-color:var(--gold)}
+.imp-actions{display:flex;gap:8px;padding-top:8px}
 .todo{padding:28px 18px;text-align:center;color:var(--muted)}
 .todo b{display:block;color:var(--ink);font-size:16px;margin-bottom:6px}
 footer{margin-top:28px;color:var(--muted);font-size:12.5px;line-height:1.7}
@@ -240,9 +259,18 @@ footer a{color:var(--accent)}
       <b>내 팀</b><span class="mini num" id="team-count"></span>
       <span class="mini" id="team-msg" role="status"></span>
       <span class="sp"></span>
+      <button class="btn primary" id="import-open">📷 스크린샷으로 불러오기</button>
       <button class="btn" data-k="auto">추천으로 6마리 채우기</button>
       <button class="btn" data-k="clear">비우기</button>
     </div>
+    <section class="card import" id="import-panel" hidden>
+      <h3>스크린샷으로 파티 불러오기</h3>
+      <p class="mini">게임의 <b>팀 화면</b>을 캡처해서 올리세요. <b>능력</b> 탭(특성·도구·기술)과 <b>스테이터스</b> 탭(성격·SP) 두 장을 같이 올리면 세트가 그대로 들어갑니다. 한 장만 올려도 됩니다.
+        이미지는 이 브라우저 안에서만 읽고 어디에도 보내지 않습니다. PC에서는 캡처 후 <b>Ctrl+V</b>로 붙여넣어도 됩니다.</p>
+      <label class="filebox"><input type="file" id="imp-file" accept="image/*" multiple> <span>이미지 고르기 (최대 2장) 또는 여기로 끌어다 놓기</span></label>
+      <p class="mini" id="imp-status" role="status"></p>
+      <div id="imp-review"></div>
+    </section>
     <div class="slots" id="team-slots"></div>
     <div class="team-grid">
       <section class="card">

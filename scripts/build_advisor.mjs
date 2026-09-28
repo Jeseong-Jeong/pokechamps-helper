@@ -4,7 +4,7 @@ import {readFileSync, writeFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import path from 'node:path';
 import {build} from 'esbuild';
-import {attachCalcNames} from './calc_names.mjs';
+import {attachCalcNames, buildItemDict} from './calc_names.mjs';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const rel = p => path.join(ROOT, p);
@@ -21,6 +21,7 @@ const data = {
   moves: D.moves.map(m => ({en: m.en, ko: m.ko, t: m.t, c: m.c, pw: m.pw, acc: m.acc})),
   usage: D.usage.map(u => ({rank: u.rank, id: u.id, pct: u.pct, win: u.win, mv: u.mv, it: u.it, ab: u.ab, tm: u.tm})),
   itemko: D.itemko, typeko: D.typeko, natureko: S.ko.nature, meta: D.meta,
+  itemdict: buildItemDict(D, S),  // 스크린샷 불러오기: 도구 한글명 → 영문명
 };
 
 const out = await build({

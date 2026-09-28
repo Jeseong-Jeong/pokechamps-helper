@@ -15,6 +15,18 @@ export function calcName(e) {
   return null;
 }
 
+// 도구 한글명 → 영문명 (스크린샷 불러오기용). 계산 라이브러리가 아는 도구만
+export function buildItemDict(D, S) {
+  const out = {};
+  for (const it of GEN.items) {
+    const en = it.name;
+    const ko = D.itemko[en] || S.ko.item[en] || S.ko.item[en.replace(/'/g, '’')];
+    if (ko) out[ko] = en;
+  }
+  for (const [en, ko] of Object.entries(D.itemko)) if (ko) out[ko] = en;
+  return out;
+}
+
 export function attachCalcNames(D) {
   const missing = [];
   for (const e of D.entries) {
