@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>포챔스 추천 봇 · 싱글</title>
+<title>싱글배틀 · 포챔스 M-C</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14.5' fill='%23fff' stroke='%23151A25' stroke-width='2'/%3E%3Cpath d='M1.5 16a14.5 14.5 0 0 1 29 0z' fill='%23E3350D' stroke='%23151A25' stroke-width='2'/%3E%3Cpath d='M1.5 16h29' stroke='%23151A25' stroke-width='3'/%3E%3Ccircle cx='16' cy='16' r='4.6' fill='%23fff' stroke='%23151A25' stroke-width='2.4'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -33,15 +34,21 @@
 *{box-sizing:border-box}
 body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--f-body);font-size:14px;line-height:1.5;padding:0 16px 48px}
 .wrap{max-width:1180px;margin:0 auto}
-header.top{padding:24px 0 14px;display:flex;flex-wrap:wrap;gap:10px 24px;align-items:flex-end;justify-content:space-between}
-.toplinks{display:flex;gap:8px;flex-wrap:wrap}
+/* ---- 공통 머리글 (index.html · advisor.html · template.html 같은 내용) ---- */
+body{margin:0}
+header.top{padding:24px 0 14px;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:flex-end;justify-content:space-between}
+header.top h1{font-family:var(--f-display);font-weight:400;font-size:clamp(28px,4.6vw,40px);line-height:1.05;margin:0;letter-spacing:.01em}
+header.top h1 small{display:block;font-family:var(--f-body);font-size:13px;font-weight:500;color:var(--muted);letter-spacing:.02em;margin-top:8px}
+.sitenav{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.sitenav .brand{display:inline-flex;align-items:center;gap:6px;font:400 16px var(--f-display);color:var(--ink);text-decoration:none;margin-right:6px}
+.sitenav .brand svg{width:22px;height:22px;flex:none}
 .pillbtn{display:inline-flex;align-items:center;font:600 13px var(--f-body);padding:7px 14px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--ink);text-decoration:none}
 .pillbtn:hover{border-color:var(--accent);color:var(--accent)}
 .pillbtn.on{background:var(--accent);border-color:var(--accent);color:#fff}
 .pillbtn.on:hover{color:#fff;filter:brightness(1.08)}
 :root[data-theme="dark"] .pillbtn.on{color:#0E121A}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .pillbtn.on{color:#0E121A}}
-.pillbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.pillbtn:focus-visible,.sitenav .brand:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 h1{font-family:var(--f-display);font-weight:400;font-size:clamp(28px,4.6vw,40px);line-height:1.05;margin:0}
 h1 small{display:block;font-family:var(--f-body);font-size:13px;font-weight:500;color:var(--muted);margin-top:8px}
 header a{color:var(--accent);font-size:13px}
@@ -459,8 +466,8 @@ button.info[aria-expanded="true"]{background:var(--accent);border-color:var(--ac
 <body>
 <div class="wrap">
   <header class="top">
-    <h1>포챔스 추천 봇<small>레귤레이션 M-C · 싱글배틀 (6마리 중 3마리 선출) · 추천만 하고 조작은 직접</small></h1>
-    <nav class="toplinks"><a class="pillbtn" href="index.html">← 처음으로</a><a class="pillbtn on" href="pokechamps-mc.html#singles">도감 보기 →</a></nav>
+    <h1>싱글배틀<small>레귤레이션 M-C · 1 대 1, 6마리 중 3마리 선출 · 추천만 하고 조작은 직접</small></h1>
+    <nav class="sitenav" aria-label="페이지"><a class="brand" href="index.html"><svg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14.5' fill='#fff' stroke='#151A25' stroke-width='2'/><path d='M1.5 16a14.5 14.5 0 0 1 29 0z' fill='#E3350D' stroke='#151A25' stroke-width='2'/><path d='M1.5 16h29' stroke='#151A25' stroke-width='3'/><circle cx='16' cy='16' r='4.6' fill='#fff' stroke='#151A25' stroke-width='2.4'/></svg>포챔스 M-C</a><a class="pillbtn on" aria-current="page" href="singles.html">싱글배틀</a><a class="pillbtn" href="advisor.html">더블배틀</a><a class="pillbtn" href="pokechamps-mc.html#singles">도감</a></nav>
   </header>
 
   <nav class="tabs" role="tablist">
