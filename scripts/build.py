@@ -315,7 +315,13 @@ C3 = [('Rillaboom / Salamence-Mega / Sneasler', '14.2%'), ('Incineroar / Rillabo
       ('Kingambit / Rillaboom / Salamence-Mega', '8.8%')]  # Pikalytics 3-core list, copied by hand
 cores = {'c3': [[' · '.join(kon(x) for x in a.split(' / ')), b] for a, b in C3]}
 tpl = open(os.path.join(HERE, 'template.html'), encoding='utf-8').read()
-html = tpl.replace('/*DATA*/null', json.dumps(out, ensure_ascii=False, separators=(',', ':'))).replace('/*CORES*/null', json.dumps(cores, ensure_ascii=False))
+# 싱글 사용률 (scripts/build_singles.mjs 가 만든 파일이 있으면 도감의 '싱글' 탭에 넣음)
+sgp = os.path.join(ROOT, 'data', 'pokechamps_mc_singles.json')
+sg = json.load(open(sgp, encoding='utf-8')) if os.path.exists(sgp) else None
+if sg:
+    sg = dict(meta=sg['meta'], usage=[{k: u[k] for k in ('rank', 'name', 'id', 'pct', 'win', 'games', 'pick', 'lead', 'mega', 'mv', 'it', 'ab', 'tm', 'sp', 'cc')} for u in sg['usage']])
+html = (tpl.replace('/*DATA*/null', json.dumps(out, ensure_ascii=False, separators=(',', ':'))).replace('/*CORES*/null', json.dumps(cores, ensure_ascii=False))
+        .replace('/*SINGLES*/null', json.dumps(sg, ensure_ascii=False, separators=(',', ':'))))
 with open(os.path.join(ROOT, 'site', 'pokechamps-mc.html'), 'w', encoding='utf-8', newline='\n') as f:
     f.write(html)
 

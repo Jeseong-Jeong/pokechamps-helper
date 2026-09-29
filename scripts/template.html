@@ -1,3 +1,7 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>포챔스 M-C 도감</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -117,6 +121,10 @@ footer a{color:var(--accent)}
 .note{font-size:12.5px;color:var(--muted);margin:0 0 12px}
 @media (max-width:640px){ .hide-sm{display:none} td,th{padding:7px 7px} }
 @media (prefers-reduced-motion: reduce){*{transition:none!important}}
+.modebar{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:4px 0 14px}
+.modebar button{appearance:none;border:0;background:var(--surface);color:var(--muted);font:600 15px var(--f-body);padding:8px 22px;cursor:pointer}
+.modebar button[aria-selected="true"]{background:var(--accent);color:#fff}
+.modebar button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 </style>
 
 <div class="wrap">
@@ -124,6 +132,10 @@ footer a{color:var(--accent)}
     <h1>포챔스 M-C 도감<small>Pokémon Champions · 참전 포켓몬 / 종족값 / 기술 / 사용률</small></h1>
     <div class="reg" id="reg"></div>
   </header>
+  <div class="modebar" role="tablist" aria-label="배틀 방식">
+    <button role="tab" data-mode="s" aria-selected="false">싱글</button>
+    <button role="tab" data-mode="d" aria-selected="true">더블</button>
+  </div>
 
   <nav class="tabs" role="tablist">
     <button role="tab" id="t-usage" aria-selected="true" data-p="usage">사용률 순위</button>
@@ -133,7 +145,7 @@ footer a{color:var(--accent)}
 
   <div class="panel" id="p-usage">
     <div class="summary" id="usage-summary"></div>
-    <p class="note">Pikalytics 기준 Reg M-C 더블(VGC) 통계, 레이팅 1760+ 대전 표본. 포켓몬 이름은 메가진화 전 모습 기준으로 합산됩니다(메가 사용 여부는 도구 채용률의 메가스톤으로 확인). 행을 누르면 상세 정보가 열립니다.</p>
+    <p class="note" id="u-note"></p>
     <div class="controls">
       <input type="search" id="u-q" placeholder="포켓몬 이름 검색 (한글/영문)">
       <select id="u-type" aria-label="타입"></select>
@@ -192,7 +204,10 @@ const DATA = /*DATA*/null;
 const CORES = /*CORES*/null;
 const TYC = {normal:'#9A9A7C',fire:'#E0662E',water:'#4A7FE0',grass:'#4E9F3D',electric:'#E9C21A',ice:'#6CC3C4',fighting:'#B8322A',poison:'#9243A0',ground:'#C9A24A',flying:'#8C8AE8',psychic:'#E5487A',bug:'#95A11E',rock:'#AD9437',ghost:'#6450A0',dragon:'#5A3CE8',dark:'#5E4A3E',steel:'#8E8EAA',fairy:'#D77FB0'};
 const LIGHT = new Set(['electric','ice','ground','normal','steel','fairy','bug','rock','flying']);
-const TK = DATA.typeko, E = DATA.entries, MV = DATA.moves, U = DATA.usage;
+const SG = /*SINGLES*/null;  // 싱글 사용률 (쇼다운 M-C 싱글 대전 기록 + Smogon 통계)
+const TK = DATA.typeko, E = DATA.entries, MV = DATA.moves, U_D = DATA.usage;
+let U = U_D, MODE = 'd';
+const useRank = e => { if (!e) return null; const u = U.find(x => x.id === (e.mega ? e.parent : e.id)); return u ? u.rank : null; };
 const byId = Object.fromEntries(E.map(e=>[e.id,e]));
 const SL = ['HP','공격','방어','특공','특방','스피드'];
 const esc = s => String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -202,7 +217,7 @@ const itemName = n => DATA.itemko[n] || n;
 const $ = id => document.getElementById(id);
 
 // header pills
-$('reg').innerHTML = `<span class="pill on">레귤레이션 <b>M-C</b> 9.9–12.2</span><span class="pill">시즌 <b>M-6</b> 9.9–10.7</span><span class="pill">수집 <b>${DATA.meta.fetched.slice(0,10)}</b></span><a class="pill" href="advisor.html" style="text-decoration:none"><b>추천 봇 →</b></a>`;
+$('reg').innerHTML = `<span class="pill on">레귤레이션 <b>M-C</b> 9.9–12.2</span><span class="pill">시즌 <b>M-6</b> 9.9–10.7</span><span class="pill">수집 <b>${DATA.meta.fetched.slice(0,10)}</b></span><a class="pill" href="index.html" style="text-decoration:none"><b>← 처음으로</b></a>`;
 
 // type selects
 for (const id of ['u-type','d-type','m-type']) {
@@ -218,13 +233,29 @@ function showTab(p){
 }
 try{const t=localStorage.getItem('pc-tab'); if(t) showTab(t)}catch(e){}
 
+// 싱글 | 더블
+const NOTE = {
+  d: 'Pikalytics 기준 Reg M-C 더블(VGC) 통계, 레이팅 1760+ 대전 표본. 포켓몬 이름은 메가진화 전 모습 기준으로 합산됩니다(메가 사용 여부는 도구 채용률의 메가스톤으로 확인). 행을 누르면 상세 정보가 열립니다.',
+  s: SG ? `쇼다운 Reg M-C 싱글(BSS, 6마리 중 3마리) 공개 대전 ${SG.meta.battles.toLocaleString()}판(${SG.meta.since}~)을 직접 모은 통계입니다. 똑같은 파티가 반복되면 한 번처럼 덜 세고, 레이팅이 높은 대전을 조금 더 믿습니다. 사용률 = 파티에 넣은 비율, 선출률 = 파티에 있을 때 실제로 데려온 비율. 능력치 배분은 Smogon 통계(${SG.meta.smogon ? SG.meta.smogon.month + ' ' + SG.meta.smogon.format : '-'})입니다.` : '싱글 데이터가 아직 없습니다.',
+};
+function setMode(m){
+  if (m === 's' && !SG) m = 'd';
+  MODE = m; U = m === 's' ? SG.usage : U_D;
+  document.querySelectorAll('.modebar button').forEach(b=>b.setAttribute('aria-selected', b.dataset.mode===m));
+  $('u-note').textContent = NOTE[m];
+  try{localStorage.setItem('pc-dexmode',m)}catch(e){}
+  if (location.hash !== (m === 's' ? '#singles' : '#doubles')) history.replaceState(null, '', m === 's' ? '#singles' : '#doubles');
+  renderSummary(); renderUsage(); renderDex();
+}
+document.querySelectorAll('.modebar button').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.mode)));
+
 // ---------- usage ----------
 function renderSummary(){
   const top = U.slice(0,3);
   const megaTop = U.map(u=>({u, st:(u.it||[]).find(([n])=>/ite( [XYZ])?$|ite$/.test(n) && !/^(White|Light|Eviolite)/.test(n))})).filter(x=>x.st && x.st[1]>=40).slice(0,6);
   $('usage-summary').innerHTML =
    `<div class="card"><h3>사용률 TOP 3</h3>${top.map(u=>`<div class="core"><span>${u.rank}. ${esc(nameOf(u))}</span><span>${u.pct.toFixed(2)}%</span></div>`).join('')}</div>`+
-   (CORES? `<div class="card"><h3>자주 쓰이는 3마리 조합</h3>${CORES.c3.map(c=>`<div class="core"><span>${esc(c[0])}</span><span>${c[1]}</span></div>`).join('')}</div>`:'')+
+   (CORES && MODE==='d'? `<div class="card"><h3>자주 쓰이는 3마리 조합</h3>${CORES.c3.map(c=>`<div class="core"><span>${esc(c[0])}</span><span>${c[1]}</span></div>`).join('')}</div>`:'')+
    `<div class="card"><h3>메가진화로 주로 쓰이는 포켓몬</h3>${megaTop.map(({u,st})=>`<div class="core"><span>${esc(nameOf(u))} · ${esc(itemName(st[0]))}</span><span>${st[1].toFixed(0)}%</span></div>`).join('')}</div>`;
 }
 function nameOf(u){ const e=byId[u.id]; return e? e.ko : u.name; }
@@ -261,11 +292,11 @@ function renderDex(){
     if(q && !(e.ko+' '+e.en+' '+e.id+' '+String(e.no).padStart(4,'0')).toLowerCase().includes(q)) return false;
     return true;});
   if(s==='bst') rows.sort((a,b)=>b.bst-a.bst);
-  else if(s==='use') rows.sort((a,b)=>(a.use||9999)-(b.use||9999));
+  else if(s==='use') rows.sort((a,b)=>(useRank(a)||9999)-(useRank(b)||9999));
   else if(s!=='no') rows.sort((a,b)=>b.st[+s]-a.st[+s]);
   $('d-count').textContent = `${rows.length}개 항목`;
   $('d-body').innerHTML = rows.map(e=>`<tr tabindex="0" data-id="${esc(e.id)}"><td class="num">${String(e.no).padStart(4,'0')}</td>
-    <td class="nm"><b>${esc(e.ko)}</b>${e.mega?'<span class="badge b-mega">메가</span>':''}${e.form&&!e.mega?`<span class="badge b-form">${e.form}</span>`:''}${e.new?'<span class="badge b-new">M-C 신규</span>':''}${e.use?`<span class="badge b-form">${e.use}위</span>`:''}<span class="en">${esc(e.en)}</span></td>
+    <td class="nm"><b>${esc(e.ko)}</b>${e.mega?'<span class="badge b-mega">메가</span>':''}${e.form&&!e.mega?`<span class="badge b-form">${e.form}</span>`:''}${e.new?'<span class="badge b-new">M-C 신규</span>':''}${useRank(e)?`<span class="badge b-form">${useRank(e)}위</span>`:''}<span class="en">${esc(e.en)}</span></td>
     <td>${e.ty.map(ty).join('')}</td>${e.st.map(v=>`<td class="num">${v}</td>`).join('')}<td class="num"><b>${e.bst}</b></td>
     <td class="hide-sm mini">${e.ab.map(a=>esc(a.ko||a.en)+(a.note?`<span class="st-h"> (${esc(a.note)})</span>`:'')).join(' · ')}</td></tr>`).join('');
 }
@@ -321,11 +352,15 @@ function openMon(id, uname){
 }
 function bars(list, fmt){ return `<div class="list2">${list.map(([n,p,x])=>`<div class="row"><span class="l">${fmt(n,x)}</span><span class="bar"><i style="width:${Math.min(100,p)}%"></i></span><span class="r">${p.toFixed(1)}%</span></div>`).join('')}</div>`; }
 function usageHtml(u){
-  let h = `<section><h4>M-C 사용 데이터 (Pikalytics)</h4><div class="kv"><div><b>${u.pct.toFixed(2)}%</b><span>사용률 · ${u.rank}위</span></div><div><b>${u.win.toFixed(1)}%</b><span>승률</span></div><div><b>${u.games.toLocaleString()}</b><span>표본 게임 수</span></div></div></section>`;
+  let h = `<section><h4>M-C ${MODE==='s'?'싱글':'더블'} 사용 데이터 (${MODE==='s'?'쇼다운 대전 기록':'Pikalytics'})</h4><div class="kv"><div><b>${u.pct.toFixed(2)}%</b><span>사용률 · ${u.rank}위</span></div><div><b>${u.win.toFixed(1)}%</b><span>승률</span></div><div><b>${u.games.toLocaleString()}</b><span>표본 ${MODE==='s'?'파티':'게임'} 수</span></div></div>
+    ${u.pick!=null?`<div class="kv" style="margin-top:8px"><div><b>${u.pick.toFixed(0)}%</b><span>선출률 (데려온 비율)</span></div><div><b>${u.lead.toFixed(0)}%</b><span>선봉률 (데려왔을 때)</span></div><div><b>${(u.mega||0).toFixed(0)}%</b><span>메가진화 (데려왔을 때)</span></div></div>`:''}</section>`;
+  const NK = {Adamant:'고집',Jolly:'명랑',Modest:'조심',Timid:'겁쟁이',Bold:'대담',Impish:'장난꾸러기',Calm:'차분',Careful:'신중',Brave:'용감',Quiet:'냉정',Relaxed:'무사태평',Sassy:'건방',Lonely:'외로움',Naughty:'개구쟁이',Hasty:'성급',Naive:'천진난만',Mild:'의젓',Rash:'덜렁',Gentle:'얌전',Lax:'촐랑'};
+  if(u.sp && u.sp.length) h += `<section><h4>능력치 배분 (SP)</h4>${bars(u.sp.map(([n,v,p])=>[`${NK[n]||n} · H${v.hp} A${v.atk} B${v.def} C${v.spa} D${v.spd} S${v.spe}`,p]),(n)=>esc(n))}</section>`;
   if(u.mv.length) h += `<section><h4>채용 기술</h4>${bars(u.mv,(m)=>typeof m==='number'?`<button class="link" data-mv="${m}">${esc(mvName(m))}</button>`:esc(m))}</section>`;
   if(u.it.length) h += `<section><h4>지닌 도구</h4>${bars(u.it,(n)=>esc(itemName(n))+(DATA.itemko[n]?` <span class="st-h">${esc(n)}</span>`:''))}</section>`;
   if(u.ab.length) h += `<section><h4>특성 채용률</h4>${bars(u.ab,(n,ko)=>esc(ko||n))}</section>`;
   if(u.tm.length) h += `<section><h4>같이 쓰이는 포켓몬</h4>${bars(u.tm,(n,id)=>id?`<button class="link" data-go="${esc(id)}">${esc(byId[id].ko)}</button>`:esc(n))}</section>`;
+  if(u.cc && u.cc.length) h += `<section><h4>천적 (이 포켓몬이 자주 지는 상대, Smogon)</h4>${bars(u.cc.map(([id,p])=>[id,p]),(id)=>byId[id]?`<button class="link" data-go="${esc(id)}">${esc(byId[id].ko)}</button>`:esc(id))}</section>`;
   if(!u.mv.length) h += `<p class="note" style="margin-top:12px">채용률이 낮아 세부 채용 데이터는 수집하지 않았습니다.</p>`;
   return h;
 }
@@ -344,5 +379,8 @@ $('foot').innerHTML = `<b>출처</b> — 참전 포켓몬·종족값·특성·�
  한글 기술·특성·도구명: <a href="https://pokeapi.co/" target="_blank" rel="noopener">PokeAPI</a> (한글명이 없는 포챔스 신규 특성 일부는 영문 표기, 신규 메가스톤은 '포켓몬명+나이트' 규칙으로 표기) · 참고: <a href="https://namu.wiki/w/Pok%C3%A9mon%20Champions" target="_blank" rel="noopener">나무위키</a>.<br>
  수집 시각 ${DATA.meta.fetched.replace('T',' ').slice(0,16)} UTC. 사용률은 게임 내 공식 랭크배틀 통계가 아닌 Pikalytics 집계(시뮬레이터 대전·대회)입니다.`;
 
-renderSummary(); renderUsage(); renderDex(); renderMoves();
+renderMoves();
+{ let m = location.hash === '#singles' ? 's' : location.hash === '#doubles' ? 'd' : null;
+  if (!m) try{ m = localStorage.getItem('pc-dexmode'); }catch(e){}
+  setMode(m || 'd'); }
 </script>

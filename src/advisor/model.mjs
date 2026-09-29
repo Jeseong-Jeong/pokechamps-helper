@@ -35,6 +35,8 @@ export function statValue(base, sp, stat, nature) {
 }
 
 export function createModel(D) {
+  // mode: 'doubles'(더블, 4마리 선출) | 'singles'(싱글, 3마리 선출). 사용률 데이터(D.usage)가 모드마다 다름
+  const mode = D.mode === 'singles' ? 'singles' : 'doubles', doubles = mode === 'doubles';
   const byId = Object.fromEntries(D.entries.map(e => [e.id, e]));
   const usageOf = e => e && D.usage.find(u => u.id === (e.mega ? e.parent : e.id));
   const moveByEn = Object.fromEntries(D.moves.map((m, i) => [m.en, i]));
@@ -80,9 +82,11 @@ export function createModel(D) {
     }
     function score(m) { return (+m.pw || 0) * (e.ty.includes(m.t) ? 1.5 : 1) * ((+m.acc || 100) / 100); }
     const physical = guessPhysical(e, moves.slice(0, 4));
+    // 사용률 데이터에 능력치 배분이 있으면(싱글: Smogon 통계) 1순위 배분
+    const sp = u && u.sp && u.sp.find(([n, v]) => NATURES[n] && Object.values(v).reduce((a, b) => a + b, 0) <= SP_TOTAL);
     return {
       id, ability, item, moves: moves.slice(0, 4),
-      ...preset(physical ? 'atk' : 'spa', e),
+      ...(sp ? {nature: sp[0], sp: {...sp[1]}} : preset(physical ? 'atk' : 'spa', e)),
       boosts: {atk: 0, def: 0, spa: 0, spd: 0, spe: 0}, status: '', hpPct: 100,
     };
   }
@@ -188,7 +192,7 @@ export function createModel(D) {
     return {...m.stats, maxHP: m.maxHP()};
   }
 
-  return {D, byId, usageOf, learnset, defaultSet, preset, damageTable, finalStats, speed, items, itemKo, moveKo, moveByEn};
+  return {D, mode, doubles, byId, usageOf, learnset, defaultSet, preset, damageTable, finalStats, speed, items, itemKo, moveKo, moveByEn};
 }
 
 function safe(f) { try { return f(); } catch (e) { return ''; } }

@@ -8,8 +8,7 @@ import {effectiveness} from './team.mjs';
 
 const STATS = ['hp', 'atk', 'def', 'spa', 'spd', 'spe'];
 const PROTECT = ['Protect', 'Detect', 'Spiky Shield', "King's Shield", 'Baneful Bunker', 'Silk Trap', 'Burning Bulwark', 'Obstruct'];
-const KEY_ROLES = ['fakeout', 'speed', 'intimidate'];
-const FIELD = {doubles: true, weather: '', terrain: '', crit: false, L: {}, R: {}};
+
 const STONE = /ite( [XYZ])?$/;
 const isStone = n => STONE.test(n) && n !== 'Eviolite';
 // 화면 갱신용으로 잠깐 양보. setTimeout은 숨겨진 탭에서 1초 이상으로 늘어나므로 MessageChannel 사용
@@ -38,6 +37,8 @@ const ATE = {Aerilate: 'flying', Pixilate: 'fairy', Refrigerate: 'ice', Galvaniz
 // 팀 짜기 단계라 시간이 좀 걸려도 정확도 우선 (상대 20마리, 사용률 0.5% 이상 후보 전부)
 export function createImprover(M, T, P, {threatCount = 20, poolMinPct = 0.5, natureko = {}} = {}) {
   const {D, byId} = M;
+  const KEY_ROLES = T.KEY_ROLES;  // 더블: 속이다·스피드 조절·위협 / 싱글: 설치기·랭크업·선공기
+  const FIELD = {doubles: M.doubles, weather: '', terrain: '', crit: false, L: {}, R: {}};
   const NK = n => natureko[n] || n;
   const usageById = Object.fromEntries(D.usage.map(u => [u.id, u]));
   const moveEn = i => (typeof i === 'number' ? D.moves[i].en : i);
@@ -193,7 +194,7 @@ export function createImprover(M, T, P, {threatCount = 20, poolMinPct = 0.5, nat
     const core = coreOf(sets);
     const ids = sets.map(s => s.baseId || s.id);
     const A = full.A;
-    const RK = {fakeout: '속이다', speed: '스피드 조절', intimidate: '위협', redirect: '유인', setter: '날씨·필드', spread: '전체 공격'};
+    const RK = Object.fromEntries(Object.entries(T.ROLES).map(([k, r]) => [k, r.ko]));
     return sets.map((s, i) => {
       const without = score(sets.filter((_, k) => k !== i));
       const keep = [], drop = [];
@@ -216,7 +217,7 @@ export function createImprover(M, T, P, {threatCount = 20, poolMinPct = 0.5, nat
       const fixed = without.danger.length < full.danger.length ? [] : full.danger.filter(t => !without.danger.includes(t));
       const myRoles = T.rolesOf(ids[i], s);
       const unique = myRoles.filter(r => A.roles[r].length === 1);
-      const dup = myRoles.filter(r => ['fakeout', 'intimidate', 'redirect', 'setter'].includes(r) && A.roles[r].length >= 2);
+      const dup = myRoles.filter(r => (M.doubles ? ['fakeout', 'intimidate', 'redirect', 'setter'] : ['hazard', 'intimidate', 'scarf']).includes(r) && A.roles[r].length >= 2);
       if (unique.filter(r => r !== 'spread').length) keep.push(`팀에서 혼자 ${unique.filter(r => r !== 'spread').map(r => RK[r]).join('·')} 담당`);
       if (dup.length && !unique.filter(r => r !== 'spread').length) {
         drop.push(`${dup.map(r => `${RK[r]}(${A.roles[r].filter(x => x !== ids[i]).map(x => byId[x].ko).join('·')}도 가능)`).join(', ')} 역할이 겹침`);
@@ -374,7 +375,7 @@ export function createImprover(M, T, P, {threatCount = 20, poolMinPct = 0.5, nat
     if (fixed.length) out.push({good: true, text: `${fixed.map(t => D.typeko[t]).join('·')} 약점 해소`});
     const newDanger = after.danger.filter(t => !before.danger.includes(t));
     const roles = before.missing.filter(r => !after.missing.includes(r));
-    const T2 = {fakeout: '속이다', speed: '스피드 조절', intimidate: '위협'};
+    const T2 = Object.fromEntries(Object.entries(T.ROLES).map(([k, r]) => [k, r.ko]));
     if (roles.length) out.push({good: true, text: `${roles.map(r => T2[r]).join('·')} 담당 생김`});
     const lost = after.missing.filter(r => !before.missing.includes(r));
     const hit = before.noHit.filter(j => !after.noHit.includes(j));

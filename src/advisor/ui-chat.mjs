@@ -1,5 +1,6 @@
 // 팀 진단 채팅 (규칙 기반): 말 → 조건 → 모델로 다시 추천
-const STORE = 'pc-chat-cons-v1';
+import {skey} from './store.mjs';
+const STORE = skey('pc-chat-cons-v1');
 const EXAMPLES = ['메가 슬롯이 애매해, 메가 말고', '풀 4배 약점은 싫어', '고릴타한테 안 죽는 애로', '메타그로스는 빼지 마',
   '브리두라스 대신 넣을 애', '속이다 있는 애', '왜 메타그로스를 빼래?', '한카리아스는 어때?', '다른 애 추천해줘', '처음부터'];
 const FAIL_KO = {exclude: '제외한 포켓몬', megaOnly: '메가 가능', avoidWeak: '약점 피하기', types: '타입', roles: '역할',

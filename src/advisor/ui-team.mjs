@@ -1,8 +1,9 @@
 // 팀 추천 탭 화면
-import {ROLES} from './team.mjs';
+import {skey} from './store.mjs';
 
-const STORE = 'pc-team-v1';
-const ROLE_ORDER = ['fakeout', 'speed', 'intimidate', 'redirect', 'setter', 'spread'];
+
+const STORE = skey('pc-team-v1');
+
 
 export function initTeam({M, T, ty, esc, $, findMon, onSendToCalc, onChange}) {
   const {byId, D} = M;
@@ -94,7 +95,8 @@ export function initTeam({M, T, ty, esc, $, findMon, onSendToCalc, onChange}) {
   }
 
   function analysis(A) {
-    const roles = ROLE_ORDER.map(k => {
+    const ROLES = T.ROLES;
+    const roles = Object.keys(ROLES).map(k => {
       const who = A.roles[k];
       return `<div class="role${who.length ? ' ok' : ' no'}"><span>${who.length ? '✓' : '—'} ${ROLES[k].ko}</span>
         <span class="mini">${who.length ? who.map(id => esc(byId[id].ko)).join(', ') : '없음'}</span></div>`;
@@ -108,7 +110,11 @@ export function initTeam({M, T, ty, esc, $, findMon, onSendToCalc, onChange}) {
     if (danger.length) notes.push(`<b>${danger.map(x => D.typeko[x.t]).join('·')}</b> 공격에 약한 멤버가 많습니다.`);
     if (noHit.length) notes.push(`기본 기술로 <b>${noHit.map(t => D.typeko[t]).join('·')}</b> 타입을 효과가 굉장하게 칠 수 없습니다.`);
     if (A.megas >= 3) notes.push(`메가진화 세트가 ${A.megas}마리입니다. 배틀당 한 번만 메가진화할 수 있습니다.`);
-    if (!A.roles.fakeout.length && !A.roles.speed.length) notes.push('속이다·스피드 조절 담당이 없어 선공을 잡기 어렵습니다.');
+    if (M.doubles && !A.roles.fakeout.length && !A.roles.speed.length) notes.push('속이다·스피드 조절 담당이 없어 선공을 잡기 어렵습니다.');
+    if (!M.doubles) {
+      if (!A.roles.setup.length) notes.push('랭크업 에이스(칼춤·용춤 등)가 없어 끝내는 힘이 약할 수 있습니다.');
+      if (!A.roles.priority.length && !A.roles.scarf.length) notes.push('선공기·스카프가 없어 빠른 상대를 마무리하기 어렵습니다.');
+    }
     return `
       ${notes.length ? `<div class="notes">${notes.map(n => `<p>${n}</p>`).join('')}</div>` : '<div class="notes ok"><p>눈에 띄는 약점이 없습니다.</p></div>'}
       <h4>역할</h4><div class="roles">${roles}</div>

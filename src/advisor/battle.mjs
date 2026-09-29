@@ -15,9 +15,42 @@ const FIRST_TURN = ['Fake Out', 'First Impression'];  // 나온 첫 턴에만 �
 const NO_FLINCH = ['Inner Focus', 'Shield Dust'];
 const avgOf = r => (r.minPct + r.maxPct) / 2;
 
+// ---- 싱글 전용 ----
+// 랭크업 기술 → 오르는 랭크
+export const SETUP_BOOST = {
+  'Swords Dance': {atk: 2}, 'Dragon Dance': {atk: 1, spe: 1}, 'Nasty Plot': {spa: 2}, 'Calm Mind': {spa: 1, spd: 1}, 'Bulk Up': {atk: 1, def: 1},
+  'Quiver Dance': {spa: 1, spd: 1, spe: 1}, 'Shell Smash': {atk: 2, spa: 2, spe: 2, def: -1, spd: -1}, Agility: {spe: 2}, 'Iron Defense': {def: 2},
+  Coil: {atk: 1, def: 1}, Curse: {atk: 1, def: 1, spe: -1}, 'Victory Dance': {atk: 1, def: 1, spe: 1}, 'Tidy Up': {atk: 1, spe: 1},
+  Growth: {atk: 1, spa: 1}, 'Belly Drum': {atk: 6}, 'Shift Gear': {atk: 1, spe: 2}, 'Tail Glow': {spa: 3}, 'Cosmic Power': {def: 1, spd: 1},
+  'Clangorous Soul': {atk: 1, def: 1, spa: 1, spd: 1, spe: 1}, 'Work Up': {atk: 1, spa: 1}, 'Hone Claws': {atk: 1},
+};
+export const HAZARD = ['Stealth Rock', 'Spikes', 'Toxic Spikes', 'Sticky Web'];
+// 상태이상 기술 → 상태, 막히는 타입·특성
+const STATUS_MOVE = {
+  'Will-O-Wisp': {st: 'brn', types: ['fire'], abil: ['Flash Fire', 'Water Veil', 'Water Bubble', 'Thermal Exchange', 'Well-Baked Body', 'Guts']},
+  'Thunder Wave': {st: 'par', types: ['ground', 'electric'], abil: ['Limber', 'Volt Absorb', 'Lightning Rod', 'Motor Drive']},
+  Glare: {st: 'par', types: ['electric'], abil: ['Limber']},
+  'Stun Spore': {st: 'par', types: ['grass', 'electric'], abil: ['Limber', 'Overcoat']},
+  Toxic: {st: 'tox', types: ['poison', 'steel'], abil: ['Immunity', 'Poison Heal', 'Magic Guard'], anyUser: ['Corrosion']},
+  Spore: {st: 'slp', types: ['grass'], abil: ['Insomnia', 'Vital Spirit', 'Sweet Veil', 'Overcoat', 'Purifying Salt']},
+  'Sleep Powder': {st: 'slp', types: ['grass'], abil: ['Insomnia', 'Vital Spirit', 'Sweet Veil', 'Overcoat', 'Purifying Salt']},
+  Hypnosis: {st: 'slp', types: [], abil: ['Insomnia', 'Vital Spirit', 'Sweet Veil', 'Purifying Salt'], acc: 0.6},
+  Yawn: {st: 'yawn', types: [], abil: ['Insomnia', 'Vital Spirit', 'Sweet Veil', 'Purifying Salt']},
+};
+const RECOVER = {Recover: 50, Roost: 50, 'Slack Off': 50, 'Soft-Boiled': 50, 'Milk Drink': 50, 'Shore Up': 50, Moonlight: 50, 'Morning Sun': 50,
+                 Synthesis: 50, 'Strength Sap': 35, Rest: 100};
+const PIVOT = ['U-turn', 'Volt Switch', 'Flip Turn'];
+// 여러 번 때리는 기술 (기합의띠·옹골참을 뚫음)
+const MULTI = ['Scale Shot', 'Bullet Seed', 'Icicle Spear', 'Rock Blast', 'Pin Missile', 'Tail Slap', 'Triple Axel', 'Surging Strikes',
+  'Population Bomb', 'Double Hit', 'Dual Wingbeat', 'Bone Rush', 'Water Shuriken', 'Arm Thrust', 'Double Kick', 'Dragon Darts', 'Triple Kick'];
+// 기합의띠·옹골참: HP가 가득일 때 한 방에 쓰러질 피해를 받으면 1 남음
+const sashSave = (set, cur, d, move) => (cur >= 100 && d >= cur && (set.item === 'Focus Sash' || set.ability === 'Sturdy') && !MULTI.includes(move) ? cur - 1 : d);
+const ANTI_SETUP = ['Haze', 'Whirlwind', 'Roar', 'Dragon Tail', 'Circle Throw', 'Encore', 'Clear Smog', 'Perish Song'];
+
 export function createBattle(M, P) {
   const {D, byId} = M;
   const usageById = Object.fromEntries(D.usage.map(u => [u.id, u]));
+  const b0 = id => (byId[id] && byId[id].mega ? byId[id].parent : id);
   const moveEn = i => (typeof i === 'number' ? D.moves[i].en : i);
   const moveOf = n => D.moves[M.moveByEn[n]];
   const calcMove = n => GEN.moves.get(toID(n));
@@ -71,7 +104,7 @@ export function createBattle(M, P) {
   const withState = (set, slot) => ({...set, hpPct: Math.max(1, slot.hpPct ?? 100), status: slot.status || '', boosts: {atk: 0, def: 0, spa: 0, spd: 0, spe: 0, ...(slot.boosts || {})}});
 
   function toModelField(f) {
-    return {doubles: true, weather: f.weather || '', terrain: f.terrain || '', crit: false,
+    return {doubles: M.doubles, weather: f.weather || '', terrain: f.terrain || '', crit: false,
             L: {tailwind: !!(f.tailwind && f.tailwind.me), ...(f.screens && f.screens.me || {})},
             R: {tailwind: !!(f.tailwind && f.tailwind.opp), ...(f.screens && f.screens.opp || {})}};
   }
@@ -105,7 +138,11 @@ export function createBattle(M, P) {
     const tr = !!f.trickRoom;
     const mine = state.me.map(s => (s && s.set && (s.hpPct ?? 100) > 0 ? {...s, set: withState(s.set, s)} : null));
     // state.megaOpp: 상대가 메가진화한 포켓몬 id ('' = 아직 안 함). 없으면 예전처럼 메가 모습으로 가정
-    const megaFlag = id => (state.megaOpp == null ? undefined : state.megaOpp === id);
+    // 상대가 아직 메가진화를 안 했으면 필드의 메가스톤 포켓몬이 이번 턴에 메가진화한다고 봄
+    //   (싱글 기록: 메가진화의 95%가 나온 뒤 첫 행동 때 / 더블: 메가 가능한 선봉이 하나면 1턴 메가 ~85%)
+    const assumeMega = state.megaOpp === '' ? ((state.opp || []).find(s => s && s.id && (s.hpPct ?? 100) > 0 && !(state.megaNo || []).includes(s.id)
+      && canMega(oppSetOf({...s, mega: true}))) || {}).id || null : null;
+    const megaFlag = id => (state.megaOpp == null ? undefined : state.megaOpp === id || assumeMega === id);
     const opps = state.opp.map(s => (s && s.id && (s.hpPct ?? 100) > 0 ? {...s, set: withState(oppSetOf({...s, mega: megaFlag(s.id)}), s)} : null));
     const bench = (state.bench || []).map(s => (s && s.set && (s.hpPct ?? 100) > 0 ? {...s, set: withState(s.set, s)} : null)).filter(Boolean);
     // 상대 뒤에 있을 수 있는 포켓몬 (선출 탭의 상대 6마리 중 필드에 없는 것)
@@ -113,6 +150,27 @@ export function createBattle(M, P) {
       .map(id => { const hp = (state.oppHp || {})[id] ?? 100; return {id, hpPct: hp, set: withState(oppSetOf({id, mega: megaFlag(id)}), {hpPct: hp})}; })
       .filter(b => b.hpPct > 0);
     const spd = {me: mine.map(m => m && M.speed(m.set, field, true)), opp: opps.map(o => o && M.speed(o.set, field, false))};
+    // 싱글: 상대는 6마리 중 3마리만 데려옴 → 이미 본 포켓몬은 확실, 못 본 포켓몬은 선출률로 남은 자리 수만큼 나눠 가짐
+    const presence = oppBench.map(() => 1);
+    if (!M.doubles) {
+      const seen = new Set(state.oppSeen || []);
+      const slots = Math.max(0, 3 - seen.size);
+      const un = oppBench.map((b, k) => (seen.has(b.id) ? -1 : k)).filter(k => k >= 0);
+      const w = un.map(k => { const u = usageById[b0(oppBench[k].id)]; return u && u.pick != null ? Math.max(5, u.pick) : 50; });
+      const tw = w.reduce((a, b) => a + b, 0) || 1;
+      un.forEach((k, n) => { presence[k] = Math.min(1, slots * w[n] / tw); });
+    }
+    const hz = (state.field && state.field.hazards) || {me: {}, opp: {}};
+    // 설치기 피해 (스텔스록: 12.5% × 바위 상성, 압정: 1/2/3층 12.5/16.7/25%, 비행·부유 제외). 통굽부츠는 무효
+    function hazardDmg(set, side) {
+      const h = hz[side] || {}, e = byId[set.id];
+      if (!e || set.item === 'Heavy-Duty Boots' || set.ability === 'Magic Guard') return 0;
+      let d = 0;
+      if (h.sr) d += 12.5 * effectiveness('rock', e.ty);
+      const air = e.ty.includes('flying') || set.ability === 'Levitate' || set.item === 'Air Balloon';
+      if (h.spikes && !air) d += [0, 12.5, 16.67, 25][Math.min(3, h.spikes)];
+      return d;
+    }
 
     // 데미지표 (최소·최대 %). key: 'm0','m1','o0','o1','b0','b1'
     const cache = new Map();
@@ -189,7 +247,7 @@ export function createBattle(M, P) {
       });
       return out;
     };
-    const defense = opps.map((o, j) => {
+    const defense = !M.doubles ? opps.map((o, j) => (o ? singlesDefense(o, j) : null)) : opps.map((o, j) => {
       if (!o) return null;
       const hits = myHits('o' + j);
       const best = hits.reduce((a, h) => Math.max(a, avgOf(h.r)), 0);
@@ -218,12 +276,80 @@ export function createBattle(M, P) {
       return {j, pS, pP, pA: 1 - pS - pP, switchTo: pS > 0 ? sw : null, switchAlt: pS > 0 && swList[1] && swList[1].worst < 60 ? swList[1] : null,
               protectMove: hasProtect, why, best, koFirst, fourX};
     });
+    // 싱글 교체 예측: 지금 대면이 불리할수록, 뒤에 이 대면을 잘 받는 포켓몬이 있을수록 교체
+    //   대면 값 = P.cellValue(주는 %, 받는 %, 먼저 움직임) — 선출 추천과 같은 기준
+    //   교체해 들어오는 포켓몬은 내 공격을 한 번 공짜로 맞으므로 그만큼 뺌
+    //   유지하는 이유: 먼저 때려서 잡을 수 있음, 기합의띠(HP 가득), HP가 적음(버리는 카드), 방금 나옴
+    function singlesDefense(o, j) {
+      const hits = myHits('o' + j);
+      const myBest = hits.reduce((a, h) => Math.max(a, avgOf(h.r)), 0);
+      const theirMoves = o.set.moves.filter(mv => { const m = moveOf(mv); return m && m.c !== '변화'; });
+      const theirBest = mine[0] ? theirMoves.reduce((a, mv) => { const r = dmg('o' + j, mv, 'm0'); return Math.max(a, r ? avgOf(r) : 0); }, 0) : 0;
+      const meFirst = mine[0] && (tr ? spd.me[0] < spd.opp[j] : spd.me[0] > spd.opp[j]);
+      const hpMe = mine[0] ? mine[0].hpPct : 100;
+      const stay = P.cellValue(theirBest / hpMe * 100, myBest / o.hpPct * 100, !meFirst);
+      const oppPrio = oppPred[j] && oppPred[j].move ? priorityOf(o.set, oppPred[j].move, f) : 0;
+      const before = h => h.prio > oppPrio || (h.prio === oppPrio && meFirst);
+      const koFirst = hits.some(h => h.r.minPct >= o.hpPct && before(h));
+      const theyKOFirst = !meFirst && theirBest >= hpMe;
+      const fourX = hits.some(h => effectiveness(h.type, byId[o.set.id].ty, o.set.ability) >= 4 && avgOf(h.r) >= 60);
+      const cands = oppBench.map((b, k) => {
+        const take = myHits('x' + k).reduce((a, h) => Math.max(a, avgOf(h.r)), 0) + hazardDmg(b.set, 'opp');
+        const thr = mine[0] ? b.set.moves.filter(Boolean).reduce((a, mv) => { const m = moveOf(mv); if (!m || m.c === '변화') return a; const r = dmg('x' + k, mv, 'm0'); return Math.max(a, r ? avgOf(r) : 0); }, 0) : 0;
+        const sB = M.speed(b.set, field, false);
+        const fasterK = tr ? sB < spd.me[0] : sB > spd.me[0];
+        const v = P.cellValue(thr / hpMe * 100, take / b.hpPct * 100, fasterK) - 0.25 * Math.min(1, take / b.hpPct);
+        return {k, id: b.id, v, take, thr, presence: presence[k], worst: take};
+      }).filter(c => c.presence > 0.05);
+      const why = [];
+      let pS = 0;
+      const ranked = cands.map(c => ({...c, w: c.presence * Math.exp(3 * c.v)})).sort((a, b) => b.w - a.w);
+      const top2 = ranked.slice(0, 2);
+      const gain = top2.length ? Math.max(...top2.map(c => c.v)) - stay : -1;
+      // 기준값: 쇼다운 M-C 싱글 기록 2,773판에서 뒤에 포켓몬이 있는 턴의 자진 교체 비율 12.9%
+      //   상황별 배수도 같은 기록에서 잰 교체율 ÷ 12.9% (4배 30%, 2배 17.5%, 반감 9.5%, 내 자속이 안 통함 24.1%,
+      //   상대에게 2배 8.2%·4배 5.7%, 능력 하락 21.8%, 능력 상승 6.2%, 설치기 직후 20.4%, 랭크업 직후 3.3%). HP·스피드는 거의 무관
+      if (top2.length) {
+        const stabOf = (set, defSet) => Math.max(0, ...byId[set.id].ty.map(t => effectiveness(t, byId[defSet.id].ty, defSet.ability)));
+        const mine0 = mine[0] && mine[0].set;
+        const hitThem = mine0 ? stabOf(mine0, o.set) : 1, hitMe = mine0 ? stabOf(o.set, mine0) : 1;
+        let mult = 1;
+        if (hitThem >= 4) { mult *= 2.3; why.push('4배 약점'); } else if (hitThem >= 2) { mult *= 1.36; why.push('약점을 찔림'); } else if (hitThem <= 0.5) mult *= 0.74;
+        if (hitMe === 0) { mult *= 1.85; why.push('자속 기술이 안 통함'); }
+        else if (hitMe >= 4) mult *= 0.45; else if (hitMe >= 2 && hitThem < 2) mult *= 0.64;
+        if (hitThem >= 2 && hitMe < 2) mult *= 1.15;
+        const bsum = Object.values(o.boosts || {}).reduce((a, v) => a + v, 0);
+        if (bsum < 0) { mult *= 1.7; why.push('능력이 떨어짐'); } else if (bsum > 0) mult *= 0.48;
+        if (o.lastMove && HAZARD.includes(o.lastMove)) { mult *= 1.6; why.push('설치기를 깔았음'); }
+        if (o.lastMove && SETUP_BOOST[o.lastMove]) mult *= 0.25;
+        // 데미지 계산으로 보정
+        if (koFirst) { mult *= 1.3; why.push('먼저 잡힘'); }
+        if (theyKOFirst) { mult *= 0.6; why.push('먼저 때려 잡을 수 있어서 버틸 수도'); }
+        const sash = o.hpPct >= 100 && (o.set.item === 'Focus Sash' || ['Sturdy', 'Disguise', 'Multiscale'].includes(o.set.ability));
+        if (sash) { mult *= 0.6; why.push('기합의띠·옹골참으로 버틸 수도'); }
+        if (gain > 0.3) mult *= 1.3; else if (gain < -0.2) mult *= 0.5;  // 뒤에 이 대면을 잘 받는 포켓몬이 있나
+        pS = Math.min(0.6, 0.129 * mult) * Math.min(1, Math.max(...top2.map(c => c.presence)));
+      }
+      const hasProtect = o.set.moves.find(m => PROTECT.includes(m));
+      let pP = 0;
+      if (hasProtect && !o.protected) pP = koFirst ? 0.2 : 0.08;  // 싱글 방어: 간보기·메가진화 턴
+      const tot = pS + pP;
+      if (tot > 0.8) { pS *= 0.8 / tot; pP *= 0.8 / tot; }
+      const wsum = top2.reduce((a, c) => a + c.w, 0) || 1;
+      const split = top2.map(c => pS * c.w / wsum);
+      return {j, pS, pP, pA: 1 - pS - pP, switchTo: top2[0] || null, switchAlt: top2[1] || null, split, stay,
+              cands: ranked.slice(0, 3).map(c => ({id: c.id, v: c.v, presence: c.presence})),
+              protectMove: hasProtect, why, best: myBest, koFirst, fourX};
+    }
+
     // 경우의 수: 상대마다 [공격, 방어, 교체] 중 확률 있는 것
     const branches = defense.map(d => {
       if (!d) return [{type: 'none', p: 1}];
       const b = [{type: 'attack', p: d.pA}];
       if (d.pP > 0) b.push({type: 'protect', p: d.pP});
-      if (d.pS > 0) b.push({type: 'switch', p: d.pS, k: d.switchTo.k});
+      if (d.split) {  // 싱글: 교체 대상 두 후보로 나눔
+        [d.switchTo, d.switchAlt].forEach((c, n) => { if (c && d.split[n] > 0.01) b.push({type: 'switch', p: d.split[n], k: c.k}); });
+      } else if (d.pS > 0) b.push({type: 'switch', p: d.pS, k: d.switchTo.k});
       return b;
     });
     const scenarios = [];
@@ -258,12 +384,61 @@ export function createBattle(M, P) {
         if (REDIRECT.includes(mv)) { out.push({kind: 'redirect', i, move: mv}); continue; }
         if (mv === 'Helping Hand') { if (mine[1 - i]) out.push({kind: 'helping', i, move: mv}); continue; }
         if (mv === 'Wide Guard') { out.push({kind: 'wideguard', i, move: mv}); continue; }
+        if (!M.doubles && m.c === '변화') {
+          if (SETUP_BOOST[mv]) out.push({kind: 'setup', i, move: mv});
+          else if (HAZARD.includes(mv)) { if (!hazardSet(mv)) out.push({kind: 'hazard', i, move: mv}); }
+          else if (STATUS_MOVE[mv]) out.push({kind: 'status', i, move: mv});
+          else if (RECOVER[mv] && me.hpPct < 75) out.push({kind: 'recover', i, move: mv});
+          continue;
+        }
         if (m.c === '변화') continue;
+        if (!M.doubles && PIVOT.includes(mv) && bench.length) { out.push({kind: 'attack', i, move: mv, target: 0, pivot: true}); continue; }
         if (isSpread(mv)) out.push({kind: 'attack', i, move: mv, target: 'spread'});
         else for (const j of [0, 1]) if (opps[j]) out.push({kind: 'attack', i, move: mv, target: j});
       }
       bench.forEach((b, k) => out.push({kind: 'switch', i, to: k}));
       return out;
+    }
+
+    const hazardSet = mv => { const h = hz.opp || {}; return mv === 'Stealth Rock' ? h.sr : mv === 'Spikes' ? (h.spikes || 0) >= 3 : mv === 'Toxic Spikes' ? (h.tspikes || 0) >= 2 : mv === 'Sticky Web' ? h.web : false; };
+    // 랭크업하면 다음 턴에 얼마나 더 세게 때리나 (상대 자리의 포켓몬 기준, 캐시)
+    const boostCache = new Map();
+    function setupGain(i, mv, oppKey) {
+      const k = i + mv + oppKey;
+      if (boostCache.has(k)) return boostCache.get(k);
+      const me = mine[i], B = SETUP_BOOST[mv];
+      const def = oppKey[0] === 'x' ? oppBench[+oppKey.slice(1)] : opps[+oppKey.slice(1)];
+      let g = 0;
+      if (me && def) {
+        const boosts = {...me.set.boosts};
+        for (const [s, v] of Object.entries(B)) boosts[s] = Math.max(-6, Math.min(6, (boosts[s] || 0) + v));
+        const up = {...me.set, boosts};
+        const best = s => M.damageTable(s, def.set, field, true, {fast: true}).filter(r => r.maxPct != null).reduce((a, r) => Math.max(a, avgOf(r)), 0);
+        const now = best(me.set), later = best(up);
+        g = Math.min(1, later / def.hpPct) - Math.min(1, now / def.hpPct);
+        // 스피드가 올라서 먼저 움직이게 되면 가산
+        const s0 = M.speed(me.set, field, true), s1 = M.speed(up, field, true), so = M.speed(def.set, field, false);
+        if (!tr && s0 <= so && s1 > so) g += 0.25;
+        if (B.def || B.spd) g += 0.05;
+      }
+      boostCache.set(k, g);
+      return g;
+    }
+    // 상대가 랭크업을 되돌릴 수단 (흑안개·울부짖기·앵콜·천진)을 가졌을 가능성
+    const antiSetup = o => { if (!o) return 0; if (o.set.ability === 'Unaware') return 1; const u = usageById[b0(o.id)]; if (!u) return 0; return Math.min(1, u.mv.reduce((a, [x, p]) => a + (ANTI_SETUP.includes(moveEn(x)) ? p : 0), 0) / 100); };
+    function statusValue(mv, target, me) {
+      const S = STATUS_MOVE[mv], e = byId[target.set.id];
+      if (target.set.status || e.ty.some(t => S.types.includes(t)) || S.abil.includes(target.set.ability)) return 0;
+      if (mv === 'Thunder Wave' && moveOf(mv) && e.ty.includes('ground')) return 0;
+      const st = M.finalStats(target.set);
+      const acc = S.acc || 1;
+      if (S.st === 'brn') return acc * (st.atk > st.spa * 1.1 ? 0.5 : 0.15);
+      // 챔피언스: 마비로 못 움직일 확률 12.5%, 잠듦 최대 3턴 → 예전보다 낮게
+      if (S.st === 'par') return acc * (M.speed(target.set, field, false) > M.speed(me.set, field, true) ? 0.25 : 0.08);
+      if (S.st === 'tox') return acc * 0.22;
+      if (S.st === 'slp') return acc * 0.4;
+      if (S.st === 'yawn') return 0.15;
+      return 0;
     }
 
     // ---------- 한 턴 모의 진행 ----------
@@ -278,6 +453,11 @@ export function createBattle(M, P) {
       const who = {m0: slotKey(0), m1: slotKey(1)};  // 교체하면 그 자리에 들어온 포켓몬이 맞음
       if (acts[0] && acts[0].kind === 'switch') hp.m0 = bench[acts[0].to].hpPct;
       if (acts[1] && acts[1].kind === 'switch') hp.m1 = bench[acts[1].to].hpPct;
+      const hzLog = [];
+      if (!M.doubles) {  // 교체해 들어올 때 설치기 피해
+        [0, 1].forEach(i => { if (acts[i] && acts[i].kind === 'switch') { const d = hazardDmg(bench[acts[i].to].set, 'me'); if (d) { hp['m' + i] -= d; hzLog.push({k: 'hazard', to: 'm' + i, id: bench[acts[i].to].id, d}); } } });
+        [0, 1].forEach(j => { if (scen[j] && scen[j].type === 'switch') { const b = oppBench[scen[j].k]; hp['o' + j] = b.hpPct; const d = hazardDmg(b.set, 'opp'); if (d) { hp['o' + j] -= d; hzLog.push({k: 'hazard', to: 'o' + j, id: b.id, d}); } } });
+      }
       const startHp = {...hp};
       const cumLo = {}, cumHi = {};  // 이번 턴에 누적으로 받은 피해 (남은 HP 범위 표시용)
       const protecting = [0, 1].map(i => acts[i] && acts[i].kind === 'protect');
@@ -288,7 +468,7 @@ export function createBattle(M, P) {
       // 상대 유인: 유인한 상대가 살아 있으면 내 단일 공격이 그쪽으로 (분노가루는 풀 타입·방진에게 안 통함)
       const oppRedir = oppPred.findIndex(p => p && p.redirect);
       const acted = {};
-      const log = [];
+      const log = [...hzLog];
       const dealt = {o0: 0, o1: 0};
       const koBefore = {};  // 상대가 행동하기 전에 쓰러짐
 
@@ -332,8 +512,11 @@ export function createBattle(M, P) {
             const r = dmg('m' + act.i, a.move, oKey(j));
             if (!r) continue;
             const d = avgOf(r) * mult;
-            const sure = r.minPct * mult >= hp[tk];
-            hp[tk] -= d; dealt[tk] += d;
+            const tset = scen[j].type === 'switch' ? oppBench[scen[j].k].set : opps[j].set;
+            const d2 = sashSave(tset, hp[tk], d, a.move);
+            if (d2 < d) log.push({k: 'sash', to: tk, id: tset.id, item: tset.item === 'Focus Sash' ? 'sash' : 'sturdy'});
+            const sure = d2 === d && r.minPct * mult >= hp[tk];
+            hp[tk] -= d2; dealt[tk] += d2;
             if (hp[tk] <= 0 && !acted[tk]) koBefore[tk] = true;
             if (a.fakeout && r.maxPct > 0 && !acted[tk] && !NO_FLINCH.includes(opps[j].set.ability)) flinched[tk] = true;
             log.push({k: 'hit', from: 'm' + act.i, to: tk, toId: scen[j].type === 'switch' ? oppBench[scen[j].k].id : null, move: a.move, r, mult, ko: hp[tk] <= 0, sure,
@@ -359,14 +542,17 @@ export function createBattle(M, P) {
             if (protecting[i]) { log.push({k: 'blocked', j: act.i, to: mk, move: p.move}); continue; }
             const r = dmg('o' + act.i, p.move, who[mk]);
             if (!r) continue;
-            hp[mk] -= avgOf(r);
+            const mset = who[mk][0] === 'b' ? bench[+who[mk].slice(1)].set : mine[i].set;
+            const d0 = avgOf(r), d1 = sashSave(mset, hp[mk], d0, p.move);
+            if (d1 < d0) log.push({k: 'sash', to: mk, id: mset.id, item: mset.item === 'Focus Sash' ? 'sash' : 'sturdy'});
+            hp[mk] -= d1;
             // 상대 속이다: 아직 행동 안 한 내 포켓몬은 풀죽음 (정신력 등 제외)
             const target = who[mk][0] === 'b' ? bench[+who[mk][1]] : mine[i];
             if (p.move === 'Fake Out' && r.maxPct > 0 && !acted[mk] && !NO_FLINCH.includes(target.set.ability)) flinched[mk] = true;
             // 교체해 들어온 포켓몬이 맞으면 그 이름(toId)과 맞은 뒤 남은 HP도 기록
             log.push({k: 'hit', from: 'o' + act.i, to: mk, toId: who[mk][0] === 'b' ? bench[+who[mk].slice(1)].id : null, move: p.move, r, ko: hp[mk] <= 0,
-                      sure: r.minPct >= startHp[mk], left: Math.max(0, hp[mk]),
-                      leftRange: [Math.max(0, startHp[mk] - (cumHi[mk] = (cumHi[mk] || 0) + r.maxPct)), Math.max(0, startHp[mk] - (cumLo[mk] = (cumLo[mk] || 0) + r.minPct))]});
+                      sure: d1 === d0 && r.minPct >= startHp[mk], left: Math.max(0, hp[mk]),
+                      leftRange: d1 < d0 ? [1, 1] : [Math.max(0, startHp[mk] - (cumHi[mk] = (cumHi[mk] || 0) + r.maxPct)), Math.max(0, startHp[mk] - (cumLo[mk] = (cumLo[mk] || 0) + r.minPct))]});
           }
         }
       }
@@ -420,7 +606,42 @@ export function createBattle(M, P) {
           score += threatened ? 0 : -0.15;
           score -= 0.05;
         }
-        if (a.kind === 'switch') score -= 0.15;
+        if (a.kind === 'switch') score -= M.doubles ? 0.15 : 0.08;  // 싱글은 교체가 기본 전술이라 부담이 적음
+        if (!M.doubles && acted['m' + i]) {
+          const occ = scen[0] && scen[0].type === 'switch' ? 'x' + scen[0].k : 'o0';
+          const target = occ[0] === 'x' ? oppBench[+occ.slice(1)] : opps[0];
+          const alive = hp['m' + i] > 0, left = Math.max(0, hp['m' + i]) / 100;
+          if (a.kind === 'setup') {
+            const g = alive ? setupGain(i, a.move, occ) : 0;
+            const v = g * (0.35 + 0.65 * left) * (1 - 0.7 * antiSetup(target));
+            score += 0.55 * v - 0.05;
+            notes.push(alive ? `${M.moveKo(a.move)} → 다음 턴 화력 +${Math.round(g * 100)}%${left < 0.4 ? ' (HP가 적어 위험)' : ''}` : `${M.moveKo(a.move)} 후 쓰러질 위험`);
+          }
+          if (a.kind === 'hazard') {
+            // 3마리 싸움이라 6마리 싸움보다 가치가 1/3 정도 (들어오는 횟수가 적음). 기합의띠·옹골참·멀티스케일을 깨거나 바위 4배면 가산
+            const left2 = oppBench.reduce((x, b, k) => x + presence[k], 0);  // 앞으로 교체해 들어올 상대 수
+            let v = (a.move === 'Stealth Rock' ? 0.04 : a.move === 'Sticky Web' ? 0.05 : 0.03) * (1 + left2);
+            if (a.move === 'Stealth Rock') oppBench.forEach((b, k) => {
+              const u = usageById[b0(b.id)], e = byId[b.set.id];
+              const sashy = ['Sturdy', 'Multiscale'].includes(b.set.ability) || (u && u.it.some(([n, p]) => n === 'Focus Sash' && p >= 30));
+              v += presence[k] * ((sashy ? 0.06 : 0) + (effectiveness('rock', e.ty) >= 4 ? 0.06 : 0));
+            });
+            score += v + (scen[0] && scen[0].type === 'switch' ? 0.03 : 0);
+            notes.push(`${M.moveKo(a.move)} 설치 — 상대가 교체해 들어올 때마다 피해`);
+          }
+          if (a.kind === 'status' && target && !oppProtect[0]) {
+            const v = statusValue(a.move, target, mine[i]);
+            score += v;
+            if (v) notes.push(`${M.moveKo(a.move)} → ${byId[target.set.id].ko}`);
+            else notes.push(`${M.moveKo(a.move)}이 통하지 않음`);
+          }
+          if (a.kind === 'recover' && alive) {
+            const heal = Math.min(RECOVER[a.move], 100 - hp['m' + i]);
+            score += 0.4 * heal / 100;
+            notes.push(`${M.moveKo(a.move)} → HP +${Math.round(heal)}%`);
+          }
+          if (a.pivot && alive) score += 0.05;  // 공격하고 유리한 포켓몬으로 교체
+        }
         if (a.kind === 'redirect' && !log.some(x => x.k === 'hit' && x.to === 'm' + i && x.from[0] === 'o')) score -= 0.1;
         if (a.kind === 'helping') score += 0.02;
         if (a.kind === 'wideguard' && !log.some(x => x.k === 'wide')) score -= 0.15;
@@ -458,10 +679,10 @@ export function createBattle(M, P) {
       vs: [0, 1].map(i => (mine[i] ? dmg('o' + j, mv, 'm' + i) : null)),
     })) : []));
     // dmg: 화면에서 기록한 기술로 교체해 들어온 포켓몬의 예상 HP를 구할 때 씀 ('b0' 내 뒤, 'x0' 상대 뒤)
-    return {top, oppPred, defense, scenarios, speeds: spd, grid, incoming, mine, opps, bench, oppBench, trickRoom: tr, count: combos.length, dmg};
+    return {top, oppPred, defense, scenarios, speeds: spd, grid, incoming, mine, opps, bench, oppBench, presence, assumeMega, trickRoom: tr, count: combos.length, dmg};
   }
 
-  return {advise, oppInfo, oppSetOf, baseForm, canMega, priorityOf, isSpread, hitsAlly, entryConditions};
+  return {advise, oppInfo, oppSetOf, baseForm, canMega, priorityOf, isSpread, hitsAlly, entryConditions, SETUP_BOOST, HAZARD};
 }
 
 export {STAT_KO};

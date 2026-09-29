@@ -1,4 +1,5 @@
 // 추천 봇 페이지 진입점. DATA는 build_advisor.mjs 가 페이지에 넣어 줌
+import {skey} from './store.mjs';
 import {createModel, STATS, STAT_KO, SP_MAX, SP_TOTAL, NATURES, WEATHER, TERRAIN, STATUS} from './model.mjs';
 import {createTeamAdvisor} from './team.mjs';
 import {initTeam} from './ui-team.mjs';
@@ -31,8 +32,8 @@ const NATURE_ORDER = ['Adamant', 'Jolly', 'Brave', 'Modest', 'Timid', 'Quiet', '
                       'Lonely', 'Naughty', 'Hasty', 'Naive', 'Mild', 'Rash', 'Gentle', 'Lax', 'Serious', 'Hardy', 'Docile', 'Bashful', 'Quirky'];
 
 // ---------------- 상태 ----------------
-const STORE = 'pc-advisor-v1';
-const blankField = () => ({doubles: true, weather: '', terrain: '', crit: false, L: {}, R: {}});
+const STORE = skey('pc-advisor-v1');
+const blankField = () => ({doubles: M.doubles, weather: '', terrain: '', crit: false, L: {}, R: {}});
 let S = load() || {L: M.defaultSet('Rillaboom'), R: M.defaultSet('Incineroar'), field: blankField()};
 function load() {
   try {
@@ -47,12 +48,12 @@ function save() { try { localStorage.setItem(STORE, JSON.stringify(S)); } catch 
 function showTab(p) {
   document.querySelectorAll('nav.tabs button').forEach(x => x.setAttribute('aria-selected', x.dataset.p === p));
   document.querySelectorAll('.panel').forEach(el => { el.hidden = el.id !== 'p-' + p; });
-  try { localStorage.setItem('pc-advisor-tab', p); } catch (e) { /* 저장 불가 */ }
+  try { localStorage.setItem(skey('pc-advisor-tab'), p); } catch (e) { /* 저장 불가 */ }
   if (p === 'improve' && improveUI) improveUI.run();
   if (p === 'battle' && battleUI) battleUI.render();
 }
 document.querySelectorAll('nav.tabs button').forEach(b => b.addEventListener('click', () => showTab(b.dataset.p)));
-try { const t = localStorage.getItem('pc-advisor-tab'); if (t && $('p-' + t)) showTab(t); } catch (e) { /* 저장값 없음 */ }
+try { const t = localStorage.getItem(skey('pc-advisor-tab')); if (t && $('p-' + t)) showTab(t); } catch (e) { /* 저장값 없음 */ }
 
 // ---------------- 포켓몬 선택 목록 ----------------
 const label = e => `${e.ko} · ${e.en}`;
@@ -275,7 +276,7 @@ const importUI = initImport({
   onImport: sets => { teamUI.importSets(sets); $('team-msg').textContent = `스크린샷에서 ${sets.length}마리를 불러왔습니다.`; },
 });
 $('import-open').addEventListener('click', () => importUI.open());
-improveUI = initImprove({M, I, C: createChat(M, DATA), ty, esc, $, getSets: () => teamUI.getSets(), teamUI, gotoTeam: () => showTab('team')});
+improveUI = initImprove({M, T, I, C: createChat(M, DATA), ty, esc, $, getSets: () => teamUI.getSets(), teamUI, gotoTeam: () => showTab('team')});
 if (!$('p-improve').hidden) improveUI.run();
 pickUI = initPick({
   M, T, P, ty, esc, $, findMon,

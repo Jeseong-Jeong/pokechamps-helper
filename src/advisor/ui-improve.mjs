@@ -1,5 +1,6 @@
 // 팀 진단 탭: 팀 점수·문제점 → 교체 추천 → (포켓몬 유지 시) 세트 다듬기
 // + 추가 대화(규칙 기반 채팅) / 상세내용 다운로드(GPT에 붙여넣을 마크다운)
+import {skey} from './store.mjs';
 import {initChat} from './ui-chat.mjs';
 import {teamReportMarkdown, downloadText} from './export-md.mjs';
 const KIND = {move: '기술', item: '도구', nature: '성격', sp: 'SP'};
@@ -7,7 +8,7 @@ const PART = {meta: '자주 만나는 상대 대응', types: '타입 약점', co
 const WK = {Rain: '비', Sun: '쾌청', Sand: '모래바람', Snow: '설경'}, TK = {Grassy: '그래스필드', Psychic: '사이코필드', Electric: '일렉트릭필드', Misty: '미스트필드'};
 const CORE = {tr: '트릭룸 핵심', weather: '날씨 핵심', terrain: '필드 핵심'};
 
-export function initImprove({M, I, C, ty, esc, $, getSets, teamUI, gotoTeam}) {
+export function initImprove({M, T, I, C, ty, esc, $, getSets, teamUI, gotoTeam}) {
   const {byId, D} = M;
   let key = null, result = null, running = false, tuneCache = [];
   const chat = initChat({M, I, C, ty, esc, root: $('chat-root'), getSets, getResult: () => result, teamUI});
@@ -81,7 +82,7 @@ export function initImprove({M, I, C, ty, esc, $, getSets, teamUI, gotoTeam}) {
     const problems = [];
     if (base.danger.length) problems.push(`<b>${base.danger.map(t => D.typeko[t]).join('·')}</b> 공격에 약한 멤버가 많음`);
     if (base.noHit.length) problems.push(`<b>${base.noHit.map(j => esc(byId[I.threats[j].id].ko)).join('·')}</b>를 약점으로 칠 기술이 없음`);
-    const RK = {fakeout: '속이다', speed: '스피드 조절', intimidate: '위협'};
+    const RK = Object.fromEntries(Object.entries(T.ROLES).map(([k, r]) => [k, r.ko]));
     if (base.missing.length) problems.push(`<b>${base.missing.map(r => RK[r]).join('·')}</b> 담당이 없음`);
     const hard = I.threats.map((t, j) => ({j, v: base.per[j]})).filter(x => x.v < 0.2).sort((a, b) => a.v - b.v).slice(0, 4);
     if (hard.length) problems.push(`<b>${hard.map(x => esc(byId[I.threats[x.j].id].ko)).join('·')}</b> 상대로 확실한 대답이 없음`);
@@ -196,10 +197,10 @@ export function initImprove({M, I, C, ty, esc, $, getSets, teamUI, gotoTeam}) {
     const k = ev.target.dataset.plan;
     if (!k) return;
     I.setOverride({[k]: ev.target.value});
-    try { localStorage.setItem('pc-plan-v1', JSON.stringify(I.getOverride())); } catch (e) { /* 저장 불가 */ }
+    try { localStorage.setItem(skey('pc-plan-v1'), JSON.stringify(I.getOverride())); } catch (e) { /* 저장 불가 */ }
     run();
   });
-  try { const o = JSON.parse(localStorage.getItem('pc-plan-v1')); if (o) I.setOverride(o); } catch (e) { /* 없음 */ }
+  try { const o = JSON.parse(localStorage.getItem(skey('pc-plan-v1'))); if (o) I.setOverride(o); } catch (e) { /* 없음 */ }
   $('p-improve').addEventListener('click', ev => {
     const b = ev.target.closest('button[data-k]');
     if (!b || !result) { if (b && b.dataset.k === 'goto-team') gotoTeam(); return; }

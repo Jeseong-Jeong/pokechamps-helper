@@ -3,10 +3,11 @@
   "private": true,
   "description": "포챔스 M-C 도감 + 추천 봇",
   "scripts": {
-    "build": "python scripts/build.py && node scripts/build_advisor.mjs",
+    "build": "node scripts/build_singles.mjs && python scripts/build.py && node scripts/build_advisor.mjs",
     "build:advisor": "node scripts/build_advisor.mjs",
     "test": "node --test tests/*.test.mjs",
-    "deploy": "node scripts/deploy_pages.mjs"
+    "deploy": "node scripts/deploy_pages.mjs",
+    "fetch:singles": "node scripts/fetch_bss_replays.mjs && node scripts/fetch_smogon_bss.mjs"
   },
   "dependencies": {
     "@smogon/calc": "0.12.0"

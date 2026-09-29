@@ -111,7 +111,12 @@ test('메가진화 전에는 원래 모습으로 계산 (메가스톤만 들고 
   assert.equal(B.oppSetOf({...s, mega: false}).id, 'Metagross');
   assert.equal(B.oppSetOf({...s, mega: true}).id, 'Mega Metagross');
   const st = megaOpp => ({field: {}, me: [slot(inc), slot(ora)], bench: [], opp: [{id: 'Metagross', item: 'Metagrossite', hpPct: 100}, {id: 'Rillaboom', hpPct: 100}], megaOpp});
-  assert.equal(B.advise(st('')).opps[0].set.id, 'Metagross');
+  // 상대가 아직 메가진화를 안 했으면 필드의 메가스톤 포켓몬이 이번 턴에 메가진화한다고 보고 계산
+  const r0 = B.advise(st(''));
+  assert.equal(r0.opps[0].set.id, 'Mega Metagross');
+  assert.equal(r0.assumeMega, 'Metagross');
+  // 다른 포켓몬이 이미 메가진화했으면 메가 전 모습
+  assert.equal(B.advise(st('Rillaboom')).opps[0].set.id, 'Metagross');
   assert.equal(B.advise(st('Metagross')).opps[0].set.id, 'Mega Metagross');
 });
 

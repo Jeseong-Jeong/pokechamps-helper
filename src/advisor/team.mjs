@@ -32,6 +32,23 @@ export const ROLES = {
 };
 const KEY_ROLES = ['fakeout', 'speed', 'intimidate'];  // 없으면 크게 아쉬운 역할
 
+// 싱글: 한 마리씩 싸우므로 설치기·교체기·랭크업·선공기·상태이상·회복이 중요
+export const ROLES_S = {
+  hazard: {ko: '스텔스록·압정', moves: ['Stealth Rock', 'Spikes', 'Toxic Spikes', 'Sticky Web', 'Stone Axe', 'Ceaseless Edge']},
+  pivot: {ko: '유턴 교체', moves: ['U-turn', 'Volt Switch', 'Flip Turn', 'Parting Shot', 'Teleport', 'Chilly Reception', 'Shed Tail', 'Baton Pass']},
+  setup: {ko: '랭크업 에이스', moves: ['Swords Dance', 'Dragon Dance', 'Nasty Plot', 'Calm Mind', 'Bulk Up', 'Quiver Dance', 'Shell Smash',
+                                   'Belly Drum', 'Agility', 'Coil', 'Iron Defense', 'Curse', 'Tidy Up', 'Victory Dance', 'Shift Gear', 'Growth', 'Tail Glow']},
+  priority: {ko: '선공기', moves: ['Sucker Punch', 'Extreme Speed', 'Aqua Jet', 'Bullet Punch', 'Ice Shard', 'Mach Punch', 'Shadow Sneak',
+                                  'Quick Attack', 'Vacuum Wave', 'Jet Punch', 'Accelerock', 'First Impression', 'Grassy Glide', 'Thunderclap'],
+             abilities: ['Prankster', 'Gale Wings']},
+  status: {ko: '상태이상', moves: ['Will-O-Wisp', 'Thunder Wave', 'Toxic', 'Spore', 'Sleep Powder', 'Yawn', 'Hypnosis', 'Glare', 'Nuzzle']},
+  recovery: {ko: '회복', moves: ['Recover', 'Roost', 'Slack Off', 'Soft-Boiled', 'Moonlight', 'Morning Sun', 'Synthesis', 'Shore Up',
+                                 'Milk Drink', 'Strength Sap', 'Wish', 'Rest', 'Pain Split'], abilities: ['Regenerator']},
+  scarf: {ko: '스카프·기합의띠', items: ['Choice Scarf', 'Focus Sash'], abilities: ['Sturdy']},
+  intimidate: {ko: '위협', abilities: ['Intimidate']},
+};
+const KEY_ROLES_S = ['hazard', 'setup', 'priority'];
+
 export function effectiveness(atkType, defTypes, ability) {
   let m = 1;
   const t = GEN.types.get(toID(atkType));
@@ -43,6 +60,7 @@ export function effectiveness(atkType, defTypes, ability) {
 
 export function createTeamAdvisor(M) {
   const {D, byId} = M;
+  const RL = M.doubles ? ROLES : ROLES_S, KEY = M.doubles ? KEY_ROLES : KEY_ROLES_S;
   const moveEn = i => (typeof i === 'number' ? D.moves[i].en : i);
   const usageById = Object.fromEntries(D.usage.map(u => [u.id, u]));
   const baseOf = id => { const e = byId[id]; return e && e.mega ? e.parent : id; };
@@ -87,10 +105,12 @@ export function createTeamAdvisor(M) {
     const u = usageById[id];
     const mv = new Set((u ? u.mv.filter(([, p]) => p >= 15).map(([i]) => moveEn(i)) : []).concat(set ? set.moves : []));
     const abil = new Set([set ? set.ability : null, ...(u ? u.ab.filter(([, p]) => p >= 40).map(x => x[0]) : [])].filter(Boolean));
+    const items = new Set([set ? set.item : null, ...(u ? u.it.filter(([, p]) => p >= 30).map(x => x[0]) : [])].filter(Boolean));
     const out = [];
-    for (const [k, r] of Object.entries(ROLES)) {
+    for (const [k, r] of Object.entries(RL)) {
       if (r.moves && r.moves.some(m => mv.has(m))) out.push(k);
       else if (r.abilities && r.abilities.some(a => abil.has(a))) out.push(k);
+      else if (r.items && r.items.some(a => items.has(a))) out.push(k);
       else if (r.spread && [...mv].some(m => {
         const g = GEN.moves.get(toID(m));
         return g && g.category !== 'Status' && /^all/.test(g.target || '');
@@ -122,7 +142,7 @@ export function createTeamAdvisor(M) {
         .map(m => (conv && m.t === 'normal' ? conv : m.t)));
       for (const t of TYPES) if ([...atkTypes].some(a => effectiveness(a, [t]) > 1)) hits[t]++;
     }
-    const roles = Object.fromEntries(Object.keys(ROLES).map(k => [k, []]));
+    const roles = Object.fromEntries(Object.keys(RL).map(k => [k, []]));
     sets.forEach((s, i) => rolesOf(ids[i], s).forEach(r => roles[r].push(ids[i])));
     const megas = sets.filter(s => s.id !== s.baseId).length;
     const speeds = sets.map(s => ({id: s.id, spe: M.finalStats(s).spe})).sort((a, b) => b.spe - a.spe);
@@ -178,9 +198,9 @@ export function createTeamAdvisor(M) {
         const mine = rolesOf(e.id, set);
         for (const r of mine) {
           if (A.roles[r].length) continue;
-          const w = KEY_ROLES.includes(r) ? 9 : 4;
+          const w = KEY.includes(r) ? 9 : 4;
           score += w;
-          reasons.push({k: 'role', w, text: `${ROLES[r].ko} 담당`});
+          reasons.push({k: 'role', w, text: `${RL[r].ko} 담당`});
         }
 
         // 메가 과다 (배틀당 1번이라 3마리째부터 손해)
@@ -206,5 +226,5 @@ export function createTeamAdvisor(M) {
     return ids;
   }
 
-  return {candidates, autoFill, analyze, teamSets, rolesOf, baseOf, TYPES};
+  return {candidates, autoFill, analyze, teamSets, rolesOf, baseOf, TYPES, ROLES: RL, KEY_ROLES: KEY};
 }

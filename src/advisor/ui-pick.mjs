@@ -1,9 +1,13 @@
 // 선출 추천 탭 화면
-const STORE = 'pc-opp-v1';
+import {skey} from './store.mjs';
+import {ARCH_INFO} from './archetypes.mjs';
+const STORE = skey('pc-opp-v1');
 
 export function initPick({M, T, P, ty, esc, $, findMon, getMySets, gotoTeam}) {
   const {byId} = M;
+  const NEED = M.doubles ? 4 : 3;  // 선출 수
   let opp = load();
+  let infoOpen = {};  // 파티 성향 ⓘ 펼침
 
   function load() {
     try {
@@ -19,19 +23,20 @@ export function initPick({M, T, P, ty, esc, $, findMon, getMySets, gotoTeam}) {
     $('pick-mine').innerHTML = mine.length
       ? mine.map(s => `<span class="mon-chip">${esc(byId[s.id].ko)}</span>`).join('')
       : '<span class="mini">팀이 비어 있습니다.</span>';
-    $('pick-mine-note').innerHTML = mine.length < 4
-      ? `내 팀이 4마리 이상 있어야 합니다. <button class="link" data-k="goto-team">팀 추천 탭에서 만들기 →</button>` : '';
+    $('pick-mine-note').innerHTML = mine.length < NEED
+      ? `내 팀이 ${NEED}마리 이상 있어야 합니다. <button class="link" data-k="goto-team">팀 추천 탭에서 만들기 →</button>` : '';
     $('pick-opp').innerHTML = [0, 1, 2, 3, 4, 5].map(i => {
       const id = opp[i];
       if (id) {
-        const e = byId[id];
-        return `<div class="opp-slot"><span class="types">${e.ty.map(ty).join('')}</span><b>${esc(e.ko)}</b>
+        const e = byId[id], u = M.usageOf(e);
+        const odds = !M.doubles && u && u.pick != null ? `<span class="mini" title="파티에 있을 때 실제로 데려오는 비율 · 데려왔을 때 선봉으로 내는 비율">선출 ${u.pick.toFixed(0)}% · 선봉 ${(u.lead || 0).toFixed(0)}%</span>` : '';
+        return `<div class="opp-slot"><span class="types">${e.ty.map(ty).join('')}</span><b>${esc(e.ko)}</b>${odds}
           <button class="link danger" data-k="opp-remove" data-i="${i}" aria-label="${esc(e.ko)} 빼기">✕</button></div>`;
       }
       return `<div class="opp-slot empty"><input class="pick" list="mon-list" data-k="opp-add" placeholder="${i === opp.length ? '상대 포켓몬' : ''}"
         aria-label="상대 ${i + 1}번" autocomplete="off"${i === opp.length ? '' : ' disabled'}></div>`;
     }).join('');
-    $('pick-result').innerHTML = mine.length >= 4 && opp.length ? result(mine) : '<p class="mini">상대 포켓몬을 입력하면 추천이 나옵니다. 6마리를 다 넣을수록 정확합니다.</p>';
+    $('pick-result').innerHTML = mine.length >= NEED && opp.length ? result(mine) : '<p class="mini">상대 포켓몬을 입력하면 추천이 나옵니다. 6마리를 다 넣을수록 정확합니다.</p>';
   }
 
   function result(mine) {
@@ -52,6 +57,8 @@ export function initPick({M, T, P, ty, esc, $, findMon, getMySets, gotoTeam}) {
     const WK = {Rain: '비', Sun: '쾌청', Sand: '모래바람', Snow: '설경'}, TK = {Grassy: '그래스필드', Psychic: '사이코필드', Electric: '일렉트릭필드', Misty: '미스트필드'};
     const modeNote = [top.useTR ? `트릭룸(${esc(byId[mine[R.plan.trIdx.find(i => top.idx.includes(i))].id].ko)}) 있을 때 60%로 계산` : '',
       top.useW ? `${WK[R.plan.weather] || TK[R.plan.terrain]} 위에서 계산` : ''].filter(Boolean).join(' · ');
+    // 상대 파티 성향 (키워드 + 한 줄 설명 + ⓘ 자세히)
+    const archHtml = R.arch ? archBlock(R.arch) : '';
     // 게임 플랜
     const planHtml = R.gamePlan.length ? `<div class="gameplan"><h3>게임 플랜</h3><ol>${R.gamePlan.map(l => `<li>${esc(l)}</li>`).join('')}</ol>
       ${modeNote ? `<p class="mini">${modeNote}</p>` : ''}</div>` : '';
@@ -90,16 +97,40 @@ export function initPick({M, T, P, ty, esc, $, findMon, getMySets, gotoTeam}) {
           <p class="mini why">${megaNote(top)}</p>
         </div>
       </div>
+      ${archHtml}
       ${planHtml}
       ${dangerHtml}
       ${R.threats.length ? `<div class="notes"><p>이 선출로 유리하게 상대하기 어려운 포켓몬: <b>${R.threats.map(t => esc(byId[R.opp[t.j].id].ko)).join(', ')}</b>. 교체나 방어로 버티는 계획이 필요합니다.</p></div>` : ''}
       ${ansHtml}
       <div class="pick-alt">
         <div><h4>다른 선출 후보</h4><ol>${alt || '<li class="mini">없음</li>'}</ol></div>
-        <div><h4>다른 선봉 조합</h4><ol>${altLeads || '<li class="mini">없음</li>'}</ol></div>
+        <div><h4>${M.doubles ? '다른 선봉 조합' : '다른 선봉 후보'}</h4><ol>${altLeads || '<li class="mini">없음</li>'}</ol></div>
       </div>
       <h4>상성표 <span class="mini">칸 = 내가 주는 % / 내가 받는 % (서로 가장 센 기술, 상대는 사용률 1순위 세트) · ${top.useTR ? '↻ 트릭룸에서 내가 먼저' : '⚡ 내가 먼저'}</span></h4>
       <div class="tbl"><table class="mxtbl"><thead><tr><th></th>${head}</tr></thead><tbody>${rows}</tbody></table></div>`;
+  }
+
+  function archBlock(A) {
+    const pct = v => Math.round(v * 100);
+    const WK = {Rain: '비', Sun: '쾌청', Sand: '모래바람', Snow: '설경'}, TK = {Psychic: '사이코필드', Grassy: '그래스필드', Electric: '일렉트릭필드', Misty: '미스트필드'};
+    const name = k => ARCH_INFO[k].ko + (k === 'weather' && A.detail ? `(${WK[A.detail.weather]})` : k === 'terrain' && A.detail ? `(${TK[A.detail.terrain]})` : '');
+    const keys = (A.keys || ['face', 'cycle', 'setup']).filter(k => A[k] != null);
+    const tags = keys.map(k => {
+      const I = {...ARCH_INFO[k], ko: name(k)}, main = A.main.includes(k);
+      const who = A.per.filter(x => x.tags.includes(k)).map(x => esc(byId[x.id].ko));
+      return `<div class="arch${main ? ' main' : ''}">
+        <div class="arch-h"><b>${I.ko}</b><span class="archbar"><i style="width:${pct(A[k])}%"></i></span><span class="mini num">${pct(A[k])}</span>
+          <button class="info" data-k="arch-info" data-v="${k}" aria-expanded="${!!infoOpen[k]}" aria-label="${I.ko} 설명">i</button></div>
+        <p class="mini">${I.short}${who.length ? ` · ${who.join(', ')}` : ''}</p>
+        ${infoOpen[k] ? `<div class="arch-more">
+          <p>${I.what}</p>
+          <p><b class="good">강한 상대</b> ${I.strong}</p>
+          <p><b class="bad">약한 상대</b> ${I.weak}</p>
+          <p><b>이런 상대를 만나면</b></p><ul>${I.how.map(x => `<li>${x}</li>`).join('')}</ul>
+        </div>` : ''}
+      </div>`;
+    }).join('');
+    return `<div class="arch-box"><h3>상대 파티 성향 <span class="mini">— ${A.main.map(name).join('·')} 쪽 (막대 = 성향 점수, ⓘ 누르면 설명)</span></h3>${tags}</div>`;
   }
 
   // ---------------- 입력 ----------------
@@ -121,6 +152,7 @@ export function initPick({M, T, P, ty, esc, $, findMon, getMySets, gotoTeam}) {
     if (b.dataset.k === 'opp-remove') { opp = opp.filter((_, i) => i !== +b.dataset.i); save(); render(); }
     if (b.dataset.k === 'opp-clear') { opp = []; save(); render(); }
     if (b.dataset.k === 'goto-team') gotoTeam();
+    if (b.dataset.k === 'arch-info') { infoOpen[b.dataset.v] = !infoOpen[b.dataset.v]; render(); }
   });
 
   render();
