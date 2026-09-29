@@ -148,9 +148,12 @@ export function initImprove({M, T, I, C, ty, esc, $, getSets, teamUI, gotoTeam})
 
     const tuneHtml = sets.map((s, i) => {
       const list = tuneCache[i] || [];
+      if (teamUI.isEditing(i)) return `<div class="tune">${teamUI.editorFor(i)}</div>`;
       return `<div class="tune">
         <div class="tune-h"><b>${nm(s)}</b>${core[i] ? `<span class="badge b-mine">${CORE[core[i]]}</span>` : ''}
-          <span class="mini">${esc(M.itemKo(s.item) || '도구 없음')} · ${esc(D.natureko[s.nature] || s.nature)} · SP ${['hp', 'atk', 'def', 'spa', 'spd', 'spe'].map(k => s.sp[k] || 0).join('-')}</span></div>
+          <span class="mini">${esc(M.itemKo(s.item) || '도구 없음')} · ${esc(D.natureko[s.nature] || s.nature)} · SP ${['hp', 'atk', 'def', 'spa', 'spd', 'spe'].map(k => s.sp[k] || 0).join('-')}</span>
+          <button class="link" data-k="iedit" data-i="${i}">직접 수정</button></div>
+        <p class="mini">${s.moves.filter(Boolean).map(n => esc(M.moveKo(n))).join(', ')}</p>
         ${list.length ? `<ul>${list.map((x, k) => `<li><span class="kind">${KIND[x.kind]}</span><span class="what">${esc(x.text)} ${deltaTag(x)}</span>
           <span class="mini why">${esc(x.why)}</span><button class="btn sm" data-k="tune" data-i="${i}" data-t="${k}">적용</button></li>`).join('')}</ul>`
           : '<p class="mini">특별히 고칠 곳이 없습니다.</p>'}
@@ -182,7 +185,7 @@ export function initImprove({M, T, I, C, ty, esc, $, getSets, teamUI, gotoTeam})
       </section>
       <section class="card">
         <h3>2. 포켓몬은 그대로 쓴다면 — 세트 다듬기</h3>
-        <p class="mini">기술·도구·성격·SP를 바꾸는 방법입니다. 옆의 점수는 적용했을 때 팀 점수 변화입니다(방어·회복 열매처럼 데미지 계산에 안 잡히는 장점은 "점수 밖 장점"). <b>적용</b>을 누르면 팀에 바로 반영되고 다시 진단합니다.</p>
+        <p class="mini">기술·도구·성격·SP를 바꾸는 방법입니다. 옆의 점수는 적용했을 때 팀 점수 변화입니다(방어·회복 열매처럼 데미지 계산에 안 잡히는 장점은 "점수 밖 장점"). <b>적용</b>을 누르면 팀에 바로 반영되고 다시 진단합니다. 원하는 대로 바꾸려면 <b>직접 수정</b>을 누르세요.</p>
         <div class="tunes">${tuneHtml}</div>
       </section>`;
   }
@@ -193,6 +196,9 @@ export function initImprove({M, T, I, C, ty, esc, $, getSets, teamUI, gotoTeam})
     const T2 = {'Grassy Surge': 'Grassy', 'Psychic Surge': 'Psychic', 'Electric Surge': 'Electric', 'Misty Surge': 'Misty'};
     return {weather: s ? W2[s.ability] : '', terrain: s ? T2[s.ability] : ''};
   };
+  // 세트 직접 수정 (팀 탭과 같은 편집창)
+  const redraw = () => { const sets = getSets(); if (result && sets.length >= 6) draw(sets); };
+  for (const t of ['input', 'change']) $('p-improve').addEventListener(t, ev => { if (teamUI.handleEdit(ev, redraw)) ev.stopImmediatePropagation(); });
   $('p-improve').addEventListener('change', ev => {
     const k = ev.target.dataset.plan;
     if (!k) return;
@@ -202,6 +208,7 @@ export function initImprove({M, T, I, C, ty, esc, $, getSets, teamUI, gotoTeam})
   });
   try { const o = JSON.parse(localStorage.getItem(skey('pc-plan-v1'))); if (o) I.setOverride(o); } catch (e) { /* 없음 */ }
   $('p-improve').addEventListener('click', ev => {
+    if (teamUI.handleEdit(ev, redraw)) return;
     const b = ev.target.closest('button[data-k]');
     if (!b || !result) { if (b && b.dataset.k === 'goto-team') gotoTeam(); return; }
     const k = b.dataset.k;
@@ -213,6 +220,7 @@ export function initImprove({M, T, I, C, ty, esc, $, getSets, teamUI, gotoTeam})
     }
     if (k === 'pair') result.pair.slots.forEach((slot, n) => teamUI.replaceAt(slot, result.pair.sets[n]));
     if (k === 'tune') teamUI.setSet(+b.dataset.i, tuneCache[+b.dataset.i][+b.dataset.t].set);
+    if (k === 'iedit') { teamUI.startEdit(+b.dataset.i); redraw(); }
   });
 
   return {run, invalidate() { key = null; }};
