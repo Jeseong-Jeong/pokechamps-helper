@@ -134,7 +134,7 @@ export function initPick({M, T, P, ty, esc, $, findMon, getMySets, gotoTeam}) {
         </div>` : ''}
       </div>`;
     }).join('');
-    return `<div class="arch-box"><h3>상대 파티 성향 <span class="mini">— ${A.main.map(name).join('·')} 쪽 (막대 = 성향 점수, ⓘ 누르면 설명)</span></h3>${tags}</div>`;
+    return `<div class="arch-box"><h3>상대 파티 성향 <span class="mini">— ${A.main.map(name).join('·')} 쪽</span></h3>${tags}</div>`;
   }
 
   // ---------------- 입력 ----------------
