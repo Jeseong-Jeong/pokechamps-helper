@@ -35,6 +35,32 @@ const pickW = (items, w) => { const t = w.reduce((a, b) => a + b, 0); let r = rn
 
 // ---------- 팀 ----------
 const TOP = G.usage.slice(0, 30).filter(u => byId[u.id] && byId[u.id].calc);
+const USAGE = G.usage;
+// ---------- 티어 모드 (TIER=1): 사용률 상위 60마리에서 두 팀 모두 균등하게 뽑아, 포켓몬마다 선출 시 승률을 잼 ----------
+const TIER = process.env.TIER === '1';
+const POOL = USAGE.slice(0, +(process.env.POOLN || 60)).filter(u => u.id && byId[u.id] && byId[u.id].calc);
+function uniTeam() {
+  const ids = [];
+  while (ids.length < 6) { const u = POOL[Math.floor(rnd() * POOL.length)]; if (!ids.some(x => byId[x].no === byId[u.id].no)) ids.push(u.id); }
+  return T.teamSets(ids);
+}
+const tier = {};
+function tierRecord(team, brought, leadCount, won) {
+  for (const s of team) { const k = s.baseId || s.id; const t = tier[k] ||= {team: 0, teamW: 0, br: 0, brW: 0, lead: 0, leadW: 0}; t.team++; if (won) t.teamW++; }
+  brought.forEach((s, n) => { const t = tier[s.baseId || s.id]; t.br++; if (won) t.brW++; if (n < leadCount) { t.lead++; if (won) t.leadW++; } });
+}
+function tierReport(name) {
+  const rank = Object.fromEntries(USAGE.map(u => [u.id, u.rank]));
+  const rows = Object.entries(tier).filter(([, t]) => t.br >= 40).map(([id, t]) => {
+    const p = t.brW / t.br, ci = 1.96 * Math.sqrt(p * (1 - p) / t.br);
+    return {id, ko: byId[id].ko, rank: rank[id], br: t.br, pick: t.br / t.team, win: p, ci, teamWin: t.teamW / t.team};
+  }).sort((a, b) => b.win - a.win);
+  writeFileSync(join(ROOT, 'raw', '_cache', 'sim', `tier-${name}.json`), JSON.stringify(rows, null, 1));
+  const f = x => (100 * x).toFixed(1);
+  console.log(`\n[${name} 티어] 선출됐을 때 승률 순 (선출 ${40}판 이상, ±는 95% 오차) · 사용률 순위 · 파티에 있을 때 선출률`);
+  rows.forEach((r, i) => console.log(`${String(i + 1).padStart(2)}. ${r.ko.padEnd(8)} 승률 ${f(r.win)}% ±${f(r.ci)} · 선출 ${r.br}판 · 선출률 ${f(r.pick)}% · 사용률 ${r.rank}위`));
+}
+
 function oppTeam() {
   const ids = [];
   while (ids.length < 6) {
@@ -117,7 +143,7 @@ function bestSwitch(b, brain, req) {
   const foe = brain.side.foe.active[0];
   const cands = req.side.pokemon.map((p, i) => ({p, i})).filter(x => !x.p.active && x.p.condition !== '0 fnt' && !x.p.condition.endsWith('fnt'));
   if (!cands.length) return 'default';
-  if (!foe || foe.fainted) return `switch ${cands[0].i + 1}`;
+  if (!foe || foe.fainted || !idOf(foe) || !byId[baseIdOf(foe)]) return `switch ${cands[0].i + 1}`;  // 모르는 폼이면 첫 후보
   const oppSet = B.oppSetOf({id: baseIdOf(foe), mega: !!byId[idOf(foe)].mega});
   let best = null;
   for (const c of cands) {
@@ -151,7 +177,7 @@ function botChoice(b, brain, req, stats) {
     if (!a || a.kind === 'none') continue;
     if (a.kind === 'switch') {
       const id = R.bench[a.to] && R.bench[a.to].id, p = id && posOf(req, id);
-      if (p > 0 && !req.active[0].trapped) { brain.decisions.switch++; trace(b, brain, st, R, c, '교체→' + id); return `switch ${p}`; }
+      if (p > 0 && !req.active[0].trapped && !req.active[0].maybeTrapped) { brain.decisions.switch++; trace(b, brain, st, R, c, '교체→' + id); return `switch ${p}`; }
       continue;
     }
     const ch = moveChoice(req, a.move, canMega);
@@ -205,7 +231,8 @@ const SWAP = process.env.SWAP === '1';
 let pair = null;
 function playOne(g, stats, sample) {
   let A, Bt;
-  if (SWAP) { if (g % 2 === 0) pair = [oppTeam(), oppTeam()]; [A, Bt] = g % 2 === 0 ? pair : [pair[1], pair[0]]; }
+  if (TIER) { A = uniTeam(); Bt = uniTeam(); }
+  else if (SWAP) { if (g % 2 === 0) pair = [oppTeam(), oppTeam()]; [A, Bt] = g % 2 === 0 ? pair : [pair[1], pair[0]]; }
   else { A = myTeam(); Bt = oppTeam(); }
   const Aids = A.map(s => s.baseId || s.id), Bids = Bt.map(s => s.baseId || s.id);
   const pa = botPick(A, Bids), pb = OPP_AI === 'bot' ? botPick(Bt, Aids) : OPP_AI === 'greedy' ? greedyPick(Bt) : {order: [0, 1, 2]};
@@ -244,6 +271,7 @@ function playOne(g, stats, sample) {
     if (!acted) break;
   }
   const won = battle.winner === 'bot';
+  if (TIER && battle.winner) { tierRecord(A, A3, 1, won); tierRecord(Bt, B3, 1, !won); }
   stats.games++; if (won) stats.wins++; if (!battle.winner) stats.ties++;
   stats.turns += battle.turn;
   for (const [k, v] of Object.entries(brains.p1.decisions)) stats.dec[k] = (stats.dec[k] || 0) + v;
@@ -267,6 +295,7 @@ const pct = (w, g) => (g ? (100 * w / g).toFixed(1) + '%' : '-');
 console.log(`상대 AI: ${OPP_AI} · ${stats.games}판 · 승률 ${pct(stats.wins, stats.games)} · 평균 ${(stats.turns / Math.max(1, stats.games)).toFixed(1)}턴 · ${((Date.now() - t0) / 1000).toFixed(0)}초`);
 console.log('우리 봇 행동:', JSON.stringify(stats.dec));
 console.log('상대 파티 성향별:', Object.entries(stats.byArch).map(([k, v]) => `${k} ${v.w}/${v.g}`).join(', '));
+if (TIER) tierReport('singles');
 console.log('많이 낸 포켓몬:', Object.entries(stats.mon).sort((a, b) => b[1].g - a[1].g).slice(0, 10).map(([k, v]) => `${k} ${v.g}판 ${pct(v.w, v.g)}`).join(', '));
 console.log('잘못된 선택:', stats.bad.length, stats.bad.slice(0, 5));
 console.log('오류:', stats.errors.length, stats.errors.slice(0, 3));

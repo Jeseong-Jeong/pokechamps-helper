@@ -417,7 +417,17 @@ export function createBattle(M, P, opts = {}) {
         if (isSpread(mv)) out.push({kind: 'attack', i, move: mv, target: 'spread'});
         else for (const j of [0, 1]) if (opps[j]) out.push({kind: 'attack', i, move: mv, target: j});
       }
-      bench.forEach((b, k) => out.push({kind: 'switch', i, to: k}));
+      // 그림자밟기(고스트 제외)·개미지옥(땅에 있는 포켓몬)·자력(강철)에 걸리면 교체 못 함 (유턴류는 가능)
+      const trapped = opps.some(o => {
+        if (!o) return false;
+        const ab = o.set.ability, ty = byId[me.set.id].ty;
+        if (ty.includes('ghost') || me.set.item === 'Shed Shell') return false;
+        if (ab === 'Shadow Tag') return me.set.ability !== 'Shadow Tag';
+        if (ab === 'Arena Trap') return !ty.includes('flying') && me.set.ability !== 'Levitate' && me.set.item !== 'Air Balloon';
+        if (ab === 'Magnet Pull') return ty.includes('steel');
+        return false;
+      });
+      if (!trapped && !me.trapped) bench.forEach((b, k) => out.push({kind: 'switch', i, to: k}));
       return out;
     }
 
