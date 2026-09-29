@@ -63,7 +63,10 @@ for (const e of DATA.entries) {
   labelMap.set(e.ko, labelMap.get(e.ko) || e.id);
   labelMap.set(e.en.toLowerCase(), e.id);
 }
-const sortedEntries = [...DATA.entries].sort((a, b) => (a.use || 999) - (b.use || 999) || a.no - b.no);
+// 자동완성 순서: 이 페이지(싱글/더블)의 사용률 순위 → 도감번호. 메가는 원래 포켓몬 순위 바로 뒤
+const rankOf = Object.fromEntries(DATA.usage.map(u => [u.id, u.rank]));
+const useRank = e => rankOf[e.mega ? e.parent : e.id] || 999;
+const sortedEntries = [...DATA.entries].sort((a, b) => useRank(a) - useRank(b) || !!a.mega - !!b.mega || a.no - b.no);
 $('mon-list').innerHTML = sortedEntries.map(e => `<option value="${esc(label(e))}">`).join('');
 function findMon(v) {
   v = v.trim();
