@@ -13,6 +13,9 @@ const blankState = () => ({field: {weather: '', terrain: '', trickRoom: false, t
 // 설치기 기술 → 깔리는 것 / 치우는 기술
 const HAZARD_OF = {'Stealth Rock': 'sr', Spikes: 'spikes'};
 const CLEAR_OWN = ['Rapid Spin', 'Mortal Spin'], CLEAR_BOTH = ['Defog', 'Tidy Up', 'Court Change'];
+// 행동 후 교체: 스스로 교체하는 기술(쓴 쪽이 고름) / 상대를 끌어내는 기술(맞은 쪽이 무작위로 끌려나옴)
+const SELF_SWITCH = ['U-turn', 'Volt Switch', 'Flip Turn', 'Parting Shot', 'Teleport', 'Chilly Reception', 'Shed Tail', 'Baton Pass'];
+const PHAZE = ['Roar', 'Whirlwind', 'Dragon Tail', 'Circle Throw'];
 
 export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, getLead}) {
   const {byId, D} = M;
@@ -249,7 +252,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
     if (a.kind === 'attack') {
       const red = c && c.log.find(x => x.k === 'redirected' && x.from === 'm' + i);
       if (red) return `<b>${esc(M.moveKo(a.move))}</b> → ${on(+red.to[1])} <span class="mini">(유인에 끌려감)</span>`;
-      if (SINGLE) return `<b>${esc(M.moveKo(a.move))}</b>${a.pivot ? ' <span class="mini">(때리고 교체)</span>' : ''}`;
+      if (SINGLE) return `<b>${esc(M.moveKo(a.move))}</b>${a.pivot ? ` <span class="mini">(때리고 교체${a.pivotTo != null && R.bench[a.pivotTo] ? ' → ' + nm(R.bench[a.pivotTo].id) : ''})</span>` : ''}`;
       return `<b>${esc(M.moveKo(a.move))}</b> → ${a.target === 'spread' ? '상대 전체' : on(a.target)}`;
     }
     const KIND = {setup: '랭크업', hazard: '설치', status: '상태이상', recover: '회복'};
@@ -268,6 +271,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
       if (x.k === 'redirected') lines.push(`${who(x.from)}의 공격이 ${who(x.to)}에게 끌려감 (유인)`);
       if (x.k === 'ally') lines.push(`<span class="bad">⚠ ${who(x.from)}의 ${esc(M.moveKo(x.move))}가 우리 편 ${who(x.to)}도 맞춤 ${x.r.minPct.toFixed(0)}~${x.r.maxPct.toFixed(0)}%</span>`);
       if (x.k === 'flinch') lines.push(`${who(x.who)} 풀죽어서 행동 못 함`);
+      if (x.k === 'pivot') lines.push(`${who(x.from)} 때리고 교체 → ${nm(x.id)} 나옴`);
       if (x.k === 'sash') lines.push(`<span class="mini">${nm(x.id)} ${x.item === 'sash' ? '기합의띠' : '옹골참'}로 1 남기고 버팀</span>`);
       if (x.k === 'hazard') lines.push(`<span class="mini">${nm(x.id)} 들어오며 설치기 피해 ${Math.round(x.d)}%</span>`);
       if (x.k === 'blocked') lines.push(`${who('o' + x.j)}의 ${esc(M.moveKo(x.move))}를 방어로 막음`);
@@ -319,7 +323,8 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
         if (!a || a.kind === 'none') return base;
         if (a.kind === 'protect') return {...base, act: 'protect', move: a.move};
         if (a.kind === 'switch') { const to = R.bench[a.to] ? R.bench[a.to].id : ''; return {...base, act: 'switch', to, newHp: S.benchHp[to] ?? 100}; }
-        return {...base, move: a.move || '', target: SINGLE ? 0 : a.kind === 'attack' ? tgtOf(a.target) : ''};
+        const afterTo = a.pivot && a.pivotTo != null && R.bench[a.pivotTo] ? R.bench[a.pivotTo].id : '';
+        return {...base, move: a.move || '', target: SINGLE ? 0 : a.kind === 'attack' ? tgtOf(a.target) : '', afterTo, afterHp: S.benchHp[afterTo] ?? 100};
       }),
       rec: top ? top.acts.map(a => [a.kind, a.move || '', a.target ?? '', a.to ?? ''].join(':')) : null,
     };
@@ -348,13 +353,14 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
   }
 
   // 교체해 들어온 포켓몬의 예상 HP: 기록한 공격 중 이 자리를 친 것을 들어온 포켓몬 기준으로 계산
-  function expectIncoming(R, side, k) {
+  function expectIncoming(R, side, k, after = false) {
     const a = draft[side][k];
-    if (!R || !a || a.act !== 'switch' || !a.to) return null;
-    const idx = side === 'me' ? R.bench.findIndex(b => b.id === a.to) : R.oppBench.findIndex(b => b.id === a.to);
+    const to = after ? a && a.afterTo : a && a.act === 'switch' && a.to;
+    if (!R || !a || !to) return null;
+    const idx = side === 'me' ? R.bench.findIndex(b => b.id === to) : R.oppBench.findIndex(b => b.id === to);
     if (idx < 0) return null;
     const defKey = (side === 'me' ? 'b' : 'x') + idx;
-    const base = side === 'me' ? (S.benchHp[a.to] ?? 100) : (S.oppHp[a.to] ?? 100);
+    const base = side === 'me' ? (S.benchHp[to] ?? 100) : (S.oppHp[to] ?? 100);
     let lo = 0, hi = 0;
     (side === 'me' ? draft.opp : draft.me).forEach((x, i) => {
       if (!x || x.act !== 'attack' || !x.move || !(x.target === 'spread' || x.target === k)) return;
@@ -367,6 +373,28 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
     const e = expectIncoming(R, side, k);
     return `<span class="hpl"><span class="mini">들어온 쪽 HP</span>${hpGauge('rnew', `data-side="${side}" data-k="${k}"`, a.newHp, '들어온 쪽 HP')}</span>${e ? `<span class="mini">맞은 뒤 예상 ${e[0]}~${e[1]}% <button class="link" data-f="rnewexp" data-side="${side}" data-k="${k}" data-v="${Math.round((e[0] + e[1]) / 2)}">넣기</button></span>` : ''}`;
   };
+
+  // 이 자리가 행동 후에 교체되나: 유턴류(스스로) / 상대의 날려버리기류(끌려나옴) / 직접 표시(탈출버튼·레드카드·위기회피 등)
+  function afterWhy(side, k) {
+    const a = draft[side][k];
+    if (!a || (a.act !== 'attack' && a.act !== 'protect')) return null;
+    if (a.act === 'attack' && SELF_SWITCH.includes(a.move)) return {kind: 'self', label: `${M.moveKo(a.move)} 후 교체되어 나온 포켓몬`};
+    const other = side === 'me' ? draft.opp : draft.me;
+    const ph = other.find(x => x && x.act === 'attack' && PHAZE.includes(x.move) && (SINGLE || x.target === k));
+    if (ph) return {kind: 'phaze', label: `상대 ${M.moveKo(ph.move)}에 끌려나온 포켓몬`};
+    if (a.afterOn) return {kind: 'manual', label: '교체되어 나온 포켓몬'};
+    return null;
+  }
+  function afterBox(side, k, a, back) {
+    const w = afterWhy(side, k);
+    if (!a || (a.act !== 'attack' && a.act !== 'protect')) return '';
+    if (!w) return `<button class="link mini" data-f="rafter" data-side="${side}" data-k="${k}" title="탈출버튼·레드카드·위기회피·도망태세 등으로 이 턴에 빠졌으면">행동 후 교체됨?</button>`;
+    return `<div class="after-box"><span class="mini">↪ ${esc(w.label)}</span>
+      <select data-f="rafterto" data-side="${side}" data-k="${k}"><option value="">(누가 나왔나요?)</option>${back.map(id => `<option value="${id}"${id === a.afterTo ? ' selected' : ''}>${nm(id)}</option>`).join('')}</select>
+      ${a.afterTo ? `<span class="hpl"><span class="mini">나온 쪽 HP</span>${hpGauge('rafterhp', `data-side="${side}" data-k="${k}"`, a.afterHp ?? 100, '나온 쪽 HP')}</span>` : ''}
+      ${a.afterTo && w.kind === 'self' ? (() => { const e = expectIncoming(lastR, side, k, true); return e ? `<span class="mini">먼저 유턴했다면 맞은 뒤 예상 ${e[0]}~${e[1]}% <button class="link" data-f="rafterexp" data-side="${side}" data-k="${k}" data-v="${Math.round((e[0] + e[1]) / 2)}">넣기</button></span>` : ''; })() : ''}
+      ${w.kind === 'manual' ? `<button class="link mini" data-f="rafter" data-side="${side}" data-k="${k}">취소</button>` : ''}</div>`;
+  }
 
   function resultForm(R) {
     if (!draft) draft = makeDraft(R);
@@ -395,6 +423,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
         ${a.act === 'switch' || a.act === 'faint' ? `<select data-f="rto" data-side="opp" data-k="${j}"><option value="">${a.act === 'faint' ? '(다음에 나온 포켓몬)' : '(누구로?)'}</option>${oppBack.map(id => `<option value="${id}"${id === a.to ? ' selected' : ''}>${nm(id)}</option>`).join('')}</select>` : ''}
         ${a.act !== 'faint' && a.act !== 'switch' ? hpBox('opp', j, a) : ''}
         ${(a.act === 'switch' || a.act === 'faint') && a.to ? newHpBox(R, 'opp', j, a) : ''}
+        ${afterBox('opp', j, a, oppBack)}
       </div>`;
     }).join('');
     const myRows = S.me.map((s, i) => {
@@ -407,6 +436,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
         ${a.act === 'switch' || a.act === 'faint' ? `<select data-f="rto" data-side="me" data-k="${i}"><option value="">${a.act === 'faint' ? '(다음에 낸 포켓몬)' : '(누구로?)'}</option>${myBack.map(id => `<option value="${id}"${id === a.to ? ' selected' : ''}>${nm(id)}</option>`).join('')}</select>` : ''}
         ${a.act !== 'faint' && a.act !== 'switch' ? hpBox('me', i, a) : ''}
         ${(a.act === 'switch' || a.act === 'faint') && a.to ? newHpBox(R, 'me', i, a) : ''}
+        ${afterBox('me', i, a, myBack)}
       </div>`;
     }).join('');
     return `<div class="turnres">
@@ -432,9 +462,9 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
     const actText = (h, side, x) => {
       if (x.act === 'switch') return `교체 → ${nm(x.to)}`;
       if (x.act === 'faint') return `쓰러짐${x.to ? ' → ' + nm(x.to) : ''}`;
-      if (x.act === 'protect') return '방어';
       const t = tname(h, side, x.target);
-      return x.move ? `${esc(M.moveKo(x.move))}${t ? ' → ' + t : ''}` : '공격';
+      const aft = x.after ? ` ↪ ${nm(x.after.to)} ${x.after.kind === 'phaze' ? '끌려나옴' : '나옴'}` : '';
+      return (x.act === 'protect' ? '방어' : x.move ? `${esc(M.moveKo(x.move))}${t ? ' → ' + t : ''}` : '공격') + aft;
     };
     const rows = S.history.slice().reverse().map(h => {
       const opp = (h.opp || []).map(o => {
@@ -474,12 +504,16 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
       const a = draft.opp[j];
       if (!s.id || !a) return;
       const d = R && R.defense[j];
-      entry.opp.push({id: s.id, actual: {act: a.act, move: a.move, target: a.target, to: a.to},
+      const aw = afterWhy('opp', j);
+      const after = aw && a.afterTo ? {to: a.afterTo, kind: aw.kind} : null;
+      entry.opp.push({id: s.id, actual: {act: a.act, move: a.move, target: a.target, to: a.to, after},
         pred: d ? {pA: d.pA, pP: d.pP, pS: d.pS, switchTo: d.switchTo ? d.switchTo.id : null, likely: likelyOf(d)} : null});
       if (a.act === 'switch' || a.act === 'faint') {
         if (a.act === 'faint') { if (!S.oppOut.includes(s.id)) S.oppOut.push(s.id); S.oppHp[s.id] = 0; }
         else S.oppHp[s.id] = s.hpPct;
-        S.opp[j] = a.to ? {...blankSlot(), id: a.to, hpPct: a.newHp ?? S.oppHp[a.to] ?? 100, fresh: true} : blankSlot();
+        // 뒤로 간 상대가 보여준 기술·도구·특성은 기억해 두고, 다시 나오면 되살림
+        S.oppKnown = {...(S.oppKnown || {}), [s.id]: {moves: s.moves, item: s.item, ability: s.ability}};
+        S.opp[j] = a.to ? {...blankSlot(), id: a.to, hpPct: a.newHp ?? S.oppHp[a.to] ?? 100, fresh: true, ...((S.oppKnown || {})[a.to] || {})} : blankSlot();
       } else {
         s.hpPct = a.hp; s.fresh = false; s.protected = a.act === 'protect';
         s.lastMove = a.act === 'attack' ? a.move : '';  // 싱글 교체 예측: 설치기 직후엔 잘 빠지고 랭크업 직후엔 안 빠짐
@@ -487,12 +521,19 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
           const cur = B.oppSetOf(s).moves.filter(Boolean);
           s.moves = cur.includes(a.move) ? cur : [a.move, ...cur].slice(0, 4);
         }
+        if (after) {  // 유턴·날려버리기 등으로 빠지고 다른 포켓몬이 나옴
+          S.oppHp[s.id] = s.hpPct;
+          S.oppKnown = {...(S.oppKnown || {}), [s.id]: {moves: s.moves, item: s.item, ability: s.ability}};
+          S.opp[j] = {...blankSlot(), id: after.to, hpPct: a.afterHp ?? S.oppHp[after.to] ?? 100, fresh: true, ...((S.oppKnown || {})[after.to] || {})};
+        }
       }
     });
     S.me.forEach((s, i) => {
       const a = draft.me[i];
       if (!s.id || !a) return;
-      entry.me.push({id: s.id, act: a.act, move: a.move, target: a.target, to: a.to});
+      const aw = afterWhy('me', i);
+      const after = aw && a.afterTo ? {to: a.afterTo, kind: aw.kind} : null;
+      entry.me.push({id: s.id, act: a.act, move: a.move, target: a.target, to: a.to, after});
       if (a.act === 'switch' || a.act === 'faint') {
         if (a.act === 'faint') { S.bench = S.bench.filter(x => x !== s.id); S.benchHp[s.id] = 0; }
         else { S.benchHp[s.id] = s.hpPct; if (!S.bench.includes(s.id)) S.bench.push(s.id); }
@@ -500,6 +541,11 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
         if (a.to) S.bench = S.bench.filter(x => x !== a.to);
       } else {
         s.hpPct = a.hp; s.fresh = false; s.protected = a.act === 'protect';
+        if (after) {  // 유턴·끌려나옴 등: 이 포켓몬은 뒤로, 나온 포켓몬이 필드로
+          S.benchHp[s.id] = s.hpPct; if (!S.bench.includes(s.id)) S.bench.push(s.id);
+          S.me[i] = {...blankSlot(), id: after.to, hpPct: a.afterHp ?? S.benchHp[after.to] ?? 100, fresh: true};
+          S.bench = S.bench.filter(x => x !== after.to);
+        }
       }
     });
     if (SINGLE) {  // 기록한 설치기·설치기 제거를 필드에 반영
@@ -628,6 +674,8 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
       case 'bhp': S.benchHp[el.dataset.v] = Math.max(1, Math.min(100, Math.round(+el.value || 1))); full = false; break;
       case 'rmove': draft[side][k].move = el.value; renderResults(); return;
       case 'rtgt': draft[side][k].target = el.value === 'spread' ? 'spread' : el.value === '' ? '' : +el.value; renderResults(); return;
+      case 'rafterto': draft[side][k].afterTo = el.value; draft[side][k].afterHp = side === 'me' ? (S.benchHp[el.value] ?? 100) : (S.oppHp[el.value] ?? 100); renderResults(); return;
+      case 'rafterhp': draft[side][k].afterHp = Math.max(1, Math.min(100, Math.round(+el.value || 1))); return;
       case 'rto': draft[side][k].to = el.value; draft[side][k].newHp = side === 'me' ? (S.benchHp[el.value] ?? 100) : (S.oppHp[el.value] ?? 100); renderResults(); return;
       case 'rhp': draft[side][k].hp = Math.max(1, Math.min(100, Math.round(+el.value || 1))); return;
       case 'rnew': draft[side][k].newHp = Math.max(1, Math.min(100, Math.round(+el.value || 1))); return;
@@ -643,7 +691,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
     if (el.type === 'range' && el.closest('.hpg')) {
       el.style.cssText = gaugeStyle(+el.value);
       el.closest('.hpg').querySelector('.hpv').textContent = el.value + '%';
-      if (el.dataset.f === 'rhp' || el.dataset.f === 'rnew') onChange(e);  // 기록 칸은 값만 저장
+      if (el.dataset.f === 'rhp' || el.dataset.f === 'rnew' || el.dataset.f === 'rafterhp') onChange(e);  // 기록 칸은 값만 저장
       return;
     }
     if (el.dataset.f === 'opick') onChange(e);
@@ -685,6 +733,8 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
       renderResults(); return;
     }
     if (f === 'rsave') { saveResult(); return; }
+    if (f === 'rafterexp') { draft[b.dataset.side][k].afterHp = Math.max(1, +b.dataset.v); renderResults(); return; }
+    if (f === 'rafter') { const a = draft[b.dataset.side][k]; a.afterOn = !a.afterOn; if (!a.afterOn) a.afterTo = ''; renderResults(); return; }
     if (f === 'rnewexp') { draft[b.dataset.side][k].newHp = +b.dataset.v; renderResults(); return; }
     if (f === 'rexp') { const a = draft[b.dataset.side][k]; a.hp = +b.dataset.v; if (a.hp <= 0) a.act = 'faint'; renderResults(); return; }
     if (f === 'oout') { const id = b.dataset.v; S.oppOut = S.oppOut.includes(id) ? S.oppOut.filter(x => x !== id) : [...S.oppOut, id]; }

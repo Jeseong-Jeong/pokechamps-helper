@@ -392,7 +392,8 @@ export function createBattle(M, P) {
           continue;
         }
         if (m.c === '변화') continue;
-        if (!M.doubles && PIVOT.includes(mv) && bench.length) { out.push({kind: 'attack', i, move: mv, target: 0, pivot: true}); continue; }
+        // 유턴·볼트체인지: 뒤 포켓몬마다 따로 모의 진행 (들어온 포켓몬이 이번 턴 상대 공격을 대신 맞음)
+        if (!M.doubles && PIVOT.includes(mv) && bench.length) { bench.forEach((b, k) => out.push({kind: 'attack', i, move: mv, target: 0, pivot: true, pivotTo: k})); continue; }
         if (isSpread(mv)) out.push({kind: 'attack', i, move: mv, target: 'spread'});
         else for (const j of [0, 1]) if (opps[j]) out.push({kind: 'attack', i, move: mv, target: j});
       }
@@ -451,6 +452,7 @@ export function createBattle(M, P) {
                   o0: opps[0] ? (scen[0].type === 'switch' ? 100 : opps[0].hpPct) : 0, o1: opps[1] ? (scen[1].type === 'switch' ? 100 : opps[1].hpPct) : 0};
       const slotKey = i => (acts[i] && acts[i].kind === 'switch' ? 'b' + acts[i].to : 'm' + i);
       const who = {m0: slotKey(0), m1: slotKey(1)};  // 교체하면 그 자리에 들어온 포켓몬이 맞음
+      const pivotLost = {};  // 유턴으로 빠지기 전에 받은 피해
       if (acts[0] && acts[0].kind === 'switch') hp.m0 = bench[acts[0].to].hpPct;
       if (acts[1] && acts[1].kind === 'switch') hp.m1 = bench[acts[1].to].hpPct;
       const hzLog = [];
@@ -522,6 +524,15 @@ export function createBattle(M, P) {
             log.push({k: 'hit', from: 'm' + act.i, to: tk, toId: scen[j].type === 'switch' ? oppBench[scen[j].k].id : null, move: a.move, r, mult, ko: hp[tk] <= 0, sure,
                       left: Math.max(0, hp[tk])});
           }
+          // 유턴·볼트체인지: 때린 뒤 뒤 포켓몬과 교체 → 아직 행동 안 한 상대의 공격은 들어온 포켓몬이 맞음
+          if (a.pivot && a.pivotTo != null && bench[a.pivotTo] && hp[key] > 0) {
+            const b = bench[a.pivotTo];
+            pivotLost[key] = startHp[key] - hp[key];
+            who[key] = 'b' + a.pivotTo;
+            hp[key] = b.hpPct - hazardDmg(b.set, 'me');
+            startHp[key] = hp[key];
+            log.push({k: 'pivot', from: key, id: b.id});
+          }
           if (hitsAlly(a.move)) {
             const ally = 1 - act.i;
             if (mine[ally] && !protecting[ally] && hp['m' + ally] > 0) {
@@ -572,7 +583,7 @@ export function createBattle(M, P) {
         if (!mine[i]) return;
         const lost = startHp[k] - Math.max(0, hp[k]);
         if (hp[k] <= 0) score -= acted[k] ? 0.7 : 1.0;
-        score -= 0.25 * lost / 100;
+        score -= 0.25 * (lost + (pivotLost[k] || 0)) / 100;
         if (flinched[k] && acts[i] && acts[i].kind !== 'switch' && acts[i].kind !== 'protect') score -= 0.3;  // 속이다에 막힘
       });
       // 트릭룸·순풍: 행동 순서가 뒤집히는 쌍 수
@@ -664,7 +675,7 @@ export function createBattle(M, P) {
     const seen = new Set(), top = [];
     for (const c of combos) {
       // 유인에 끌려가서 결과가 같은 대상 차이는 하나로 봄
-      const k = c.acts.map((a, i) => { const red = c.log.find(x => x.k === 'redirected' && x.from === 'm' + i); return [a.kind, a.move, a.to, red ? red.to : (typeof a.target === 'number' ? 'o' + a.target : a.target)].join(':'); }).join('|');
+      const k = c.acts.map((a, i) => { const red = c.log.find(x => x.k === 'redirected' && x.from === 'm' + i); return [a.kind, a.move, a.to, a.pivotTo, red ? red.to : (typeof a.target === 'number' ? 'o' + a.target : a.target)].join(':'); }).join('|');
       if (seen.has(k)) continue;
       seen.add(k); top.push(c);
       if (top.length >= 3) break;
@@ -679,7 +690,8 @@ export function createBattle(M, P) {
       vs: [0, 1].map(i => (mine[i] ? dmg('o' + j, mv, 'm' + i) : null)),
     })) : []));
     // dmg: 화면에서 기록한 기술로 교체해 들어온 포켓몬의 예상 HP를 구할 때 씀 ('b0' 내 뒤, 'x0' 상대 뒤)
-    return {top, oppPred, defense, scenarios, speeds: spd, grid, incoming, mine, opps, bench, oppBench, presence, assumeMega, trickRoom: tr, count: combos.length, dmg};
+    return {top, oppPred, defense, scenarios, speeds: spd, grid, incoming, mine, opps, bench, oppBench, presence, assumeMega, trickRoom: tr, count: combos.length, dmg,
+            all: combos.map(c => ({acts: c.acts, score: c.score}))};  // all: 모든 행동 조합 점수 (확인용)
   }
 
   return {advise, oppInfo, oppSetOf, baseForm, canMega, priorityOf, isSpread, hitsAlly, entryConditions, SETUP_BOOST, HAZARD};

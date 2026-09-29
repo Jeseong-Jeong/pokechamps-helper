@@ -71,3 +71,17 @@ test('싱글 배틀: 약점을 찔리면 교체 확률이 올라가고, 스텔�
   const sw = R.top[0].sims.find(s => s.scen[0].type === 'switch');
   assert.ok(sw && sw.log.some(x => x.k === 'hazard'));
 });
+
+test('싱글 배틀: 유턴은 먼저 때리고 빠져서 상대 공격은 들어온 포켓몬이 맞음, 누구로 바꿀지도 추천', () => {
+  const me = {id: 'Meowscarada', ability: 'Protean', item: 'Choice Scarf', moves: ['Flower Trick', 'Knock Off', 'U-turn', 'Triple Axel'],
+              nature: 'Jolly', sp: {hp: 2, atk: 32, def: 0, spa: 0, spd: 0, spe: 32}, boosts: {}, status: '', hpPct: 100};
+  const bench = T.teamSets(['Garchomp', 'Glimmora']).map(s => ({id: s.baseId, set: s, hpPct: 100}));
+  const R = B.advise({field: {}, me: [{set: me, hpPct: 100, fresh: true}, null], opp: [{id: 'Archaludon', hpPct: 100, fresh: true}, null],
+                      bench, oppBench: [], oppSeen: ['Archaludon'], megaOpp: 'X'});
+  const top = R.top[0], a = top.acts[0];
+  assert.equal(a.move, 'U-turn');
+  assert.equal(bench[a.pivotTo].id, 'Glimmora', '용성군을 대신 맞아도 기합의띠로 버티는 킬라플로르로');
+  const order = top.log.map(x => x.k);
+  assert.ok(order.indexOf('pivot') > order.indexOf('hit'));
+  assert.equal(top.log.filter(x => x.k === 'hit' && x.from[0] === 'o')[0].toId, 'Glimmora');
+});
