@@ -322,8 +322,13 @@ def kon(n):
         return by[mid]['ko']
     return n
 # 같은 팀에 자주 같이 들어가는 조합 (Pikalytics 더블 M-C 'Common Team Cores' — raw/pchamps_cores.json, scrape_pikalytics.js 가 같이 받음)
+#   새로 받은 pchamps_pikalytics.json 에 cores 가 들어 있으면 그걸 쓰고, 없으면 raw/pchamps_cores.json
 cpath = os.path.join(ROOT, 'raw', 'pchamps_cores.json')
 CR = json.load(open(cpath, encoding='utf-8')) if os.path.exists(cpath) else {}
+if P and P.get('cores') and P['cores'].get('c2'):
+    CR = P['cores']
+    with open(cpath, 'w', encoding='utf-8', newline='\n') as f:  # 같은 내용을 cores 파일에도 남김
+        json.dump({'source': 'Pikalytics Common Team Cores (scrape_pikalytics.js)', 'fetched': P.get('fetched', ''), **CR}, f, ensure_ascii=False)
 cores = {k: [[' · '.join(kon(x) for x in names), f'{pct}%', n] for names, n, pct in CR.get(k, [])] for k in ('c2', 'c3', 'c4')}
 tpl = open(os.path.join(HERE, 'template.html'), encoding='utf-8').read()
 # 싱글 사용률 (scripts/build_singles.mjs 가 만든 파일이 있으면 도감의 '싱글' 탭에 넣음)

@@ -150,16 +150,20 @@ md/xlsx는 직접 고치지 말고 `scripts/export_docs.py`를 고친 뒤 다시
 
 두 사이트 모두 서버에서 바로 받으면 막히는 경우가 있어서, 브라우저 콘솔에서 돌리는 방식으로 만들었습니다.
 
-1. `https://www.serebii.net/pokemonchampions/pokemon.shtml` 열기 → F12 콘솔에 `scripts/scrape_serebii.js` 붙여넣기 → `pchamps_serebii.json` 다운로드
-2. `https://www.pikalytics.com/pokedex/gen9championsvgc2026regmc/` 열기 → 콘솔에 `scripts/scrape_pikalytics.js` 붙여넣기 → 5~15분 뒤 `pchamps_pikalytics.json` 다운로드
-3. 두 파일을 `raw/`에 덮어쓰고 `python scripts/build.py`
-4. 한글명 보충: `node scripts/fetch_ko_extra.js` (Node 18+) → `python scripts/build.py` 한 번 더
+1. (도감, 패치 때만) `https://www.serebii.net/pokemonchampions/pokemon.shtml` 열기 → F12 콘솔에 `scripts/scrape_serebii.js` 붙여넣기 → `pchamps_serebii.json` 다운로드 → `raw/`에 덮어쓰기
+2. (더블 사용률) `https://www.pikalytics.com/pokedex/gen9championsvgc2026regmc` 열기 → 콘솔에 `scripts/scrape_pikalytics.js` 붙여넣기 → 5~15분 뒤 `pchamps_pikalytics.json` 다운로드
+   → `raw/pchamps_pikalytics.json`에 덮어쓰기. 파일 안의 `cores`(2·3·4마리 조합)는 build.py가 자동으로 도감에 넣고 `raw/pchamps_cores.json`에도 저장
+   (특성은 스크립트가 대회 데이터 championstournaments에서 받아 바꿔 넣음 — M-C 페이지 특성 표가 틀림)
+3. (싱글 사용률) `npm run fetch:singles` — 쇼다운 싱글 M-C 공개 대전 기록 + Smogon 싱글 통계 (네트워크 필요, 첫 실행 10~20분, 이후 새 기록만)
+4. `npm run build` → `npm test` → 커밋 → `npm run deploy`
+5. (한글명 빠졌을 때) `node scripts/fetch_ko_extra.js` → `npm run build` 한 번 더
 
 레귤레이션이 바뀌면 확인할 것:
 - `scrape_pikalytics.js`의 `FORMAT`, `API` 값 (Pikalytics 페이지 네트워크 탭의 `/api/l/...` 요청에서 확인)
 - `build.py`의 `NEW_MC` 목록 (해당 패치의 추가 포켓몬, Serebii `patch.shtml` 참고)
-- `build.py`의 `C3` (Pikalytics 메인의 3마리 코어, 손으로 옮겨 적은 값)
-- `template.html` 상단의 레귤레이션/시즌 날짜 문구
+- `raw/pchamps_cores.json` (Pikalytics 목록 페이지의 Common Team Cores)
+- `template.html` 상단의 레귤레이션/시즌 날짜 문구, `build_advisor.mjs`의 '현재 레귤레이션' 문구
+- 싱글 형식 이름 `gen9championsbssregmc` (fetch_bss_replays.mjs), Smogon 싱글 통계 월·형식 (fetch_smogon_bss.mjs 인자)
 
 ## pokechamps_mc.json 스키마
 
