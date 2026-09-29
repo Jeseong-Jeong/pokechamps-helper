@@ -267,7 +267,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
       if (x.k === 'oppSwitch') lines.push(`상대 ${nm(R.opps[x.j].set.id)} 교체 → ${nm(x.to)}`);
       if (x.k === 'oppProtect') lines.push(`상대 ${nm(R.opps[x.j].set.id)} 방어`);
       if (x.k === 'oppBlocked') lines.push(`<span class="mini">${who(x.from)}의 ${esc(M.moveKo(x.move))}는 방어에 막힘</span>`);
-      if (x.k === 'hit' && x.from[0] !== 'o') lines.push(`${who(x.from)}의 ${esc(M.moveKo(x.move))} → ${x.toId ? nm(x.toId) + '(교체해 들어옴)' : who(x.to)} ${rng(x.r)}${!x.ko && x.toId ? ` → 남은 HP 약 ${Math.round(x.left)}%` : ''}${x.mult > 1 ? ' (도우미)' : ''}${x.ko ? (x.sure ? ' <b class="good">확정으로 쓰러짐</b>' : ' <b class="good">쓰러질 가능성 큼</b>') : ''}`);
+      if (x.k === 'hit' && x.from[0] !== 'o') lines.push(`${who(x.from)}의 ${esc(M.moveKo(x.move))} → ${x.toId ? nm(x.toId) + '(교체해 들어옴)' : who(x.to)} ${rng(x.r)}${!x.ko && x.toId ? ` → 남은 HP 약 ${Math.round(x.left)}%` : ''}${x.mult > 1 ? ' (도우미)' : ''}${x.sure ? ' <b class="good">확정으로 쓰러짐</b>' : x.koP >= 0.05 ? ` <b class="${x.koP >= 0.5 ? 'good' : ''}">쓰러뜨릴 확률 ${Math.round(x.koP * 100)}%</b>` : ''}${x.acc < 1 ? ` <span class="mini">(명중 ${Math.round(x.acc * 100)}%)</span>` : ''}`);
       if (x.k === 'redirected') lines.push(`${who(x.from)}의 공격이 ${who(x.to)}에게 끌려감 (유인)`);
       if (x.k === 'ally') lines.push(`<span class="bad">⚠ ${who(x.from)}의 ${esc(M.moveKo(x.move))}가 우리 편 ${who(x.to)}도 맞춤 ${x.r.minPct.toFixed(0)}~${x.r.maxPct.toFixed(0)}%</span>`);
       if (x.k === 'flinch') lines.push(`${who(x.who)} 풀죽어서 행동 못 함`);
@@ -279,7 +279,8 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
       if (x.k === 'hit' && x.from[0] === 'o') {
         const tgt = x.toId ? `교체해 들어온 ${nm(x.toId)}` : who(x.to);
         const [l0, l1] = x.leftRange.map(Math.round);
-        const left = x.ko ? ' <b class="bad">쓰러짐 위험</b>' : ` → 남은 HP 약 ${l0 === l1 ? l0 : `${l0}~${l1}`}%`;
+        const risk = x.koP >= 0.05 ? ` <b class="${x.koP >= 0.5 ? 'bad' : ''}">쓰러질 확률 ${Math.round(x.koP * 100)}%</b>` : '';
+        const left = x.koP >= 0.95 ? ' <b class="bad">쓰러짐 위험</b>' : ` → 남은 HP 약 ${l0 === l1 ? l0 : `${l0}~${l1}`}%${risk}`;
         const line = `${who(x.from)}의 ${esc(M.moveKo(x.move))} → ${tgt} ${rng(x.r)}${left}`;
         lines.push(x.toId ? line : `<span class="mini">${line}</span>`);
       }
@@ -306,6 +307,19 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
   const likelyOf = d => (!d ? 'attack' : d.pS >= d.pA && d.pS >= d.pP ? 'switch' : d.pP > d.pA ? 'protect' : 'attack');
   const tgtOf = t => (t === 'spread' ? 'spread' : typeof t === 'number' ? t : '');
   // 기본값: 내 쪽은 추천 1순위, 상대 쪽은 예상 행동
+  // 추천 행동 조합(c) → 내 쪽 결과 기록 칸 (추천 카드를 누를 때도 씀)
+  function meDraft(R, c) {
+    return S.me.map((s, i) => {
+      if (!s.id) return null;
+      const a = c && c.acts[i];
+      const base = {act: 'attack', move: '', target: '', to: '', hp: s.hpPct, newHp: 100};
+      if (!a || a.kind === 'none') return base;
+      if (a.kind === 'protect') return {...base, act: 'protect', move: a.move};
+      if (a.kind === 'switch') { const to = R.bench[a.to] ? R.bench[a.to].id : ''; return {...base, act: 'switch', to, newHp: S.benchHp[to] ?? 100}; }
+      const afterTo = a.pivot && a.pivotTo != null && R.bench[a.pivotTo] ? R.bench[a.pivotTo].id : '';
+      return {...base, move: a.move || '', target: SINGLE ? 0 : a.kind === 'attack' ? tgtOf(a.target) : '', afterTo, afterHp: S.benchHp[afterTo] ?? 100};
+    });
+  }
   function makeDraft(R) {
     const top = R && R.top[0];
     return {
@@ -316,16 +330,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
         const to = d && d.switchTo ? d.switchTo.id : '';
         return {act: 'attack', move, target: SINGLE ? 0 : p && !p.redirect ? tgtOf(p.target) : '', to, hp: s.hpPct, newHp: S.oppHp[to] ?? 100};
       }),
-      me: S.me.map((s, i) => {
-        if (!s.id) return null;
-        const a = top && top.acts[i];
-        const base = {act: 'attack', move: '', target: '', to: '', hp: s.hpPct, newHp: 100};
-        if (!a || a.kind === 'none') return base;
-        if (a.kind === 'protect') return {...base, act: 'protect', move: a.move};
-        if (a.kind === 'switch') { const to = R.bench[a.to] ? R.bench[a.to].id : ''; return {...base, act: 'switch', to, newHp: S.benchHp[to] ?? 100}; }
-        const afterTo = a.pivot && a.pivotTo != null && R.bench[a.pivotTo] ? R.bench[a.pivotTo].id : '';
-        return {...base, move: a.move || '', target: SINGLE ? 0 : a.kind === 'attack' ? tgtOf(a.target) : '', afterTo, afterHp: S.benchHp[afterTo] ?? 100};
-      }),
+      me: meDraft(R, top),
       rec: top ? top.acts.map(a => [a.kind, a.move || '', a.target ?? '', a.to ?? ''].join(':')) : null,
     };
   }
@@ -541,6 +546,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
         if (a.to) S.bench = S.bench.filter(x => x !== a.to);
       } else {
         s.hpPct = a.hp; s.fresh = false; s.protected = a.act === 'protect';
+        s.lastMove = a.act === 'attack' ? a.move : '';  // 같은 변화기 반복 판단용
         if (after) {  // 유턴·끌려나옴 등: 이 포켓몬은 뒤로, 나온 포켓몬이 필드로
           S.benchHp[s.id] = s.hpPct; if (!S.bench.includes(s.id)) S.bench.push(s.id);
           S.me[i] = {...blankSlot(), id: after.to, hpPct: a.afterHp ?? S.benchHp[after.to] ?? 100, fresh: true};
@@ -548,6 +554,8 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
         }
       }
     });
+    // 하품: 맞은 상대는 다음 턴 끝에 잠듦 → 그 턴에는 하품·상태이상기를 또 쓰지 않게
+    S.opp.forEach((s, j) => { s.drowsy = draft.me.some(a => a && a.act === 'attack' && a.move === 'Yawn' && (SINGLE || a.target === j)) && !s.status; });
     if (SINGLE) {  // 기록한 설치기·설치기 제거를 필드에 반영
       const hz = S.field.hazards || (S.field.hazards = blankHazards());
       const apply = (move, side) => {  // side = 기술을 쓴 쪽
@@ -591,7 +599,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
     R.mine.forEach((m, i) => m && order.push({n: nm(m.set.id), s: R.speeds.me[i], me: true}));
     R.opps.forEach((o, j) => o && order.push({n: nm(o.set.id), s: R.speeds.opp[j], me: false}));
     order.sort((a, b) => (R.trickRoom ? a.s - b.s : b.s - a.s));
-    const top = R.top.map((c, k) => `<div class="bt-rec${k === 0 ? ' first' : ''}">
+    const top = R.top.map((c, k) => `<div class="bt-rec${k === 0 ? ' first' : ''}${draft && draft.pickedRec === k ? ' picked' : ''}" data-f="userec" data-v="${k}" role="button" tabindex="0" title="누르면 아래 결과 기록의 내 행동으로 넣어요">
       <div class="bt-rec-h"><span class="tag">${k + 1}순위</span>${c.acts.map((a, i) => (R.mine[i] ? `<span>${nm(R.mine[i].set.id)}: ${actText(a, R, c, i)}</span>` : '')).join('')}</div>
       <ul>${logText(c, R).map(l => `<li>${l}</li>`).join('')}${c.notes.map(n => `<li>${esc(n)}</li>`).join('')}</ul>
       ${ifElse(c, R)}
@@ -602,7 +610,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
     const inc = R.incoming.map((rows, j) => (R.opps[j] ? `<table class="typetbl bt-grid"><thead><tr><th>${nm(R.opps[j].set.id)}</th>${R.mine.map(m => `<th>${m ? nm(m.set.id) : '—'}</th>`).join('')}</tr></thead>
       <tbody>${rows.map(x => `<tr><td>${esc(M.moveKo(x.move))}${x.prio > 0 ? ` <span class="badge b-form">선공+${x.prio}</span>` : ''}${x.spread ? ' <span class="badge b-form">전체</span>' : ''}</td>${x.vs.map(r => `<td class="num">${pctCell(r)}</td>`).join('')}</tr>`).join('')}</tbody></table>` : '')).join('');
     return `
-      <h3>이번 턴 추천</h3>
+      <h3>이번 턴 추천 <span class="mini">— 누르면 아래 결과 기록에 넣어져요</span></h3>
       <div class="bt-recs">${top || '<p class="mini">가능한 행동이 없습니다.</p>'}</div>
       <div class="bt-two">
         <div><h4>상대 예상 행동</h4><ul class="probs">${pred}</ul></div>
@@ -696,7 +704,23 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
     }
     if (el.dataset.f === 'opick') onChange(e);
   });
+  root.addEventListener('keydown', e => {
+    if ((e.key === 'Enter' || e.key === ' ') && e.target.matches && e.target.matches('[data-f=userec]')) { e.preventDefault(); e.target.click(); }
+  });
   root.addEventListener('click', e => {
+    const rc = e.target.closest('[data-f=userec]');
+    if (rc && !e.target.closest('button, select, input, a')) {  // 추천 카드 → 결과 기록의 내 행동으로
+      const R = lastR, k = +rc.dataset.v;
+      if (R && R.top[k]) {
+        if (!draft) draft = makeDraft(R);
+        draft.me = meDraft(R, R.top[k]);
+        draft.pickedRec = k;
+        renderResults();
+        const f = document.querySelector('#p-battle .turnres');
+        if (f) f.scrollIntoView({block: 'start', behavior: 'smooth'});
+      }
+      return;
+    }
     const b = e.target.closest('button[data-f]');
     if (!b) return;
     const f = b.dataset.f, k = +b.dataset.k;

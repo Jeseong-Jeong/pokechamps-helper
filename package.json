@@ -14,6 +14,7 @@
   },
   "devDependencies": {
     "esbuild": "^0.25.0",
+    "pokemon-showdown": "^0.11.11",
     "tesseract.js": "^5.1.1"
   }
 }

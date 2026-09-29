@@ -44,16 +44,33 @@ const PIVOT = ['U-turn', 'Volt Switch', 'Flip Turn'];
 const MULTI = ['Scale Shot', 'Bullet Seed', 'Icicle Spear', 'Rock Blast', 'Pin Missile', 'Tail Slap', 'Triple Axel', 'Surging Strikes',
   'Population Bomb', 'Double Hit', 'Dual Wingbeat', 'Bone Rush', 'Water Shuriken', 'Arm Thrust', 'Double Kick', 'Dragon Darts', 'Triple Kick'];
 // 기합의띠·옹골참: HP가 가득일 때 한 방에 쓰러질 피해를 받으면 1 남음
+// 난수: 데미지는 최소~최대 사이 고르게(16단계), 급소 1/24 (1.5배). 명중률은 기술 수치
+const CRIT = 1 / 24;
+const pAtLeast = (lo, hi, h) => (hi < h ? 0 : lo >= h ? 1 : (hi - h) / Math.max(1e-9, hi - lo));
+export const koChance = (r, h, mult = 1) => (1 - CRIT) * pAtLeast(r.minPct * mult, r.maxPct * mult, h) + CRIT * pAtLeast(r.minPct * mult * 1.5, r.maxPct * mult * 1.5, h);
 const sashSave = (set, cur, d, move) => (cur >= 100 && d >= cur && (set.item === 'Focus Sash' || set.ability === 'Sturdy') && !MULTI.includes(move) ? cur - 1 : d);
 const ANTI_SETUP = ['Haze', 'Whirlwind', 'Roar', 'Dragon Tail', 'Circle Throw', 'Encore', 'Clear Smog', 'Perish Song'];
 
-export function createBattle(M, P) {
+// 점수 가중치 (모의 대전으로 조정: scripts/sim/selfplay.mjs)
+export const DEFAULT_W = {switchCost: 0.08, damageW: 0.45, recoverW: 0.4, setupW: 0.55, statusW: 1, hazardW: 1, repeatPenalty: 0.5};
+export function createBattle(M, P, opts = {}) {
+  const W = {...DEFAULT_W, ...opts};
   const {D, byId} = M;
   const usageById = Object.fromEntries(D.usage.map(u => [u.id, u]));
   const b0 = id => (byId[id] && byId[id].mega ? byId[id].parent : id);
   const moveEn = i => (typeof i === 'number' ? D.moves[i].en : i);
   const moveOf = n => D.moves[M.moveByEn[n]];
   const calcMove = n => GEN.moves.get(toID(n));
+  // 명중률 (필중 기술·노가드·복안·날씨 반영)
+  function accOf(set, move, f) {
+    const m = moveOf(move);
+    let a = m && +m.acc ? +m.acc / 100 : 1;
+    if (set.ability === 'No Guard') return 1;
+    if ((move === 'Thunder' || move === 'Hurricane') && f.weather === 'Rain') return 1;
+    if (move === 'Blizzard' && f.weather === 'Snow') return 1;
+    if (set.ability === 'Compound Eyes') a *= 1.3;
+    return Math.min(1, a);
+  }
 
   // ---------------- 상대 정보 (사용률) ----------------
   function oppInfo(id) {
@@ -429,7 +446,7 @@ export function createBattle(M, P) {
     const antiSetup = o => { if (!o) return 0; if (o.set.ability === 'Unaware') return 1; const u = usageById[b0(o.id)]; if (!u) return 0; return Math.min(1, u.mv.reduce((a, [x, p]) => a + (ANTI_SETUP.includes(moveEn(x)) ? p : 0), 0) / 100); };
     function statusValue(mv, target, me) {
       const S = STATUS_MOVE[mv], e = byId[target.set.id];
-      if (target.set.status || e.ty.some(t => S.types.includes(t)) || S.abil.includes(target.set.ability)) return 0;
+      if (target.set.status || target.drowsy || e.ty.some(t => S.types.includes(t)) || S.abil.includes(target.set.ability)) return 0;  // 이미 상태이상·졸음이면 소용없음
       if (mv === 'Thunder Wave' && moveOf(mv) && e.ty.includes('ground')) return 0;
       const st = M.finalStats(target.set);
       const acc = S.acc || 1;
@@ -472,7 +489,9 @@ export function createBattle(M, P) {
       const acted = {};
       const log = [...hzLog];
       const dealt = {o0: 0, o1: 0};
-      const koBefore = {};  // 상대가 행동하기 전에 쓰러짐
+      const koBefore = {};  // 상대가 행동하기 전에 쓰러졌을 확률
+      // 난수: 이번 턴 끝까지 서 있을 확률 (빗나감·데미지 난수·급소). HP는 기댓값으로 깎음
+      const alive = {m0: 1, m1: 1, o0: 1, o1: 1};
 
       // 행동 목록 (교체는 맨 먼저)
       const list = [];
@@ -494,9 +513,10 @@ export function createBattle(M, P) {
 
       for (const act of list) {
         const key = act.side + act.i;
-        if (hp[key] <= 0) continue;
+        if (hp[key] <= 0 || alive[key] < 0.02) continue;
         if (flinched[key]) { log.push({k: 'flinch', who: key}); continue; }
         acted[key] = true;
+        const w = alive[key];  // 앞에서 맞고 쓰러졌을 수도 있으니 그만큼만 행동
         if (act.side === 'm') {
           const a = act.a;
           if (a.kind !== 'attack') continue;
@@ -513,16 +533,20 @@ export function createBattle(M, P) {
             if (oppProtect[j]) { log.push({k: 'oppBlocked', from: 'm' + act.i, j, move: a.move}); continue; }
             const r = dmg('m' + act.i, a.move, oKey(j));
             if (!r) continue;
+            const acc = accOf(mine[act.i].set, a.move, f);
             const d = avgOf(r) * mult;
             const tset = scen[j].type === 'switch' ? oppBench[scen[j].k].set : opps[j].set;
             const d2 = sashSave(tset, hp[tk], d, a.move);
             if (d2 < d) log.push({k: 'sash', to: tk, id: tset.id, item: tset.item === 'Focus Sash' ? 'sash' : 'sturdy'});
-            const sure = d2 === d && r.minPct * mult >= hp[tk];
-            hp[tk] -= d2; dealt[tk] += d2;
-            if (hp[tk] <= 0 && !acted[tk]) koBefore[tk] = true;
+            const pKO = d2 < d ? 0 : acc * w * koChance(r, hp[tk], mult);
+            const sure = d2 === d && acc >= 1 && r.minPct * mult >= hp[tk];
+            if (!acted[tk]) koBefore[tk] = 1 - (1 - (koBefore[tk] || 0)) * (1 - pKO);
+            alive[tk] *= 1 - pKO;
+            const exp = d2 * acc * w;
+            hp[tk] -= alive[tk] < 0.02 ? d2 : exp; dealt[tk] += exp;
             if (a.fakeout && r.maxPct > 0 && !acted[tk] && !NO_FLINCH.includes(opps[j].set.ability)) flinched[tk] = true;
-            log.push({k: 'hit', from: 'm' + act.i, to: tk, toId: scen[j].type === 'switch' ? oppBench[scen[j].k].id : null, move: a.move, r, mult, ko: hp[tk] <= 0, sure,
-                      left: Math.max(0, hp[tk])});
+            log.push({k: 'hit', from: 'm' + act.i, to: tk, toId: scen[j].type === 'switch' ? oppBench[scen[j].k].id : null, move: a.move, r, mult,
+                      ko: 1 - alive[tk] >= 0.5, koP: 1 - alive[tk], acc, sure, left: Math.max(0, hp[tk])});
           }
           // 유턴·볼트체인지: 때린 뒤 뒤 포켓몬과 교체 → 아직 행동 안 한 상대의 공격은 들어온 포켓몬이 맞음
           if (a.pivot && a.pivotTo != null && bench[a.pivotTo] && hp[key] > 0) {
@@ -554,14 +578,18 @@ export function createBattle(M, P) {
             const r = dmg('o' + act.i, p.move, who[mk]);
             if (!r) continue;
             const mset = who[mk][0] === 'b' ? bench[+who[mk].slice(1)].set : mine[i].set;
+            const acc = accOf(opps[act.i].set, p.move, f);
             const d0 = avgOf(r), d1 = sashSave(mset, hp[mk], d0, p.move);
             if (d1 < d0) log.push({k: 'sash', to: mk, id: mset.id, item: mset.item === 'Focus Sash' ? 'sash' : 'sturdy'});
-            hp[mk] -= d1;
+            const pKO = d1 < d0 ? 0 : acc * w * koChance(r, hp[mk]);
+            alive[mk] *= 1 - pKO;
+            hp[mk] -= alive[mk] < 0.02 ? d1 : d1 * acc * w;
             // 상대 속이다: 아직 행동 안 한 내 포켓몬은 풀죽음 (정신력 등 제외)
             const target = who[mk][0] === 'b' ? bench[+who[mk][1]] : mine[i];
             if (p.move === 'Fake Out' && r.maxPct > 0 && !acted[mk] && !NO_FLINCH.includes(target.set.ability)) flinched[mk] = true;
             // 교체해 들어온 포켓몬이 맞으면 그 이름(toId)과 맞은 뒤 남은 HP도 기록
-            log.push({k: 'hit', from: 'o' + act.i, to: mk, toId: who[mk][0] === 'b' ? bench[+who[mk].slice(1)].id : null, move: p.move, r, ko: hp[mk] <= 0,
+            log.push({k: 'hit', from: 'o' + act.i, to: mk, toId: who[mk][0] === 'b' ? bench[+who[mk].slice(1)].id : null, move: p.move, r,
+                      ko: 1 - alive[mk] >= 0.5, koP: 1 - alive[mk], acc,
                       sure: d1 === d0 && r.minPct >= startHp[mk], left: Math.max(0, hp[mk]),
                       leftRange: d1 < d0 ? [1, 1] : [Math.max(0, startHp[mk] - (cumHi[mk] = (cumHi[mk] || 0) + r.maxPct)), Math.max(0, startHp[mk] - (cumLo[mk] = (cumLo[mk] || 0) + r.minPct))]});
           }
@@ -574,15 +602,16 @@ export function createBattle(M, P) {
       [0, 1].forEach(j => {
         const k = 'o' + j;
         if (!opps[j]) return;
-        if (hp[k] <= 0) score += scen[j].type === 'switch' ? 0.9 : 1 + 0.3 * threat[j] + (koBefore[k] ? 0.3 * threat[j] : 0);
-        else score += 0.45 * Math.min(1, dealt[k] / Math.max(1, startHp[k]));
+        const pk = 1 - alive[k];
+        score += pk * (scen[j].type === 'switch' ? 0.9 : 1 + 0.3 * threat[j]) + 0.3 * threat[j] * (koBefore[k] || 0)
+               + (1 - pk) * W.damageW * Math.min(1, dealt[k] / Math.max(1, startHp[k]));
         if (flinched[k] && oppPred[j] && oppPred[j].move && scen[j].type === 'attack') score += 0.4 * threat[j];
       });
       [0, 1].forEach(i => {
         const k = 'm' + i;
         if (!mine[i]) return;
         const lost = startHp[k] - Math.max(0, hp[k]);
-        if (hp[k] <= 0) score -= acted[k] ? 0.7 : 1.0;
+        score -= (1 - alive[k]) * (acted[k] ? 0.7 : 1.0);
         score -= 0.25 * (lost + (pivotLost[k] || 0)) / 100;
         if (flinched[k] && acts[i] && acts[i].kind !== 'switch' && acts[i].kind !== 'protect') score -= 0.3;  // 속이다에 막힘
       });
@@ -617,16 +646,18 @@ export function createBattle(M, P) {
           score += threatened ? 0 : -0.15;
           score -= 0.05;
         }
-        if (a.kind === 'switch') score -= M.doubles ? 0.15 : 0.08;  // 싱글은 교체가 기본 전술이라 부담이 적음
+        if (a.kind === 'switch') score -= M.doubles ? 0.15 : W.switchCost;  // 싱글은 교체가 기본 전술이라 부담이 적음
         if (!M.doubles && acted['m' + i]) {
           const occ = scen[0] && scen[0].type === 'switch' ? 'x' + scen[0].k : 'o0';
           const target = occ[0] === 'x' ? oppBench[+occ.slice(1)] : opps[0];
-          const alive = hp['m' + i] > 0, left = Math.max(0, hp['m' + i]) / 100;
+          const up = alive['m' + i], left = Math.max(0, hp['m' + i]) / 100;  // up: 이번 턴을 버틸 확률
+          // 같은 변화기를 연달아 쓰면 (회복·상태이상 반복) 가치를 낮춤 — 진행이 없는 무한 반복 방지
+          const rep = mine[i].lastMove && mine[i].lastMove === a.move ? W.repeatPenalty : 1;
           if (a.kind === 'setup') {
-            const g = alive ? setupGain(i, a.move, occ) : 0;
-            const v = g * (0.35 + 0.65 * left) * (1 - 0.7 * antiSetup(target));
-            score += 0.55 * v - 0.05;
-            notes.push(alive ? `${M.moveKo(a.move)} → 다음 턴 화력 +${Math.round(g * 100)}%${left < 0.4 ? ' (HP가 적어 위험)' : ''}` : `${M.moveKo(a.move)} 후 쓰러질 위험`);
+            const g = up > 0.02 ? setupGain(i, a.move, occ) : 0;
+            const v = g * (0.35 + 0.65 * left) * (1 - 0.7 * antiSetup(target)) * up;
+            score += W.setupW * v * rep - 0.05;
+            notes.push(up > 0.5 ? `${M.moveKo(a.move)} → 다음 턴 화력 +${Math.round(g * 100)}%${left < 0.4 ? ' (HP가 적어 위험)' : ''}` : `${M.moveKo(a.move)} 후 쓰러질 위험`);
           }
           if (a.kind === 'hazard') {
             // 3마리 싸움이라 6마리 싸움보다 가치가 1/3 정도 (들어오는 횟수가 적음). 기합의띠·옹골참·멀티스케일을 깨거나 바위 4배면 가산
@@ -637,27 +668,27 @@ export function createBattle(M, P) {
               const sashy = ['Sturdy', 'Multiscale'].includes(b.set.ability) || (u && u.it.some(([n, p]) => n === 'Focus Sash' && p >= 30));
               v += presence[k] * ((sashy ? 0.06 : 0) + (effectiveness('rock', e.ty) >= 4 ? 0.06 : 0));
             });
-            score += v + (scen[0] && scen[0].type === 'switch' ? 0.03 : 0);
+            score += W.hazardW * (v + (scen[0] && scen[0].type === 'switch' ? 0.03 : 0));
             notes.push(`${M.moveKo(a.move)} 설치 — 상대가 교체해 들어올 때마다 피해`);
           }
           if (a.kind === 'status' && target && !oppProtect[0]) {
-            const v = statusValue(a.move, target, mine[i]);
+            const v = statusValue(a.move, target, mine[i]) * W.statusW * rep;
             score += v;
             if (v) notes.push(`${M.moveKo(a.move)} → ${byId[target.set.id].ko}`);
             else notes.push(`${M.moveKo(a.move)}이 통하지 않음`);
           }
-          if (a.kind === 'recover' && alive) {
+          if (a.kind === 'recover' && up > 0.02) {
             const heal = Math.min(RECOVER[a.move], 100 - hp['m' + i]);
-            score += 0.4 * heal / 100;
+            score += W.recoverW * heal / 100 * up * rep;
             notes.push(`${M.moveKo(a.move)} → HP +${Math.round(heal)}%`);
           }
-          if (a.pivot && alive) score += 0.05;  // 공격하고 유리한 포켓몬으로 교체
+          if (a.pivot && up > 0.5) score += 0.05;  // 공격하고 유리한 포켓몬으로 교체
         }
         if (a.kind === 'redirect' && !log.some(x => x.k === 'hit' && x.to === 'm' + i && x.from[0] === 'o')) score -= 0.1;
         if (a.kind === 'helping') score += 0.02;
         if (a.kind === 'wideguard' && !log.some(x => x.k === 'wide')) score -= 0.15;
       });
-      return {score, hp, log, notes, koBefore, flinched};
+      return {score, hp, alive, log, notes, koBefore, flinched};
     }
 
     const o0 = optionsFor(0), o1 = optionsFor(1);

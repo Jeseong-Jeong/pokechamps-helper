@@ -15,11 +15,19 @@ export function createPickAdvisor(M, T) {
   // 상대 세트: 사용률 1순위 (메가스톤 40%+ 이면 메가 형태)
   const oppSet = id => T.teamSets([T.baseOf(id)])[0];
 
+  // 명중률: 빗나갈 수 있는 기술은 기댓값으로 (용성군 90%, 하이드로펌프 80% …)
+  const accOf = (set, name, field) => {
+    const m = M.D.moves[M.moveByEn[name]];
+    if (set.ability === 'No Guard') return 1;
+    if ((name === 'Thunder' || name === 'Hurricane') && field.weather === 'Rain') return 1;
+    if (name === 'Blizzard' && field.weather === 'Snow') return 1;
+    return Math.min(1, (m && +m.acc ? +m.acc / 100 : 1) * (set.ability === 'Compound Eyes' ? 1.3 : 1));
+  };
   function best(att, def, attIsLeft, field = FIELD) {
     const rows = M.damageTable(att, def, field, attIsLeft, {fast: true}).filter(r => r.maxPct != null);
-    if (!rows.length) return {pct: 0, move: null, row: null};
-    const top = rows.reduce((a, b) => (avg(b) > avg(a) ? b : a));
-    return {pct: avg(top), move: top.name, row: top};
+    if (!rows.length) return {pct: 0, eff: 0, move: null, row: null};
+    const top = rows.reduce((a, b) => (avg(b) * accOf(att, b.name, field) > avg(a) * accOf(att, a.name, field) ? b : a));
+    return {pct: avg(top), eff: avg(top) * accOf(att, top.name, field), move: top.name, row: top};
   }
 
   // 등장하면 날씨·필드를 까는 특성
@@ -57,7 +65,7 @@ export function createPickAdvisor(M, T) {
         // 기합의띠·옹골참: HP가 가득이면 한 방은 버팀 (연속기는 제외) → 대면 값은 99%로
         const sash = s => s.item === 'Focus Sash' || s.ability === 'Sturdy';
         const multi = r => r && r.row && MULTI.has(r.move);
-        const offV = sash(b) && !multi(off) ? Math.min(off.pct, 99) : off.pct, defV = sash(a) && !multi(def) ? Math.min(def.pct, 99) : def.pct;
+        const offV = sash(b) && !multi(off) ? Math.min(off.eff, 99) : off.eff, defV = sash(a) && !multi(def) ? Math.min(def.eff, 99) : def.eff;
         return {off, def, sa, sb, faster, field: f, v: cellValue(offV, defV, faster)};
       });
       if (cells.length === 1) return cells[0];
@@ -113,7 +121,7 @@ export function createPickAdvisor(M, T) {
 
   // 트릭룸 아래 칸: 데미지는 같고 행동 순서만 뒤집힘
   function trCell(c) {
-    const f = x => { const faster = x.sa < x.sb; return {faster, v: cellValue(x.off.pct, x.def.pct, faster)}; };
+    const f = x => { const faster = x.sa < x.sb; return {faster, v: cellValue(x.off.eff ?? x.off.pct, x.def.eff ?? x.def.pct, faster)}; };
     const a = f(c);
     return c.alt ? {faster: a.faster, v: (a.v + f(c.alt).v) / 2} : a;
   }
