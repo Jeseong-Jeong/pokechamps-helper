@@ -213,7 +213,7 @@ function playOne(g, stats, sample) {
   const battle = new Battle({formatid: 'gen9championscustomgame', seed: PRNG.generateSeed ? PRNG.generateSeed() : undefined});
   const pack = sets => Teams.pack(Teams.import(sets.map(exportSet).join('\n')));
   battle.setPlayer('p1', {name: 'bot', team: pack(A3)});
-  battle.setPlayer('p2', {name: OPP_AI, team: pack(B3)});
+  battle.setPlayer('p2', {name: OPP_AI === 'bot' ? 'bot2' : OPP_AI, team: pack(B3)});  // 봇끼리면 이름이 같아 승자 판정이 틀림
   const brains = {p1: makeBrain(battle.p1, A3, Bids), p2: makeBrain(battle.p2, B3, Aids)};
   let logPos = 0, guard = 0;
   const scan = () => {  // 새 로그에서 상대가 보여준 기술·나온 포켓몬·메가진화 기록
