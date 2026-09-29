@@ -331,8 +331,7 @@ CSV = os.path.join(ROOT, 'data', 'csv')
 os.makedirs(CSV, exist_ok=True)
 def w(name, header, rows):
     with open(os.path.join(CSV, name), 'w', newline='', encoding='utf-8-sig') as f:
-        c = csv.writer(f, lineterminator='
-'); c.writerow(header); c.writerows(rows)
+        c = csv.writer(f, lineterminator='\n'); c.writerow(header); c.writerows(rows)
 w('pokemon.csv', ['id', 'dex_no', 'name_ko', 'name_en', 'type1', 'type2', 'hp', 'atk', 'def', 'spa', 'spd', 'spe', 'bst',
                   'abilities_en', 'abilities_ko', 'is_mega', 'mega_of', 'megas', 'form_kind', 'new_in_mc', 'usage_rank', 'learnset_size'],
   [[e['id'], e['no'], e['ko'], e['en'], e['ty'][0], e['ty'][1] if len(e['ty']) > 1 else '', *e['st'], e['bst'],
