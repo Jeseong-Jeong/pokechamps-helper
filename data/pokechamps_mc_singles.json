@@ -4,95 +4,95 @@
   {
    "name": "Garchomp",
    "id": "Garchomp",
-   "pct": 31.125,
-   "win": 48.79,
-   "games": 1289,
-   "pick": 45.8,
+   "pct": 31.199,
+   "win": 48.68,
+   "games": 1299,
+   "pick": 45.5,
    "lead": 43,
-   "mega": 31.2,
-   "seen": 253.07097860699594,
+   "mega": 31.4,
+   "seen": 254.24841289297677,
    "mv": [
     [
      124,
-     86.98
+     86.56
     ],
     [
      108,
-     43.54
+     44.07
     ],
     [
      418,
-     43.53
+     43.32
     ],
     [
      123,
-     36.98
+     37.55
     ],
     [
      299,
-     26.6
+     26.9
     ],
     [
      115,
-     17.53
+     17.45
     ],
     [
      371,
-     17.31
+     17.22
     ],
     [
      447,
-     15.35
+     15.28
     ],
     [
      113,
-     14.88
+     14.81
     ],
     [
      321,
-     14.43
+     14.36
     ],
     [
      161,
-     14.27
+     14.2
     ],
     [
      359,
-     9.49
+     9.44
     ]
    ],
    "it": [
     [
      "Garchompite Z",
-     65.21
+     65.42
     ],
     [
      "Focus Sash",
-     10.88
+     10.82
     ],
     [
      "Sitrus Berry",
-     10.53
+     10.47
     ],
     [
      "Life Orb",
-     6.77
+     6.73
     ],
     [
      "Lum Berry",
-     2.26
+     2.25
     ],
     [
      "Garchompite",
-     1.4
+     1.39
     ],
     [
      "Yache Berry",
-     1.33
+     1.32
     ],
     [
      "Leftovers",
-     1.09
+     1.08
     ]
    ],
    "ab": [
@@ -110,52 +110,52 @@
    "tm": [
     [
      "Primarina",
-     25.14,
+     24.98,
      "Primarina"
     ],
     [
      "Golisopod",
-     19.81,
+     19.71,
      "Golisopod"
     ],
     [
      "Archaludon",
-     16.64,
+     16.63,
      "Archaludon"
     ],
     [
      "Gholdengo",
-     15.2,
+     15.05,
      "Gholdengo"
     ],
     [
-     "Lucario",
-     14.26,
-     "Lucario"
-    ],
-    [
      "Salamence",
-     14.19,
+     14.15,
      "Salamence"
     ],
     [
+     "Lucario",
+     14.11,
+     "Lucario"
+    ],
+    [
      "Corviknight",
-     13.67,
+     13.53,
      "Corviknight"
     ],
     [
-     "Rillaboom",
-     13.41,
-     "Rillaboom"
-    ],
-    [
      "Meowscarada",
-     13.38,
+     13.47,
      "Meowscarada"
     ],
     [
+     "Rillaboom",
+     13.38,
+     "Rillaboom"
+    ],
+    [
      "Mimikyu",
-     11.84,
+     11.72,
      "Mimikyu"
     ]
    ],
@@ -256,75 +256,75 @@
   {
    "name": "Salamence",
    "id": "Salamence",
-   "pct": 27.089,
-   "win": 46.02,
-   "games": 2581,
-   "pick": 44.2,
-   "lead": 18.3,
-   "mega": 84.8,
-   "seen": 225.70620633009042,
+   "pct": 27.145,
+   "win": 46.08,
+   "games": 2603,
+   "pick": 44.3,
+   "lead": 18.4,
+   "mega": 85,
+   "seen": 228.38378824474458,
    "mv": [
     [
      107,
-     93.13
+     92.96
     ],
     [
      111,
-     85.77
+     85.11
     ],
     [
      124,
-     61.07
+     60.65
     ],
     [
      108,
-     40.64
+     41.12
     ],
     [
      363,
-     24.01
+     23.83
     ],
     [
      219,
-     22.19
+     22.85
     ],
     [
      110,
-     16.91
+     16.78
     ],
     [
      161,
-     10.09
+     10.02
     ],
     [
      299,
-     7.86
+     7.8
     ],
     [
      435,
-     7.51
+     7.45
     ],
     [
      456,
-     6.25
+     6.2
     ],
     [
-     152,
-     3.84
+     113,
+     4.5
     ]
    ],
    "it": [
     [
      "Salamencite",
-     97.51
+     97.54
     ],
     [
      "Life Orb",
-     1.3
+     1.29
     ],
     [
      "Leftovers",
-     1.19
+     1.17
     ]
    ],
    "ab": [
@@ -337,52 +337,52 @@
    "tm": [
     [
      "Primarina",
-     32.06,
+     31.88,
      "Primarina"
     ],
     [
      "Hippowdon",
-     22.78,
+     22.56,
      "Hippowdon"
     ],
     [
      "Gholdengo",
-     21.81,
+     21.9,
      "Gholdengo"
     ],
     [
      "Golisopod",
-     20.8,
+     20.87,
      "Golisopod"
     ],
     [
      "Meowscarada",
-     20.51,
+     20.45,
      "Meowscarada"
     ],
     [
      "Archaludon",
-     18.9,
+     18.74,
      "Archaludon"
     ],
     [
      "Garchomp",
-     16.31,
+     16.26,
      "Garchomp"
     ],
     [
      "Aegislash",
-     16.25,
+     16.24,
      "Aegislash"
     ],
     [
      "Rillaboom",
-     15.56,
+     15.52,
      "Rillaboom"
     ],
     [
      "Lucario",
-     15.43,
+     15.28,
      "Lucario"
     ]
    ],
@@ -393,13 +393,13 @@
   {
    "name": "Primarina",
    "id": "Primarina",
-   "pct": 20.04,
-   "win": 46.66,
-   "games": 732,
+   "pct": 19.973,
+   "win": 46.8,
+   "games": 735,
    "pick": 39.1,
-   "lead": 40.7,
+   "lead": 40.6,
    "mega": 0,
-   "seen": 137.41423653426847,
+   "seen": 137.82753126572118,
    "mv": [
     [
      282,
@@ -407,35 +407,35 @@
     ],
     [
      409,
-     62.93
+     62.88
     ],
     [
      16,
-     51.84
+     51.79
     ],
     [
      62,
-     32.98
+     32.95
     ],
     [
      132,
-     25.94
+     26.65
     ],
     [
      166,
-     22.5
+     22.49
     ],
     [
      441,
-     10.56
+     10.55
     ],
     [
      117,
-     6.9
+     6.89
     ],
     [
      219,
-     5.15
+     5.14
     ],
     [
      135,
@@ -447,7 +447,7 @@
     ],
     [
      327,
-     3.61
+     3.6
     ]
    ],
    "it": [
@@ -499,12 +499,12 @@
    "tm": [
     [
      "Salamence",
-     43.34,
+     43.33,
      "Salamence"
     ],
     [
      "Garchomp",
-     39.04,
+     39.03,
      "Garchomp"
     ],
     [
@@ -514,37 +514,37 @@
     ],
     [
      "Gholdengo",
-     20.35,
+     20.26,
      "Gholdengo"
     ],
     [
      "Rillaboom",
-     19.42,
+     19.33,
      "Rillaboom"
     ],
     [
      "Hippowdon",
-     17.63,
+     17.55,
      "Hippowdon"
     ],
     [
      "Metagross",
-     17.01,
+     16.93,
      "Metagross"
     ],
     [
      "Meowscarada",
-     15.86,
+     15.79,
      "Meowscarada"
     ],
     [
      "Archaludon",
-     14.96,
+     14.89,
      "Archaludon"
     ],
     [
      "Baxcalibur",
-     12.91,
+     12.86,
      "Baxcalibur"
     ]
    ],
@@ -645,61 +645,61 @@
   {
    "name": "Golisopod",
    "id": "Golisopod",
-   "pct": 19.797,
-   "win": 49.93,
-   "games": 688,
-   "pick": 46.3,
-   "lead": 35,
-   "mega": 88.3,
-   "seen": 164.9334112617051,
+   "pct": 19.78,
+   "win": 49.81,
+   "games": 692,
+   "pick": 46.5,
+   "lead": 34.9,
+   "mega": 88.4,
+   "seen": 166.8007059931578,
    "mv": [
     [
      250,
-     76.76
+     76.3
     ],
     [
      157,
-     65.62
+     65.34
     ],
     [
      436,
-     56.93
+     57.22
     ],
     [
      447,
-     50.9
+     50.81
     ],
     [
      237,
-     37.56
+     37.01
     ],
     [
      16,
-     22.98
+     23.32
     ],
     [
      119,
-     20.83
+     21.44
     ],
     [
      56,
-     18.96
+     18.69
     ],
     [
      484,
-     17.42
+     17.85
     ],
     [
      73,
-     13.93
+     14.18
     ],
     [
      255,
-     9.94
+     9.79
     ],
     [
      52,
-     2.28
+     2.25
     ]
    ],
    "it": [
@@ -722,52 +722,52 @@
    "tm": [
     [
      "Garchomp",
-     31.15,
+     31.09,
      "Garchomp"
     ],
     [
      "Salamence",
-     28.47,
+     28.64,
      "Salamence"
     ],
     [
      "Primarina",
-     25.71,
+     25.64,
      "Primarina"
     ],
     [
      "Archaludon",
-     23.34,
+     23.17,
      "Archaludon"
     ],
     [
      "Pelipper",
-     17.09,
+     16.97,
      "Pelipper"
     ],
     [
      "Gholdengo",
-     16.83,
+     16.71,
      "Gholdengo"
     ],
     [
      "Rillaboom",
-     15.69,
+     15.74,
      "Rillaboom"
     ],
     [
      "Basculegion",
-     14.11,
+     14.01,
      "Basculegion"
     ],
     [
      "Baxcalibur",
-     10.17,
+     10.1,
      "Baxcalibur"
     ],
     [
      "Glimmora",
-     9.84,
+     9.78,
      "Glimmora"
     ]
    ],
@@ -778,13 +778,13 @@
   {
    "name": "Archaludon",
    "id": "Archaludon",
-   "pct": 17.051,
-   "win": 51.81,
-   "games": 2232,
-   "pick": 57.7,
-   "lead": 47.8,
+   "pct": 17.008,
+   "win": 51.55,
+   "games": 2248,
+   "pick": 57.4,
+   "lead": 47.9,
    "mega": 0,
-   "seen": 175.44463322527855,
+   "seen": 175.47157432316155,
    "mv": [
     [
      108,
@@ -792,15 +792,15 @@
     ],
     [
      418,
-     80.54
+     80.52
     ],
     [
      163,
-     60.18
+     60.17
     ],
     [
      465,
-     38.9
+     38.94
     ],
     [
      113,
@@ -846,7 +846,7 @@
     ],
     [
      "White Herb",
-     11.34
+     11.33
     ],
     [
      "Red Card",
@@ -884,52 +884,52 @@
    "tm": [
     [
      "Pelipper",
-     35.98,
+     36.03,
      "Pelipper"
     ],
     [
      "Garchomp",
-     30.38,
+     30.51,
      "Garchomp"
     ],
     [
      "Salamence",
-     30.03,
+     29.9,
      "Salamence"
     ],
     [
      "Golisopod",
-     27.09,
+     26.95,
      "Golisopod"
     ],
     [
      "Swampert",
-     22.2,
+     22.12,
      "Swampert"
     ],
     [
      "Meowscarada",
-     19.83,
+     19.76,
      "Meowscarada"
     ],
     [
      "Primarina",
-     17.58,
+     17.49,
      "Primarina"
     ],
     [
      "Sneasler",
-     16.71,
+     16.66,
      "Sneasler"
     ],
     [
      "Basculegion",
-     14.89,
+     14.82,
      "Basculegion"
     ],
     [
      "Rillaboom",
-     12.24,
+     12.18,
      "Rillaboom"
     ]
    ],
@@ -1030,75 +1030,75 @@
   {
    "name": "Lucario",
    "id": "Lucario",
-   "pct": 14.749,
-   "win": 56.66,
-   "games": 665,
-   "pick": 44.4,
-   "lead": 18.9,
+   "pct": 14.695,
+   "win": 56.85,
+   "games": 667,
+   "pick": 44.5,
+   "lead": 19.4,
    "mega": 93.6,
-   "seen": 118.25651376781913,
+   "seen": 118.90705200651075,
    "mv": [
     [
      24,
-     99.14
+     99.74
     ],
     [
      163,
-     94.04
+     93.49
     ],
     [
      291,
-     66.32
+     67.11
     ],
     [
      92,
-     34.51
+     34.31
     ],
     [
      487,
-     23.36
+     23.22
     ],
     [
      62,
-     16.67
+     16.58
     ],
     [
      419,
-     10.68
+     10.62
     ],
     [
      378,
-     10.42
+     10.36
     ],
     [
      73,
-     7.8
+     7.75
     ],
     [
      170,
-     7.49
+     7.45
     ],
     [
      329,
-     6.32
+     6.29
     ],
     [
      276,
-     5.43
+     5.4
     ]
    ],
    "it": [
     [
      "Lucarionite Z",
-     92.45
+     92.49
     ],
     [
      "Lucarionite",
-     6.84
+     6.8
     ],
     [
      "Focus Sash",
-     0.71
+     0.7
     ]
    ],
    "ab": [
@@ -1116,52 +1116,52 @@
    "tm": [
     [
      "Garchomp",
-     30.09,
+     29.96,
      "Garchomp"
     ],
     [
      "Salamence",
-     28.35,
+     28.23,
      "Salamence"
     ],
     [
      "Rillaboom",
-     21.8,
+     22.13,
      "Rillaboom"
     ],
     [
      "Primarina",
-     17.38,
+     17.31,
      "Primarina"
     ],
     [
      "Baxcalibur",
-     15.73,
+     16.09,
      "Baxcalibur"
     ],
     [
      "Mimikyu",
-     15.62,
+     15.98,
      "Mimikyu"
     ],
     [
      "Hippowdon",
-     15.56,
+     15.49,
      "Hippowdon"
     ],
     [
      "Glimmora",
-     13.65,
+     13.59,
      "Glimmora"
     ],
     [
      "Ninetales-Alola",
-     12.08,
+     12.03,
      "Ninetales-Alola"
     ],
     [
      "Basculegion",
-     11.69,
+     11.64,
      "Basculegion"
     ]
    ],
@@ -1227,83 +1227,83 @@
   {
    "name": "Baxcalibur",
    "id": "Baxcalibur",
-   "pct": 14.332,
-   "win": 56.01,
-   "games": 632,
-   "pick": 43.1,
-   "lead": 20.3,
-   "mega": 56.4,
-   "seen": 111.37487760210794,
+   "pct": 14.321,
+   "win": 56.32,
+   "games": 635,
+   "pick": 43.3,
+   "lead": 20.1,
+   "mega": 55.8,
+   "seen": 112.66300667787108,
    "mv": [
     [
      184,
-     90.72
+     91.54
     ],
     [
      124,
-     77.82
+     77.53
     ],
     [
      225,
-     73.82
+     72.61
     ],
     [
      111,
-     70.31
+     71.46
     ],
     [
      227,
-     29.61
+     30.11
     ],
     [
      447,
-     25.35
+     24.94
     ],
     [
      228,
-     7.73
+     7.6
     ],
     [
      371,
-     6.24
+     6.14
     ],
     [
      210,
-     4.75
+     4.67
     ],
     [
      176,
-     2.55
+     2.51
     ],
     [
      237,
-     2.49
+     2.45
     ],
     [
      89,
-     2.05
+     2.02
     ]
    ],
    "it": [
     [
      "Baxcalibrite",
-     80.55
+     79.83
     ],
     [
      "Focus Sash",
-     11.96
+     11.86
     ],
     [
      "Life Orb",
-     4.33
+     5.18
     ],
     [
      "Leftovers",
-     1.72
+     1.71
     ],
     [
      "Sitrus Berry",
-     0.73
+     0.72
     ],
     [
      "Haban Berry",
@@ -1325,52 +1325,52 @@
    "tm": [
     [
      "Garchomp",
-     24.92,
+     24.75,
      "Garchomp"
     ],
     [
      "Ninetales-Alola",
-     24.07,
+     24.17,
      "Ninetales-Alola"
     ],
     [
      "Salamence",
-     21.31,
+     21.43,
      "Salamence"
     ],
     [
      "Primarina",
-     18.06,
+     17.93,
      "Primarina"
     ],
     [
      "Gholdengo",
-     16.83,
+     16.71,
      "Gholdengo"
     ],
     [
      "Lucario",
-     16.19,
+     16.51,
      "Lucario"
     ],
     [
      "Mimikyu",
-     14.09,
+     14.43,
      "Mimikyu"
     ],
     [
      "Golisopod",
-     14.05,
+     13.95,
      "Golisopod"
     ],
     [
      "Archaludon",
-     12.77,
+     12.68,
      "Archaludon"
     ],
     [
      "Rillaboom",
-     12.07,
+     12.42,
      "Rillaboom"
     ]
    ],
@@ -1379,164 +1379,15 @@
    "rank": 7
   },
   {
-   "name": "Rillaboom",
-   "id": "Rillaboom",
-   "pct": 14.015,
-   "win": 42.18,
-   "games": 466,
-   "pick": 47.4,
-   "lead": 33.3,
-   "mega": 0,
-   "seen": 126.25925514065607,
-   "mv": [
-    [
-     187,
-     100
-    ],
-    [
-     484,
-     69.7
-    ],
-    [
-     210,
-     47.55
-    ],
-    [
-     242,
-     38.46
-    ],
-    [
-     144,
-     32.35
-    ],
-    [
-     504,
-     27.01
-    ],
-    [
-     120,
-     25.83
-    ],
-    [
-     447,
-     14.57
-    ],
-    [
-     251,
-     8.92
-    ],
-    [
-     116,
-     7.51
-    ],
-    [
-     440,
-     3.6
-    ],
-    [
-     133,
-     3.25
-    ]
-   ],
-   "it": [
-    [
-     "Life Orb",
-     52.99
-    ],
-    [
-     "Grassy Seed",
-     26.91
-    ],
-    [
-     "Leftovers",
-     8.17
-    ],
-    [
-     "Sitrus Berry",
-     6.63
-    ],
-    [
-     "Focus Sash",
-     3.4
-    ],
-    [
-     "Eject Button",
-     1.9
-    ]
-   ],
-   "ab": [
-    [
-     "Grassy Surge",
-     100,
-     "그래스메이커"
-    ]
-   ],
-   "tm": [
-    [
-     "Salamence",
-     30.07,
-     "Salamence"
-    ],
-    [
-     "Garchomp",
-     29.78,
-     "Garchomp"
-    ],
-    [
-     "Primarina",
-     27.77,
-     "Primarina"
-    ],
-    [
-     "Lucario",
-     22.94,
-     "Lucario"
-    ],
-    [
-     "Golisopod",
-     22.16,
-     "Golisopod"
-    ],
-    [
-     "Gholdengo",
-     15.39,
-     "Gholdengo"
-    ],
-    [
-     "Archaludon",
-     14.89,
-     "Archaludon"
-    ],
-    [
-     "Baxcalibur",
-     12.34,
-     "Baxcalibur"
-    ],
-    [
-     "Glimmora",
-     11.41,
-     "Glimmora"
-    ],
-    [
-     "Blaziken",
-     11.38,
-     "Blaziken"
-    ]
-   ],
-   "sp": [],
-   "cc": [],
-   "rank": 8
-  },
-  {
    "name": "Gholdengo",
    "id": "Gholdengo",
-   "pct": 13.999,
-   "win": 45.6,
-   "games": 502,
+   "pct": 14.009,
+   "win": 45.91,
+   "games": 506,
    "pick": 33.5,
-   "lead": 24,
+   "lead": 23.8,
    "mega": 0,
-   "seen": 84.09234582296132,
+   "seen": 84.79634582296131,
    "mv": [
     [
      378,
@@ -1544,73 +1395,73 @@
     ],
     [
      291,
-     88.87
+     89.99
     ],
     [
      266,
-     73.31
+     72.58
     ],
     [
      348,
-     33.82
+     33.48
     ],
     [
      465,
-     15.87
+     15.71
     ],
     [
      477,
-     13.75
+     13.61
     ],
     [
      435,
-     8.17
+     8.09
     ],
     [
      163,
-     6.75
+     6.68
     ],
     [
      271,
-     5.64
+     5.58
     ],
     [
      170,
-     5.49
+     5.43
     ],
     [
      350,
-     3.87
+     3.83
     ],
     [
      327,
-     1.74
+     1.72
     ]
    ],
    "it": [
     [
      "Air Balloon",
-     67.39
+     66.62
     ],
     [
      "Leftovers",
-     17.73
+     17.53
     ],
     [
      "Life Orb",
-     7.11
+     8.16
     ],
     [
      "Sitrus Berry",
-     3.18
+     3.14
     ],
     [
      "Grassy Seed",
-     2.64
+     2.61
     ],
     [
      "Shuca Berry",
-     1.96
+     1.94
     ]
    ],
    "ab": [
@@ -1623,53 +1474,53 @@
    "tm": [
     [
      "Salamence",
-     42.2,
+     42.44,
      "Salamence"
     ],
     [
      "Garchomp",
-     33.8,
+     33.51,
      "Garchomp"
     ],
     [
      "Primarina",
-     29.13,
+     28.88,
      "Primarina"
     ],
     [
      "Golisopod",
-     23.8,
+     23.6,
      "Golisopod"
     ],
     [
      "Hippowdon",
-     23.14,
+     22.94,
      "Hippowdon"
     ],
     [
      "Baxcalibur",
-     17.24,
+     17.09,
      "Baxcalibur"
     ],
     [
      "Rillaboom",
-     15.4,
+     15.27,
      "Rillaboom"
     ],
     [
-     "Meowscarada",
+     "Ninetales-Alola",
      11.94,
+     "Ninetales-Alola"
+    ],
+    [
+     "Meowscarada",
+     11.84,
      "Meowscarada"
     ],
     [
      "Archaludon",
-     11.91,
+     11.8,
      "Archaludon"
-    ],
-    [
-     "Ninetales-Alola",
-     11.56,
-     "Ninetales-Alola"
     ]
    ],
    "sp": [
@@ -1764,18 +1615,167 @@
      22
     ]
    ],
+   "rank": 8
+  },
+  {
+   "name": "Rillaboom",
+   "id": "Rillaboom",
+   "pct": 14,
+   "win": 42.34,
+   "games": 469,
+   "pick": 47.3,
+   "lead": 33.1,
+   "mega": 0,
+   "seen": 126.87725514065606,
+   "mv": [
+    [
+     187,
+     100
+    ],
+    [
+     484,
+     70.55
+    ],
+    [
+     210,
+     47.24
+    ],
+    [
+     242,
+     38.21
+    ],
+    [
+     144,
+     33.44
+    ],
+    [
+     504,
+     26.83
+    ],
+    [
+     120,
+     25.67
+    ],
+    [
+     447,
+     14.48
+    ],
+    [
+     251,
+     8.86
+    ],
+    [
+     116,
+     7.46
+    ],
+    [
+     440,
+     3.58
+    ],
+    [
+     133,
+     3.22
+    ]
+   ],
+   "it": [
+    [
+     "Life Orb",
+     52.99
+    ],
+    [
+     "Grassy Seed",
+     26.91
+    ],
+    [
+     "Leftovers",
+     8.17
+    ],
+    [
+     "Sitrus Berry",
+     6.63
+    ],
+    [
+     "Focus Sash",
+     3.4
+    ],
+    [
+     "Eject Button",
+     1.9
+    ]
+   ],
+   "ab": [
+    [
+     "Grassy Surge",
+     100,
+     "그래스메이커"
+    ]
+   ],
+   "tm": [
+    [
+     "Salamence",
+     30.09,
+     "Salamence"
+    ],
+    [
+     "Garchomp",
+     29.81,
+     "Garchomp"
+    ],
+    [
+     "Primarina",
+     27.58,
+     "Primarina"
+    ],
+    [
+     "Lucario",
+     23.23,
+     "Lucario"
+    ],
+    [
+     "Golisopod",
+     22.24,
+     "Golisopod"
+    ],
+    [
+     "Gholdengo",
+     15.28,
+     "Gholdengo"
+    ],
+    [
+     "Archaludon",
+     14.79,
+     "Archaludon"
+    ],
+    [
+     "Baxcalibur",
+     12.71,
+     "Baxcalibur"
+    ],
+    [
+     "Glimmora",
+     11.33,
+     "Glimmora"
+    ],
+    [
+     "Blaziken",
+     11.31,
+     "Blaziken"
+    ]
+   ],
+   "sp": [],
+   "cc": [],
    "rank": 9
   },
   {
    "name": "Meowscarada",
    "id": "Meowscarada",
-   "pct": 13.405,
-   "win": 49.11,
-   "games": 2115,
+   "pct": 13.378,
+   "win": 49.15,
+   "games": 2131,
    "pick": 43.7,
-   "lead": 41.2,
+   "lead": 40.9,
    "mega": 0,
-   "seen": 102.63367631730146,
+   "seen": 103.44705867008713,
    "mv": [
     [
      167,
@@ -1783,47 +1783,47 @@
     ],
     [
      481,
-     83.89
+     83.5
     ],
     [
      484,
-     71.21
+     70.82
     ],
     [
      242,
-     61.54
+     61.2
     ],
     [
      311,
-     17.31
+     17.22
     ],
     [
      436,
-     12.11
+     12.09
     ],
     [
      463,
-     7.79
-    ],
-    [
-     477,
      7.75
     ],
     [
+     477,
+     7.71
+    ],
+    [
      52,
-     6.35
+     6.32
     ],
     [
      257,
-     5.72
+     5.69
     ],
     [
      321,
-     2.68
+     2.66
     ],
     [
      472,
-     2.33
+     2.32
     ]
    ],
    "it": [
@@ -1854,52 +1854,52 @@
    "tm": [
     [
      "Salamence",
-     41.44,
+     41.48,
      "Salamence"
     ],
     [
      "Garchomp",
-     31.06,
+     31.42,
      "Garchomp"
     ],
     [
      "Archaludon",
-     25.22,
+     25.11,
      "Archaludon"
     ],
     [
      "Primarina",
-     23.71,
+     23.58,
      "Primarina"
     ],
     [
      "Swampert",
-     18.07,
+     18.01,
      "Swampert"
     ],
     [
      "Sneasler",
-     17.54,
+     17.47,
      "Sneasler"
     ],
     [
      "Pelipper",
-     15.74,
+     15.69,
      "Pelipper"
     ],
     [
      "Blaziken",
-     14.89,
+     14.8,
      "Blaziken"
     ],
     [
      "Hippowdon",
-     12.76,
+     12.68,
      "Hippowdon"
     ],
     [
      "Gholdengo",
-     12.47,
+     12.4,
      "Gholdengo"
     ]
    ],
@@ -2000,13 +2000,13 @@
   {
    "name": "Basculegion",
    "id": "Basculegion",
-   "pct": 11.758,
-   "win": 50.7,
-   "games": 421,
-   "pick": 40.8,
-   "lead": 12,
+   "pct": 11.675,
+   "win": 50.74,
+   "games": 422,
+   "pick": 40.9,
+   "lead": 11.9,
    "mega": 0,
-   "seen": 82.75165601539581,
+   "seen": 82.95393592501622,
    "mv": [
     [
      246,
@@ -2014,19 +2014,19 @@
     ],
     [
      495,
-     80.99
+     80.87
     ],
     [
      166,
-     64.59
+     64.32
     ],
     [
      16,
-     52.61
+     52.5
     ],
     [
      255,
-     5.53
+     5.52
     ],
     [
      299,
@@ -2038,11 +2038,11 @@
     ],
     [
      133,
-     2.98
+     2.97
     ],
     [
      222,
-     2.94
+     2.93
     ],
     [
      309,
@@ -2050,11 +2050,11 @@
     ],
     [
      89,
-     2.27
+     2.26
     ],
     [
      330,
-     1.84
+     1.83
     ]
    ],
    "it": [
@@ -2106,52 +2106,52 @@
    "tm": [
     [
      "Garchomp",
-     28.12,
+     28.17,
      "Garchomp"
     ],
     [
      "Pawmot",
-     25.02,
+     25,
      "Pawmot"
     ],
     [
      "Golisopod",
-     23.76,
+     23.74,
      "Golisopod"
     ],
     [
      "Archaludon",
-     21.6,
+     21.58,
      "Archaludon"
     ],
     [
      "Salamence",
-     21.04,
+     21.02,
      "Salamence"
     ],
     [
      "Kingambit",
-     17.23,
+     17.29,
      "Kingambit"
     ],
     [
      "Pelipper",
-     16.49,
+     16.47,
      "Pelipper"
     ],
     [
      "Lucario",
-     14.66,
+     14.65,
      "Lucario"
     ],
     [
      "Banette",
-     13.62,
+     13.61,
      "Banette"
     ],
     [
      "Rillaboom",
-     11.62,
+     11.61,
      "Rillaboom"
     ]
    ],
@@ -2237,13 +2237,13 @@
   {
    "name": "Mimikyu",
    "id": "Mimikyu",
-   "pct": 11.456,
-   "win": 52.52,
-   "games": 766,
-   "pick": 39.5,
-   "lead": 19,
-   "mega": 91.3,
-   "seen": 85.25343387889359,
+   "pct": 11.45,
+   "win": 52.68,
+   "games": 769,
+   "pick": 40,
+   "lead": 19.2,
+   "mega": 90.1,
+   "seen": 86.55451035627684,
    "mv": [
     [
      311,
@@ -2251,61 +2251,61 @@
     ],
     [
      381,
-     69.32
+     71.32
     ],
     [
      447,
-     68.01
+     66.97
     ],
     [
      379,
-     37.61
+     38.56
     ],
     [
      91,
-     29.41
+     28.96
     ],
     [
      478,
-     25.21
+     24.83
     ],
     [
      116,
-     12.78
+     12.59
     ],
     [
      501,
-     6.25
+     6.16
     ],
     [
      435,
-     5.14
+     5.07
     ],
     [
      97,
-     5.1
+     5.02
     ],
     [
      477,
-     4.36
+     4.29
     ],
     [
      504,
-     2.86
+     2.81
     ]
    ],
    "it": [
     [
      "Life Orb",
-     89.61
+     89.73
     ],
     [
      "Red Card",
-     5.89
+     5.83
     ],
     [
      "Sitrus Berry",
-     4.49
+     4.44
     ]
    ],
    "ab": [
@@ -2318,52 +2318,52 @@
    "tm": [
     [
      "Garchomp",
-     32.16,
+     31.93,
      "Garchomp"
     ],
     [
      "Primarina",
-     21.69,
+     21.72,
      "Primarina"
     ],
     [
      "Salamence",
-     21.67,
+     21.51,
      "Salamence"
     ],
     [
      "Lucario",
-     20.1,
+     20.5,
      "Lucario"
     ],
     [
-     "Archaludon",
-     17.87,
-     "Archaludon"
-    ],
-    [
      "Baxcalibur",
-     17.63,
+     18.04,
      "Baxcalibur"
     ],
     [
+     "Archaludon",
+     17.74,
+     "Archaludon"
+    ],
+    [
      "Charizard",
-     14.78,
+     15.22,
      "Charizard"
     ],
     [
-     "Hippowdon",
-     13.27,
-     "Hippowdon"
-    ],
-    [
      "Golisopod",
-     13.26,
+     13.35,
      "Golisopod"
     ],
     [
+     "Hippowdon",
+     13.17,
+     "Hippowdon"
+    ],
+    [
      "Dragonite",
-     12.64,
+     12.55,
      "Dragonite"
     ]
    ],
@@ -2464,7 +2464,7 @@
   {
    "name": "Hippowdon",
    "id": "Hippowdon",
-   "pct": 10.787,
+   "pct": 10.702,
    "win": 47.45,
    "games": 381,
    "pick": 51.8,
@@ -2689,15 +2689,229 @@
    "rank": 13
   },
   {
+   "name": "Glimmora",
+   "id": "Glimmora",
+   "pct": 10.301,
+   "win": 51.17,
+   "games": 374,
+   "pick": 55.8,
+   "lead": 72.5,
+   "mega": 8.5,
+   "seen": 107.29298084302631,
+   "mv": [
+    [
+     418,
+     100
+    ],
+    [
+     321,
+     82.96
+    ],
+    [
+     123,
+     63.49
+    ],
+    [
+     398,
+     32.02
+    ],
+    [
+     287,
+     30.15
+    ],
+    [
+     413,
+     18.54
+    ],
+    [
+     285,
+     17.24
+    ],
+    [
+     135,
+     16.56
+    ],
+    [
+     397,
+     8.54
+    ],
+    [
+     471,
+     7.64
+    ],
+    [
+     358,
+     4.95
+    ],
+    [
+     134,
+     4.71
+    ]
+   ],
+   "it": [
+    [
+     "Focus Sash",
+     50.63
+    ],
+    [
+     "Air Balloon",
+     19.07
+    ],
+    [
+     "Glimmoranite",
+     16.65
+    ],
+    [
+     "Red Card",
+     9.39
+    ],
+    [
+     "Leftovers",
+     3.06
+    ],
+    [
+     "Passho Berry",
+     1.2
+    ]
+   ],
+   "ab": [
+    [
+     "Toxic Debris",
+     59.48,
+     "독치장"
+    ],
+    [
+     "Adaptability",
+     22.08,
+     "적응력"
+    ],
+    [
+     "Corrosion",
+     18.44,
+     "부식"
+    ]
+   ],
+   "tm": [
+    [
+     "Salamence",
+     34.92,
+     "Salamence"
+    ],
+    [
+     "Garchomp",
+     30.19,
+     "Garchomp"
+    ],
+    [
+     "Primarina",
+     24.48,
+     "Primarina"
+    ],
+    [
+     "Lucario",
+     19.39,
+     "Lucario"
+    ],
+    [
+     "Golisopod",
+     18.77,
+     "Golisopod"
+    ],
+    [
+     "Rillaboom",
+     15.4,
+     "Rillaboom"
+    ],
+    [
+     "Meowscarada",
+     13.71,
+     "Meowscarada"
+    ],
+    [
+     "Blaziken",
+     13.7,
+     "Blaziken"
+    ],
+    [
+     "Archaludon",
+     12.19,
+     "Archaludon"
+    ],
+    [
+     "Aegislash",
+     12.16,
+     "Aegislash"
+    ]
+   ],
+   "sp": [
+    [
+     "Modest",
+     {
+      "hp": 1,
+      "atk": 0,
+      "def": 1,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     13.6
+    ],
+    [
+     "Timid",
+     {
+      "hp": 1,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 1,
+      "spe": 32
+     },
+     12.1
+    ],
+    [
+     "Timid",
+     {
+      "hp": 1,
+      "atk": 0,
+      "def": 1,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     11.3
+    ],
+    [
+     "Calm",
+     {
+      "hp": 32,
+      "atk": 0,
+      "def": 2,
+      "spa": 0,
+      "spd": 32,
+      "spe": 0
+     },
+     10.1
+    ]
+   ],
+   "cc": [
+    [
+     "Garchomp",
+     81.7,
+     29
+    ]
+   ],
+   "rank": 14
+  },
+  {
    "name": "Sneasler",
    "id": "Sneasler",
-   "pct": 10.302,
-   "win": 45.13,
-   "games": 2180,
-   "pick": 40,
-   "lead": 22.5,
+   "pct": 10.258,
+   "win": 44.99,
+   "games": 2195,
+   "pick": 39.9,
+   "lead": 22.6,
    "mega": 0,
-   "seen": 69.99971042021974,
+   "seen": 70.04170032210891,
    "mv": [
     [
      73,
@@ -2709,15 +2923,15 @@
     ],
     [
      447,
-     56.92
+     56.9
     ],
     [
      144,
-     55.76
+     55.77
     ],
     [
      3,
-     36.67
+     36.65
     ],
     [
      460,
@@ -2802,52 +3016,52 @@
    "tm": [
     [
      "Salamence",
-     34.74,
+     34.98,
      "Salamence"
     ],
     [
      "Archaludon",
-     27.66,
+     27.62,
      "Archaludon"
     ],
     [
      "Pelipper",
-     24.08,
+     24.05,
      "Pelipper"
     ],
     [
      "Indeedee",
-     23.07,
+     23.29,
      "Indeedee"
     ],
     [
      "Meowscarada",
-     22.82,
+     22.79,
      "Meowscarada"
     ],
     [
      "Garchomp",
-     19.76,
+     19.69,
      "Garchomp"
     ],
     [
      "Swampert",
-     19.6,
+     19.58,
      "Swampert"
     ],
     [
      "Rillaboom",
-     15.21,
+     15.15,
      "Rillaboom"
     ],
     [
      "Kingambit",
-     15.01,
+     14.95,
      "Kingambit"
     ],
     [
      "Golisopod",
-     11.77,
+     11.72,
      "Golisopod"
     ]
    ],
@@ -2902,229 +3116,15 @@
     ]
    ],
    "cc": [],
-   "rank": 14
-  },
-  {
-   "name": "Glimmora",
-   "id": "Glimmora",
-   "pct": 10.296,
-   "win": 51.6,
-   "games": 372,
-   "pick": 55.8,
-   "lead": 72.3,
-   "mega": 8.6,
-   "seen": 106.33098084302631,
-   "mv": [
-    [
-     418,
-     100
-    ],
-    [
-     321,
-     81.67
-    ],
-    [
-     123,
-     64.2
-    ],
-    [
-     398,
-     32.38
-    ],
-    [
-     287,
-     30.48
-    ],
-    [
-     413,
-     18.75
-    ],
-    [
-     285,
-     17.43
-    ],
-    [
-     135,
-     16.75
-    ],
-    [
-     471,
-     7.73
-    ],
-    [
-     397,
-     6.42
-    ],
-    [
-     358,
-     5.01
-    ],
-    [
-     134,
-     4.76
-    ]
-   ],
-   "it": [
-    [
-     "Focus Sash",
-     50.63
-    ],
-    [
-     "Air Balloon",
-     19.07
-    ],
-    [
-     "Glimmoranite",
-     16.65
-    ],
-    [
-     "Red Card",
-     9.39
-    ],
-    [
-     "Leftovers",
-     3.06
-    ],
-    [
-     "Passho Berry",
-     1.2
-    ]
-   ],
-   "ab": [
-    [
-     "Toxic Debris",
-     59.48,
-     "독치장"
-    ],
-    [
-     "Adaptability",
-     22.08,
-     "적응력"
-    ],
-    [
-     "Corrosion",
-     18.44,
-     "부식"
-    ]
-   ],
-   "tm": [
-    [
-     "Salamence",
-     35.21,
-     "Salamence"
-    ],
-    [
-     "Garchomp",
-     29.6,
-     "Garchomp"
-    ],
-    [
-     "Primarina",
-     24.69,
-     "Primarina"
-    ],
-    [
-     "Lucario",
-     19.55,
-     "Lucario"
-    ],
-    [
-     "Golisopod",
-     18.93,
-     "Golisopod"
-    ],
-    [
-     "Rillaboom",
-     15.53,
-     "Rillaboom"
-    ],
-    [
-     "Meowscarada",
-     13.83,
-     "Meowscarada"
-    ],
-    [
-     "Blaziken",
-     13.81,
-     "Blaziken"
-    ],
-    [
-     "Aegislash",
-     12.26,
-     "Aegislash"
-    ],
-    [
-     "Archaludon",
-     11.8,
-     "Archaludon"
-    ]
-   ],
-   "sp": [
-    [
-     "Modest",
-     {
-      "hp": 1,
-      "atk": 0,
-      "def": 1,
-      "spa": 32,
-      "spd": 0,
-      "spe": 32
-     },
-     13.6
-    ],
-    [
-     "Timid",
-     {
-      "hp": 1,
-      "atk": 0,
-      "def": 0,
-      "spa": 32,
-      "spd": 1,
-      "spe": 32
-     },
-     12.1
-    ],
-    [
-     "Timid",
-     {
-      "hp": 1,
-      "atk": 0,
-      "def": 1,
-      "spa": 32,
-      "spd": 0,
-      "spe": 32
-     },
-     11.3
-    ],
-    [
-     "Calm",
-     {
-      "hp": 32,
-      "atk": 0,
-      "def": 2,
-      "spa": 0,
-      "spd": 32,
-      "spe": 0
-     },
-     10.1
-    ]
-   ],
-   "cc": [
-    [
-     "Garchomp",
-     81.7,
-     29
-    ]
-   ],
    "rank": 15
   },
   {
    "name": "Corviknight",
    "id": "Corviknight",
-   "pct": 10.104,
-   "win": 50.83,
-   "games": 339,
-   "pick": 33.9,
+   "pct": 10.093,
+   "win": 50.85,
+   "games": 341,
+   "pick": 33.6,
    "lead": 15.3,
    "mega": 0,
    "seen": 63.6291674231158,
@@ -3224,52 +3224,52 @@
    "tm": [
     [
      "Garchomp",
-     42.11,
+     41.82,
      "Garchomp"
     ],
     [
      "Primarina",
-     18.57,
+     18.44,
      "Primarina"
     ],
     [
      "Raichu",
-     15.24,
+     15.14,
      "Raichu"
     ],
     [
      "Salamence",
-     13.85,
+     14.06,
      "Salamence"
     ],
     [
      "Baxcalibur",
-     13.18,
+     13.09,
      "Baxcalibur"
     ],
     [
      "Gengar",
-     12.14,
+     12.05,
      "Gengar"
     ],
     [
      "Basculegion",
-     11.99,
+     11.91,
      "Basculegion"
     ],
     [
      "Rillaboom",
-     11.74,
+     11.66,
      "Rillaboom"
     ],
     [
      "Hippowdon",
-     11.64,
+     11.56,
      "Hippowdon"
     ],
     [
      "Mimikyu",
-     11.33,
+     11.25,
      "Mimikyu"
     ]
    ],
@@ -3370,83 +3370,83 @@
   {
    "name": "Blaziken",
    "id": "Blaziken",
-   "pct": 9.724,
-   "win": 51.74,
-   "games": 339,
-   "pick": 46.5,
-   "lead": 41,
-   "mega": 50.8,
-   "seen": 83.03331750608376,
+   "pct": 9.733,
+   "win": 51.66,
+   "games": 342,
+   "pick": 46.3,
+   "lead": 40.8,
+   "mega": 51.1,
+   "seen": 83.52829225291434,
    "mv": [
     [
      73,
-     66.38
+     67.1
     ],
     [
      447,
-     59.88
+     59.55
     ],
     [
      327,
-     53
+     52.72
     ],
     [
      98,
-     48.25
+     49.07
     ],
     [
      162,
-     46.69
+     46.44
     ],
     [
      32,
-     42.42
+     42.19
     ],
     [
      463,
-     13.26
+     13.19
     ],
     [
      211,
-     10.17
+     10.11
     ],
     [
      56,
-     9.86
+     9.81
     ],
     [
      435,
-     5.95
+     5.92
     ],
     [
      301,
-     5.37
+     5.34
     ],
     [
      242,
-     4.79
+     4.77
     ]
    ],
    "it": [
     [
      "Blazikenite",
-     68.81
+     69.06
     ],
     [
      "Focus Sash",
-     18.39
+     18.24
     ],
     [
      "Life Orb",
-     8.17
+     8.11
     ],
     [
      "Leftovers",
-     3.91
+     3.88
     ],
     [
      "Shuca Berry",
-     0.72
+     0.71
     ]
    ],
    "ab": [
@@ -3459,52 +3459,52 @@
    "tm": [
     [
      "Garchomp",
-     26.83,
+     27.09,
      "Garchomp"
     ],
     [
      "Salamence",
-     25.38,
+     25.53,
      "Salamence"
     ],
     [
      "Meowscarada",
-     20.53,
+     20.35,
      "Meowscarada"
     ],
     [
      "Primarina",
-     19.54,
+     19.74,
      "Primarina"
     ],
     [
      "Ninetales-Alola",
-     19.19,
+     19.4,
      "Ninetales-Alola"
     ],
     [
      "Rillaboom",
-     16.41,
+     16.26,
      "Rillaboom"
     ],
     [
      "Baxcalibur",
-     14.66,
+     14.54,
      "Baxcalibur"
     ],
     [
      "Archaludon",
-     14.66,
+     14.53,
      "Archaludon"
     ],
     [
      "Glimmora",
-     14.63,
+     14.5,
      "Glimmora"
     ],
     [
      "Basculegion",
-     13.26,
+     13.14,
      "Basculegion"
     ]
    ],
@@ -3590,13 +3590,13 @@
   {
    "name": "Ninetales-Alola",
    "id": "Ninetales-Alola",
-   "pct": 9.471,
-   "win": 60.63,
-   "games": 352,
-   "pick": 55.2,
-   "lead": 50.3,
+   "pct": 9.601,
+   "win": 61.24,
+   "games": 358,
+   "pick": 55.6,
+   "lead": 51,
    "mega": 0,
-   "seen": 98.52004796326486,
+   "seen": 101.42204796326484,
    "mv": [
     [
      26,
@@ -3604,47 +3604,47 @@
     ],
     [
      43,
-     62.81
+     63.25
     ],
     [
      176,
-     58.2
+     58.61
     ],
     [
      282,
-     49.63
+     48.61
     ],
     [
      132,
-     34.92
+     35.8
     ],
     [
      291,
-     9.47
+     9.28
     ],
     [
      32,
-     6.95
+     6.8
     ],
     [
      7,
-     4.03
+     3.95
     ],
     [
      281,
-     3.52
+     3.44
     ],
     [
      405,
-     3.47
+     3.4
     ],
     [
      366,
-     2.81
+     2.76
     ],
     [
      175,
-     1.73
+     1.7
     ]
    ],
    "it": [
@@ -3687,53 +3687,53 @@
    "tm": [
     [
      "Baxcalibur",
-     36.43,
+     36.05,
      "Baxcalibur"
     ],
     [
      "Garchomp",
-     29.15,
+     28.94,
      "Garchomp"
     ],
     [
      "Salamence",
-     26.76,
+     27.3,
      "Salamence"
     ],
     [
      "Blaziken",
-     19.7,
+     19.66,
      "Blaziken"
     ],
     [
      "Lucario",
-     18.81,
+     18.41,
      "Lucario"
     ],
     [
      "Gholdengo",
-     17.08,
+     17.42,
      "Gholdengo"
     ],
     [
      "Volcarona",
-     13.61,
+     13.32,
      "Volcarona"
     ],
     [
      "Gyarados",
-     13.35,
+     13.07,
      "Gyarados"
     ],
     [
      "Primarina",
-     11.85,
+     12.2,
      "Primarina"
     ],
     [
-     "Archaludon",
-     11.3,
-     "Archaludon"
+     "Corviknight",
+     11.1,
+     "Corviknight"
     ]
    ],
    "sp": [
@@ -3808,49 +3808,49 @@
   {
    "name": "Kingambit",
    "id": "Kingambit",
-   "pct": 9.115,
-   "win": 50.21,
-   "games": 557,
-   "pick": 30.1,
-   "lead": 12.7,
+   "pct": 9.258,
+   "win": 49.57,
+   "games": 564,
+   "pick": 29.8,
+   "lead": 12.5,
    "mega": 0,
-   "seen": 47.420673361221006,
+   "seen": 47.98172830013274,
    "mv": [
     [
      436,
-     80.56
+     81.4
     ],
     [
      243,
-     79.19
+     79.44
     ],
     [
      447,
-     51.44
+     53.92
     ],
     [
      237,
-     39.94
+     40.03
     ],
     [
      257,
-     15.66
+     15.69
     ],
     [
      52,
-     9.35
+     9.39
     ],
     [
      272,
-     5.88
+     5.9
     ],
     [
      327,
-     4.56
+     4.58
     ],
     [
      418,
-     1.51
+     1.52
     ]
    ],
    "it": [
@@ -3890,65 +3890,65 @@
    "ab": [
     [
      "Supreme Overlord",
-     70.81,
+     70.84,
      "총대장"
     ],
     [
      "Defiant",
-     29.19,
+     29.16,
      "오기"
     ]
    ],
    "tm": [
     [
      "Garchomp",
-     29.69,
+     31.32,
      "Garchomp"
     ],
     [
      "Basculegion",
-     22.22,
+     21.81,
      "Basculegion"
     ],
     [
      "Salamence",
-     17.47,
+     17.06,
      "Salamence"
     ],
     [
      "Sneasler",
-     16.96,
+     16.57,
      "Sneasler"
     ],
     [
      "Pawmot",
-     15.12,
+     14.77,
      "Pawmot"
     ],
     [
-     "Rillaboom",
-     12.12,
-     "Rillaboom"
-    ],
-    [
      "Glimmora",
-     12.03,
+     12.68,
      "Glimmora"
     ],
     [
+     "Rillaboom",
+     11.84,
+     "Rillaboom"
+    ],
+    [
+     "Rotom-Wash",
+     11.76,
+     "Rotom-Wash"
+    ],
+    [
      "Baxcalibur",
-     11.95,
+     11.68,
      "Baxcalibur"
     ],
     [
      "Golisopod",
-     11.8,
+     11.53,
      "Golisopod"
-    ],
-    [
-     "Mimikyu",
-     11.28,
-     "Mimikyu"
     ]
    ],
    "sp": [
@@ -4013,21 +4013,21 @@
   {
    "name": "Pelipper",
    "id": "Pelipper",
-   "pct": 8.671,
-   "win": 47.79,
-   "games": 1931,
-   "pick": 39.1,
-   "lead": 47.3,
+   "pct": 8.643,
+   "win": 47.6,
+   "games": 1946,
+   "pick": 38.9,
+   "lead": 47.2,
    "mega": 0,
-   "seen": 64.33942703775892,
+   "seen": 64.36881878176918,
    "mv": [
     [
      215,
-     82.74
+     82.76
     ],
     [
      484,
-     46.79
+     46.75
     ],
     [
      496,
@@ -4039,11 +4039,11 @@
     ],
     [
      441,
-     37.93
+     38
     ],
     [
      221,
-     34.35
+     34.43
     ],
     [
      363,
@@ -4114,52 +4114,52 @@
    "tm": [
     [
      "Archaludon",
-     70.76,
+     70.89,
      "Archaludon"
     ],
     [
      "Swampert",
-     41.27,
+     41.15,
      "Swampert"
     ],
     [
      "Golisopod",
-     39.02,
+     38.84,
      "Golisopod"
     ],
     [
      "Sneasler",
-     28.61,
+     28.54,
      "Sneasler"
     ],
     [
      "Garchomp",
-     28.57,
+     28.44,
      "Garchomp"
     ],
     [
      "Salamence",
-     27.65,
+     27.58,
      "Salamence"
     ],
     [
      "Meowscarada",
-     24.34,
+     24.29,
      "Meowscarada"
     ],
     [
      "Basculegion",
-     22.36,
+     22.25,
      "Basculegion"
     ],
     [
      "Rillaboom",
-     11.13,
+     11.08,
      "Rillaboom"
     ],
     [
      "Kingambit",
-     9.34,
+     9.29,
      "Kingambit"
     ]
    ],
@@ -4240,10 +4240,10 @@
   {
    "name": "Aegislash",
    "id": "Aegislash",
-   "pct": 8.612,
-   "win": 49.12,
-   "games": 311,
-   "pick": 35.9,
+   "pct": 8.616,
+   "win": 49.08,
+   "games": 313,
+   "pick": 35.6,
    "lead": 27.8,
    "mega": 0,
    "seen": 57.10784801168935,
@@ -4337,52 +4337,52 @@
    "tm": [
     [
      "Salamence",
-     51.11,
+     51.16,
      "Salamence"
     ],
     [
      "Hippowdon",
-     31.58,
+     31.31,
      "Hippowdon"
     ],
     [
      "Primarina",
-     26.82,
+     26.96,
      "Primarina"
     ],
     [
      "Garchomp",
-     25.23,
+     25.38,
      "Garchomp"
     ],
     [
      "Baxcalibur",
-     16.99,
+     16.85,
      "Baxcalibur"
     ],
     [
      "Meowscarada",
-     15.99,
+     15.86,
      "Meowscarada"
     ],
     [
-     "Glimmora",
-     14.66,
-     "Glimmora"
-    ],
-    [
      "Golisopod",
-     14.66,
+     15.01,
      "Golisopod"
     ],
     [
+     "Glimmora",
+     14.54,
+     "Glimmora"
+    ],
+    [
      "Blaziken",
-     14.17,
+     14.05,
      "Blaziken"
     ],
     [
      "Charizard",
-     13.33,
+     13.22,
      "Charizard"
     ]
    ],
@@ -4451,211 +4451,13 @@
    "rank": 21
   },
   {
-   "name": "Charizard",
-   "id": "Charizard",
-   "pct": 8.059,
-   "win": 49.75,
-   "games": 298,
-   "pick": 55.2,
-   "lead": 34,
-   "mega": 91.9,
-   "seen": 81.14196044600655,
-   "mv": [
-    [
-     407,
-     84.03
-    ],
-    [
-     161,
-     45.57
-    ],
-    [
-     110,
-     36.13
-    ],
-    [
-     496,
-     32.93
-    ],
-    [
-     111,
-     32.25
-    ],
-    [
-     9,
-     26.42
-    ],
-    [
-     301,
-     22.59
-    ],
-    [
-     162,
-     20.49
-    ],
-    [
-     113,
-     18.73
-    ],
-    [
-     463,
-     13.97
-    ],
-    [
-     13,
-     9.38
-    ],
-    [
-     299,
-     7.72
-    ]
-   ],
-   "it": [
-    [
-     "Charizardite Y",
-     72.32
-    ],
-    [
-     "Charizardite X",
-     27.68
-    ]
-   ],
-   "ab": [
-    [
-     "Drought",
-     96.51,
-     "가뭄"
-    ],
-    [
-     "Solar Power",
-     3.49,
-     "선파워"
-    ]
-   ],
-   "tm": [
-    [
-     "Garchomp",
-     36.25,
-     "Garchomp"
-    ],
-    [
-     "Mimikyu",
-     21,
-     "Mimikyu"
-    ],
-    [
-     "Baxcalibur",
-     17.86,
-     "Baxcalibur"
-    ],
-    [
-     "Primarina",
-     15.67,
-     "Primarina"
-    ],
-    [
-     "Meowscarada",
-     15.57,
-     "Meowscarada"
-    ],
-    [
-     "Aegislash",
-     14.24,
-     "Aegislash"
-    ],
-    [
-     "Hippowdon",
-     13.99,
-     "Hippowdon"
-    ],
-    [
-     "Archaludon",
-     12.82,
-     "Archaludon"
-    ],
-    [
-     "Lucario",
-     12.51,
-     "Lucario"
-    ],
-    [
-     "Venusaur",
-     11.61,
-     "Venusaur"
-    ]
-   ],
-   "sp": [
-    [
-     "Timid",
-     {
-      "hp": 2,
-      "atk": 0,
-      "def": 0,
-      "spa": 32,
-      "spd": 0,
-      "spe": 32
-     },
-     13.8
-    ],
-    [
-     "Adamant",
-     {
-      "hp": 2,
-      "atk": 32,
-      "def": 0,
-      "spa": 0,
-      "spd": 0,
-      "spe": 32
-     },
-     13.2
-    ],
-    [
-     "Jolly",
-     {
-      "hp": 2,
-      "atk": 32,
-      "def": 0,
-      "spa": 0,
-      "spd": 0,
-      "spe": 32
-     },
-     9
-    ],
-    [
-     "Timid",
-     {
-      "hp": 22,
-      "atk": 0,
-      "def": 17,
-      "spa": 5,
-      "spd": 0,
-      "spe": 22
-     },
-     7.6
-    ]
-   ],
-   "cc": [
-    [
-     "Garchomp",
-     76.4,
-     28
-    ],
-    [
-     "Hippowdon",
-     40.3,
-     23
-    ]
-   ],
-   "rank": 22
-  },
-  {
    "name": "Pawmot",
    "id": "Pawmot",
-   "pct": 8.038,
-   "win": 43.9,
-   "games": 257,
-   "pick": 60.2,
-   "lead": 9.8,
+   "pct": 8.11,
+   "win": 44.44,
+   "games": 261,
+   "pick": 60.1,
+   "lead": 10.5,
    "mega": 0,
    "seen": 84.69168746112516,
    "mv": [
@@ -4734,63 +4536,406 @@
    "tm": [
     [
      "Basculegion",
-     36.6,
+     35.99,
      "Basculegion"
     ],
     [
      "Salamence",
-     29.88,
+     29.39,
      "Salamence"
     ],
     [
      "Banette",
-     24.79,
+     24.38,
      "Banette"
     ],
     [
      "Garchomp",
-     21.19,
+     21.34,
      "Garchomp"
     ],
     [
      "Primarina",
-     20.79,
+     20.45,
      "Primarina"
     ],
     [
      "Golisopod",
-     20.14,
+     19.81,
      "Golisopod"
     ],
     [
      "Kingambit",
-     17.15,
+     16.86,
      "Kingambit"
     ],
     [
-     "Victreebel",
-     14.47,
-     "Victreebel"
-    ],
-    [
      "Baxcalibur",
-     14.44,
+     14.98,
      "Baxcalibur"
     ],
     [
-     "Gholdengo",
-     12.58,
-     "Gholdengo"
+     "Victreebel",
+     14.23,
+     "Victreebel"
+    ],
+    [
+     "Lucario",
+     12.93,
+     "Lucario"
     ]
    ],
    "sp": [],
    "cc": [],
+   "rank": 22
+  },
+  {
+   "name": "Charizard",
+   "id": "Charizard",
+   "pct": 8.095,
+   "win": 50.36,
+   "games": 301,
+   "pick": 54.9,
+   "lead": 33.8,
+   "mega": 91.2,
+   "seen": 81.79249868469817,
+   "mv": [
+    [
+     407,
+     83.2
+    ],
+    [
+     161,
+     45.13
+    ],
+    [
+     110,
+     35.78
+    ],
+    [
+     496,
+     32.61
+    ],
+    [
+     111,
+     31.94
+    ],
+    [
+     9,
+     28.13
+    ],
+    [
+     301,
+     24.33
+    ],
+    [
+     162,
+     20.29
+    ],
+    [
+     113,
+     18.54
+    ],
+    [
+     463,
+     13.84
+    ],
+    [
+     13,
+     9.28
+    ],
+    [
+     299,
+     7.64
+    ]
+   ],
+   "it": [
+    [
+     "Charizardite Y",
+     72.32
+    ],
+    [
+     "Charizardite X",
+     27.68
+    ]
+   ],
+   "ab": [
+    [
+     "Drought",
+     96.51,
+     "가뭄"
+    ],
+    [
+     "Solar Power",
+     3.49,
+     "선파워"
+    ]
+   ],
+   "tm": [
+    [
+     "Garchomp",
+     35.8,
+     "Garchomp"
+    ],
+    [
+     "Mimikyu",
+     21.52,
+     "Mimikyu"
+    ],
+    [
+     "Baxcalibur",
+     18.42,
+     "Baxcalibur"
+    ],
+    [
+     "Primarina",
+     15.48,
+     "Primarina"
+    ],
+    [
+     "Meowscarada",
+     15.38,
+     "Meowscarada"
+    ],
+    [
+     "Aegislash",
+     14.07,
+     "Aegislash"
+    ],
+    [
+     "Hippowdon",
+     13.82,
+     "Hippowdon"
+    ],
+    [
+     "Lucario",
+     13.13,
+     "Lucario"
+    ],
+    [
+     "Archaludon",
+     12.67,
+     "Archaludon"
+    ],
+    [
+     "Venusaur",
+     11.92,
+     "Venusaur"
+    ]
+   ],
+   "sp": [
+    [
+     "Timid",
+     {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     13.8
+    ],
+    [
+     "Adamant",
+     {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     13.2
+    ],
+    [
+     "Jolly",
+     {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     9
+    ],
+    [
+     "Timid",
+     {
+      "hp": 22,
+      "atk": 0,
+      "def": 17,
+      "spa": 5,
+      "spd": 0,
+      "spe": 22
+     },
+     7.6
+    ]
+   ],
+   "cc": [
+    [
+     "Garchomp",
+     76.4,
+     28
+    ],
+    [
+     "Hippowdon",
+     40.3,
+     23
+    ]
+   ],
    "rank": 23
+  },
+  {
+   "name": "Indeedee",
+   "id": "Indeedee",
+   "pct": 7.596,
+   "win": 53.37,
+   "games": 267,
+   "pick": 63.2,
+   "lead": 63.8,
+   "mega": 0,
+   "seen": 91.93236980624206,
+   "mv": [
+    [
+     138,
+     100
+    ],
+    [
+     290,
+     81.68
+    ],
+    [
+     132,
+     52.85
+    ],
+    [
+     478,
+     19.84
+    ],
+    [
+     94,
+     18.98
+    ],
+    [
+     435,
+     5.34
+    ],
+    [
+     477,
+     5.26
+    ],
+    [
+     204,
+     4.76
+    ],
+    [
+     502,
+     4.13
+    ],
+    [
+     135,
+     3.45
+    ],
+    [
+     117,
+     1.95
+    ],
+    [
+     263,
+     1.55
+    ]
+   ],
+   "it": [
+    [
+     "Focus Sash",
+     48.68
+    ],
+    [
+     "Psychic Seed",
+     15.42
+    ],
+    [
+     "Leftovers",
+     15.12
+    ],
+    [
+     "Life Orb",
+     11.85
+    ],
+    [
+     "Eject Button",
+     8.93
+    ]
+   ],
+   "ab": [
+    [
+     "Psychic Surge",
+     100,
+     "사이코메이커"
+    ]
+   ],
+   "tm": [
+    [
+     "Blastoise",
+     37.77,
+     "Blastoise"
+    ],
+    [
+     "Sneasler",
+     31.46,
+     "Sneasler"
+    ],
+    [
+     "Garchomp",
+     24.46,
+     "Garchomp"
+    ],
+    [
+     "Armarouge",
+     22.01,
+     "Armarouge"
+    ],
+    [
+     "Salamence",
+     21.87,
+     "Salamence"
+    ],
+    [
+     "Archaludon",
+     19.38,
+     "Archaludon"
+    ],
+    [
+     "Baxcalibur",
+     17.9,
+     "Baxcalibur"
+    ],
+    [
+     "Rillaboom",
+     15.51,
+     "Rillaboom"
+    ],
+    [
+     "Hippowdon",
+     15.47,
+     "Hippowdon"
+    ],
+    [
+     "Metagross",
+     14.69,
+     "Metagross"
+    ]
+   ],
+   "sp": [],
+   "cc": [],
+   "rank": 24
   },
   {
    "name": "Volcarona",
    "id": "Volcarona",
-   "pct": 7.616,
+   "pct": 7.557,
    "win": 52.66,
    "games": 322,
    "pick": 32.2,
@@ -5007,160 +5152,15 @@
      23
     ]
    ],
-   "rank": 24
-  },
-  {
-   "name": "Indeedee",
-   "id": "Indeedee",
-   "pct": 7.593,
-   "win": 53.81,
-   "games": 265,
-   "pick": 63.7,
-   "lead": 63.8,
-   "mega": 0,
-   "seen": 91.93236980624206,
-   "mv": [
-    [
-     138,
-     100
-    ],
-    [
-     290,
-     81.68
-    ],
-    [
-     132,
-     52.85
-    ],
-    [
-     478,
-     19.84
-    ],
-    [
-     94,
-     18.98
-    ],
-    [
-     435,
-     5.34
-    ],
-    [
-     477,
-     5.26
-    ],
-    [
-     204,
-     4.76
-    ],
-    [
-     502,
-     4.13
-    ],
-    [
-     135,
-     3.45
-    ],
-    [
-     117,
-     1.95
-    ],
-    [
-     263,
-     1.55
-    ]
-   ],
-   "it": [
-    [
-     "Focus Sash",
-     48.68
-    ],
-    [
-     "Psychic Seed",
-     15.42
-    ],
-    [
-     "Leftovers",
-     15.12
-    ],
-    [
-     "Life Orb",
-     11.85
-    ],
-    [
-     "Eject Button",
-     8.93
-    ]
-   ],
-   "ab": [
-    [
-     "Psychic Surge",
-     100,
-     "사이코메이커"
-    ]
-   ],
-   "tm": [
-    [
-     "Blastoise",
-     38.09,
-     "Blastoise"
-    ],
-    [
-     "Sneasler",
-     31.3,
-     "Sneasler"
-    ],
-    [
-     "Garchomp",
-     24.67,
-     "Garchomp"
-    ],
-    [
-     "Armarouge",
-     22.19,
-     "Armarouge"
-    ],
-    [
-     "Salamence",
-     21.63,
-     "Salamence"
-    ],
-    [
-     "Archaludon",
-     19.54,
-     "Archaludon"
-    ],
-    [
-     "Baxcalibur",
-     18.05,
-     "Baxcalibur"
-    ],
-    [
-     "Rillaboom",
-     15.64,
-     "Rillaboom"
-    ],
-    [
-     "Hippowdon",
-     15.6,
-     "Hippowdon"
-    ],
-    [
-     "Metagross",
-     14.81,
-     "Metagross"
-    ]
-   ],
-   "sp": [],
-   "cc": [],
    "rank": 25
   },
   {
    "name": "Metagross",
    "id": "Metagross",
-   "pct": 7.55,
-   "win": 50.72,
-   "games": 311,
-   "pick": 36.9,
+   "pct": 7.531,
+   "win": 50.99,
+   "games": 312,
+   "pick": 36.7,
    "lead": 17.9,
    "mega": 94.1,
    "seen": 51.70445777611694,
@@ -5239,52 +5239,52 @@
    "tm": [
     [
      "Garchomp",
-     47.45,
+     47.73,
      "Garchomp"
     ],
     [
      "Primarina",
-     45.14,
+     44.9,
      "Primarina"
     ],
     [
      "Salamence",
-     28.6,
+     28.45,
      "Salamence"
     ],
     [
-     "Hydreigon",
-     18.73,
-     "Hydreigon"
-    ],
-    [
      "Meowscarada",
-     18.62,
+     19.06,
      "Meowscarada"
     ],
     [
+     "Hydreigon",
+     18.63,
+     "Hydreigon"
+    ],
+    [
      "Indeedee",
-     14.9,
+     14.82,
      "Indeedee"
     ],
     [
      "Rillaboom",
-     13.55,
+     13.48,
      "Rillaboom"
     ],
     [
      "Mimikyu",
-     13.44,
+     13.36,
      "Mimikyu"
     ],
     [
      "Ninetales-Alola",
-     12.79,
+     12.72,
      "Ninetales-Alola"
     ],
     [
      "Archaludon",
-     12.72,
+     12.65,
      "Archaludon"
     ]
    ],
@@ -5385,7 +5385,7 @@
   {
    "name": "Blastoise",
    "id": "Blastoise",
-   "pct": 6.52,
+   "pct": 6.469,
    "win": 48.59,
    "games": 243,
    "pick": 43.6,
@@ -5570,226 +5570,85 @@
    "rank": 27
   },
   {
-   "name": "Cinderace",
-   "id": "Cinderace",
-   "pct": 6.177,
-   "win": 54.41,
-   "games": 212,
-   "pick": 33.6,
-   "lead": 44.1,
-   "mega": 0,
-   "seen": 37.42914934191808,
-   "mv": [
-    [
-     336,
-     100
-    ],
-    [
-     211,
-     84.28
-    ],
-    [
-     484,
-     47.06
-    ],
-    [
-     436,
-     41.16
-    ],
-    [
-     195,
-     28.87
-    ],
-    [
-     237,
-     20.96
-    ],
-    [
-     501,
-     11.12
-    ],
-    [
-     447,
-     7.92
-    ],
-    [
-     327,
-     5.76
-    ],
-    [
-     452,
-     5.25
-    ],
-    [
-     510,
-     3.92
-    ],
-    [
-     32,
-     3.88
-    ]
-   ],
-   "it": [
-    [
-     "Life Orb",
-     63.8
-    ],
-    [
-     "Air Balloon",
-     22.59
-    ],
-    [
-     "Focus Sash",
-     9.65
-    ],
-    [
-     "Choice Scarf",
-     3.96
-    ]
-   ],
-   "ab": [
-    [
-     "Libero",
-     100,
-     "리베로"
-    ]
-   ],
-   "tm": [
-    [
-     "Garchomp",
-     23.73,
-     "Garchomp"
-    ],
-    [
-     "Primarina",
-     22.51,
-     "Primarina"
-    ],
-    [
-     "Golisopod",
-     22.14,
-     "Golisopod"
-    ],
-    [
-     "Salamence",
-     19.93,
-     "Salamence"
-    ],
-    [
-     "Rillaboom",
-     19.77,
-     "Rillaboom"
-    ],
-    [
-     "Glimmora",
-     19.39,
-     "Glimmora"
-    ],
-    [
-     "Baxcalibur",
-     18.19,
-     "Baxcalibur"
-    ],
-    [
-     "Lucario",
-     17.2,
-     "Lucario"
-    ],
-    [
-     "Gholdengo",
-     17.04,
-     "Gholdengo"
-    ],
-    [
-     "Basculegion",
-     14.64,
-     "Basculegion"
-    ]
-   ],
-   "sp": [],
-   "cc": [],
-   "rank": 28
-  },
-  {
    "name": "Rotom-Wash",
    "id": "Rotom-Wash",
-   "pct": 6.136,
-   "win": 44.78,
-   "games": 461,
-   "pick": 53.1,
-   "lead": 46.2,
+   "pct": 6.251,
+   "win": 44.72,
+   "games": 466,
+   "pick": 53.4,
+   "lead": 45.7,
    "mega": 0,
-   "seen": 58.33057773007556,
+   "seen": 59.50192000927429,
    "mv": [
     [
      217,
-     95.89
+     97.67
     ],
     [
      501,
-     95.82
+     97.63
     ],
     [
      489,
-     78.28
+     80.93
     ],
     [
      465,
-     38.36
+     38.63
     ],
     [
      302,
-     21.18
+     21.3
     ],
     [
      477,
-     13.96
+     14.05
     ],
     [
      102,
-     8.96
+     9.03
     ],
     [
      253,
-     5.7
+     5.73
     ],
     [
      464,
-     4.02
+     4.05
     ],
     [
      291,
-     3.23
+     3.26
     ],
     [
      350,
-     2.73
+     2.74
     ],
     [
      131,
-     2.59
+     2.61
     ]
    ],
    "it": [
     [
      "Leftovers",
-     50.96
+     50.52
     ],
     [
      "Sitrus Berry",
-     39.32
+     40.16
     ],
     [
      "Choice Scarf",
-     5.45
+     5.23
     ],
     [
      "Light Clay",
-     2.31
+     2.22
     ],
     [
      "Chesto Berry",
-     0.99
+     0.95
     ]
    ],
    "ab": [
@@ -5802,52 +5661,52 @@
    "tm": [
     [
      "Garchomp",
-     36.69,
+     36.86,
      "Garchomp"
     ],
     [
      "Lucario",
-     24.39,
+     23.75,
      "Lucario"
     ],
     [
      "Salamence",
-     18.62,
+     19.62,
      "Salamence"
     ],
     [
+     "Kingambit",
+     17.42,
+     "Kingambit"
+    ],
+    [
      "Mimikyu",
-     17.72,
+     17.26,
      "Mimikyu"
     ],
     [
      "Sneasler",
-     17.29,
+     16.84,
      "Sneasler"
     ],
     [
-     "Kingambit",
-     16.72,
-     "Kingambit"
-    ],
-    [
      "Blaziken",
-     16.61,
+     16.17,
      "Blaziken"
     ],
     [
-     "Meowscarada",
-     15.96,
-     "Meowscarada"
-    ],
-    [
      "Gholdengo",
-     15.53,
+     15.96,
      "Gholdengo"
     ],
     [
+     "Meowscarada",
+     15.55,
+     "Meowscarada"
+    ],
+    [
      "Ninetales-Alola",
-     15.31,
+     15.55,
      "Ninetales-Alola"
     ]
    ],
@@ -5908,15 +5767,156 @@
      23
     ]
    ],
+   "rank": 28
+  },
+  {
+   "name": "Cinderace",
+   "id": "Cinderace",
+   "pct": 6.169,
+   "win": 54.71,
+   "games": 213,
+   "pick": 34,
+   "lead": 43.3,
+   "mega": 0,
+   "seen": 38.207149341918075,
+   "mv": [
+    [
+     336,
+     100
+    ],
+    [
+     211,
+     83.23
+    ],
+    [
+     484,
+     46.48
+    ],
+    [
+     436,
+     40.65
+    ],
+    [
+     195,
+     28.51
+    ],
+    [
+     237,
+     20.7
+    ],
+    [
+     501,
+     10.98
+    ],
+    [
+     447,
+     7.82
+    ],
+    [
+     327,
+     5.69
+    ],
+    [
+     452,
+     5.18
+    ],
+    [
+     510,
+     3.87
+    ],
+    [
+     32,
+     3.83
+    ]
+   ],
+   "it": [
+    [
+     "Life Orb",
+     65.69
+    ],
+    [
+     "Air Balloon",
+     21.41
+    ],
+    [
+     "Focus Sash",
+     9.14
+    ],
+    [
+     "Choice Scarf",
+     3.76
+    ]
+   ],
+   "ab": [
+    [
+     "Libero",
+     100,
+     "리베로"
+    ]
+   ],
+   "tm": [
+    [
+     "Garchomp",
+     24.23,
+     "Garchomp"
+    ],
+    [
+     "Primarina",
+     22.36,
+     "Primarina"
+    ],
+    [
+     "Golisopod",
+     22,
+     "Golisopod"
+    ],
+    [
+     "Salamence",
+     19.8,
+     "Salamence"
+    ],
+    [
+     "Rillaboom",
+     19.64,
+     "Rillaboom"
+    ],
+    [
+     "Glimmora",
+     19.26,
+     "Glimmora"
+    ],
+    [
+     "Baxcalibur",
+     18.07,
+     "Baxcalibur"
+    ],
+    [
+     "Lucario",
+     17.09,
+     "Lucario"
+    ],
+    [
+     "Gholdengo",
+     16.93,
+     "Gholdengo"
+    ],
+    [
+     "Basculegion",
+     14.54,
+     "Basculegion"
+    ]
+   ],
+   "sp": [],
+   "cc": [],
    "rank": 29
   },
   {
    "name": "Raichu",
    "id": "Raichu",
-   "pct": 5.721,
-   "win": 50.42,
-   "games": 184,
-   "pick": 54.4,
+   "pct": 5.715,
+   "win": 50.76,
+   "games": 185,
+   "pick": 54,
    "lead": 44.2,
    "mega": 90,
    "seen": 55.36284616635313,
@@ -6000,53 +6000,53 @@
    "tm": [
     [
      "Garchomp",
-     36.07,
+     36.51,
      "Garchomp"
     ],
     [
      "Corviknight",
-     26.93,
+     26.74,
      "Corviknight"
     ],
     [
      "Rillaboom",
-     23.13,
+     22.97,
      "Rillaboom"
     ],
     [
      "Primarina",
-     18.04,
+     17.92,
      "Primarina"
     ],
     [
      "Basculegion",
-     14.24,
+     14.14,
      "Basculegion"
     ],
     [
      "Mimikyu",
-     13.87,
+     13.77,
      "Mimikyu"
     ],
     [
      "Greninja",
-     12.9,
+     12.81,
      "Greninja"
     ],
     [
      "Archaludon",
-     12.7,
+     12.62,
      "Archaludon"
     ],
     [
-     "Gholdengo",
-     12.58,
-     "Gholdengo"
+     "Kingambit",
+     12.61,
+     "Kingambit"
     ],
     [
-     "Kingambit",
-     12,
-     "Kingambit"
+     "Gholdengo",
+     12.5,
+     "Gholdengo"
     ]
    ],
    "sp": [
@@ -6111,29 +6111,29 @@
   {
    "name": "Swampert",
    "id": "Swampert",
-   "pct": 5.677,
+   "pct": 5.638,
    "win": 52.87,
-   "games": 1831,
+   "games": 1845,
    "pick": 49,
    "lead": 37,
-   "mega": 65.6,
-   "seen": 47.93374256588416,
+   "mega": 65.7,
+   "seen": 47.951053964550155,
    "mv": [
     [
      124,
-     80.48
+     80.51
     ],
     [
      166,
-     63.17
+     63.15
     ],
     [
      224,
-     52.94
+     52.82
     ],
     [
      495,
-     45.81
+     45.95
     ],
     [
      418,
@@ -6145,7 +6145,7 @@
     ],
     [
      83,
-     8.1
+     8.11
     ],
     [
      327,
@@ -6171,7 +6171,7 @@
    "it": [
     [
      "Swampertite",
-     81.15
+     81.16
     ],
     [
      "Sitrus Berry",
@@ -6179,11 +6179,11 @@
     ],
     [
      "Leftovers",
-     5.55
+     5.54
     ],
     [
      "Focus Sash",
-     3.88
+     3.87
     ],
     [
      "Rindo Berry",
@@ -6210,52 +6210,52 @@
    "tm": [
     [
      "Archaludon",
-     66.68,
+     66.71,
      "Archaludon"
     ],
     [
      "Pelipper",
-     63.04,
+     63.07,
      "Pelipper"
     ],
     [
      "Salamence",
-     44.58,
+     44.63,
      "Salamence"
     ],
     [
      "Meowscarada",
-     42.67,
+     42.73,
      "Meowscarada"
     ],
     [
      "Sneasler",
-     35.56,
+     35.62,
      "Sneasler"
     ],
     [
      "Garchomp",
-     22.23,
+     22.2,
      "Garchomp"
     ],
     [
      "Golisopod",
-     15.64,
+     15.63,
      "Golisopod"
     ],
     [
      "Lucario",
-     10.81,
+     10.8,
      "Lucario"
     ],
     [
      "Basculegion",
-     10.62,
+     10.61,
      "Basculegion"
     ],
     [
      "Gholdengo",
-     9.7,
+     9.69,
      "Gholdengo"
     ]
    ],
@@ -6326,7 +6326,7 @@
   {
    "name": "Gengar",
    "id": "Gengar",
-   "pct": 5.509,
+   "pct": 5.466,
    "win": 41.81,
    "games": 175,
    "pick": 42.4,
@@ -6547,7 +6547,7 @@
   {
    "name": "Gyarados",
    "id": "Gyarados",
-   "pct": 5.442,
+   "pct": 5.399,
    "win": 57.65,
    "games": 293,
    "pick": 43.2,
@@ -6787,61 +6787,61 @@
   {
    "name": "Dragonite",
    "id": "Dragonite",
-   "pct": 5.182,
-   "win": 49.52,
-   "games": 205,
-   "pick": 42.5,
-   "lead": 27.2,
-   "mega": 70.4,
-   "seen": 39.84159736762551,
+   "pct": 5.193,
+   "win": 49.6,
+   "games": 207,
+   "pick": 42.7,
+   "lead": 26.9,
+   "mega": 69.5,
+   "seen": 40.41293964682424,
    "mv": [
     [
      108,
-     68.29
+     69.14
     ],
     [
      161,
-     41.19
+     41.02
     ],
     [
      363,
-     22.37
+     22.26
     ],
     [
      141,
-     21.76
+     21.65
     ],
     [
      465,
-     19.85
-    ],
-    [
-     9,
-     15.46
+     19.78
     ],
     [
      111,
-     14.56
+     16.65
+    ],
+    [
+     9,
+     15.37
     ],
     [
      113,
-     12.37
+     12.32
     ],
     [
      124,
-     10.92
+     10.86
     ],
     [
      115,
-     10.32
+     10.3
     ],
     [
      435,
-     8.17
+     8.15
     ],
     [
      215,
-     7.13
+     7.11
     ]
    ],
    "it": [
@@ -6885,52 +6885,52 @@
    "tm": [
     [
      "Mimikyu",
-     27.95,
+     27.67,
      "Mimikyu"
     ],
     [
      "Garchomp",
-     25.19,
+     24.94,
      "Garchomp"
     ],
     [
      "Archaludon",
-     18.38,
+     18.19,
      "Archaludon"
     ],
     [
      "Glimmora",
-     17.28,
+     17.1,
      "Glimmora"
     ],
     [
      "Meowscarada",
-     17.15,
+     16.98,
      "Meowscarada"
     ],
     [
      "Primarina",
-     16.46,
+     16.3,
      "Primarina"
     ],
     [
      "Basculegion",
-     15.73,
+     15.58,
      "Basculegion"
     ],
     [
      "Kingambit",
-     13.93,
+     13.79,
      "Kingambit"
     ],
     [
      "Golisopod",
-     13.17,
+     13.04,
      "Golisopod"
     ],
     [
      "Corviknight",
-     12.65,
+     12.52,
      "Corviknight"
     ]
    ],
@@ -7016,79 +7016,79 @@
   {
    "name": "Greninja",
    "id": "Greninja",
-   "pct": 5.086,
-   "win": 47.31,
-   "games": 175,
-   "pick": 46.7,
-   "lead": 38.5,
-   "mega": 41.7,
-   "seen": 42.999220185850476,
+   "pct": 5.173,
+   "win": 48.18,
+   "games": 179,
+   "pick": 46.6,
+   "lead": 37.6,
+   "mega": 40.8,
+   "seen": 43.994826533761135,
    "mv": [
     [
      92,
-     71.93
+     73.71
     ],
     [
      221,
-     51.81
+     53.09
     ],
     [
      398,
-     41.1
+     40.77
     ],
     [
      441,
-     40.29
+     40.08
     ],
     [
      492,
-     34.67
+     38.38
     ],
     [
      217,
-     17.28
+     17.19
     ],
     [
      484,
-     14.12
+     14.05
     ],
     [
      472,
-     3.51
+     3.49
     ],
     [
      287,
-     3.43
+     3.41
     ],
     [
      359,
-     2.84
+     2.82
     ],
     [
      195,
-     2.58
+     2.56
     ],
     [
      140,
-     2.39
+     2.38
     ]
    ],
    "it": [
     [
      "Greninjite",
-     70.08
+     69.3
     ],
     [
      "Focus Sash",
-     22.79
+     23.65
     ],
     [
      "Life Orb",
-     3.59
+     3.57
     ],
     [
      "Choice Scarf",
-     1.63
+     1.59
     ],
     [
      "Leftovers",
@@ -7096,7 +7096,7 @@
     ],
     [
      "Expert Belt",
-     0.63
+     0.61
     ]
    ],
    "ab": [
@@ -7109,52 +7109,52 @@
    "tm": [
     [
      "Garchomp",
-     43.85,
+     42.77,
      "Garchomp"
     ],
     [
      "Salamence",
-     27.49,
+     28.57,
      "Salamence"
     ],
     [
      "Primarina",
-     24.89,
+     24.28,
      "Primarina"
     ],
     [
      "Mimikyu",
-     19.83,
+     19.34,
      "Mimikyu"
     ],
     [
      "Corviknight",
-     15.73,
+     16.05,
      "Corviknight"
     ],
     [
      "Archaludon",
-     15.03,
+     14.66,
      "Archaludon"
     ],
     [
      "Raichu",
-     14.51,
+     14.16,
      "Raichu"
     ],
     [
      "Rillaboom",
-     13.86,
+     13.52,
      "Rillaboom"
     ],
     [
      "Aegislash",
-     13.83,
+     13.49,
      "Aegislash"
     ],
     [
      "Blaziken",
-     13.82,
+     13.48,
      "Blaziken"
     ]
    ],
@@ -7230,87 +7230,87 @@
   {
    "name": "Scizor",
    "id": "Scizor",
-   "pct": 5.048,
-   "win": 41.83,
-   "games": 191,
-   "pick": 31.2,
-   "lead": 38.2,
-   "mega": 28.1,
-   "seen": 29.645733865405667,
+   "pct": 5.04,
+   "win": 42.19,
+   "games": 192,
+   "pick": 31.6,
+   "lead": 39.4,
+   "mega": 27.5,
+   "seen": 30.24573386540567,
    "mv": [
     [
      58,
-     54.98
+     55.87
     ],
     [
      447,
-     51.67
+     53.14
     ],
     [
      484,
-     30.5
+     30.12
     ],
     [
      73,
-     23.16
+     22.87
     ],
     [
      242,
-     17.23
+     17.01
     ],
     [
      363,
-     11.15
+     10.99
     ],
     [
      54,
-     2.16
+     4.25
+    ],
+    [
+     121,
+     2.35
     ],
     [
      171,
-     1.77
+     1.75
     ],
     [
      52,
-     1.39
+     1.37
     ],
     [
      96,
-     0.72
+     0.71
     ],
     [
      22,
-     0.53
-    ],
-    [
-     474,
-     0.5
+     0.52
     ]
    ],
    "it": [
     [
      "Scizorite",
-     51.18
+     50.52
     ],
     [
      "Life Orb",
-     24.17
+     25.19
     ],
     [
      "metalcoat",
-     10.14
+     9.95
     ],
     [
      "Sitrus Berry",
-     6.57
+     6.49
     ],
     [
      "Leftovers",
-     5.87
+     5.82
     ],
     [
      "Lum Berry",
-     1.28
+     1.26
     ]
    ],
    "ab": [
@@ -7323,52 +7323,52 @@
    "tm": [
     [
      "Garchomp",
-     48.84,
+     49.16,
      "Garchomp"
     ],
     [
      "Meowscarada",
-     23.97,
+     23.82,
      "Meowscarada"
     ],
     [
      "Primarina",
-     21.56,
+     22.05,
      "Primarina"
     ],
     [
      "Salamence",
-     17.05,
+     16.94,
      "Salamence"
     ],
     [
      "Blaziken",
-     13.97,
+     13.88,
      "Blaziken"
     ],
     [
      "Baxcalibur",
-     12.9,
+     12.82,
      "Baxcalibur"
     ],
     [
      "Greninja",
-     10.79,
+     10.72,
      "Greninja"
     ],
     [
      "Gengar",
-     10.65,
+     10.58,
      "Gengar"
     ],
     [
      "Gyarados",
-     10.64,
+     10.57,
      "Gyarados"
     ],
     [
      "Slowking-Galar",
-     9.95,
+     9.88,
      "Slowking-Galar"
     ]
    ],
@@ -7434,7 +7434,7 @@
   {
    "name": "Absol",
    "id": "Absol",
-   "pct": 4.82,
+   "pct": 4.782,
    "win": 39.91,
    "games": 166,
    "pick": 46.1,
@@ -7572,49 +7572,49 @@
   {
    "name": "Ceruledge",
    "id": "Ceruledge",
-   "pct": 4.651,
-   "win": 55.2,
-   "games": 181,
-   "pick": 33.8,
-   "lead": 26.6,
+   "pct": 4.724,
+   "win": 55.51,
+   "games": 184,
+   "pick": 33.9,
+   "lead": 25.9,
    "mega": 0,
-   "seen": 25.550036223060815,
+   "seen": 26.386036223060813,
    "mv": [
     [
      317,
-     47.71
+     48.98
     ],
     [
      447,
-     45.91
+     45.63
     ],
     [
      381,
-     40.31
+     43.14
     ],
     [
      39,
-     39.19
+     38.91
     ],
     [
      73,
-     9.42
+     9.3
     ],
     [
      327,
-     3.86
+     3.85
     ],
     [
      379,
-     3.06
+     3.04
     ],
     [
      134,
-     2.24
+     2.23
     ],
     [
      56,
-     1.36
+     1.34
     ],
     [
      333,
@@ -7670,52 +7670,52 @@
    "tm": [
     [
      "Golisopod",
-     30.1,
+     30.32,
      "Golisopod"
     ],
     [
      "Salamence",
-     28.22,
+     27.56,
      "Salamence"
     ],
     [
      "Garchomp",
-     25.2,
+     25.28,
      "Garchomp"
     ],
     [
      "Baxcalibur",
-     21.13,
+     20.64,
      "Baxcalibur"
     ],
     [
      "Gholdengo",
-     13.81,
+     13.49,
      "Gholdengo"
     ],
     [
-     "Basculegion",
-     13.11,
-     "Basculegion"
-    ],
-    [
      "Primarina",
-     12.76,
+     13.13,
      "Primarina"
     ],
     [
+     "Basculegion",
+     12.81,
+     "Basculegion"
+    ],
+    [
      "Grimmsnarl",
-     11.73,
+     11.46,
      "Grimmsnarl"
     ],
     [
      "Corviknight",
-     10.78,
+     10.53,
      "Corviknight"
     ],
     [
      "Blastoise",
-     10.75,
+     10.5,
      "Blastoise"
     ]
    ],
@@ -7781,61 +7781,61 @@
   {
    "name": "Sylveon",
    "id": "Sylveon",
-   "pct": 4.584,
-   "win": 44.54,
-   "games": 177,
-   "pick": 40.8,
-   "lead": 35.1,
+   "pct": 4.557,
+   "win": 44.65,
+   "games": 178,
+   "pick": 41,
+   "lead": 34.9,
    "mega": 0,
-   "seen": 32.71262499967933,
+   "seen": 32.941655570904196,
    "mv": [
     [
      219,
-     64.76
+     65.05
     ],
     [
      508,
-     48.3
+     48.41
     ],
     [
      290,
-     33.35
+     33.5
     ],
     [
      502,
-     30.73
+     30.78
     ],
     [
      327,
-     26.38
+     26.41
     ],
     [
      218,
-     13.6
+     13.61
     ],
     [
      338,
-     9.39
+     9.28
     ],
     [
      98,
-     6.7
+     6.6
     ],
     [
      435,
-     2.45
+     2.46
     ],
     [
      117,
-     1.87
+     1.88
     ],
     [
      282,
-     1.73
+     1.74
     ],
     [
      378,
-     1.07
+     1.08
     ]
    ],
    "it": [
@@ -7879,52 +7879,52 @@
    "tm": [
     [
      "Garchomp",
-     31.69,
+     31.83,
      "Garchomp"
     ],
     [
      "Salamence",
-     28.69,
+     28.64,
      "Salamence"
     ],
     [
      "Golisopod",
-     21.3,
+     21.25,
      "Golisopod"
     ],
     [
      "Rillaboom",
-     14.9,
+     14.87,
      "Rillaboom"
     ],
     [
      "Gholdengo",
-     14.46,
+     14.43,
      "Gholdengo"
     ],
     [
      "Basculegion",
-     13.55,
+     13.72,
      "Basculegion"
     ],
     [
      "Samurott-Hisui",
-     11.43,
+     11.41,
      "Samurott-Hisui"
     ],
     [
      "Lucario",
-     10.95,
+     10.93,
      "Lucario"
     ],
     [
      "Gyarados",
-     10.86,
+     10.84,
      "Gyarados"
     ],
     [
      "Gengar",
-     10.86,
+     10.83,
      "Gengar"
     ]
    ],
@@ -8025,10 +8025,10 @@
   {
    "name": "Dragapult",
    "id": "Dragapult",
-   "pct": 4.42,
-   "win": 54.85,
-   "games": 156,
-   "pick": 49.2,
+   "pct": 4.419,
+   "win": 54.43,
+   "games": 157,
+   "pick": 48.9,
    "lead": 49.3,
    "mega": 0,
    "seen": 37.0927891205934,
@@ -8136,52 +8136,52 @@
    "tm": [
     [
      "Salamence",
-     23.07,
+     22.89,
      "Salamence"
     ],
     [
      "Golisopod",
-     20.71,
+     20.55,
      "Golisopod"
     ],
     [
      "Garchomp",
-     16.95,
+     16.82,
      "Garchomp"
     ],
     [
      "Lucario",
-     15.85,
+     15.72,
      "Lucario"
     ],
     [
      "Archaludon",
-     14.89,
+     15.55,
      "Archaludon"
     ],
     [
      "Blastoise",
-     14.85,
+     14.73,
      "Blastoise"
     ],
     [
      "Primarina",
-     13.64,
+     13.53,
      "Primarina"
     ],
     [
      "Baxcalibur",
-     13.37,
+     13.27,
      "Baxcalibur"
     ],
     [
      "Hatterene",
-     10.75,
+     10.66,
      "Hatterene"
     ],
     [
      "Ninetales-Alola",
-     10,
+     9.92,
      "Ninetales-Alola"
     ]
    ],
@@ -8247,7 +8247,7 @@
   {
    "name": "Hydreigon",
    "id": "Hydreigon",
-   "pct": 4.298,
+   "pct": 4.264,
    "win": 58.11,
    "games": 162,
    "pick": 41.9,
@@ -8469,71 +8469,71 @@
   {
    "name": "Skeledirge",
    "id": "Skeledirge",
-   "pct": 4.206,
-   "win": 46.48,
-   "games": 153,
-   "pick": 19,
-   "lead": 20,
+   "pct": 4.205,
+   "win": 46.14,
+   "games": 154,
+   "pick": 19.6,
+   "lead": 23,
    "mega": 0,
-   "seen": 11.15206362122721,
+   "seen": 11.75206362122721,
    "mv": [
     [
      469,
-     23.41
-    ],
-    [
-     393,
-     16
+     24.33
     ],
     [
      378,
-     14.92
+     16.93
+    ],
+    [
+     393,
+     15.89
     ],
     [
      501,
-     14
+     13.91
     ],
     [
      508,
-     4.4
+     4.38
     ],
     [
      209,
-     1.84
+     1.81
     ]
    ],
    "it": [
     [
      "Sitrus Berry",
-     26.75
+     26.46
     ],
     [
      "nothing",
-     24.64
+     24.29
     ],
     [
      "Leftovers",
-     18.93
+     18.73
     ],
     [
      "Shuca Berry",
-     9.08
+     8.95
     ],
     [
      "Lum Berry",
-     5.22
+     5.14
     ],
     [
      "zoomlens",
-     5.2
+     5.13
     ],
     [
      "Kasib Berry",
-     5.07
+     5.02
     ],
     [
      "Air Balloon",
-     2.42
+     3.62
     ]
    ],
    "ab": [
@@ -8551,52 +8551,52 @@
    "tm": [
     [
      "Salamence",
-     44.35,
+     44.02,
      "Salamence"
     ],
     [
      "Primarina",
-     31.81,
+     31.57,
      "Primarina"
     ],
     [
      "Lucario",
-     24.64,
+     24.46,
      "Lucario"
     ],
     [
      "Meowscarada",
-     20.29,
+     20.14,
      "Meowscarada"
     ],
     [
      "Garchomp",
-     18.19,
+     18.05,
      "Garchomp"
     ],
     [
-     "Golisopod",
-     14.83,
-     "Golisopod"
-    ],
-    [
      "Pawmot",
-     14.64,
+     15.28,
      "Pawmot"
     ],
     [
+     "Golisopod",
+     14.72,
+     "Golisopod"
+    ],
+    [
      "Baxcalibur",
-     14.59,
+     14.48,
      "Baxcalibur"
     ],
     [
      "Basculegion",
-     12.53,
+     12.44,
      "Basculegion"
     ],
     [
      "Umbreon",
-     11.86,
+     11.77,
      "Umbreon"
     ]
    ],
@@ -8654,73 +8654,294 @@
    "rank": 42
   },
   {
-   "name": "Umbreon",
-   "id": "Umbreon",
-   "pct": 4.168,
-   "win": 47.85,
-   "games": 143,
-   "pick": 43.2,
-   "lead": 31.8,
-   "mega": 0,
-   "seen": 33.18790925785241,
+   "name": "Clefable",
+   "id": "Clefable",
+   "pct": 4.175,
+   "win": 46.62,
+   "games": 148,
+   "pick": 35.3,
+   "lead": 26.2,
+   "mega": 50.6,
+   "seen": 26.487722348374223,
    "mv": [
     [
-     175,
-     59.42
-    ],
-    [
-     502,
-     48.78
-    ],
-    [
-     508,
-     45.56
-    ],
-    [
-     327,
-     30.74
-    ],
-    [
-     471,
-     22.58
-    ],
-    [
-     32,
-     8.57
-    ],
-    [
-     62,
-     7.82
+     282,
+     46.66
     ],
     [
      283,
-     6.89
+     33.61
+    ],
+    [
+     62,
+     31.85
+    ],
+    [
+     80,
+     30.32
+    ],
+    [
+     32,
+     12.35
+    ],
+    [
+     161,
+     9.39
+    ],
+    [
+     290,
+     4.91
+    ],
+    [
+     117,
+     3.82
+    ],
+    [
+     502,
+     3.66
+    ],
+    [
+     427,
+     3.46
+    ],
+    [
+     465,
+     2.28
+    ],
+    [
+     65,
+     2.25
+    ]
+   ],
+   "it": [
+    [
+     "Clefablite",
+     64.94
+    ],
+    [
+     "Leftovers",
+     25.01
+    ],
+    [
+     "Sitrus Berry",
+     4.36
+    ],
+    [
+     "Life Orb",
+     2.08
+    ],
+    [
+     "Light Clay",
+     1.98
+    ],
+    [
+     "Fairy Feather",
+     0.65
+    ],
+    [
+     "Babiri Berry",
+     0.5
+    ],
+    [
+     "Mental Herb",
+     0.31
+    ]
+   ],
+   "ab": [
+    [
+     "Magic Bounce",
+     58.48,
+     "매직미러"
+    ],
+    [
+     "Unaware",
+     35.71,
+     "천진"
+    ],
+    [
+     "Magic Guard",
+     5.32,
+     "매직가드"
+    ],
+    [
+     "Cute Charm",
+     0.49,
+     "헤롱헤롱바디"
+    ]
+   ],
+   "tm": [
+    [
+     "Garchomp",
+     26.19,
+     "Garchomp"
+    ],
+    [
+     "Kingambit",
+     16.55,
+     "Kingambit"
+    ],
+    [
+     "Mimikyu",
+     16.03,
+     "Mimikyu"
+    ],
+    [
+     "Gholdengo",
+     14.46,
+     "Gholdengo"
+    ],
+    [
+     "Indeedee",
+     13.08,
+     "Indeedee"
+    ],
+    [
+     "Salamence",
+     12.48,
+     "Salamence"
+    ],
+    [
+     "Glimmora",
+     12.46,
+     "Glimmora"
+    ],
+    [
+     "Corviknight",
+     11.48,
+     "Corviknight"
+    ],
+    [
+     "Archaludon",
+     11.08,
+     "Archaludon"
+    ],
+    [
+     "Basculegion",
+     11.07,
+     "Basculegion"
+    ]
+   ],
+   "sp": [
+    [
+     "Bold",
+     {
+      "hp": 32,
+      "atk": 0,
+      "def": 32,
+      "spa": 0,
+      "spd": 2,
+      "spe": 0
+     },
+     22.7
+    ],
+    [
+     "Bold",
+     {
+      "hp": 32,
+      "atk": 0,
+      "def": 32,
+      "spa": 2,
+      "spd": 0,
+      "spe": 0
+     },
+     15.1
+    ],
+    [
+     "Bold",
+     {
+      "hp": 32,
+      "atk": 0,
+      "def": 32,
+      "spa": 0,
+      "spd": 0,
+      "spe": 2
+     },
+     9.6
+    ],
+    [
+     "Bold",
+     {
+      "hp": 31,
+      "atk": 0,
+      "def": 32,
+      "spa": 0,
+      "spd": 0,
+      "spe": 3
+     },
+     6.6
+    ]
+   ],
+   "cc": [],
+   "rank": 43
+  },
+  {
+   "name": "Umbreon",
+   "id": "Umbreon",
+   "pct": 4.166,
+   "win": 48.24,
+   "games": 144,
+   "pick": 43.6,
+   "lead": 31.3,
+   "mega": 0,
+   "seen": 33.78790925785241,
+   "mv": [
+    [
+     175,
+     60.27
+    ],
+    [
+     502,
+     49.73
+    ],
+    [
+     508,
+     46.59
+    ],
+    [
+     327,
+     31.85
+    ],
+    [
+     471,
+     22.33
+    ],
+    [
+     32,
+     8.49
+    ],
+    [
+     62,
+     7.76
+    ],
+    [
+     283,
+     6.8
     ],
     [
      91,
-     6.39
+     6.34
     ],
     [
      305,
-     3.24
+     3.21
     ],
     [
      98,
-     2.57
+     2.55
     ],
     [
      460,
-     1.63
+     1.61
     ]
    ],
    "it": [
     [
      "Leftovers",
-     90.37
+     90.55
     ],
     [
      "Sitrus Berry",
-     5.29
+     5.19
     ],
     [
      "Eject Button",
@@ -8728,23 +8949,23 @@
     ],
     [
      "Chesto Berry",
-     1.14
+     1.11
     ],
     [
      "Black Glasses",
-     0.74
+     0.72
     ],
     [
      "Chople Berry",
-     0.37
+     0.36
     ],
     [
      "Light Clay",
-     0.35
+     0.34
     ],
     [
      "Life Orb",
-     0.33
+     0.32
     ]
    ],
    "ab": [
@@ -8762,52 +8983,52 @@
    "tm": [
     [
      "Salamence",
-     40.44,
+     40.89,
      "Salamence"
     ],
     [
      "Primarina",
-     31.34,
+     31.1,
      "Primarina"
     ],
     [
      "Golisopod",
-     20.91,
+     20.75,
      "Golisopod"
     ],
     [
      "Garchomp",
-     20.46,
+     20.31,
      "Garchomp"
     ],
     [
      "Gengar",
-     19.89,
+     19.74,
      "Gengar"
     ],
     [
+     "Gholdengo",
+     13.62,
+     "Gholdengo"
+    ],
+    [
      "Lucario",
-     13.72,
+     13.61,
      "Lucario"
     ],
     [
      "Skarmory",
-     13.5,
+     13.4,
      "Skarmory"
     ],
     [
-     "Gholdengo",
-     12.96,
-     "Gholdengo"
-    ],
-    [
      "Skeledirge",
-     11.97,
+     11.88,
      "Skeledirge"
     ],
     [
      "Hippowdon",
-     11.07,
+     10.99,
      "Hippowdon"
     ]
    ],
@@ -8903,233 +9124,12 @@
      44
     ]
    ],
-   "rank": 43
-  },
-  {
-   "name": "Clefable",
-   "id": "Clefable",
-   "pct": 4.157,
-   "win": 47.19,
-   "games": 147,
-   "pick": 34.6,
-   "lead": 27.2,
-   "mega": 48.9,
-   "seen": 25.525722348374224,
-   "mv": [
-    [
-     282,
-     42.98
-    ],
-    [
-     283,
-     33.11
-    ],
-    [
-     62,
-     31.34
-    ],
-    [
-     80,
-     29.81
-    ],
-    [
-     32,
-     12.13
-    ],
-    [
-     161,
-     9.25
-    ],
-    [
-     290,
-     4.81
-    ],
-    [
-     117,
-     3.77
-    ],
-    [
-     502,
-     3.64
-    ],
-    [
-     427,
-     3.45
-    ],
-    [
-     465,
-     2.24
-    ],
-    [
-     65,
-     2.21
-    ]
-   ],
-   "it": [
-    [
-     "Clefablite",
-     64.14
-    ],
-    [
-     "Leftovers",
-     25.54
-    ],
-    [
-     "Sitrus Berry",
-     4.45
-    ],
-    [
-     "Life Orb",
-     2.14
-    ],
-    [
-     "Light Clay",
-     2.04
-    ],
-    [
-     "Fairy Feather",
-     0.67
-    ],
-    [
-     "Babiri Berry",
-     0.52
-    ],
-    [
-     "Mental Herb",
-     0.32
-    ]
-   ],
-   "ab": [
-    [
-     "Magic Bounce",
-     58.48,
-     "매직미러"
-    ],
-    [
-     "Unaware",
-     35.71,
-     "천진"
-    ],
-    [
-     "Magic Guard",
-     5.32,
-     "매직가드"
-    ],
-    [
-     "Cute Charm",
-     0.49,
-     "헤롱헤롱바디"
-    ]
-   ],
-   "tm": [
-    [
-     "Garchomp",
-     25.29,
-     "Garchomp"
-    ],
-    [
-     "Mimikyu",
-     16.23,
-     "Mimikyu"
-    ],
-    [
-     "Kingambit",
-     15.53,
-     "Kingambit"
-    ],
-    [
-     "Gholdengo",
-     14.63,
-     "Gholdengo"
-    ],
-    [
-     "Indeedee",
-     13.24,
-     "Indeedee"
-    ],
-    [
-     "Salamence",
-     12.64,
-     "Salamence"
-    ],
-    [
-     "Corviknight",
-     11.62,
-     "Corviknight"
-    ],
-    [
-     "Glimmora",
-     11.39,
-     "Glimmora"
-    ],
-    [
-     "Basculegion",
-     11.2,
-     "Basculegion"
-    ],
-    [
-     "Blaziken",
-     10.68,
-     "Blaziken"
-    ]
-   ],
-   "sp": [
-    [
-     "Bold",
-     {
-      "hp": 32,
-      "atk": 0,
-      "def": 32,
-      "spa": 0,
-      "spd": 2,
-      "spe": 0
-     },
-     22.7
-    ],
-    [
-     "Bold",
-     {
-      "hp": 32,
-      "atk": 0,
-      "def": 32,
-      "spa": 2,
-      "spd": 0,
-      "spe": 0
-     },
-     15.1
-    ],
-    [
-     "Bold",
-     {
-      "hp": 32,
-      "atk": 0,
-      "def": 32,
-      "spa": 0,
-      "spd": 0,
-      "spe": 2
-     },
-     9.6
-    ],
-    [
-     "Bold",
-     {
-      "hp": 31,
-      "atk": 0,
-      "def": 32,
-      "spa": 0,
-      "spd": 0,
-      "spe": 3
-     },
-     6.6
-    ]
-   ],
-   "cc": [],
    "rank": 44
   },
   {
    "name": "Staraptor",
    "id": "Staraptor",
-   "pct": 4.076,
+   "pct": 4.044,
    "win": 38.22,
    "games": 152,
    "pick": 42.9,
@@ -9325,61 +9325,61 @@
   {
    "name": "Toxapex",
    "id": "Toxapex",
-   "pct": 3.939,
-   "win": 36.5,
-   "games": 136,
-   "pick": 39.2,
-   "lead": 20.4,
+   "pct": 3.989,
+   "win": 35.77,
+   "games": 139,
+   "pick": 39.6,
+   "lead": 21.4,
    "mega": 0,
-   "seen": 28.663857760972157,
+   "seen": 29.5972387121384,
    "mv": [
     [
      471,
-     53.04
+     54.41
     ],
     [
      348,
-     37.48
+     37.68
     ],
     [
      233,
-     33.85
+     36.56
     ],
     [
      30,
-     28.33
+     28.65
     ],
     [
      199,
-     22.2
+     22.23
     ],
     [
      472,
-     7.69
+     7.73
     ],
     [
      441,
-     7.2
+     7.29
     ],
     [
      255,
-     5.5
+     5.53
     ],
     [
      314,
-     5.02
+     5.04
     ],
     [
      221,
-     3.7
+     3.75
     ],
     [
      423,
-     2.08
+     2.1
     ],
     [
      229,
-     1.94
+     1.97
     ]
    ],
    "it": [
@@ -9431,52 +9431,52 @@
    "tm": [
     [
      "Garchomp",
-     27.6,
+     29.06,
      "Garchomp"
     ],
     [
      "Sableye",
-     25.98,
+     25.46,
      "Sableye"
     ],
     [
      "Salamence",
-     23.55,
+     23.07,
      "Salamence"
     ],
     [
      "Gholdengo",
-     21.1,
+     20.68,
      "Gholdengo"
     ],
     [
      "Corviknight",
-     20.6,
+     20.19,
      "Corviknight"
     ],
     [
      "Rillaboom",
-     16.02,
+     15.7,
      "Rillaboom"
     ],
     [
      "Dragalge",
-     15.97,
+     15.65,
      "Dragalge"
     ],
     [
      "Blaziken",
-     14.54,
+     15.47,
      "Blaziken"
     ],
     [
      "Meowscarada",
-     14.13,
+     13.85,
      "Meowscarada"
     ],
     [
      "Hippowdon",
-     13.16,
+     12.9,
      "Hippowdon"
     ]
    ],
@@ -9562,10 +9562,10 @@
   {
    "name": "Grimmsnarl",
    "id": "Grimmsnarl",
-   "pct": 3.862,
-   "win": 45.27,
-   "games": 125,
-   "pick": 64.5,
+   "pct": 3.873,
+   "win": 44.79,
+   "games": 126,
+   "pick": 63.8,
    "lead": 86.2,
    "mega": 0,
    "seen": 46.12487094444306,
@@ -9656,52 +9656,52 @@
    "tm": [
     [
      "Salamence",
-     38.56,
+     39.2,
      "Salamence"
     ],
     [
      "Golisopod",
-     28.29,
+     29.04,
      "Golisopod"
     ],
     [
      "Gholdengo",
-     17.88,
+     17.69,
      "Gholdengo"
     ],
     [
      "Blaziken",
-     17.64,
+     17.45,
      "Blaziken"
     ],
     [
      "Garchomp",
-     15.97,
+     15.8,
      "Garchomp"
     ],
     [
      "Ceruledge",
-     14.13,
+     13.98,
      "Ceruledge"
     ],
     [
      "Basculegion",
-     13.38,
+     13.24,
      "Basculegion"
     ],
     [
      "Lucario",
-     12.65,
+     12.52,
      "Lucario"
     ],
     [
      "Primarina",
-     12.08,
+     11.96,
      "Primarina"
     ],
     [
      "Rillaboom",
-     11.78,
+     11.66,
      "Rillaboom"
     ]
    ],
@@ -9775,9 +9775,228 @@
    "rank": 47
   },
   {
+   "name": "Venusaur",
+   "id": "Venusaur",
+   "pct": 3.799,
+   "win": 50.73,
+   "games": 145,
+   "pick": 49.1,
+   "lead": 27.9,
+   "mega": 79.8,
+   "seen": 35.12520390838657,
+   "mv": [
+    [
+     123,
+     59.88
+    ],
+    [
+     397,
+     38.72
+    ],
+    [
+     395,
+     34.62
+    ],
+    [
+     181,
+     29
+    ],
+    [
+     448,
+     19.76
+    ],
+    [
+     251,
+     11.13
+    ],
+    [
+     398,
+     10.58
+    ],
+    [
+     191,
+     5.42
+    ],
+    [
+     135,
+     5.11
+    ],
+    [
+     496,
+     4.97
+    ],
+    [
+     249,
+     4.08
+    ],
+    [
+     327,
+     2.61
+    ]
+   ],
+   "it": [
+    [
+     "Venusaurite",
+     83.62
+    ],
+    [
+     "Life Orb",
+     11.49
+    ],
+    [
+     "Focus Sash",
+     2.14
+    ],
+    [
+     "Leftovers",
+     1.74
+    ],
+    [
+     "Expert Belt",
+     0.31
+    ],
+    [
+     "Miracle Seed",
+     0.31
+    ]
+   ],
+   "ab": [
+    [
+     "Thick Fat",
+     76.98,
+     "두꺼운지방"
+    ],
+    [
+     "Chlorophyll",
+     22.1,
+     "엽록소"
+    ],
+    [
+     "Overgrow",
+     0.92,
+     "심록"
+    ]
+   ],
+   "tm": [
+    [
+     "Charizard",
+     25.41,
+     "Charizard"
+    ],
+    [
+     "Ninetales-Alola",
+     24.78,
+     "Ninetales-Alola"
+    ],
+    [
+     "Samurott-Hisui",
+     19.61,
+     "Samurott-Hisui"
+    ],
+    [
+     "Baxcalibur",
+     19.18,
+     "Baxcalibur"
+    ],
+    [
+     "Aegislash",
+     17.68,
+     "Aegislash"
+    ],
+    [
+     "Torkoal",
+     17.02,
+     "Torkoal"
+    ],
+    [
+     "Garchomp",
+     16.95,
+     "Garchomp"
+    ],
+    [
+     "Gholdengo",
+     14.7,
+     "Gholdengo"
+    ],
+    [
+     "Blastoise",
+     12.79,
+     "Blastoise"
+    ],
+    [
+     "Primarina",
+     12.46,
+     "Primarina"
+    ]
+   ],
+   "sp": [
+    [
+     "Modest",
+     {
+      "hp": 32,
+      "atk": 0,
+      "def": 2,
+      "spa": 32,
+      "spd": 0,
+      "spe": 0
+     },
+     21.5
+    ],
+    [
+     "Modest",
+     {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     10.2
+    ],
+    [
+     "Calm",
+     {
+      "hp": 32,
+      "atk": 0,
+      "def": 0,
+      "spa": 0,
+      "spd": 32,
+      "spe": 2
+     },
+     5.2
+    ],
+    [
+     "Bold",
+     {
+      "hp": 0,
+      "atk": 0,
+      "def": 32,
+      "spa": 32,
+      "spd": 2,
+      "spe": 0
+     },
+     4.7
+    ]
+   ],
+   "cc": [
+    [
+     "Corviknight",
+     51.9,
+     22
+    ],
+    [
+     "Archaludon",
+     33.9,
+     21
+    ]
+   ],
+   "rank": 48
+  },
+  {
    "name": "Samurott-Hisui",
    "id": "Samurott-Hisui",
-   "pct": 3.778,
+   "pct": 3.748,
    "win": 48.58,
    "games": 142,
    "pick": 49.5,
@@ -10024,231 +10243,12 @@
      21
     ]
    ],
-   "rank": 48
-  },
-  {
-   "name": "Venusaur",
-   "id": "Venusaur",
-   "pct": 3.728,
-   "win": 49.4,
-   "games": 142,
-   "pick": 49.4,
-   "lead": 28.5,
-   "mega": 79.4,
-   "seen": 34.421203908386566,
-   "mv": [
-    [
-     123,
-     58.8
-    ],
-    [
-     397,
-     38.39
-    ],
-    [
-     395,
-     34.27
-    ],
-    [
-     181,
-     28.79
-    ],
-    [
-     448,
-     19.65
-    ],
-    [
-     251,
-     11.06
-    ],
-    [
-     398,
-     10.5
-    ],
-    [
-     191,
-     5.37
-    ],
-    [
-     135,
-     5.05
-    ],
-    [
-     496,
-     4.93
-    ],
-    [
-     249,
-     4.04
-    ],
-    [
-     327,
-     2.58
-    ]
-   ],
-   "it": [
-    [
-     "Venusaurite",
-     83.29
-    ],
-    [
-     "Life Orb",
-     11.62
-    ],
-    [
-     "Focus Sash",
-     2.23
-    ],
-    [
-     "Leftovers",
-     1.81
-    ],
-    [
-     "Expert Belt",
-     0.33
-    ],
-    [
-     "Miracle Seed",
-     0.32
-    ]
-   ],
-   "ab": [
-    [
-     "Thick Fat",
-     76.98,
-     "두꺼운지방"
-    ],
-    [
-     "Chlorophyll",
-     22.1,
-     "엽록소"
-    ],
-    [
-     "Overgrow",
-     0.92,
-     "심록"
-    ]
-   ],
-   "tm": [
-    [
-     "Charizard",
-     25.09,
-     "Charizard"
-    ],
-    [
-     "Ninetales-Alola",
-     23.6,
-     "Ninetales-Alola"
-    ],
-    [
-     "Samurott-Hisui",
-     20.14,
-     "Samurott-Hisui"
-    ],
-    [
-     "Baxcalibur",
-     19.69,
-     "Baxcalibur"
-    ],
-    [
-     "Torkoal",
-     17.47,
-     "Torkoal"
-    ],
-    [
-     "Aegislash",
-     17.31,
-     "Aegislash"
-    ],
-    [
-     "Garchomp",
-     16.56,
-     "Garchomp"
-    ],
-    [
-     "Gholdengo",
-     13.26,
-     "Gholdengo"
-    ],
-    [
-     "Blastoise",
-     13.13,
-     "Blastoise"
-    ],
-    [
-     "Primarina",
-     11.95,
-     "Primarina"
-    ]
-   ],
-   "sp": [
-    [
-     "Modest",
-     {
-      "hp": 32,
-      "atk": 0,
-      "def": 2,
-      "spa": 32,
-      "spd": 0,
-      "spe": 0
-     },
-     21.5
-    ],
-    [
-     "Modest",
-     {
-      "hp": 2,
-      "atk": 0,
-      "def": 0,
-      "spa": 32,
-      "spd": 0,
-      "spe": 32
-     },
-     10.2
-    ],
-    [
-     "Calm",
-     {
-      "hp": 32,
-      "atk": 0,
-      "def": 0,
-      "spa": 0,
-      "spd": 32,
-      "spe": 2
-     },
-     5.2
-    ],
-    [
-     "Bold",
-     {
-      "hp": 0,
-      "atk": 0,
-      "def": 32,
-      "spa": 32,
-      "spd": 2,
-      "spe": 0
-     },
-     4.7
-    ]
-   ],
-   "cc": [
-    [
-     "Corviknight",
-     51.9,
-     22
-    ],
-    [
-     "Archaludon",
-     33.9,
-     21
-    ]
-   ],
    "rank": 49
   },
   {
    "name": "Starmie",
    "id": "Starmie",
-   "pct": 3.513,
+   "pct": 3.486,
    "win": 50.33,
    "games": 120,
    "pick": 35.6,
@@ -10468,10 +10468,10 @@
   {
    "name": "Ditto",
    "id": "Ditto",
-   "pct": 3.436,
-   "win": 52.34,
-   "games": 121,
-   "pick": 45.4,
+   "pct": 3.446,
+   "win": 52.84,
+   "games": 122,
+   "pick": 44.9,
    "lead": 12.5,
    "mega": 0,
    "seen": 29.017340516404953,
@@ -10509,52 +10509,52 @@
    "tm": [
     [
      "Salamence",
-     44.76,
+     45.35,
      "Salamence"
     ],
     [
      "Golisopod",
-     35.6,
+     35.23,
      "Golisopod"
     ],
     [
      "Primarina",
-     20.96,
+     21.8,
      "Primarina"
     ],
     [
      "Garchomp",
-     18.05,
+     17.86,
      "Garchomp"
     ],
     [
      "Lucario",
-     16.58,
+     16.41,
      "Lucario"
     ],
     [
      "Glimmora",
-     14.21,
+     14.06,
      "Glimmora"
     ],
     [
      "Gholdengo",
-     12.84,
+     12.7,
      "Gholdengo"
     ],
     [
      "Baxcalibur",
-     12.8,
+     12.66,
      "Baxcalibur"
     ],
     [
      "Pawmot",
-     11.65,
+     11.53,
      "Pawmot"
     ],
     [
      "Corviknight",
-     11.53,
+     11.41,
      "Corviknight"
     ]
    ],
@@ -10614,7 +10614,7 @@
   {
    "name": "Hatterene",
    "id": "Hatterene",
-   "pct": 3.143,
+   "pct": 3.118,
    "win": 48.62,
    "games": 105,
    "pick": 57.7,
@@ -10820,10 +10820,10 @@
   {
    "name": "Incineroar",
    "id": "Incineroar",
-   "pct": 2.916,
-   "win": 44.51,
-   "games": 98,
-   "pick": 33.5,
+   "pct": 2.915,
+   "win": 44.18,
+   "games": 99,
+   "pick": 33.2,
    "lead": 29.1,
    "mega": 0,
    "seen": 18.553408374287315,
@@ -10921,52 +10921,52 @@
    "tm": [
     [
      "Garchomp",
-     31.66,
+     31.43,
      "Garchomp"
     ],
     [
      "Basculegion",
-     20.53,
+     20.38,
      "Basculegion"
     ],
     [
      "Lucario",
-     19.52,
+     19.38,
      "Lucario"
     ],
     [
      "Rillaboom",
-     17.63,
+     17.5,
      "Rillaboom"
     ],
     [
      "Golisopod",
-     16.64,
+     17.25,
      "Golisopod"
     ],
     [
      "Gholdengo",
-     12.39,
+     12.29,
      "Gholdengo"
     ],
     [
      "Kingambit",
-     12.32,
+     12.23,
      "Kingambit"
     ],
     [
      "Pelipper",
-     11.79,
+     11.71,
      "Pelipper"
     ],
     [
      "Farigiraf",
-     10.95,
+     10.87,
      "Farigiraf"
     ],
     [
      "Sneasler",
-     10.73,
+     10.65,
      "Sneasler"
     ]
    ],
@@ -11026,10 +11026,10 @@
   {
    "name": "Palafin",
    "id": "Palafin",
-   "pct": 2.853,
-   "win": 46.17,
-   "games": 99,
-   "pick": 38.4,
+   "pct": 2.862,
+   "win": 45.66,
+   "games": 100,
+   "pick": 38,
    "lead": 58.1,
    "mega": 92.8,
    "seen": 19.92943611215883,
@@ -11119,52 +11119,52 @@
    "tm": [
     [
      "Golisopod",
-     32.3,
+     31.95,
      "Golisopod"
     ],
     [
      "Salamence",
-     23.18,
+     22.92,
      "Salamence"
     ],
     [
      "Gholdengo",
-     19.31,
+     19.1,
      "Gholdengo"
     ],
     [
      "Lucario",
-     15.83,
+     15.66,
      "Lucario"
     ],
     [
      "Baxcalibur",
-     13.53,
+     13.39,
      "Baxcalibur"
     ],
     [
      "Volcarona",
-     12.73,
+     12.59,
      "Volcarona"
     ],
     [
-     "Blaziken",
-     11.5,
-     "Blaziken"
-    ],
-    [
      "Pawmot",
-     11.39,
+     12.36,
      "Pawmot"
     ],
     [
+     "Blaziken",
+     11.38,
+     "Blaziken"
+    ],
+    [
      "Garchomp",
-     10.72,
+     10.6,
      "Garchomp"
     ],
     [
      "Rillaboom",
-     10.68,
+     10.56,
      "Rillaboom"
     ]
    ],
@@ -11222,9 +11222,215 @@
    "rank": 54
   },
   {
+   "name": "Espathra",
+   "id": "Espathra",
+   "pct": 2.84,
+   "win": 46.16,
+   "games": 100,
+   "pick": 54.9,
+   "lead": 56.7,
+   "mega": 0,
+   "seen": 28.478282440047135,
+   "mv": [
+    [
+     327,
+     49.68
+    ],
+    [
+     62,
+     49.14
+    ],
+    [
+     32,
+     43.89
+    ],
+    [
+     259,
+     20.68
+    ],
+    [
+     435,
+     9.42
+    ],
+    [
+     94,
+     7.15
+    ],
+    [
+     427,
+     4.69
+    ],
+    [
+     378,
+     3.04
+    ],
+    [
+     253,
+     2.05
+    ],
+    [
+     484,
+     1.84
+    ],
+    [
+     363,
+     1.06
+    ],
+    [
+     135,
+     0.31
+    ]
+   ],
+   "it": [
+    [
+     "Focus Sash",
+     37.39
+    ],
+    [
+     "Sitrus Berry",
+     19.9
+    ],
+    [
+     "Leftovers",
+     17.28
+    ],
+    [
+     "Colbur Berry",
+     14.44
+    ],
+    [
+     "Mental Herb",
+     4.12
+    ],
+    [
+     "Life Orb",
+     3.24
+    ],
+    [
+     "Damp Rock",
+     1.1
+    ],
+    [
+     "Twisted Spoon",
+     0.91
+    ]
+   ],
+   "ab": [
+    [
+     "Speed Boost",
+     100,
+     "가속"
+    ]
+   ],
+   "tm": [
+    [
+     "Garchomp",
+     27.64,
+     "Garchomp"
+    ],
+    [
+     "Lucario",
+     25.28,
+     "Lucario"
+    ],
+    [
+     "Archaludon",
+     20.55,
+     "Archaludon"
+    ],
+    [
+     "Floette-Eternal",
+     18.95,
+     "Floette-Eternal"
+    ],
+    [
+     "Pelipper",
+     18.15,
+     "Pelipper"
+    ],
+    [
+     "Golisopod",
+     16.78,
+     "Golisopod"
+    ],
+    [
+     "Rillaboom",
+     16.56,
+     "Rillaboom"
+    ],
+    [
+     "Kingambit",
+     15.88,
+     "Kingambit"
+    ],
+    [
+     "Baxcalibur",
+     15.67,
+     "Baxcalibur"
+    ],
+    [
+     "Clefable",
+     15.47,
+     "Clefable"
+    ]
+   ],
+   "sp": [
+    [
+     "Timid",
+     {
+      "hp": 32,
+      "atk": 0,
+      "def": 29,
+      "spa": 0,
+      "spd": 0,
+      "spe": 5
+     },
+     20.1
+    ],
+    [
+     "Timid",
+     {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     13.4
+    ],
+    [
+     "Modest",
+     {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     13.4
+    ],
+    [
+     "Modest",
+     {
+      "hp": 1,
+      "atk": 0,
+      "def": 1,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     6.2
+    ]
+   ],
+   "cc": [],
+   "rank": 55
+  },
+  {
    "name": "Armarouge",
    "id": "Armarouge",
-   "pct": 2.791,
+   "pct": 2.769,
    "win": 54.39,
    "games": 93,
    "pick": 48.7,
@@ -11430,224 +11636,229 @@
     ]
    ],
    "cc": [],
-   "rank": 55
+   "rank": 56
   },
   {
-   "name": "Espathra",
-   "id": "Espathra",
-   "pct": 2.787,
-   "win": 45.99,
+   "name": "Excadrill",
+   "id": "Excadrill",
+   "pct": 2.744,
+   "win": 46.99,
    "games": 98,
-   "pick": 53.6,
-   "lead": 59.6,
-   "mega": 0,
-   "seen": 27.720282440047136,
+   "pick": 49,
+   "lead": 56.9,
+   "mega": 7.5,
+   "seen": 25.16140613802884,
    "mv": [
     [
-     327,
-     48.47
+     124,
+     46.88
     ],
     [
-     62,
-     47.92
+     237,
+     39.48
     ],
     [
-     32,
-     42.23
+     418,
+     31.96
     ],
     [
-     259,
-     20.75
+     346,
+     19.91
     ],
     [
-     435,
-     9.43
+     359,
+     8.26
     ],
     [
-     94,
-     7.18
+     447,
+     7.03
     ],
     [
-     427,
-     4.69
+     210,
+     5.39
     ],
     [
-     378,
-     3.06
+     360,
+     5.16
     ],
     [
-     253,
-     2.05
+     236,
+     2.22
     ],
     [
-     484,
-     1.84
+     91,
+     1.57
     ],
     [
-     363,
-     1.06
+     142,
+     1.57
     ],
     [
-     135,
-     0.32
+     52,
+     1.3
     ]
    ],
    "it": [
     [
      "Focus Sash",
-     37.39
-    ],
-    [
-     "Sitrus Berry",
-     19.9
-    ],
-    [
-     "Leftovers",
-     17.28
-    ],
-    [
-     "Colbur Berry",
-     14.44
-    ],
-    [
-     "Mental Herb",
-     4.12
+     29.7
     ],
     [
      "Life Orb",
-     3.24
+     23.69
     ],
     [
-     "Damp Rock",
-     1.1
+     "Choice Scarf",
+     23.22
     ],
     [
-     "Twisted Spoon",
-     0.91
+     "Sitrus Berry",
+     5.52
+    ],
+    [
+     "softsand",
+     4.25
+    ],
+    [
+     "Air Balloon",
+     3.95
+    ],
+    [
+     "Excadrite",
+     3.85
+    ],
+    [
+     "Leftovers",
+     3
     ]
    ],
    "ab": [
     [
-     "Speed Boost",
-     99.99,
-     "가속"
+     "Mold Breaker",
+     86.52,
+     "틀깨기"
+    ],
+    [
+     "Sand Rush",
+     13.47,
+     "모래헤치기"
     ]
    ],
    "tm": [
     [
-     "Lucario",
-     25.97,
-     "Lucario"
+     "Corviknight",
+     31.98,
+     "Corviknight"
     ],
     [
-     "Garchomp",
-     25.67,
-     "Garchomp"
-    ],
-    [
-     "Archaludon",
-     21.11,
-     "Archaludon"
-    ],
-    [
-     "Floette-Eternal",
-     19.47,
-     "Floette-Eternal"
-    ],
-    [
-     "Pelipper",
-     18.64,
-     "Pelipper"
-    ],
-    [
-     "Golisopod",
-     17.24,
-     "Golisopod"
-    ],
-    [
-     "Rillaboom",
-     17.01,
-     "Rillaboom"
-    ],
-    [
-     "Baxcalibur",
-     16.09,
-     "Baxcalibur"
-    ],
-    [
-     "Clefable",
-     15.9,
-     "Clefable"
+     "Rotom-Wash",
+     25.81,
+     "Rotom-Wash"
     ],
     [
      "Gholdengo",
-     14.19,
+     24.75,
      "Gholdengo"
+    ],
+    [
+     "Raichu",
+     19.61,
+     "Raichu"
+    ],
+    [
+     "Tyranitar",
+     17.4,
+     "Tyranitar"
+    ],
+    [
+     "Baxcalibur",
+     17.14,
+     "Baxcalibur"
+    ],
+    [
+     "Salamence",
+     15.99,
+     "Salamence"
+    ],
+    [
+     "Blaziken",
+     14.52,
+     "Blaziken"
+    ],
+    [
+     "Meowscarada",
+     14.4,
+     "Meowscarada"
+    ],
+    [
+     "Garchomp",
+     14.02,
+     "Garchomp"
     ]
    ],
    "sp": [
     [
-     "Timid",
+     "Jolly",
+     {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     46.8
+    ],
+    [
+     "Adamant",
+     {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     18.9
+    ],
+    [
+     "Adamant",
+     {
+      "hp": 0,
+      "atk": 32,
+      "def": 4,
+      "spa": 0,
+      "spd": 0,
+      "spe": 30
+     },
+     3.5
+    ],
+    [
+     "Careful",
      {
       "hp": 32,
       "atk": 0,
-      "def": 29,
+      "def": 0,
       "spa": 0,
-      "spd": 0,
-      "spe": 5
+      "spd": 32,
+      "spe": 2
      },
-     20.1
-    ],
-    [
-     "Timid",
-     {
-      "hp": 2,
-      "atk": 0,
-      "def": 0,
-      "spa": 32,
-      "spd": 0,
-      "spe": 32
-     },
-     13.4
-    ],
-    [
-     "Modest",
-     {
-      "hp": 2,
-      "atk": 0,
-      "def": 0,
-      "spa": 32,
-      "spd": 0,
-      "spe": 32
-     },
-     13.4
-    ],
-    [
-     "Modest",
-     {
-      "hp": 1,
-      "atk": 0,
-      "def": 1,
-      "spa": 32,
-      "spd": 0,
-      "spe": 32
-     },
-     6.2
+     3.3
     ]
    ],
    "cc": [],
-   "rank": 56
+   "rank": 57
   },
   {
    "name": "Tyranitar",
    "id": "Tyranitar",
-   "pct": 2.72,
-   "win": 38.7,
-   "games": 90,
-   "pick": 49,
-   "lead": 39.8,
-   "mega": 43.2,
-   "seen": 25.341623040692664,
+   "pct": 2.73,
+   "win": 38.26,
+   "games": 91,
+   "pick": 49.6,
+   "lead": 41.2,
+   "mega": 42.2,
+   "seen": 25.941623040692665,
    "mv": [
     [
      242,
@@ -11742,52 +11953,52 @@
    "tm": [
     [
      "Garchomp",
-     34.12,
+     33.73,
      "Garchomp"
     ],
     [
      "Gyarados",
-     22.94,
+     22.68,
      "Gyarados"
     ],
     [
      "Gholdengo",
-     22.6,
+     22.34,
      "Gholdengo"
     ],
     [
      "Golisopod",
-     19.7,
+     19.48,
      "Golisopod"
     ],
     [
      "Excadrill",
-     16.53,
+     17.49,
      "Excadrill"
     ],
     [
      "Salamence",
-     16.39,
+     17.35,
      "Salamence"
     ],
     [
      "Corviknight",
-     14.74,
+     15.72,
      "Corviknight"
     ],
     [
      "Primarina",
-     13.2,
+     13.05,
      "Primarina"
     ],
     [
      "Glimmora",
-     13.18,
+     13.03,
      "Glimmora"
     ],
     [
      "Ninetales-Alola",
-     11.44,
+     11.31,
      "Ninetales-Alola"
     ]
    ],
@@ -11842,12 +12053,12 @@
     ]
    ],
    "cc": [],
-   "rank": 57
+   "rank": 58
   },
   {
    "name": "Mamoswine",
    "id": "Mamoswine",
-   "pct": 2.719,
+   "pct": 2.698,
    "win": 67.82,
    "games": 107,
    "pick": 54.2,
@@ -12053,223 +12264,12 @@
     ]
    ],
    "cc": [],
-   "rank": 58
-  },
-  {
-   "name": "Excadrill",
-   "id": "Excadrill",
-   "pct": 2.682,
-   "win": 47.34,
-   "games": 95,
-   "pick": 49.7,
-   "lead": 56.2,
-   "mega": 7.6,
-   "seen": 24.737142069316914,
-   "mv": [
-    [
-     124,
-     46.88
-    ],
-    [
-     237,
-     39.48
-    ],
-    [
-     418,
-     31.96
-    ],
-    [
-     346,
-     19.91
-    ],
-    [
-     359,
-     8.26
-    ],
-    [
-     447,
-     7.03
-    ],
-    [
-     210,
-     5.39
-    ],
-    [
-     360,
-     5.16
-    ],
-    [
-     236,
-     2.22
-    ],
-    [
-     91,
-     1.57
-    ],
-    [
-     142,
-     1.57
-    ],
-    [
-     52,
-     1.3
-    ]
-   ],
-   "it": [
-    [
-     "Focus Sash",
-     29.7
-    ],
-    [
-     "Life Orb",
-     23.69
-    ],
-    [
-     "Choice Scarf",
-     23.22
-    ],
-    [
-     "Sitrus Berry",
-     5.52
-    ],
-    [
-     "softsand",
-     4.25
-    ],
-    [
-     "Air Balloon",
-     3.95
-    ],
-    [
-     "Excadrite",
-     3.85
-    ],
-    [
-     "Leftovers",
-     3
-    ]
-   ],
-   "ab": [
-    [
-     "Mold Breaker",
-     86.03,
-     "틀깨기"
-    ],
-    [
-     "Sand Rush",
-     13.96,
-     "모래헤치기"
-    ]
-   ],
-   "tm": [
-    [
-     "Corviknight",
-     31.8,
-     "Corviknight"
-    ],
-    [
-     "Rotom-Wash",
-     24.66,
-     "Rotom-Wash"
-    ],
-    [
-     "Gholdengo",
-     23.57,
-     "Gholdengo"
-    ],
-    [
-     "Raichu",
-     20.23,
-     "Raichu"
-    ],
-    [
-     "Baxcalibur",
-     17.68,
-     "Baxcalibur"
-    ],
-    [
-     "Tyranitar",
-     16.77,
-     "Tyranitar"
-    ],
-    [
-     "Blaziken",
-     14.98,
-     "Blaziken"
-    ],
-    [
-     "Meowscarada",
-     14.86,
-     "Meowscarada"
-    ],
-    [
-     "Garchomp",
-     14.45,
-     "Garchomp"
-    ],
-    [
-     "Skeledirge",
-     13.53,
-     "Skeledirge"
-    ]
-   ],
-   "sp": [
-    [
-     "Jolly",
-     {
-      "hp": 2,
-      "atk": 32,
-      "def": 0,
-      "spa": 0,
-      "spd": 0,
-      "spe": 32
-     },
-     46.8
-    ],
-    [
-     "Adamant",
-     {
-      "hp": 2,
-      "atk": 32,
-      "def": 0,
-      "spa": 0,
-      "spd": 0,
-      "spe": 32
-     },
-     18.9
-    ],
-    [
-     "Adamant",
-     {
-      "hp": 0,
-      "atk": 32,
-      "def": 4,
-      "spa": 0,
-      "spd": 0,
-      "spe": 30
-     },
-     3.5
-    ],
-    [
-     "Careful",
-     {
-      "hp": 32,
-      "atk": 0,
-      "def": 0,
-      "spa": 0,
-      "spd": 32,
-      "spe": 2
-     },
-     3.3
-    ]
-   ],
-   "cc": [],
    "rank": 59
   },
   {
    "name": "Rotom-Heat",
    "id": "Rotom-Heat",
-   "pct": 2.655,
+   "pct": 2.634,
    "win": 43.89,
    "games": 91,
    "pick": 37.9,
@@ -12475,7 +12475,7 @@
   {
    "name": "Araquanid",
    "id": "Araquanid",
-   "pct": 2.594,
+   "pct": 2.573,
    "win": 43.78,
    "games": 91,
    "pick": 37,
@@ -12681,7 +12681,7 @@
   {
    "name": "Slowking-Galar",
    "id": "Slowking-Galar",
-   "pct": 2.578,
+   "pct": 2.557,
    "win": 48.32,
    "games": 94,
    "pick": 52.9,
@@ -12892,7 +12892,7 @@
   {
    "name": "Delphox",
    "id": "Delphox",
-   "pct": 2.568,
+   "pct": 2.547,
    "win": 59,
    "games": 108,
    "pick": 24.1,
@@ -13109,9 +13109,429 @@
    "rank": 63
   },
   {
+   "name": "Floette-Eternal",
+   "id": "Floette-Eternal",
+   "pct": 2.53,
+   "win": 42.1,
+   "games": 93,
+   "pick": 36.1,
+   "lead": 38.7,
+   "mega": 76.1,
+   "seen": 15.631073499411082,
+   "mv": [
+    [
+     282,
+     35.25
+    ],
+    [
+     62,
+     30
+    ],
+    [
+     117,
+     22.95
+    ],
+    [
+     254,
+     17.5
+    ],
+    [
+     181,
+     7.17
+    ],
+    [
+     448,
+     6.87
+    ],
+    [
+     327,
+     3.41
+    ],
+    [
+     66,
+     3.31
+    ],
+    [
+     477,
+     2.62
+    ],
+    [
+     329,
+     2.17
+    ],
+    [
+     435,
+     1.43
+    ],
+    [
+     281,
+     0.31
+    ]
+   ],
+   "it": [
+    [
+     "Floettite",
+     96.2
+    ],
+    [
+     "Choice Scarf",
+     2.33
+    ],
+    [
+     "Focus Sash",
+     1.44
+    ]
+   ],
+   "ab": [
+    [
+     "Fairy Aura",
+     98.22,
+     "페어리오라"
+    ],
+    [
+     "Symbiosis",
+     1.34,
+     "공생"
+    ],
+    [
+     "Flower Veil",
+     0.45,
+     "플라워베일"
+    ]
+   ],
+   "tm": [
+    [
+     "Garchomp",
+     32.5,
+     "Garchomp"
+    ],
+    [
+     "Espathra",
+     21.28,
+     "Espathra"
+    ],
+    [
+     "Archaludon",
+     19.32,
+     "Archaludon"
+    ],
+    [
+     "Salamence",
+     16.47,
+     "Salamence"
+    ],
+    [
+     "Meowscarada",
+     15.56,
+     "Meowscarada"
+    ],
+    [
+     "Indeedee",
+     14.84,
+     "Indeedee"
+    ],
+    [
+     "Sneasler",
+     14.53,
+     "Sneasler"
+    ],
+    [
+     "Rillaboom",
+     14.06,
+     "Rillaboom"
+    ],
+    [
+     "Gengar",
+     13.46,
+     "Gengar"
+    ],
+    [
+     "Ditto",
+     12.9,
+     "Ditto"
+    ]
+   ],
+   "sp": [
+    [
+     "Timid",
+     {
+      "hp": 22,
+      "atk": 0,
+      "def": 11,
+      "spa": 1,
+      "spd": 0,
+      "spe": 32
+     },
+     20.2
+    ],
+    [
+     "Timid",
+     {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     16.8
+    ],
+    [
+     "Timid",
+     {
+      "hp": 32,
+      "atk": 0,
+      "def": 0,
+      "spa": 15,
+      "spd": 0,
+      "spe": 19
+     },
+     12.8
+    ],
+    [
+     "Timid",
+     {
+      "hp": 18,
+      "atk": 0,
+      "def": 0,
+      "spa": 16,
+      "spd": 0,
+      "spe": 32
+     },
+     7.1
+    ]
+   ],
+   "cc": [
+    [
+     "Archaludon",
+     25,
+     21
+    ],
+    [
+     "Garchomp",
+     14.9,
+     32
+    ]
+   ],
+   "rank": 64
+  },
+  {
+   "name": "Sableye",
+   "id": "Sableye",
+   "pct": 2.526,
+   "win": 46.54,
+   "games": 82,
+   "pick": 66.4,
+   "lead": 70.7,
+   "mega": 10.6,
+   "seen": 29.833794217812354,
+   "mv": [
+    [
+     350,
+     44.06
+    ],
+    [
+     501,
+     41.83
+    ],
+    [
+     253,
+     41.32
+    ],
+    [
+     348,
+     27.4
+    ],
+    [
+     452,
+     13.1
+    ],
+    [
+     175,
+     9.77
+    ],
+    [
+     132,
+     8.24
+    ],
+    [
+     242,
+     7.27
+    ],
+    [
+     272,
+     4.8
+    ],
+    [
+     442,
+     4.39
+    ],
+    [
+     345,
+     3.34
+    ],
+    [
+     327,
+     3.32
+    ]
+   ],
+   "it": [
+    [
+     "Light Clay",
+     52.83
+    ],
+    [
+     "Sablenite",
+     38.18
+    ],
+    [
+     "Focus Sash",
+     3.95
+    ],
+    [
+     "Sitrus Berry",
+     3.54
+    ],
+    [
+     "Leftovers",
+     0.5
+    ],
+    [
+     "Roseli Berry",
+     0.38
+    ],
+    [
+     "Choice Scarf",
+     0.36
+    ]
+   ],
+   "ab": [
+    [
+     "Prankster",
+     66.27,
+     "짓궂은마음"
+    ],
+    [
+     "Magic Bounce",
+     33.66,
+     "매직미러"
+    ]
+   ],
+   "tm": [
+    [
+     "Toxapex",
+     40.21,
+     "Toxapex"
+    ],
+    [
+     "Dragalge",
+     35.51,
+     "Dragalge"
+    ],
+    [
+     "Corviknight",
+     29.6,
+     "Corviknight"
+    ],
+    [
+     "Samurott-Hisui",
+     23.16,
+     "Samurott-Hisui"
+    ],
+    [
+     "Gholdengo",
+     23.02,
+     "Gholdengo"
+    ],
+    [
+     "Hippowdon",
+     15.01,
+     "Hippowdon"
+    ],
+    [
+     "Golisopod",
+     14.51,
+     "Golisopod"
+    ],
+    [
+     "Sylveon",
+     13.05,
+     "Sylveon"
+    ],
+    [
+     "Clefable",
+     12.8,
+     "Clefable"
+    ],
+    [
+     "Slowking-Galar",
+     11.99,
+     "Slowking-Galar"
+    ]
+   ],
+   "sp": [
+    [
+     "Bold",
+     {
+      "hp": 32,
+      "atk": 0,
+      "def": 7,
+      "spa": 0,
+      "spd": 27,
+      "spe": 0
+     },
+     45.3
+    ],
+    [
+     "Impish",
+     {
+      "hp": 32,
+      "atk": 0,
+      "def": 25,
+      "spa": 0,
+      "spd": 9,
+      "spe": 0
+     },
+     11
+    ],
+    [
+     "Calm",
+     {
+      "hp": 32,
+      "atk": 0,
+      "def": 0,
+      "spa": 0,
+      "spd": 32,
+      "spe": 0
+     },
+     8.1
+    ],
+    [
+     "Bold",
+     {
+      "hp": 32,
+      "atk": 0,
+      "def": 32,
+      "spa": 0,
+      "spd": 2,
+      "spe": 0
+     },
+     5.6
+    ]
+   ],
+   "cc": [
+    [
+     "Primarina",
+     54.9,
+     20
+    ]
+   ],
+   "rank": 65
+  },
+  {
    "name": "Banette",
    "id": "Banette",
-   "pct": 2.541,
+   "pct": 2.521,
    "win": 42.89,
    "games": 80,
    "pick": 60.5,
@@ -13281,405 +13701,194 @@
     ]
    ],
    "cc": [],
-   "rank": 64
+   "rank": 66
   },
   {
-   "name": "Floette-Eternal",
-   "id": "Floette-Eternal",
-   "pct": 2.515,
-   "win": 42.67,
-   "games": 92,
-   "pick": 36.6,
-   "lead": 38.7,
-   "mega": 76.1,
-   "seen": 15.631073499411082,
+   "name": "Empoleon",
+   "id": "Empoleon",
+   "pct": 2.409,
+   "win": 57.88,
+   "games": 185,
+   "pick": 50.6,
+   "lead": 80.2,
+   "mega": 0,
+   "seen": 21.33438724001616,
    "mv": [
     [
-     282,
-     35.25
+     166,
+     37.43
     ],
     [
-     62,
-     30
+     508,
+     36.09
     ],
     [
-     117,
-     22.95
+     418,
+     33.21
     ],
     [
-     254,
-     17.5
+     441,
+     19.05
     ],
     [
-     181,
-     7.17
+     221,
+     16.76
     ],
     [
-     448,
-     6.87
+     363,
+     6.01
+    ],
+    [
+     487,
+     5.74
+    ],
+    [
+     217,
+     2.9
+    ],
+    [
+     163,
+     0.79
     ],
     [
      327,
-     3.41
-    ],
-    [
-     66,
-     3.31
-    ],
-    [
-     477,
-     2.62
-    ],
-    [
-     329,
-     2.17
-    ],
-    [
-     435,
-     1.43
-    ],
-    [
-     281,
-     0.31
+     0.52
     ]
    ],
    "it": [
     [
-     "Floettite",
-     96.2
+     "Sitrus Berry",
+     30.65
     ],
     [
-     "Choice Scarf",
-     2.33
+     "Leftovers",
+     27.78
+    ],
+    [
+     "Shuca Berry",
+     20.47
+    ],
+    [
+     "Air Balloon",
+     7.45
+    ],
+    [
+     "Red Card",
+     6.71
     ],
     [
      "Focus Sash",
-     1.44
+     5.45
+    ],
+    [
+     "Bright Powder",
+     0.41
+    ],
+    [
+     "Wacan Berry",
+     0.33
     ]
    ],
    "ab": [
     [
-     "Fairy Aura",
-     98.22,
-     "페어리오라"
+     "Competitive",
+     63.02,
+     "승기"
     ],
     [
-     "Symbiosis",
-     1.34,
-     "공생"
-    ],
-    [
-     "Flower Veil",
-     0.45,
-     "플라워베일"
+     "Torrent",
+     36.98,
+     "급류"
     ]
    ],
    "tm": [
     [
      "Garchomp",
-     32.94,
+     66.81,
      "Garchomp"
     ],
     [
-     "Espathra",
-     21.57,
-     "Espathra"
-    ],
-    [
-     "Archaludon",
-     18.21,
-     "Archaludon"
-    ],
-    [
      "Salamence",
-     16.7,
+     36.59,
      "Salamence"
     ],
     [
+     "Mimikyu",
+     29.77,
+     "Mimikyu"
+    ],
+    [
+     "Baxcalibur",
+     29.46,
+     "Baxcalibur"
+    ],
+    [
+     "Lucario",
+     28.62,
+     "Lucario"
+    ],
+    [
+     "Gyarados",
+     27.2,
+     "Gyarados"
+    ],
+    [
+     "Metagross",
+     21.35,
+     "Metagross"
+    ],
+    [
+     "Ninetales-Alola",
+     19.1,
+     "Ninetales-Alola"
+    ],
+    [
      "Meowscarada",
-     15.78,
+     15.66,
      "Meowscarada"
     ],
     [
-     "Indeedee",
-     15.04,
-     "Indeedee"
-    ],
-    [
-     "Sneasler",
-     14.73,
-     "Sneasler"
-    ],
-    [
-     "Rillaboom",
-     14.25,
-     "Rillaboom"
-    ],
-    [
-     "Gengar",
-     13.64,
-     "Gengar"
-    ],
-    [
-     "Ditto",
-     13.08,
-     "Ditto"
+     "Volcarona",
+     15.22,
+     "Volcarona"
     ]
    ],
    "sp": [
     [
-     "Timid",
+     "Sassy",
      {
-      "hp": 22,
+      "hp": 32,
       "atk": 0,
-      "def": 11,
-      "spa": 1,
-      "spd": 0,
-      "spe": 32
+      "def": 2,
+      "spa": 0,
+      "spd": 32,
+      "spe": 0
      },
-     20.2
+     35.8
     ],
     [
-     "Timid",
+     "Modest",
      {
-      "hp": 2,
+      "hp": 32,
       "atk": 0,
       "def": 0,
       "spa": 32,
       "spd": 0,
-      "spe": 32
+      "spe": 2
      },
-     16.8
-    ],
-    [
-     "Timid",
-     {
-      "hp": 32,
-      "atk": 0,
-      "def": 0,
-      "spa": 15,
-      "spd": 0,
-      "spe": 19
-     },
-     12.8
-    ],
-    [
-     "Timid",
-     {
-      "hp": 18,
-      "atk": 0,
-      "def": 0,
-      "spa": 16,
-      "spd": 0,
-      "spe": 32
-     },
-     7.1
-    ]
-   ],
-   "cc": [
-    [
-     "Archaludon",
-     25,
-     21
-    ],
-    [
-     "Garchomp",
-     14.9,
-     32
-    ]
-   ],
-   "rank": 65
-  },
-  {
-   "name": "Sableye",
-   "id": "Sableye",
-   "pct": 2.514,
-   "win": 47.13,
-   "games": 81,
-   "pick": 66,
-   "lead": 72.1,
-   "mega": 8.9,
-   "seen": 29.233794217812353,
-   "mv": [
-    [
-     350,
-     43.59
-    ],
-    [
-     501,
-     41.4
-    ],
-    [
-     253,
-     40.89
-    ],
-    [
-     348,
-     27.16
-    ],
-    [
-     452,
-     12.95
-    ],
-    [
-     175,
-     9.77
-    ],
-    [
-     132,
-     8.21
-    ],
-    [
-     242,
-     7.2
-    ],
-    [
-     272,
-     4.74
-    ],
-    [
-     442,
-     4.33
-    ],
-    [
-     327,
-     3.34
-    ],
-    [
-     345,
-     3.3
-    ]
-   ],
-   "it": [
-    [
-     "Light Clay",
-     53.51
-    ],
-    [
-     "Sablenite",
-     37.38
-    ],
-    [
-     "Focus Sash",
-     4
-    ],
-    [
-     "Sitrus Berry",
-     3.59
-    ],
-    [
-     "Leftovers",
-     0.51
-    ],
-    [
-     "Roseli Berry",
-     0.39
-    ],
-    [
-     "Choice Scarf",
-     0.37
-    ]
-   ],
-   "ab": [
-    [
-     "Prankster",
-     66.27,
-     "짓궂은마음"
-    ],
-    [
-     "Magic Bounce",
-     33.66,
-     "매직미러"
-    ]
-   ],
-   "tm": [
-    [
-     "Toxapex",
-     40.71,
-     "Toxapex"
-    ],
-    [
-     "Dragalge",
-     35.95,
-     "Dragalge"
-    ],
-    [
-     "Corviknight",
-     29.97,
-     "Corviknight"
-    ],
-    [
-     "Samurott-Hisui",
-     23.45,
-     "Samurott-Hisui"
-    ],
-    [
-     "Gholdengo",
-     23.31,
-     "Gholdengo"
-    ],
-    [
-     "Hippowdon",
-     15.2,
-     "Hippowdon"
-    ],
-    [
-     "Golisopod",
-     14.69,
-     "Golisopod"
-    ],
-    [
-     "Sylveon",
-     13.21,
-     "Sylveon"
-    ],
-    [
-     "Clefable",
-     12.96,
-     "Clefable"
-    ],
-    [
-     "Slowking-Galar",
-     12.14,
-     "Slowking-Galar"
-    ]
-   ],
-   "sp": [
-    [
-     "Bold",
-     {
-      "hp": 32,
-      "atk": 0,
-      "def": 7,
-      "spa": 0,
-      "spd": 27,
-      "spe": 0
-     },
-     45.3
-    ],
-    [
-     "Impish",
-     {
-      "hp": 32,
-      "atk": 0,
-      "def": 25,
-      "spa": 0,
-      "spd": 9,
-      "spe": 0
-     },
-     11
+     10.8
     ],
     [
      "Calm",
      {
       "hp": 32,
       "atk": 0,
-      "def": 0,
+      "def": 18,
       "spa": 0,
-      "spd": 32,
+      "spd": 16,
       "spe": 0
      },
-     8.1
+     7.2
     ],
     [
      "Bold",
@@ -13691,22 +13900,16 @@
       "spd": 2,
       "spe": 0
      },
-     5.6
+     6.5
     ]
    ],
-   "cc": [
-    [
-     "Primarina",
-     54.9,
-     20
-    ]
-   ],
-   "rank": 66
+   "cc": [],
+   "rank": 67
   },
   {
    "name": "Meganium",
    "id": "Meganium",
-   "pct": 2.334,
+   "pct": 2.316,
    "win": 51.52,
    "games": 85,
    "pick": 42.7,
@@ -13879,12 +14082,12 @@
     ]
    ],
    "cc": [],
-   "rank": 67
+   "rank": 68
   },
   {
    "name": "Lopunny",
    "id": "Lopunny",
-   "pct": 2.32,
+   "pct": 2.302,
    "win": 44.25,
    "games": 85,
    "pick": 45.6,
@@ -14116,215 +14319,12 @@
      24
     ]
    ],
-   "rank": 68
-  },
-  {
-   "name": "Empoleon",
-   "id": "Empoleon",
-   "pct": 2.308,
-   "win": 57.45,
-   "games": 182,
-   "pick": 51.5,
-   "lead": 79.5,
-   "mega": 0,
-   "seen": 20.55638724001616,
-   "mv": [
-    [
-     166,
-     36.2
-    ],
-    [
-     508,
-     34.77
-    ],
-    [
-     418,
-     31.77
-    ],
-    [
-     441,
-     19.82
-    ],
-    [
-     221,
-     14.63
-    ],
-    [
-     363,
-     6.21
-    ],
-    [
-     487,
-     5.97
-    ],
-    [
-     217,
-     3.03
-    ],
-    [
-     163,
-     0.81
-    ],
-    [
-     327,
-     0.53
-    ]
-   ],
-   "it": [
-    [
-     "Sitrus Berry",
-     30.65
-    ],
-    [
-     "Leftovers",
-     27.78
-    ],
-    [
-     "Shuca Berry",
-     20.47
-    ],
-    [
-     "Air Balloon",
-     7.45
-    ],
-    [
-     "Red Card",
-     6.71
-    ],
-    [
-     "Focus Sash",
-     5.45
-    ],
-    [
-     "Bright Powder",
-     0.41
-    ],
-    [
-     "Wacan Berry",
-     0.33
-    ]
-   ],
-   "ab": [
-    [
-     "Competitive",
-     63.02,
-     "승기"
-    ],
-    [
-     "Torrent",
-     36.98,
-     "급류"
-    ]
-   ],
-   "tm": [
-    [
-     "Garchomp",
-     68.53,
-     "Garchomp"
-    ],
-    [
-     "Salamence",
-     35.04,
-     "Salamence"
-    ],
-    [
-     "Mimikyu",
-     31.33,
-     "Mimikyu"
-    ],
-    [
-     "Lucario",
-     30.12,
-     "Lucario"
-    ],
-    [
-     "Baxcalibur",
-     29.32,
-     "Baxcalibur"
-    ],
-    [
-     "Gyarados",
-     28.63,
-     "Gyarados"
-    ],
-    [
-     "Metagross",
-     20.69,
-     "Metagross"
-    ],
-    [
-     "Ninetales-Alola",
-     18.41,
-     "Ninetales-Alola"
-    ],
-    [
-     "Volcarona",
-     16.02,
-     "Volcarona"
-    ],
-    [
-     "Meowscarada",
-     14.71,
-     "Meowscarada"
-    ]
-   ],
-   "sp": [
-    [
-     "Sassy",
-     {
-      "hp": 32,
-      "atk": 0,
-      "def": 2,
-      "spa": 0,
-      "spd": 32,
-      "spe": 0
-     },
-     35.8
-    ],
-    [
-     "Modest",
-     {
-      "hp": 32,
-      "atk": 0,
-      "def": 0,
-      "spa": 32,
-      "spd": 0,
-      "spe": 2
-     },
-     10.8
-    ],
-    [
-     "Calm",
-     {
-      "hp": 32,
-      "atk": 0,
-      "def": 18,
-      "spa": 0,
-      "spd": 16,
-      "spe": 0
-     },
-     7.2
-    ],
-    [
-     "Bold",
-     {
-      "hp": 32,
-      "atk": 0,
-      "def": 32,
-      "spa": 0,
-      "spd": 2,
-      "spe": 0
-     },
-     6.5
-    ]
-   ],
-   "cc": [],
    "rank": 69
   },
   {
    "name": "Indeedee-F",
    "id": "Indeedee-F",
-   "pct": 2.301,
+   "pct": 2.283,
    "win": 35.71,
    "games": 73,
    "pick": 51.3,
@@ -14455,9 +14455,217 @@
    "rank": 70
   },
   {
+   "name": "Arcanine-Hisui",
+   "id": "Arcanine-Hisui",
+   "pct": 2.216,
+   "win": 40.69,
+   "games": 78,
+   "pick": 42.5,
+   "lead": 45.9,
+   "mega": 0,
+   "seen": 17.539973826658038,
+   "mv": [
+    [
+     162,
+     32.86
+    ],
+    [
+     200,
+     32.76
+    ],
+    [
+     141,
+     21.72
+    ],
+    [
+     73,
+     19.42
+    ],
+    [
+     500,
+     6.67
+    ],
+    [
+     426,
+     3.59
+    ],
+    [
+     359,
+     2.36
+    ],
+    [
+     60,
+     1.91
+    ],
+    [
+     299,
+     0.68
+    ],
+    [
+     284,
+     0.33
+    ],
+    [
+     330,
+     0.32
+    ]
+   ],
+   "it": [
+    [
+     "Choice Scarf",
+     46.7
+    ],
+    [
+     "Focus Sash",
+     31.89
+    ],
+    [
+     "Quick Claw",
+     12.28
+    ],
+    [
+     "Air Balloon",
+     5.64
+    ],
+    [
+     "hardstone",
+     1.45
+    ],
+    [
+     "Life Orb",
+     1.01
+    ],
+    [
+     "Sitrus Berry",
+     0.41
+    ]
+   ],
+   "ab": [
+    [
+     "Rock Head",
+     95.57,
+     "돌머리"
+    ],
+    [
+     "Intimidate",
+     2.5,
+     "위협"
+    ],
+    [
+     "Flash Fire",
+     1.94,
+     "타오르는불꽃"
+    ]
+   ],
+   "tm": [
+    [
+     "Garchomp",
+     25.63,
+     "Garchomp"
+    ],
+    [
+     "Salamence",
+     25.48,
+     "Salamence"
+    ],
+    [
+     "Rillaboom",
+     22.51,
+     "Rillaboom"
+    ],
+    [
+     "Raichu",
+     18.92,
+     "Raichu"
+    ],
+    [
+     "Primarina",
+     17.8,
+     "Primarina"
+    ],
+    [
+     "Gholdengo",
+     17.6,
+     "Gholdengo"
+    ],
+    [
+     "Golisopod",
+     16.65,
+     "Golisopod"
+    ],
+    [
+     "Baxcalibur",
+     15.71,
+     "Baxcalibur"
+    ],
+    [
+     "Lucario",
+     15.32,
+     "Lucario"
+    ],
+    [
+     "Ninetales-Alola",
+     13.57,
+     "Ninetales-Alola"
+    ]
+   ],
+   "sp": [
+    [
+     "Jolly",
+     {
+      "hp": 1,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 1,
+      "spe": 32
+     },
+     47.4
+    ],
+    [
+     "Adamant",
+     {
+      "hp": 32,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 2
+     },
+     13.7
+    ],
+    [
+     "Adamant",
+     {
+      "hp": 1,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 1,
+      "spe": 32
+     },
+     8.8
+    ],
+    [
+     "Jolly",
+     {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     4.9
+    ]
+   ],
+   "cc": [],
+   "rank": 71
+  },
+  {
    "name": "Milotic",
    "id": "Milotic",
-   "pct": 2.172,
+   "pct": 2.155,
    "win": 44.09,
    "games": 81,
    "pick": 29.7,
@@ -14660,220 +14868,12 @@
     ]
    ],
    "cc": [],
-   "rank": 71
-  },
-  {
-   "name": "Arcanine-Hisui",
-   "id": "Arcanine-Hisui",
-   "pct": 2.169,
-   "win": 40.43,
-   "games": 76,
-   "pick": 40.8,
-   "lead": 42,
-   "mega": 0,
-   "seen": 16.321973826658038,
-   "mv": [
-    [
-     162,
-     30.98
-    ],
-    [
-     200,
-     30.88
-    ],
-    [
-     141,
-     21.38
-    ],
-    [
-     73,
-     16.34
-    ],
-    [
-     500,
-     6.61
-    ],
-    [
-     426,
-     3.5
-    ],
-    [
-     359,
-     2.33
-    ],
-    [
-     60,
-     1.87
-    ],
-    [
-     299,
-     0.7
-    ],
-    [
-     284,
-     0.34
-    ],
-    [
-     330,
-     0.33
-    ]
-   ],
-   "it": [
-    [
-     "Choice Scarf",
-     46.7
-    ],
-    [
-     "Focus Sash",
-     31.89
-    ],
-    [
-     "Quick Claw",
-     12.28
-    ],
-    [
-     "Air Balloon",
-     5.64
-    ],
-    [
-     "hardstone",
-     1.45
-    ],
-    [
-     "Life Orb",
-     1.01
-    ],
-    [
-     "Sitrus Berry",
-     0.41
-    ]
-   ],
-   "ab": [
-    [
-     "Rock Head",
-     95.57,
-     "돌머리"
-    ],
-    [
-     "Intimidate",
-     2.5,
-     "위협"
-    ],
-    [
-     "Flash Fire",
-     1.94,
-     "타오르는불꽃"
-    ]
-   ],
-   "tm": [
-    [
-     "Garchomp",
-     24.88,
-     "Garchomp"
-    ],
-    [
-     "Salamence",
-     23.28,
-     "Salamence"
-    ],
-    [
-     "Rillaboom",
-     21.68,
-     "Rillaboom"
-    ],
-    [
-     "Raichu",
-     19.48,
-     "Raichu"
-    ],
-    [
-     "Primarina",
-     18.33,
-     "Primarina"
-    ],
-    [
-     "Gholdengo",
-     16.66,
-     "Gholdengo"
-    ],
-    [
-     "Baxcalibur",
-     16.17,
-     "Baxcalibur"
-    ],
-    [
-     "Lucario",
-     15.77,
-     "Lucario"
-    ],
-    [
-     "Golisopod",
-     15.64,
-     "Golisopod"
-    ],
-    [
-     "Ninetales-Alola",
-     12.51,
-     "Ninetales-Alola"
-    ]
-   ],
-   "sp": [
-    [
-     "Jolly",
-     {
-      "hp": 1,
-      "atk": 32,
-      "def": 0,
-      "spa": 0,
-      "spd": 1,
-      "spe": 32
-     },
-     47.4
-    ],
-    [
-     "Adamant",
-     {
-      "hp": 32,
-      "atk": 32,
-      "def": 0,
-      "spa": 0,
-      "spd": 0,
-      "spe": 2
-     },
-     13.7
-    ],
-    [
-     "Adamant",
-     {
-      "hp": 1,
-      "atk": 32,
-      "def": 0,
-      "spa": 0,
-      "spd": 1,
-      "spe": 32
-     },
-     8.8
-    ],
-    [
-     "Jolly",
-     {
-      "hp": 2,
-      "atk": 32,
-      "def": 0,
-      "spa": 0,
-      "spd": 0,
-      "spe": 32
-     },
-     4.9
-    ]
-   ],
-   "cc": [],
    "rank": 72
   },
   {
    "name": "Whimsicott",
    "id": "Whimsicott",
-   "pct": 2.005,
+   "pct": 1.989,
    "win": 21.47,
    "games": 70,
    "pick": 48.6,
@@ -15086,7 +15086,7 @@
   {
    "name": "Froslass",
    "id": "Froslass",
-   "pct": 2,
+   "pct": 1.984,
    "win": 42.86,
    "games": 293,
    "pick": 57.7,
@@ -15273,7 +15273,7 @@
   {
    "name": "Sirfetch’d",
    "id": "Sirfetch'd",
-   "pct": 1.993,
+   "pct": 1.977,
    "win": 45.67,
    "games": 65,
    "pick": 60.2,
@@ -15402,7 +15402,7 @@
   {
    "name": "Victreebel",
    "id": "Victreebel",
-   "pct": 1.983,
+   "pct": 1.967,
    "win": 40.38,
    "games": 67,
    "pick": 51.7,
@@ -15584,7 +15584,7 @@
   {
    "name": "Skarmory",
    "id": "Skarmory",
-   "pct": 1.944,
+   "pct": 1.928,
    "win": 45.46,
    "games": 66,
    "pick": 40.1,
@@ -15792,7 +15792,7 @@
   {
    "name": "Mawile",
    "id": "Mawile",
-   "pct": 1.92,
+   "pct": 1.905,
    "win": 45.69,
    "games": 63,
    "pick": 42.6,
@@ -15967,49 +15967,53 @@
   {
    "name": "Zoroark-Hisui",
    "id": "Zoroark-Hisui",
-   "pct": 1.835,
-   "win": 51.33,
-   "games": 64,
-   "pick": 3.7,
+   "pct": 1.869,
+   "win": 49.99,
+   "games": 66,
+   "pick": 5,
    "lead": 0,
    "mega": 0,
-   "seen": 0.357,
+   "seen": 0.8519747468305832,
    "mv": [
     [
      161,
-     5.98
+     5.93
     ],
     [
      378,
-     5.52
-    ],
-    [
-     170,
-     4.4
+     5.47
     ],
     [
      40,
-     3.78
+     4.57
+    ],
+    [
+     170,
+     4.37
     ],
     [
      229,
-     2.56
+     2.54
     ],
     [
      186,
-     2.4
+     2.38
     ],
     [
      397,
-     2.17
+     2.15
+    ],
+    [
+     435,
+     1.94
     ],
     [
      477,
-     1.6
+     1.59
     ],
     [
      271,
-     1.12
+     1.11
     ],
     [
      91,
@@ -16018,10 +16022,6 @@
     [
      452,
      0.9
-    ],
-    [
-     219,
-     0.79
     ]
    ],
    "it": [
@@ -16056,52 +16056,52 @@
    "tm": [
     [
      "Garchomp",
-     20.94,
+     23,
      "Garchomp"
     ],
     [
      "Cinderace",
-     20.48,
+     19.94,
      "Cinderace"
     ],
     [
      "Greninja",
-     17.84,
+     17.37,
      "Greninja"
     ],
     [
      "Meowscarada",
-     17.61,
+     17.15,
      "Meowscarada"
     ],
     [
      "Meganium",
-     16.12,
+     15.7,
      "Meganium"
     ],
     [
      "Baxcalibur",
-     13.72,
+     13.36,
      "Baxcalibur"
     ],
     [
      "Grimmsnarl",
-     13.21,
+     12.87,
      "Grimmsnarl"
     ],
     [
      "Starmie",
-     13.13,
+     12.79,
      "Starmie"
     ],
     [
      "Lucario",
-     12.27,
+     11.95,
      "Lucario"
     ],
     [
      "Salamence",
-     12.18,
+     11.86,
      "Salamence"
     ]
    ],
@@ -16161,7 +16161,7 @@
   {
    "name": "Dragalge",
    "id": "Dragalge",
-   "pct": 1.835,
+   "pct": 1.82,
    "win": 60.46,
    "games": 57,
    "pick": 47,
@@ -16350,7 +16350,7 @@
   {
    "name": "Chandelure",
    "id": "Chandelure",
-   "pct": 1.79,
+   "pct": 1.776,
    "win": 45.65,
    "games": 283,
    "pick": 24.8,
@@ -16542,7 +16542,7 @@
   {
    "name": "Annihilape",
    "id": "Annihilape",
-   "pct": 1.777,
+   "pct": 1.763,
    "win": 41.31,
    "games": 56,
    "pick": 30.2,
@@ -16751,9 +16751,209 @@
    "rank": 82
   },
   {
+   "name": "Gardevoir",
+   "id": "Gardevoir",
+   "pct": 1.694,
+   "win": 32.86,
+   "games": 59,
+   "pick": 42.9,
+   "lead": 33,
+   "mega": 58,
+   "seen": 13.3383172963309,
+   "mv": [
+    [
+     282,
+     16.76
+    ],
+    [
+     219,
+     12.25
+    ],
+    [
+     24,
+     8.34
+    ],
+    [
+     487,
+     8.17
+    ],
+    [
+     138,
+     7.69
+    ],
+    [
+     329,
+     6.46
+    ],
+    [
+     478,
+     4.82
+    ],
+    [
+     135,
+     4.81
+    ],
+    [
+     327,
+     3.78
+    ],
+    [
+     335,
+     2.93
+    ],
+    [
+     10,
+     2.22
+    ],
+    [
+     290,
+     1.47
+    ]
+   ],
+   "it": [
+    [
+     "Gardevoirite",
+     81.53
+    ],
+    [
+     "Focus Sash",
+     12.55
+    ],
+    [
+     "Choice Scarf",
+     4.96
+    ],
+    [
+     "Damp Rock",
+     0.5
+    ]
+   ],
+   "ab": [
+    [
+     "Pixilate",
+     54.18,
+     "페어리스킨"
+    ],
+    [
+     "Trace",
+     45.39,
+     "트레이스"
+    ],
+    [
+     "Synchronize",
+     0.43,
+     "싱크로"
+    ]
+   ],
+   "tm": [
+    [
+     "Indeedee-F",
+     43.33,
+     "Indeedee-F"
+    ],
+    [
+     "Sneasler",
+     28.79,
+     "Sneasler"
+    ],
+    [
+     "Garchomp",
+     27.98,
+     "Garchomp"
+    ],
+    [
+     "Gengar",
+     15.97,
+     "Gengar"
+    ],
+    [
+     "Golisopod",
+     15.37,
+     "Golisopod"
+    ],
+    [
+     "Salamence",
+     14.82,
+     "Salamence"
+    ],
+    [
+     "Cinderace",
+     13.99,
+     "Cinderace"
+    ],
+    [
+     "Primarina",
+     13.25,
+     "Primarina"
+    ],
+    [
+     "Pelipper",
+     13.2,
+     "Pelipper"
+    ],
+    [
+     "Hippowdon",
+     12.97,
+     "Hippowdon"
+    ]
+   ],
+   "sp": [
+    [
+     "Timid",
+     {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     39.5
+    ],
+    [
+     "Modest",
+     {
+      "hp": 20,
+      "atk": 0,
+      "def": 10,
+      "spa": 17,
+      "spd": 1,
+      "spe": 18
+     },
+     19
+    ],
+    [
+     "Bold",
+     {
+      "hp": 32,
+      "atk": 0,
+      "def": 32,
+      "spa": 0,
+      "spd": 2,
+      "spe": 0
+     },
+     11.9
+    ],
+    [
+     "Modest",
+     {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 2,
+      "spe": 32
+     },
+     5.4
+    ]
+   ],
+   "cc": [],
+   "rank": 83
+  },
+  {
    "name": "Kleavor",
    "id": "Kleavor",
-   "pct": 1.661,
+   "pct": 1.648,
    "win": 46.67,
    "games": 55,
    "pick": 55.4,
@@ -16936,212 +17136,12 @@
     ]
    ],
    "cc": [],
-   "rank": 83
-  },
-  {
-   "name": "Gardevoir",
-   "id": "Gardevoir",
-   "pct": 1.627,
-   "win": 34.49,
-   "games": 56,
-   "pick": 43.7,
-   "lead": 34,
-   "mega": 56.7,
-   "seen": 12.89991109199524,
-   "mv": [
-    [
-     282,
-     16.76
-    ],
-    [
-     219,
-     12.25
-    ],
-    [
-     24,
-     8.34
-    ],
-    [
-     487,
-     8.17
-    ],
-    [
-     138,
-     7.69
-    ],
-    [
-     329,
-     6.46
-    ],
-    [
-     478,
-     4.82
-    ],
-    [
-     135,
-     4.81
-    ],
-    [
-     327,
-     3.78
-    ],
-    [
-     335,
-     2.93
-    ],
-    [
-     10,
-     2.22
-    ],
-    [
-     290,
-     1.47
-    ]
-   ],
-   "it": [
-    [
-     "Gardevoirite",
-     81.34
-    ],
-    [
-     "Focus Sash",
-     12.69
-    ],
-    [
-     "Choice Scarf",
-     5.01
-    ],
-    [
-     "Damp Rock",
-     0.5
-    ]
-   ],
-   "ab": [
-    [
-     "Pixilate",
-     54.18,
-     "페어리스킨"
-    ],
-    [
-     "Trace",
-     45.39,
-     "트레이스"
-    ],
-    [
-     "Synchronize",
-     0.43,
-     "싱크로"
-    ]
-   ],
-   "tm": [
-    [
-     "Indeedee-F",
-     45.48,
-     "Indeedee-F"
-    ],
-    [
-     "Sneasler",
-     30.21,
-     "Sneasler"
-    ],
-    [
-     "Garchomp",
-     26.35,
-     "Garchomp"
-    ],
-    [
-     "Gengar",
-     16.76,
-     "Gengar"
-    ],
-    [
-     "Golisopod",
-     16.14,
-     "Golisopod"
-    ],
-    [
-     "Salamence",
-     15.55,
-     "Salamence"
-    ],
-    [
-     "Cinderace",
-     14.69,
-     "Cinderace"
-    ],
-    [
-     "Primarina",
-     13.91,
-     "Primarina"
-    ],
-    [
-     "Pelipper",
-     13.85,
-     "Pelipper"
-    ],
-    [
-     "Hippowdon",
-     13.61,
-     "Hippowdon"
-    ]
-   ],
-   "sp": [
-    [
-     "Timid",
-     {
-      "hp": 2,
-      "atk": 0,
-      "def": 0,
-      "spa": 32,
-      "spd": 0,
-      "spe": 32
-     },
-     39.5
-    ],
-    [
-     "Modest",
-     {
-      "hp": 20,
-      "atk": 0,
-      "def": 10,
-      "spa": 17,
-      "spd": 1,
-      "spe": 18
-     },
-     19
-    ],
-    [
-     "Bold",
-     {
-      "hp": 32,
-      "atk": 0,
-      "def": 32,
-      "spa": 0,
-      "spd": 2,
-      "spe": 0
-     },
-     11.9
-    ],
-    [
-     "Modest",
-     {
-      "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spa": 32,
-      "spd": 2,
-      "spe": 32
-     },
-     5.4
-    ]
-   ],
-   "cc": [],
    "rank": 84
   },
   {
    "name": "Arboliva",
    "id": "Arboliva",
-   "pct": 1.602,
+   "pct": 1.589,
    "win": 53.32,
    "games": 58,
    "pick": 32.6,
@@ -17278,7 +17278,7 @@
   {
    "name": "Goodra-Hisui",
    "id": "Goodra-Hisui",
-   "pct": 1.551,
+   "pct": 1.539,
    "win": 46.75,
    "games": 55,
    "pick": 27.6,
@@ -17490,13 +17490,13 @@
   {
    "name": "Inteleon",
    "id": "Inteleon",
-   "pct": 1.448,
-   "win": 34.19,
-   "games": 44,
-   "pick": 60.6,
-   "lead": 54.9,
+   "pct": 1.471,
+   "win": 33.4,
+   "games": 45,
+   "pick": 61.5,
+   "lead": 56.6,
    "mega": 0,
-   "seen": 16.06836615820209,
+   "seen": 16.724366158202088,
    "mv": [
     [
      403,
@@ -17504,43 +17504,43 @@
     ],
     [
      221,
-     74.22
+     72.29
     ],
     [
      171,
-     34.31
+     33.41
     ],
     [
      92,
-     34.16
+     33.28
     ],
     [
      253,
-     32.64
+     31.79
     ],
     [
      487,
-     22.14
+     21.57
     ],
     [
      350,
-     15.39
+     14.99
     ],
     [
      378,
-     12.16
+     11.85
     ],
     [
      8,
-     10.24
+     9.97
     ],
     [
      43,
-     9.57
+     9.32
     ],
     [
      371,
-     8.02
+     7.82
     ]
    ],
    "it": [
@@ -17557,53 +17557,53 @@
    "tm": [
     [
      "Garchomp",
-     31.32,
+     30.6,
      "Garchomp"
     ],
     [
      "Salamence",
-     22.6,
+     22.07,
      "Salamence"
     ],
     [
      "Absol",
-     20.45,
+     19.98,
      "Absol"
     ],
     [
      "Rillaboom",
-     19.86,
+     19.4,
      "Rillaboom"
     ],
     [
      "Froslass",
-     14.96,
+     14.61,
      "Froslass"
     ],
     [
      "Golisopod",
-     14.84,
+     14.5,
      "Golisopod"
     ],
     [
+     "Ceruledge",
+     12.98,
+     "Ceruledge"
+    ],
+    [
      "Skeledirge",
-     13.21,
+     12.91,
      "Skeledirge"
     ],
     [
      "Pawmot",
-     12.75,
+     12.45,
      "Pawmot"
     ],
     [
      "Primarina",
-     11.24,
+     10.97,
      "Primarina"
-    ],
-    [
-     "Scizor",
-     10.98,
-     "Scizor"
     ]
    ],
    "sp": [],
@@ -17613,45 +17613,45 @@
   {
    "name": "Scovillain",
    "id": "Scovillain",
-   "pct": 1.395,
-   "win": 53.02,
-   "games": 57,
-   "pick": 51.2,
+   "pct": 1.393,
+   "win": 53.33,
+   "games": 58,
+   "pick": 50.7,
    "lead": 61.2,
    "mega": 80.8,
-   "seen": 13.259534263234958,
+   "seen": 13.215172321533883,
    "mv": [
     [
      327,
-     36.42
+     36.36
     ],
     [
      251,
-     23.25
+     23.19
     ],
     [
      161,
-     18.32
+     18.34
     ],
     [
      181,
-     13.58
+     13.6
     ],
     [
      301,
-     12.96
+     12.83
     ],
     [
      249,
-     10.02
+     10.03
     ],
     [
      61,
-     6.42
+     6.43
     ],
     [
      435,
-     5.17
+     5.18
     ],
     [
      191,
@@ -17662,12 +17662,12 @@
      1.97
     ],
     [
-     342,
-     1.38
-    ],
-    [
      133,
      1.36
+    ],
+    [
+     342,
+     1.33
     ]
    ],
    "it": [
@@ -17677,70 +17677,70 @@
     ],
     [
      "Leftovers",
-     7.99
+     8
     ]
    ],
    "ab": [
     [
      "Spicy Spray",
-     84.92,
+     84.9,
      "하바네로분출"
     ],
     [
      "Moody",
-     14.96,
+     14.97,
      "변덕쟁이"
     ]
    ],
    "tm": [
     [
      "Garchomp",
-     25.45,
+     25.94,
      "Garchomp"
     ],
     [
      "Blaziken",
-     21.69,
+     21.55,
      "Blaziken"
     ],
     [
+     "Basculegion",
+     21.06,
+     "Basculegion"
+    ],
+    [
      "Glimmora",
-     20.97,
+     20.83,
      "Glimmora"
     ],
     [
      "Starmie",
-     20.64,
+     20.51,
      "Starmie"
     ],
     [
-     "Basculegion",
-     20.54,
-     "Basculegion"
-    ],
-    [
      "Baxcalibur",
-     18.97,
+     18.84,
      "Baxcalibur"
     ],
     [
-     "Archaludon",
-     17.4,
-     "Archaludon"
-    ],
-    [
      "Sylveon",
-     16.78,
+     17.33,
      "Sylveon"
     ],
     [
+     "Archaludon",
+     17.29,
+     "Archaludon"
+    ],
+    [
      "Basculegion-F",
-     12.85,
+     12.76,
      "Basculegion-F"
     ],
     [
      "Persian-Alola",
-     12.85,
+     12.76,
      "Persian-Alola"
     ]
    ],
@@ -17811,7 +17811,7 @@
   {
    "name": "Alakazam",
    "id": "Alakazam",
-   "pct": 1.39,
+   "pct": 1.379,
    "win": 53.69,
    "games": 46,
    "pick": 37.9,
@@ -18014,9 +18014,212 @@
    "rank": 89
   },
   {
+   "name": "Scolipede",
+   "id": "Scolipede",
+   "pct": 1.311,
+   "win": 45.91,
+   "games": 43,
+   "pick": 67.1,
+   "lead": 66.7,
+   "mega": 13.7,
+   "seen": 15.946899533421533,
+   "mv": [
+    [
+     32,
+     30.19
+    ],
+    [
+     327,
+     27.12
+    ],
+    [
+     447,
+     25.22
+    ],
+    [
+     236,
+     23.94
+    ],
+    [
+     124,
+     12.12
+    ],
+    [
+     435,
+     12.07
+    ],
+    [
+     250,
+     9.54
+    ],
+    [
+     314,
+     8
+    ],
+    [
+     471,
+     2.18
+    ],
+    [
+     195,
+     2.05
+    ],
+    [
+     360,
+     1.43
+    ],
+    [
+     359,
+     1
+    ]
+   ],
+   "it": [
+    [
+     "Scolipite",
+     37.92
+    ],
+    [
+     "Sitrus Berry",
+     30.24
+    ],
+    [
+     "Focus Sash",
+     24.54
+    ],
+    [
+     "Leftovers",
+     4.06
+    ],
+    [
+     "Mental Herb",
+     1.42
+    ],
+    [
+     "Occa Berry",
+     1.33
+    ]
+   ],
+   "ab": [
+    [
+     "Speed Boost",
+     80.74,
+     "가속"
+    ],
+    [
+     "Shell Armor",
+     19.25,
+     "조가비갑옷"
+    ]
+   ],
+   "tm": [
+    [
+     "Hatterene",
+     30.57,
+     "Hatterene"
+    ],
+    [
+     "Basculegion",
+     25.45,
+     "Basculegion"
+    ],
+    [
+     "Garchomp",
+     20.86,
+     "Garchomp"
+    ],
+    [
+     "Absol",
+     18.99,
+     "Absol"
+    ],
+    [
+     "Kingambit",
+     17.85,
+     "Kingambit"
+    ],
+    [
+     "Volcarona",
+     16.31,
+     "Volcarona"
+    ],
+    [
+     "Vaporeon",
+     15.86,
+     "Vaporeon"
+    ],
+    [
+     "Gengar",
+     15.86,
+     "Gengar"
+    ],
+    [
+     "Corviknight",
+     14.19,
+     "Corviknight"
+    ],
+    [
+     "Ninetales-Alola",
+     13.43,
+     "Ninetales-Alola"
+    ]
+   ],
+   "sp": [
+    [
+     "Adamant",
+     {
+      "hp": 24,
+      "atk": 20,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 22
+     },
+     19.5
+    ],
+    [
+     "Bold",
+     {
+      "hp": 32,
+      "atk": 0,
+      "def": 27,
+      "spa": 0,
+      "spd": 2,
+      "spe": 5
+     },
+     14.3
+    ],
+    [
+     "Adamant",
+     {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     12.6
+    ],
+    [
+     "Bold",
+     {
+      "hp": 32,
+      "atk": 0,
+      "def": 32,
+      "spa": 0,
+      "spd": 2,
+      "spe": 0
+     },
+     6.1
+    ]
+   ],
+   "cc": [],
+   "rank": 90
+  },
+  {
    "name": "Torkoal",
    "id": "Torkoal",
-   "pct": 1.295,
+   "pct": 1.284,
    "win": 33.38,
    "games": 45,
    "pick": 52.2,
@@ -18222,12 +18425,12 @@
     ]
    ],
    "cc": [],
-   "rank": 90
+   "rank": 91
   },
   {
    "name": "Grapploct",
    "id": "Grapploct",
-   "pct": 1.284,
+   "pct": 1.274,
    "win": 46.84,
    "games": 43,
    "pick": 66.3,
@@ -18353,12 +18556,12 @@
    ],
    "sp": [],
    "cc": [],
-   "rank": 91
+   "rank": 92
   },
   {
    "name": "Vanilluxe",
    "id": "Vanilluxe",
-   "pct": 1.265,
+   "pct": 1.255,
    "win": 42.08,
    "games": 50,
    "pick": 67.7,
@@ -18532,12 +18735,12 @@
     ]
    ],
    "cc": [],
-   "rank": 92
+   "rank": 93
   },
   {
    "name": "Hawlucha",
    "id": "Hawlucha",
-   "pct": 1.246,
+   "pct": 1.237,
    "win": 49.85,
    "games": 54,
    "pick": 47.3,
@@ -18743,12 +18946,220 @@
     ]
    ],
    "cc": [],
-   "rank": 93
+   "rank": 94
+  },
+  {
+   "name": "Gallade",
+   "id": "Gallade",
+   "pct": 1.231,
+   "win": 45.08,
+   "games": 41,
+   "pick": 59.2,
+   "lead": 36.7,
+   "mega": 11.8,
+   "seen": 12.43369228467411,
+   "mv": [
+    [
+     333,
+     26.77
+    ],
+    [
+     365,
+     22.75
+    ],
+    [
+     248,
+     15.66
+    ],
+    [
+     381,
+     11.18
+    ],
+    [
+     219,
+     7.9
+    ],
+    [
+     116,
+     4.06
+    ],
+    [
+     447,
+     3.49
+    ],
+    [
+     294,
+     3.05
+    ],
+    [
+     253,
+     2.55
+    ],
+    [
+     481,
+     2.26
+    ],
+    [
+     7,
+     1.85
+    ],
+    [
+     229,
+     1.31
+    ]
+   ],
+   "it": [
+    [
+     "Life Orb",
+     56.66
+    ],
+    [
+     "Focus Sash",
+     22.75
+    ],
+    [
+     "Galladite",
+     12.49
+    ],
+    [
+     "Choice Scarf",
+     5.22
+    ],
+    [
+     "Lum Berry",
+     1.97
+    ],
+    [
+     "Expert Belt",
+     0.67
+    ]
+   ],
+   "ab": [
+    [
+     "Sharpness",
+     86.86,
+     "예리함"
+    ],
+    [
+     "Inner Focus",
+     9.63,
+     "정신력"
+    ],
+    [
+     "Steadfast",
+     3.43,
+     "불굴의마음"
+    ]
+   ],
+   "tm": [
+    [
+     "Primarina",
+     28.95,
+     "Primarina"
+    ],
+    [
+     "Garchomp",
+     28.47,
+     "Garchomp"
+    ],
+    [
+     "Golisopod",
+     25.12,
+     "Golisopod"
+    ],
+    [
+     "Baxcalibur",
+     18.27,
+     "Baxcalibur"
+    ],
+    [
+     "Cinderace",
+     17.9,
+     "Cinderace"
+    ],
+    [
+     "Salamence",
+     16.89,
+     "Salamence"
+    ],
+    [
+     "Greninja",
+     14.53,
+     "Greninja"
+    ],
+    [
+     "Mimikyu",
+     14.43,
+     "Mimikyu"
+    ],
+    [
+     "Kingambit",
+     14.14,
+     "Kingambit"
+    ],
+    [
+     "Basculegion",
+     12.63,
+     "Basculegion"
+    ]
+   ],
+   "sp": [
+    [
+     "Adamant",
+     {
+      "hp": 32,
+      "atk": 32,
+      "def": 2,
+      "spa": 0,
+      "spd": 0,
+      "spe": 0
+     },
+     57.9
+    ],
+    [
+     "Jolly",
+     {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     10.5
+    ],
+    [
+     "Adamant",
+     {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     7.9
+    ],
+    [
+     "Adamant",
+     {
+      "hp": 10,
+      "atk": 32,
+      "def": 1,
+      "spa": 0,
+      "spd": 0,
+      "spe": 23
+     },
+     5.6
+    ]
+   ],
+   "cc": [],
+   "rank": 95
   },
   {
    "name": "Politoed",
    "id": "Politoed",
-   "pct": 1.229,
+   "pct": 1.219,
    "win": 39.89,
    "games": 48,
    "pick": 32.2,
@@ -18860,483 +19271,76 @@
    ],
    "sp": [],
    "cc": [],
-   "rank": 94
-  },
-  {
-   "name": "Gallade",
-   "id": "Gallade",
-   "pct": 1.209,
-   "win": 46.26,
-   "games": 40,
-   "pick": 58.1,
-   "lead": 33.9,
-   "mega": 7.8,
-   "seen": 11.833692284674111,
-   "mv": [
-    [
-     333,
-     25.84
-    ],
-    [
-     365,
-     22.45
-    ],
-    [
-     248,
-     15.47
-    ],
-    [
-     381,
-     11.11
-    ],
-    [
-     219,
-     7.72
-    ],
-    [
-     447,
-     3.43
-    ],
-    [
-     294,
-     2.99
-    ],
-    [
-     253,
-     2.49
-    ],
-    [
-     481,
-     2.23
-    ],
-    [
-     116,
-     1.85
-    ],
-    [
-     7,
-     1.81
-    ],
-    [
-     229,
-     1.28
-    ]
-   ],
-   "it": [
-    [
-     "Life Orb",
-     57.39
-    ],
-    [
-     "Focus Sash",
-     23
-    ],
-    [
-     "Galladite",
-     11.41
-    ],
-    [
-     "Choice Scarf",
-     5.28
-    ],
-    [
-     "Lum Berry",
-     1.99
-    ],
-    [
-     "Expert Belt",
-     0.68
-    ]
-   ],
-   "ab": [
-    [
-     "Sharpness",
-     86.86,
-     "예리함"
-    ],
-    [
-     "Inner Focus",
-     9.63,
-     "정신력"
-    ],
-    [
-     "Steadfast",
-     3.43,
-     "불굴의마음"
-    ]
-   ],
-   "tm": [
-    [
-     "Primarina",
-     29.7,
-     "Primarina"
-    ],
-    [
-     "Garchomp",
-     26.6,
-     "Garchomp"
-    ],
-    [
-     "Golisopod",
-     25.78,
-     "Golisopod"
-    ],
-    [
-     "Baxcalibur",
-     18.75,
-     "Baxcalibur"
-    ],
-    [
-     "Cinderace",
-     18.37,
-     "Cinderace"
-    ],
-    [
-     "Salamence",
-     17.33,
-     "Salamence"
-    ],
-    [
-     "Greninja",
-     14.91,
-     "Greninja"
-    ],
-    [
-     "Mimikyu",
-     14.8,
-     "Mimikyu"
-    ],
-    [
-     "Basculegion",
-     12.96,
-     "Basculegion"
-    ],
-    [
-     "Slowking-Galar",
-     12.42,
-     "Slowking-Galar"
-    ]
-   ],
-   "sp": [
-    [
-     "Adamant",
-     {
-      "hp": 32,
-      "atk": 32,
-      "def": 2,
-      "spa": 0,
-      "spd": 0,
-      "spe": 0
-     },
-     57.9
-    ],
-    [
-     "Jolly",
-     {
-      "hp": 2,
-      "atk": 32,
-      "def": 0,
-      "spa": 0,
-      "spd": 0,
-      "spe": 32
-     },
-     10.5
-    ],
-    [
-     "Adamant",
-     {
-      "hp": 2,
-      "atk": 32,
-      "def": 0,
-      "spa": 0,
-      "spd": 0,
-      "spe": 32
-     },
-     7.9
-    ],
-    [
-     "Adamant",
-     {
-      "hp": 10,
-      "atk": 32,
-      "def": 1,
-      "spa": 0,
-      "spd": 0,
-      "spe": 23
-     },
-     5.6
-    ]
-   ],
-   "cc": [],
-   "rank": 95
-  },
-  {
-   "name": "Scolipede",
-   "id": "Scolipede",
-   "pct": 1.196,
-   "win": 47.47,
-   "games": 40,
-   "pick": 66.9,
-   "lead": 69.4,
-   "mega": 15.1,
-   "seen": 14.300899533421534,
-   "mv": [
-    [
-     32,
-     27.88
-    ],
-    [
-     447,
-     24.88
-    ],
-    [
-     327,
-     22.71
-    ],
-    [
-     236,
-     21.73
-    ],
-    [
-     124,
-     12.37
-    ],
-    [
-     435,
-     10.23
-    ],
-    [
-     250,
-     9.79
-    ],
-    [
-     314,
-     8.2
-    ],
-    [
-     471,
-     2.11
-    ],
-    [
-     195,
-     1.99
-    ],
-    [
-     360,
-     1.38
-    ],
-    [
-     359,
-     1.04
-    ]
-   ],
-   "it": [
-    [
-     "Scolipite",
-     38.48
-    ],
-    [
-     "Sitrus Berry",
-     30.64
-    ],
-    [
-     "Focus Sash",
-     24.86
-    ],
-    [
-     "Leftovers",
-     2.73
-    ],
-    [
-     "Mental Herb",
-     1.45
-    ],
-    [
-     "Occa Berry",
-     1.35
-    ]
-   ],
-   "ab": [
-    [
-     "Speed Boost",
-     78.49,
-     "가속"
-    ],
-    [
-     "Shell Armor",
-     21.51,
-     "조가비갑옷"
-    ]
-   ],
-   "tm": [
-    [
-     "Hatterene",
-     33.78,
-     "Hatterene"
-    ],
-    [
-     "Basculegion",
-     28.12,
-     "Basculegion"
-    ],
-    [
-     "Absol",
-     20.98,
-     "Absol"
-    ],
-    [
-     "Volcarona",
-     18.02,
-     "Volcarona"
-    ],
-    [
-     "Vaporeon",
-     17.53,
-     "Vaporeon"
-    ],
-    [
-     "Gengar",
-     17.53,
-     "Gengar"
-    ],
-    [
-     "Garchomp",
-     15.8,
-     "Garchomp"
-    ],
-    [
-     "Corviknight",
-     15.67,
-     "Corviknight"
-    ],
-    [
-     "Polteageist",
-     13.55,
-     "Polteageist"
-    ],
-    [
-     "Scizor",
-     13.44,
-     "Scizor"
-    ]
-   ],
-   "sp": [
-    [
-     "Adamant",
-     {
-      "hp": 24,
-      "atk": 20,
-      "def": 0,
-      "spa": 0,
-      "spd": 0,
-      "spe": 22
-     },
-     19.5
-    ],
-    [
-     "Bold",
-     {
-      "hp": 32,
-      "atk": 0,
-      "def": 27,
-      "spa": 0,
-      "spd": 2,
-      "spe": 5
-     },
-     14.3
-    ],
-    [
-     "Adamant",
-     {
-      "hp": 2,
-      "atk": 32,
-      "def": 0,
-      "spa": 0,
-      "spd": 0,
-      "spe": 32
-     },
-     12.6
-    ],
-    [
-     "Bold",
-     {
-      "hp": 32,
-      "atk": 0,
-      "def": 32,
-      "spa": 0,
-      "spd": 2,
-      "spe": 0
-     },
-     6.1
-    ]
-   ],
-   "cc": [],
    "rank": 96
   },
   {
    "name": "Bellibolt",
    "id": "Bellibolt",
-   "pct": 1.132,
-   "win": 35.49,
-   "games": 32,
-   "pick": 42.1,
-   "lead": 38.1,
+   "pct": 1.167,
+   "win": 37.9,
+   "games": 33,
+   "pick": 44.2,
+   "lead": 43.3,
    "mega": 0,
-   "seen": 9.051359682996967,
+   "seen": 9.887359682996967,
    "mv": [
     [
      406,
-     28.47
+     29.63
     ],
     [
      471,
-     21.68
+     21.37
     ],
     [
      489,
-     21.14
-    ],
-    [
-     393,
-     19.03
+     20.86
     ],
     [
      303,
-     16.47
+     19.36
+    ],
+    [
+     393,
+     18.75
+    ],
+    [
+     67,
+     3.12
     ],
     [
      102,
-     2.47
+     2.44
     ],
     [
      435,
-     0.39
+     0.38
     ]
    ],
    "it": [
     [
      "Leftovers",
-     64.92
+     63.93
     ],
     [
      "Sitrus Berry",
-     31.12
-    ],
-    [
-     "Magnet",
-     1.29
+     30.51
     ],
     [
      "Shuca Berry",
+     2.91
+    ],
+    [
+     "Magnet",
      1.27
     ],
     [
      "Lum Berry",
-     0.59
+     0.58
     ],
     [
      "Lucarionite",
-     0.57
+     0.56
     ]
    ],
    "ab": [
@@ -19349,52 +19353,52 @@
    "tm": [
     [
      "Primarina",
-     40.92,
+     39.39,
      "Primarina"
     ],
     [
      "Garchomp",
-     37.15,
+     35.76,
      "Garchomp"
     ],
     [
      "Golisopod",
-     32.42,
+     34.95,
      "Golisopod"
     ],
     [
      "Corviknight",
-     24.72,
+     23.8,
      "Corviknight"
     ],
     [
      "Salamence",
-     24.4,
+     23.49,
      "Salamence"
     ],
     [
      "Lucario",
-     18.81,
+     18.11,
      "Lucario"
     ],
     [
      "Scizor",
-     18.52,
+     17.83,
      "Scizor"
     ],
     [
      "Grapploct",
-     18.34,
+     17.65,
      "Grapploct"
     ],
     [
      "Feraligatr",
-     18.12,
+     17.44,
      "Feraligatr"
     ],
     [
      "Meowscarada",
-     14.81,
+     14.25,
      "Meowscarada"
     ]
    ],
@@ -19470,7 +19474,7 @@
   {
    "name": "Aggron",
    "id": "Aggron",
-   "pct": 1.083,
+   "pct": 1.075,
    "win": 52.95,
    "games": 42,
    "pick": 27.8,
@@ -19655,9 +19659,220 @@
    "rank": 98
   },
   {
+   "name": "Serperior",
+   "id": "Serperior",
+   "pct": 1.059,
+   "win": 42.46,
+   "games": 44,
+   "pick": 41.7,
+   "lead": 28.8,
+   "mega": 0,
+   "seen": 7.78191808247277,
+   "mv": [
+    [
+     249,
+     19.41
+    ],
+    [
+     327,
+     9.13
+    ],
+    [
+     185,
+     8.55
+    ],
+    [
+     251,
+     8.13
+    ],
+    [
+     113,
+     7.43
+    ],
+    [
+     452,
+     6.22
+    ],
+    [
+     435,
+     4.19
+    ],
+    [
+     242,
+     1.58
+    ],
+    [
+     279,
+     1.35
+    ],
+    [
+     350,
+     0.49
+    ],
+    [
+     253,
+     0.48
+    ],
+    [
+     181,
+     0.42
+    ]
+   ],
+   "it": [
+    [
+     "Focus Sash",
+     52.71
+    ],
+    [
+     "Leftovers",
+     17.63
+    ],
+    [
+     "Light Clay",
+     6.44
+    ],
+    [
+     "Miracle Seed",
+     6.38
+    ],
+    [
+     "Expert Belt",
+     5.28
+    ],
+    [
+     "Sitrus Berry",
+     5.22
+    ],
+    [
+     "Wide Lens",
+     2.59
+    ],
+    [
+     "Life Orb",
+     1.62
+    ]
+   ],
+   "ab": [
+    [
+     "Contrary",
+     96.22,
+     "심술꾸러기"
+    ],
+    [
+     "Overgrow",
+     3.78,
+     "심록"
+    ]
+   ],
+   "tm": [
+    [
+     "Cinderace",
+     31.85,
+     "Cinderace"
+    ],
+    [
+     "Salamence",
+     25.4,
+     "Salamence"
+    ],
+    [
+     "Volcarona",
+     21.24,
+     "Volcarona"
+    ],
+    [
+     "Baxcalibur",
+     20.37,
+     "Baxcalibur"
+    ],
+    [
+     "Hippowdon",
+     20.1,
+     "Hippowdon"
+    ],
+    [
+     "Greninja",
+     20.1,
+     "Greninja"
+    ],
+    [
+     "Lucario",
+     19.33,
+     "Lucario"
+    ],
+    [
+     "Slowking-Galar",
+     18.76,
+     "Slowking-Galar"
+    ],
+    [
+     "Absol",
+     13.75,
+     "Absol"
+    ],
+    [
+     "Dragapult",
+     13.62,
+     "Dragapult"
+    ]
+   ],
+   "sp": [
+    [
+     "Timid",
+     {
+      "hp": 0,
+      "atk": 2,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     24.4
+    ],
+    [
+     "Timid",
+     {
+      "hp": 32,
+      "atk": 0,
+      "def": 0,
+      "spa": 2,
+      "spd": 0,
+      "spe": 32
+     },
+     21.6
+    ],
+    [
+     "Timid",
+     {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     15.6
+    ],
+    [
+     "Timid",
+     {
+      "hp": 27,
+      "atk": 0,
+      "def": 0,
+      "spa": 7,
+      "spd": 0,
+      "spe": 32
+     },
+     6.3
+    ]
+   ],
+   "cc": [],
+   "rank": 99
+  },
+  {
    "name": "Farigiraf",
    "id": "Farigiraf",
-   "pct": 1.052,
+   "pct": 1.044,
    "win": 33.64,
    "games": 36,
    "pick": 38.5,
@@ -19864,12 +20079,12 @@
     ]
    ],
    "cc": [],
-   "rank": 99
+   "rank": 100
   },
   {
    "name": "Snorlax",
    "id": "Snorlax",
-   "pct": 1.045,
+   "pct": 1.037,
    "win": 29.58,
    "games": 35,
    "pick": 45.7,
@@ -20075,223 +20290,219 @@
     ]
    ],
    "cc": [],
-   "rank": 100
+   "rank": 101
   },
   {
-   "name": "Serperior",
-   "id": "Serperior",
-   "pct": 1.035,
-   "win": 43.75,
-   "games": 43,
-   "pick": 42.9,
-   "lead": 28.8,
+   "name": "Azumarill",
+   "id": "Azumarill",
+   "pct": 1.022,
+   "win": 37.59,
+   "games": 39,
+   "pick": 25.2,
+   "lead": 13.8,
    "mega": 0,
-   "seen": 7.78191808247277,
+   "seen": 4.9331586181681555,
    "mv": [
     [
-     249,
-     19.41
+     311,
+     14.22
+    ],
+    [
+     16,
+     13.26
+    ],
+    [
+     36,
+     7.72
+    ],
+    [
+     132,
+     5.86
+    ],
+    [
+     255,
+     5.39
+    ],
+    [
+     306,
+     3.55
     ],
     [
      327,
-     9.13
+     3.52
     ],
     [
-     185,
-     8.55
-    ],
-    [
-     251,
-     8.13
-    ],
-    [
-     113,
-     7.43
-    ],
-    [
-     452,
-     6.22
-    ],
-    [
-     435,
-     4.19
+     52,
+     1.17
     ],
     [
      242,
-     1.58
+     0.68
     ],
     [
-     279,
-     1.35
-    ],
-    [
-     350,
-     0.49
-    ],
-    [
-     253,
-     0.48
-    ],
-    [
-     181,
+     440,
      0.42
+    ],
+    [
+     497,
+     0.4
     ]
    ],
    "it": [
     [
-     "Focus Sash",
-     52.71
-    ],
-    [
-     "Leftovers",
-     17.63
-    ],
-    [
-     "Light Clay",
-     6.44
-    ],
-    [
-     "Miracle Seed",
-     6.38
-    ],
-    [
-     "Expert Belt",
-     5.28
-    ],
-    [
      "Sitrus Berry",
-     5.22
+     36.3
     ],
     [
-     "Wide Lens",
-     2.59
+     "Mystic Water",
+     30.11
+    ],
+    [
+     "Wacan Berry",
+     19.55
+    ],
+    [
+     "Lum Berry",
+     5.38
     ],
     [
      "Life Orb",
-     1.62
+     2.95
+    ],
+    [
+     "Chesto Berry",
+     1.82
+    ],
+    [
+     "Rindo Berry",
+     1.61
+    ],
+    [
+     "Fairy Feather",
+     1.2
     ]
    ],
    "ab": [
     [
-     "Contrary",
-     96.22,
-     "심술꾸러기"
+     "Huge Power",
+     92.68,
+     "천하장사"
     ],
     [
-     "Overgrow",
-     3.78,
-     "심록"
+     "Sap Sipper",
+     7.09,
+     "초식"
     ]
    ],
    "tm": [
     [
-     "Cinderace",
-     32.82,
-     "Cinderace"
+     "Garchomp",
+     24.6,
+     "Garchomp"
     ],
     [
-     "Salamence",
-     26.18,
-     "Salamence"
+     "Scizor",
+     22.43,
+     "Scizor"
     ],
     [
-     "Volcarona",
-     21.89,
-     "Volcarona"
+     "Staraptor",
+     22.24,
+     "Staraptor"
     ],
     [
-     "Baxcalibur",
-     20.99,
-     "Baxcalibur"
-    ],
-    [
-     "Hippowdon",
-     20.72,
-     "Hippowdon"
-    ],
-    [
-     "Greninja",
-     20.72,
-     "Greninja"
-    ],
-    [
-     "Lucario",
-     19.92,
-     "Lucario"
-    ],
-    [
-     "Slowking-Galar",
-     19.33,
-     "Slowking-Galar"
-    ],
-    [
-     "Absol",
-     14.17,
-     "Absol"
+     "Hatterene",
+     19.17,
+     "Hatterene"
     ],
     [
      "Dragapult",
-     14.03,
+     19.17,
      "Dragapult"
+    ],
+    [
+     "Kingambit",
+     18.53,
+     "Kingambit"
+    ],
+    [
+     "Ampharos",
+     15.19,
+     "Ampharos"
+    ],
+    [
+     "Umbreon",
+     15.19,
+     "Umbreon"
+    ],
+    [
+     "Weavile",
+     14.97,
+     "Weavile"
+    ],
+    [
+     "Ceruledge",
+     12.26,
+     "Ceruledge"
     ]
    ],
    "sp": [
     [
-     "Timid",
+     "Adamant",
      {
-      "hp": 0,
-      "atk": 2,
-      "def": 0,
-      "spa": 32,
+      "hp": 1,
+      "atk": 32,
+      "def": 32,
+      "spa": 0,
       "spd": 0,
-      "spe": 32
+      "spe": 1
      },
-     24.4
+     20.8
     ],
     [
-     "Timid",
-     {
-      "hp": 32,
-      "atk": 0,
-      "def": 0,
-      "spa": 2,
-      "spd": 0,
-      "spe": 32
-     },
-     21.6
-    ],
-    [
-     "Timid",
-     {
-      "hp": 2,
-      "atk": 0,
-      "def": 0,
-      "spa": 32,
-      "spd": 0,
-      "spe": 32
-     },
-     15.6
-    ],
-    [
-     "Timid",
+     "Adamant",
      {
       "hp": 27,
-      "atk": 0,
+      "atk": 32,
       "def": 0,
-      "spa": 7,
+      "spa": 0,
       "spd": 0,
-      "spe": 32
+      "spe": 7
      },
-     6.3
+     17.9
+    ],
+    [
+     "Adamant",
+     {
+      "hp": 21,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 13
+     },
+     16
+    ],
+    [
+     "Adamant",
+     {
+      "hp": 31,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 3,
+      "spe": 0
+     },
+     8
     ]
    ],
    "cc": [],
-   "rank": 101
+   "rank": 102
   },
   {
    "name": "Meowstic",
    "id": "Meowstic",
-   "pct": 1.015,
+   "pct": 1.007,
    "win": 45.83,
    "games": 33,
    "pick": 61.8,
@@ -20417,219 +20628,12 @@
    ],
    "sp": [],
    "cc": [],
-   "rank": 102
-  },
-  {
-   "name": "Azumarill",
-   "id": "Azumarill",
-   "pct": 0.986,
-   "win": 34.81,
-   "games": 38,
-   "pick": 26.3,
-   "lead": 13.8,
-   "mega": 0,
-   "seen": 4.9331586181681555,
-   "mv": [
-    [
-     311,
-     14.22
-    ],
-    [
-     16,
-     13.26
-    ],
-    [
-     36,
-     7.72
-    ],
-    [
-     132,
-     5.86
-    ],
-    [
-     255,
-     5.39
-    ],
-    [
-     306,
-     3.55
-    ],
-    [
-     327,
-     3.52
-    ],
-    [
-     52,
-     1.17
-    ],
-    [
-     242,
-     0.68
-    ],
-    [
-     440,
-     0.42
-    ],
-    [
-     497,
-     0.4
-    ]
-   ],
-   "it": [
-    [
-     "Sitrus Berry",
-     36.3
-    ],
-    [
-     "Mystic Water",
-     30.11
-    ],
-    [
-     "Wacan Berry",
-     19.55
-    ],
-    [
-     "Lum Berry",
-     5.38
-    ],
-    [
-     "Life Orb",
-     2.95
-    ],
-    [
-     "Chesto Berry",
-     1.82
-    ],
-    [
-     "Rindo Berry",
-     1.61
-    ],
-    [
-     "Fairy Feather",
-     1.2
-    ]
-   ],
-   "ab": [
-    [
-     "Huge Power",
-     92.68,
-     "천하장사"
-    ],
-    [
-     "Sap Sipper",
-     7.09,
-     "초식"
-    ]
-   ],
-   "tm": [
-    [
-     "Garchomp",
-     25.7,
-     "Garchomp"
-    ],
-    [
-     "Scizor",
-     23.43,
-     "Scizor"
-    ],
-    [
-     "Staraptor",
-     23.23,
-     "Staraptor"
-    ],
-    [
-     "Hatterene",
-     20.02,
-     "Hatterene"
-    ],
-    [
-     "Dragapult",
-     20.02,
-     "Dragapult"
-    ],
-    [
-     "Kingambit",
-     19.36,
-     "Kingambit"
-    ],
-    [
-     "Ampharos",
-     15.87,
-     "Ampharos"
-    ],
-    [
-     "Umbreon",
-     15.87,
-     "Umbreon"
-    ],
-    [
-     "Weavile",
-     15.64,
-     "Weavile"
-    ],
-    [
-     "Basculegion",
-     12.42,
-     "Basculegion"
-    ]
-   ],
-   "sp": [
-    [
-     "Adamant",
-     {
-      "hp": 1,
-      "atk": 32,
-      "def": 32,
-      "spa": 0,
-      "spd": 0,
-      "spe": 1
-     },
-     20.8
-    ],
-    [
-     "Adamant",
-     {
-      "hp": 27,
-      "atk": 32,
-      "def": 0,
-      "spa": 0,
-      "spd": 0,
-      "spe": 7
-     },
-     17.9
-    ],
-    [
-     "Adamant",
-     {
-      "hp": 21,
-      "atk": 32,
-      "def": 0,
-      "spa": 0,
-      "spd": 0,
-      "spe": 13
-     },
-     16
-    ],
-    [
-     "Adamant",
-     {
-      "hp": 31,
-      "atk": 32,
-      "def": 0,
-      "spa": 0,
-      "spd": 3,
-      "spe": 0
-     },
-     8
-    ]
-   ],
-   "cc": [],
    "rank": 103
   },
   {
    "name": "Quaquaval",
    "id": "Quaquaval",
-   "pct": 0.962,
+   "pct": 0.955,
    "win": 50.04,
    "games": 35,
    "pick": 47,
@@ -20840,7 +20844,7 @@
   {
    "name": "Ampharos",
    "id": "Ampharos",
-   "pct": 0.957,
+   "pct": 0.949,
    "win": 42.22,
    "games": 29,
    "pick": 55.4,
@@ -20957,7 +20961,7 @@
   {
    "name": "Heliolisk",
    "id": "Heliolisk",
-   "pct": 0.952,
+   "pct": 0.944,
    "win": 60.49,
    "games": 44,
    "pick": 61.3,
@@ -21164,7 +21168,7 @@
   {
    "name": "Sinistcha",
    "id": "Sinistcha",
-   "pct": 0.951,
+   "pct": 0.943,
    "win": 52.2,
    "games": 31,
    "pick": 36.7,
@@ -21375,7 +21379,7 @@
   {
    "name": "Talonflame",
    "id": "Talonflame",
-   "pct": 0.921,
+   "pct": 0.914,
    "win": 25.69,
    "games": 30,
    "pick": 66.8,
@@ -21586,7 +21590,7 @@
   {
    "name": "Weavile",
    "id": "Weavile",
-   "pct": 0.908,
+   "pct": 0.901,
    "win": 52.37,
    "games": 44,
    "pick": 43.9,
@@ -21787,9 +21791,222 @@
    "rank": 109
   },
   {
+   "name": "Aerodactyl",
+   "id": "Aerodactyl",
+   "pct": 0.889,
+   "win": 51.57,
+   "games": 43,
+   "pick": 34.9,
+   "lead": 46.1,
+   "mega": 28.4,
+   "seen": 5.4301126373010336,
+   "mv": [
+    [
+     359,
+     10.13
+    ],
+    [
+     418,
+     7.63
+    ],
+    [
+     451,
+     7.15
+    ],
+    [
+     121,
+     6.43
+    ],
+    [
+     124,
+     4.31
+    ],
+    [
+     222,
+     3.9
+    ],
+    [
+     426,
+     3.23
+    ],
+    [
+     360,
+     3.14
+    ],
+    [
+     111,
+     2.97
+    ],
+    [
+     369,
+     2.64
+    ],
+    [
+     452,
+     1.66
+    ],
+    [
+     363,
+     0.33
+    ]
+   ],
+   "it": [
+    [
+     "Aerodactylite",
+     61.26
+    ],
+    [
+     "Life Orb",
+     23.82
+    ],
+    [
+     "Focus Sash",
+     8.32
+    ],
+    [
+     "hardstone",
+     3.1
+    ],
+    [
+     "King's Rock",
+     2.17
+    ],
+    [
+     "Choice Scarf",
+     0.63
+    ]
+   ],
+   "ab": [
+    [
+     "Tough Claws",
+     51.55,
+     "단단한발톱"
+    ],
+    [
+     "Rock Head",
+     23.89,
+     "돌머리"
+    ],
+    [
+     "Unnerve",
+     17.93,
+     "긴장감"
+    ],
+    [
+     "Pressure",
+     6.62,
+     "프레셔"
+    ]
+   ],
+   "tm": [
+    [
+     "Garchomp",
+     50.91,
+     "Garchomp"
+    ],
+    [
+     "Sylveon",
+     22.3,
+     "Sylveon"
+    ],
+    [
+     "Kingambit",
+     22.3,
+     "Kingambit"
+    ],
+    [
+     "Charizard",
+     20.1,
+     "Charizard"
+    ],
+    [
+     "Basculegion",
+     18.77,
+     "Basculegion"
+    ],
+    [
+     "Aegislash",
+     18.4,
+     "Aegislash"
+    ],
+    [
+     "Rillaboom",
+     16.58,
+     "Rillaboom"
+    ],
+    [
+     "Raichu",
+     16.06,
+     "Raichu"
+    ],
+    [
+     "Scovillain",
+     15.25,
+     "Scovillain"
+    ],
+    [
+     "Glimmora",
+     14.87,
+     "Glimmora"
+    ]
+   ],
+   "sp": [
+    [
+     "Adamant",
+     {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     64.6
+    ],
+    [
+     "Jolly",
+     {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     16.5
+    ],
+    [
+     "Jolly",
+     {
+      "hp": 8,
+      "atk": 26,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     7.2
+    ],
+    [
+     "Jolly",
+     {
+      "hp": 0,
+      "atk": 32,
+      "def": 2,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     2.4
+    ]
+   ],
+   "cc": [],
+   "rank": 110
+  },
+  {
    "name": "Vaporeon",
    "id": "Vaporeon",
-   "pct": 0.893,
+   "pct": 0.886,
    "win": 57.12,
    "games": 31,
    "pick": 52,
@@ -21974,225 +22191,12 @@
     ]
    ],
    "cc": [],
-   "rank": 110
-  },
-  {
-   "name": "Aerodactyl",
-   "id": "Aerodactyl",
-   "pct": 0.887,
-   "win": 51.07,
-   "games": 42,
-   "pick": 33.9,
-   "lead": 43.5,
-   "mega": 25.2,
-   "seen": 5.1940991678454465,
-   "mv": [
-    [
-     359,
-     9.73
-    ],
-    [
-     418,
-     7.49
-    ],
-    [
-     121,
-     6.48
-    ],
-    [
-     451,
-     5.93
-    ],
-    [
-     124,
-     4.24
-    ],
-    [
-     222,
-     3.92
-    ],
-    [
-     426,
-     3.25
-    ],
-    [
-     360,
-     3.07
-    ],
-    [
-     111,
-     2.98
-    ],
-    [
-     369,
-     2.58
-    ],
-    [
-     452,
-     1.67
-    ],
-    [
-     363,
-     0.33
-    ]
-   ],
-   "it": [
-    [
-     "Aerodactylite",
-     61.08
-    ],
-    [
-     "Life Orb",
-     23.94
-    ],
-    [
-     "Focus Sash",
-     8.34
-    ],
-    [
-     "hardstone",
-     3.12
-    ],
-    [
-     "King's Rock",
-     2.18
-    ],
-    [
-     "Choice Scarf",
-     0.63
-    ]
-   ],
-   "ab": [
-    [
-     "Tough Claws",
-     52.05,
-     "단단한발톱"
-    ],
-    [
-     "Rock Head",
-     24.12,
-     "돌머리"
-    ],
-    [
-     "Unnerve",
-     17.19,
-     "긴장감"
-    ],
-    [
-     "Pressure",
-     6.65,
-     "프레셔"
-    ]
-   ],
-   "tm": [
-    [
-     "Garchomp",
-     50.4,
-     "Garchomp"
-    ],
-    [
-     "Sylveon",
-     21.49,
-     "Sylveon"
-    ],
-    [
-     "Kingambit",
-     21.49,
-     "Kingambit"
-    ],
-    [
-     "Charizard",
-     20.31,
-     "Charizard"
-    ],
-    [
-     "Aegislash",
-     18.59,
-     "Aegislash"
-    ],
-    [
-     "Basculegion",
-     17.93,
-     "Basculegion"
-    ],
-    [
-     "Rillaboom",
-     16.75,
-     "Rillaboom"
-    ],
-    [
-     "Raichu",
-     16.23,
-     "Raichu"
-    ],
-    [
-     "Glimmora",
-     15.02,
-     "Glimmora"
-    ],
-    [
-     "Scovillain",
-     14.37,
-     "Scovillain"
-    ]
-   ],
-   "sp": [
-    [
-     "Adamant",
-     {
-      "hp": 2,
-      "atk": 32,
-      "def": 0,
-      "spa": 0,
-      "spd": 0,
-      "spe": 32
-     },
-     64.6
-    ],
-    [
-     "Jolly",
-     {
-      "hp": 2,
-      "atk": 32,
-      "def": 0,
-      "spa": 0,
-      "spd": 0,
-      "spe": 32
-     },
-     16.5
-    ],
-    [
-     "Jolly",
-     {
-      "hp": 8,
-      "atk": 26,
-      "def": 0,
-      "spa": 0,
-      "spd": 0,
-      "spe": 32
-     },
-     7.2
-    ],
-    [
-     "Jolly",
-     {
-      "hp": 0,
-      "atk": 32,
-      "def": 2,
-      "spa": 0,
-      "spd": 0,
-      "spe": 32
-     },
-     2.4
-    ]
-   ],
-   "cc": [],
    "rank": 111
   },
   {
    "name": "Espeon",
    "id": "Espeon",
-   "pct": 0.878,
+   "pct": 0.871,
    "win": 46.33,
    "games": 31,
    "pick": 36.2,
@@ -22403,7 +22407,7 @@
   {
    "name": "Sceptile",
    "id": "Sceptile",
-   "pct": 0.868,
+   "pct": 0.861,
    "win": 59.45,
    "games": 40,
    "pick": 42.4,
@@ -22599,7 +22603,7 @@
   {
    "name": "Toxtricity",
    "id": "Toxtricity",
-   "pct": 0.866,
+   "pct": 0.859,
    "win": 54.21,
    "games": 29,
    "pick": 39.4,
@@ -22706,7 +22710,7 @@
   {
    "name": "Tinkaton",
    "id": "Tinkaton",
-   "pct": 0.833,
+   "pct": 0.826,
    "win": 62.67,
    "games": 25,
    "pick": 34.4,
@@ -22904,7 +22908,7 @@
   {
    "name": "Heracross",
    "id": "Heracross",
-   "pct": 0.821,
+   "pct": 0.814,
    "win": 47.97,
    "games": 29,
    "pick": 45.8,
@@ -23070,7 +23074,7 @@
   {
    "name": "Overqwil",
    "id": "Overqwil",
-   "pct": 0.819,
+   "pct": 0.812,
    "win": 39.1,
    "games": 27,
    "pick": 34.5,
@@ -23282,7 +23286,7 @@
   {
    "name": "Feraligatr",
    "id": "Feraligatr",
-   "pct": 0.809,
+   "pct": 0.802,
    "win": 41.13,
    "games": 34,
    "pick": 57.9,
@@ -23464,7 +23468,7 @@
   {
    "name": "Basculegion-F",
    "id": "Basculegion-F",
-   "pct": 0.722,
+   "pct": 0.716,
    "win": 69.66,
    "games": 35,
    "pick": 38.6,
@@ -23658,7 +23662,7 @@
   {
    "name": "Orthworm",
    "id": "Orthworm",
-   "pct": 0.72,
+   "pct": 0.714,
    "win": 55.98,
    "games": 28,
    "pick": 59.9,
@@ -23848,7 +23852,7 @@
   {
    "name": "Persian-Alola",
    "id": "Persian-Alola",
-   "pct": 0.687,
+   "pct": 0.682,
    "win": 52.27,
    "games": 28,
    "pick": 59.4,
@@ -23942,7 +23946,7 @@
   {
    "name": "Pincurchin",
    "id": "Pincurchin",
-   "pct": 0.656,
+   "pct": 0.651,
    "win": 18.5,
    "games": 21,
    "pick": 56.8,
@@ -24047,7 +24051,7 @@
   {
    "name": "Slowking",
    "id": "Slowking",
-   "pct": 0.629,
+   "pct": 0.624,
    "win": 44.77,
    "games": 17,
    "pick": 49.3,
@@ -24253,7 +24257,7 @@
   {
    "name": "Conkeldurr",
    "id": "Conkeldurr",
-   "pct": 0.618,
+   "pct": 0.613,
    "win": 65.73,
    "games": 35,
    "pick": 38.6,
@@ -24457,7 +24461,7 @@
   {
    "name": "Altaria",
    "id": "Altaria",
-   "pct": 0.61,
+   "pct": 0.606,
    "win": 53.09,
    "games": 30,
    "pick": 24.3,
@@ -24640,7 +24644,7 @@
   {
    "name": "Polteageist",
    "id": "Polteageist",
-   "pct": 0.603,
+   "pct": 0.598,
    "win": 53.31,
    "games": 18,
    "pick": 35,
@@ -24819,7 +24823,7 @@
   {
    "name": "Kangaskhan",
    "id": "Kangaskhan",
-   "pct": 0.573,
+   "pct": 0.569,
    "win": 33.91,
    "games": 21,
    "pick": 49.8,
@@ -25010,7 +25014,7 @@
   {
    "name": "Maushold-Four",
    "id": "Maushold",
-   "pct": 0.572,
+   "pct": 0.567,
    "win": 11.44,
    "games": 18,
    "pick": 41.1,
@@ -25194,7 +25198,7 @@
   {
    "name": "Glalie",
    "id": "Glalie",
-   "pct": 0.565,
+   "pct": 0.561,
    "win": 53.34,
    "games": 19,
    "pick": 44.7,
@@ -25308,7 +25312,7 @@
   {
    "name": "Eelektross",
    "id": "Eelektross",
-   "pct": 0.559,
+   "pct": 0.554,
    "win": 17.12,
    "games": 21,
    "pick": 78.7,
@@ -25499,7 +25503,7 @@
   {
    "name": "Slowbro-Galar",
    "id": "Slowbro-Galar",
-   "pct": 0.545,
+   "pct": 0.54,
    "win": 39.33,
    "games": 25,
    "pick": 25.7,
@@ -25678,7 +25682,7 @@
   {
    "name": "Beedrill",
    "id": "Beedrill",
-   "pct": 0.527,
+   "pct": 0.523,
    "win": 42.44,
    "games": 18,
    "pick": 51.4,
@@ -25854,119 +25858,12 @@
    "rank": 132
   },
   {
-   "name": "Golurk",
-   "id": "Golurk",
-   "pct": 0.484,
-   "win": 39.95,
-   "games": 19,
-   "pick": 49.3,
-   "lead": 8.5,
-   "mega": 49.6,
-   "seen": 4.535990399572387,
-   "mv": [
-    [
-     201,
-     95.54
-    ],
-    [
-     224,
-     63.31
-    ],
-    [
-     317,
-     51.77
-    ],
-    [
-     116,
-     49.41
-    ],
-    [
-     122,
-     45.9
-    ],
-    [
-     73,
-     37.06
-    ],
-    [
-     327,
-     34.74
-    ],
-    [
-     124,
-     22.27
-    ]
-   ],
-   "it": [
-    [
-     "Golurkite",
-     100
-    ]
-   ],
-   "ab": [],
-   "tm": [
-    [
-     "Sneasler",
-     43.17,
-     "Sneasler"
-    ],
-    [
-     "Cinderace",
-     33.81,
-     "Cinderace"
-    ],
-    [
-     "Goodra-Hisui",
-     33.81,
-     "Goodra-Hisui"
-    ],
-    [
-     "Glimmora",
-     33.81,
-     "Glimmora"
-    ],
-    [
-     "Rillaboom",
-     33.81,
-     "Rillaboom"
-    ],
-    [
-     "Starmie",
-     24.28,
-     "Starmie"
-    ],
-    [
-     "Primarina",
-     24.09,
-     "Primarina"
-    ],
-    [
-     "Hatterene",
-     23.41,
-     "Hatterene"
-    ],
-    [
-     "Gengar",
-     20.83,
-     "Gengar"
-    ],
-    [
-     "Golisopod",
-     16.5,
-     "Golisopod"
-    ]
-   ],
-   "sp": [],
-   "cc": [],
-   "rank": 133
-  },
-  {
    "name": "Slowbro",
    "id": "Slowbro",
-   "pct": 0.476,
-   "win": 53.13,
-   "games": 17,
-   "pick": 32.7,
+   "pct": 0.508,
+   "win": 49.4,
+   "games": 18,
+   "pick": 30.4,
    "lead": 7.9,
    "mega": 86.1,
    "seen": 2.5485561654152606,
@@ -26069,53 +25966,53 @@
    "tm": [
     [
      "Garchomp",
-     65.72,
+     68.13,
      "Garchomp"
     ],
     [
      "Skeledirge",
-     36.24,
+     33.7,
      "Skeledirge"
     ],
     [
      "Toxapex",
-     29.17,
+     27.12,
      "Toxapex"
     ],
     [
      "Snorlax",
-     29.17,
+     27.12,
      "Snorlax"
     ],
     [
      "Corviknight",
-     29.17,
+     27.12,
      "Corviknight"
     ],
     [
      "Sableye",
-     29.17,
+     27.12,
      "Sableye"
     ],
     [
      "Salamence",
-     24.66,
+     22.93,
      "Salamence"
     ],
     [
      "Clefable",
-     22.13,
+     20.57,
      "Clefable"
     ],
     [
      "Inteleon",
-     22.13,
+     20.57,
      "Inteleon"
     ],
     [
-     "Metagross",
-     20.05,
-     "Metagross"
+     "Kingambit",
+     20.44,
+     "Kingambit"
     ]
    ],
    "sp": [
@@ -26169,12 +26066,210 @@
     ]
    ],
    "cc": [],
+   "rank": 133
+  },
+  {
+   "name": "Crabominable",
+   "id": "Crabominable",
+   "pct": 0.483,
+   "win": 71.49,
+   "games": 19,
+   "pick": 33.8,
+   "lead": 61,
+   "mega": 100,
+   "seen": 3.1256664479029803,
+   "mv": [
+    [
+     116,
+     100
+    ],
+    [
+     261,
+     100
+    ],
+    [
+     224,
+     46.69
+    ],
+    [
+     223,
+     33.32
+    ]
+   ],
+   "it": [
+    [
+     "Crabominite",
+     100
+    ]
+   ],
+   "ab": [],
+   "tm": [
+    [
+     "Garchomp",
+     67.27,
+     "Garchomp"
+    ],
+    [
+     "Mimikyu",
+     44.82,
+     "Mimikyu"
+    ],
+    [
+     "Starmie",
+     37.32,
+     "Starmie"
+    ],
+    [
+     "Archaludon",
+     37.32,
+     "Archaludon"
+    ],
+    [
+     "Volcarona",
+     27.62,
+     "Volcarona"
+    ],
+    [
+     "Corviknight",
+     17.02,
+     "Corviknight"
+    ],
+    [
+     "Rillaboom",
+     17.02,
+     "Rillaboom"
+    ],
+    [
+     "Primarina",
+     15.84,
+     "Primarina"
+    ],
+    [
+     "Golisopod",
+     15.53,
+     "Golisopod"
+    ],
+    [
+     "Cinderace",
+     14.23,
+     "Cinderace"
+    ]
+   ],
+   "sp": [],
+   "cc": [],
    "rank": 134
+  },
+  {
+   "name": "Golurk",
+   "id": "Golurk",
+   "pct": 0.48,
+   "win": 39.95,
+   "games": 19,
+   "pick": 49.3,
+   "lead": 8.5,
+   "mega": 49.6,
+   "seen": 4.535990399572387,
+   "mv": [
+    [
+     201,
+     95.54
+    ],
+    [
+     224,
+     63.31
+    ],
+    [
+     317,
+     51.77
+    ],
+    [
+     116,
+     49.41
+    ],
+    [
+     122,
+     45.9
+    ],
+    [
+     73,
+     37.06
+    ],
+    [
+     327,
+     34.74
+    ],
+    [
+     124,
+     22.27
+    ]
+   ],
+   "it": [
+    [
+     "Golurkite",
+     100
+    ]
+   ],
+   "ab": [],
+   "tm": [
+    [
+     "Sneasler",
+     43.17,
+     "Sneasler"
+    ],
+    [
+     "Cinderace",
+     33.81,
+     "Cinderace"
+    ],
+    [
+     "Goodra-Hisui",
+     33.81,
+     "Goodra-Hisui"
+    ],
+    [
+     "Glimmora",
+     33.81,
+     "Glimmora"
+    ],
+    [
+     "Rillaboom",
+     33.81,
+     "Rillaboom"
+    ],
+    [
+     "Starmie",
+     24.28,
+     "Starmie"
+    ],
+    [
+     "Primarina",
+     24.09,
+     "Primarina"
+    ],
+    [
+     "Hatterene",
+     23.41,
+     "Hatterene"
+    ],
+    [
+     "Gengar",
+     20.83,
+     "Gengar"
+    ],
+    [
+     "Golisopod",
+     16.5,
+     "Golisopod"
+    ]
+   ],
+   "sp": [],
+   "cc": [],
+   "rank": 135
   },
   {
    "name": "Pyroar",
    "id": "Pyroar",
-   "pct": 0.472,
+   "pct": 0.468,
    "win": 47.44,
    "games": 15,
    "pick": 40.9,
@@ -26352,12 +26447,12 @@
     ]
    ],
    "cc": [],
-   "rank": 135
+   "rank": 136
   },
   {
    "name": "Salazzle",
    "id": "Salazzle",
-   "pct": 0.462,
+   "pct": 0.458,
    "win": 51.12,
    "games": 18,
    "pick": 37.7,
@@ -26551,12 +26646,12 @@
     ]
    ],
    "cc": [],
-   "rank": 136
+   "rank": 137
   },
   {
    "name": "Vileplume",
    "id": "Vileplume",
-   "pct": 0.46,
+   "pct": 0.457,
    "win": 63.31,
    "games": 21,
    "pick": 31.4,
@@ -26742,12 +26837,12 @@
     ]
    ],
    "cc": [],
-   "rank": 137
+   "rank": 138
   },
   {
    "name": "Tauros-Paldea-Blaze",
    "id": "Tauros-Paldea-Combat",
-   "pct": 0.451,
+   "pct": 0.448,
    "win": 26.1,
    "games": 18,
    "pick": 13.1,
@@ -26930,12 +27025,12 @@
     ]
    ],
    "cc": [],
-   "rank": 138
+   "rank": 139
   },
   {
    "name": "Arcanine",
    "id": "Arcanine",
-   "pct": 0.447,
+   "pct": 0.443,
    "win": 65.87,
    "games": 14,
    "pick": 40.6,
@@ -27125,103 +27220,12 @@
     ]
    ],
    "cc": [],
-   "rank": 139
-  },
-  {
-   "name": "Crabominable",
-   "id": "Crabominable",
-   "pct": 0.442,
-   "win": 68.65,
-   "games": 18,
-   "pick": 37.2,
-   "lead": 61,
-   "mega": 100,
-   "seen": 3.1256664479029803,
-   "mv": [
-    [
-     116,
-     100
-    ],
-    [
-     261,
-     100
-    ],
-    [
-     224,
-     46.69
-    ],
-    [
-     223,
-     33.32
-    ]
-   ],
-   "it": [
-    [
-     "Crabominite",
-     100
-    ]
-   ],
-   "ab": [],
-   "tm": [
-    [
-     "Garchomp",
-     73.96,
-     "Garchomp"
-    ],
-    [
-     "Mimikyu",
-     49.27,
-     "Mimikyu"
-    ],
-    [
-     "Starmie",
-     41.03,
-     "Starmie"
-    ],
-    [
-     "Archaludon",
-     41.03,
-     "Archaludon"
-    ],
-    [
-     "Volcarona",
-     30.36,
-     "Volcarona"
-    ],
-    [
-     "Corviknight",
-     18.72,
-     "Corviknight"
-    ],
-    [
-     "Rillaboom",
-     18.72,
-     "Rillaboom"
-    ],
-    [
-     "Primarina",
-     17.41,
-     "Primarina"
-    ],
-    [
-     "Cinderace",
-     15.65,
-     "Cinderace"
-    ],
-    [
-     "Slowbro",
-     15.52,
-     "Slowbro"
-    ]
-   ],
-   "sp": [],
-   "cc": [],
    "rank": 140
   },
   {
    "name": "Glaceon",
    "id": "Glaceon",
-   "pct": 0.432,
+   "pct": 0.429,
    "win": 60.74,
    "games": 15,
    "pick": 18.2,
@@ -27404,7 +27408,7 @@
   {
    "name": "Luxray",
    "id": "Luxray",
-   "pct": 0.423,
+   "pct": 0.42,
    "win": 39.89,
    "games": 20,
    "pick": 60.2,
@@ -27517,7 +27521,7 @@
   {
    "name": "Sharpedo",
    "id": "Sharpedo",
-   "pct": 0.421,
+   "pct": 0.418,
    "win": 30.67,
    "games": 12,
    "pick": 40.1,
@@ -27688,7 +27692,7 @@
   {
    "name": "Lycanroc-Dusk",
    "id": "Lycanroc-Dusk",
-   "pct": 0.412,
+   "pct": 0.409,
    "win": 37.04,
    "games": 21,
    "pick": 63,
@@ -27813,7 +27817,7 @@
   {
    "name": "Infernape",
    "id": "Infernape",
-   "pct": 0.402,
+   "pct": 0.399,
    "win": 54.54,
    "games": 17,
    "pick": 53.7,
@@ -28012,7 +28016,7 @@
   {
    "name": "Rhyperior",
    "id": "Rhyperior",
-   "pct": 0.385,
+   "pct": 0.382,
    "win": 29.05,
    "games": 21,
    "pick": 52.1,
@@ -28115,7 +28119,7 @@
   {
    "name": "Gliscor",
    "id": "Gliscor",
-   "pct": 0.382,
+   "pct": 0.379,
    "win": 26.13,
    "games": 11,
    "pick": 39.6,
@@ -28331,7 +28335,7 @@
   {
    "name": "Klefki",
    "id": "Klefki",
-   "pct": 0.379,
+   "pct": 0.376,
    "win": 33.42,
    "games": 10,
    "pick": 58.6,
@@ -28525,7 +28529,7 @@
   {
    "name": "Raichu-Alola",
    "id": "Raichu-Alola",
-   "pct": 0.37,
+   "pct": 0.367,
    "win": 6.03,
    "games": 12,
    "pick": 40.6,
@@ -28630,7 +28634,7 @@
   {
    "name": "Scrafty",
    "id": "Scrafty",
-   "pct": 0.367,
+   "pct": 0.364,
    "win": 63.72,
    "games": 18,
    "pick": 47.5,
@@ -28804,7 +28808,7 @@
   {
    "name": "Bastiodon",
    "id": "Bastiodon",
-   "pct": 0.366,
+   "pct": 0.363,
    "win": 30.96,
    "games": 15,
    "pick": 56.6,
@@ -28895,9 +28899,126 @@
    "rank": 151
   },
   {
+   "name": "Drampa",
+   "id": "Drampa",
+   "pct": 0.347,
+   "win": 26.44,
+   "games": 11,
+   "pick": 58.2,
+   "lead": 0,
+   "mega": 59.6,
+   "seen": 3.86651507756326,
+   "mv": [
+    [
+     221,
+     78.21
+    ],
+    [
+     108,
+     70.79
+    ],
+    [
+     123,
+     66.65
+    ],
+    [
+     327,
+     62.48
+    ],
+    [
+     152,
+     39.04
+    ],
+    [
+     62,
+     27.61
+    ],
+    [
+     219,
+     27.61
+    ],
+    [
+     363,
+     27.61
+    ]
+   ],
+   "it": [
+    [
+     "Drampanite",
+     79.29
+    ],
+    [
+     "Focus Sash",
+     20.71
+    ]
+   ],
+   "ab": [
+    [
+     "Berserk",
+     100,
+     "발끈"
+    ]
+   ],
+   "tm": [
+    [
+     "Staraptor",
+     45.9,
+     "Staraptor"
+    ],
+    [
+     "Hatterene",
+     31.41,
+     "Hatterene"
+    ],
+    [
+     "Mimikyu",
+     29.09,
+     "Mimikyu"
+    ],
+    [
+     "Metagross",
+     28.12,
+     "Metagross"
+    ],
+    [
+     "Grimmsnarl",
+     23.81,
+     "Grimmsnarl"
+    ],
+    [
+     "Lopunny",
+     23.52,
+     "Lopunny"
+    ],
+    [
+     "Snorlax",
+     23.52,
+     "Snorlax"
+    ],
+    [
+     "Gengar",
+     23.52,
+     "Gengar"
+    ],
+    [
+     "Heliolisk",
+     19.3,
+     "Heliolisk"
+    ],
+    [
+     "Gholdengo",
+     19.27,
+     "Gholdengo"
+    ]
+   ],
+   "sp": [],
+   "cc": [],
+   "rank": 152
+  },
+  {
    "name": "Kommo-o",
    "id": "Kommo-o",
-   "pct": 0.349,
+   "pct": 0.346,
    "win": 51.18,
    "games": 11,
    "pick": 38.5,
@@ -29108,129 +29229,12 @@
     ]
    ],
    "cc": [],
-   "rank": 152
-  },
-  {
-   "name": "Drampa",
-   "id": "Drampa",
-   "pct": 0.349,
-   "win": 26.44,
-   "games": 11,
-   "pick": 58.2,
-   "lead": 0,
-   "mega": 59.6,
-   "seen": 3.86651507756326,
-   "mv": [
-    [
-     221,
-     78.21
-    ],
-    [
-     108,
-     70.79
-    ],
-    [
-     123,
-     66.65
-    ],
-    [
-     327,
-     62.48
-    ],
-    [
-     152,
-     39.04
-    ],
-    [
-     62,
-     27.61
-    ],
-    [
-     219,
-     27.61
-    ],
-    [
-     363,
-     27.61
-    ]
-   ],
-   "it": [
-    [
-     "Drampanite",
-     79.29
-    ],
-    [
-     "Focus Sash",
-     20.71
-    ]
-   ],
-   "ab": [
-    [
-     "Berserk",
-     100,
-     "발끈"
-    ]
-   ],
-   "tm": [
-    [
-     "Staraptor",
-     45.9,
-     "Staraptor"
-    ],
-    [
-     "Hatterene",
-     31.41,
-     "Hatterene"
-    ],
-    [
-     "Mimikyu",
-     29.09,
-     "Mimikyu"
-    ],
-    [
-     "Metagross",
-     28.12,
-     "Metagross"
-    ],
-    [
-     "Grimmsnarl",
-     23.81,
-     "Grimmsnarl"
-    ],
-    [
-     "Lopunny",
-     23.52,
-     "Lopunny"
-    ],
-    [
-     "Snorlax",
-     23.52,
-     "Snorlax"
-    ],
-    [
-     "Gengar",
-     23.52,
-     "Gengar"
-    ],
-    [
-     "Heliolisk",
-     19.3,
-     "Heliolisk"
-    ],
-    [
-     "Gholdengo",
-     19.27,
-     "Gholdengo"
-    ]
-   ],
-   "sp": [],
-   "cc": [],
    "rank": 153
   },
   {
    "name": "Krookodile",
    "id": "Krookodile",
-   "pct": 0.348,
+   "pct": 0.345,
    "win": 69.77,
    "games": 10,
    "pick": 29.3,
@@ -29421,7 +29425,7 @@
   {
    "name": "Vivillon",
    "id": "Vivillon",
-   "pct": 0.346,
+   "pct": 0.343,
    "win": 66.56,
    "games": 16,
    "pick": 66.5,
@@ -29600,7 +29604,7 @@
   {
    "name": "Chesnaught",
    "id": "Chesnaught",
-   "pct": 0.339,
+   "pct": 0.336,
    "win": 46.41,
    "games": 10,
    "pick": 45.3,
@@ -29774,7 +29778,7 @@
   {
    "name": "Noivern",
    "id": "Noivern",
-   "pct": 0.338,
+   "pct": 0.335,
    "win": 0,
    "games": 12,
    "pick": 55.4,
@@ -29970,7 +29974,7 @@
   {
    "name": "Slurpuff",
    "id": "Slurpuff",
-   "pct": 0.327,
+   "pct": 0.324,
    "win": 51.19,
    "games": 12,
    "pick": 61.4,
@@ -30073,7 +30077,7 @@
   {
    "name": "Wigglytuff",
    "id": "Wigglytuff",
-   "pct": 0.317,
+   "pct": 0.315,
    "win": 14.63,
    "games": 11,
    "pick": 18.7,
@@ -30164,7 +30168,7 @@
   {
    "name": "Toucannon",
    "id": "Toucannon",
-   "pct": 0.315,
+   "pct": 0.313,
    "win": 49.17,
    "games": 9,
    "pick": 44.5,
@@ -30267,7 +30271,7 @@
   {
    "name": "Goodra",
    "id": "Goodra",
-   "pct": 0.305,
+   "pct": 0.302,
    "win": 60.61,
    "games": 10,
    "pick": 44.4,
@@ -30354,7 +30358,7 @@
   {
    "name": "Pikachu",
    "id": "Pikachu",
-   "pct": 0.302,
+   "pct": 0.3,
    "win": 48.64,
    "games": 8,
    "pick": 11.4,
@@ -30428,7 +30432,7 @@
   {
    "name": "Barbaracle",
    "id": "Barbaracle",
-   "pct": 0.274,
+   "pct": 0.272,
    "win": 14.99,
    "games": 16,
    "pick": 18.8,
@@ -30602,7 +30606,7 @@
   {
    "name": "Swalot",
    "id": "Swalot",
-   "pct": 0.271,
+   "pct": 0.269,
    "win": 32.54,
    "games": 9,
    "pick": 44.4,
@@ -30701,7 +30705,7 @@
   {
    "name": "Garganacl",
    "id": "Garganacl",
-   "pct": 0.265,
+   "pct": 0.262,
    "win": 20.37,
    "games": 8,
    "pick": 23.2,
@@ -30905,7 +30909,7 @@
   {
    "name": "Houndoom",
    "id": "Houndoom",
-   "pct": 0.26,
+   "pct": 0.258,
    "win": 74.64,
    "games": 12,
    "pick": 23.6,
@@ -31080,7 +31084,7 @@
   {
    "name": "Perrserker",
    "id": "Perrserker",
-   "pct": 0.257,
+   "pct": 0.255,
    "win": 71.99,
    "games": 10,
    "pick": 40.6,
@@ -31175,7 +31179,7 @@
   {
    "name": "Forretress",
    "id": "Forretress",
-   "pct": 0.253,
+   "pct": 0.251,
    "win": 38.65,
    "games": 10,
    "pick": 76.8,
@@ -31282,7 +31286,7 @@
   {
    "name": "Typhlosion-Hisui",
    "id": "Typhlosion-Hisui",
-   "pct": 0.247,
+   "pct": 0.245,
    "win": 48.46,
    "games": 8,
    "pick": 30.6,
@@ -31360,7 +31364,7 @@
   {
    "name": "Farfetch’d",
    "id": "Farfetch'd",
-   "pct": 0.243,
+   "pct": 0.241,
    "win": 39.9,
    "games": 8,
    "pick": 46.9,
@@ -31439,7 +31443,7 @@
   {
    "name": "Rotom-Mow",
    "id": "Rotom-Mow",
-   "pct": 0.239,
+   "pct": 0.237,
    "win": 48.11,
    "games": 9,
    "pick": 69.5,
@@ -31625,7 +31629,7 @@
   {
    "name": "Jolteon",
    "id": "Jolteon",
-   "pct": 0.237,
+   "pct": 0.236,
    "win": 20.54,
    "games": 10,
    "pick": 54.7,
@@ -31715,7 +31719,7 @@
   {
    "name": "Avalugg",
    "id": "Avalugg",
-   "pct": 0.21,
+   "pct": 0.209,
    "win": 17.32,
    "games": 8,
    "pick": 0,
@@ -31784,7 +31788,7 @@
   {
    "name": "Hydrapple",
    "id": "Hydrapple",
-   "pct": 0.204,
+   "pct": 0.203,
    "win": 16.07,
    "games": 8,
    "pick": 63.9,
@@ -31992,7 +31996,7 @@
   {
    "name": "Emboar",
    "id": "Emboar",
-   "pct": 0.202,
+   "pct": 0.201,
    "win": 30.13,
    "games": 9,
    "pick": 43.1,
@@ -32089,7 +32093,7 @@
   {
    "name": "Pinsir",
    "id": "Pinsir",
-   "pct": 0.19,
+   "pct": 0.188,
    "win": 43.95,
    "games": 9,
    "pick": 16.6,
@@ -32260,7 +32264,7 @@
   {
    "name": "Falinks",
    "id": "Falinks",
-   "pct": 0.187,
+   "pct": 0.186,
    "win": 45.62,
    "games": 8,
    "pick": 58.1,
@@ -32343,7 +32347,7 @@
   {
    "name": "Torterra",
    "id": "Torterra",
-   "pct": 0.177,
+   "pct": 0.175,
    "win": 34.55,
    "games": 8,
    "pick": 26.9,
@@ -32430,7 +32434,7 @@
   {
    "name": "Flareon",
    "id": "Flareon",
-   "pct": 0.138,
+   "pct": 0.137,
    "win": 100,
    "games": 8,
    "pick": 28.3,
@@ -32563,7 +32567,7 @@
   {
    "name": "Stunfisk",
    "id": "Stunfisk",
-   "pct": 0.13,
+   "pct": 0.129,
    "win": 32.14,
    "games": 9,
    "pick": 100,
@@ -32625,10 +32629,196 @@
    "rank": 180
   }
  ],
+ "combos": {
+  "bring": [
+   [
+    [
+     "Archaludon",
+     "Pelipper",
+     "Swampert"
+    ],
+    11.98,
+    36.3,
+    669
+   ],
+   [
+    [
+     "Archaludon",
+     "Salamence",
+     "Swampert"
+    ],
+    4.67,
+    53.9,
+    261
+   ],
+   [
+    [
+     "Froslass",
+     "Rotom-Wash",
+     "Sneasler"
+    ],
+    2.94,
+    19.6,
+    164
+   ],
+   [
+    [
+     "Archaludon",
+     "Meowscarada",
+     "Salamence"
+    ],
+    1.67,
+    36.7,
+    93
+   ],
+   [
+    [
+     "Archaludon",
+     "Salamence",
+     "Sneasler"
+    ],
+    1.36,
+    19,
+    76
+   ],
+   [
+    [
+     "Empoleon",
+     "Garchomp",
+     "Gyarados"
+    ],
+    1.31,
+    85.7,
+    73
+   ],
+   [
+    [
+     "Archaludon",
+     "Pelipper",
+     "Salamence"
+    ],
+    1.13,
+    33,
+    63
+   ],
+   [
+    [
+     "Archaludon",
+     "Meowscarada",
+     "Swampert"
+    ],
+    0.77,
+    21.4,
+    43
+   ],
+   [
+    [
+     "Meowscarada",
+     "Salamence",
+     "Sneasler"
+    ],
+    0.54,
+    44.6,
+    30
+   ],
+   [
+    [
+     "Meowscarada",
+     "Salamence",
+     "Swampert"
+    ],
+    0.45,
+    30.3,
+    25
+   ]
+  ],
+  "lead": [
+   [
+    [
+     "Archaludon"
+    ],
+    14.18,
+    56.8,
+    792
+   ],
+   [
+    [
+     "Pelipper"
+    ],
+    7.34,
+    43.1,
+    410
+   ],
+   [
+    [
+     "Salamence"
+    ],
+    5.34,
+    44.4,
+    298
+   ],
+   [
+    [
+     "Swampert"
+    ],
+    4.96,
+    55.6,
+    277
+   ],
+   [
+    [
+     "Garchomp"
+    ],
+    4.39,
+    41.9,
+    245
+   ],
+   [
+    [
+     "Froslass"
+    ],
+    4.1,
+    47.6,
+    229
+   ],
+   [
+    [
+     "Meowscarada"
+    ],
+    3.24,
+    40.9,
+    181
+   ],
+   [
+    [
+     "Glimmora"
+    ],
+    2.69,
+    48,
+    150
+   ],
+   [
+    [
+     "Sneasler"
+    ],
+    2.26,
+    34.2,
+    126
+   ],
+   [
+    [
+     "Primarina"
+    ],
+    2.24,
+    40.7,
+    125
+   ]
+  ]
+ },
  "meta": {
-  "source": "Showdown gen9championsbssregmc 2026-09-01~ 공개 대전 2773판 (레이팅 중앙값 1086, 같은 파티 반복은 가중치 낮춤) + Smogon gen9championsbssregmb 2026-08 1630",
-  "fetched": "2026-09-29T00:32:16.444Z",
-  "battles": 2773,
+  "source": "Showdown gen9championsbssregmc 2026-09-01~ 공개 대전 2792판 (레이팅 중앙값 1086, 같은 파티 반복은 가중치 낮춤) + Smogon gen9championsbssregmb 2026-08 1630",
+  "fetched": "2026-09-29T05:46:57.903Z",
+  "battles": 2792,
   "since": "2026-09-01",
   "smogon": {
    "month": "2026-08",

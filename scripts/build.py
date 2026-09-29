@@ -319,7 +319,17 @@ tpl = open(os.path.join(HERE, 'template.html'), encoding='utf-8').read()
 sgp = os.path.join(ROOT, 'data', 'pokechamps_mc_singles.json')
 sg = json.load(open(sgp, encoding='utf-8')) if os.path.exists(sgp) else None
 if sg:
-    sg = dict(meta=sg['meta'], usage=[{k: u[k] for k in ('rank', 'name', 'id', 'pct', 'win', 'games', 'pick', 'lead', 'mega', 'mv', 'it', 'ab', 'tm', 'sp', 'cc')} for u in sg['usage']])
+    sg = dict(meta=sg['meta'], combos=sg.get('combos'), usage=[{k: u[k] for k in ('rank', 'name', 'id', 'pct', 'win', 'games', 'pick', 'lead', 'mega', 'mv', 'it', 'ab', 'tm', 'sp', 'cc')} for u in sg['usage']])
+# 더블: 쇼다운 VGC M-C 대전 기록에서 자주 나온 선봉 2마리·선출 4마리 (scripts/fetch_bss_replays.mjs … gen9championsvgc2026regmc)
+vgp = os.path.join(ROOT, 'raw', 'pchamps_vgc_mc.json')
+if os.path.exists(vgp):
+    VG = json.load(open(vgp, encoding='utf-8'))
+    def vid(n):  # 쇼다운 이름 → 도감 id (사용률 매칭과 같은 ek)
+        e = ek(n)
+        return (e['parent'] if e.get('mega') else e['id']) if e else n
+    cores['d'] = {'lead': [[[vid(x) for x in c[0]], c[1], c[2], c[3]] for c in VG['combos']['lead'][:10]],
+                  'bring': [[[vid(x) for x in c[0]], c[1], c[2], c[3]] for c in VG['combos']['bring'][:10]],
+                  'battles': VG['battles'], 'since': VG['since']}
 html = (tpl.replace('/*DATA*/null', json.dumps(out, ensure_ascii=False, separators=(',', ':'))).replace('/*CORES*/null', json.dumps(cores, ensure_ascii=False))
         .replace('/*SINGLES*/null', json.dumps(sg, ensure_ascii=False, separators=(',', ':'))))
 with open(os.path.join(ROOT, 'site', 'dex.html'), 'w', encoding='utf-8', newline='\n') as f:

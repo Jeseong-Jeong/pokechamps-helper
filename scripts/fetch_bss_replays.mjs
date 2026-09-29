@@ -1,15 +1,19 @@
-// 싱글(BSS Reg M-C) 사용률: Pikalytics·Smogon 월간 통계에 아직 없어서 쇼다운 공개 대전 기록을 직접 모아 집계
-// 사용법: node scripts/fetch_bss_replays.mjs [시작일 YYYY-MM-DD]
-//   raw/_cache/bss/ 에 받은 기록을 저장해 두므로 다시 돌리면 새 기록만 받음 → raw/pchamps_bss_mc.json
+// 쇼다운 공개 대전 기록을 직접 모아 집계 (싱글 사용률은 Pikalytics·Smogon 월간 통계에 아직 없어서, 더블은 선봉·선출 조합용)
+// 사용법: node scripts/fetch_bss_replays.mjs [시작일 YYYY-MM-DD] [형식] [결과 파일]
+//   기본: 싱글 gen9championsbssregmc → raw/pchamps_bss_mc.json (캐시 raw/_cache/bss/)
+//   더블: node scripts/fetch_bss_replays.mjs 2026-09-01 gen9championsvgc2026regmc raw/pchamps_vgc_mc.json (캐시 raw/_cache/<형식>/)
+//   받은 기록은 캐시에 저장해 두므로 다시 돌리면 새 기록만 받음
 // 기록에서 알 수 있는 것: 파티 6마리(팀 미리보기), 실제로 낸 3마리·선봉, 쓴 기술, 드러난 도구·특성, 메가진화, 승패
 import {mkdirSync, existsSync, readFileSync, writeFileSync, readdirSync} from 'node:fs';
 import {join, dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const FORMAT = 'gen9championsbssregmc';
+const FORMAT = process.argv[3] || 'gen9championsbssregmc';
+const OUTFILE = process.argv[4] || 'raw/pchamps_bss_mc.json';
+const DOUBLES = /vgc|doubles/.test(FORMAT), NBRING = DOUBLES ? 4 : 3, NLEAD = DOUBLES ? 2 : 1;
 const SINCE = new Date((process.argv[2] || '2026-09-01') + 'T00:00:00Z').getTime() / 1000;
-const CACHE = join(ROOT, 'raw', '_cache', 'bss');
+const CACHE = join(ROOT, 'raw', '_cache', FORMAT === 'gen9championsbssregmc' ? 'bss' : FORMAT);
 mkdirSync(CACHE, {recursive: true});
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
@@ -68,11 +72,13 @@ const files = readdirSync(CACHE);
 for (const f of files) { const R = JSON.parse(readFileSync(join(CACHE, f), 'utf8')); if (R.uploadtime >= SINCE) for (const k of teamKey(R.log)) teamFreq[k] = (teamFreq[k] || 0) + 1; }
 const rateW = r => 0.6 + 0.6 * Math.min(1, Math.max(0, ((r || 1000) - 1000) / 300));
 let weightTotal = 0;
+const combos = {bring: {}, lead: {}};
 for (const f of files) {
   const R = JSON.parse(readFileSync(join(CACHE, f), 'utf8'));
   if (R.uploadtime < SINCE) continue;
   const L = R.log.split('\n');
-  const names = {}, team = {p1: [], p2: []}, nick = {}, brought = {p1: new Set(), p2: new Set()}, lead = {};
+  const names = {}, team = {p1: [], p2: []}, nick = {}, brought = {p1: new Set(), p2: new Set()}, lead = {p1: new Set(), p2: new Set()};
+  let started = false;  // 1턴 전에 나온 포켓몬 = 선봉 (싱글 1마리, 더블 2마리)
   const per = {};   // 'p1|Species' → 이번 판에서 드러난 것
   const P = (side, s) => (per[side + '|' + s] ||= {mv: new Set(), it: null, ab: null, mega: null});
   const who = ref => { const m = /^(p[12])[ab]?: (.*)$/.exec((ref || '').trim()); return m ? [m[1], nick[m[1] + '|' + m[2]]] : [null, null]; };
@@ -89,7 +95,7 @@ for (const f of files) {
       const s = p[3].split(',')[0].trim();
       const base = team[side].find(t => s === t || s.startsWith(t + '-')) || s;  // 메가 모습 → 파티 이름
       nick[side + '|' + nk] = base;
-      if (!lead[side]) lead[side] = base;
+      if (!started) lead[side].add(base);
       brought[side].add(base);
     } else if (cmd === 'detailschange' || cmd === '-mega') {
       const [side, s] = who(p[2]);
@@ -119,6 +125,7 @@ for (const f of files) {
         if (side && s) { if (it && !ofRef(rest)) P(side, s).it = it; if (ab && cmd !== '-item') P(side, s).ab = ab; }
       }
     }
+    if (cmd === 'turn') started = true;
     if (cmd === 'win') winner = p[2];
   }
   if (team.p1.length !== 6 || team.p2.length !== 6 || !brought.p1.size || !brought.p2.size) continue;
@@ -129,12 +136,16 @@ for (const f of files) {
     const won = winner && names[side] === winner;
     const w = rateW(R.rating) / Math.sqrt(teamFreq[keys[side === 'p1' ? 0 : 1]] || 1);
     weightTotal += w;
+    // 조합: 실제로 데려온 포켓몬들 / 선봉
+    const addC = (tab, set) => { const k = [...set].sort().join('|'); const c = tab[k] ||= {w: 0, win: 0, n: 0}; c.w += w; c.n++; if (won) c.win += w; };
+    if (brought[side].size === NBRING) addC(combos.bring, brought[side]);  // 기권 등으로 덜 나온 판은 빼고
+    if (lead[side].size === NLEAD) addC(combos.lead, lead[side]);
     for (const s of team[side]) {
       const e = sp(s);
       e.teams += w; e.n = (e.n || 0) + 1; if (won) e.wins += w;
       for (const t of team[side]) if (t !== s) inc(e.tm, t, w);
       if (brought[side].has(s)) { e.brought += w; if (won) e.broughtWins += w; }
-      if (lead[side] === s) e.leads += w;
+      if (lead[side].has(s)) e.leads += w;
       const x = per[side + '|' + s];
       if (!x) continue;
       if (x.mega && !x.it) x.it = x.mega;  // 메가진화 = 메가스톤 확인
@@ -147,8 +158,12 @@ for (const f of files) {
   }
 }
 ratings.sort((a, b) => a - b);
+// 자주 나온 조합 상위 40개: [포켓몬들, 비율 %, 그 조합의 승률 %, 판 수]
+//   '자주 보이는' 조합이 목적이라 가중치 없이 실제로 나온 횟수 순 (같은 파티 반복도 그대로 셈)
+const topC = tab => Object.entries(tab).filter(([k, c]) => c.n >= 8).sort((a, b) => b[1].n - a[1].n).slice(0, 40)
+  .map(([k, c]) => [k.split('|'), +(100 * c.n / Math.max(1, battles * 2)).toFixed(2), +(100 * c.win / c.w).toFixed(1), c.n]);
 const out = {fetched: new Date().toISOString(), format: FORMAT, since: new Date(SINCE * 1000).toISOString().slice(0, 10), battles, weightTotal,
              topTeamShare: Math.max(...Object.values(teamFreq)) / Math.max(1, battles * 2),
-             ratingMedian: ratings[ratings.length >> 1] || 0, species: S};
-writeFileSync(join(ROOT, 'raw', 'pchamps_bss_mc.json'), JSON.stringify(out));
+             ratingMedian: ratings[ratings.length >> 1] || 0, species: S, combos: {bring: topC(combos.bring), lead: topC(combos.lead)}};
+writeFileSync(join(ROOT, OUTFILE), JSON.stringify(out));
 console.log('집계', battles, '판 · 포켓몬', Object.keys(S).length, '· 레이팅 중앙값', out.ratingMedian);

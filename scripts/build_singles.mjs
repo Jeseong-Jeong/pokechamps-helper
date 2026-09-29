@@ -118,7 +118,10 @@ for (const [name, s] of Object.entries(R.species)) {
 }
 usage.sort((a, b) => b.pct - a.pct);
 usage.forEach((u, i) => { u.rank = i + 1; });
-const out = {mode: 'singles', usage,
+// 자주 선출되는 3마리 / 선봉 (쇼다운 기록에서 실제로 데려온 조합, 나온 횟수 순)
+const mapCombo = list => (list || []).map(([names, share, win, n]) => [names.map(x => { const i = idOf(x); return i ? baseOf(i) : x; }), share, win, n]);
+const combos = R.combos ? {bring: mapCombo(R.combos.bring).slice(0, 10), lead: mapCombo(R.combos.lead).slice(0, 10)} : null;
+const out = {mode: 'singles', usage, combos,
   meta: {source: `Showdown ${R.format} ${R.since}~ 공개 대전 ${R.battles}판 (레이팅 중앙값 ${R.ratingMedian}, 같은 파티 반복은 가중치 낮춤) + Smogon ${G.format || '-'} ${G.month || ''} ${G.rating || ''}`,
          fetched: R.fetched, battles: R.battles, since: R.since, smogon: G.month ? {month: G.month, format: G.format, rating: G.rating, battles: G.battles} : null}};
 writeFileSync(join(ROOT, 'data', 'pokechamps_mc_singles.json'), JSON.stringify(out, null, 1));
