@@ -47,9 +47,25 @@ function page(file, data, swaps = []) {
 
 page('doubles.html', {...common, mode: 'doubles', usage: slimUsage(D.usage), meta: D.meta});
 
+// 첫 화면(site/index.html)의 '마지막 업데이트' 칸: 빌드 날짜 + 지금 데이터의 레귤레이션·사용률 수집일
+function stampIndex(singlesMeta) {
+  const p = rel('site/index.html');
+  if (!existsSync(p)) return;
+  const d = new Date(), pad = n => String(n).padStart(2, '0');
+  const today = `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+  const day = s => (s ? String(s).slice(0, 10) : '-');
+  const chips = [`<span>마지막 업데이트 <b>${today}</b></span>`, `<span>현재 레귤레이션 <b>M-C</b></span>`,
+    `<span>더블 사용률 <b>${day(D.meta.pfetched)}</b></span>`];
+  if (singlesMeta) chips.push(`<span>싱글 사용률 <b>${day(singlesMeta.fetched)}</b></span>`);
+  const html = readFileSync(p, 'utf8').replace(/<!--UPDATED-->[\s\S]*?<!--\/UPDATED-->/, `<!--UPDATED-->${chips.join('')}<!--/UPDATED-->`);
+  writeFileSync(p, html);
+}
+
+let singlesMeta = null;
 if (existsSync(rel('data/pokechamps_mc_singles.json'))) {
   const G = JSON.parse(readFileSync(rel('data/pokechamps_mc_singles.json'), 'utf8'));
   const m = G.meta;
+  singlesMeta = m;
   page('singles.html', {...common, mode: 'singles', usage: slimUsage(G.usage), meta: {...D.meta, singles: m}}, [
     ['<title>더블배틀 · 포챔스 배틀 도우미</title>', '<title>싱글배틀 · 포챔스 배틀 도우미</title>'],
     ['<h1>더블배틀<small>레귤레이션 M-C · 2 대 2, 6마리 중 4마리 선출 · 추천만 하고 조작은 직접</small></h1>', '<h1>싱글배틀<small>레귤레이션 M-C · 1 대 1, 6마리 중 3마리 선출 · 추천만 하고 조작은 직접</small></h1>'],
@@ -61,3 +77,4 @@ if (existsSync(rel('data/pokechamps_mc_singles.json'))) {
      `쇼다운 싱글 M-C(BSS Reg M-C) 공개 대전 ${m.battles}판(${m.since}~)을 직접 모은 사용률·선출률·선봉률과, <a href="https://www.smogon.com/stats/" target="_blank" rel="noopener">Smogon 통계</a>(${m.smogon ? m.smogon.month + ' ' + m.smogon.format : '-'})의 능력치 배분·기술·도구입니다.`],
   ]);
 }
+stampIndex(singlesMeta);
