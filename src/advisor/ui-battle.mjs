@@ -446,7 +446,8 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
     }).join('');
     return `<div class="turnres">
       <h3>${S.turn}턴 결과 기록 <span class="mini">— 내 쪽은 추천 1순위, 상대 쪽은 예상 행동으로 미리 채워져 있어요. 실제와 다른 곳만 고치고 남은 HP를 적은 뒤 저장하세요</span></h3>
-      <div class="rcols"><div><h4>상대</h4>${oppRows}</div><div><h4>나</h4>${myRows}</div></div>
+      <div class="rside opp"><h4>상대</h4><div class="rpair${SINGLE ? ' single' : ''}">${oppRows}</div></div>
+      <div class="rside me"><h4>나</h4><div class="rpair${SINGLE ? ' single' : ''}">${myRows}</div></div>
       <button class="btn primary" data-f="rsave">결과 저장 → ${S.turn + 1}턴</button>
     </div>`;
   }

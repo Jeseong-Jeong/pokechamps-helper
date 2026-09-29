@@ -133,7 +133,8 @@ function bestSwitch(b, brain, req) {
 function trace(b, brain, st, R, c, what) {
   const d = R.defense[0];
   const alt = R.top.filter(x => x !== c).slice(0, 2).map(x => `${x.acts[0].kind}:${x.acts[0].move || (R.bench[x.acts[0].to] || {}).id || ''} ${x.score.toFixed(2)}`).join(', ');
-  brain.trace.push(`T${b.turn} ${byId[st.me[0].set.id].ko}(${st.me[0].hpPct}%) vs ${byId[st.opp[0].id].ko}(${st.opp[0].hpPct}%): ${what} ${c.score.toFixed(2)} | 대안 ${alt} | 상대예측 ${R.oppPred[0] && R.oppPred[0].move} 교체${Math.round(((d && d.pS) || 0) * 100)}%`);
+  const ko = id => (byId[id] ? byId[id].ko : id);
+  brain.trace.push(`T${b.turn} ${ko(st.me[0].set.id)}(${st.me[0].hpPct}%) vs ${ko(st.opp[0].id)}(${st.opp[0].hpPct}%): ${what} ${c.score.toFixed(2)} | 대안 ${alt} | 상대예측 ${R.oppPred[0] && R.oppPred[0].move} 교체${Math.round(((d && d.pS) || 0) * 100)}%`);
 }
 function botChoice(b, brain, req, stats) {
   if (req.forceSwitch) {

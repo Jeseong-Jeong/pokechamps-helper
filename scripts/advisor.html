@@ -305,9 +305,16 @@ label.chk input{margin:0}
 @media (max-width:720px){.bt-grids{grid-template-columns:1fr}}
 .turnres{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}
 .turnres h3 .mini{font-weight:400}
-.rcols{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media (max-width:720px){.rcols{grid-template-columns:1fr}}
-.rrow{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:6px 0;border-top:1px dashed var(--line)}
+/* 턴 결과 기록: 배틀 판처럼 위 상대 / 아래 나, 한 줄에 두 마리 */
+.rside{margin-top:8px;padding:8px 10px;border-radius:10px}
+.rside.opp{background:color-mix(in srgb,var(--bad) 7%,var(--surface))}
+.rside.me{background:color-mix(in srgb,var(--accent) 7%,var(--surface))}
+.rside h4{margin:0 0 4px}
+.rpair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.rpair.single{grid-template-columns:1fr}
+@media (max-width:720px){.rpair{grid-template-columns:1fr}}
+.rrow{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:6px 0;align-content:flex-start}
+.rpair .rrow+.rrow{border-top:0}
 .rrow b{min-width:80px}
 .rrow label{flex-direction:row;align-items:center;gap:4px}
 .rrow input[type=number]{width:58px;padding:3px 5px}
