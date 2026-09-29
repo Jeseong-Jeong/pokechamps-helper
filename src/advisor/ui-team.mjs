@@ -53,7 +53,7 @@ export function initTeam({M, T, ty, esc, $, findMon, onSendToCalc, onChange}) {
   function slot(i, set) {
     if (!set) {
       return `<div class="slot empty">
-        <input class="pick" list="mon-list" data-k="add" placeholder="${i === ids.length ? '포켓몬 추가 (이름 검색)' : ''}" aria-label="팀 ${i + 1}번 추가" autocomplete="off"${i === ids.length ? '' : ' disabled'}>
+        <input class="pick" list="base-list" data-k="add" placeholder="${i === ids.length ? '포켓몬 추가 (이름 검색)' : ''}" aria-label="팀 ${i + 1}번 추가" autocomplete="off"${i === ids.length ? '' : ' disabled'}>
       </div>`;
     }
     const base = byId[set.baseId], e = byId[set.id];

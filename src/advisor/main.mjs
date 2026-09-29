@@ -68,6 +68,8 @@ const rankOf = Object.fromEntries(DATA.usage.map(u => [u.id, u.rank]));
 const useRank = e => rankOf[e.mega ? e.parent : e.id] || 999;
 const sortedEntries = [...DATA.entries].sort((a, b) => useRank(a) - useRank(b) || !!a.mega - !!b.mega || a.no - b.no);
 $('mon-list').innerHTML = sortedEntries.map(e => `<option value="${esc(label(e))}">`).join('');
+// 팀·상대 입력용: 메가진화 전 모습만 (팀 미리보기에는 메가 전 모습만 보이고, 메가는 메가스톤으로 정해짐)
+$('base-list').innerHTML = sortedEntries.filter(e => !e.mega).map(e => `<option value="${esc(label(e))}">`).join('');
 function findMon(v) {
   v = v.trim();
   return labelMap.get(v) || labelMap.get(v.toLowerCase()) || null;

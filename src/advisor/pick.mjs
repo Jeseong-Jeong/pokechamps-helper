@@ -101,6 +101,13 @@ export function createPickAdvisor(M, T) {
   const isMega = s => s.baseId && s.id !== s.baseId;
   // 메가 세트의 "메가진화 안 한" 모습 (메가스톤 대신 다음 순위 도구)
   const unMega = s => ({...M.defaultSet(s.baseId), baseId: s.baseId});
+  // 상대마다 메가진화할 확률 (메가 세트로 가정한 상대만, 아니면 null)
+  const STONE_RE = /ite( [XYZ])?$/;
+  const stoneRate = id => { const u = M.usageOf(byId[id]); return u ? Math.min(1, u.it.filter(([n]) => STONE_RE.test(n) && n !== 'Eviolite').reduce((a, [, p]) => a + p, 0) / 100) : 0; };
+  function oppMegaOdds(oppIds, opp) {
+    const st = oppIds.map(stoneRate), tot = st.reduce((a, b) => a + b, 0);
+    return opp.map((s, j) => (isMega(s) ? Math.min(1, st[j] / Math.max(1, 1 + (tot - st[j]) * PICK / 6)) : null));
+  }
   const TR_WEIGHT = 0.6;  // 트릭룸 담당을 데려가면 게임의 60% 정도를 트릭룸 아래에서 싸운다고 봄
   const PROTECT_TR = ['fakeout', 'redirect'];
 
@@ -123,9 +130,24 @@ export function createPickAdvisor(M, T) {
     const arch = M.doubles ? archetypeD(oppIds) : archetype(oppIds);
     const plan = teamPlan(mineSets);
     // 상황별 상성표: 날씨·필드 담당을 데려갔을 때(W) / 안 데려갔을 때(0), 메가 세트는 메가 안 한 모습(B)도
+    // 상대 메가진화: 팀 미리보기에서는 누가 메가진화할지 모름 → 메가 확률로 메가 모습·원래 모습 칸 값을 섞음
+    //   확률 = 메가스톤 채용률 ÷ (1 + 다른 메가 후보들의 채용률 × 선출될 비율)  (한 배틀에 한 마리만 메가)
+    const oppMega = oppMegaOdds(oppIds, opp);
+    const megaCols = opp.map((s, j) => j).filter(j => oppMega[j] != null);
+    const blend = (list, ctx) => {
+      const full = matrix(list, opp, ctx);
+      if (!megaCols.length) return full;
+      const bm = matrix(list, megaCols.map(j => unMega(opp[j])), ctx);
+      return full.map((row, i) => row.map((c, j) => {
+        const n = megaCols.indexOf(j);
+        if (n < 0) return c;
+        const b = bm[i][n], p = oppMega[j];
+        return {...c, v: p * c.v + (1 - p) * b.v, pMega: p, base: b};
+      }));
+    };
     const build = ctx => {
-      const X = matrix(mineSets, opp, ctx);
-      const XB = mineSets.map((s, i) => (isMega(s) ? matrix([unMega(s)], opp, ctx)[0] : X[i]));
+      const X = blend(mineSets, ctx);
+      const XB = mineSets.map((s, i) => (isMega(s) ? blend([unMega(s)], ctx)[0] : X[i]));
       return {X, XB};
     };
     const C0 = build({});
@@ -195,7 +217,7 @@ export function createPickAdvisor(M, T) {
     if (!top) return {opp, X: C0.X, weights: w, picks: [], leads: [], threats: [], plan, arch};
     const L = M.doubles ? leads(top, mineSets, w, plan) : leadsS(top, mineSets, oppIds);
     return {
-      opp, X: C0.X, weights: w, plan, arch, picks: picks.slice(0, 3), leads: L, oppLeads: M.doubles ? null : oppLeadOdds(oppIds),
+      opp, X: C0.X, weights: w, plan, arch, oppMega, picks: picks.slice(0, 3), leads: L, oppLeads: M.doubles ? null : oppLeadOdds(oppIds),
       threats: threats(top.rows, opp, top.idx),
       answers: answers(top, opp),
       dangers: dangers(top, opp, mineSets),
@@ -375,12 +397,12 @@ export function createPickAdvisor(M, T) {
     const vsLead = likely.map(({j, p}) => {
       const c = top.noTR[a][j];
       const how = c.off.move ? `${M.moveKo(c.off.move)} ${c.off.pct >= 100 ? '한 방' : c.off.pct.toFixed(0) + '%'}` : '';
-      return `${byId[opp[j].id].ko}(${Math.round(p * 100)}%)${how ? ' → ' + how : ''}${c.v < 0 ? ' — 불리, 교체 고려' : ''}`;
+      return `${byId[opp[j].baseId || opp[j].id].ko}(${Math.round(p * 100)}%)${how ? ' → ' + how : ''}${c.v < 0 ? ' — 불리, 교체 고려' : ''}`;
     });
     lines.push(`선봉 ${ko(a)} · 예상 상대 선봉: ${vsLead.join(', ')}`);
     const backNote = L.back.map(i => {
       const good = top.rows[i].map((c, j) => ({j, v: c.v})).filter(x => x.v > 0.3).sort((x, y) => y.v - x.v).slice(0, 2);
-      return `${ko(i)}${good.length ? `(${good.map(x => byId[opp[x.j].id].ko).join('·')} 상대)` : ''}`;
+      return `${ko(i)}${good.length ? `(${good.map(x => byId[opp[x.j].baseId || opp[x.j].id].ko).join('·')} 상대)` : ''}`;
     });
     lines.push(`뒤: ${backNote.join(', ')}`);
     if (top.megaI != null) lines.push(`메가진화: ${ko(top.megaI)}`);
@@ -466,12 +488,12 @@ export function createPickAdvisor(M, T) {
       // 가장 유리한 상대에게 가장 센 기술
       const j = likely.slice(0, 4).sort((a, b) => top.noTR[i][b].off.pct - top.noTR[i][a].off.pct)[0];
       const c = top.noTR[i][j];
-      return c.off.move ? `${M.moveKo(c.off.move)} → ${byId[opp[j].id].ko} (${c.off.pct >= 100 ? '한 방' : c.off.pct.toFixed(0) + '%'})` : '공격';
+      return c.off.move ? `${M.moveKo(c.off.move)} → ${byId[opp[j].baseId || opp[j].id].ko} (${c.off.pct >= 100 ? '한 방' : c.off.pct.toFixed(0) + '%'})` : '공격';
     };
     lines.push(`1턴: ${L.lead.map(i => `${ko(i)} ${act(i)}`).join(' / ')}`);
     const backNote = L.back.map(i => {
       const good = top.rows[i].map((c, j) => ({j, v: c.v})).filter(x => x.v > 0.3).sort((a, b) => b.v - a.v).slice(0, 2);
-      return `${ko(i)}${good.length ? `(${good.map(x => byId[opp[x.j].id].ko).join('·')} 상대)` : ''}`;
+      return `${ko(i)}${good.length ? `(${good.map(x => byId[opp[x.j].baseId || opp[x.j].id].ko).join('·')} 상대)` : ''}`;
     });
     const trBack = L.back.find(i => plan.trIdx.includes(i));
     const trNote = !top.useTR ? '' : trBack != null ? ` — ${ko(trBack)} 등장 후 트릭룸, 그다음부터 느린 멤버가 먼저 움직임` : ' — 트릭룸 아래에서 느린 멤버가 먼저 움직임';

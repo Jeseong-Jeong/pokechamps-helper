@@ -30,10 +30,13 @@ export function initPick({M, T, P, ty, esc, $, findMon, getMySets, gotoTeam}) {
       if (id) {
         const e = byId[id], u = M.usageOf(e);
         const odds = !M.doubles && u && u.pick != null ? `<span class="mini" title="파티에 있을 때 실제로 데려오는 비율 · 데려왔을 때 선봉으로 내는 비율">선출 ${u.pick.toFixed(0)}% · 선봉 ${(u.lead || 0).toFixed(0)}%</span>` : '';
-        return `<div class="opp-slot"><span class="types">${e.ty.map(ty).join('')}</span><b>${esc(e.ko)}</b>${odds}
+        // 메가스톤: 어떤 메가가 될지는 게임이 시작돼야 알 수 있음 → 채용률만 표시
+        const stones = u ? u.it.filter(([n]) => /ite( [XYZ])?$/.test(n) && n !== 'Eviolite' && n !== 'White Herb') : [];
+        const megaHint = stones.length ? `<span class="mini" title="이 포켓몬이 메가스톤을 드는 비율">메가스톤 ${stones.map(([n, p]) => `${stones.length > 1 ? ((n.match(/ ([XYZ])$/) || [])[1] || '일반') + ' ' : ''}${p.toFixed(0)}%`).join(' · ')}</span>` : '';
+        return `<div class="opp-slot"><span class="types">${e.ty.map(ty).join('')}</span><b>${esc(e.ko)}</b>${odds}${megaHint}
           <button class="link danger" data-k="opp-remove" data-i="${i}" aria-label="${esc(e.ko)} 빼기">✕</button></div>`;
       }
-      return `<div class="opp-slot empty"><input class="pick" list="mon-list" data-k="opp-add" placeholder="${i === opp.length ? '상대 포켓몬' : ''}"
+      return `<div class="opp-slot empty"><input class="pick" list="base-list" data-k="opp-add" placeholder="${i === opp.length ? '상대 포켓몬' : ''}"
         aria-label="상대 ${i + 1}번" autocomplete="off"${i === opp.length ? '' : ' disabled'}></div>`;
     }).join('');
     $('pick-result').innerHTML = mine.length >= NEED && opp.length ? result(mine) : '<p class="mini">상대 포켓몬을 입력하면 추천이 나옵니다. 6마리를 다 넣을수록 정확합니다.</p>';
@@ -50,10 +53,11 @@ export function initPick({M, T, P, ty, esc, $, findMon, getMySets, gotoTeam}) {
       const s = mine[i], e = byId[s.id];
       const vs = R.opp.map((o, j) => ({j, v: top.rows[i][j].v})).sort((a, b) => b.v - a.v).filter(x => x.v > 0.3).slice(0, 3);
       return `<div class="pick-card"><span class="tag">${tag}</span><b>${nm(i)}</b><span class="types">${e.ty.map(ty).join('')}</span>
-        <span class="mini">${vs.length ? '유리: ' + vs.map(x => esc(byId[R.opp[x.j].id].ko)).join(', ') : '받쳐주는 역할'}</span></div>`;
+        <span class="mini">${vs.length ? '유리: ' + vs.map(x => on(x.j)).join(', ') : '받쳐주는 역할'}</span></div>`;
     };
     const pct = x => (x >= 100 ? '한 방' : `${x.toFixed(0)}%`);
-    const on = n => esc(byId[R.opp[n].id].ko);
+    // 상대 이름은 메가 전 모습으로 (누가 메가진화할지는 모름), 메가 확률은 따로 표시
+    function on(n) { const o = R.opp[n]; return esc(byId[o.baseId || o.id].ko); }
     const WK = {Rain: '비', Sun: '쾌청', Sand: '모래바람', Snow: '설경'}, TK = {Grassy: '그래스필드', Psychic: '사이코필드', Electric: '일렉트릭필드', Misty: '미스트필드'};
     const modeNote = [top.useTR ? `트릭룸(${esc(byId[mine[R.plan.trIdx.find(i => top.idx.includes(i))].id].ko)}) 있을 때 60%로 계산` : '',
       top.useW ? `${WK[R.plan.weather] || TK[R.plan.terrain]} 위에서 계산` : ''].filter(Boolean).join(' · ');
@@ -73,7 +77,7 @@ export function initPick({M, T, P, ty, esc, $, findMon, getMySets, gotoTeam}) {
     const altLeads = R.leads.slice(1).map(l => `<li>${l.lead.map(nm).join(' + ')} <span class="mini">${esc(l.why.join(' · '))}</span></li>`).join('');
 
     // 상성표
-    const head = R.opp.map(o => `<th>${esc(byId[o.id].ko)}</th>`).join('');
+    const head = R.opp.map((o, j) => `<th>${on(j)}${R.oppMega && R.oppMega[j] != null ? `<br><span class="mini" title="메가진화할 확률 (메가스톤 채용률, 한 배틀에 한 마리)">메가 ${Math.round(R.oppMega[j] * 100)}%</span>` : ''}</th>`).join('');
     const rows = mine.map((s, i) => {
       const chosen = top.idx.includes(i);
       return `<tr class="${chosen ? 'chosen' : ''}"><th>${nm(i)}${i === top.megaI ? ' <span class="badge b-mega">메가</span>' : ''}</th>${top.rows[i].map(c => {
@@ -100,13 +104,13 @@ export function initPick({M, T, P, ty, esc, $, findMon, getMySets, gotoTeam}) {
       ${archHtml}
       ${planHtml}
       ${dangerHtml}
-      ${R.threats.length ? `<div class="notes"><p>이 선출로 유리하게 상대하기 어려운 포켓몬: <b>${R.threats.map(t => esc(byId[R.opp[t.j].id].ko)).join(', ')}</b>. 교체나 방어로 버티는 계획이 필요합니다.</p></div>` : ''}
+      ${R.threats.length ? `<div class="notes"><p>이 선출로 유리하게 상대하기 어려운 포켓몬: <b>${R.threats.map(t => on(t.j)).join(', ')}</b>. 교체나 방어로 버티는 계획이 필요합니다.</p></div>` : ''}
       ${ansHtml}
       <div class="pick-alt">
         <div><h4>다른 선출 후보</h4><ol>${alt || '<li class="mini">없음</li>'}</ol></div>
         <div><h4>${M.doubles ? '다른 선봉 조합' : '다른 선봉 후보'}</h4><ol>${altLeads || '<li class="mini">없음</li>'}</ol></div>
       </div>
-      <h4>상성표 <span class="mini">칸 = 내가 주는 % / 내가 받는 % (서로 가장 센 기술, 상대는 사용률 1순위 세트) · ${top.useTR ? '↻ 트릭룸에서 내가 먼저' : '⚡ 내가 먼저'}</span></h4>
+      <h4>상성표 <span class="mini">칸 = 내가 주는 % / 내가 받는 % (서로 가장 센 기술, 상대는 사용률 1순위 세트) · 메가스톤을 자주 드는 상대는 칸 숫자는 메가 모습, 유불리(색·추천)는 메가 확률로 섞어서 계산 · ${top.useTR ? '↻ 트릭룸에서 내가 먼저' : '⚡ 내가 먼저'}</span></h4>
       <div class="tbl"><table class="mxtbl"><thead><tr><th></th>${head}</tr></thead><tbody>${rows}</tbody></table></div>`;
   }
 

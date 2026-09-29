@@ -37,11 +37,31 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
   const mySetOf = id => { const s = rawSetOf(id); return s && B.canMega(s) && S.mega.me !== id ? B.baseForm(s) : s; };
   const oppSlot = s => ({...s, mega: S.mega.opp === s.id});
   // 메가진화 버튼: 이 포켓몬이 메가스톤을 들었고, 그쪽이 아직 메가진화를 안 했거나 이 포켓몬이 한 경우
+  // 상대가 될 수 있는 메가 모습: 사용률 데이터의 메가스톤 → 메가 모습 (X·Y·Z 가 여럿이면 버튼 여러 개)
+  function megaForms(id) {
+    const e = byId[id];
+    if (!e || !e.megas) return [];
+    return B.oppInfo(id).items.filter(([n]) => /ite( [XYZ])?$/.test(n) && n !== 'Eviolite').map(([stone, pct]) => {
+      const suf = (stone.match(/ ([XYZ])$/) || [])[1];
+      const mega = e.megas.find(m => ((m.match(/ ([XYZ])$/) || [])[1]) === suf);
+      return mega ? {stone, mega, pct} : null;
+    }).filter(Boolean);
+  }
   function megaBtn(side, id) {
-    const can = side === 'me' ? B.canMega(rawSetOf(id)) : B.canMega(B.oppSetOf({...S.opp.find(o => o.id === id), mega: true}));
+    const can = side === 'me' ? B.canMega(rawSetOf(id)) : B.canMega(B.oppSetOf({...S.opp.find(o => o.id === id), mega: true})) || megaForms(id).length > 0;
     if (!can) return '';
     const done = S.mega[side];
     if (done && done !== id) return '';
+    if (side === 'opp' && megaForms(id).length > 1) {
+      // 메가 모습이 여럿: 실제로 본 모습을 누르세요 (채용률 표시)
+      const slot = S.opp.find(o => o.id === id);
+      const cur = B.oppSetOf({...slot, mega: true}).item;
+      const btns = megaForms(id).map(f => `<button class="tog${done === id && cur === f.stone ? ' on' : ''}" data-f="megaform" data-v="${id}" data-stone="${esc(f.stone)}"
+        title="이 모습으로 메가진화했으면 누르세요 (다시 누르면 취소)">${nm(f.mega)} <span class="mini">${f.pct.toFixed(0)}%</span></button>`).join('');
+      const assumedF = !done && !S.megaNo.includes(id) && (S.opp.find(o => o.id && !S.megaNo.includes(o.id) && B.canMega(B.oppSetOf({...o, mega: true}))) || {}).id === id;
+      const no = !done ? `<button class="tog${S.megaNo.includes(id) ? ' on' : ''}" data-f="megano" data-v="${id}" title="상대가 메가진화하지 않았으면 누르세요">메가 안 함</button>` : '';
+      return `<span class="mini">메가진화:</span>${btns}${no}${assumedF ? `<span class="mini">${nm(B.oppSetOf({...slot, mega: true}).id)}로 메가진화할 것으로 보고 계산 중</span>` : ''}`;
+    }
     // 상대: 아직 아무도 메가진화 안 했으면 이 포켓몬이 이번 턴에 메가진화한다고 보고 계산 (실제로 안 하면 "메가 안 함")
     const assumed = side === 'opp' && !done && !S.megaNo.includes(id) && (S.opp.find(o => o.id && !S.megaNo.includes(o.id) && B.canMega(B.oppSetOf({...o, mega: true}))) || {}).id === id;
     const no = side === 'opp' && !done ? `<button class="tog${S.megaNo.includes(id) ? ' on' : ''}" data-f="megano" data-v="${id}" title="상대가 메가진화하지 않았으면 누르세요">메가 안 함</button>` : '';
@@ -115,7 +135,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
     if (side === 'opp') {
       const ids = getOppIds().filter(id => !S.opp.some((o, j) => j !== k && o.id === id) && !S.oppOut.includes(id));
       return `<div class="pickgrid">${ids.map(id => `<button class="pk${S.opp[k].id === id ? ' on' : ''}" data-f="oquick" data-k="${k}" data-v="${id}">${nm(id)}</button>`).join('')}
-        <input class="pick" list="mon-list" data-f="opick" data-k="${k}" placeholder="${ids.length ? '다른 포켓몬 검색' : '상대 포켓몬 검색'}" autocomplete="off"></div>
+        <input class="pick" list="base-list" data-f="opick" data-k="${k}" placeholder="${ids.length ? '다른 포켓몬 검색' : '상대 포켓몬 검색'}" autocomplete="off"></div>
         ${ids.length ? '' : '<p class="mini">선출 추천 탭에 상대 6마리를 넣어두면 여기서 누르기만 하면 됩니다.</p>'}`;
     }
     const ids = mySets().map(x => x.baseId || x.id).filter(id => !S.me.some((o, j) => j !== k && o.id === id) && (S.benchHp[id] ?? 100) > 0);
@@ -684,6 +704,14 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
       note = '다음 턴: "방금 나옴"을 해제했어요. HP·랭크·필드를 바꾸고, 교체된 포켓몬은 다시 고르세요.';
     }
     if (f === 'reset') { S = blankState(); note = ''; draft = null; }
+    if (f === 'megaform') {  // 상대가 이 메가 모습으로 메가진화함 (메가스톤을 그걸로)
+      const id = b.dataset.v, slot = S.opp.find(o => o.id === id);
+      const same = S.mega.opp === id && B.oppSetOf({...slot, mega: true}).item === b.dataset.stone;
+      slot.item = b.dataset.stone;
+      S.mega.opp = same ? '' : id;
+      S.megaNo = S.megaNo.filter(x => x !== id);
+      draft = null; save(); render(); return;
+    }
     if (f === 'megano') { const id = b.dataset.v; S.megaNo = S.megaNo.includes(id) ? S.megaNo.filter(x => x !== id) : [...S.megaNo, id]; draft = null; save(); render(); return; }
     if (f === 'hz') {
       const h = S.field.hazards || (S.field.hazards = blankHazards()), sd = b.dataset.side;

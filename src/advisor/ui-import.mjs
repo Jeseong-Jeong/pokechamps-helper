@@ -75,7 +75,7 @@ export function initImport({M, itemDict, esc, ty, $, findMon, natureko, onImport
     $('imp-review').innerHTML = rows.map((r, i) => {
       if (r.empty) {
         return `<div class="imp-row" data-i="${i}"><div class="imp-h"><span class="num">${i + 1}</span>
-          <input class="pick warn" list="mon-list" data-f="name" placeholder="못 읽음 · 포켓몬 이름 입력" aria-label="${i + 1}번 포켓몬"></div></div>`;
+          <input class="pick warn" list="base-list" data-f="name" placeholder="못 읽음 · 포켓몬 이름 입력" aria-label="${i + 1}번 포켓몬"></div></div>`;
       }
       const s = r.set, e = byId[s.id], base = byId[r.baseId];
       const w = k => (r.warn.includes(k) ? ' warn' : '');
@@ -84,7 +84,7 @@ export function initImport({M, itemDict, esc, ty, $, findMon, natureko, onImport
       return `<div class="imp-row" data-i="${i}">
         <div class="imp-h">
           <span class="num">${i + 1}</span>
-          <input class="pick${w('이름')}" list="mon-list" data-f="name" value="${esc(base.ko)} · ${esc(base.en)}" aria-label="${i + 1}번 포켓몬">
+          <input class="pick${w('이름')}" list="base-list" data-f="name" value="${esc(base.ko)} · ${esc(base.en)}" aria-label="${i + 1}번 포켓몬">
           <span class="types">${e.ty.map(ty).join('')}</span>
           ${s.id !== r.baseId ? `<span class="badge b-mega">${esc(e.ko)}</span>` : ''}
           <span class="mini">${r.found.stats ? '성격·SP 읽음' : '성격·SP 기본값'}</span>
