@@ -126,7 +126,7 @@ function card(side) {
         <input type="number" min="0" max="${SP_MAX}" step="1" inputmode="numeric" data-k="sp" data-s="${k}" value="${set.sp[k] || 0}" aria-label="${STAT_KO[k]} SP">
         <b class="num">${k === 'hp' ? stats.maxHP : stats[k]}</b>
         ${k === 'hp'
-          ? `<label class="hp">HP<input type="number" min="1" max="100" data-k="hpPct" value="${set.hpPct}" aria-label="남은 HP %">%</label>`
+          ? `<label class="hp hpg">HP<input type="range" min="1" max="100" data-k="hpPct" value="${set.hpPct}" style="--p:${set.hpPct}%;--c:${set.hpPct > 50 ? 'var(--good)' : set.hpPct > 20 ? 'var(--gold)' : 'var(--bad)'}" aria-label="남은 HP %"><b class="num hpv">${set.hpPct}%</b></label>`
           : `<select data-k="boost" data-s="${k}" aria-label="${STAT_KO[k]} 랭크">${[6,5,4,3,2,1,0,-1,-2,-3,-4,-5,-6].map(v => `<option value="${v}"${v === (set.boosts[k] || 0) ? ' selected' : ''}>${v > 0 ? '+' + v : v}</option>`).join('')}</select>`}
       </div>`).join('')}
       <div class="sp-sum${spSum > SP_TOTAL ? ' over' : ''}">SP 합계 <b>${spSum}</b> / ${SP_TOTAL}${spSum > SP_TOTAL ? ' · 초과' : ''}</div>
@@ -213,7 +213,13 @@ function onCardInput(ev) {
     case 'ability': case 'item': case 'status': set[k] = el.value; break;
     case 'nature': set.nature = el.value; full = true; break;
     case 'sp': set.sp[el.dataset.s] = clamp(+el.value || 0, 0, SP_MAX); full = ev.type === 'change'; break;
-    case 'hpPct': set.hpPct = clamp(+el.value || 100, 1, 100); break;
+    case 'hpPct': {
+      set.hpPct = clamp(+el.value || 100, 1, 100);
+      el.style.setProperty('--p', set.hpPct + '%');
+      el.style.setProperty('--c', set.hpPct > 50 ? 'var(--good)' : set.hpPct > 20 ? 'var(--gold)' : 'var(--bad)');
+      el.parentElement.querySelector('.hpv').textContent = set.hpPct + '%';
+      break;
+    }
     case 'boost': set.boosts[el.dataset.s] = +el.value; full = true; break;
     case 'move': set.moves[+el.dataset.i] = el.value; break;
     case 'side': S.field[side][el.dataset.s] = el.checked; break;

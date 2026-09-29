@@ -333,7 +333,19 @@ label.chk input{margin:0}
 .hp-row{display:flex;align-items:center;gap:6px}
 .hpbar{flex:1;height:10px;border-radius:5px;background:var(--bar-bg);overflow:hidden}
 .hpbar i{display:block;height:100%}
-.hp-row input{width:54px;padding:3px 5px}
+.hp-row .hpg{flex:1}
+/* HP 게이지 (누르거나 끌어서 입력, 맨 왼쪽 = 1%) */
+.hpg{display:inline-flex;align-items:center;gap:8px;min-width:150px}
+.hpg input[type=range]{-webkit-appearance:none;appearance:none;flex:1;min-width:110px;height:16px;border-radius:8px;margin:0;padding:0;cursor:pointer;border:1px solid var(--line);
+  background:linear-gradient(to right,var(--c,var(--good)) 0,var(--c,var(--good)) var(--p,100%),var(--bar-bg) var(--p,100%))}
+.hpg input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--surface);border:2px solid var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.hpg input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--surface);border:2px solid var(--ink)}
+.hpg input[type=range]::-moz-range-track{background:transparent}
+.hpg input[type=range]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.hpg .hpv{min-width:44px;text-align:right;font-size:13px}
+.hpl{display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap}
+.bench-item .hpg{min-width:130px}
+.sp-r .hpg{min-width:0}
 .tog-row{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
 .tog-row select{font-size:12px;padding:3px 4px}
 .tog{appearance:none;border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:999px;font:12px var(--f-body);padding:3px 9px;cursor:pointer}

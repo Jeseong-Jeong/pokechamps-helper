@@ -83,6 +83,12 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
   // ---------------- 그리기 (게임 화면처럼: 위 상대 두 마리, 아래 내 두 마리) ----------------
   let pickOpen = {};  // 'opp0' 등: 포켓몬 고르기 칸 열림
   const hpColor = p => (p > 50 ? 'var(--good)' : p > 20 ? 'var(--gold)' : 'var(--bad)');
+  // HP 게이지: 누르거나 끌어서 입력. 맨 왼쪽 = 1% (기합의띠·옹골참으로 버틴 상태), 쓰러짐은 "쓰러짐" 버튼으로
+  const gaugeStyle = v => `--p:${v}%;--c:${hpColor(v)}`;
+  function hpGauge(f, attrs, v, label) {
+    const x = Math.max(1, Math.min(100, Math.round(v)));
+    return `<span class="hpg"><input type="range" min="1" max="100" step="1" data-f="${f}" ${attrs} value="${x}" style="${gaugeStyle(x)}" aria-label="${label}"><b class="num hpv">${v <= 0 ? '쓰러짐' : x + '%'}</b></span>`;
+  }
   const boostSummary = b => BOOSTS.filter(s => b && b[s]).map(s => `${STAT_KO[s]}${b[s] > 0 ? '+' : ''}${b[s]}`).join(' ');
 
   function boostRow(side, k, b) {
@@ -94,8 +100,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
   function stateRows(side, k, s) {
     const bs = boostSummary(s.boosts);
     return `
-      <div class="hp-row"><span class="hpbar"><i style="width:${s.hpPct}%;background:${hpColor(s.hpPct)}"></i></span>
-        <input type="number" min="0" max="100" data-f="hp" data-side="${side}" data-k="${k}" value="${s.hpPct}" aria-label="남은 HP">%</div>
+      <div class="hp-row">${hpGauge('hp', `data-side="${side}" data-k="${k}"`, s.hpPct, '남은 HP')}</div>
       <div class="tog-row">
         <select data-f="status" data-side="${side}" data-k="${k}" aria-label="상태이상">${Object.entries(STATUS).map(([v, t]) => `<option value="${v}"${v === s.status ? ' selected' : ''}>${v ? t : '상태 정상'}</option>`).join('')}</select>
         <button class="tog${s.fresh ? ' on' : ''}" data-f="tog" data-side="${side}" data-k="${k}" data-v="fresh" title="이번 턴에 나옴 (속이다·만나자마자 가능)">방금 나옴</button>
@@ -172,7 +177,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
     return `<div class="back-row">
       <div><span class="who">내 뒤 (교체 가능, 최대 2)</span><div class="uchips">${mine.map(id => {
         const on = S.bench.includes(id), hp = S.benchHp[id] ?? 100;
-        return `<span class="bench-item"><button class="uchip${on ? ' on' : ''}${hp <= 0 ? ' dead' : ''}" data-f="benchtog" data-v="${id}">${nm(id)}</button>${on ? `<input type="number" min="0" max="100" data-f="bhp" data-v="${id}" value="${hp}" aria-label="${nm(id)} HP">%` : ''}</span>`;
+        return `<span class="bench-item"><button class="uchip${on ? ' on' : ''}${hp <= 0 ? ' dead' : ''}" data-f="benchtog" data-v="${id}">${nm(id)}</button>${on && hp > 0 ? hpGauge('bhp', `data-v="${id}"`, hp, `${nm(id)} HP`) : ''}</span>`;
       }).join('') || '<span class="mini">없음</span>'}</div></div>
       <div><span class="who">상대 뒤 (교체 예측에 사용 · 누르면 제외)${SINGLE ? ' — 6마리 중 3마리만 데려와요. 아직 안 나온 포켓몬은 선출률로 추정' : ''}</span><div class="uchips">${opp.map(id => {
         const out = S.oppOut.includes(id);
@@ -340,7 +345,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
   }
   const newHpBox = (R, side, k, a) => {
     const e = expectIncoming(R, side, k);
-    return `<label>들어온 쪽 HP<input type="number" min="0" max="100" data-f="rnew" data-side="${side}" data-k="${k}" value="${a.newHp}">%</label>${e ? `<span class="mini">맞은 뒤 예상 ${e[0]}~${e[1]}% <button class="link" data-f="rnewexp" data-side="${side}" data-k="${k}" data-v="${Math.round((e[0] + e[1]) / 2)}">넣기</button></span>` : ''}`;
+    return `<span class="hpl"><span class="mini">들어온 쪽 HP</span>${hpGauge('rnew', `data-side="${side}" data-k="${k}"`, a.newHp, '들어온 쪽 HP')}</span>${e ? `<span class="mini">맞은 뒤 예상 ${e[0]}~${e[1]}% <button class="link" data-f="rnewexp" data-side="${side}" data-k="${k}" data-v="${Math.round((e[0] + e[1]) / 2)}">넣기</button></span>` : ''}`;
   };
 
   function resultForm(R) {
@@ -353,7 +358,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
       <option value="spread"${a.target === 'spread' ? ' selected' : ''}>→ 전체</option></select>`);
     const hpBox = (side, k, a) => {
       const e = expectHp(R, side, k);
-      return `<label>남은 HP<input type="number" min="0" max="100" data-f="rhp" data-side="${side}" data-k="${k}" value="${a.hp}">%</label>${e ? `<span class="mini">예상 ${e[0]}~${e[1]}% <button class="link" data-f="rexp" data-side="${side}" data-k="${k}" data-v="${Math.round((e[0] + e[1]) / 2)}">넣기</button></span>` : ''}`;
+      return `<span class="hpl"><span class="mini">남은 HP</span>${hpGauge('rhp', `data-side="${side}" data-k="${k}"`, a.hp, '남은 HP')}</span>${e ? `<span class="mini">예상 ${e[0]}~${e[1]}% <button class="link" data-f="rexp" data-side="${side}" data-k="${k}" data-v="${Math.round((e[0] + e[1]) / 2)}">넣기</button></span>` : ''}`;
     };
     const myNames = S.me.map(s => (s.id ? nm(s.id) : ''));
     const oppNames = S.opp.map(s => (s.id ? nm(s.id) : ''));
@@ -582,7 +587,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
         const base = byId[id].mega ? byId[id].parent : id;
         S.opp[k] = {...blankSlot(), id: base}; applyEntry(); break;
       }
-      case 'hp': slot.hpPct = Math.max(0, Math.min(100, Math.round(+el.value || 0))); full = false; break;
+      case 'hp': slot.hpPct = Math.max(1, Math.min(100, Math.round(+el.value || 1))); full = false; break;
       case 'status': slot.status = el.value; full = false; break;
       case 'boost': slot.boosts = {...slot.boosts, [el.dataset.s]: +el.value}; full = false; break;
       case 'fresh': slot.fresh = el.checked; break;
@@ -600,12 +605,12 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
         S.bench = el.checked ? [...S.bench.filter(x => x !== id), id].slice(-2) : S.bench.filter(x => x !== id);
         break;
       }
-      case 'bhp': S.benchHp[el.dataset.v] = Math.max(0, Math.min(100, Math.round(+el.value || 0))); full = false; break;
+      case 'bhp': S.benchHp[el.dataset.v] = Math.max(1, Math.min(100, Math.round(+el.value || 1))); full = false; break;
       case 'rmove': draft[side][k].move = el.value; renderResults(); return;
       case 'rtgt': draft[side][k].target = el.value === 'spread' ? 'spread' : el.value === '' ? '' : +el.value; renderResults(); return;
       case 'rto': draft[side][k].to = el.value; draft[side][k].newHp = side === 'me' ? (S.benchHp[el.value] ?? 100) : (S.oppHp[el.value] ?? 100); renderResults(); return;
-      case 'rhp': draft[side][k].hp = Math.max(0, Math.min(100, Math.round(+el.value || 0))); if (draft[side][k].hp === 0) { draft[side][k].act = 'faint'; renderResults(); } return;
-      case 'rnew': draft[side][k].newHp = Math.max(0, Math.min(100, Math.round(+el.value || 0))); return;
+      case 'rhp': draft[side][k].hp = Math.max(1, Math.min(100, Math.round(+el.value || 1))); return;
+      case 'rnew': draft[side][k].newHp = Math.max(1, Math.min(100, Math.round(+el.value || 1))); return;
       default: return;
     }
     draft = null;  // 필드가 바뀌면 결과 입력 초기화
@@ -613,7 +618,16 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
     if (full) render(); else renderResults();
   }
   root.addEventListener('change', onChange);
-  root.addEventListener('input', e => { if (['hp', 'bhp', 'opick'].includes(e.target.dataset.f)) onChange(e); });
+  root.addEventListener('input', e => {
+    const el = e.target;
+    if (el.type === 'range' && el.closest('.hpg')) {
+      el.style.cssText = gaugeStyle(+el.value);
+      el.closest('.hpg').querySelector('.hpv').textContent = el.value + '%';
+      if (el.dataset.f === 'rhp' || el.dataset.f === 'rnew') onChange(e);  // 기록 칸은 값만 저장
+      return;
+    }
+    if (el.dataset.f === 'opick') onChange(e);
+  });
   root.addEventListener('click', e => {
     const b = e.target.closest('button[data-f]');
     if (!b) return;
