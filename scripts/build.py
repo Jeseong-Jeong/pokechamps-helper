@@ -322,7 +322,7 @@ if sg:
     sg = dict(meta=sg['meta'], usage=[{k: u[k] for k in ('rank', 'name', 'id', 'pct', 'win', 'games', 'pick', 'lead', 'mega', 'mv', 'it', 'ab', 'tm', 'sp', 'cc')} for u in sg['usage']])
 html = (tpl.replace('/*DATA*/null', json.dumps(out, ensure_ascii=False, separators=(',', ':'))).replace('/*CORES*/null', json.dumps(cores, ensure_ascii=False))
         .replace('/*SINGLES*/null', json.dumps(sg, ensure_ascii=False, separators=(',', ':'))))
-with open(os.path.join(ROOT, 'site', 'pokechamps-mc.html'), 'w', encoding='utf-8', newline='\n') as f:
+with open(os.path.join(ROOT, 'site', 'dex.html'), 'w', encoding='utf-8', newline='\n') as f:
     f.write(html)
 
 # ---------- csv ----------

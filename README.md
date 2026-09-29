@@ -2,7 +2,7 @@
 
 Pokémon Champions(포켓몬 챔피언스) 레귤레이션 M-C 기준 데이터 묶음입니다.
 참전 포켓몬, 종족값, 특성, 배울 수 있는 기술, 메가진화, 기술 수치, 사용률 순위가 들어 있습니다.
-이 데이터로 만든 **추천 봇**도 함께 있습니다 — 더블(`site/advisor.html`)과 싱글(`site/singles.html`). 봇은 추천만 하고 게임 조작은 사람이 직접 합니다.
+이 데이터로 만든 **추천 봇**도 함께 있습니다 — 더블(`site/doubles.html`)과 싱글(`site/singles.html`). 봇은 추천만 하고 게임 조작은 사람이 직접 합니다.
 
 ## 싱글 (site/singles.html)
 
@@ -30,7 +30,7 @@ Pokémon Champions(포켓몬 챔피언스) 레귤레이션 M-C 기준 데이터 
   상대가 날려버리기·울부짖기·드래곤테일·배대뒤치기를 쓰면 맞은 쪽에 "끌려나온 포켓몬" 칸이 자동으로 생깁니다. 탈출버튼·레드카드·위기회피 등은 "행동 후 교체됨?"을 눌러 적습니다.
   저장하면 빠진 포켓몬은 그 HP로 뒤로 가고 나온 포켓몬이 필드에 섭니다. 상대가 보여준 기술·도구는 뒤로 갔다 다시 나와도 기억합니다. 상대가 아직 메가진화를 안 했으면 필드의 메가스톤 포켓몬이 이번 턴에 메가진화한다고 보고 계산("메가 안 함"으로 끌 수 있음).
 
-## 추천 봇 — 더블 (site/advisor.html)
+## 추천 봇 — 더블 (site/doubles.html)
 
 더블클릭해서 브라우저로 열면 됩니다(인터넷 없이 동작, 입력값은 브라우저에 저장).
 
@@ -71,7 +71,7 @@ Pokémon Champions(포켓몬 챔피언스) 레귤레이션 M-C 기준 데이터 
 
 ```bash
 npm run build           # 싱글 데이터 → 도감 → 추천 봇(더블·싱글) 전부
-npm run build:advisor   # site/advisor.html, site/singles.html 만들기
+npm run build:advisor   # site/doubles.html, site/singles.html 만들기
 npm run fetch:singles   # 쇼다운 싱글 대전 기록 새로 받기 + Smogon 싱글 통계 (네트워크 필요)
 npm test                # 계산 로직 테스트
 ```
@@ -82,8 +82,8 @@ npm test                # 계산 로직 테스트
 
 ## 웹사이트 (GitHub Pages)
 
-- 주소: https://jeseong-jeong.github.io/pokechamps-mc/ (첫 화면 → 싱글 / 더블 / 도감)
-- 저장소: https://github.com/Jeseong-Jeong/pokechamps-mc
+- 주소: https://jeseong-jeong.github.io/pokechamps-helper/ (첫 화면 → 싱글 / 더블 / 도감)
+- 저장소: https://github.com/Jeseong-Jeong/pokechamps-helper
 - `site/` 폴더가 그대로 사이트가 됩니다. 고친 뒤에는 빌드 → 커밋 → 배포:
 
 ```bash
@@ -126,14 +126,14 @@ pokechamps-mc/
 │  ├─ fetch_ko_extra.js       빠진 한글명 보충용 Node 스크립트
 │  ├─ template.html           도감 페이지 템플릿 (/*DATA*/ 자리에 JSON 주입)
 │  ├─ advisor.html            추천 봇 페이지 템플릿
-│  ├─ build_advisor.mjs       추천 봇 빌드 (src + 데이터 → site/advisor.html 한 파일)
+│  ├─ build_advisor.mjs       추천 봇 빌드 (src + 데이터 → site/doubles.html 한 파일)
 │  ├─ calc_names.mjs          도감 id → @smogon/calc 종 이름 매칭
 │  ├─ scrape_serebii.js       원본 재수집용 브라우저 콘솔 스크립트
 │  └─ scrape_pikalytics.js    원본 재수집용 브라우저 콘솔 스크립트
 └─ site/
    ├─ index.html              첫 화면 (싱글 / 더블 / 도감)
-   ├─ pokechamps-mc.html      완성된 단일 파일 도감 페이지 (싱글 | 더블 탭)
-   ├─ advisor.html            추천 봇 — 더블
+   ├─ dex.html                완성된 단일 파일 도감 페이지 (싱글 | 더블 탭)
+   ├─ doubles.html            추천 봇 — 더블
    └─ singles.html            추천 봇 — 싱글
 ```
 

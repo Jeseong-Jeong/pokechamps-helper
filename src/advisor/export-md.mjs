@@ -88,7 +88,7 @@ export function teamReportMarkdown({M, I, sets, result, tunes = [], constraints 
     '2. "내가 붙인 조건"을 지키면서 바꿀 만한 포켓몬 2~3마리와 세트(도구·특성·성격·SP·기술)를 추천해줘.',
     '3. 포켓몬을 유지한다면 기술·도구·SP를 어떻게 바꾸면 좋을지 알려줘.',
     '4. (여기에 하고 싶은 말을 적으세요)', '');
-  L.push(`---`, `포챔스 추천 봇에서 ${today}에 내보냄 · https://jeseong-jeong.github.io/pokechamps-mc/`);
+  L.push(`---`, `포챔스 추천 봇에서 ${today}에 내보냄 · https://jeseong-jeong.github.io/pokechamps-helper/`);
   return L.join('\n');
 }
 

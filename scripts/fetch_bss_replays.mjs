@@ -16,7 +16,7 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 async function getJson(url) {
   for (let i = 0; i < 5; i++) {
     try {
-      const r = await fetch(url, {headers: {'user-agent': 'pokechamps-mc usage (github.com/Jeseong-Jeong/pokechamps-mc)'}});
+      const r = await fetch(url, {headers: {'user-agent': 'pokechamps-mc usage (github.com/Jeseong-Jeong/pokechamps-helper)'}});
       if (r.status === 429 || r.status >= 500) { await sleep(5000 * (i + 1)); continue; }
       if (!r.ok) return null;
       return await r.json();

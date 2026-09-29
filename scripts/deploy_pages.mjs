@@ -12,4 +12,4 @@ if (sh('git status --porcelain -- site')) {
 const sha = sh('git subtree split --prefix site HEAD');
 sh(`git push origin ${sha}:refs/heads/gh-pages --force`);
 console.log(`배포함: gh-pages ← ${sha.slice(0, 7)}`);
-console.log('https://jeseong-jeong.github.io/pokechamps-mc/ (반영까지 1~2분)');
+console.log('https://jeseong-jeong.github.io/pokechamps-helper/ (반영까지 1~2분)');
