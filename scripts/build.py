@@ -309,27 +309,28 @@ with open(os.path.join(ROOT, 'data', 'pokechamps_mc.json'), 'w', encoding='utf-8
 # ---------- page ----------
 by = {e['id']: e for e in entries}
 def kon(n):
-    return by['Mega ' + n[:-5]]['ko'] if n.endswith('-Mega') else by[n]['ko']
-C3 = [('Rillaboom / Salamence-Mega / Sneasler', '14.2%'), ('Incineroar / Rillaboom / Sneasler', '11.5%'),
-      ('Gholdengo / Rillaboom / Salamence-Mega', '8.9%'), ('Kingambit / Rillaboom / Sneasler', '8.9%'),
-      ('Kingambit / Rillaboom / Salamence-Mega', '8.8%')]  # Pikalytics 3-core list, copied by hand
-cores = {'c3': [[' · '.join(kon(x) for x in a.split(' / ')), b] for a, b in C3]}
+    # Pikalytics 이름 → 한글 (Salamence-Mega → 메가보만다, Raichu-Mega-Y → 메가라이츄 Y, Floette-Eternal-Mega)
+    import re as _re
+    m = _re.match(r'^(.*?)-Mega(?:-([XYZ]))?$', n)
+    if not m:
+        e = ek(n) if P else None
+        return e['ko'] if e else n
+    base = ek(m.group(1)) if P else None
+    if base and base.get('megas'):
+        suf = m.group(2) or ''
+        mid = next((x for x in base['megas'] if (_re.search(r' ([XYZ])$', x) or [None, ''])[1] == suf), base['megas'][0])
+        return by[mid]['ko']
+    return n
+# 같은 팀에 자주 같이 들어가는 조합 (Pikalytics 더블 M-C 'Common Team Cores' — raw/pchamps_cores.json, scrape_pikalytics.js 가 같이 받음)
+cpath = os.path.join(ROOT, 'raw', 'pchamps_cores.json')
+CR = json.load(open(cpath, encoding='utf-8')) if os.path.exists(cpath) else {}
+cores = {k: [[' · '.join(kon(x) for x in names), f'{pct}%', n] for names, n, pct in CR.get(k, [])] for k in ('c2', 'c3', 'c4')}
 tpl = open(os.path.join(HERE, 'template.html'), encoding='utf-8').read()
 # 싱글 사용률 (scripts/build_singles.mjs 가 만든 파일이 있으면 도감의 '싱글' 탭에 넣음)
 sgp = os.path.join(ROOT, 'data', 'pokechamps_mc_singles.json')
 sg = json.load(open(sgp, encoding='utf-8')) if os.path.exists(sgp) else None
 if sg:
     sg = dict(meta=sg['meta'], combos=sg.get('combos'), usage=[{k: u[k] for k in ('rank', 'name', 'id', 'pct', 'win', 'games', 'pick', 'lead', 'mega', 'mv', 'it', 'ab', 'tm', 'sp', 'cc')} for u in sg['usage']])
-# 더블: 쇼다운 VGC M-C 대전 기록에서 자주 나온 선봉 2마리·선출 4마리 (scripts/fetch_bss_replays.mjs … gen9championsvgc2026regmc)
-vgp = os.path.join(ROOT, 'raw', 'pchamps_vgc_mc.json')
-if os.path.exists(vgp):
-    VG = json.load(open(vgp, encoding='utf-8'))
-    def vid(n):  # 쇼다운 이름 → 도감 id (사용률 매칭과 같은 ek)
-        e = ek(n)
-        return (e['parent'] if e.get('mega') else e['id']) if e else n
-    cores['d'] = {'lead': [[[vid(x) for x in c[0]], c[1], c[2], c[3]] for c in VG['combos']['lead'][:10]],
-                  'bring': [[[vid(x) for x in c[0]], c[1], c[2], c[3]] for c in VG['combos']['bring'][:10]],
-                  'battles': VG['battles'], 'since': VG['since']}
 html = (tpl.replace('/*DATA*/null', json.dumps(out, ensure_ascii=False, separators=(',', ':'))).replace('/*CORES*/null', json.dumps(cores, ensure_ascii=False))
         .replace('/*SINGLES*/null', json.dumps(sg, ensure_ascii=False, separators=(',', ':'))))
 with open(os.path.join(ROOT, 'site', 'dex.html'), 'w', encoding='utf-8', newline='\n') as f:

@@ -266,10 +266,10 @@ document.querySelectorAll('.modebar button').forEach(b=>b.addEventListener('clic
 
 // ---------- usage ----------
 function renderSummary(){
-  const top = U.slice(0,3);
+  const top = U.slice(0,5);
   const megaTop = U.map(u=>({u, st:(u.it||[]).find(([n])=>/ite( [XYZ])?$|ite$/.test(n) && !/^(White|Light|Eviolite)/.test(n))})).filter(x=>x.st && x.st[1]>=40).slice(0,6);
   $('usage-summary').innerHTML =
-   `<div class="card"><h3>사용률 TOP 3</h3>${top.map(u=>`<div class="core"><span>${u.rank}. ${esc(nameOf(u))}</span><span>${u.pct.toFixed(2)}%</span></div>`).join('')}</div>`+
+   `<div class="card"><h3>사용률 TOP 5</h3>${top.map(u=>`<div class="core"><span>${u.rank}. ${esc(nameOf(u))}</span><span>${u.pct.toFixed(2)}%</span></div>`).join('')}</div>`+
    comboCards()+
    `<div class="card"><h3>메가진화로 주로 쓰이는 포켓몬</h3>${megaTop.map(({u,st})=>`<div class="core"><span>${esc(nameOf(u))} · ${esc(itemName(st[0]))}</span><span>${st[1].toFixed(0)}%</span></div>`).join('')}</div>`;
 }
@@ -281,8 +281,9 @@ function comboList(title, list, note){
 }
 function comboCards(){
   if(MODE==='s') return SG && SG.combos ? comboList('자주 선출되는 3마리', SG.combos.bring, '싱글은 6마리 중 3마리를 데려가요. 실제 대전에서 같이 나온 3마리 조합입니다.') : '';
-  if(CORES && CORES.d) return comboList('자주 나오는 선봉 2마리', CORES.d.lead, '더블은 첫 턴에 2마리가 나와요.') + comboList('자주 선출되는 4마리', CORES.d.bring, `쇼다운 더블 M-C 공개 대전 ${CORES.d.battles.toLocaleString()}판 기준`);
-  return CORES && CORES.c3 ? `<div class="card"><h3>같은 파티에 자주 들어가는 3마리</h3>${CORES.c3.map(c=>`<div class="core"><span>${esc(c[0])}</span><span>${c[1]}</span></div>`).join('')}</div>` : '';
+  // 더블: Pikalytics 대회 팀에서 같이 들어가는 2마리·4마리 조합 (더블은 2마리씩 나오고 4마리를 데려가요)
+  const card = (title, list, note) => list && list.length ? `<div class="card"><h3>${title}</h3>${list.map(c=>`<div class="core"><span>${esc(c[0])}</span><span>${c[1]}</span></div>`).join('')}${note?`<p class="st-h" style="margin:6px 0 0">${note}</p>`:''}</div>` : '';
+  return CORES ? card('자주 같이 쓰이는 2마리', CORES.c2, '') + card('자주 같이 쓰이는 4마리', CORES.c4, 'Pikalytics 대회 팀 기준 · 같은 팀에 같이 들어간 비율') : '';
 }
 function renderUsage(){
   const q=$('u-q').value.trim().toLowerCase(), t=$('u-type').value;

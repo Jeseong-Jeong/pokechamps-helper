@@ -46,6 +46,11 @@
     console.log('done', x.rank, x.name);
     await sleep(1800);
   }
-  const blob = new Blob([JSON.stringify({ fetched: new Date().toISOString(), list, detail })], { type: 'application/json' });
+  // 같은 팀에 자주 같이 들어가는 조합 (이 목록 페이지의 'Common Team Cores') → raw/pchamps_cores.json 모양
+  const coreText = document.body.innerText.slice(document.body.innerText.indexOf('Common Team Cores'));
+  const coreOf = (label, next) => { const a = coreText.indexOf(label), b = next ? coreText.indexOf(next) : coreText.length;
+    return [...coreText.slice(a + label.length, b > a ? b : undefined).matchAll(/#\d+\n([^\n]+)\n(\d+) teams\n([\d.]+)%/g)].map(m => [m[1].split(' / ').map(x => x.trim()), +m[2], +m[3]]); };
+  const cores = { c2: coreOf('2-Pokemon Cores', '3-Pokemon Cores'), c3: coreOf('3-Pokemon Cores', '4-Pokemon Cores'), c4: coreOf('4-Pokemon Cores') };
+  const blob = new Blob([JSON.stringify({ fetched: new Date().toISOString(), list, detail, cores })], { type: 'application/json' });
   const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'pchamps_pikalytics.json'; document.body.appendChild(a); a.click();
 })();
