@@ -53,7 +53,7 @@ if (existsSync(rel('data/pokechamps_mc_singles.json'))) {
   page('singles.html', {...common, mode: 'singles', usage: slimUsage(G.usage), meta: {...D.meta, singles: m}}, [
     ['<title>포챔스 추천 봇</title>', '<title>포챔스 추천 봇 · 싱글</title>'],
     ['레귤레이션 M-C · 더블배틀 · 추천만 하고 조작은 직접', '레귤레이션 M-C · 싱글배틀 (6마리 중 3마리 선출) · 추천만 하고 조작은 직접'],
-    ['<a href="pokechamps-mc.html">도감 보기 →</a>', '<a href="index.html">← 처음으로</a> · <a href="pokechamps-mc.html#singles">도감 보기 →</a>'],
+    ['<a class="pillbtn on" href="pokechamps-mc.html">도감 보기 →</a>', '<a class="pillbtn on" href="pokechamps-mc.html#singles">도감 보기 →</a>'],
     ['빠진 역할(속이다·스피드 조절·위협 등)', '빠진 역할(스텔스록·랭크업 에이스·선공기 등)'],
     ['4마리 조합 15개를 "상대 각 포켓몬에 대한 가장 좋은 대답"으로 평가하고, 메가가 2마리 이상이면 누구를 메가진화할지까지 골라 계산합니다. 선봉은 상대 전체 압박과 속이다·스피드 조절·위협 조합으로 고릅니다.',
      '3마리 조합 20개를 "상대 각 포켓몬에 대한 가장 좋은 대답"으로 평가합니다. 상대가 실제로 데려올 확률(선출률)이 높은 포켓몬일수록 크게 봅니다. 선봉은 상대가 선봉으로 낼 확률(선봉률)이 높은 포켓몬과의 대면으로 고르고, 상대 파티 성향(대면·사이클·랭크업)에 맞는 역할에 점수를 더합니다.'],

@@ -48,11 +48,14 @@ const MULTI = ['Scale Shot', 'Bullet Seed', 'Icicle Spear', 'Rock Blast', 'Pin M
 const CRIT = 1 / 24;
 const pAtLeast = (lo, hi, h) => (hi < h ? 0 : lo >= h ? 1 : (hi - h) / Math.max(1e-9, hi - lo));
 export const koChance = (r, h, mult = 1) => (1 - CRIT) * pAtLeast(r.minPct * mult, r.maxPct * mult, h) + CRIT * pAtLeast(r.minPct * mult * 1.5, r.maxPct * mult * 1.5, h);
+// 상태이상으로 이번 턴 행동할 확률 (챔피언스: 마비로 못 움직일 확률 12.5%, 잠듦 최대 3턴, 얼음은 3번째 턴까지 반드시 풀림)
+//   화상(물리 공격 반감)·마비(스피드 반감)는 데미지·스피드 계산에 이미 들어감
+export const actChance = set => (set.status === 'par' ? 0.875 : set.status === 'slp' || set.status === 'frz' ? 1 / 3 : 1);
 const sashSave = (set, cur, d, move) => (cur >= 100 && d >= cur && (set.item === 'Focus Sash' || set.ability === 'Sturdy') && !MULTI.includes(move) ? cur - 1 : d);
 const ANTI_SETUP = ['Haze', 'Whirlwind', 'Roar', 'Dragon Tail', 'Circle Throw', 'Encore', 'Clear Smog', 'Perish Song'];
 
 // 점수 가중치 (모의 대전으로 조정: scripts/sim/selfplay.mjs)
-export const DEFAULT_W = {switchCost: 0.08, damageW: 0.45, recoverW: 0.4, setupW: 0.55, statusW: 1, hazardW: 1, repeatPenalty: 0.5};
+export const DEFAULT_W = {switchCost: 0.08, damageW: 0.45, recoverW: 0.4, setupW: 0.55, statusW: 1, hazardW: 1, repeatPenalty: 0.5, contW: 0.3};
 export function createBattle(M, P, opts = {}) {
   const W = {...DEFAULT_W, ...opts};
   const {D, byId} = M;
@@ -516,7 +519,9 @@ export function createBattle(M, P, opts = {}) {
         if (hp[key] <= 0 || alive[key] < 0.02) continue;
         if (flinched[key]) { log.push({k: 'flinch', who: key}); continue; }
         acted[key] = true;
-        const w = alive[key];  // 앞에서 맞고 쓰러졌을 수도 있으니 그만큼만 행동
+        // 앞에서 맞고 쓰러졌을 수도 있고, 마비·잠듦·얼음이면 못 움직일 수도 있으니 그만큼만 행동
+        const actorSet = act.side === 'm' ? (who[key][0] === 'b' ? bench[+who[key].slice(1)].set : mine[act.i].set) : opps[act.i].set;
+        const w = alive[key] * (act.a && act.a.move === 'Sleep Talk' && actorSet.status === 'slp' ? 1 : actChance(actorSet));
         if (act.side === 'm') {
           const a = act.a;
           if (a.kind !== 'attack') continue;
@@ -615,6 +620,20 @@ export function createBattle(M, P, opts = {}) {
         score -= 0.25 * (lost + (pivotLost[k] || 0)) / 100;
         if (flinched[k] && acts[i] && acts[i].kind !== 'switch' && acts[i].kind !== 'protect') score -= 0.3;  // 속이다에 막힘
       });
+      // 싱글: 턴이 끝난 뒤의 대면 (한 턴 더 내다보기) — 교체해 들어온 포켓몬이 다음 턴에 이 상대를 이길 수 있나
+      if (!M.doubles && W.contW) {
+        const mk = who.m0, ok = oKey(0);
+        const meSet = mk[0] === 'b' ? bench[+mk.slice(1)] && bench[+mk.slice(1)].set : mine[0] && mine[0].set;
+        const opSet = ok[0] === 'x' ? oppBench[+ok.slice(1)] && oppBench[+ok.slice(1)].set : opps[0] && opps[0].set;
+        const up = alive.m0 * alive.o0;
+        if (meSet && opSet && up > 0.05 && hp.m0 > 0 && hp.o0 > 0) {
+          const bestOf = (att, set, def) => set.moves.filter(Boolean).reduce((a, mv) => { const m = moveOf(mv); if (!m || m.c === '변화') return a; const r = dmg(att, mv, def); return Math.max(a, r ? avgOf(r) * accOf(set, mv, f) : 0); }, 0);
+          const give = bestOf(mk, meSet, ok), take = bestOf(ok, opSet, mk);
+          const sMe = mk === 'm0' ? spd.me[0] : M.speed(meSet, field, true), sOp = ok === 'o0' ? spd.opp[0] : M.speed(opSet, field, false);
+          const faster = tr ? sMe < sOp : sMe > sOp;
+          score += W.contW * up * P.cellValue(give / Math.max(1, hp.o0) * 100, take / Math.max(1, hp.m0) * 100, faster);
+        }
+      }
       // 트릭룸·순풍: 행동 순서가 뒤집히는 쌍 수
       const pairs = (meSpe, oppSpe, trOn) => {
         let good = 0;

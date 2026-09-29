@@ -382,7 +382,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
   // 이 자리가 행동 후에 교체되나: 유턴류(스스로) / 상대의 날려버리기류(끌려나옴) / 직접 표시(탈출버튼·레드카드·위기회피 등)
   function afterWhy(side, k) {
     const a = draft[side][k];
-    if (!a || (a.act !== 'attack' && a.act !== 'protect')) return null;
+    if (!a || (a.act !== 'attack' && a.act !== 'protect' && a.act !== 'skip')) return null;
     if (a.act === 'attack' && SELF_SWITCH.includes(a.move)) return {kind: 'self', label: `${M.moveKo(a.move)} 후 교체되어 나온 포켓몬`};
     const other = side === 'me' ? draft.opp : draft.me;
     const ph = other.find(x => x && x.act === 'attack' && PHAZE.includes(x.move) && (SINGLE || x.target === k));
@@ -392,7 +392,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
   }
   function afterBox(side, k, a, back) {
     const w = afterWhy(side, k);
-    if (!a || (a.act !== 'attack' && a.act !== 'protect')) return '';
+    if (!a || (a.act !== 'attack' && a.act !== 'protect' && a.act !== 'skip')) return '';
     if (!w) return `<button class="link mini" data-f="rafter" data-side="${side}" data-k="${k}" title="탈출버튼·레드카드·위기회피·도망태세 등으로 이 턴에 빠졌으면">행동 후 교체됨?</button>`;
     return `<div class="after-box"><span class="mini">↪ ${esc(w.label)}</span>
       <select data-f="rafterto" data-side="${side}" data-k="${k}"><option value="">(누가 나왔나요?)</option>${back.map(id => `<option value="${id}"${id === a.afterTo ? ' selected' : ''}>${nm(id)}</option>`).join('')}</select>
@@ -400,6 +400,10 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
       ${a.afterTo && w.kind === 'self' ? (() => { const e = expectIncoming(lastR, side, k, true); return e ? `<span class="mini">먼저 유턴했다면 맞은 뒤 예상 ${e[0]}~${e[1]}% <button class="link" data-f="rafterexp" data-side="${side}" data-k="${k}" data-v="${Math.round((e[0] + e[1]) / 2)}">넣기</button></span>` : ''; })() : ''}
       ${w.kind === 'manual' ? `<button class="link mini" data-f="rafter" data-side="${side}" data-k="${k}">취소</button>` : ''}</div>`;
   }
+
+  // 행동 못 함 이유: 잠듦·얼음이면 상태이상도 같이 기록
+  const SKIP = {par: '마비', slp: '잠듦', frz: '얼음', flinch: '풀죽음', confuse: '혼란', other: '기타(도발·앵콜 등)'};
+  const skipSel = (side, k, a) => `<select data-f="rskip" data-side="${side}" data-k="${k}" aria-label="행동 못 한 이유">${Object.entries(SKIP).map(([v, t]) => `<option value="${v}"${(a.skip || 'par') === v ? ' selected' : ''}>${t}</option>`).join('')}</select>`;
 
   function resultForm(R) {
     if (!draft) draft = makeDraft(R);
@@ -423,7 +427,8 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
       const list = [...new Set([...known, ...I.moves.slice(0, 10).map(x => x[0])])];
       const pctOf = m => { const x = I.moves.find(y => y[0] === m); return x && x[1] ? ` ${x[1].toFixed(0)}%` : ''; };
       return `<div class="rrow"><b>${nm(s.id)}</b>
-        <span class="segs">${btn('opp', j, 'attack', '공격·기타', a.act)}${btn('opp', j, 'protect', '방어', a.act)}${btn('opp', j, 'switch', '교체', a.act)}${btn('opp', j, 'faint', '쓰러짐', a.act)}</span>
+        <span class="segs">${btn('opp', j, 'attack', '공격·기타', a.act)}${btn('opp', j, 'protect', '방어', a.act)}${btn('opp', j, 'switch', '교체', a.act)}${btn('opp', j, 'skip', '행동 못 함', a.act)}${btn('opp', j, 'faint', '쓰러짐', a.act)}</span>
+        ${a.act === 'skip' ? skipSel('opp', j, a) : ''}
         ${a.act === 'attack' ? `<select data-f="rmove" data-side="opp" data-k="${j}"><option value="">(기술 모름)</option>${list.map(m => `<option value="${esc(m)}"${m === a.move ? ' selected' : ''}>${esc(M.moveKo(m))}${pctOf(m)}</option>`).join('')}</select>${tgtSel('opp', j, a, myNames)}` : ''}
         ${a.act === 'switch' || a.act === 'faint' ? `<select data-f="rto" data-side="opp" data-k="${j}"><option value="">${a.act === 'faint' ? '(다음에 나온 포켓몬)' : '(누구로?)'}</option>${oppBack.map(id => `<option value="${id}"${id === a.to ? ' selected' : ''}>${nm(id)}</option>`).join('')}</select>` : ''}
         ${a.act !== 'faint' && a.act !== 'switch' ? hpBox('opp', j, a) : ''}
@@ -436,7 +441,8 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
       if (!s.id || !a) return '';
       const set = mySetOf(s.id);
       return `<div class="rrow"><b>${nm(s.id)}</b>
-        <span class="segs">${btn('me', i, 'attack', '공격·기타', a.act)}${btn('me', i, 'protect', '방어', a.act)}${btn('me', i, 'switch', '교체', a.act)}${btn('me', i, 'faint', '쓰러짐', a.act)}</span>
+        <span class="segs">${btn('me', i, 'attack', '공격·기타', a.act)}${btn('me', i, 'protect', '방어', a.act)}${btn('me', i, 'switch', '교체', a.act)}${btn('me', i, 'skip', '행동 못 함', a.act)}${btn('me', i, 'faint', '쓰러짐', a.act)}</span>
+        ${a.act === 'skip' ? skipSel('me', i, a) : ''}
         ${a.act === 'attack' && set ? `<select data-f="rmove" data-side="me" data-k="${i}"><option value="">(기술)</option>${set.moves.filter(Boolean).map(m => `<option value="${esc(m)}"${m === a.move ? ' selected' : ''}>${esc(M.moveKo(m))}</option>`).join('')}</select>${tgtSel('me', i, a, oppNames)}` : ''}
         ${a.act === 'switch' || a.act === 'faint' ? `<select data-f="rto" data-side="me" data-k="${i}"><option value="">${a.act === 'faint' ? '(다음에 낸 포켓몬)' : '(누구로?)'}</option>${myBack.map(id => `<option value="${id}"${id === a.to ? ' selected' : ''}>${nm(id)}</option>`).join('')}</select>` : ''}
         ${a.act !== 'faint' && a.act !== 'switch' ? hpBox('me', i, a) : ''}
@@ -455,7 +461,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
   function historyBox() {
     if (!S.history.length) return '';
     let hit = 0, n = 0, follow = 0, fn = 0;
-    const T2 = {attack: '공격', protect: '방어', switch: '교체', faint: '쓰러짐'};
+    const T2 = {attack: '공격', protect: '방어', switch: '교체', faint: '쓰러짐', skip: '행동 못 함'};
     // 대상 이름: 그 자리가 이번 턴에 교체했으면 들어온 포켓몬
     const tname = (h, side, t) => {
       if (t === 'spread') return '전체';
@@ -470,12 +476,13 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
       if (x.act === 'faint') return `쓰러짐${x.to ? ' → ' + nm(x.to) : ''}`;
       const t = tname(h, side, x.target);
       const aft = x.after ? ` ↪ ${nm(x.after.to)} ${x.after.kind === 'phaze' ? '끌려나옴' : '나옴'}` : '';
+      if (x.act === 'skip') return `행동 못 함(${SKIP[x.skip] || '?'})` + aft;
       return (x.act === 'protect' ? '방어' : x.move ? `${esc(M.moveKo(x.move))}${t ? ' → ' + t : ''}` : '공격') + aft;
     };
     const rows = S.history.slice().reverse().map(h => {
       const opp = (h.opp || []).map(o => {
         let mark = '';
-        if (o.pred && o.actual.act !== 'faint') {
+        if (o.pred && o.actual.act !== 'faint' && o.actual.act !== 'skip') {
           n++;
           const ok = o.pred.likely === o.actual.act && (o.actual.act !== 'switch' || !o.pred.switchTo || o.pred.switchTo === o.actual.to);
           if (ok) hit++;
@@ -512,7 +519,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
       const d = R && R.defense[j];
       const aw = afterWhy('opp', j);
       const after = aw && a.afterTo ? {to: a.afterTo, kind: aw.kind} : null;
-      entry.opp.push({id: s.id, actual: {act: a.act, move: a.move, target: a.target, to: a.to, after},
+      entry.opp.push({id: s.id, actual: {act: a.act, move: a.move, target: a.target, to: a.to, after, skip: a.act === 'skip' ? a.skip || 'par' : undefined},
         pred: d ? {pA: d.pA, pP: d.pP, pS: d.pS, switchTo: d.switchTo ? d.switchTo.id : null, likely: likelyOf(d)} : null});
       if (a.act === 'switch' || a.act === 'faint') {
         if (a.act === 'faint') { if (!S.oppOut.includes(s.id)) S.oppOut.push(s.id); S.oppHp[s.id] = 0; }
@@ -522,6 +529,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
         S.opp[j] = a.to ? {...blankSlot(), id: a.to, hpPct: a.newHp ?? S.oppHp[a.to] ?? 100, fresh: true, ...((S.oppKnown || {})[a.to] || {})} : blankSlot();
       } else {
         s.hpPct = a.hp; s.fresh = false; s.protected = a.act === 'protect';
+        if (a.act === 'skip' && ['par', 'slp', 'frz'].includes(a.skip || 'par')) s.status = a.skip || 'par';  // 행동 못 한 이유가 상태이상이면 기록
         s.lastMove = a.act === 'attack' ? a.move : '';  // 싱글 교체 예측: 설치기 직후엔 잘 빠지고 랭크업 직후엔 안 빠짐
         if (a.act === 'attack' && a.move) {  // 본 기술은 확인된 기술로
           const cur = B.oppSetOf(s).moves.filter(Boolean);
@@ -539,7 +547,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
       if (!s.id || !a) return;
       const aw = afterWhy('me', i);
       const after = aw && a.afterTo ? {to: a.afterTo, kind: aw.kind} : null;
-      entry.me.push({id: s.id, act: a.act, move: a.move, target: a.target, to: a.to, after});
+      entry.me.push({id: s.id, act: a.act, move: a.move, target: a.target, to: a.to, after, skip: a.act === 'skip' ? a.skip || 'par' : undefined});
       if (a.act === 'switch' || a.act === 'faint') {
         if (a.act === 'faint') { S.bench = S.bench.filter(x => x !== s.id); S.benchHp[s.id] = 0; }
         else { S.benchHp[s.id] = s.hpPct; if (!S.bench.includes(s.id)) S.bench.push(s.id); }
@@ -547,6 +555,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
         if (a.to) S.bench = S.bench.filter(x => x !== a.to);
       } else {
         s.hpPct = a.hp; s.fresh = false; s.protected = a.act === 'protect';
+        if (a.act === 'skip' && ['par', 'slp', 'frz'].includes(a.skip || 'par')) s.status = a.skip || 'par';
         s.lastMove = a.act === 'attack' ? a.move : '';  // 같은 변화기 반복 판단용
         if (after) {  // 유턴·끌려나옴 등: 이 포켓몬은 뒤로, 나온 포켓몬이 필드로
           S.benchHp[s.id] = s.hpPct; if (!S.bench.includes(s.id)) S.bench.push(s.id);
@@ -683,6 +692,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
       case 'bhp': S.benchHp[el.dataset.v] = Math.max(1, Math.min(100, Math.round(+el.value || 1))); full = false; break;
       case 'rmove': draft[side][k].move = el.value; renderResults(); return;
       case 'rtgt': draft[side][k].target = el.value === 'spread' ? 'spread' : el.value === '' ? '' : +el.value; renderResults(); return;
+      case 'rskip': draft[side][k].skip = el.value; return;
       case 'rafterto': draft[side][k].afterTo = el.value; draft[side][k].afterHp = side === 'me' ? (S.benchHp[el.value] ?? 100) : (S.oppHp[el.value] ?? 100); renderResults(); return;
       case 'rafterhp': draft[side][k].afterHp = Math.max(1, Math.min(100, Math.round(+el.value || 1))); return;
       case 'rto': draft[side][k].to = el.value; draft[side][k].newHp = side === 'me' ? (S.benchHp[el.value] ?? 100) : (S.oppHp[el.value] ?? 100); renderResults(); return;
@@ -755,6 +765,7 @@ export function initBattle({M, B, ty, esc, $, findMon, getMySets, getOppIds, get
       const side = b.dataset.side, a = draft[side][k];
       a.act = b.dataset.v;
       if ((a.act === 'switch' || a.act === 'faint') && side === 'me' && !a.to) a.to = S.bench.find(id => !S.me.some(s => s.id === id)) || '';
+      if (a.act === 'skip' && !a.skip) { const st = (side === 'me' ? S.me : S.opp)[k].status; a.skip = ['par', 'slp', 'frz'].includes(st) ? st : 'par'; }
       renderResults(); return;
     }
     if (f === 'rsave') { saveResult(); return; }

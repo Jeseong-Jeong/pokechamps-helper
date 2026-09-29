@@ -85,3 +85,12 @@ test('싱글 배틀: 유턴은 먼저 때리고 빠져서 상대 공격은 들�
   assert.ok(order.indexOf('pivot') > order.indexOf('hit'));
   assert.equal(top.log.filter(x => x.k === 'hit' && x.from[0] === 'o')[0].toId, 'Glimmora');
 });
+
+test('상태이상: 잠든 상대는 대부분 행동 못 함 → 받는 피해 기댓값이 줄어듦 (챔피언스 잠듦 최대 3턴)', () => {
+  const me = T.teamSets(['Primarina'])[0];
+  const base = st => B.advise({field: {}, me: [{set: me, hpPct: 100, fresh: false}, null], opp: [{id: 'Garchomp', hpPct: 100, fresh: false, status: st}, null],
+                               bench: [], oppBench: [], oppSeen: ['Garchomp'], megaOpp: 'X'});
+  const lost = R => { const c = R.top[0]; return 100 - c.hp.m0; };
+  assert.ok(lost(base('slp')) < lost(base('')) * 0.6, `잠듦 ${lost(base('slp'))} vs 정상 ${lost(base(''))}`);
+  assert.ok(lost(base('par')) < lost(base('')));
+});
