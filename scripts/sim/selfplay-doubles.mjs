@@ -88,6 +88,7 @@ function botChoice(b, brain, req, stats) {
     }).join(', ');
   }
   const st = stateFor(b, brain);
+  if (st.field.weather) (brain.wxSeen ||= new Set()).add(st.field.weather);
   let R;
   try { R = B.advise(st); } catch (e) { stats.errors.push(String(e.stack || e).slice(0, 300)); return 'default'; }
   const top = R.top[0];
@@ -189,7 +190,11 @@ function playOne(g, stats, sample) {
   stats.games++; if (won) stats.wins++;
   stats.turns += battle.turn;
   for (const [k, v] of Object.entries(brains.p1.dec)) stats.dec[k] = (stats.dec[k] || 0) + v;
-  const tag = pa.arch ? pa.arch.main.join('·') : '';
+  // 성향 이름: 날씨·필드는 종류까지 (예: weather:Rain)
+  const tag = pa.arch ? pa.arch.main.map(k => (k === 'weather' ? 'weather:' + pa.arch.detail.weather : k === 'terrain' ? 'terrain:' + pa.arch.detail.terrain : k)).join('·') : '';
+  // 대전 중 날씨가 우리 봇 입력에 들어갔는지 (확인용)
+  stats.wx = stats.wx || {};
+  for (const w of brains.p1.wxSeen || []) stats.wx[w] = (stats.wx[w] || 0) + 1;
   stats.byArch[tag] = stats.byArch[tag] || {g: 0, w: 0}; stats.byArch[tag].g++; if (won) stats.byArch[tag].w++;
   if (!won && sample.length < 6) sample.push(`=== ${g + 1}판 패 (${battle.turn}턴) — 우리 ${A4.map(s => byId[s.id].ko).join('·')} vs ${B4.map(s => byId[s.id].ko).join('·')} (${tag})\n` +
     battle.log.filter(l => /^\|(switch|move|faint|-mega|win|turn|cant|-activate)\|/.test(l)).join('\n'));
@@ -206,5 +211,9 @@ const pct = (w, g) => (g ? (100 * w / g).toFixed(1) + '%' : '-');
 console.log(`[더블] 상대 AI: ${OPP_AI} · ${stats.games}판 · 승률 ${pct(stats.wins, stats.games)} · 평균 ${(stats.turns / Math.max(1, stats.games)).toFixed(1)}턴 · ${((Date.now() - t0) / 1000).toFixed(0)}초`);
 console.log('우리 봇 행동:', JSON.stringify(stats.dec));
 console.log('상대 파티 성향별:', Object.entries(stats.byArch).map(([k, v]) => `${k} ${v.w}/${v.g}`).join(', '));
+console.log('봇이 본 날씨(판 수):', JSON.stringify(stats.wx));
+const groups = {};
+for (const [k, v] of Object.entries(stats.byArch)) for (const part of k.split('·')) { const g = part.startsWith('weather') ? part : part.startsWith('terrain') ? 'terrain' : part; groups[g] = groups[g] || {g: 0, w: 0}; groups[g].g += v.g; groups[g].w += v.w; }
+console.log('성향별(겹치면 각각 셈):', Object.entries(groups).sort((a, b) => b[1].g - a[1].g).map(([k, v]) => `${k} ${v.w}/${v.g}=${pct(v.w, v.g)}±${(196 * Math.sqrt((v.w / v.g) * (1 - v.w / v.g) / v.g)).toFixed(0)}%`).join(', '));
 console.log('잘못된 선택:', stats.bad.length, stats.bad.slice(0, 5));
 console.log('오류:', stats.errors.length, stats.errors.slice(0, 3));

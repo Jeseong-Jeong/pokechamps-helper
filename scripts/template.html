@@ -2,7 +2,8 @@
 <html lang="ko">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>포챔스 M-C 도감</title>
+<title>도감 · 포챔스 M-C</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14.5' fill='%23fff' stroke='%23151A25' stroke-width='2'/%3E%3Cpath d='M1.5 16a14.5 14.5 0 0 1 29 0z' fill='%23E3350D' stroke='%23151A25' stroke-width='2'/%3E%3Cpath d='M1.5 16h29' stroke='%23151A25' stroke-width='3'/%3E%3Ccircle cx='16' cy='16' r='4.6' fill='%23fff' stroke='%23151A25' stroke-width='2.4'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -32,9 +33,22 @@
 *{box-sizing:border-box}
 body{background:var(--ground);color:var(--ink);font-family:var(--f-body);font-size:14px;line-height:1.55;padding-inline:16px;padding-block:0 48px}
 .wrap{max-width:1180px;margin:0 auto}
-header.top{padding-block:28px 18px;display:flex;flex-wrap:wrap;gap:14px 28px;align-items:flex-end;justify-content:space-between}
-h1{font-family:var(--f-display);font-weight:400;font-size:clamp(28px,4.6vw,42px);line-height:1.05;margin:0;letter-spacing:.01em;text-wrap:balance}
-h1 small{display:block;font-family:var(--f-body);font-size:13px;font-weight:500;color:var(--muted);letter-spacing:.02em;margin-top:8px}
+/* ---- 공통 머리글 (index.html · advisor.html · template.html 같은 내용) ---- */
+body{margin:0}
+header.top{padding:24px 0 14px;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:flex-end;justify-content:space-between}
+header.top h1{font-family:var(--f-display);font-weight:400;font-size:clamp(28px,4.6vw,40px);line-height:1.05;margin:0;letter-spacing:.01em}
+header.top h1 small{display:block;font-family:var(--f-body);font-size:13px;font-weight:500;color:var(--muted);letter-spacing:.02em;margin-top:8px}
+.sitenav{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.sitenav .brand{display:inline-flex;align-items:center;gap:6px;font:400 16px var(--f-display);color:var(--ink);text-decoration:none;margin-right:6px}
+.sitenav .brand svg{width:22px;height:22px;flex:none}
+.pillbtn{display:inline-flex;align-items:center;font:600 13px var(--f-body);padding:7px 14px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--ink);text-decoration:none}
+.pillbtn:hover{border-color:var(--accent);color:var(--accent)}
+.pillbtn.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.pillbtn.on:hover{color:#fff;filter:brightness(1.08)}
+:root[data-theme="dark"] .pillbtn.on{color:#0E121A}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .pillbtn.on{color:#0E121A}}
+.pillbtn:focus-visible,.sitenav .brand:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.reg{margin:-4px 0 12px}
 .reg{display:flex;flex-wrap:wrap;gap:8px}
 .reg .pill{font-family:var(--f-mono);font-size:12px;padding:5px 10px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--muted)}
 .reg .pill b{color:var(--ink);font-weight:500}
@@ -129,9 +143,10 @@ footer a{color:var(--accent)}
 
 <div class="wrap">
   <header class="top">
-    <h1>포챔스 M-C 도감<small>Pokémon Champions · 참전 포켓몬 / 종족값 / 기술 / 사용률</small></h1>
-    <div class="reg" id="reg"></div>
+    <h1>도감<small>레귤레이션 M-C · 참전 포켓몬 / 종족값 / 기술 / 사용률</small></h1>
+    <nav class="sitenav" aria-label="페이지"><a class="brand" href="index.html"><svg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14.5' fill='#fff' stroke='#151A25' stroke-width='2'/><path d='M1.5 16a14.5 14.5 0 0 1 29 0z' fill='#E3350D' stroke='#151A25' stroke-width='2'/><path d='M1.5 16h29' stroke='#151A25' stroke-width='3'/><circle cx='16' cy='16' r='4.6' fill='#fff' stroke='#151A25' stroke-width='2.4'/></svg>포챔스 M-C</a><a class="pillbtn" href="singles.html">싱글배틀</a><a class="pillbtn" href="advisor.html">더블배틀</a><a class="pillbtn on" aria-current="page" href="pokechamps-mc.html">도감</a></nav>
   </header>
+  <div class="reg" id="reg"></div>
   <div class="modebar" role="tablist" aria-label="배틀 방식">
     <button role="tab" data-mode="s" aria-selected="false">싱글</button>
     <button role="tab" data-mode="d" aria-selected="true">더블</button>
@@ -217,7 +232,7 @@ const itemName = n => DATA.itemko[n] || n;
 const $ = id => document.getElementById(id);
 
 // header pills
-$('reg').innerHTML = `<span class="pill on">레귤레이션 <b>M-C</b> 9.9–12.2</span><span class="pill">시즌 <b>M-6</b> 9.9–10.7</span><span class="pill">수집 <b>${DATA.meta.fetched.slice(0,10)}</b></span><a class="pill" href="index.html" style="text-decoration:none"><b>← 처음으로</b></a>`;
+$('reg').innerHTML = `<span class="pill on">레귤레이션 <b>M-C</b> 9.9–12.2</span><span class="pill">시즌 <b>M-6</b> 9.9–10.7</span><span class="pill">수집 <b>${DATA.meta.fetched.slice(0,10)}</b></span>`;
 
 // type selects
 for (const id of ['u-type','d-type','m-type']) {
